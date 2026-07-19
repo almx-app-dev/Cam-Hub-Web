@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <meta name="description" content="Cam-Hub connects compatible cameras and recorders in one private, direct-viewing experience.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Cam-Hub — Your cameras, one clear view">
+  <meta property="og:description" content="Direct camera viewing, open protocol support, and LiveView Mix without mandatory vendor cloud sign-in.">
+  <meta property="og:url" content="https://wkc41511.github.io/Cam-Hub/">
+  <meta property="og:image" content="https://wkc41511.github.io/Cam-Hub/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://wkc41511.github.io/Cam-Hub/assets/og.png">
+  <title>Cam-Hub</title>
+  <link rel="icon" href="assets/app-icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="home">
+  <header class="topbar" aria-label="Site header">
+    <a class="brand" href="./" aria-label="Cam-Hub home">
+      <img src="assets/app-icon.png" alt="" width="42" height="42">
+      <span><strong>Cam-Hub</strong><small data-i18n="topline">直接連接．集中監看</small></span>
+    </a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-controls" data-i18n-aria="menuLabel">
+      <span></span><span></span><span></span>
+      <span class="sr-only" data-i18n="menuLabel">開啟選單</span>
+    </button>
+    <div class="topbar-controls" id="site-controls">
+      <nav class="navlinks" aria-label="Primary">
+        <a href="./" data-nav="home" data-i18n="navHome">首頁</a>
+        <a href="product.html" data-nav="product" data-i18n="navProduct">功能介紹</a>
+        <a href="support.html" data-nav="support" data-i18n="navSupport">支援</a>
+        <a href="privacy.html" data-nav="privacy" data-i18n="navPrivacy">隱私權</a>
+        <a href="terms.html" data-nav="terms" data-i18n="navTerms">使用條款</a>
+      </nav>
+      <div class="pickers">
+        <label><span class="sr-only" data-i18n="themeLabel">外觀</span><select id="themeSelect" aria-label="Theme"><option value="auto" data-i18n="themeAuto">自動</option><option value="light" data-i18n="themeLight">淺色</option><option value="dark" data-i18n="themeDark">深色</option></select></label>
+        <label><span class="sr-only" data-i18n="languageLabel">語言</span><select id="languageSelect" aria-label="Language"><option value="zh-Hant">繁體中文</option><option value="en">English</option></select></label>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="home-hero">
+      <div class="hero-copy">
+        <div class="eyebrow" data-i18n="eyebrow">直接連接您的設備</div>
+        <h1 data-i18n="title">自己的攝影機，<br><span>不必被雲端綁住。</span></h1>
+        <p class="summary" data-i18n="summary">Cam-Hub 讓您直接連接相容的攝影機與錄影主機，不需為觀看影像另外註冊品牌雲端帳號。</p>
+        <div class="hero-actions">
+          <a class="button primary" href="product.html" data-i18n="primaryCTA">查看功能</a>
+          <a class="button secondary" href="support.html#compatibility" data-i18n="secondaryCTA">確認相容方式</a>
+        </div>
+        <ul class="trust-list" aria-label="Highlights">
+          <li data-i18n="trustAccount">不需另外建立帳號</li>
+          <li data-i18n="trustProtocol">支援 ONVIF 與相容設備協議</li>
+          <li data-i18n="trustMix">跨設備 LiveView Mix</li>
+        </ul>
+      </div>
+      <div class="hero-visual" aria-label="Cam-Hub LiveView Mix preview">
+        <div class="visual-glow"></div>
+        <img class="live-mix-image" src="assets/live-mix.jpg" alt="Six camera channels arranged in a Cam-Hub monitoring dashboard">
+        <div class="signal-card signal-card-a"><span></span><b>CAM 01</b><small data-i18n="statusLive">即時</small></div>
+        <div class="signal-card signal-card-b"><span></span><b>CAM 06</b><small>LIVE MIX</small></div>
+      </div>
+    </section>
+
+    <section class="intro-band" aria-labelledby="intro-title">
+      <p class="section-kicker" data-i18n="introKicker">少一層帳號，多一點掌控</p>
+      <h2 id="intro-title" data-i18n="introTitle">讓不同來源的影像，回到同一個畫面。</h2>
+      <p data-i18n="introBody">加入單一攝影機，或連接部分相容的 NVR、DVR 與 NAS 監控系統。Cam-Hub 將通道整理在一致的介面中，讓查看與切換更簡單。</p>
+    </section>
+
+    <section class="feature-grid" id="features" aria-label="Features">
+      <article class="feature-card featured">
+        <span class="feature-number">01</span>
+        <div class="feature-icon connection-icon" aria-hidden="true"><i></i><i></i><i></i></div>
+        <h2 data-i18n="featureDirectTitle">直接連接</h2>
+        <p data-i18n="featureDirectBody">使用設備本身的位址與存取資訊連線，不必為了觀看影像註冊品牌雲端帳號。</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-number">02</span>
+        <div class="feature-icon grid-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <h2>LiveView Mix</h2>
+        <p data-i18n="featureMixBody">把不同攝影機與錄影主機的通道混合成一個專屬監看面板。</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-number">03</span>
+        <div class="feature-icon protocol-icon" aria-hidden="true"><i></i><i></i><i></i></div>
+        <h2 data-i18n="featureProtocolTitle">開放協議優先</h2>
+        <p data-i18n="featureProtocolBody">支援 ONVIF 與 RTSP 串流，並針對部分設備提供相容連接。</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-number">04</span>
+        <div class="feature-icon playback-icon" aria-hidden="true"><i></i></div>
+        <h2 data-i18n="featurePlaybackTitle">即時與回放</h2>
+        <p data-i18n="featurePlaybackBody">查看即時影像，並在支援的設備上搜尋與播放錄影內容。</p>
+      </article>
+    </section>
+
+    <section class="compatibility-band" aria-labelledby="compatibility-title">
+      <div>
+        <p class="section-kicker" data-i18n="compatibilityKicker">目前相容性</p>
+        <h2 id="compatibility-title" data-i18n="compatibilityTitle">開放協議，加上經過實測的設備連接。</h2>
+      </div>
+      <div class="compatibility-items" aria-label="Supported connection families">
+        <span>ONVIF</span><span>RTSP</span><span>Hikvision*</span><span>Dahua*</span><span>Synology*</span>
+      </div>
+      <p class="legal-note" data-i18n="compatibilityNote">* 僅代表部分設備與功能經過相容性測試，不代表與品牌原廠存在合作、贊助或官方認可關係。實際功能依型號、韌體與設定而異。</p>
+    </section>
+
+    <section class="closing-cta">
+      <img src="assets/app-icon.png" width="96" height="96" alt="Cam-Hub app icon">
+      <div><p class="section-kicker">CAM-HUB</p><h2 data-i18n="closingTitle">把監看畫面，重新交回自己掌握。</h2></div>
+      <a class="button secondary" href="product.html" data-i18n="closingCTA">了解如何使用</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span data-i18n="footer">Copyright © 2026 ALMX. All rights reserved.</span>
+    <nav aria-label="Legal"><a href="privacy.html" data-i18n="navPrivacy">隱私權</a><a href="terms.html" data-i18n="navTerms">使用條款</a></nav>
+  </footer>
+  <script src="site.js"></script>
+</body>
+</html>
