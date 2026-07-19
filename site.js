@@ -3,6 +3,17 @@ const shared = {
   eulaUrl: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
 };
 
+function languageForRegion(languages, timeZone) {
+  const regionIsTaiwan = languages.some((language) => {
+    try {
+      return new Intl.Locale(language).region === "TW";
+    } catch {
+      return /(?:^|[-_])TW(?:$|[-_])/i.test(language);
+    }
+  });
+  return regionIsTaiwan || timeZone === "Asia/Taipei" ? "zh-Hant" : "en";
+}
+
 const translations = {
   "zh-Hant": {
     htmlLang: "zh-Hant",
@@ -228,9 +239,17 @@ const siteControls = document.getElementById("site-controls");
 
 function preferredLanguage() {
   const stored = localStorage.getItem("camHubSiteLanguage");
-  if (stored && translations[stored]) return stored;
+  const isManual = localStorage.getItem("camHubSiteLanguageManual") === "1";
+  if (isManual && stored && translations[stored]) return stored;
+
   const languages = navigator.languages?.length ? navigator.languages : [navigator.language || "en"];
-  return languages.some((language) => language.toLowerCase().startsWith("zh")) ? "zh-Hant" : "en";
+  let timeZone = "";
+  try {
+    timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  } catch {
+    // Keep the locale-only result when a browser does not expose its time zone.
+  }
+  return languageForRegion(languages, timeZone);
 }
 
 function preferredTheme() {
@@ -271,7 +290,7 @@ function renderPage(data) {
   return null;
 }
 
-function applyLanguage(language) {
+function applyLanguage(language, persist = false) {
   const locale = translations[language] || translations.en;
   const pageData = locale[page] || locale.home;
   document.body.classList.add("is-switching");
@@ -294,12 +313,15 @@ function applyLanguage(language) {
     const rendered = renderPage(pageData);
     if (rendered !== null) document.getElementById("content").innerHTML = rendered;
     languageSelect.value = language;
-    localStorage.setItem("camHubSiteLanguage", language);
+    if (persist) {
+      localStorage.setItem("camHubSiteLanguage", language);
+      localStorage.setItem("camHubSiteLanguageManual", "1");
+    }
     document.body.classList.remove("is-switching");
   }, 70);
 }
 
-languageSelect.addEventListener("change", (event) => applyLanguage(event.target.value));
+languageSelect.addEventListener("change", (event) => applyLanguage(event.target.value, true));
 themeSelect.addEventListener("change", (event) => applyTheme(event.target.value));
 
 menuButton?.addEventListener("click", () => {
