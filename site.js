@@ -1,17 +1,37 @@
 const shared = {
   contactEmail: "app-dev@almx.cc",
-  eulaUrl: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
+  eulaUrl: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+  supportedLanguages: "English · 繁體中文 · 简体中文 · 日本語 · 한국어 · Deutsch · Español · Français · العربية"
 };
 
-function languageForRegion(languages, timeZone) {
-  const regionIsTaiwan = languages.some((language) => {
+function supportedLanguageForPreferences(languages) {
+  const directLanguages = new Map([
+    ["en", "en"],
+    ["ar", "ar"],
+    ["de", "de"],
+    ["es", "es"],
+    ["fr", "fr"],
+    ["ja", "ja"],
+    ["ko", "ko"]
+  ]);
+
+  for (const preference of languages) {
+    const tag = String(preference || "").replaceAll("_", "-");
+    const baseLanguage = tag.split("-")[0].toLowerCase();
+    if (directLanguages.has(baseLanguage)) return directLanguages.get(baseLanguage);
+    if (baseLanguage !== "zh") continue;
+
     try {
-      return new Intl.Locale(language).region === "TW";
+      const locale = new Intl.Locale(tag).maximize();
+      if (locale.script === "Hant" || ["TW", "HK", "MO"].includes(locale.region)) return "zh-Hant";
+      return "zh-Hans";
     } catch {
-      return /(?:^|[-_])TW(?:$|[-_])/i.test(language);
+      if (/(?:^|-)Hant(?:-|$)|(?:^|-)(?:TW|HK|MO)(?:-|$)/i.test(tag)) return "zh-Hant";
+      return "zh-Hans";
     }
-  });
-  return regionIsTaiwan || timeZone === "Asia/Taipei" ? "zh-Hant" : "en";
+  }
+
+  return "en";
 }
 
 const translations = {
@@ -79,7 +99,7 @@ const translations = {
       eyebrow: "SUPPORT",
       title: "支援與相容性",
       summary: "連線問題通常與設備協議、權限、連接埠或網路設定有關。這裡整理了開始檢查的位置。",
-      meta: [["聯絡信箱", `<a href="mailto:${shared.contactEmail}">${shared.contactEmail}</a>`], ["App", "Cam-Hub"], ["支援語言", "繁體中文 / English"]],
+      meta: [["聯絡信箱", `<a href="mailto:${shared.contactEmail}">${shared.contactEmail}</a>`], ["App", "Cam-Hub"], ["支援語言", shared.supportedLanguages]],
       sections: [
         ["相容性", ["Cam-Hub 支援 ONVIF 與 RTSP 影像連接，並已針對部分 Hikvision、Dahua 與 Synology 設備或系統進行測試。實際相容性取決於型號、韌體、帳號權限、串流格式與網路設定。", "部分設備可能需要先在管理介面中啟用 ONVIF、RTSP 或相關本機服務。品牌相容性說明不代表與品牌原廠存在合作、贊助或官方認可關係。"], "compatibility"],
         ["回報連線問題前", ["確認攝影機或錄影主機已上線，且 Apple 裝置可以連線至該設備。", "確認設備位址、HTTP 埠、RTSP 埠、使用者名稱與密碼。", "需要時，請在設備管理介面中啟用 ONVIF 或相關本機服務。", "確認設備帳號具備查看指定通道與錄影內容的權限。", "若主串流的編碼、解析度或流量不相容，可以嘗試使用子串流。"]],
@@ -186,7 +206,7 @@ const translations = {
       eyebrow: "SUPPORT",
       title: "Support and compatibility",
       summary: "Connection issues are usually related to protocols, permissions, ports, or network configuration. Here is where to start checking.",
-      meta: [["Contact", `<a href="mailto:${shared.contactEmail}">${shared.contactEmail}</a>`], ["App", "Cam-Hub"], ["Languages", "繁體中文 / English"]],
+      meta: [["Contact", `<a href="mailto:${shared.contactEmail}">${shared.contactEmail}</a>`], ["App", "Cam-Hub"], ["Languages", shared.supportedLanguages]],
       sections: [
         ["Compatibility", ["Cam-Hub supports ONVIF and RTSP-based viewing and has been tested with selected Hikvision, Dahua, and Synology devices or systems. Compatibility varies by model, firmware, account permissions, stream format, and network configuration.", "Some equipment requires ONVIF, RTSP, or another local service to be enabled in its administration interface. Compatibility statements do not imply affiliation, sponsorship, or endorsement by the equipment vendor."], "compatibility"],
         ["Before reporting a connection problem", ["Confirm that the camera or recorder is online and reachable from your Apple device.", "Verify the equipment address, HTTP port, RTSP port, username, and password.", "Enable ONVIF or the required local service in the equipment settings when applicable.", "Use an account that has permission to view the selected channels and recordings.", "Try the camera sub-stream when the main-stream codec, resolution, or bandwidth is not compatible."]],
@@ -231,11 +251,29 @@ const translations = {
   }
 };
 
+Object.assign(translations, globalThis.CamHubAdditionalTranslations || {});
+
+const languageChoices = [
+  ["en", "English"],
+  ["zh-Hant", "繁體中文"],
+  ["zh-Hans", "简体中文"],
+  ["ja", "日本語"],
+  ["ko", "한국어"],
+  ["de", "Deutsch"],
+  ["es", "Español"],
+  ["fr", "Français"],
+  ["ar", "العربية"]
+];
+
 const page = document.body.dataset.page || "home";
 const languageSelect = document.getElementById("languageSelect");
 const themeSelect = document.getElementById("themeSelect");
 const menuButton = document.querySelector(".menu-button");
 const siteControls = document.getElementById("site-controls");
+
+languageSelect.innerHTML = languageChoices
+  .map(([value, label]) => `<option value="${value}">${label}</option>`)
+  .join("");
 
 function preferredLanguage() {
   const stored = localStorage.getItem("camHubSiteLanguage");
@@ -243,13 +281,7 @@ function preferredLanguage() {
   if (isManual && stored && translations[stored]) return stored;
 
   const languages = navigator.languages?.length ? navigator.languages : [navigator.language || "en"];
-  let timeZone = "";
-  try {
-    timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  } catch {
-    // Keep the locale-only result when a browser does not expose its time zone.
-  }
-  return languageForRegion(languages, timeZone);
+  return supportedLanguageForPreferences(languages);
 }
 
 function preferredTheme() {
@@ -296,6 +328,7 @@ function applyLanguage(language, persist = false) {
   document.body.classList.add("is-switching");
   window.setTimeout(() => {
     document.documentElement.lang = locale.htmlLang;
+    document.documentElement.dir = locale.dir || "ltr";
     document.title = pageData.documentTitle;
     document.querySelectorAll("[data-i18n]").forEach((node) => {
       const key = node.dataset.i18n;
