@@ -487,6 +487,12 @@ h1 .hero-accent {
 .inner-page { padding: 76px 0 110px; }
 .page-hero { max-width: 880px; padding: 24px 0 56px; }
 .page-hero h1 { font-size: clamp(44px, 7vw, 78px); }
+body[data-page="product"] .page-hero h1 {
+  color: transparent;
+  background: linear-gradient(95deg, var(--hero-gradient-start) 0%, var(--hero-gradient-mid) 56%, var(--hero-gradient-end) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
 
 .article-card {
   max-width: 940px;
