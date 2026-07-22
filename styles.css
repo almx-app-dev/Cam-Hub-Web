@@ -819,6 +819,14 @@ html[dir="rtl"] .guide-visual figcaption { right: 20px; left: auto; }
     text-wrap: pretty;
   }
   .page-title-line { display: block; text-wrap: balance; }
+  html:lang(zh-Hant) .page-title-line,
+  html:lang(zh-Hans) .page-title-line,
+  html:lang(ja) .page-title-line,
+  html:lang(ko) .page-title-line {
+    overflow-wrap: normal;
+    white-space: nowrap;
+    word-break: keep-all;
+  }
   html:lang(zh-Hant) .page-hero .summary,
   html:lang(zh-Hans) .page-hero .summary,
   html:lang(ja) .page-hero .summary,

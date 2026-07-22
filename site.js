@@ -78,9 +78,9 @@ const translations = {
       closingCTA: "了解如何使用"
     },
     product: {
-      documentTitle: "Cam-Hub — 操作 Wiki",
-      topline: "操作 Wiki",
-      eyebrow: "CAM-HUB USER GUIDE",
+      documentTitle: "Cam-Hub — 功能介紹",
+      topline: "功能介紹",
+      eyebrow: "CAM-HUB 功能介紹",
       title: '<span class="page-title-line">從加入設備開始，</span><span class="page-title-line">逐步設定 Cam-Hub。</span>',
       summary: "依照 App 裡實際出現的入口、選項與操作結果整理；需要調整監看牆、回放錄影或移轉設備時，可以直接跳到對應章節。",
       wikiLabel: "快速前往章節",
@@ -306,9 +306,9 @@ const translations = {
       closingCTA: "Learn how it works"
     },
     product: {
-      documentTitle: "Cam-Hub — User Guide Wiki",
-      topline: "User Guide Wiki",
-      eyebrow: "CAM-HUB USER GUIDE",
+      documentTitle: "Cam-Hub — Features",
+      topline: "Features",
+      eyebrow: "CAM-HUB FEATURES",
       title: '<span class="page-title-line">Set up Cam-Hub,</span> <span class="page-title-line">one screen at a time.</span>',
       summary: "Use the same entry points and controls you see in the app. Jump directly to device setup, LiveView Mix, playback, transfer, or app behaviour.",
       wikiLabel: "Jump to a chapter",
@@ -542,7 +542,7 @@ function applyPhraseWrapping(language) {
     acceptNode(node) {
       const parent = node.parentElement;
       if (!parent || !node.data.trim()) return NodeFilter.FILTER_REJECT;
-      if (parent.closest("script, style, select, option, textarea, .sr-only")) return NodeFilter.FILTER_REJECT;
+      if (parent.closest("script, style, select, option, textarea, .sr-only, .eyebrow, .section-kicker, figcaption")) return NodeFilter.FILTER_REJECT;
       return NodeFilter.FILTER_ACCEPT;
     }
   });

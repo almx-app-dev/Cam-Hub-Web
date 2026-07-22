@@ -751,7 +751,7 @@
 
   const wikiByLocale = {
     "zh-Hans": {
-      documentTitle: "Cam-Hub — 操作 Wiki", topline: "操作 Wiki", eyebrow: "CAM-HUB USER GUIDE",
+      documentTitle: "Cam-Hub — 功能介绍", topline: "功能介绍", eyebrow: "CAM-HUB 功能介绍",
       title: '<span class="page-title-line">从添加设备开始，</span><span class="page-title-line">逐步设置 Cam-Hub。</span>', summary: "按照 App 中实际出现的入口与选项整理，可直接前往设备、LiveView Mix、回放、迁移或设置章节。", wikiLabel: "快速前往章节",
       wiki: [
         ["devices", "01", "设备与通道", "先完成设备连接，再决定哪些通道显示在监看画面。", [
@@ -781,8 +781,8 @@
       ]
     },
     ja: {
-      documentTitle: "Cam-Hub — 操作 Wiki", topline: "操作 Wiki", eyebrow: "CAM-HUB USER GUIDE",
-      title: '<span class="page-title-line">機器の追加から</span><span class="page-title-line">Cam-Hub を順番に設定。</span>', summary: "App に表示される入口と操作に沿って、機器、LiveView Mix、再生、移行、設定を確認できます。", wikiLabel: "章へ移動",
+      documentTitle: "Cam-Hub — 機能紹介", topline: "機能紹介", eyebrow: "CAM-HUB 機能紹介",
+      title: '<span class="page-title-line">機器の追加から</span><span class="page-title-line">Cam-Hub を</span><span class="page-title-line">順番に設定。</span>', summary: "App に表示される入口と操作に沿って、機器、LiveView Mix、再生、移行、設定を確認できます。", wikiLabel: "章へ移動",
       wiki: [
         ["devices", "01", "機器とチャンネル", "機器を接続してから、監視画面に表示するチャンネルを選びます。", [
           ["接続情報を準備", "アドレスまたはホスト名、HTTP／RTSP ポート、ユーザー名、パスワードを入力します。所有・管理または明示的な許可を得た機器だけに接続してください。"],
@@ -811,8 +811,8 @@
       ]
     },
     ko: {
-      documentTitle: "Cam-Hub — 사용 Wiki", topline: "사용 Wiki", eyebrow: "CAM-HUB USER GUIDE",
-      title: '<span class="page-title-line">장비 추가부터</span> <span class="page-title-line">Cam-Hub를 단계별로 설정하세요.</span>', summary: "App의 실제 메뉴와 조작을 기준으로 장비, LiveView Mix, 재생, 이전 및 설정을 안내합니다.", wikiLabel: "챕터 바로가기",
+      documentTitle: "Cam-Hub — 기능 소개", topline: "기능 소개", eyebrow: "CAM-HUB 기능 소개",
+      title: '<span class="page-title-line">장비 추가부터</span> <span class="page-title-line">Cam-Hub를</span> <span class="page-title-line">단계별로 설정하세요.</span>', summary: "App의 실제 메뉴와 조작을 기준으로 장비, LiveView Mix, 재생, 이전 및 설정을 안내합니다.", wikiLabel: "챕터 바로가기",
       wiki: [
         ["devices", "01", "장비와 채널", "장비를 연결한 다음 모니터링 화면에 표시할 채널을 선택합니다.", [
           ["연결 정보 준비", "주소 또는 호스트 이름, HTTP／RTSP 포트, 사용자 이름과 비밀번호를 입력합니다. 소유·관리하거나 명시적으로 허가받은 장비만 연결하세요."],
@@ -841,7 +841,7 @@
       ]
     },
     de: {
-      documentTitle: "Cam-Hub — Bedienungs-Wiki", topline: "Bedienungs-Wiki", eyebrow: "CAM-HUB USER GUIDE",
+      documentTitle: "Cam-Hub — Funktionen", topline: "Funktionen", eyebrow: "CAM-HUB FUNKTIONEN",
       title: '<span class="page-title-line">Cam-Hub Schritt für Schritt</span> <span class="page-title-line">einrichten.</span>', summary: "Folgt den tatsächlichen Menüs der App für Geräte, LiveView Mix, Wiedergabe, Übertragung und Einstellungen.", wikiLabel: "Zum Kapitel",
       wiki: [
         ["devices", "01", "Geräte und Kanäle", "Zuerst das Gerät verbinden, dann die gewünschten Überwachungskanäle auswählen.", [
@@ -871,7 +871,7 @@
       ]
     },
     es: {
-      documentTitle: "Cam-Hub — Wiki de uso", topline: "Wiki de uso", eyebrow: "CAM-HUB USER GUIDE",
+      documentTitle: "Cam-Hub — Funciones", topline: "Funciones", eyebrow: "FUNCIONES DE CAM-HUB",
       title: '<span class="page-title-line">Configura Cam-Hub</span> <span class="page-title-line">paso a paso.</span>', summary: "Sigue los mismos menús y controles de la App para dispositivos, LiveView Mix, reproducción, transferencia y ajustes.", wikiLabel: "Ir a un capítulo",
       wiki: [
         ["devices", "01", "Dispositivos y canales", "Conecta el equipo y después elige qué canales aparecen en las pantallas.", [
@@ -901,7 +901,7 @@
       ]
     },
     fr: {
-      documentTitle: "Cam-Hub — Wiki d’utilisation", topline: "Wiki d’utilisation", eyebrow: "CAM-HUB USER GUIDE",
+      documentTitle: "Cam-Hub — Fonctionnalités", topline: "Fonctionnalités", eyebrow: "FONCTIONNALITÉS CAM-HUB",
       title: '<span class="page-title-line">Configurez Cam-Hub</span> <span class="page-title-line">étape par étape.</span>', summary: "Suivez les menus réels de l’App pour les équipements, LiveView Mix, la lecture, le transfert et les réglages.", wikiLabel: "Aller à un chapitre",
       wiki: [
         ["devices", "01", "Équipements et canaux", "Connectez d’abord l’équipement, puis choisissez les canaux à afficher.", [
@@ -931,7 +931,7 @@
       ]
     },
     ar: {
-      documentTitle: "Cam-Hub — دليل الاستخدام", topline: "دليل الاستخدام", eyebrow: "CAM-HUB USER GUIDE",
+      documentTitle: "Cam-Hub — الميزات", topline: "الميزات", eyebrow: "ميزات CAM-HUB",
       title: '<span class="page-title-line">اضبط Cam-Hub</span> <span class="page-title-line">خطوة بخطوة.</span>', summary: "اتبع القوائم الفعلية في التطبيق للمعدات وLiveView Mix والتشغيل والنقل والإعدادات.", wikiLabel: "الانتقال إلى فصل",
       wiki: [
         ["devices", "01", "المعدات والقنوات", "صِل المعدات أولاً ثم اختر القنوات التي تظهر في شاشات المراقبة.", [
