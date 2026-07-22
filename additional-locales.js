@@ -748,4 +748,221 @@
       }
     }
   };
+
+  const wikiByLocale = {
+    "zh-Hans": {
+      documentTitle: "Cam-Hub — 操作 Wiki", topline: "操作 Wiki", eyebrow: "CAM-HUB USER GUIDE",
+      title: '<span class="page-title-line">从添加设备开始，</span><span class="page-title-line">逐步设置 Cam-Hub。</span>', summary: "按照 App 中实际出现的入口与选项整理，可直接前往设备、LiveView Mix、回放、迁移或设置章节。", wikiLabel: "快速前往章节",
+      wiki: [
+        ["devices", "01", "设备与通道", "先完成设备连接，再决定哪些通道显示在监看画面。", [
+          ["准备连接信息", "输入设备地址或主机名、HTTP／RTSP 端口、用户名和密码。请仅连接您拥有、管理或已获明确授权使用的设备。"],
+          ["自动识别或使用 ONVIF", "Cam-Hub 会尝试兼容的设备连接，也可直接选择 ONVIF。ONVIF 或 RTSP 可能需要先在设备管理界面启用。"],
+          ["整理通道", "连接成功后可选择要显示的摄像头、停用不需要的通道，并查看型号、固件和通道数量。"]
+        ]],
+        ["mix", "02", "LiveView Mix 监看墙", "把不同摄像头与录像设备的通道放在同一个画面。", [
+          ["跨设备组合", "可同时加入来自不同摄像头、NVR、DVR 或 NAS 监控系统的通道。"],
+          ["17 种全屏布局", "支持 2×2 至 7×7 网格，以及 1+3、1+5、1+7、1+21、1+27 主画面布局；高密度布局更适合大屏幕。"],
+          ["排序与填充方式", "调整摄像头顺序，并在 Fit、Crop、Stretch 三种画面填充方式之间选择。"],
+          ["水印与多用途空白格", "可显示设备名、摄像头名或 IP；空白格还可放置图片、时钟、文字标签或调用自有 HTTP Webhook 的控制按钮。"]
+        ]],
+        ["viewing", "03", "实时查看与录像回放", "根据单画面或多画面场景调整清晰度与操作方式。", [
+          ["HD／SD 与缩放", "分别设置单摄像头和多摄像头的默认画质；单通道支持手势缩放、双击缩放和横屏显示。"],
+          ["快照与分享", "设备支持时可截取当前画面并通过系统分享。分享前请确认内容与接收对象。"],
+          ["录像时间轴", "按日期查看可缩放时间轴，并区分 Continuous 与 Events。搜索和播放能力取决于设备与账号权限。"]
+        ], '功能可用性提示：实时串流、截图、<span class="keep-phrase">主／子码流切换</span>、录像搜索、<span class="keep-phrase">Continuous／Events 分类</span>、时间轴定位和回放，均以摄像机或录像主机实际返回的能力，以及登录设备账号获得的权限为准。'],
+        ["backup", "04", "加密备份与迁移", "备份和迁移包含敏感连接信息，请妥善保管 PIN 与分享代码。", [
+          ["iCloud 加密备份", "使用六位数 PIN 加密设备、凭据、通道和设置并保存到您的 iCloud。PIN 无法由开发者找回。"],
+          ["还原与加密代码", "可用原 PIN 从 iCloud 还原，也可导出加密代码在另一台 Cam-Hub 中导入；仅与可信对象分享完整代码。"]
+        ]],
+        ["preferences", "05", "显示、串流与数据管理", "按网络、设备性能和日常使用方式调整 App。", [
+          ["监看行为", "可隐藏离线摄像头、在支持的设备上保持画面外串流，并选择启动时打开上次位置、LiveView Mix 或指定设备。"],
+          ["重置与删除", "还原默认设置会保留设备；删除全部数据会移除本机设备与密码；删除 iCloud 备份只处理云端备份。"]
+        ]]
+      ]
+    },
+    ja: {
+      documentTitle: "Cam-Hub — 操作 Wiki", topline: "操作 Wiki", eyebrow: "CAM-HUB USER GUIDE",
+      title: '<span class="page-title-line">機器の追加から</span><span class="page-title-line">Cam-Hub を順番に設定。</span>', summary: "App に表示される入口と操作に沿って、機器、LiveView Mix、再生、移行、設定を確認できます。", wikiLabel: "章へ移動",
+      wiki: [
+        ["devices", "01", "機器とチャンネル", "機器を接続してから、監視画面に表示するチャンネルを選びます。", [
+          ["接続情報を準備", "アドレスまたはホスト名、HTTP／RTSP ポート、ユーザー名、パスワードを入力します。所有・管理または明示的な許可を得た機器だけに接続してください。"],
+          ["自動判別または ONVIF", "互換接続を試し、必要に応じて ONVIF を直接選択できます。機器側で ONVIF／RTSP の有効化が必要な場合があります。"],
+          ["チャンネルを整理", "表示するカメラを選び、不要なチャンネルを無効化し、機種・ファームウェア・チャンネル数を確認できます。"]
+        ]],
+        ["mix", "02", "LiveView Mix 監視ウォール", "異なるカメラやレコーダーの映像をひとつの画面にまとめます。", [
+          ["機器をまたいで構成", "複数のカメラ、NVR、DVR、NAS 監視システムのチャンネルを同時に配置できます。"],
+          ["17 種類の全画面レイアウト", "2×2〜7×7 のグリッドと、1+3、1+5、1+7、1+21、1+27 のフォーカス配置を選べます。高密度配置は大画面向けです。"],
+          ["並び順と表示方法", "カメラ順を変更し、Fit、Crop、Stretch の表示方法を選択できます。"],
+          ["透かしと多目的スロット", "機器名・カメラ名・IP を表示でき、空き枠には画像、時計、ラベル、HTTP Webhook の操作ボタンを置けます。"]
+        ]],
+        ["viewing", "03", "ライブ表示と録画再生", "単画面と多画面で画質や操作を使い分けます。", [
+          ["HD／SD とズーム", "単一カメラと複数カメラの既定画質を個別に設定できます。単一画面ではピンチ、ダブルタップ、横向き表示に対応します。"],
+          ["スナップショット共有", "機器が対応していれば現在の画像を取得し、システム共有から送信できます。"],
+          ["録画タイムライン", "日付、拡大可能な時間軸、Continuous／Events を利用できます。検索・再生は機器と権限に依存します。"]
+        ], '機能に関する注意：ライブ映像、スナップショット、<span class="keep-phrase">メイン／サブストリーム切替</span>、録画検索、<span class="keep-phrase">Continuous／Events 分類</span>、タイムライン移動、再生の可否は、カメラまたは録画機が実際に通知する機能と、ログインした機器アカウントに付与された権限により異なります。'],
+        ["backup", "04", "暗号化バックアップと移行", "PIN と共有コードには接続情報が含まれるため、安全に管理してください。", [
+          ["iCloud バックアップ", "6 桁 PIN で機器、認証情報、チャンネル、設定を暗号化して自分の iCloud に保存します。PIN は復元できません。"],
+          ["復元と暗号化コード", "元の PIN で iCloud から復元するか、暗号化コードを別の Cam-Hub に読み込めます。信頼できる相手だけに共有してください。"]
+        ]],
+        ["preferences", "05", "表示・ストリーミング・データ管理", "ネットワークや端末性能に合わせて App の動作を調整します。", [
+          ["監視画面の動作", "オフラインカメラを非表示にし、対応機器では画面外接続を維持し、起動時に開く画面を選べます。"],
+          ["リセットと削除", "設定の初期化、ローカル機器とパスワードの削除、iCloud バックアップの削除はそれぞれ別に実行できます。"]
+        ]]
+      ]
+    },
+    ko: {
+      documentTitle: "Cam-Hub — 사용 Wiki", topline: "사용 Wiki", eyebrow: "CAM-HUB USER GUIDE",
+      title: '<span class="page-title-line">장비 추가부터</span> <span class="page-title-line">Cam-Hub를 단계별로 설정하세요.</span>', summary: "App의 실제 메뉴와 조작을 기준으로 장비, LiveView Mix, 재생, 이전 및 설정을 안내합니다.", wikiLabel: "챕터 바로가기",
+      wiki: [
+        ["devices", "01", "장비와 채널", "장비를 연결한 다음 모니터링 화면에 표시할 채널을 선택합니다.", [
+          ["연결 정보 준비", "주소 또는 호스트 이름, HTTP／RTSP 포트, 사용자 이름과 비밀번호를 입력합니다. 소유·관리하거나 명시적으로 허가받은 장비만 연결하세요."],
+          ["자동 감지 또는 ONVIF", "호환 연결을 먼저 시도하며 필요하면 ONVIF를 직접 선택할 수 있습니다. 장비 설정에서 ONVIF／RTSP를 활성화해야 할 수 있습니다."],
+          ["채널 정리", "표시할 카메라를 선택하고 사용하지 않는 채널을 끄며 모델, 펌웨어와 채널 수를 확인할 수 있습니다."]
+        ]],
+        ["mix", "02", "LiveView Mix 모니터링 월", "서로 다른 카메라와 레코더의 채널을 한 화면에 배치합니다.", [
+          ["장비 간 혼합", "여러 카메라, NVR, DVR 또는 NAS 감시 시스템의 채널을 함께 표시할 수 있습니다."],
+          ["17가지 전체 화면 레이아웃", "2×2~7×7 그리드와 1+3, 1+5, 1+7, 1+21, 1+27 포커스 배치를 지원합니다. 고밀도 배치는 큰 화면에 적합합니다."],
+          ["순서와 채우기 방식", "카메라 순서를 바꾸고 Fit, Crop, Stretch 표시 방식을 선택할 수 있습니다."],
+          ["워터마크와 다목적 빈 슬롯", "장비명·카메라명·IP를 표시하고, 빈 슬롯에는 이미지, 시계, 라벨 또는 HTTP Webhook 제어 버튼을 넣을 수 있습니다."]
+        ]],
+        ["viewing", "03", "실시간 보기와 녹화 재생", "단일 화면과 다중 화면에 맞춰 화질과 조작 방식을 설정합니다.", [
+          ["HD／SD와 확대", "단일 및 다중 카메라의 기본 화질을 각각 설정하며 핀치, 두 번 탭, 가로 화면 보기를 지원합니다."],
+          ["스냅샷과 공유", "장비가 지원하면 현재 화면을 캡처해 시스템 공유 기능으로 보낼 수 있습니다."],
+          ["녹화 타임라인", "날짜, 확대 가능한 타임라인, Continuous／Events 분류를 제공합니다. 검색과 재생은 장비와 권한에 따라 달라집니다."]
+        ], '기능 이용 안내: 실시간 스트리밍, 스냅샷, <span class="keep-phrase">주／보조 스트림 전환</span>, 녹화 검색, <span class="keep-phrase">Continuous／Events 분류</span>, 타임라인 이동 및 재생은 카메라나 레코더가 실제로 제공하는 기능과 로그인한 장비 계정에 부여된 권한에 따라 달라집니다.'],
+        ["backup", "04", "암호화 백업과 이전", "PIN과 공유 코드는 민감한 연결 정보를 포함하므로 안전하게 관리하세요.", [
+          ["iCloud 암호화 백업", "6자리 PIN으로 장비, 인증 정보, 채널과 설정을 암호화해 개인 iCloud에 저장합니다. PIN은 복구할 수 없습니다."],
+          ["복원과 암호화 코드", "원래 PIN으로 iCloud에서 복원하거나 암호화 코드를 다른 Cam-Hub에서 가져올 수 있습니다. 신뢰하는 사람에게만 공유하세요."]
+        ]],
+        ["preferences", "05", "표시·스트리밍·데이터 관리", "네트워크와 기기 성능에 맞게 App 동작을 조정합니다.", [
+          ["모니터링 동작", "오프라인 카메라를 숨기고, 지원 장비에서 화면 밖 스트림을 유지하며, 시작 시 열 화면을 선택할 수 있습니다."],
+          ["재설정과 삭제", "기본 설정 복원, 로컬 장비·비밀번호 삭제, iCloud 백업 삭제는 서로 별도로 실행됩니다."]
+        ]]
+      ]
+    },
+    de: {
+      documentTitle: "Cam-Hub — Bedienungs-Wiki", topline: "Bedienungs-Wiki", eyebrow: "CAM-HUB USER GUIDE",
+      title: '<span class="page-title-line">Cam-Hub Schritt für Schritt</span> <span class="page-title-line">einrichten.</span>', summary: "Folgt den tatsächlichen Menüs der App für Geräte, LiveView Mix, Wiedergabe, Übertragung und Einstellungen.", wikiLabel: "Zum Kapitel",
+      wiki: [
+        ["devices", "01", "Geräte und Kanäle", "Zuerst das Gerät verbinden, dann die gewünschten Überwachungskanäle auswählen.", [
+          ["Verbindungsdaten vorbereiten", "Adresse oder Hostname, HTTP-/RTSP-Ports, Benutzername und Passwort eingeben. Nur eigene, verwaltete oder ausdrücklich freigegebene Geräte verbinden."],
+          ["Automatische Erkennung oder ONVIF", "Cam-Hub versucht eine kompatible Verbindung; ONVIF kann direkt gewählt werden. ONVIF/RTSP muss eventuell am Gerät aktiviert werden."],
+          ["Kanäle organisieren", "Kameras auswählen, ungenutzte Kanäle deaktivieren und Modell, Firmware sowie Kanalanzahl prüfen."]
+        ]],
+        ["mix", "02", "LiveView Mix Videowand", "Kanäle verschiedener Kameras und Rekorder auf einem Bildschirm kombinieren.", [
+          ["Geräteübergreifend mischen", "Kanäle aus mehreren Kameras, NVRs, DVRs oder NAS-Überwachungssystemen gemeinsam anzeigen."],
+          ["17 Vollbildlayouts", "Raster von 2×2 bis 7×7 sowie 1+3, 1+5, 1+7, 1+21 und 1+27. Dichte Layouts eignen sich besser für große Bildschirme."],
+          ["Reihenfolge und Bildfüllung", "Kameras anordnen und zwischen Fit, Crop und Stretch wählen."],
+          ["Wasserzeichen und Mehrzweckfelder", "Geräte-/Kameraname oder IP einblenden; leere Felder können Bild, Uhr, Beschriftung oder HTTP-Webhook-Steuerung zeigen."]
+        ]],
+        ["viewing", "03", "Liveansicht und Wiedergabe", "Qualität und Bedienung für Einzel- und Mehrfachansichten anpassen.", [
+          ["HD/SD und Zoom", "Standardqualität getrennt festlegen; Einzelansicht unterstützt Pinch-Zoom, Doppeltippen und Querformat."],
+          ["Schnappschuss und Teilen", "Wenn unterstützt, aktuelles Bild aufnehmen und über das System teilen."],
+          ["Aufnahmezeitleiste", "Datum, zoombare Zeitleiste sowie Continuous/Events. Suche und Wiedergabe hängen von Gerät und Berechtigungen ab."]
+        ], 'Hinweis zur Verfügbarkeit: Live-Streaming, Schnappschüsse, <span class="keep-phrase">Haupt-/Nebenstream</span>, Aufnahmesuche, <span class="keep-phrase">Continuous-/Events-Kategorien</span>, Zeitleistensuche und Wiedergabe richten sich nach den tatsächlich gemeldeten Fähigkeiten der Kamera bzw. des Rekorders und den Berechtigungen des angemeldeten Gerätekontos.'],
+        ["backup", "04", "Verschlüsselte Sicherung und Übertragung", "PIN und Freigabecode enthalten sensible Verbindungsdaten und müssen sicher verwahrt werden.", [
+          ["iCloud-Sicherung", "Geräte, Zugangsdaten, Kanäle und Einstellungen mit einer sechsstelligen PIN verschlüsselt im eigenen iCloud speichern. Die PIN ist nicht wiederherstellbar."],
+          ["Wiederherstellung und Code", "Mit der ursprünglichen PIN aus iCloud wiederherstellen oder einen verschlüsselten Code in einer anderen Cam-Hub Installation importieren. Nur vertrauenswürdig teilen."]
+        ]],
+        ["preferences", "05", "Anzeige, Streaming und Daten", "App-Verhalten an Netzwerk und Geräteleistung anpassen.", [
+          ["Überwachungsverhalten", "Offline-Kameras ausblenden, bei unterstützten Geräten Verbindungen außerhalb des Bildschirms halten und den Startbildschirm wählen."],
+          ["Zurücksetzen und Löschen", "Standardeinstellungen, lokale Geräte/Passwörter und iCloud-Sicherung werden jeweils getrennt zurückgesetzt oder gelöscht."]
+        ]]
+      ]
+    },
+    es: {
+      documentTitle: "Cam-Hub — Wiki de uso", topline: "Wiki de uso", eyebrow: "CAM-HUB USER GUIDE",
+      title: '<span class="page-title-line">Configura Cam-Hub</span> <span class="page-title-line">paso a paso.</span>', summary: "Sigue los mismos menús y controles de la App para dispositivos, LiveView Mix, reproducción, transferencia y ajustes.", wikiLabel: "Ir a un capítulo",
+      wiki: [
+        ["devices", "01", "Dispositivos y canales", "Conecta el equipo y después elige qué canales aparecen en las pantallas.", [
+          ["Preparar la conexión", "Introduce dirección o host, puertos HTTP/RTSP, usuario y contraseña. Conecta solo equipos propios, administrados o autorizados expresamente."],
+          ["Detección automática u ONVIF", "Cam-Hub prueba una conexión compatible o permite elegir ONVIF. Puede ser necesario activar ONVIF/RTSP en el equipo."],
+          ["Organizar canales", "Elige cámaras visibles, desactiva canales sin uso y revisa modelo, firmware y número de canales."]
+        ]],
+        ["mix", "02", "Muro LiveView Mix", "Combina canales de distintas cámaras y grabadores en una pantalla.", [
+          ["Mezclar equipos", "Reúne canales de varias cámaras, NVR, DVR o sistemas NAS de videovigilancia."],
+          ["17 diseños a pantalla completa", "Cuadrículas de 2×2 a 7×7 y diseños 1+3, 1+5, 1+7, 1+21 y 1+27. Los diseños densos son mejores en pantallas grandes."],
+          ["Orden y ajuste de imagen", "Reordena cámaras y selecciona Fit, Crop o Stretch."],
+          ["Marcas de agua y espacios multiuso", "Muestra nombre de equipo/cámara o IP; un espacio vacío puede contener imagen, reloj, etiqueta o controles HTTP Webhook."]
+        ]],
+        ["viewing", "03", "Vista en directo y grabaciones", "Ajusta calidad y manejo para una o varias cámaras.", [
+          ["HD/SD y zoom", "Configura calidades por separado; la vista individual admite pellizcar, doble toque y modo horizontal."],
+          ["Capturas y uso compartido", "Si el equipo lo permite, captura la imagen actual y compártela mediante el sistema."],
+          ["Línea de tiempo", "Selector de día, línea temporal ampliable y pestañas Continuous/Events. La búsqueda y reproducción dependen del equipo y los permisos."]
+        ], 'Aviso de disponibilidad: la emisión en directo, las capturas, el cambio entre flujo principal y secundario, la búsqueda de grabaciones, la clasificación <span class="keep-phrase">Continuous/Events</span>, la navegación por la línea de tiempo y la reproducción dependen de las funciones que comunique realmente la cámara o el grabador y de los permisos de la cuenta del equipo.'],
+        ["backup", "04", "Copia y transferencia cifradas", "El PIN y el código contienen datos sensibles de conexión; protégelos.", [
+          ["Copia en iCloud", "Cifra equipos, credenciales, canales y ajustes con un PIN de seis dígitos en tu iCloud. El PIN no puede recuperarse."],
+          ["Restaurar o transferir", "Restaura con el PIN original o importa un código cifrado en otra instalación de Cam-Hub. Compártelo solo con personas de confianza."]
+        ]],
+        ["preferences", "05", "Pantalla, streaming y datos", "Adapta el comportamiento a la red y al dispositivo.", [
+          ["Comportamiento de supervisión", "Oculta cámaras sin conexión, conserva streams fuera de pantalla cuando sea compatible y elige qué abrir al iniciar."],
+          ["Restablecer y borrar", "Los ajustes, los equipos/contraseñas locales y la copia de iCloud se restablecen o eliminan por separado."]
+        ]]
+      ]
+    },
+    fr: {
+      documentTitle: "Cam-Hub — Wiki d’utilisation", topline: "Wiki d’utilisation", eyebrow: "CAM-HUB USER GUIDE",
+      title: '<span class="page-title-line">Configurez Cam-Hub</span> <span class="page-title-line">étape par étape.</span>', summary: "Suivez les menus réels de l’App pour les équipements, LiveView Mix, la lecture, le transfert et les réglages.", wikiLabel: "Aller à un chapitre",
+      wiki: [
+        ["devices", "01", "Équipements et canaux", "Connectez d’abord l’équipement, puis choisissez les canaux à afficher.", [
+          ["Préparer la connexion", "Saisissez l’adresse ou l’hôte, les ports HTTP/RTSP, le nom d’utilisateur et le mot de passe. Connectez uniquement les équipements autorisés."],
+          ["Détection automatique ou ONVIF", "Cam-Hub essaie une connexion compatible ou permet de choisir ONVIF. ONVIF/RTSP peut devoir être activé dans l’équipement."],
+          ["Organiser les canaux", "Choisissez les caméras visibles, désactivez les canaux inutiles et consultez modèle, micrologiciel et nombre de canaux."]
+        ]],
+        ["mix", "02", "Mur LiveView Mix", "Réunissez les canaux de plusieurs caméras et enregistreurs sur un écran.", [
+          ["Mélanger les équipements", "Combinez les canaux de caméras, NVR, DVR ou systèmes NAS de vidéosurveillance."],
+          ["17 dispositions plein écran", "Grilles de 2×2 à 7×7 et dispositions 1+3, 1+5, 1+7, 1+21, 1+27. Les dispositions denses conviennent mieux aux grands écrans."],
+          ["Ordre et remplissage", "Réorganisez les caméras et choisissez Fit, Crop ou Stretch."],
+          ["Filigranes et cases polyvalentes", "Affichez nom d’équipement/caméra ou IP ; une case vide peut contenir image, horloge, étiquette ou commandes HTTP Webhook."]
+        ]],
+        ["viewing", "03", "Direct et lecture des enregistrements", "Adaptez la qualité et les gestes aux vues simple et multiple.", [
+          ["HD/SD et zoom", "Réglez séparément les qualités par défaut ; la vue simple prend en charge pincement, double toucher et paysage."],
+          ["Capture et partage", "Si l’équipement le permet, capturez l’image actuelle et partagez-la via le système."],
+          ["Chronologie", "Sélecteur de date, chronologie zoomable et onglets Continuous/Events. Recherche et lecture dépendent de l’équipement et des autorisations."]
+        ], 'Disponibilité des fonctions : le direct, les captures, le choix du flux principal ou secondaire, la recherche d’enregistrements, les catégories <span class="keep-phrase">Continuous/Events</span>, le déplacement dans la chronologie et la lecture dépendent des capacités réellement déclarées par la caméra ou l’enregistreur et des autorisations du compte de l’équipement.'],
+        ["backup", "04", "Sauvegarde et transfert chiffrés", "Le PIN et le code contiennent des données de connexion sensibles : protégez-les.", [
+          ["Sauvegarde iCloud", "Chiffrez équipements, identifiants, canaux et réglages avec un PIN à six chiffres dans votre iCloud. Le PIN est irrécupérable."],
+          ["Restaurer ou transférer", "Restaurez avec le PIN d’origine ou importez un code chiffré dans une autre installation Cam-Hub. Partagez-le uniquement avec une personne de confiance."]
+        ]],
+        ["preferences", "05", "Affichage, streaming et données", "Adaptez le comportement de l’App au réseau et à l’appareil.", [
+          ["Comportement de surveillance", "Masquez les caméras hors ligne, gardez les flux hors écran si compatible et choisissez l’écran ouvert au lancement."],
+          ["Réinitialiser et supprimer", "Les réglages, équipements/mots de passe locaux et la sauvegarde iCloud sont gérés séparément."]
+        ]]
+      ]
+    },
+    ar: {
+      documentTitle: "Cam-Hub — دليل الاستخدام", topline: "دليل الاستخدام", eyebrow: "CAM-HUB USER GUIDE",
+      title: '<span class="page-title-line">اضبط Cam-Hub</span> <span class="page-title-line">خطوة بخطوة.</span>', summary: "اتبع القوائم الفعلية في التطبيق للمعدات وLiveView Mix والتشغيل والنقل والإعدادات.", wikiLabel: "الانتقال إلى فصل",
+      wiki: [
+        ["devices", "01", "المعدات والقنوات", "صِل المعدات أولاً ثم اختر القنوات التي تظهر في شاشات المراقبة.", [
+          ["تجهيز بيانات الاتصال", "أدخل العنوان أو اسم المضيف ومنافذ HTTP/RTSP واسم المستخدم وكلمة المرور. اتصل فقط بالمعدات التي تملكها أو تديرها أو لديك تصريح صريح باستخدامها."],
+          ["الكشف التلقائي أو ONVIF", "يجرب Cam-Hub اتصالاً متوافقًا ويمكن اختيار ONVIF مباشرة. قد يلزم تفعيل ONVIF/RTSP في إعدادات المعدات."],
+          ["تنظيم القنوات", "اختر الكاميرات الظاهرة وعطّل القنوات غير المستخدمة وراجع الطراز والبرنامج الثابت وعدد القنوات."]
+        ]],
+        ["mix", "02", "جدار LiveView Mix", "اجمع قنوات كاميرات ومسجلات مختلفة في شاشة واحدة.", [
+          ["دمج عدة معدات", "اعرض معًا قنوات من كاميرات وNVR وDVR أو أنظمة مراقبة NAS مختلفة."],
+          ["17 تخطيطًا بملء الشاشة", "شبكات من 2×2 إلى 7×7 وتخطيطات 1+3 و1+5 و1+7 و1+21 و1+27. التخطيطات الكثيفة أنسب للشاشات الكبيرة."],
+          ["الترتيب وملء الصورة", "أعد ترتيب الكاميرات واختر Fit أو Crop أو Stretch."],
+          ["علامات مائية وخانات متعددة الاستخدام", "اعرض اسم الجهاز أو الكاميرا أو IP؛ ويمكن للخانة الفارغة عرض صورة أو ساعة أو تسمية أو أزرار HTTP Webhook."]
+        ]],
+        ["viewing", "03", "العرض المباشر وتشغيل التسجيل", "اضبط الجودة والتحكم للعرض الفردي أو المتعدد.", [
+          ["HD/SD والتكبير", "عيّن الجودة الافتراضية لكل وضع؛ وتدعم الشاشة الفردية القرص للتكبير والنقر المزدوج والوضع الأفقي."],
+          ["اللقطات والمشاركة", "إذا كانت المعدات تدعم ذلك، التقط الصورة الحالية وشاركها عبر النظام."],
+          ["الخط الزمني", "اختيار اليوم وخط زمني قابل للتكبير وتبويبا Continuous/Events. يعتمد البحث والتشغيل على المعدات والصلاحيات."]
+        ], 'تنبيه بشأن توفر الميزات: يعتمد البث المباشر واللقطات والتبديل بين البث الرئيسي والفرعي والبحث في التسجيلات وتصنيف <span class="keep-phrase">Continuous/Events</span> والتنقل على الخط الزمني والتشغيل على الإمكانات التي تبلغ عنها الكاميرا أو المسجل فعليًا، وعلى الصلاحيات الممنوحة لحساب المعدات المستخدم لتسجيل الدخول.'],
+        ["backup", "04", "نسخ ونقل مشفران", "يتضمن PIN ورمز المشاركة معلومات اتصال حساسة، لذا احفظهما بأمان.", [
+          ["نسخة iCloud", "شفّر المعدات وبيانات الدخول والقنوات والإعدادات برمز PIN من ستة أرقام في iCloud الخاص بك. لا يمكن استعادة الرمز."],
+          ["الاستعادة أو النقل", "استعد بالرمز الأصلي أو استورد رمزًا مشفرًا في تثبيت Cam-Hub آخر. شاركه فقط مع جهة موثوقة."]
+        ]],
+        ["preferences", "05", "العرض والبث وإدارة البيانات", "اضبط سلوك التطبيق وفق الشبكة وقدرة الجهاز.", [
+          ["سلوك المراقبة", "أخفِ الكاميرات غير المتصلة، وأبقِ البث خارج الشاشة عند دعمه، واختر ما يفتح عند التشغيل."],
+          ["إعادة الضبط والحذف", "تُدار الإعدادات والمعدات/كلمات المرور المحلية ونسخة iCloud بشكل منفصل عند إعادة الضبط أو الحذف."]
+        ]]
+      ]
+    }
+  };
+
+  Object.entries(wikiByLocale).forEach(([locale, wiki]) => {
+    Object.assign(globalThis.CamHubAdditionalTranslations[locale].product, wiki);
+  });
 })();

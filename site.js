@@ -78,20 +78,141 @@ const translations = {
       closingCTA: "了解如何使用"
     },
     product: {
-      documentTitle: "Cam-Hub — 功能介紹",
-      topline: "功能介紹",
-      eyebrow: "CAM-HUB PRODUCT",
-      title: "從加入設備，到建立自己的監看牆。",
-      summary: "Cam-Hub 將設備連接、通道整理、即時監看與錄影回放集中在清楚一致的流程中。",
-      steps: [
-        ["01", "加入您的設備", "輸入您擁有或獲授權管理之設備的位址與登入資訊。Cam-Hub 會嘗試辨識部分相容設備，也可以選擇使用 ONVIF 連線。"],
-        ["02", "選擇需要的通道", "查看攝影機或錄影主機提供的通道，啟用您希望監看的影像來源。"],
-        ["03", "建立 LiveView Mix", "將不同攝影機、NVR、DVR 或 NAS 監控系統中的通道混合成單一監看面板。"],
-        ["04", "查看即時與錄影影像", "開啟通道即可查看即時影像；設備支援相關功能時，也能搜尋並播放錄影內容。"],
-        ["05", "選用加密 iCloud 備份", "您可以使用六位數 PIN 加密備份支援的設備設定、登入資訊與 App 設定至自己的 iCloud，以便在支援的安裝環境中恢復。"],
-        ["06", "依設備能力調整", "連線協議、主／子串流、錄影搜尋與播放能力會依型號、韌體、帳號權限及設備設定而不同。"]
+      documentTitle: "Cam-Hub — 操作 Wiki",
+      topline: "操作 Wiki",
+      eyebrow: "CAM-HUB USER GUIDE",
+      title: '<span class="page-title-line">從加入設備開始，</span><span class="page-title-line">逐步設定 Cam-Hub。</span>',
+      summary: "依照 App 裡實際出現的入口、選項與操作結果整理；需要調整監看牆、回放錄影或移轉設備時，可以直接跳到對應章節。",
+      wikiLabel: "快速前往章節",
+      wiki: [
+        ["devices", "01", "設備與通道", "先完成設備連線，再決定哪些通道要出現在監看畫面。", [
+          ["準備連線資訊", [
+            "開啟 Devices，按下新增設備，進入 Add Device。",
+            "Name 可以留白；IP address or hostname、Username 為必要欄位。HTTP Port 預設 80，RTSP Port 預設 554，若設備使用其他連接埠請依管理介面填寫。",
+            "輸入 Password 後按 Add。連線期間畫面會顯示 Connecting to device；若失敗，App 會區分無法連線、帳密錯誤或設備不支援。",
+            "請只使用您擁有、管理或已獲明確授權的設備與帳號。"
+          ]],
+          ["自動辨識或使用 ONVIF", [
+            "一般情況先保持 Connect via ONVIF 關閉，讓 Cam-Hub 嘗試相容設備的原生連線，以取得較完整功能。",
+            "若無法辨識，或您希望固定使用開放協議，再開啟 Connect via ONVIF 後重新加入。",
+            "設備端可能需要先啟用 ONVIF、建立具備觀看權限的 ONVIF 帳號，並開放 RTSP。可從 Compatibility reference 查看連線提示。"
+          ]],
+          ["整理攝影機通道", [
+            "加入成功後展開設備卡片，Channels 會列出設備回報的攝影機。",
+            "開啟需要觀看的通道；不使用的通道可以停用。錄影主機通道也可設為 Turn off camera，使它停止串流而不是只隱藏。",
+            "離線通道仍會保留在設備頁並以灰色呈現；若已開啟 Hide offline cameras，它不會出現在即時監看牆。"
+          ]],
+          ["查看與更新設備資訊", [
+            "設備卡片可展開或收合型號、位址、Port、序號、韌體與通道數。",
+            "右上角可重新命名設備；下拉重新整理可重新取得通道狀態。",
+            "設備頁右上角的填滿圖示只改變目前畫面的 Fit／Crop／Stretch；全螢幕按鈕會打開該設備的通道牆。"
+          ]]
+        ]],
+        ["mix", "02", "LiveView Mix 監看牆", "把不同攝影機與錄影主機的通道排在同一個畫面，並依實際螢幕調整密度。", [
+          ["選擇 LiveView Mix 的攝影機", [
+            "前往 Settings → LiveView Mix Dashboard。",
+            "在各設備區段勾選要混合的通道；每個通道右側可獨立選 SD 或 HD，也可用 All SD／All HD 一次套用。",
+            "回到 Live 分頁並在上方選擇 LiveView Mix。分頁內是方便捲動的預覽；按 Full screen 才會套用所選的完整牆面排版。"
+          ]],
+          ["17 種全螢幕排版", [
+            "均分網格：2×2、2×3、3×3、3×4、4×4、5×4、6×4、5×5、7×4、6×5、6×6、7×7。",
+            "主畫面配置：1+3、1+5、1+7、1+21、1+27。第一個攝影機會放入最大的主格。",
+            "超過 16 格的排版會顯示螢幕標記，表示密度較高，較適合大尺寸顯示器。"
+          ]],
+          ["排列攝影機與空白格", [
+            "在 LiveView Mix 設定按 Arrange cameras 進入排列頁。",
+            "可直接把一格拖到另一格互換；也可按 Edit，使用清單拖曳排序或滑動刪除。順序會逐頁填入排版格位。",
+            "按 Add empty slot 可插入刻意保留的空格；點一下該空格可繼續設定它要顯示的內容。"
+          ]],
+          ["三種畫面填滿方式", [
+            "Fit：保留完整影像比例，尺寸不合時出現黑邊。",
+            "Crop：維持比例並放大到填滿格位，超出格位的邊緣會被裁掉。",
+            "Stretch：不裁切並直接填滿格位，但可能拉寬或壓扁影像。這個設定可作為全域預設，也能在個別設備或通道暫時切換。"
+          ]],
+          ["自訂浮水印", [
+            "在 Watermark 開啟 Show watermark，選擇顯示 Device name、Camera name 與 IP address。",
+            "可調整位置、透明度、顏色、文字大小與 Standard／Rounded／Monospaced／Serif 字體。",
+            "Legibility 可使用 Shadow、Outline、Plate 或 None；頁面同時提供明亮與深色背景預覽，確認文字在日夜畫面都看得清楚。"
+          ]],
+          ["圖片、時鐘、標籤與控制面板", [
+            "在 Arrange 新增 Empty slot，再點擊空白格進入 Slot Editor。",
+            "Image 可從照片選擇或直接拍攝；Clock 可選擇日期、秒數與 12／24 小時；Label 可設定文字、SF Symbol 與顏色。",
+            "Control 可建立 HTTP Webhook 按鈕，內建門、車庫、燈、門鎖、窗簾、場景、警報、風扇、插座與空調範本，也能自訂。涉及開門、解鎖等操作可要求再次確認。",
+            "圖片與格位設定會隨支援的加密備份移轉；Webhook 端點仍由您自行建立與保護。"
+          ]]
+        ]],
+        ["viewing", "03", "即時觀看與錄影回放", "單一攝影機著重清晰度與操作；多畫面則可以優先兼顧裝置負載與頻寬。", [
+          ["單畫面與多畫面品質", [
+            "前往 Settings → Default quality，分別設定 Single camera 與 Multiple cameras 的 HD／SD 預設值。",
+            "打開單一通道後，如果該設備回報可切換主／子串流，控制列會顯示 SD／HD 選擇。",
+            "LiveView Mix 則可在通道清單逐一指定畫質，或使用 All SD／All HD 批次設定。多格同時播放時，較低畫質通常能減少頻寬與裝置負載。"
+          ]],
+          ["縮放與橫向全螢幕", [
+            "在單一通道畫面使用雙指縮放；放大後可拖曳查看不同位置。",
+            "雙擊可快速切換至 2.5 倍，再次雙擊回到完整畫面。",
+            "將裝置旋轉為橫向時，導覽列、控制列與分頁列會隱藏，畫面改為盡量填滿螢幕。"
+          ]],
+          ["快照與分享", [
+            "在單一通道控制列按 Snapshot，Cam-Hub 會向設備要求目前畫面的快照。",
+            "取得影像後會開啟預覽頁；按 Share 使用系統分享功能。",
+            "快照可能包含人物、地址、時間或其他敏感資訊。送出前請確認影像內容、接收對象與所在地規範。"
+          ]],
+          ["日期、時間軸與錄影分類", [
+            "在通道頁下方選擇要查詢的日期；Cam-Hub 會向設備要求該日的錄影片段。",
+            "Recordings 可在 Continuous 與 Events 間切換。拖曳或縮放時間軸，將中央游標移到希望播放的時間；也可以直接點選下方片段。",
+            "進入錄影後畫面會顯示 PLAYBACK 與設備時間；按 Back to Live 返回即時串流。部分設備會先下載片段，再由系統播放器播放。"
+          ]]
+        ], '功能可用性警語：即時串流、快照、<span class="keep-phrase">主／子串流切換</span>、錄影搜尋、<span class="keep-phrase">Continuous／Events 分類</span>、時間軸定位及回放，均以攝影機或錄影主機實際回傳的能力，以及登入帳號被賦予的權限為準。'],
+        ["backup", "04", "加密備份與設備移轉", "備份與分享都會攜帶敏感連線資訊；Cam-Hub 會先加密，但 PIN 與分享對象仍需由您妥善管理。", [
+          ["本機密碼保護", [
+            "加入設備成功後，密碼存入 Apple Keychain；設備名稱、位址、連接埠、通道與 App 設定保留在裝置資料中。",
+            "Cam-Hub 只在建立您要求的連線、搜尋錄影、擷取快照或進行備份／移轉時使用這些資料。",
+            "Delete All Data 會移除本機設備資料與已保存密碼；刪除 App 也可能使尚未備份的設定無法復原。"
+          ]],
+          ["六位數 PIN 加密 iCloud 備份", [
+            "前往 Settings → Back Up to iCloud，選擇備份位置後輸入六位數 PIN，並再次輸入確認。",
+            "備份內容包括支援的設備、登入資訊、通道、LiveView Mix 與 App 設定，會先以 PIN 加密再保存至您自己的 iCloud。",
+            "PIN 不會交由開發者保管，也沒有忘記密碼的復原流程。建立備份後請另外安全保存 PIN，並確認 Current Backup 已顯示新的備份時間與設備數。"
+          ]],
+          ["從 iCloud 還原", [
+            "在 Settings → Restore from iCloud 選擇要還原的備份，輸入建立備份時使用的 PIN。",
+            "建議來源與目標使用相同 App 版本，並先確認登入的是保存該備份的 Apple Account；舊版本建立的備份可能需要重新備份後才會顯示。",
+            "還原會受目前方案可用上限影響。完成後請逐一確認設備位址、通道與 LiveView Mix 是否符合目前網路環境。"
+          ]],
+          ["不經 iCloud 的加密移轉", [
+            "前往 Settings → Export Cameras 產生加密代碼，可複製或使用系統分享；接收端從 Import Cameras 貼上完整代碼。",
+            "匯入內容包含設備及其登入資訊，並會受接收端目前方案限制。",
+            "任何取得完整代碼並擁有 Cam-Hub 的人都可能加入這些設備。不要貼到公開聊天室、工單或網站，只交給確實需要且受信任的對象。"
+          ]]
+        ]],
+        ["preferences", "05", "顯示、串流與資料管理", "依網路、裝置效能與日常使用方式調整 App 行為；需要重設時，也可以分開處理設定、本機資料與 iCloud 備份。", [
+          ["隱藏離線攝影機", [
+            "Settings → Hide offline cameras 開啟後，沒有訊號的攝影機不會出現在 Live 分頁與即時監看牆。",
+            "它仍會保留在 Devices 的通道清單並以灰色顯示，因此不會被誤認為已刪除；訊號恢復後可再次出現在監看畫面。"
+          ]],
+          ["維持畫面外串流", [
+            "當 App 偵測到需要較長重新連線時間的相容設備時，Streaming 區段會顯示 Keep streams connected off-screen。",
+            "開啟後，捲出畫面的通道仍保留連線，回到該畫面時能更快恢復；代價是持續使用網路、電力與系統資源。不需要立即恢復時建議關閉。"
+          ]],
+          ["選擇啟動首頁", [
+            "前往 Settings → LiveView Mix → Open on launch。",
+            "Last viewed 會回到上次選擇；LiveView Mix 直接開啟跨設備監看牆；也可以指定某一台設備。",
+            "如果指定設備已刪除或 LiveView Mix 尚未設定，App 會回到可用的畫面，而不會保留不存在的入口。"
+          ]],
+          ["方案與顯示通道", [
+            "Settings → Plans 會顯示目前攝影機與錄影主機方案及使用上限。",
+            "未完全解鎖時，Choose which cameras show 可選擇有限名額要套用在哪些通道；已完全解鎖時不再需要此清單。",
+            "購買與 Restore Purchases 均由 Apple 提供的購買狀態決定。方案不會改變攝影機本身提供的協議、權限或回放能力。"
+          ]],
+          ["分開重設與刪除", [
+            "Restore Default Settings：只把外觀、語言、品質、LiveView Mix 等設定恢復預設，保留已加入設備。",
+            "Delete All Data：移除本機設備、攝影機與 Keychain 密碼；iCloud 備份與訂閱不受影響。",
+            "Delete iCloud Backup：刪除雲端的加密備份，不影響目前裝置上的設備與設定。若尚未登入 iCloud，可能只能清除本機看到的備份狀態。",
+            "執行不可逆刪除前，請先確認 iCloud 已完成同步、PIN 可用，而且備份版本可供目標裝置還原。"
+          ]]
+        ]]
       ],
-      note: "Cam-Hub 不會繞過設備原有的存取控制。請只連接您擁有、管理或已獲明確授權使用的攝影機、錄影主機與網路。"
+      note: "Cam-Hub 不會繞過設備原有的存取控制。功能會依型號、韌體、協議實作、帳號權限、編碼與網路條件而異。"
     },
     support: {
       documentTitle: "Cam-Hub — 支援與相容性",
@@ -185,20 +306,48 @@ const translations = {
       closingCTA: "Learn how it works"
     },
     product: {
-      documentTitle: "Cam-Hub — Product Guide",
-      topline: "Product guide",
-      eyebrow: "CAM-HUB PRODUCT",
-      title: "From adding equipment to building your own monitoring wall.",
-      summary: "Cam-Hub brings device connection, channel organization, live viewing, and recording playback into one clear workflow.",
-      steps: [
-        ["01", "Add your equipment", "Enter the address and credentials for equipment you own or are authorized to access. Cam-Hub can identify selected compatible devices or connect through ONVIF."],
-        ["02", "Choose the channels", "Review the cameras exposed by a camera or recorder and enable the channels you want to view."],
-        ["03", "Build LiveView Mix", "Combine channels from different cameras, NVRs, DVRs, or NAS surveillance systems into one monitoring dashboard."],
-        ["04", "View live and recorded video", "Open a channel for live viewing. Recording search and playback are available when supported by the equipment."],
-        ["05", "Optionally back up to iCloud", "Use a six-digit PIN to encrypt supported equipment configuration, credentials, and app settings in your private iCloud for restoration in supported installations."],
-        ["06", "Adapt to equipment capabilities", "Connection protocol, main and sub streams, recording search, and playback vary by model, firmware, account permissions, and equipment settings."]
+      documentTitle: "Cam-Hub — User Guide Wiki",
+      topline: "User Guide Wiki",
+      eyebrow: "CAM-HUB USER GUIDE",
+      title: '<span class="page-title-line">Set up Cam-Hub,</span> <span class="page-title-line">one screen at a time.</span>',
+      summary: "Use the same entry points and controls you see in the app. Jump directly to device setup, LiveView Mix, playback, transfer, or app behaviour.",
+      wikiLabel: "Jump to a chapter",
+      wiki: [
+        ["devices", "01", "Devices and channels", "Connect the equipment first, then decide which channels belong on your monitoring screens.", [
+          ["Prepare connection details", "Enter the address or host name, HTTP and RTSP ports, username, and password. Connect only to equipment you own, manage, or are explicitly authorized to use."],
+          ["Auto-detect or use ONVIF", "Cam-Hub first tries a compatible device connection and can also connect directly through ONVIF. ONVIF or RTSP may need to be enabled in the equipment administration interface."],
+          ["Organize camera channels", "After connection, Cam-Hub lists the channels exposed by the equipment. Choose which cameras appear, disable unused channels, or stop selected recorder channels from streaming."],
+          ["Review and update equipment", "The device page shows model, address, firmware, and channel count. You can rename a device, refresh its channels, and open a full-screen wall when needed."]
+        ]],
+        ["mix", "02", "LiveView Mix monitoring wall", "Place channels from different cameras and recorders on one screen, then tune the density for the display you use.", [
+          ["Mix devices on one wall", "LiveView Mix can combine channels from different cameras, NVRs, DVRs, or NAS surveillance systems instead of keeping each device in a separate view."],
+          ["17 full-screen layouts", "Choose uniform grids from 2×2 through 7×7, or focus layouts 1+3, 1+5, 1+7, 1+21, and 1+27. Dense layouts are marked as better suited to a large screen."],
+          ["Arrange cameras and blank slots", "Reorder cameras to control which tile each one uses; the first item goes to the primary or top-left tile. Blank slots can preserve a deliberate wall structure."],
+          ["Three video fill modes", "Fit shows the complete picture with black bars; Crop preserves the aspect ratio while trimming edges; Stretch fills the tile without cropping but may distort the picture."],
+          ["Custom watermarks", "Overlay device name, camera name, or IP on each tile, with controls for position, opacity, colour, text size, font, and legibility treatment."],
+          ["Pictures, clocks, labels, and controls", "A blank tile can show a picture, live clock, text label, or a smart-home control panel whose buttons call HTTP webhooks you configure."]
+        ]],
+        ["viewing", "03", "Live viewing and recording playback", "Single-camera viewing can prioritize clarity and interaction; multi-camera walls can prioritize device load and bandwidth.", [
+          ["Single and multi-camera quality", "Set separate default HD or SD quality for one camera and for multi-camera views. LiveView Mix can also assign quality per camera."],
+          ["Zoom and landscape viewing", "The single-channel view supports pinch zoom and double-tap zoom. Rotating to landscape hides surrounding controls so the picture can use the screen."],
+          ["Snapshots and sharing", "When supported by the equipment, capture the current picture and share it through the system share sheet. Check the content and recipient before sharing."],
+          ["Date, timeline, and recording types", "Playback includes a day picker, zoomable timeline, and Continuous or Events tabs. Search, precise seeking, and playback still depend on equipment support and account permissions."]
+        ], 'Availability notice: live streaming, snapshots, <span class="keep-phrase">main/sub-stream selection</span>, recording search, <span class="keep-phrase">Continuous/Events classification</span>, timeline seeking, and playback all depend on the capabilities actually reported by the camera or recorder and the permissions granted to the signed-in equipment account.'],
+        ["backup", "04", "Encrypted backup and transfer", "Backups and transfers contain sensitive connection details. Cam-Hub encrypts them, while you remain responsible for the PIN and recipient.", [
+          ["Local password protection", "Equipment passwords are stored in Apple Keychain. General configuration and channel information remain on the device for the connections and actions you request."],
+          ["Six-digit PIN iCloud backup", "Encrypt supported devices, credentials, channels, and app settings to your own iCloud. The developer cannot recover the PIN, so keep it somewhere safe."],
+          ["Restore from iCloud", "Enter the original PIN in a compatible installation to restore. Use the same app version when possible and make sure the correct Apple Account is signed in."],
+          ["Encrypted transfer without iCloud", "Export an encrypted code containing equipment and passwords, then import it into another Cam-Hub installation. Anyone with the complete code may be able to add the equipment, so share it only with trusted people."]
+        ]],
+        ["preferences", "05", "Display, streaming, and data controls", "Tune app behaviour for your network and device, and handle preferences, local data, and iCloud backup separately when resetting.", [
+          ["Hide offline cameras", "Cameras with no signal can be hidden from live walls while remaining listed and greyed out on the device page for troubleshooting."],
+          ["Keep off-screen streams connected", "Selected equipment can keep camera tiles connected after they scroll away, making them resume faster when revisited. This uses more bandwidth and battery."],
+          ["Choose what opens on launch", "Return to the last viewed location, open LiveView Mix directly, or open a selected device when the app launches."],
+          ["Plans and visible cameras", "Review camera and recorder limits in Plans. When not every channel is unlocked, choose which cameras should remain visible."],
+          ["Reset and delete separately", "Restore Defaults keeps equipment but resets preferences. Delete All Data removes local equipment and passwords. Delete iCloud Backup affects only the cloud backup. Confirm that a usable backup exists before deleting local data."]
+        ]]
       ],
-      note: "Cam-Hub does not bypass equipment access controls. Connect only to cameras, recorders, and networks that you own, manage, or have explicit authorization to use."
+      note: "Cam-Hub does not bypass equipment access controls. Features vary by model, firmware, protocol implementation, account permissions, codec, and network conditions."
     },
     support: {
       documentTitle: "Cam-Hub — Support and Compatibility",
@@ -320,6 +469,53 @@ function renderProduct(data) {
     ["assets/app-layouts.jpg", "LIVEVIEW LAYOUTS", "compatibility"]
   ];
 
+  const wikiVisuals = {
+    devices: [
+      ["assets/app-add-device.jpg", "ADD DEVICE"],
+      ["assets/app-channels.jpg", "CHANNEL MANAGEMENT"]
+    ],
+    mix: [
+      ["assets/app-liveview.jpg", "LIVEVIEW MIX"],
+      ["assets/app-layouts.jpg", "17 FULL-SCREEN LAYOUTS"]
+    ],
+    viewing: [["assets/app-playback.jpg", "LIVE & PLAYBACK"]],
+    backup: [["assets/app-backup.jpg", "ENCRYPTED ICLOUD BACKUP"]],
+    preferences: [["assets/app-settings.jpg", "APP SETTINGS"]]
+  };
+
+  if (data.wiki) {
+    const chapters = data.wiki.map(([id, number, title, summary, topics, warning]) => {
+      const visuals = wikiVisuals[id] || [];
+      return `<article class="wiki-chapter" id="wiki-${id}">
+        <header class="wiki-chapter-head">
+          <span class="wiki-chapter-number">${number}</span>
+          <div><h2>${title}</h2><p>${summary}</p></div>
+        </header>
+        <div class="wiki-media-grid wiki-media-${visuals.length}">${visuals.map(([image, label]) => `
+          <figure class="wiki-media">
+            <div class="wiki-screen"><img src="${image}" alt="" loading="lazy" decoding="async"></div>
+            <figcaption>${label}</figcaption>
+          </figure>`).join("")}</div>
+        ${warning ? `<aside class="wiki-warning"><strong>!</strong><p>${warning}</p></aside>` : ""}
+        <div class="wiki-topics">${topics.map(([topicTitle, body], topicIndex) => `
+          <section class="wiki-topic">
+            <span>${number}.${String(topicIndex + 1).padStart(2, "0")}</span>
+            <h3>${topicTitle}</h3>
+            ${Array.isArray(body)
+              ? `<ol>${body.map((step) => `<li>${step}</li>`).join("")}</ol>`
+              : `<p>${body}</p>`}
+          </section>`).join("")}</div>
+      </article>`;
+    }).join("");
+
+    return `<nav class="wiki-nav" aria-label="${data.wikiLabel}">
+      <strong>${data.wikiLabel}</strong>
+      <div>${data.wiki.map(([id, number, title]) => `<a href="#wiki-${id}"><span>${number}</span>${title}</a>`).join("")}</div>
+    </nav>
+    <section class="wiki-content">${chapters}</section>
+    <aside class="guide-note">${data.note}</aside>`;
+  }
+
   return `<section class="guide-grid">${data.steps.map(([number, title, text], index) => {
     const [image, label, visual] = productVisuals[index];
     return `
@@ -337,6 +533,47 @@ function renderPage(data) {
   if (page === "product") return renderProduct(data);
   if (["support", "privacy", "terms"].includes(page)) return `${renderMeta(data.meta)}${renderSections(data.sections)}`;
   return null;
+}
+
+function applyPhraseWrapping(language) {
+  document.querySelectorAll("wbr[data-phrase-break]").forEach((node) => node.remove());
+  document.body.normalize();
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+    acceptNode(node) {
+      const parent = node.parentElement;
+      if (!parent || !node.data.trim()) return NodeFilter.FILTER_REJECT;
+      if (parent.closest("script, style, select, option, textarea, .sr-only")) return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+  const textNodes = [];
+  while (walker.nextNode()) textNodes.push(walker.currentNode);
+  textNodes.forEach((node) => {
+    node.data = node.data.replaceAll("Cam-Hub", "Cam‑Hub").replaceAll("CAM-HUB", "CAM‑HUB");
+  });
+
+  if (!["zh-Hant", "zh-Hans", "ja", "ko"].includes(language) || !Intl.Segmenter) return;
+
+  const segmenter = new Intl.Segmenter(language, { granularity: "word" });
+
+  textNodes.forEach((node) => {
+    const segments = [...segmenter.segment(node.data)].map(({ segment }) => segment);
+    if (segments.length < 2) return;
+    const fragment = document.createDocumentFragment();
+    segments.forEach((segment, index) => {
+      fragment.append(document.createTextNode(segment));
+      if (index < segments.length - 1) {
+        const nextSegment = segments[index + 1];
+        if (/^[\/／・→‑–—-]$/.test(segment) || /^[\/／・→‑–—-]$/.test(nextSegment)) return;
+        if (/^[、，。；：！？）】》」』〕〉]/.test(nextSegment)) return;
+        if (/[（【《「『〔〈]$/.test(segment)) return;
+        const breakOpportunity = document.createElement("wbr");
+        breakOpportunity.dataset.phraseBreak = "";
+        fragment.append(breakOpportunity);
+      }
+    });
+    node.replaceWith(fragment);
+  });
 }
 
 function applyLanguage(language, persist = false) {
@@ -362,6 +599,7 @@ function applyLanguage(language, persist = false) {
     });
     const rendered = renderPage(pageData);
     if (rendered !== null) document.getElementById("content").innerHTML = rendered;
+    applyPhraseWrapping(language);
     languageSelect.value = language;
     if (persist) {
       localStorage.setItem("camHubSiteLanguage", language);
