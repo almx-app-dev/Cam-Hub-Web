@@ -311,9 +311,26 @@ function renderSections(sections) {
 }
 
 function renderProduct(data) {
-  return `<section class="guide-grid">${data.steps.map(([number, title, text]) => `
-    <article class="guide-card"><span>${number}</span><h2>${title}</h2><p>${text}</p></article>
-  `).join("")}<aside class="guide-note">${data.note}</aside></section>`;
+  const productVisuals = [
+    ["assets/product-devices.jpg", "DEVICE SETUP", "devices"],
+    ["assets/product-liveview.jpg", "CHANNEL SELECTION", "channels"],
+    ["assets/product-liveview.jpg", "LIVEVIEW MIX", "mix"],
+    ["assets/product-playback.jpg", "PLAYBACK", "playback"],
+    ["assets/product-devices.jpg", "ENCRYPTED BACKUP", "backup"],
+    ["assets/product-devices.jpg", "DEVICE COMPATIBILITY", "compatibility"]
+  ];
+
+  return `<section class="guide-grid">${data.steps.map(([number, title, text], index) => {
+    const [image, label, visual] = productVisuals[index];
+    return `
+    <article class="guide-card guide-card-${visual}">
+      <figure class="guide-visual">
+        <img src="${image}" alt="" loading="lazy" decoding="async">
+        <figcaption>${label}</figcaption>
+      </figure>
+      <div class="guide-copy"><span class="guide-step-number">${number}</span><h2>${title}</h2><p>${text}</p></div>
+    </article>`;
+  }).join("")}<aside class="guide-note">${data.note}</aside></section>`;
 }
 
 function renderPage(data) {
