@@ -312,12 +312,12 @@ function renderSections(sections) {
 
 function renderProduct(data) {
   const productVisuals = [
-    ["assets/product-devices.jpg", "DEVICE SETUP", "devices"],
-    ["assets/product-liveview.jpg", "CHANNEL SELECTION", "channels"],
-    ["assets/product-liveview.jpg", "LIVEVIEW MIX", "mix"],
-    ["assets/product-playback.jpg", "PLAYBACK", "playback"],
-    ["assets/product-devices.jpg", "ENCRYPTED BACKUP", "backup"],
-    ["assets/product-devices.jpg", "DEVICE COMPATIBILITY", "compatibility"]
+    ["assets/app-add-device.jpg", "DEVICE SETUP", "devices"],
+    ["assets/app-channels.jpg", "CHANNEL SELECTION", "channels"],
+    ["assets/app-liveview.jpg", "LIVEVIEW MIX", "mix"],
+    ["assets/app-playback.jpg", "PLAYBACK", "playback"],
+    ["assets/app-backup.jpg", "ENCRYPTED BACKUP", "backup"],
+    ["assets/app-layouts.jpg", "LIVEVIEW LAYOUTS", "compatibility"]
   ];
 
   return `<section class="guide-grid">${data.steps.map(([number, title, text], index) => {

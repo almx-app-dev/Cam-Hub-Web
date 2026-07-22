@@ -533,12 +533,12 @@ body[data-page="product"] .page-hero h1 {
 .guide-step-number { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; color: #00131b; background: linear-gradient(135deg, var(--cyan), #3d8cff); border-radius: 10px; font-size: 12px; font-weight: 900; }
 .guide-card h2 { margin: 24px 0 12px; font-size: 28px; }
 .guide-card p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.75; }
-.guide-card-devices .guide-visual img { object-position: 18% 50%; }
-.guide-card-channels .guide-visual img { object-position: 50% 32%; }
-.guide-card-mix .guide-visual img { object-position: 50% 68%; }
-.guide-card-playback .guide-visual img { object-position: 50% 48%; }
-.guide-card-backup .guide-visual img { object-position: 82% 50%; }
-.guide-card-compatibility .guide-visual img { object-position: 27% 50%; }
+.guide-card-devices .guide-visual img { object-position: 50% 12%; }
+.guide-card-channels .guide-visual img { object-position: 50% 18%; }
+.guide-card-mix .guide-visual img { object-position: 50% 18%; }
+.guide-card-playback .guide-visual img { object-position: 50% 22%; }
+.guide-card-backup .guide-visual img { object-position: 50% 22%; }
+.guide-card-compatibility .guide-visual img { object-position: 50% 16%; }
 .guide-note { grid-column: 1 / -1; padding: 24px; color: #aab7d5; background: rgba(10, 24, 58, 0.62); border: 1px solid var(--line); border-radius: 14px; line-height: 1.7; }
 
 .footer {
