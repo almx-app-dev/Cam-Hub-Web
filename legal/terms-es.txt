@@ -1,0 +1,68 @@
+TERMS OF USE
+Términos de uso
+
+El uso de Cam-Hub está sujeto a estos términos y a las normas aplicables del Apple App Store.
+
+Vigente desde: 26 de julio de 2026
+App: Cam-Hub
+Contacto: app-dev@almx.cc
+
+EULA estándar de Apple
+
+Cam-Hub utiliza el acuerdo de licencia estándar de Apple. Si existe conflicto, prevalecen los términos aplicables de Apple.
+
+Apple Standard End User License Agreement
+
+Uso legal y autorizado
+
+Conecta únicamente equipos y redes que poseas, administres o estés expresamente autorizado a utilizar. Debes cumplir las leyes locales de privacidad, supervisión, grabación, trabajo y propiedad.
+
+Acceso a los equipos y seguridad
+
+Debes proporcionar direcciones y credenciales válidas. Cam-Hub no elude los controles de acceso. Eres responsable de proteger equipos, red, cuentas, contraseñas, acceso remoto y contenidos exportados o compartidos.
+
+Botones de control y equipos conectados
+
+Los botones de control de LiveView Mix envían una solicitud que configuras al endpoint que eliges. Cam-Hub no verifica lo que hace el endpoint, no confirma que la acción se haya completado y no puede garantizar la entrega. Un botón podría activarse sin que lo pretendieras o fallar cuando lo necesites.
+
+Eres responsable de lo que conectas a cada botón y de las consecuencias de su funcionamiento. No los uses cuando un fallo, retraso, duplicación o activación accidental pueda causar lesiones, atrapamiento, daños materiales o pérdida de seguridad. Esto incluye puertas, portones, cerraduras, persianas y cualquier equipo que pueda atrapar a una persona o vehículo. Mantén siempre un medio independiente para accionar el equipo.
+
+Exploración de red
+
+La pestaña Herramientas sondea direcciones y puertos de una red que selecciones. Explora únicamente redes que poseas, administres o para las que tengas autorización expresa. La exploración no autorizada puede infringir leyes sobre uso indebido de sistemas informáticos, las condiciones del operador de red o las políticas de tu empleador u organización.
+
+Códigos de transferencia
+
+Eres responsable de quién recibe un código de transferencia y de cambiar de inmediato las contraseñas del equipo si el código pudiera haberse expuesto. Consulta la Política de privacidad para conocer su contenido, cifrado y vigencia.
+
+Compatibilidad y disponibilidad
+
+Las funciones varían según el modelo, firmware, implementación del protocolo, permisos, códec, configuración de grabación y condiciones de red. La compatibilidad con ONVIF, RTSP o una familia de productos no garantiza el funcionamiento de todos los modelos o funciones.
+
+La compatibilidad de algunas marcas se deriva de documentación pública del fabricante y no se ha verificado con todos los modelos. Cam-Hub confirma una ruta de transmisión funcional al añadir el equipo; hasta entonces, no se garantiza la compatibilidad.
+
+Cam-Hub no es un servicio de vigilancia de emergencias y no garantiza vídeo ininterrumpido, disponibilidad de grabaciones, entrega de alertas ni resultados concretos de seguridad.
+
+Compras y suscripciones
+
+Las compras, renovaciones, cancelaciones, reembolsos y gestión de la cuenta siguen la información de Apple y la configuración de tu Apple Account.
+
+Si caduca una suscripción, los canales que superen el límite gratuito dejan de transmitir. Los equipos, nombres y ajustes permanecen en el dispositivo y vuelven a estar disponibles al renovar una suscripción aplicable. Los precios y contenidos de los planes pueden cambiar conforme a los avisos de Apple y la ley aplicable. Los cambios de precio de una suscripción solo se aplican en una renovación futura según indique Apple. Estos términos no limitan derechos imperativos del consumidor.
+
+Privacidad
+
+El tratamiento de datos se describe en una Política de privacidad independiente.
+
+Política de privacidad de Cam-Hub
+
+Nombres de terceros
+
+Hikvision, Dahua, Synology, ONVIF y otros nombres pertenecen a sus titulares. La compatibilidad técnica no implica afiliación, patrocinio ni aprobación oficial.
+
+Exclusión de garantías y limitación de responsabilidad
+
+Además de las exclusiones del EULA estándar de Apple, Cam-Hub se proporciona «tal cual» y «según disponibilidad», sin garantías de ningún tipo. En la medida permitida por la ley, el desarrollador no responde de pérdidas indirectas, incidentales, especiales o consecuentes, incluidas grabaciones perdidas, eventos no detectados, daños materiales o interrupción del negocio. Nada de estos términos excluye o limita responsabilidades que la ley no permita excluir o limitar, restringe derechos imperativos del consumidor ni sustituye derechos otorgados por los términos de Apple.
+
+Cambios
+
+Podemos actualizar estos términos por cambios de funciones, legislación o requisitos de la tienda y publicaremos la fecha revisada.

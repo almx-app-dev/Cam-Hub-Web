@@ -1,0 +1,58 @@
+PRIVACY POLICY
+Politique de confidentialité
+
+Cam-Hub privilégie le traitement sur l’appareil et le contrôle par l’utilisateur, sans suivi publicitaire tiers.
+
+Date d’effet: 26 juillet 2026
+App: Cam-Hub
+Contact: app-dev@almx.cc
+
+Aperçu
+
+Cam-Hub n’exige aucun compte de service supplémentaire et n’intègre ni publicité tierce ni suivi publicitaire. L’App se connecte aux caméras et enregistreurs configurés et autorisés par l’utilisateur.
+
+Informations et identifiants
+
+Noms, adresses, ports, utilisateurs, canaux et réglages sont stockés sur l’appareil ; les mots de passe dans Apple Keychain. Ils servent uniquement aux connexions et actions demandées.
+
+Connexions et vidéo
+
+Lors de l’affichage en direct ou enregistré, l’App se connecte à l’adresse indiquée. L’équipement, le réseau, le VPN, le DNS ou les services distants peuvent traiter des données de connexion selon leurs politiques. Cam-Hub n’utilise pas la vidéo pour la publicité ou le profilage comportemental.
+
+Panneaux Webhook et destinations tierces
+
+Vous pouvez définir pour les boutons de commande LiveView Mix une méthode HTTP ou HTTPS, une URL de destination, des en-têtes personnalisés et un corps de requête. Ces réglages peuvent contenir des jetons Authorization ou d’autres données sensibles. Ils sont stockés dans la configuration LiveView Mix de l’appareil et peuvent être inclus dans une sauvegarde iCloud chiffrée que vous choisissez de créer.
+
+Ce n’est qu’au toucher d’un bouton que l’App envoie la requête directement depuis votre appareil vers la destination indiquée, par exemple Home Assistant, Node-RED ou un autre service tiers. Cette destination et les fournisseurs réseau peuvent traiter l’adresse IP source, les en-têtes et le corps selon leurs propres politiques. Le développeur de Cam-Hub ne choisit ni ne contrôle ces destinations et ne reçoit pas les données qui leur sont envoyées. HTTP ne chiffre pas le transit ; utilisez HTTPS pour les données sensibles et vérifiez les pratiques de confidentialité et de sécurité du destinataire.
+
+Accès et analyse du réseau local
+
+Cam-Hub demande l’autorisation Réseau local afin de se connecter directement aux caméras et enregistreurs. Lorsque vous lancez une analyse dans l’onglet Outils, l’App sonde le sous-réseau choisi et des ports courants de services de caméra, et peut lire les adresses des équipements qui répondent, les ports ouverts et les noms HTTP Server pour aider à les identifier.
+
+L’analyse ne commence qu’à votre demande. Les résultats sont traités sur l’appareil et ne sont pas envoyés au développeur de Cam-Hub.
+
+Photos et caméra
+
+Vous pouvez utiliser le sélecteur de photos système d’Apple pour choisir une photo précise, ou autoriser la caméra à en prendre une nouvelle, pour une case libre LiveView Mix. L’App reçoit uniquement l’image choisie ou capturée et ne parcourt pas toute votre photothèque. L’image est redimensionnée, compressée et stockée dans la configuration LiveView Mix de l’appareil.
+
+Les images restent sur votre appareil ; le développeur de Cam-Hub ne les reçoit pas et n’y accède pas. Elles ne peuvent être enregistrées dans votre propre iCloud, avec une sauvegarde chiffrée Cam-Hub destinée à restaurer vos appareils, que si vous choisissez de créer cette sauvegarde. Vous pouvez retirer une image dans LiveView Mix et modifier les autorisations Caméra ou Photos dans les Réglages du système.
+
+Codes de transfert des caméras
+
+Vous pouvez exporter un code contenant les adresses, noms d’utilisateur, informations de canaux et mots de passe des caméras ou enregistreurs sélectionnés. La clé de chiffrement est dérivée par PBKDF2-HMAC-SHA256 avec 600 000 itérations, à partir d’une chaîne fixe intégrée aux versions compatibles de Cam-Hub et d’un sel aléatoire nouvellement généré pour chaque code. Le code est ensuite chiffré et authentifié avec AES-256-GCM. La chaîne intégrée n’est ni un mot de passe choisi par vous ni une clé propre à chaque destinataire.
+
+Toute personne disposant du code complet et d’une version compatible de Cam-Hub peut déchiffrer et importer les identifiants. Les codes n’expirent pas automatiquement ; supprimer l’équipement ou l’App de l’appareil source ne révoque pas les copies déjà partagées.
+
+Sauvegarde iCloud facultative
+
+Si vous l’activez, l’App chiffre les configurations et identifiants pris en charge avec un PIN à six chiffres et les place dans votre iCloud privé. Nous ne pouvons ni récupérer le PIN ni déchiffrer la sauvegarde.
+
+Achats, conservation, suppression et choix
+
+Apple traite les achats et abonnements ; nous ne recevons pas les données de paiement complètes.
+
+Les réglages locaux restent jusqu’à la suppression du contenu concerné ou la désinstallation. Dans l’App, vous pouvez supprimer les équipements, images et commandes LiveView Mix ainsi que la sauvegarde iCloud ; vous pouvez retirer les autorisations dans les Réglages de l’appareil Apple. Les données iCloud se gèrent via votre Apple Account. Les e-mails d’assistance sont conservés uniquement pour traiter la demande et garder les justificatifs nécessaires. Pour exercer vos droits applicables, contactez l’adresse ci-dessus.
+
+Modifications
+
+Nous pouvons mettre à jour cette politique en cas d’évolution des fonctions, de la loi ou des exigences de la boutique et publierons la date révisée.

@@ -1,0 +1,68 @@
+TERMS OF USE
+Nutzungsbedingungen
+
+Für die Nutzung von Cam-Hub gelten diese Bedingungen und die anwendbaren Regeln des Apple App Store.
+
+Gültig ab: 26. Juli 2026
+App: Cam-Hub
+Kontakt: app-dev@almx.cc
+
+Apple Standard-EULA
+
+Für Cam-Hub gilt die Apple Standard-Endnutzer-Lizenzvereinbarung. Bei Widersprüchen gehen die anwendbaren Apple-Bedingungen vor.
+
+Apple Standard End User License Agreement
+
+Rechtmäßige und autorisierte Nutzung
+
+Verbinden Sie nur Geräte und Netzwerke, die Sie besitzen, verwalten oder ausdrücklich nutzen dürfen. Sie sind für die Einhaltung örtlicher Datenschutz-, Überwachungs-, Aufzeichnungs-, Arbeits- und Eigentumsvorschriften verantwortlich.
+
+Gerätezugriff und Sicherheit
+
+Sie müssen gültige Geräteadressen und Zugangsdaten angeben. Cam-Hub umgeht keine Zugriffskontrollen. Sie sind für die Absicherung von Geräten, Netzwerk, Konten, Passwörtern, Fernzugriff und exportierten oder geteilten Medien verantwortlich.
+
+Steuerschaltflächen und verbundene Geräte
+
+LiveView-Mix-Steuerschaltflächen senden eine von Ihnen konfigurierte Anfrage an einen von Ihnen gewählten Endpunkt. Cam-Hub prüft nicht, was dieser Endpunkt ausführt, bestätigt nicht den Abschluss einer Aktion und kann die Zustellung nicht garantieren. Eine Schaltfläche kann unbeabsichtigt auslösen oder im benötigten Moment ausfallen.
+
+Sie sind dafür verantwortlich, womit eine Schaltfläche verbunden ist und welche Folgen ihre Betätigung hat. Verwenden Sie diese Schaltflächen nicht, wenn Ausfall, Verzögerung, doppelte Ausführung oder versehentliche Betätigung zu Verletzungen, Einschließen, Sachschäden oder Sicherheitsverlust führen könnten. Dazu zählen Türen, Tore, Schlösser, Rollläden und Geräte, in denen Personen oder Fahrzeuge eingeklemmt werden können. Halten Sie stets eine unabhängige Bedienmöglichkeit bereit.
+
+Netzwerkscan
+
+Der Bereich „Werkzeuge“ prüft Adressen und Ports in einem von Ihnen gewählten Netzwerk. Scannen Sie nur Netzwerke, die Sie besitzen, verwalten oder ausdrücklich scannen dürfen. Ein Scan ohne Erlaubnis kann gegen Gesetze zum Missbrauch von Computersystemen, Bedingungen Ihres Netzbetreibers oder Richtlinien Ihres Arbeitgebers oder Ihrer Organisation verstoßen.
+
+Übertragungscodes
+
+Sie sind dafür verantwortlich, wer einen Übertragungscode erhält, und müssen betroffene Gerätepasswörter sofort ändern, wenn er möglicherweise offengelegt wurde. Inhalt, Verschlüsselung und Gültigkeitsdauer des Codes beschreibt die Datenschutzerklärung.
+
+Kompatibilität und Verfügbarkeit
+
+Funktionen variieren nach Gerätemodell, Firmware, Protokollimplementierung, Berechtigungen, Codec, Aufzeichnungskonfiguration und Netzwerkbedingungen. Die Unterstützung von ONVIF, RTSP oder einer benannten Produktfamilie garantiert nicht, dass jedes Modell oder jede Funktion arbeitet.
+
+Die Unterstützung einiger Marken wurde aus veröffentlichten Herstellerunterlagen abgeleitet und nicht mit jedem Modell praktisch geprüft. Cam-Hub bestätigt beim Hinzufügen eines Geräts einen funktionierenden Stream-Pfad; bis dahin ist die Kompatibilität nicht garantiert.
+
+Cam-Hub ist kein Notfallüberwachungsdienst und garantiert weder unterbrechungsfreie Videos, verfügbare Aufzeichnungen, zugestellte Meldungen noch bestimmte Sicherheitsergebnisse.
+
+Käufe und Abonnements
+
+Käufe, Verlängerung, Kündigung, Erstattung und Kontoverwaltung richten sich nach Apples Angaben und den Einstellungen Ihres Apple Accounts.
+
+Endet ein Abonnement, wird das Streaming von Kanälen oberhalb des kostenlosen Kontingents beendet. Geräte, Namen und Einstellungen bleiben auf dem Gerät und werden nach Erneuerung eines passenden Abonnements wieder verfügbar. Preise und Tarifinhalte können nach Apples Mitteilungen und dem anwendbaren Recht geändert werden. Eine Preisänderung des Abonnements gilt erst für eine von Apple angegebene künftige Verlängerung. Zwingende gesetzliche Verbraucherrechte werden nicht eingeschränkt.
+
+Datenschutz
+
+Die Datenverarbeitung ist in einer gesonderten Datenschutzerklärung beschrieben.
+
+Cam-Hub Datenschutzerklärung
+
+Drittanbieterbezeichnungen
+
+Hikvision, Dahua, Synology, ONVIF und andere Namen gehören ihren jeweiligen Rechteinhabern. Technische Kompatibilität bedeutet keine Zugehörigkeit, Partnerschaft, Förderung oder offizielle Anerkennung.
+
+Gewährleistungsausschluss und Haftungsbeschränkung
+
+Cam-Hub wird zusätzlich zu den Haftungsausschlüssen in Apples Standard-EULA ohne Gewährleistung „wie besehen“ und „wie verfügbar“ bereitgestellt. Soweit gesetzlich zulässig, haftet der Entwickler nicht für mittelbare, beiläufige, besondere oder Folgeschäden, einschließlich verlorener Aufnahmen, verpasster Ereignisse, Sachschäden oder Betriebsunterbrechungen. Nichts in diesen Bedingungen schließt eine gesetzlich nicht ausschließbare oder beschränkbare Haftung aus, beschränkt zwingende Verbraucherrechte oder ersetzt Rechte aus Apples Bedingungen.
+
+Änderungen
+
+Wir können diese Bedingungen bei Änderungen von Funktionen, Recht oder Store-Anforderungen aktualisieren und das Änderungsdatum veröffentlichen.

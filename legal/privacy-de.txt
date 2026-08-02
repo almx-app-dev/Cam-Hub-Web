@@ -1,0 +1,58 @@
+PRIVACY POLICY
+Datenschutzerklärung
+
+Cam-Hub setzt auf Verarbeitung auf dem Gerät und Nutzerkontrolle und enthält kein Werbetracking durch Dritte.
+
+Gültig ab: 26. Juli 2026
+App: Cam-Hub
+Kontakt: app-dev@almx.cc
+
+Überblick
+
+Cam-Hub verlangt kein zusätzliches Dienstkonto und enthält keine Drittanbieterwerbung oder Werbeverfolgung. Die App verbindet sich mit Kameras und Rekordern, die Sie konfigurieren und verwenden dürfen.
+
+Geräte- und Zugangsdaten
+
+Gerätenamen, Adressen, Ports, Benutzernamen, Kanäle und App-Einstellungen werden auf Ihrem Gerät gespeichert; Passwörter im Apple Keychain. Sie werden nur für die von Ihnen angeforderten Verbindungen und Aktionen verwendet.
+
+Verbindungen und Video
+
+Bei Live- oder Aufzeichnungsansichten verbindet sich die App mit der von Ihnen angegebenen Geräteadresse. Gerät, Netzwerk, VPN, DNS oder gewählte Ferndienste können Verbindungsdaten nach eigenen Richtlinien verarbeiten. Cam-Hub nutzt Video nicht für Werbung oder Verhaltensprofile.
+
+Webhook-Steuerfelder und Drittanbieter-Endpunkte
+
+Für LiveView-Mix-Steuerschaltflächen können Sie HTTP- oder HTTPS-Methode, Endpunkt-URL, eigene Header und einen Anfrageinhalt festlegen. Diese Einstellungen können Authorization-Token oder andere sensible Angaben enthalten. Sie werden in der LiveView-Mix-Konfiguration auf Ihrem Gerät gespeichert und können in einer von Ihnen erstellten verschlüsselten iCloud-Sicherung enthalten sein.
+
+Nur wenn Sie eine Schaltfläche betätigen, sendet die App die Anfrage direkt von Ihrem Gerät an den von Ihnen bestimmten Endpunkt, etwa Home Assistant, Node-RED oder einen anderen Drittanbieterdienst. Der Endpunkt und Netzbetreiber können Quell-IP, Header und Anfrageinhalt nach ihren Richtlinien verarbeiten. Der Cam-Hub-Entwickler wählt oder kontrolliert diese Endpunkte nicht und erhält die dorthin gesendeten Daten nicht. HTTP ist während der Übertragung unverschlüsselt; verwenden Sie HTTPS für sensible Daten und prüfen Sie Datenschutz und Sicherheit des Empfängers.
+
+Lokaler Netzwerkzugriff und Scan
+
+Cam-Hub fordert die Berechtigung für das lokale Netzwerk an, um Kameras und Rekorder direkt zu verbinden. Wenn Sie im Tab „Werkzeuge“ einen Scan starten, prüft die App das gewählte Subnetz und übliche Kameradienst-Ports und kann Adressen antwortender Geräte, offene Ports und HTTP-Server-Namen auslesen, um Geräte zu identifizieren.
+
+Ein Scan wird nur auf Ihre Anforderung gestartet. Ergebnisse werden auf Ihrem Gerät verarbeitet und nicht an den Cam-Hub-Entwickler gesendet.
+
+Fotos und Kamera
+
+Sie können mit Apples System-Fotoauswahl ein bestimmtes Foto wählen oder den Kamerazugriff erlauben, um ein neues Foto für ein freies LiveView-Mix-Feld aufzunehmen. Die App erhält nur das ausgewählte oder aufgenommene Bild und durchsucht nicht Ihre gesamte Fotomediathek. Das Bild wird verkleinert, komprimiert und in der LiveView-Mix-Konfiguration auf Ihrem Gerät gespeichert.
+
+Bilder verbleiben auf Ihrem Gerät; der Cam-Hub-Entwickler erhält sie nicht und kann nicht darauf zugreifen. Nur wenn Sie selbst ein verschlüsseltes Cam-Hub-iCloud-Backup erstellen, können die Bilder zur Gerätewiederherstellung mit diesem Backup in Ihrer eigenen iCloud gespeichert werden. Sie können Bilder in LiveView Mix entfernen und Kamera- oder Fotoberechtigungen in den Systemeinstellungen ändern.
+
+Kamera-Übertragungscodes
+
+Sie können einen Übertragungscode exportieren, der Adressen, Benutzernamen, Kanalinformationen und Passwörter ausgewählter Kameras oder Rekorder enthält. Der Verschlüsselungsschlüssel wird mittels PBKDF2-HMAC-SHA256 mit 600.000 Iterationen aus einer in kompatiblen Cam-Hub-Versionen fest eingebetteten Zeichenfolge und einem für jeden Code neu erzeugten zufälligen Salt abgeleitet. Anschließend wird der Code mit AES-256-GCM authentifiziert verschlüsselt. Die eingebettete Zeichenfolge ist weder ein von Ihnen gewähltes Passwort noch ein individueller Schlüssel je Empfänger.
+
+Jede Person mit dem vollständigen Code und einer kompatiblen Cam-Hub-Version kann die Zugangsdaten entschlüsseln und importieren. Übertragungscodes laufen nicht automatisch ab; das Löschen eines Geräts oder der App auf dem Quellgerät widerruft bereits geteilte Kopien nicht.
+
+Optionales iCloud-Backup
+
+Wenn Sie diese Funktion wählen, verschlüsselt die App unterstützte Konfigurationen und Zugangsdaten mit einer sechsstelligen PIN und legt sie in Ihrer privaten iCloud ab. Wir können die PIN nicht wiederherstellen und das Backup nicht entschlüsseln.
+
+Käufe, Aufbewahrung, Löschung und Wahlmöglichkeiten
+
+Käufe und Abonnements verarbeitet Apple; vollständige Zahlungsdaten erhalten wir nicht.
+
+Lokale Einstellungen bleiben gespeichert, bis Sie die betreffenden Inhalte löschen oder die App deinstallieren. In der App können Sie Geräte, LiveView-Mix-Bilder und Steuerungseinstellungen sowie das iCloud-Backup löschen; Systemberechtigungen können Sie in den Einstellungen Ihres Apple-Geräts widerrufen. iCloud-Daten verwalten Sie über Ihren Apple Account. Support-E-Mails bewahren wir nur zur Bearbeitung und für erforderliche Nachweise auf. Für anwendbare Datenschutzrechte wenden Sie sich an die oben genannte Adresse.
+
+Änderungen
+
+Wir können diese Erklärung bei Änderungen von Funktionen, Recht oder Store-Anforderungen aktualisieren und das Änderungsdatum veröffentlichen.

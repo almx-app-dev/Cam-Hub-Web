@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cam Hub — Import cameras</title>
+<!-- Note: iOS opens the Cam Hub app directly for this link when it's installed
+     (via the Associated Domains AASA). This page is the fallback shown only
+     when the app is NOT installed. The transfer code rides in the URL fragment
+     (#…), so it never reaches this server; JavaScript reads it below. -->
+<style>
+  :root { --navy:#0b1f3a; --cyan:#34d1e6; --ink:#e8eef7; --muted:#9fb0c8; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+         background:var(--navy); color:var(--ink); min-height:100vh;
+         display:flex; align-items:center; justify-content:center; padding:24px; }
+  .card { width:100%; max-width:420px; text-align:center; }
+  h1 { font-size:1.5rem; margin:0 0 4px; }
+  p { color:var(--muted); line-height:1.5; }
+  .btn { display:inline-block; margin:20px 0 8px; padding:14px 28px; border-radius:14px;
+         background:var(--cyan); color:var(--navy); font-weight:700; text-decoration:none; }
+  .code { margin-top:20px; padding:14px; border-radius:12px; background:#08182e;
+          border:1px solid #1c3352; font:0.72rem/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;
+          color:var(--ink); word-break:break-all; text-align:left; max-height:160px; overflow:auto; }
+  .copy { margin-top:10px; padding:10px 18px; border-radius:10px; background:transparent;
+          border:1px solid #2a4a72; color:var(--ink); font-weight:600; cursor:pointer; }
+  .steps { text-align:left; margin:18px auto 0; padding-left:1.1em; color:var(--muted); font-size:0.9rem; }
+  .hint { margin-top:22px; font-size:0.8rem; }
+  .hint a { color:var(--cyan); }
+  .muted { color:var(--muted); font-size:0.75rem; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>Add these cameras to Cam Hub</h1>
+    <p>Someone shared cameras with you. Get Cam Hub, then paste the code below to add them — with their passwords, encrypted.</p>
+
+    <a class="btn" href="https://apps.apple.com/app/cam-hub/id6792057195">Download on the App Store</a>
+
+    <ol class="steps">
+      <li>Install Cam Hub and open it.</li>
+      <li>Go to <b>Settings › Import Cameras</b>.</li>
+      <li>Tap <b>Paste</b>, then <b>Import Cameras</b>.</li>
+    </ol>
+
+    <div id="codeBox" class="code" hidden></div>
+    <button id="copyBtn" class="copy" hidden>Copy code</button>
+
+    <p class="hint" id="haveApp" hidden>Already have Cam Hub? <a id="openApp" href="#">Open it in the app</a>.<br>
+      <span class="muted">If nothing happens, copy the code above and paste it in Cam Hub under Settings › Import Cameras.</span></p>
+  </div>
+
+<script>
+  // The transfer code is in the fragment; extract and display it for pasting.
+  (function () {
+    var raw = (location.hash || "").replace(/^#/, "");
+    var code = decodeURIComponent(raw);
+    var box = document.getElementById("codeBox");
+    var copy = document.getElementById("copyBtn");
+    var open = document.getElementById("openApp");
+    var haveApp = document.getElementById("haveApp");
+    if (!code) return;
+    // Custom scheme, NOT an https link: iOS keeps a tap on a same-domain link
+    // inside Safari, so a universal link here could never reach the app.
+    // Silently does nothing when the app isn't installed — hence the
+    // copy-and-paste fallback shown right beneath it.
+    open.href = "camhub://i#" + raw;
+    haveApp.hidden = false;
+    box.textContent = code;
+    box.hidden = false;
+    copy.hidden = false;
+    copy.addEventListener("click", function () {
+      navigator.clipboard.writeText(code).then(function () {
+        copy.textContent = "Copied";
+      }, function () { /* clipboard blocked — the code is visible to select */ });
+    });
+  })();
+</script>
+</body>
+</html>

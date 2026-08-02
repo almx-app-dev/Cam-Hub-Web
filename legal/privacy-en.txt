@@ -1,0 +1,64 @@
+PRIVACY POLICY
+Privacy policy
+
+Cam-Hub is designed around device-side processing and user control. It does not require a service account or include third-party advertising tracking.
+
+Effective date: July 26, 2026
+App: Cam-Hub
+Contact: app-dev@almx.cc
+
+Overview
+
+Cam-Hub does not require you to create a Cam-Hub service account and does not include third-party advertising or advertising tracking. The app is designed to connect to cameras and recorders that you configure.
+
+Equipment information and credentials
+
+Camera and recorder names, addresses, ports, usernames, channel information, and app settings are stored on your device. Passwords are stored in Apple Keychain. Cam-Hub uses this information only to perform the connections and actions you request.
+
+Camera connections and media
+
+When you view live or recorded video, the app connects to the equipment address you provided. Your equipment, network provider, VPN provider, DNS provider, or any remote endpoint you choose may process connection information under its own policies. Cam-Hub does not use camera video for advertising or behavioral profiling.
+
+Webhook control panels and third-party endpoints
+
+You can create LiveView Mix control buttons by configuring an HTTP or HTTPS method, endpoint URL, custom headers, and request body. These settings may contain Authorization tokens or other sensitive data. They are stored in the LiveView Mix configuration on your device and may be included in an encrypted iCloud backup that you choose to create.
+
+Only when you tap a button does the app send the request directly from your device to the endpoint you specified, such as Home Assistant, Node-RED, or another third-party service. That endpoint and network providers may process your source IP address, headers, and request body under their own policies. The Cam-Hub developer does not choose, control, or receive data sent to those endpoints. HTTP is not encrypted in transit; use HTTPS for sensitive data and review the recipient’s privacy and security practices.
+
+Local network access and scanning
+
+Cam-Hub requests Local Network permission to connect directly to cameras and recorders. When you start a scan in the Tools tab, the app probes the subnet you select and common camera service ports, and may read responding equipment addresses, open ports, and HTTP Server names to help identify equipment.
+
+A scan starts only when you request it. Results are processed on your device and are not sent to the Cam-Hub developer.
+
+Photos and camera
+
+You can use Apple’s system photo picker to select a specific photo, or grant Camera access to capture a new photo, for a LiveView Mix blank slot. The app receives only the image you select or capture, not your entire photo library. It downsizes and compresses the image and stores it in the LiveView Mix configuration on your device.
+
+Images remain on your device and are not received or accessed by the Cam-Hub developer. Only if you choose to create an encrypted Cam-Hub iCloud backup may the images be stored with that backup in your own iCloud for device restoration. You can remove an image in LiveView Mix and change Camera or Photos permissions in system Settings.
+
+Camera transfer codes
+
+You can export a transfer code containing the selected cameras’ or recorders’ addresses, usernames, channel information, and passwords. The encryption key is derived from a fixed string embedded in compatible versions of Cam-Hub and a fresh random salt for each code, using PBKDF2-HMAC-SHA256 with 600,000 iterations. The code is then encrypted and authenticated with AES-256-GCM. The embedded string is not a password you choose or a key unique to each recipient.
+
+Anyone who obtains the complete code and uses a compatible version of Cam-Hub can decrypt and import the credentials. Transfer codes do not expire automatically, and deleting equipment or the app from the source device does not revoke copies already shared.
+
+Optional iCloud backup
+
+If you choose iCloud Backup, the app encrypts supported camera and recorder configuration, credentials, channels, and app settings with a six-digit PIN before placing the backup in your private iCloud key-value storage.
+
+Backup time, device count, and site name are stored separately so the app can display backup status. Keep your PIN safe; we cannot recover or decrypt it for you.
+
+Purchases and subscriptions
+
+Purchases and subscriptions are processed by Apple. We do not receive your full payment card or bank information. The app reads purchase status supplied by Apple to unlock the corresponding limits or features.
+
+Sharing, retention, deletion, and choices
+
+We do not sell personal data. Local configuration remains on your device until you delete the relevant content or remove the app. You can delete equipment, LiveView Mix images, and control settings in the app, delete an iCloud backup separately, and withdraw system permissions in Settings on your Apple device.
+
+Optional iCloud data is managed through your Apple Account and iCloud services. Information you voluntarily email to support is retained only as needed to respond and maintain necessary support records.
+
+Children and policy changes
+
+Cam-Hub is not directed to children and does not intentionally collect children’s personal information. We may update this policy when app features, laws, or store requirements change. The revised date will be published on this page.
