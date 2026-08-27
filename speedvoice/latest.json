@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "voiceID": "taiwan-female-b1-natural",
-  "packVersion": 2,
-  "url": "https://cam-hub.almx.cc/speedvoice/tw-natural-v2.camvoice",
-  "byteSize": 8319788,
-  "sha256": "fa2be42dba45c8875a8ea4c37e1d16c245c2f7bd7fc75dcf3bcf7ee811e696b6",
-  "clipCount": 223,
+  "packVersion": 3,
+  "url": "https://cam-hub.almx.cc/speedvoice/tw-natural-v3.camvoice",
+  "byteSize": 15648263,
+  "sha256": "4de68361da109cef8d64aa1059543e0c1b17968369500709ca6663b5bba5bf11",
+  "clipCount": 397,
   "minimumAppBuild": 131
 }
