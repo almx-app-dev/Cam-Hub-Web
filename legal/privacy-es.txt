@@ -37,22 +37,26 @@ Puedes usar el selector de fotos del sistema Apple para elegir una foto concreta
 
 Las imágenes permanecen en tu dispositivo; el desarrollador de Cam-Hub no las recibe ni puede acceder a ellas. Solo si decides crear una copia cifrada de Cam-Hub en iCloud, las imágenes pueden guardarse con esa copia en tu propia cuenta de iCloud para restaurar tus dispositivos. Puedes retirar una imagen en LiveView Mix y cambiar los permisos de Cámara o Fotos en Ajustes del sistema.
 
-Códigos de transferencia de cámaras
+Códigos para compartir cámaras
 
-Puedes exportar un código que contiene direcciones, nombres de usuario, información de canales y contraseñas de las cámaras o grabadores seleccionados. La clave de cifrado se deriva mediante PBKDF2-HMAC-SHA256 con 600.000 iteraciones a partir de una cadena fija integrada en las versiones compatibles de Cam-Hub y un salt aleatorio nuevo para cada código. Después, el código se cifra y autentica con AES-256-GCM. La cadena integrada no es una contraseña elegida por ti ni una clave exclusiva para cada destinatario.
+Puedes compartir un código cifrado con las direcciones, los nombres de usuario, la información de canales y las contraseñas de las cámaras o grabadores seleccionados. Al compartir, puedes decidir si lo bloqueas con un PIN de seis dígitos. El desarrollador no guarda el PIN ni puede recuperarlo.
 
-Quien obtenga el código completo y use una versión compatible de Cam-Hub podrá descifrar e importar las credenciales. Los códigos no caducan automáticamente; eliminar el equipo o la App del dispositivo de origen no revoca las copias ya compartidas.
+Un código bloqueado exige el PIN correcto al importar o restaurar las cámaras compartidas. Sin PIN, una versión compatible de Cam-Hub puede importar directamente el código completo. Los códigos no caducan automáticamente; eliminar el equipo o la App del dispositivo de origen no revoca las copias ya compartidas.
 
 Copia opcional en iCloud
 
-Si la eliges, la App cifra configuraciones y credenciales compatibles con un PIN de seis dígitos y las guarda en tu iCloud privado. No podemos recuperar el PIN ni descifrar la copia.
+La App cifra las configuraciones y credenciales compatibles y las guarda en tu iCloud privado. La copia y la restauración en iPhone, iPad y Apple TV no usan PIN; para restaurar, selecciona una copia disponible y continúa directamente.
 
-Compras, conservación, eliminación y opciones
+Compras y suscripciones
 
-Apple procesa compras y suscripciones; no recibimos los datos de pago completos.
+Apple procesa las compras y las suscripciones. No recibimos los datos completos de tu tarjeta ni de tu banco. La App consulta el estado de compra que facilita Apple para desbloquear los límites y las funciones correspondientes.
 
-Los ajustes locales permanecen hasta que elimines el contenido correspondiente o desinstales la App. Puedes eliminar en la App equipos, imágenes y controles de LiveView Mix y la copia de iCloud; también puedes retirar permisos en los Ajustes del dispositivo Apple. Los datos de iCloud se gestionan mediante tu Apple Account. Los correos de soporte se conservan solo para atender la solicitud y mantener registros necesarios. Para ejercer derechos de protección de datos aplicables, escribe al contacto indicado.
+Compartición, conservación, eliminación y opciones
 
-Cambios
+No vendemos datos personales. Los ajustes locales permanecen en tu dispositivo hasta que elimines el contenido correspondiente o desinstales la App. En la App puedes eliminar equipos, imágenes de LiveView Mix y ajustes de control, eliminar por separado una copia de seguridad de iCloud y retirar los permisos del sistema en los Ajustes de tu dispositivo Apple.
 
-Podemos actualizar esta política por cambios de funciones, legislación o requisitos de la tienda y publicaremos la fecha revisada.
+Los datos opcionales de iCloud se gestionan a través de tu Apple Account y los servicios de iCloud. Los correos que envíes voluntariamente al soporte se conservan solo el tiempo necesario para responderte y mantener los registros de soporte imprescindibles. Para ejercer los derechos de protección de datos que te correspondan, escribe al contacto indicado.
+
+Menores y cambios en la política
+
+Cam-Hub no está dirigida a menores y no recopila intencionadamente información personal de menores. Podemos actualizar esta política cuando cambien las funciones, la legislación o los requisitos de la tienda. La fecha de revisión se publicará en esta página.

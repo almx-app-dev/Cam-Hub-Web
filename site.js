@@ -72,7 +72,7 @@ const translations = {
       featurePlaybackTitle: "即時與回放",
       featurePlaybackBody: "查看即時影像，並在支援的設備上搜尋與播放錄影內容。",
       featureTVTitle: "Apple TV 大螢幕監看",
-      featureTVBody: "在 Apple TV 上使用 LiveView Mix、設備監看牆與全螢幕影像；也能從 iPhone 或 iPad 建立加密備份，再輸入 PIN 還原設定。",
+      featureTVBody: "在 Apple TV 上使用 LiveView Mix、設備監看牆與全螢幕影像；也能從 iPhone 或 iPad 建立加密備份，無需 PIN 即可還原設定。",
       featureWebhookTitle: "Webhook 控制面板",
       featureWebhookBody: "把 LiveView Mix 的空白格變成 HTTP Webhook 按鈕，連接您自行管理的門禁、照明、場景或其他網路服務；敏感操作可要求再次確認。",
       compatibilityKicker: "目前相容性",
@@ -167,26 +167,26 @@ const translations = {
             "進入錄影後畫面會顯示 PLAYBACK 與設備時間；按 Back to Live 返回即時串流。部分設備會先下載片段，再由系統播放器播放。"
           ]]
         ], '功能可用性警語：即時串流、快照、<span class="keep-phrase">主／子串流切換</span>、錄影搜尋、<span class="keep-phrase">Continuous／Events 分類</span>、時間軸定位及回放，均以攝影機或錄影主機實際回傳的能力，以及登入帳號被賦予的權限為準。'],
-        ["backup", "04", "加密備份與設備移轉", "備份與分享都會攜帶敏感連線資訊；Cam-Hub 會先加密，但 PIN 與分享對象仍需由您妥善管理。", [
+        ["backup", "04", "加密備份與攝影機分享", "iCloud 備份與還原不再使用 PIN；分享攝影機時，可自行決定是否用六位數 PIN 鎖定分享代碼。", [
           ["本機密碼保護", [
             "加入設備成功後，密碼存入 Apple Keychain；設備名稱、位址、連接埠、通道與 App 設定保留在裝置資料中。",
             "Cam-Hub 只在建立您要求的連線、搜尋錄影、擷取快照或進行備份／移轉時使用這些資料。",
             "Delete All Data 會移除本機設備資料與已保存密碼；刪除 App 也可能使尚未備份的設定無法復原。"
           ]],
-          ["六位數 PIN 加密 iCloud 備份", [
-            "前往 Settings → Back Up to iCloud，選擇備份位置後輸入六位數 PIN，並再次輸入確認。",
-            "備份內容包括支援的設備、登入資訊、通道、LiveView Mix 與 App 設定，會先以 PIN 加密再保存至您自己的 iCloud。",
-            "PIN 不會交由開發者保管，也沒有忘記密碼的復原流程。建立備份後請另外安全保存 PIN，並確認 Current Backup 已顯示新的備份時間與設備數。"
+          ["不需 PIN 的 iCloud 加密備份", [
+            "前往 Settings → Back Up to iCloud，選擇 iPhone／iPad 或 Apple TV 備份位置後即可建立備份，不需要設定 PIN。",
+            "備份內容包括支援的設備、登入資訊、通道、LiveView Mix 與 App 設定，會先加密再保存至您自己的私人 iCloud。",
+            "完成後請確認 Current Backup 已顯示新的備份時間與設備數。"
           ]],
           ["從 iCloud 還原", [
-            "在 Settings → Restore from iCloud 選擇要還原的備份，輸入建立備份時使用的 PIN。",
+            "在 Settings → Restore from iCloud 選擇要還原的備份即可繼續；iPhone、iPad 與 Apple TV 都不會要求 PIN 驗證。",
             "建議來源與目標使用相同 App 版本，並先確認登入的是保存該備份的 Apple Account；舊版本建立的備份可能需要重新備份後才會顯示。",
             "還原會受目前方案可用上限影響。完成後請逐一確認設備位址、通道與 LiveView Mix 是否符合目前網路環境。"
           ]],
-          ["不經 iCloud 的加密移轉", [
-            "前往 Settings → Export Cameras 產生加密代碼，可複製或使用系統分享；接收端從 Import Cameras 貼上完整代碼。",
-            "匯入內容包含設備及其登入資訊，並會受接收端目前方案限制。",
-            "任何取得完整代碼並擁有 Cam-Hub 的人都可能加入這些設備。不要貼到公開聊天室、工單或網站，只交給確實需要且受信任的對象。"
+          ["分享攝影機與選用 PIN", [
+            "前往 Settings → Share Cameras，選擇要分享的攝影機並產生加密代碼；分享時可決定是否用 PIN 鎖定。",
+            "若啟用 PIN 鎖定，請設定並確認六位數字；接收端匯入或還原分享內容時必須通過 PIN 驗證。未設定 PIN 時，貼上或開啟完整代碼後可直接匯入。",
+            "匯入內容包含設備及其登入資訊，並受接收端目前方案限制。完整代碼與 PIN 只應交給可信任的對象，不要張貼到公開聊天室、工單或網站。"
           ]]
         ]],
         ["preferences", "05", "顯示、串流與資料管理", "依網路、裝置效能與日常使用方式調整 App 行為；需要重設時，也可以分開處理設定、本機資料與 iCloud 備份。", [
@@ -212,7 +212,7 @@ const translations = {
             "Restore Default Settings：只把外觀、語言、品質、LiveView Mix 等設定恢復預設，保留已加入設備。",
             "Delete All Data：移除本機設備、攝影機與 Keychain 密碼；iCloud 備份與訂閱不受影響。",
             "Delete iCloud Backup：刪除雲端的加密備份，不影響目前裝置上的設備與設定。若尚未登入 iCloud，可能只能清除本機看到的備份狀態。",
-            "執行不可逆刪除前，請先確認 iCloud 已完成同步、PIN 可用，而且備份版本可供目標裝置還原。"
+            "執行不可逆刪除前，請先確認 iCloud 已完成同步，而且備份版本可供目標裝置還原。"
           ]]
         ]],
         ["tv-control", "06", "Apple TV 與 Webhook 控制", "把監看牆帶到電視，也能在 LiveView Mix 中加入由您自行管理的 HTTP 控制按鈕。", [
@@ -222,8 +222,8 @@ const translations = {
             "即時串流、回放、主／子串流與通道功能仍以設備實際回傳能力、帳號權限、編碼及網路條件為準。"
           ]],
           ["從 iPhone 或 iPad 移轉設定", [
-            "在 iPhone 或 iPad 開啟 Settings → Back Up to iCloud，將 Destination 選為 Apple TV，設定六位數 PIN 後建立 Apple TV 專用加密備份。",
-            "Apple TV 登入保存備份的同一個 Apple Account，開啟 Restore from iCloud，再輸入建立備份時使用的 PIN。",
+            "在 iPhone 或 iPad 開啟 Settings → Back Up to iCloud，將 Destination 選為 Apple TV，建立 Apple TV 專用加密備份；不需要設定 PIN。",
+            "Apple TV 登入保存備份的同一個 Apple Account，開啟 Restore from iCloud 並選擇備份，即可直接還原。",
             "Apple TV 只會還原 Apple TV 專用備份。完成後請確認設備位址、通道與 LiveView Mix 符合電視所在的網路環境。"
           ]],
           ["建立 Webhook 控制面板", [
@@ -250,7 +250,7 @@ const translations = {
       sections: [
         ["相容性", ["Cam-Hub 支援 ONVIF 與 RTSP 影像連接，並已針對部分 Hikvision、Dahua 與 Synology 設備或系統進行測試。實際相容性取決於型號、韌體、帳號權限、串流格式與網路設定。", "部分設備可能需要先在管理介面中啟用 ONVIF、RTSP 或相關本機服務。品牌相容性說明不代表與品牌原廠存在合作、贊助或官方認可關係。"], "compatibility"],
         ["回報連線問題前", ["確認攝影機或錄影主機已上線，且 Apple 裝置可以連線至該設備。", "確認設備位址、HTTP 埠、RTSP 埠、使用者名稱與密碼。", "需要時，請在設備管理介面中啟用 ONVIF 或相關本機服務。", "確認設備帳號具備查看指定通道與錄影內容的權限。", "若主串流的編碼、解析度或流量不相容，可以嘗試使用子串流。"]],
-        ["聯絡支援時請提供", ["App 版本、Apple 裝置型號與作業系統版本。", "攝影機或錄影主機的型號與韌體版本。", "使用的連線方式、操作步驟與完整錯誤訊息。", "請勿寄送攝影機密碼、備份 PIN 或完整的公網連線位址。"]],
+        ["聯絡支援時請提供", ["App 版本、Apple 裝置型號與作業系統版本。", "攝影機或錄影主機的型號與韌體版本。", "使用的連線方式、操作步驟與完整錯誤訊息。", "請勿寄送攝影機密碼、分享攝影機 PIN、完整分享代碼或公網連線位址。"]],
         ["常見限制", ["ONVIF 與 RTSP 的實作會因設備品牌、型號與韌體而異，因此支援協議不等於每項功能都能使用。", "遠端連線需要您自行建立並保護適當的 VPN、路由或設備遠端存取設定。Cam-Hub 不會自動開放路由器連接埠。", "錄影搜尋與回放需要設備本身支援，並且登入帳號擁有相應權限。"]]
       ]
     },
@@ -268,8 +268,9 @@ const translations = {
         ["Webhook 控制面板與第三方端點", ["您可以設定 HTTP 或 HTTPS 方法、端點網址、自訂標頭與請求內容，建立 LiveView Mix 控制按鈕。這些設定可能包含 Authorization 權杖或其他敏感資料，會保存在裝置上的 LiveView Mix 設定中，也可能包含在您主動建立的加密 iCloud 備份內。", "只有在您點按按鈕時，App 才會從您的裝置直接把請求送到您指定的端點，例如 Home Assistant、Node-RED 或其他第三方服務。該端點及網路服務商可能依其政策取得來源 IP、標頭與請求內容；Cam-Hub 的開發者不會代您選擇、控制或接收這些端點的資料。HTTP 傳輸未加密，敏感資料請使用 HTTPS，並自行確認接收端的隱私與安全做法。"]],
         ["區域網路存取與掃描", ["Cam-Hub 會請求本機網路權限，以直接連接攝影機與錄影主機。當您在「工具」分頁啟動掃描時，App 會探測您選擇的子網路及常見攝影機服務連接埠，並可能讀取回應中的設備位址、開放連接埠與 HTTP Server 名稱，協助您辨識設備。", "掃描由您主動啟動，結果在裝置上處理，不會傳送給 Cam-Hub 的開發者。"]],
         ["照片與相機", ["您可以透過 Apple 的系統照片選擇器挑選特定照片，或授權相機拍攝新照片，放入 LiveView Mix 空格。App 只取得您選取或拍攝的圖片，不會瀏覽整個照片圖庫；圖片會縮小並壓縮後保存在裝置的 LiveView Mix 設定中。", "圖片僅保存在您的裝置上，Cam-Hub 開發者不會接收或存取。只有在您自行建立 Cam-Hub 加密 iCloud 備份時，圖片才可能隨備份存入您自己的 iCloud，以供裝置還原。您可在 LiveView Mix 中移除圖片，並可在系統設定中變更相機或照片權限。"]],
-        ["攝影機轉移代碼", ["您可匯出含所選攝影機或錄影主機之位址、使用者名稱、通道資訊及密碼的轉移代碼。代碼會以 Cam-Hub 內建的固定字串和每次產生的隨機 salt，經 PBKDF2-HMAC-SHA256（600,000 次）衍生金鑰，再以 AES-256-GCM 驗證加密。該固定字串由相容版本的 Cam-Hub 共用，並非您設定的密碼，也不是每位收件者專用的金鑰。", "任何取得完整代碼且使用相容版本 Cam-Hub 的人都能解密並匯入其中憑證。代碼不會自動到期，從來源裝置刪除設備或 App 也不會撤銷已分享的副本。"]],
-        ["選用的 iCloud 備份", ["若您選擇使用 iCloud 備份，App 會先以六位數 PIN 加密支援的攝影機與錄影主機設定、登入資訊、通道及 App 設定，再存入您私人的 iCloud Key-Value Store。", "備份時間、設備數量與站點名稱會分開保存，供 App 顯示備份狀態。請妥善保存 PIN；我們無法替您找回或解密。"]],
+        ["位置（台灣國道影像）", ["只有在您於「國道攝影機資料庫」中主動點選「使用我的位置」時，App 才會向系統要求一次目前位置，用來將公開的公路攝影機依距離排序。", "位置僅在您的裝置上使用於當次排序，不會儲存、不會隨備份保留，也不會傳送給 Cam-Hub 開發者或任何第三方。App 不會在背景追蹤位置。您可以改用道路或地區瀏覽，或在系統設定中隨時關閉定位權限。"], "", "TW"],
+        ["攝影機分享代碼", ["您可分享含所選攝影機或錄影主機之位址、使用者名稱、通道資訊及密碼的加密代碼。分享時可自行決定是否用六位數 PIN 鎖定；開發者不會保存 PIN，也無法替您找回。", "受 PIN 鎖定的代碼在匯入或還原分享內容時必須輸入正確 PIN；未設定 PIN 的完整代碼可由相容版本 Cam-Hub 直接匯入。代碼不會自動到期，從來源裝置刪除設備或 App 也不會撤銷已分享的副本。"]],
+        ["選用的 iCloud 備份", ["若您選擇使用 iCloud 備份，App 會先加密支援的攝影機與錄影主機設定、登入資訊、通道及 App 設定，再存入您私人的 iCloud Key-Value Store。iPhone、iPad 與 Apple TV 的備份和還原不使用 PIN。", "備份時間、設備數量與站點名稱會分開保存，供 App 顯示備份狀態。還原時選擇可用備份即可繼續。"]],
         ["購買與訂閱", ["購買與訂閱由 Apple 處理。我們不會取得您的完整付款卡號或銀行資訊。App 只會讀取 Apple 提供的購買狀態，以啟用相應的使用上限或功能。"]],
         ["分享、保留、刪除與選擇", ["我們不販售個人資料。本機設定會保留在您的裝置上，直到您刪除相關內容或移除 App。您可在 App 內刪除設備、LiveView Mix 圖片與控制設定，並可分開刪除 iCloud 備份；系統權限可在 Apple 裝置的「設定」中撤回。", "選用的 iCloud 資料由您的 Apple Account 與 iCloud 服務管理。您透過 Email 主動寄給支援信箱的資訊，只會在回覆問題及保留必要支援紀錄所需的期間內保存。"]],
         ["兒童與政策更新", ["Cam-Hub 並非以兒童為主要對象，也不會刻意收集兒童的個人資料。當 App 功能、法規或商店要求變更時，我們可能更新本政策，並在本頁公布新的修訂日期。"]]
@@ -293,6 +294,7 @@ const translations = {
         ["訂閱與購買", ["App 內購買與訂閱由 Apple 處理。價格、續訂、取消、退款與帳號管理依 Apple 顯示的資訊及您的 Apple Account 設定為準。App 會依有效的購買權益決定可使用的上限或功能。", "訂閱失效後，超出免費額度的通道會停止串流；您的設備、名稱與設定仍保留在裝置上，續訂適用方案後即可恢復使用。價格與方案內容可能依 Apple 通知及適用法律調整；訂閱價格異動僅會依 Apple 所示於後續續訂時生效。"]],
         ["隱私權", ["資料處理由獨立的隱私權政策說明。", `<a href="privacy.html">Cam-Hub 隱私權政策</a>`]],
         ["第三方名稱與服務", ["Hikvision、Dahua、Synology、ONVIF 及其他相關名稱，均為其各自權利人的商標或識別名稱。Cam-Hub 為獨立開發的應用程式。", "成功連線代表設備與 Cam-Hub 使用的協議或功能在技術上相容，不代表與相關權利人存在隸屬、合作、贊助或官方認可關係。"]],
+        ["公路公開影像（台灣）", ["在台灣地區，Cam-Hub 可加入交通部高速公路局公開發布的國道與快速公路即時影像。影像來源為交通部高速公路局「交通資料庫」，依「政府資料開放授權條款」釋出。", "此影像為免費附加內容，不計入任何訂閱方案的頻道額度，Cam-Hub 亦未就該影像收取費用。影像僅供參考，可能隨時中斷、變更或停止提供，不保證正確性、即時性或可用性，且不提供錄影回放。", "Cam-Hub 與交通部高速公路局並無隸屬、合作、贊助或官方認可關係；提供該資料不代表該局對本應用程式有任何推薦或核准之意。"], "", "TW"],
         ["免責聲明與責任限制", ["Cam-Hub 依「現狀」及「可提供狀態」提供，除 Apple 標準 EULA 所載免責外，不附任何形式之擔保。在法律允許的範圍內，開發者不對間接、附帶、特殊或衍生性損失負責，包括影像遺失、事件未被記錄、財物損失或營運中斷。本條不排除或限制依法不得排除或限制的責任、不限制強制性消費者權利，亦不取代 Apple 條款賦予您的權利。"]],
         ["條款更新", ["當 App 功能、法規或商店要求變更時，我們可能更新本條款，並在本頁公布新的修訂日期。"]]
       ]
@@ -335,7 +337,7 @@ const translations = {
       featurePlaybackTitle: "Live and playback",
       featurePlaybackBody: "View live video and search or play recordings when the equipment supports those capabilities.",
       featureTVTitle: "Monitoring on Apple TV",
-      featureTVBody: "Use LiveView Mix, equipment walls, and full-screen video on Apple TV. Create an encrypted Apple TV backup on iPhone or iPad, then restore it with your PIN.",
+      featureTVBody: "Use LiveView Mix, equipment walls, and full-screen video on Apple TV. Create an encrypted Apple TV backup on iPhone or iPad, then restore it without a PIN.",
       featureWebhookTitle: "Webhook control panels",
       featureWebhookBody: "Turn a LiveView Mix blank slot into HTTP webhook buttons for access, lighting, scenes, or other services you manage. Sensitive actions can require confirmation.",
       compatibilityKicker: "Current compatibility",
@@ -430,26 +432,26 @@ const translations = {
             "Playback displays PLAYBACK and the equipment time. Tap Back to Live to return to the live stream. Some equipment downloads a clip before opening it in the system player."
           ]]
         ], 'Availability notice: live streaming, snapshots, <span class="keep-phrase">main/sub-stream selection</span>, recording search, <span class="keep-phrase">Continuous/Events classification</span>, timeline seeking, and playback all depend on the capabilities actually reported by the camera or recorder and the permissions granted to the signed-in equipment account.'],
-        ["backup", "04", "Encrypted backup and transfer", "Backups and transfers contain sensitive connection details. Cam-Hub encrypts them, while you remain responsible for the PIN and recipient.", [
+        ["backup", "04", "Encrypted backup and camera sharing", "iCloud backup and restore no longer use a PIN. When sharing cameras, you can choose whether to lock the sharing code with a six-digit PIN.", [
           ["Local password protection", [
             "After equipment is added, its password is stored in Apple Keychain. The equipment name, address, ports, channels, and app settings remain in device data.",
             "Cam-Hub uses this information only for connections, recording searches, snapshots, backups, and transfers that you request.",
             "Delete All Data removes local equipment data and saved passwords. Removing the app can also make configuration that was never backed up unrecoverable."
           ]],
-          ["Six-digit PIN iCloud backup", [
-            "Go to Settings → Back Up to iCloud, choose the backup location, enter a six-digit PIN, and enter it again to confirm.",
-            "The backup includes supported equipment, credentials, channels, LiveView Mix, and app settings. Cam-Hub encrypts it with the PIN before saving it to your private iCloud.",
-            "The developer does not keep the PIN and cannot recover it. Store it safely and confirm that Current Backup shows the new time and equipment count."
+          ["Encrypted iCloud backup without a PIN", [
+            "Go to Settings → Back Up to iCloud, choose the iPhone/iPad or Apple TV backup location, and create the backup without setting a PIN.",
+            "The backup includes supported equipment, credentials, channels, LiveView Mix, and app settings. Cam-Hub encrypts it before saving it to your private iCloud.",
+            "Confirm that Current Backup shows the new time and equipment count."
           ]],
           ["Restore from iCloud", [
-            "Open Settings → Restore from iCloud, select the backup, and enter the PIN used when it was created.",
+            "Open Settings → Restore from iCloud and select the backup to continue. iPhone, iPad, and Apple TV do not require PIN verification.",
             "Use the same app version when possible and confirm that the Apple Account containing the backup is signed in. Backups from an older version may need to be recreated before they appear.",
             "Restore is subject to the current plan limits. Afterwards, verify every equipment address, channel, and LiveView Mix against the current network."
           ]],
-          ["Encrypted transfer without iCloud", [
-            "Open Settings → Export Cameras to create an encrypted code, then copy or share it. On the destination installation, paste the complete code into Import Cameras.",
-            "The import contains equipment and its credentials and is subject to the destination plan limits.",
-            "Anyone who obtains the complete code and has Cam-Hub may be able to add that equipment. Never post it in a public chat, ticket, or website; send it only to a trusted person who needs it."
+          ["Share cameras with an optional PIN", [
+            "Open Settings → Share Cameras, select the cameras, and create an encrypted sharing code. Choose whether to lock it with a PIN.",
+            "If PIN lock is enabled, enter and confirm six digits. The recipient must pass PIN verification when importing or restoring the shared cameras. Without a PIN, the complete code imports directly.",
+            "The import includes equipment and credentials and is subject to destination plan limits. Send the complete code and PIN only to a trusted recipient; never post them in a public chat, ticket, or website."
           ]]
         ]],
         ["preferences", "05", "Display, streaming, and data controls", "Tune app behaviour for your network and device, and handle preferences, local data, and iCloud backup separately when resetting.", [
@@ -475,7 +477,7 @@ const translations = {
             "Restore Default Settings resets appearance, language, quality, LiveView Mix, and other preferences while keeping added equipment.",
             "Delete All Data removes local equipment, cameras, and Keychain passwords. It does not affect iCloud backups or subscriptions.",
             "Delete iCloud Backup removes the encrypted cloud backup without changing equipment and settings on the current device. When iCloud is unavailable, it may only clear locally displayed backup state.",
-            "Before an irreversible deletion, confirm that iCloud has synchronized, the PIN works, and the backup version can be restored on the destination device."
+            "Before an irreversible deletion, confirm that iCloud has synchronized and that the backup version can be restored on the destination device."
           ]]
         ]],
         ["tv-control", "06", "Apple TV and webhook controls", "Move the monitoring wall to the television and add HTTP control buttons that connect to endpoints you manage.", [
@@ -485,8 +487,8 @@ const translations = {
             "Live streaming, playback, main/sub-stream selection, and channel features still depend on the capabilities reported by the equipment, account permissions, codec, and network conditions."
           ]],
           ["Transfer setup from iPhone or iPad", [
-            "On iPhone or iPad, open Settings → Back Up to iCloud, choose Apple TV as the destination, and create a dedicated encrypted backup with a six-digit PIN.",
-            "Sign in to the same Apple Account on Apple TV, open Restore from iCloud, and enter the PIN used to create the backup.",
+            "On iPhone or iPad, open Settings → Back Up to iCloud, choose Apple TV as the destination, and create a dedicated encrypted backup without setting a PIN.",
+            "Sign in to the same Apple Account on Apple TV, open Restore from iCloud, select the backup, and restore it directly.",
             "Apple TV restores only the dedicated Apple TV backup. Afterwards, verify equipment addresses, channels, and LiveView Mix against the television's current network."
           ]],
           ["Build a webhook control panel", [
@@ -513,7 +515,7 @@ const translations = {
       sections: [
         ["Compatibility", ["Cam-Hub supports ONVIF and RTSP-based viewing and has been tested with selected Hikvision, Dahua, and Synology devices or systems. Compatibility varies by model, firmware, account permissions, stream format, and network configuration.", "Some equipment requires ONVIF, RTSP, or another local service to be enabled in its administration interface. Compatibility statements do not imply affiliation, sponsorship, or endorsement by the equipment vendor."], "compatibility"],
         ["Before reporting a connection problem", ["Confirm that the camera or recorder is online and reachable from your Apple device.", "Verify the equipment address, HTTP port, RTSP port, username, and password.", "Enable ONVIF or the required local service in the equipment settings when applicable.", "Use an account that has permission to view the selected channels and recordings.", "Try the camera sub-stream when the main-stream codec, resolution, or bandwidth is not compatible."]],
-        ["When contacting support", ["Include the app version, Apple device, and operating system version.", "Include the camera or recorder model and firmware version.", "Describe the connection method, exact steps, and complete error message.", "Never send us your camera password, backup PIN, or complete public connection address."]],
+        ["When contacting support", ["Include the app version, Apple device, and operating system version.", "Include the camera or recorder model and firmware version.", "Describe the connection method, exact steps, and complete error message.", "Never send us your camera password, camera-sharing PIN, complete sharing code, or public connection address."]],
         ["Common limitations", ["ONVIF and RTSP implementations vary across vendors, models, and firmware. Supporting a protocol does not mean every optional feature is available.", "Remote access requires you to configure and secure an appropriate VPN, router, or equipment remote-access method. Cam-Hub does not automatically open router ports.", "Recording search and playback require equipment support and an account with the relevant permissions."]]
       ]
     },
@@ -531,8 +533,8 @@ const translations = {
         ["Webhook control panels and third-party endpoints", ["You can create LiveView Mix control buttons by configuring an HTTP or HTTPS method, endpoint URL, custom headers, and request body. These settings may contain Authorization tokens or other sensitive data. They are stored in the LiveView Mix configuration on your device and may be included in an encrypted iCloud backup that you choose to create.", "Only when you tap a button does the app send the request directly from your device to the endpoint you specified, such as Home Assistant, Node-RED, or another third-party service. That endpoint and network providers may process your source IP address, headers, and request body under their own policies. The Cam-Hub developer does not choose, control, or receive data sent to those endpoints. HTTP is not encrypted in transit; use HTTPS for sensitive data and review the recipient’s privacy and security practices."]],
         ["Local network access and scanning", ["Cam-Hub requests Local Network permission to connect directly to cameras and recorders. When you start a scan in the Tools tab, the app probes the subnet you select and common camera service ports, and may read responding equipment addresses, open ports, and HTTP Server names to help identify equipment.", "A scan starts only when you request it. Results are processed on your device and are not sent to the Cam-Hub developer."]],
         ["Photos and camera", ["You can use Apple’s system photo picker to select a specific photo, or grant Camera access to capture a new photo, for a LiveView Mix blank slot. The app receives only the image you select or capture, not your entire photo library. It downsizes and compresses the image and stores it in the LiveView Mix configuration on your device.", "Images remain on your device and are not received or accessed by the Cam-Hub developer. Only if you choose to create an encrypted Cam-Hub iCloud backup may the images be stored with that backup in your own iCloud for device restoration. You can remove an image in LiveView Mix and change Camera or Photos permissions in system Settings."]],
-        ["Camera transfer codes", ["You can export a transfer code containing the selected cameras’ or recorders’ addresses, usernames, channel information, and passwords. The encryption key is derived from a fixed string embedded in compatible versions of Cam-Hub and a fresh random salt for each code, using PBKDF2-HMAC-SHA256 with 600,000 iterations. The code is then encrypted and authenticated with AES-256-GCM. The embedded string is not a password you choose or a key unique to each recipient.", "Anyone who obtains the complete code and uses a compatible version of Cam-Hub can decrypt and import the credentials. Transfer codes do not expire automatically, and deleting equipment or the app from the source device does not revoke copies already shared."]],
-        ["Optional iCloud backup", ["If you choose iCloud Backup, the app encrypts supported camera and recorder configuration, credentials, channels, and app settings with a six-digit PIN before placing the backup in your private iCloud key-value storage.", "Backup time, device count, and site name are stored separately so the app can display backup status. Keep your PIN safe; we cannot recover or decrypt it for you."]],
+        ["Camera sharing codes", ["You can share an encrypted code containing the selected cameras’ or recorders’ addresses, usernames, channel information, and passwords. When sharing, you can choose whether to lock the code with a six-digit PIN. The developer does not keep the PIN and cannot recover it.", "A PIN-locked code requires the correct PIN when the recipient imports or restores the shared cameras. Without a PIN, a compatible version of Cam-Hub can import the complete code directly. Codes do not expire automatically, and deleting equipment or the app from the source device does not revoke copies already shared."]],
+        ["Optional iCloud backup", ["If you choose iCloud Backup, the app encrypts supported camera and recorder configuration, credentials, channels, and app settings before placing the backup in your private iCloud key-value storage. Backup and restore on iPhone, iPad, and Apple TV do not use a PIN.", "Backup time, device count, and site name are stored separately so the app can display backup status. To restore, select an available backup and continue directly."]],
         ["Purchases and subscriptions", ["Purchases and subscriptions are processed by Apple. We do not receive your full payment card or bank information. The app reads purchase status supplied by Apple to unlock the corresponding limits or features."]],
         ["Sharing, retention, deletion, and choices", ["We do not sell personal data. Local configuration remains on your device until you delete the relevant content or remove the app. You can delete equipment, LiveView Mix images, and control settings in the app, delete an iCloud backup separately, and withdraw system permissions in Settings on your Apple device.", "Optional iCloud data is managed through your Apple Account and iCloud services. Information you voluntarily email to support is retained only as needed to respond and maintain necessary support records."]],
         ["Children and policy changes", ["Cam-Hub is not directed to children and does not intentionally collect children’s personal information. We may update this policy when app features, laws, or store requirements change. The revised date will be published on this page."]]
@@ -666,8 +668,25 @@ function renderMeta(items) {
   return `<div class="meta">${items.map(([label, value]) => `<div><span>${label}</span><strong>${value}</strong></div>`).join("")}</div>`;
 }
 
+// Best-effort region of the visitor, without a network call, an IP lookup, or
+// a permission prompt: the browser's own time zone, with the language tag as a
+// fallback. Only used to hide clauses about region-locked features from people
+// who cannot reach them — never to unlock anything.
+function visitorRegion() {
+  try {
+    if (Intl.DateTimeFormat().resolvedOptions().timeZone === "Asia/Taipei") return "TW";
+  } catch (error) {
+    // Older browsers without resolvedOptions fall through to the language tag.
+  }
+  const language = (navigator.language || "").toLowerCase();
+  if (language === "zh-tw" || language.endsWith("-tw")) return "TW";
+  return "";
+}
+
 function renderSections(sections) {
-  return sections.map(([title, body, id]) => {
+  const region = visitorRegion();
+  return sections.filter(([, , , onlyRegion]) => !onlyRegion || onlyRegion === region)
+    .map(([title, body, id]) => {
     const list = body.length > 2;
     const content = list
       ? `<ul>${body.map((item) => `<li>${item}</li>`).join("")}</ul>`
@@ -760,7 +779,7 @@ function applyPhraseWrapping(language) {
     acceptNode(node) {
       const parent = node.parentElement;
       if (!parent || !node.data.trim()) return NodeFilter.FILTER_REJECT;
-      if (parent.closest("script, style, select, option, textarea, .sr-only, .eyebrow, .section-kicker, figcaption, .page-title-line, .hero-line, .keep-phrase")) return NodeFilter.FILTER_REJECT;
+      if (parent.closest("script, style, select, option, textarea, .sr-only, .eyebrow, .section-kicker, figcaption, .hero-line, .keep-phrase")) return NodeFilter.FILTER_REJECT;
       return NodeFilter.FILTER_ACCEPT;
     }
   });

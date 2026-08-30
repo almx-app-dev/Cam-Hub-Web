@@ -86,26 +86,26 @@
             "回放时会显示 PLAYBACK 与设备时间；轻点“返回实时”可回到直播。部分设备会先下载片段，再使用系统播放器打开。"
           ]]
         ], '功能可用性提示：实时串流、快照、<span class="keep-phrase">主／子码流切换</span>、录像搜索、<span class="keep-phrase">Continuous／Events 分类</span>、时间轴定位与回放，均以摄像头或录像主机实际返回的能力，以及登录设备账号获得的权限为准。'],
-        ["backup", "04", "加密备份与迁移", "备份与迁移包含敏感连接信息。Cam-Hub 会进行加密，但 PIN 与接收对象仍由您负责。", [
+        ["backup", "04", "加密备份与摄像头共享", "iCloud 备份与还原不再使用 PIN；共享摄像头时，可自行决定是否用六位数 PIN 锁定共享代码。", [
           ["本机密码保护", [
             "设备添加后，密码会存入 Apple Keychain；设备名称、地址、端口、通道与 App 设置则保留在设备资料中。",
             "Cam-Hub 只会在您要求连接、搜索录像、取得快照、备份或迁移时使用这些信息。",
             "“删除全部资料”会移除本机设备资料和已保存密码。若从未备份，移除 App 后相关设置也可能无法恢复。"
           ]],
-          ["六位数 PIN iCloud 备份", [
-            "进入“设置”→“备份到 iCloud”，选择备份目的地，输入六位数 PIN，并再次输入确认。",
-            "备份包含受支持的设备、登录信息、通道、LiveView Mix 与 App 设置。Cam-Hub 会先使用 PIN 加密，再存入您自己的私人 iCloud。",
-            "开发者不会保存 PIN，也无法为您找回。请妥善保管，并确认“当前备份”显示新的时间与设备数量。"
+          ["无需 PIN 的 iCloud 加密备份", [
+            "进入“设置”→“备份到 iCloud”，选择 iPhone／iPad 或 Apple TV 备份目的地后即可建立备份，无需设置 PIN。",
+            "备份包含受支持的设备、登录信息、通道、LiveView Mix 与 App 设置。Cam-Hub 会先加密，再存入您自己的私人 iCloud。",
+            "请确认“当前备份”显示新的时间与设备数量。"
           ]],
           ["从 iCloud 还原", [
-            "打开“设置”→“从 iCloud 还原”，选择备份并输入建立备份时使用的 PIN。",
+            "打开“设置”→“从 iCloud 还原”并选择备份即可继续；iPhone、iPad 与 Apple TV 均不要求 PIN 验证。",
             "请尽量使用相同 App 版本，并确认已登录保存该备份的 Apple Account。旧版本备份可能需要重新建立后才会显示。",
             "还原仍受当前方案上限限制。完成后请按当前网络逐项检查设备地址、通道与 LiveView Mix。"
           ]],
-          ["不使用 iCloud 的加密迁移", [
-            "打开“设置”→“导出摄像头”建立加密代码，然后复制或分享；在目标安装中将完整代码粘贴到“导入摄像头”。",
-            "导入内容包括设备与登录信息，并受目标设备当前方案上限限制。",
-            "任何取得完整代码且安装 Cam-Hub 的人都可能添加其中设备。不要将代码贴到公开聊天、工单或网站，只可交给确实需要且可信任的对象。"
+          ["共享摄像头与可选 PIN", [
+            "打开“设置”→“共享摄像头”，选择摄像头并建立加密共享代码；分享时可决定是否用 PIN 锁定。",
+            "启用 PIN 锁定时，请设置并确认六位数字。接收者导入或还原共享摄像头时必须通过 PIN 验证；未设置 PIN 时，完整代码可直接导入。",
+            "导入内容包括设备与登录信息，并受目标设备当前方案上限限制。完整代码与 PIN 只可交给可信任的对象，切勿发布到公开聊天、工单或网站。"
           ]]
         ]],
         ["preferences", "05", "显示、串流与资料控制", "依网络与设备能力调整 App，并在重置时分别处理偏好、本机资料与 iCloud 备份。", [
@@ -131,7 +131,7 @@
             "“恢复默认设置”会重置外观、语言、画质、LiveView Mix 与其他偏好，但保留已添加设备。",
             "“删除全部资料”会移除本机设备、摄像头与 Keychain 密码，不影响 iCloud 备份或订阅。",
             "“删除 iCloud 备份”只移除加密云端备份，不会改变当前设备上的设备与设置。iCloud 无法使用时，可能只能清除本机显示的备份状态。",
-            "执行无法撤销的删除前，请确认 iCloud 已同步、PIN 可用，并且目标设备能够还原该备份版本。"
+            "执行无法撤销的删除前，请确认 iCloud 已同步，并且目标设备能够还原该备份版本。"
           ]]
         ]],
         ["tv-control", "06", "Apple TV 与 Webhook 控制", "将监看墙扩展到电视，并加入连接到自有端点的 HTTP 控制按钮。", [
@@ -141,8 +141,8 @@
             "实时串流、回放、主／子码流选择及通道功能，仍取决于设备实际返回的能力、账号权限、编解码器与网络状况。"
           ]],
           ["从 iPhone 或 iPad 移转设置", [
-            "在 iPhone 或 iPad 中打开“设置”→“备份到 iCloud”，选择 Apple TV 为目的地，并使用六位数 PIN 建立专用加密备份。",
-            "在 Apple TV 登录同一 Apple Account，打开“从 iCloud 还原”，输入建立备份时使用的 PIN。",
+            "在 iPhone 或 iPad 中打开“设置”→“备份到 iCloud”，选择 Apple TV 为目的地，建立专用加密备份，无需设置 PIN。",
+            "在 Apple TV 登录同一 Apple Account，打开“从 iCloud 还原”并选择备份，即可直接还原。",
             "Apple TV 只会还原专用的 Apple TV 备份。完成后请按电视当前网络检查设备地址、通道与 LiveView Mix。"
           ]],
           ["建立 Webhook 控制面板", [
@@ -245,26 +245,26 @@
             "재생 중에는 PLAYBACK과 장비 시간이 표시됩니다. ‘실시간으로 돌아가기’를 눌러 라이브 스트림으로 복귀합니다. 일부 장비는 클립을 먼저 내려받은 뒤 시스템 플레이어에서 엽니다."
           ]]
         ], '기능 제공 안내: 실시간 스트리밍, 스냅샷, <span class="keep-phrase">주/보조 스트림 선택</span>, 녹화 검색, <span class="keep-phrase">Continuous/Events 분류</span>, 타임라인 탐색과 재생은 카메라 또는 녹화기가 실제로 제공하는 기능과 로그인한 장비 계정의 권한에 따라 달라집니다.'],
-        ["backup", "04", "암호화 백업과 전송", "백업과 전송에는 민감한 연결 정보가 포함됩니다. Cam-Hub가 암호화하지만 PIN과 수신자 관리는 사용자의 책임입니다.", [
+        ["backup", "04", "암호화 백업과 카메라 공유", "iCloud 백업과 복원에는 더 이상 PIN을 사용하지 않습니다. 카메라를 공유할 때 공유 코드를 6자리 PIN으로 잠글지 선택할 수 있습니다.", [
           ["기기 내 비밀번호 보호", [
             "장비를 추가하면 비밀번호는 Apple Keychain에 저장되고 장비 이름, 주소, 포트, 채널과 App 설정은 기기 데이터에 남습니다.",
             "Cam-Hub는 사용자가 요청한 연결, 녹화 검색, 스냅샷, 백업과 전송에만 이 정보를 사용합니다.",
             "‘모든 데이터 삭제’는 로컬 장비 데이터와 저장된 비밀번호를 제거합니다. 백업하지 않은 설정은 App을 삭제한 뒤 복구할 수 없을 수 있습니다."
           ]],
-          ["6자리 PIN iCloud 백업", [
-            "‘설정’ → ‘iCloud에 백업’을 열고 백업 위치를 선택한 다음 6자리 PIN을 입력하고 한 번 더 입력해 확인합니다.",
-            "백업에는 지원되는 장비, 인증 정보, 채널, LiveView Mix와 App 설정이 포함됩니다. Cam-Hub는 PIN으로 암호화한 뒤 사용자의 개인 iCloud에 저장합니다.",
-            "개발자는 PIN을 보관하지 않으며 복구할 수도 없습니다. 안전하게 보관하고 ‘현재 백업’에 새 시간과 장비 수가 표시되는지 확인하세요."
+          ["PIN 없는 iCloud 암호화 백업", [
+            "‘설정’ → ‘iCloud에 백업’을 열고 iPhone/iPad 또는 Apple TV 백업 위치를 선택하면 PIN 설정 없이 백업을 만들 수 있습니다.",
+            "백업에는 지원되는 장비, 인증 정보, 채널, LiveView Mix와 App 설정이 포함됩니다. Cam-Hub는 이를 암호화한 뒤 사용자의 개인 iCloud에 저장합니다.",
+            "‘현재 백업’에 새 시간과 장비 수가 표시되는지 확인하세요."
           ]],
           ["iCloud에서 복원", [
-            "‘설정’ → ‘iCloud에서 복원’을 열고 백업을 선택한 뒤 생성할 때 사용한 PIN을 입력합니다.",
+            "‘설정’ → ‘iCloud에서 복원’을 열고 백업을 선택하면 바로 진행됩니다. iPhone, iPad와 Apple TV 모두 PIN 확인을 요구하지 않습니다.",
             "가능하면 같은 App 버전을 사용하고 백업을 보유한 Apple Account로 로그인했는지 확인하세요. 오래된 버전의 백업은 다시 생성해야 표시될 수 있습니다.",
             "복원에는 현재 요금제 한도가 적용됩니다. 완료 후 현재 네트워크에 맞게 각 장비 주소, 채널과 LiveView Mix를 확인하세요."
           ]],
-          ["iCloud 없는 암호화 전송", [
-            "‘설정’ → ‘카메라 내보내기’에서 암호화 코드를 만든 뒤 복사하거나 공유합니다. 대상 Cam-Hub의 ‘카메라 가져오기’에 전체 코드를 붙여 넣습니다.",
-            "가져오기에는 장비와 인증 정보가 포함되며 대상 설치의 요금제 한도가 적용됩니다.",
-            "전체 코드를 얻고 Cam-Hub를 사용하는 사람은 해당 장비를 추가할 수 있습니다. 공개 채팅, 지원 티켓이나 웹사이트에 게시하지 말고 꼭 필요한 신뢰할 수 있는 사람에게만 보내세요."
+          ["카메라 공유와 선택적 PIN", [
+            "‘설정’ → ‘카메라 공유’를 열고 카메라를 선택해 암호화된 공유 코드를 만듭니다. 공유할 때 PIN으로 잠글지 선택할 수 있습니다.",
+            "PIN 잠금을 켜면 6자리 숫자를 입력하고 확인합니다. 수신자는 공유 카메라를 가져오거나 복원할 때 PIN 인증을 통과해야 합니다. PIN을 설정하지 않으면 전체 코드를 바로 가져옵니다.",
+            "가져오기에는 장비와 인증 정보가 포함되며 대상 설치의 요금제 한도가 적용됩니다. 전체 코드와 PIN은 신뢰할 수 있는 사람에게만 보내고 공개 채팅, 지원 티켓이나 웹사이트에 게시하지 마세요."
           ]]
         ]],
         ["preferences", "05", "표시, 스트리밍과 데이터 제어", "네트워크와 기기에 맞게 App을 조정하고 초기화할 때 환경설정, 로컬 데이터, iCloud 백업을 각각 관리합니다.", [
@@ -290,7 +290,7 @@
             "‘기본 설정 복원’은 추가한 장비를 유지한 채 외관, 언어, 화질, LiveView Mix와 기타 환경설정을 초기화합니다.",
             "‘모든 데이터 삭제’는 로컬 장비, 카메라와 Keychain 비밀번호를 제거하며 iCloud 백업이나 구독에는 영향을 주지 않습니다.",
             "‘iCloud 백업 삭제’는 암호화된 클라우드 백업만 제거하고 현재 기기의 장비와 설정은 바꾸지 않습니다. iCloud를 사용할 수 없으면 로컬에 표시된 백업 상태만 지울 수 있습니다.",
-            "되돌릴 수 없는 삭제 전에 iCloud 동기화 여부, PIN 작동 여부와 대상 기기에서 해당 백업 버전을 복원할 수 있는지 확인하세요."
+            "되돌릴 수 없는 삭제 전에 iCloud 동기화 여부와 대상 기기에서 해당 백업 버전을 복원할 수 있는지 확인하세요."
           ]]
         ]],
         ["tv-control", "06", "Apple TV와 Webhook 제어", "모니터링 월을 TV로 확장하고 직접 관리하는 엔드포인트에 연결되는 HTTP 제어 버튼을 추가합니다.", [
@@ -300,8 +300,8 @@
             "실시간 스트리밍, 재생, 주/보조 스트림 선택과 채널 기능은 장비가 제공하는 기능, 계정 권한, 코덱과 네트워크 상태에 따라 달라집니다."
           ]],
           ["iPhone 또는 iPad에서 설정 전송", [
-            "iPhone 또는 iPad에서 ‘설정’ → ‘iCloud에 백업’을 열고 Apple TV를 대상으로 선택한 뒤 6자리 PIN으로 전용 암호화 백업을 만듭니다.",
-            "Apple TV에서 같은 Apple Account로 로그인하고 ‘iCloud에서 복원’을 연 다음 백업 생성에 사용한 PIN을 입력합니다.",
+            "iPhone 또는 iPad에서 ‘설정’ → ‘iCloud에 백업’을 열고 Apple TV를 대상으로 선택한 뒤 PIN 설정 없이 전용 암호화 백업을 만듭니다.",
+            "Apple TV에서 같은 Apple Account로 로그인하고 ‘iCloud에서 복원’을 연 다음 백업을 선택해 바로 복원합니다.",
             "Apple TV는 Apple TV 전용 백업만 복원합니다. 완료 후 TV가 연결된 현재 네트워크에 맞게 장비 주소, 채널과 LiveView Mix를 확인하세요."
           ]],
           ["Webhook 제어 패널 만들기", [
@@ -404,26 +404,26 @@
             "Bei der Wiedergabe erscheinen PLAYBACK und die Gerätezeit. „Zurück zu Live“ öffnet wieder den Livestream. Manche Geräte laden zunächst einen Clip herunter und öffnen ihn anschließend im Systemplayer."
           ]]
         ], 'Verfügbarkeitshinweis: Live-Streaming, Schnappschüsse, <span class="keep-phrase">Haupt-/Nebenstream-Auswahl</span>, Aufnahmesuche, <span class="keep-phrase">Continuous-/Events-Klassifizierung</span>, Zeitleistennavigation und Wiedergabe hängen von den tatsächlich gemeldeten Gerätefunktionen und den Berechtigungen des angemeldeten Gerätekontos ab.'],
-        ["backup", "04", "Verschlüsselte Sicherung und Übertragung", "Sicherungen und Übertragungen enthalten vertrauliche Verbindungsdaten. Cam-Hub verschlüsselt sie; PIN und Empfänger liegen weiterhin in Ihrer Verantwortung.", [
+        ["backup", "04", "Verschlüsselte Sicherung und Kamerafreigabe", "iCloud-Sicherung und -Wiederherstellung verwenden keine PIN mehr. Beim Teilen von Kameras können Sie den Freigabecode optional mit einer sechsstelligen PIN sperren.", [
           ["Lokaler Passwortschutz", [
             "Nach dem Hinzufügen wird das Gerätepasswort im Apple-Schlüsselbund gespeichert. Name, Adresse, Ports, Kanäle und App-Einstellungen bleiben in den Gerätedaten.",
             "Cam-Hub verwendet diese Angaben nur für von Ihnen angeforderte Verbindungen, Aufnahmesuchen, Schnappschüsse, Sicherungen und Übertragungen.",
             "„Alle Daten löschen“ entfernt lokale Gerätedaten und gespeicherte Passwörter. Nie gesicherte Konfigurationen können auch nach dem Löschen der App unwiederbringlich verloren sein."
           ]],
-          ["iCloud-Sicherung mit sechsstelliger PIN", [
-            "Öffnen Sie „Einstellungen“ → „In iCloud sichern“, wählen Sie das Ziel und geben Sie die sechsstellige PIN zweimal ein.",
-            "Die Sicherung umfasst unterstützte Geräte, Zugangsdaten, Kanäle, LiveView Mix und App-Einstellungen. Cam-Hub verschlüsselt sie vor dem Speichern in Ihrer privaten iCloud mit der PIN.",
-            "Der Entwickler speichert die PIN nicht und kann sie nicht wiederherstellen. Bewahren Sie sie sicher auf und prüfen Sie unter „Aktuelle Sicherung“ Zeit und Geräteanzahl."
+          ["Verschlüsselte iCloud-Sicherung ohne PIN", [
+            "Öffnen Sie „Einstellungen“ → „In iCloud sichern“, wählen Sie iPhone/iPad oder Apple TV als Ziel und erstellen Sie die Sicherung ohne PIN.",
+            "Die Sicherung umfasst unterstützte Geräte, Zugangsdaten, Kanäle, LiveView Mix und App-Einstellungen. Cam-Hub verschlüsselt sie vor dem Speichern in Ihrer privaten iCloud.",
+            "Prüfen Sie unter „Aktuelle Sicherung“, ob die neue Zeit und Geräteanzahl angezeigt werden."
           ]],
           ["Aus iCloud wiederherstellen", [
-            "Öffnen Sie „Einstellungen“ → „Aus iCloud wiederherstellen“, wählen Sie die Sicherung und geben Sie deren PIN ein.",
+            "Öffnen Sie „Einstellungen“ → „Aus iCloud wiederherstellen“ und wählen Sie die Sicherung. Auf iPhone, iPad und Apple TV ist keine PIN-Prüfung erforderlich.",
             "Verwenden Sie möglichst dieselbe App-Version und prüfen Sie, ob das Apple Account mit der Sicherung angemeldet ist. Ältere Sicherungen müssen gegebenenfalls neu erstellt werden, bevor sie erscheinen.",
             "Die Wiederherstellung unterliegt den aktuellen Tarifgrenzen. Prüfen Sie danach Geräteadressen, Kanäle und LiveView Mix im derzeitigen Netzwerk."
           ]],
-          ["Verschlüsselte Übertragung ohne iCloud", [
-            "Erstellen Sie unter „Einstellungen“ → „Kameras exportieren“ einen verschlüsselten Code und kopieren oder teilen Sie ihn. Fügen Sie den vollständigen Code auf dem Ziel unter „Kameras importieren“ ein.",
-            "Der Import enthält Geräte und Zugangsdaten und unterliegt den Tarifgrenzen der Zielinstallation.",
-            "Wer den vollständigen Code und Cam-Hub besitzt, kann die Geräte möglicherweise hinzufügen. Veröffentlichen Sie ihn nie in Chats, Tickets oder auf Websites, sondern senden Sie ihn nur an vertrauenswürdige Empfänger mit tatsächlichem Bedarf."
+          ["Kameras mit optionaler PIN teilen", [
+            "Öffnen Sie „Einstellungen“ → „Kameras teilen“, wählen Sie die Kameras und erstellen Sie einen verschlüsselten Freigabecode. Entscheiden Sie, ob er mit einer PIN gesperrt wird.",
+            "Bei aktivierter PIN-Sperre geben Sie sechs Ziffern ein und bestätigen sie. Der Empfänger muss die PIN beim Importieren oder Wiederherstellen der geteilten Kameras bestätigen. Ohne PIN wird der vollständige Code direkt importiert.",
+            "Der Import enthält Geräte und Zugangsdaten und unterliegt den Tarifgrenzen des Ziels. Senden Sie vollständigen Code und PIN nur an vertrauenswürdige Empfänger und veröffentlichen Sie sie nie in Chats, Tickets oder auf Websites."
           ]]
         ]],
         ["preferences", "05", "Anzeige, Streaming und Datensteuerung", "Passen Sie die App an Netzwerk und Gerät an und behandeln Sie Einstellungen, lokale Daten und iCloud-Sicherung beim Zurücksetzen getrennt.", [
@@ -449,7 +449,7 @@
             "„Standardeinstellungen wiederherstellen“ setzt Darstellung, Sprache, Qualität, LiveView Mix und weitere Einstellungen zurück, behält aber hinzugefügte Geräte.",
             "„Alle Daten löschen“ entfernt lokale Geräte, Kameras und Schlüsselbund-Passwörter, ohne iCloud-Sicherungen oder Abonnements zu verändern.",
             "„iCloud-Sicherung löschen“ entfernt nur die verschlüsselte Cloud-Sicherung. Bei nicht verfügbarer iCloud wird gegebenenfalls lediglich der lokal angezeigte Sicherungsstatus gelöscht.",
-            "Prüfen Sie vor einer endgültigen Löschung die iCloud-Synchronisierung, die PIN und die Wiederherstellbarkeit der Sicherungsversion auf dem Zielgerät."
+            "Prüfen Sie vor einer endgültigen Löschung die iCloud-Synchronisierung und die Wiederherstellbarkeit der Sicherungsversion auf dem Zielgerät."
           ]]
         ]],
         ["tv-control", "06", "Apple TV und Webhook-Steuerung", "Bringen Sie die Überwachungswand auf den Fernseher und ergänzen Sie HTTP-Steuerungen für selbst verwaltete Endpunkte.", [
@@ -459,8 +459,8 @@
             "Live-Streaming, Wiedergabe, Haupt-/Nebenstream und Kanalfunktionen hängen weiterhin von gemeldeten Gerätefähigkeiten, Kontoberechtigungen, Codec und Netzwerk ab."
           ]],
           ["Einrichtung von iPhone oder iPad übertragen", [
-            "Öffnen Sie auf iPhone oder iPad „Einstellungen“ → „In iCloud sichern“, wählen Sie Apple TV als Ziel und erstellen Sie eine eigene verschlüsselte Sicherung mit sechsstelliger PIN.",
-            "Melden Sie Apple TV beim selben Apple Account an, öffnen Sie „Aus iCloud wiederherstellen“ und geben Sie die PIN der Sicherung ein.",
+            "Öffnen Sie auf iPhone oder iPad „Einstellungen“ → „In iCloud sichern“, wählen Sie Apple TV als Ziel und erstellen Sie eine eigene verschlüsselte Sicherung ohne PIN.",
+            "Melden Sie Apple TV beim selben Apple Account an, öffnen Sie „Aus iCloud wiederherstellen“, wählen Sie die Sicherung und stellen Sie sie direkt wieder her.",
             "Apple TV stellt ausschließlich die dafür vorgesehene Apple-TV-Sicherung wieder her. Prüfen Sie anschließend Adressen, Kanäle und LiveView Mix im aktuellen Fernsehnetzwerk."
           ]],
           ["Webhook-Steuerfeld erstellen", [
@@ -563,26 +563,26 @@
             "La reproducción muestra PLAYBACK y la hora del equipo; Volver a directo restablece la transmisión. Algunos equipos descargan primero el clip y lo abren después en el reproductor del sistema."
           ]]
         ], "Aviso de disponibilidad: el vídeo en directo, las capturas, el cambio de flujo principal/secundario, la búsqueda, las categorías Continuo/Eventos, la cronología y la reproducción dependen de las funciones comunicadas por la cámara o el grabador y de los permisos asignados a la cuenta."],
-        ["backup", "04", "Copias cifradas y transferencia", "Las copias y los códigos contienen datos de conexión sensibles; Cam-Hub los cifra, pero usted debe proteger el PIN y elegir bien a los destinatarios.", [
+        ["backup", "04", "Copias cifradas y uso compartido de cámaras", "Las copias y restauraciones de iCloud ya no usan PIN. Al compartir cámaras, puede bloquear opcionalmente el código con un PIN de seis cifras.", [
           ["Protección local de contraseñas", [
             "Las contraseñas se guardan en Apple Keychain; nombres, direcciones, puertos, canales y ajustes permanecen en los datos del dispositivo.",
             "Cam-Hub usa estos datos solo para conexiones, búsquedas, capturas, copias o transferencias que usted solicita.",
             "Eliminar todos los datos borra los equipos y las contraseñas locales; desinstalar la app también puede hacer irrecuperable una configuración sin copia."
           ]],
-          ["Copia en iCloud cifrada con PIN", [
-            "En Ajustes → Copia en iCloud, elija el destino e introduzca dos veces un PIN de seis cifras.",
+          ["Copia cifrada en iCloud sin PIN", [
+            "En Ajustes → Copia en iCloud, elija iPhone/iPad o Apple TV como destino y cree la copia sin configurar un PIN.",
             "Los equipos, credenciales, canales, LiveView Mix y ajustes compatibles se cifran antes de guardarse en su propio iCloud.",
-            "El desarrollador no conserva el PIN ni puede recuperarlo. Guárdelo en un lugar seguro y confirme que Copia actual muestra la hora y la cantidad de equipos correctas."
+            "Confirme que Copia actual muestra la hora y la cantidad de equipos correctas."
           ]],
           ["Restaurar desde iCloud", [
-            "En Ajustes → Restaurar desde iCloud, elija la copia e introduzca su PIN.",
+            "En Ajustes → Restaurar desde iCloud, elija la copia y continúe. iPhone, iPad y Apple TV no requieren verificación de PIN.",
             "Use preferiblemente la misma versión de la app y el Apple Account que contiene la copia; las copias antiguas pueden requerir una nueva exportación.",
             "La restauración respeta los límites del plan activo. Revise después direcciones, canales y LiveView Mix en la red actual."
           ]],
-          ["Transferencia cifrada sin iCloud", [
-            "Ajustes → Exportar cámaras genera un código cifrado que puede copiar o compartir; el destinatario lo pega completo en Importar cámaras.",
-            "El código incluye el equipo y sus credenciales, y la importación queda sujeta a los límites del plan de destino.",
-            "Quien obtenga el código completo y tenga Cam-Hub podría añadir esos equipos. No lo publique en chats, tickets o sitios web; compártalo solo con destinatarios de confianza."
+          ["Compartir cámaras con PIN opcional", [
+            "Abra Ajustes → Compartir cámaras, seleccione las cámaras y cree un código cifrado. Decida si desea bloquearlo con un PIN.",
+            "Si activa el bloqueo, introduzca y confirme seis cifras. El destinatario debe verificar el PIN al importar o restaurar las cámaras compartidas. Sin PIN, el código completo se importa directamente.",
+            "La importación incluye el equipo y sus credenciales y queda sujeta a los límites del plan de destino. Envíe el código completo y el PIN solo a destinatarios de confianza; no los publique en chats, tickets o sitios web."
           ]]
         ]],
         ["preferences", "05", "Pantalla, transmisión y datos", "Adapte la app a la red y al dispositivo, y trate por separado los ajustes, los datos locales y la copia de iCloud al restablecer.", [
@@ -608,7 +608,7 @@
             "Restaurar ajustes predeterminados reinicia apariencia, idioma, calidad, LiveView Mix y otras preferencias, pero conserva los equipos.",
             "Eliminar todos los datos borra equipos, cámaras y contraseñas de Keychain sin afectar a las copias de iCloud ni a las suscripciones.",
             "Eliminar copia de iCloud borra solo la copia cifrada; si iCloud no está disponible, puede limitarse a limpiar el estado local mostrado.",
-            "Antes de una eliminación irreversible, confirme la sincronización de iCloud, el PIN y que la versión de la copia pueda restaurarse en el destino."
+            "Antes de una eliminación irreversible, confirme la sincronización de iCloud y que la versión de la copia pueda restaurarse en el destino."
           ]]
         ]],
         ["tv-control", "06", "Apple TV y controles webhook", "Lleve el panel al televisor y añada controles HTTP para endpoints administrados por usted.", [
@@ -618,8 +618,8 @@
             "La transmisión, reproducción, selección de flujo y funciones de canal siguen dependiendo del equipo, los permisos, el códec y la red."
           ]],
           ["Transferir la configuración desde iPhone o iPad", [
-            "En iPhone o iPad, abra Ajustes → Copia en iCloud, seleccione Apple TV como destino y cree una copia cifrada específica con PIN de seis cifras.",
-            "Inicie sesión con el mismo Apple Account en Apple TV, abra Restaurar desde iCloud e introduzca el PIN.",
+            "En iPhone o iPad, abra Ajustes → Copia en iCloud, seleccione Apple TV como destino y cree una copia cifrada específica sin PIN.",
+            "Inicie sesión con el mismo Apple Account en Apple TV, abra Restaurar desde iCloud, seleccione la copia y restáurela directamente.",
             "Apple TV solo restaura su copia específica; revise después las direcciones, los canales y LiveView Mix en la red del televisor."
           ]],
           ["Crear un panel de control webhook", [
@@ -722,26 +722,26 @@
             "La lecture affiche PLAYBACK et l’heure de l’équipement ; Retour au direct rétablit le flux. Certains équipements téléchargent d’abord la séquence puis l’ouvrent dans le lecteur système."
           ]]
         ], "Avis de disponibilité : le direct, les instantanés, le changement de flux principal/secondaire, la recherche, les catégories Continu/Événements, la chronologie et la lecture dépendent des capacités déclarées par la caméra ou l’enregistreur et des autorisations accordées au compte."],
-        ["backup", "04", "Sauvegarde chiffrée et transfert", "Sauvegardes et codes contiennent des données de connexion sensibles : Cam-Hub les chiffre, mais vous devez protéger le PIN et choisir les destinataires.", [
+        ["backup", "04", "Sauvegarde chiffrée et partage de caméras", "La sauvegarde et la restauration iCloud n’utilisent plus de PIN. Lors du partage de caméras, vous pouvez verrouiller le code avec un PIN facultatif à six chiffres.", [
           ["Protection locale des mots de passe", [
             "Les mots de passe sont conservés dans Apple Keychain ; noms, adresses, ports, canaux et réglages restent dans les données de l’appareil.",
             "Cam-Hub n’utilise ces informations que pour les connexions, recherches, instantanés, sauvegardes ou transferts que vous demandez.",
             "Supprimer toutes les données efface équipements et mots de passe locaux ; désinstaller l’app peut aussi rendre irrécupérable une configuration non sauvegardée."
           ]],
-          ["Sauvegarde iCloud chiffrée par PIN", [
-            "Dans Réglages → Sauvegarder sur iCloud, choisissez la destination et saisissez deux fois un PIN à six chiffres.",
+          ["Sauvegarde iCloud chiffrée sans PIN", [
+            "Dans Réglages → Sauvegarder sur iCloud, choisissez iPhone/iPad ou Apple TV comme destination et créez la sauvegarde sans définir de PIN.",
             "Équipements, identifiants, canaux, LiveView Mix et réglages compatibles sont chiffrés avant d’être stockés dans votre propre iCloud.",
-            "Le développeur ne conserve pas le PIN et ne peut pas le récupérer. Gardez-le en lieu sûr et vérifiez l’heure et le nombre d’équipements dans Sauvegarde actuelle."
+            "Vérifiez l’heure et le nombre d’équipements dans Sauvegarde actuelle."
           ]],
           ["Restaurer depuis iCloud", [
-            "Dans Réglages → Restaurer depuis iCloud, choisissez la sauvegarde et saisissez son PIN.",
+            "Dans Réglages → Restaurer depuis iCloud, choisissez la sauvegarde et continuez. Aucun PIN n’est demandé sur iPhone, iPad ou Apple TV.",
             "Utilisez de préférence la même version de l’app et l’Apple Account qui contient la sauvegarde ; une ancienne sauvegarde peut devoir être recréée.",
             "La restauration respecte les limites du forfait actif. Vérifiez ensuite les adresses, canaux et LiveView Mix sur le réseau actuel."
           ]],
-          ["Transfert chiffré sans iCloud", [
-            "Réglages → Exporter les caméras produit un code chiffré à copier ou partager ; le destinataire le colle intégralement dans Importer les caméras.",
-            "Le code contient l’équipement et ses identifiants, et l’importation reste soumise aux limites du forfait de destination.",
-            "Toute personne disposant du code complet et de Cam-Hub pourrait ajouter ces équipements. Ne le publiez jamais dans un chat, un ticket ou un site web ; partagez-le uniquement avec une personne de confiance."
+          ["Partager les caméras avec un PIN facultatif", [
+            "Ouvrez Réglages → Partager les caméras, sélectionnez les caméras et créez un code chiffré. Choisissez de le verrouiller ou non avec un PIN.",
+            "Si le verrouillage est activé, saisissez et confirmez six chiffres. Le destinataire doit vérifier le PIN pour importer ou restaurer les caméras partagées. Sans PIN, le code complet s’importe directement.",
+            "L’importation contient l’équipement et ses identifiants et reste soumise aux limites du forfait de destination. Envoyez le code complet et le PIN uniquement à une personne de confiance ; ne les publiez jamais dans un chat, un ticket ou un site web."
           ]]
         ]],
         ["preferences", "05", "Affichage, streaming et données", "Adaptez l’app au réseau et à l’appareil, et gérez séparément les réglages, les données locales et la sauvegarde iCloud lors d’une réinitialisation.", [
@@ -767,7 +767,7 @@
             "Rétablir les réglages par défaut réinitialise l’apparence, la langue, la qualité, LiveView Mix et les préférences, mais conserve les équipements.",
             "Supprimer toutes les données efface équipements, caméras et mots de passe Keychain sans toucher aux sauvegardes iCloud ni aux abonnements.",
             "Supprimer la sauvegarde iCloud efface uniquement la sauvegarde chiffrée ; si iCloud est indisponible, seul l’état local affiché peut être nettoyé.",
-            "Avant toute suppression irréversible, vérifiez la synchronisation iCloud, le PIN et la restauration de cette version sur l’appareil de destination."
+            "Avant toute suppression irréversible, vérifiez la synchronisation iCloud et la restauration de cette version sur l’appareil de destination."
           ]]
         ]],
         ["tv-control", "06", "Apple TV et commandes webhook", "Affichez le mur sur le téléviseur et ajoutez des commandes HTTP vers des endpoints que vous administrez.", [
@@ -777,8 +777,8 @@
             "Streaming, lecture, choix du flux et fonctions de canal dépendent toujours de l’équipement, des autorisations, du codec et du réseau."
           ]],
           ["Transférer les réglages depuis un iPhone ou iPad", [
-            "Sur iPhone ou iPad, ouvrez Réglages → Sauvegarder sur iCloud, choisissez Apple TV comme destination et créez une sauvegarde chiffrée dédiée avec un PIN à six chiffres.",
-            "Connectez le même Apple Account sur Apple TV, ouvrez Restaurer depuis iCloud et saisissez le PIN.",
+            "Sur iPhone ou iPad, ouvrez Réglages → Sauvegarder sur iCloud, choisissez Apple TV comme destination et créez une sauvegarde chiffrée dédiée sans PIN.",
+            "Connectez le même Apple Account sur Apple TV, ouvrez Restaurer depuis iCloud, sélectionnez la sauvegarde et restaurez-la directement.",
             "Apple TV ne restaure que sa sauvegarde dédiée ; vérifiez ensuite adresses, canaux et LiveView Mix sur le réseau du téléviseur."
           ]],
           ["Créer un panneau de commandes webhook", [
@@ -823,22 +823,22 @@
           ["اللقطات والمشاركة", ["اضغط «لقطة» في شاشة القناة لطلب الصورة الحالية من الجهاز.", "بعد استلامها تظهر المعاينة ويمكن فتح المشاركة الخاصة بالنظام.", "قد تتضمن اللقطة أشخاصاً أو عناوين أو بيانات حساسة؛ راجع المحتوى والمستلم والقوانين المحلية قبل الإرسال."]],
           ["التاريخ والخط الزمني وأنواع التسجيل", ["اختر تاريخاً أسفل القناة لطلب مقاطع ذلك اليوم من الجهاز.", "بدّل بين «مستمر» و«أحداث»، واسحب الخط الزمني أو كبّره إلى الوقت المطلوب، أو اضغط مقطعاً مباشرة.", "تعرض شاشة التشغيل PLAYBACK ووقت الجهاز؛ ويعيد «الرجوع إلى المباشر» البث. تنزّل بعض الأجهزة المقطع أولاً ثم تفتحه في مشغل النظام."]]
         ], "تنبيه التوفر: يعتمد البث واللقطات وتبديل البث الرئيسي/الفرعي والبحث وتصنيف «مستمر/أحداث» والخط الزمني والتشغيل على القدرات التي ترسلها الكاميرا أو المسجل وعلى الصلاحيات الممنوحة للحساب."],
-        ["backup", "04", "النسخ المشفرة ونقل الإعدادات", "تحمل النسخ والرموز بيانات اتصال حساسة؛ يشفرها Cam-Hub، وعليك حماية رمز PIN واختيار المستلم بعناية.", [
+        ["backup", "04", "النسخ المشفرة ومشاركة الكاميرات", "لم يعد النسخ إلى iCloud والاستعادة منه يستخدمان رمز PIN. وعند مشاركة الكاميرات يمكنك اختيار قفل رمز المشاركة برمز PIN اختياري من ستة أرقام.", [
           ["حماية كلمات المرور محلياً", ["تُحفظ كلمات المرور في Apple Keychain، بينما تبقى الأسماء والعناوين والمنافذ والقنوات والإعدادات في بيانات الجهاز.", "يستخدم Cam-Hub المعلومات فقط للاتصال أو البحث أو اللقطات أو النسخ أو النقل الذي تطلبه.", "يمسح «حذف كل البيانات» الأجهزة وكلمات المرور المحلية؛ وقد تجعل إزالة التطبيق إعداداً غير منسوخ غير قابل للاسترداد."]],
-          ["نسخة iCloud مشفرة برمز PIN", ["اختر الوجهة من «الإعدادات» ← «النسخ إلى iCloud»، ثم أدخل رمز PIN من ستة أرقام مرتين.", "تُشفر الأجهزة وبيانات الدخول والقنوات وLiveView Mix والإعدادات المدعومة قبل حفظها في iCloud الخاص بك.", "لا يحتفظ المطور برمز PIN ولا يستطيع استعادته. احفظه بأمان وتحقق من وقت النسخة وعدد الأجهزة المعروضين."]],
-          ["الاستعادة من iCloud", ["اختر النسخة من «الإعدادات» ← «الاستعادة من iCloud» وأدخل رمز PIN.", "يُفضّل استخدام إصدار التطبيق نفسه وApple Account الذي يحوي النسخة؛ وقد يلزم إنشاء نسخة أحدث من البيانات القديمة.", "تلتزم الاستعادة بحدود الخطة الحالية. راجع بعدها العناوين والقنوات وLiveView Mix على الشبكة الجديدة."]],
-          ["نقل مشفر دون iCloud", ["ينشئ «تصدير الكاميرات» رمزاً مشفراً للنسخ أو المشاركة، ويلصقه المستلم كاملاً في «استيراد الكاميرات».", "يتضمن الرمز الجهاز وبيانات دخوله، ويخضع الاستيراد لحدود خطة جهاز الاستقبال.", "قد يضيف أي شخص يملك الرمز الكامل وCam-Hub تلك الأجهزة. لا تنشره في محادثة أو تذكرة أو موقع؛ أرسله فقط إلى شخص موثوق يحتاجه."]]
+          ["نسخة iCloud مشفرة بلا PIN", ["اختر iPhone/iPad أو Apple TV وجهةً من «الإعدادات» ← «النسخ إلى iCloud»، ثم أنشئ النسخة من دون إعداد رمز PIN.", "تُشفر الأجهزة وبيانات الدخول والقنوات وLiveView Mix والإعدادات المدعومة قبل حفظها في iCloud الخاص بك.", "تحقق من وقت النسخة وعدد الأجهزة المعروضين في «النسخة الحالية»."]],
+          ["الاستعادة من iCloud", ["اختر النسخة من «الإعدادات» ← «الاستعادة من iCloud» وتابع مباشرة؛ لا يطلب iPhone أو iPad أو Apple TV التحقق من PIN.", "يُفضّل استخدام إصدار التطبيق نفسه وApple Account الذي يحوي النسخة؛ وقد يلزم إنشاء نسخة أحدث من البيانات القديمة.", "تلتزم الاستعادة بحدود الخطة الحالية. راجع بعدها العناوين والقنوات وLiveView Mix على الشبكة الجديدة."]],
+          ["مشاركة الكاميرات برمز PIN اختياري", ["افتح «الإعدادات» ← «مشاركة الكاميرات»، وحدد الكاميرات وأنشئ رمز مشاركة مشفراً. اختر ما إذا كنت تريد قفله برمز PIN.", "عند تفعيل القفل، أدخل ستة أرقام وأكدها. يجب على المستلم التحقق من PIN عند استيراد الكاميرات المشتركة أو استعادتها. ومن دون PIN، يُستورد الرمز الكامل مباشرة.", "يتضمن الاستيراد الأجهزة وبيانات الدخول ويخضع لحدود خطة الجهاز المستلم. أرسل الرمز الكامل وPIN إلى شخص موثوق فقط، ولا تنشرهما في محادثة أو تذكرة أو موقع."]]
         ]],
         ["preferences", "05", "العرض والبث وإدارة البيانات", "كيّف التطبيق مع الشبكة والجهاز، وتعامل مع الإعدادات والبيانات المحلية ونسخة iCloud بصورة منفصلة عند إعادة الضبط.", [
           ["إخفاء الكاميرات غير المتصلة", ["يزيلها «الإعدادات» ← «إخفاء الكاميرات غير المتصلة» من العرض المباشر والجدران أثناء انقطاع الإشارة.", "تبقى باهتة في قائمة القنوات كي لا تبدو محذوفة، ويمكنها العودة عند رجوع الإشارة."]],
           ["إبقاء البث متصلاً خارج الشاشة", ["يظهر الخيار ضمن «البث» حين يكتشف Cam-Hub جهازاً متوافقاً يحتاج وقتاً أطول لإعادة الاتصال.", "تبقى القنوات خارج الشاشة متصلة فتعود أسرع، مقابل استخدام مستمر للشبكة والطاقة والموارد؛ عطّله إن لم تحتج عودة فورية."]],
           ["اختيار شاشة البدء", ["افتح «الإعدادات» ← LiveView Mix ← «فتح عند التشغيل».", "يعيد «آخر عرض» الاختيار السابق، ويفتح LiveView Mix الجدار المختلط، ويمكن أيضاً اختيار جهاز محدد.", "إذا حُذف الجهاز أو لم يُضبط LiveView Mix ينتقل التطبيق إلى شاشة متاحة."]],
           ["الخطط والكاميرات الظاهرة", ["تعرض «الإعدادات» ← «الخطط» خطط الكاميرات والمسجلات النشطة وحدودها.", "عند عدم فتح كل القنوات، يخصص «اختيار الكاميرات المعروضة» المقاعد المتاحة؛ وتنتفي الحاجة إليه بعد الفتح الكامل.", "تتبع المشتريات واستعادتها الحالة التي تقدمها Apple. لا تغيّر الخطة بروتوكولات الجهاز أو صلاحياته أو قدرته على التشغيل."]],
-          ["إعادة الضبط والحذف بصورة منفصلة", ["يعيد «الإعدادات الافتراضية» المظهر واللغة والجودة وLiveView Mix والتفضيلات، مع إبقاء الأجهزة.", "يمسح «حذف كل البيانات» الأجهزة والكاميرات وكلمات Keychain دون التأثير في نسخ iCloud أو الاشتراكات.", "يحذف «نسخة iCloud» النسخة المشفرة فقط؛ وإذا تعذر iCloud فقد يمسح حالة النسخة المحلية المعروضة فحسب.", "قبل الحذف النهائي، تحقق من مزامنة iCloud وصحة PIN وإمكان استعادة إصدار النسخة على الجهاز المستهدف."]]
+          ["إعادة الضبط والحذف بصورة منفصلة", ["يعيد «الإعدادات الافتراضية» المظهر واللغة والجودة وLiveView Mix والتفضيلات، مع إبقاء الأجهزة.", "يمسح «حذف كل البيانات» الأجهزة والكاميرات وكلمات Keychain دون التأثير في نسخ iCloud أو الاشتراكات.", "يحذف «نسخة iCloud» النسخة المشفرة فقط؛ وإذا تعذر iCloud فقد يمسح حالة النسخة المحلية المعروضة فحسب.", "قبل الحذف النهائي، تحقق من مزامنة iCloud وإمكان استعادة إصدار النسخة على الجهاز المستهدف."]]
         ]],
         ["tv-control", "06", "Apple TV وتحكم Webhook", "اعرض جدار المراقبة على التلفزيون وأضف أزرار HTTP لنقاط نهاية تديرها بنفسك.", [
           ["المراقبة على Apple TV", ["يتضمن تطبيق tvOS ‏LiveView Mix وجدراناً لكل جهاز وعرض كاميرا بملء الشاشة وخطاً زمنياً للتسجيلات، ومصمم للتنقل بالتركيز عبر Siri Remote.", "تناسب التخطيطات الكثيفة الشاشات الكبيرة، ويمكن اختيار الكاميرا أو زر Webhook مباشرة من الجدار.", "يبقى البث والتشغيل واختيار المسار وميزات القناة معتمداً على الجهاز والصلاحيات والترميز والشبكة."]],
-          ["نقل الإعداد من iPhone أو iPad", ["على iPhone أو iPad، افتح النسخ إلى iCloud واختر Apple TV وجهةً وأنشئ نسخة مشفرة مخصصة برمز PIN من ستة أرقام.", "سجّل الدخول إلى Apple Account نفسه على Apple TV، وافتح الاستعادة من iCloud وأدخل PIN.", "يستعيد Apple TV نسخته المخصصة فقط؛ راجع بعدها العناوين والقنوات وLiveView Mix ضمن شبكة التلفزيون."]],
+          ["نقل الإعداد من iPhone أو iPad", ["على iPhone أو iPad، افتح النسخ إلى iCloud واختر Apple TV وجهةً وأنشئ نسخة مشفرة مخصصة من دون PIN.", "سجّل الدخول إلى Apple Account نفسه على Apple TV، وافتح الاستعادة من iCloud واختر النسخة لاستعادتها مباشرة.", "يستعيد Apple TV نسخته المخصصة فقط؛ راجع بعدها العناوين والقنوات وLiveView Mix ضمن شبكة التلفزيون."]],
           ["إنشاء لوحة تحكم Webhook", ["افتح «ترتيب الكاميرات» في LiveView Mix، وأضف خانة فارغة وعيّن نوعها «تحكم».", "اختر بوابة أو مرأباً أو ضوءاً أو قفلاً أو ستارة أو مشهداً أو إنذاراً أو مروحة أو مقبساً أو تكييفاً أو قالباً مخصصاً؛ ولكل زر رمز وتسمية ولون وتأكيد.", "يمكن لكل زر إرسال GET أو POST أو PUT أو DELETE إلى نقطة HTTP أو HTTPS تحددها، مع رؤوس وContent-Type ونص JSON اختياري."]],
           ["تشغيل التحكم من جدار المراقبة", ["اضغط الزر على iPhone أو iPad؛ وعلى Apple TV انقل التركيز بالريموت واضغط. تعرض الخانة الإرسال أو النجاح أو الفشل.", "اطلب التأكيد للفتح وإلغاء القفل والإنذار وسائر الإجراءات صعبة التراجع، واستخدم نقاطاً محدودة الصلاحيات.", "تنتقل إعدادات التحكم المدعومة مع النسخ المشفرة. تبقى نقاط النهاية وبيانات الدخول والوصول الشبكي وسلامة المعدات الفعلية مسؤوليتك."]]
         ], "تنبيه أمني: تستدعي أزرار Webhook نقاط الشبكة التي تحددها. لا يتحقق Cam-Hub من أمان النقاط أو أنظمة الدخول أو الأقفال أو الإنذارات أو المعدات الفعلية. قيّد الصلاحيات واحمِ بيانات الدخول واطلب التأكيد للإجراءات صعبة التراجع."]

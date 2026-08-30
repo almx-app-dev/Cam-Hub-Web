@@ -37,17 +37,17 @@ You can use Apple’s system photo picker to select a specific photo, or grant C
 
 Images remain on your device and are not received or accessed by the Cam-Hub developer. Only if you choose to create an encrypted Cam-Hub iCloud backup may the images be stored with that backup in your own iCloud for device restoration. You can remove an image in LiveView Mix and change Camera or Photos permissions in system Settings.
 
-Camera transfer codes
+Camera sharing codes
 
-You can export a transfer code containing the selected cameras’ or recorders’ addresses, usernames, channel information, and passwords. The encryption key is derived from a fixed string embedded in compatible versions of Cam-Hub and a fresh random salt for each code, using PBKDF2-HMAC-SHA256 with 600,000 iterations. The code is then encrypted and authenticated with AES-256-GCM. The embedded string is not a password you choose or a key unique to each recipient.
+You can share an encrypted code containing the selected cameras’ or recorders’ addresses, usernames, channel information, and passwords. When sharing, you can choose whether to lock the code with a six-digit PIN. The developer does not keep the PIN and cannot recover it.
 
-Anyone who obtains the complete code and uses a compatible version of Cam-Hub can decrypt and import the credentials. Transfer codes do not expire automatically, and deleting equipment or the app from the source device does not revoke copies already shared.
+A PIN-locked code requires the correct PIN when the recipient imports or restores the shared cameras. Without a PIN, a compatible version of Cam-Hub can import the complete code directly. Codes do not expire automatically, and deleting equipment or the app from the source device does not revoke copies already shared.
 
 Optional iCloud backup
 
-If you choose iCloud Backup, the app encrypts supported camera and recorder configuration, credentials, channels, and app settings with a six-digit PIN before placing the backup in your private iCloud key-value storage.
+If you choose iCloud Backup, the app encrypts supported camera and recorder configuration, credentials, channels, and app settings before placing the backup in your private iCloud key-value storage. Backup and restore on iPhone, iPad, and Apple TV do not use a PIN.
 
-Backup time, device count, and site name are stored separately so the app can display backup status. Keep your PIN safe; we cannot recover or decrypt it for you.
+Backup time, device count, and site name are stored separately so the app can display backup status. To restore, select an available backup and continue directly.
 
 Purchases and subscriptions
 

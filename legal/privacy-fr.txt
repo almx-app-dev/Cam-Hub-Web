@@ -37,22 +37,26 @@ Vous pouvez utiliser le sélecteur de photos système d’Apple pour choisir une
 
 Les images restent sur votre appareil ; le développeur de Cam-Hub ne les reçoit pas et n’y accède pas. Elles ne peuvent être enregistrées dans votre propre iCloud, avec une sauvegarde chiffrée Cam-Hub destinée à restaurer vos appareils, que si vous choisissez de créer cette sauvegarde. Vous pouvez retirer une image dans LiveView Mix et modifier les autorisations Caméra ou Photos dans les Réglages du système.
 
-Codes de transfert des caméras
+Codes de partage des caméras
 
-Vous pouvez exporter un code contenant les adresses, noms d’utilisateur, informations de canaux et mots de passe des caméras ou enregistreurs sélectionnés. La clé de chiffrement est dérivée par PBKDF2-HMAC-SHA256 avec 600 000 itérations, à partir d’une chaîne fixe intégrée aux versions compatibles de Cam-Hub et d’un sel aléatoire nouvellement généré pour chaque code. Le code est ensuite chiffré et authentifié avec AES-256-GCM. La chaîne intégrée n’est ni un mot de passe choisi par vous ni une clé propre à chaque destinataire.
+Vous pouvez partager un code chiffré contenant les adresses, noms d’utilisateur, informations de canaux et mots de passe des caméras ou enregistreurs sélectionnés. Lors du partage, vous choisissez de le verrouiller ou non avec un PIN à six chiffres. Le développeur ne conserve pas ce PIN et ne peut pas le récupérer.
 
-Toute personne disposant du code complet et d’une version compatible de Cam-Hub peut déchiffrer et importer les identifiants. Les codes n’expirent pas automatiquement ; supprimer l’équipement ou l’App de l’appareil source ne révoque pas les copies déjà partagées.
+Un code verrouillé exige le bon PIN lors de l’importation ou de la restauration des caméras partagées. Sans PIN, une version compatible de Cam-Hub peut importer directement le code complet. Les codes n’expirent pas automatiquement ; supprimer l’équipement ou l’App de l’appareil source ne révoque pas les copies déjà partagées.
 
 Sauvegarde iCloud facultative
 
-Si vous l’activez, l’App chiffre les configurations et identifiants pris en charge avec un PIN à six chiffres et les place dans votre iCloud privé. Nous ne pouvons ni récupérer le PIN ni déchiffrer la sauvegarde.
+L’App chiffre les configurations et identifiants pris en charge et les place dans votre iCloud privé. La sauvegarde et la restauration sur iPhone, iPad et Apple TV n’utilisent aucun PIN ; pour restaurer, sélectionnez simplement une sauvegarde disponible.
 
-Achats, conservation, suppression et choix
+Achats et abonnements
 
-Apple traite les achats et abonnements ; nous ne recevons pas les données de paiement complètes.
+Les achats et les abonnements sont traités par Apple. Nous ne recevons pas vos coordonnées bancaires complètes. L’app lit l’état d’achat transmis par Apple afin de débloquer les limites et les fonctionnalités correspondantes.
 
-Les réglages locaux restent jusqu’à la suppression du contenu concerné ou la désinstallation. Dans l’App, vous pouvez supprimer les équipements, images et commandes LiveView Mix ainsi que la sauvegarde iCloud ; vous pouvez retirer les autorisations dans les Réglages de l’appareil Apple. Les données iCloud se gèrent via votre Apple Account. Les e-mails d’assistance sont conservés uniquement pour traiter la demande et garder les justificatifs nécessaires. Pour exercer vos droits applicables, contactez l’adresse ci-dessus.
+Partage, conservation, suppression et choix
 
-Modifications
+Nous ne vendons aucune donnée personnelle. Les réglages locaux restent sur votre appareil jusqu’à ce que vous supprimiez le contenu concerné ou désinstalliez l’app. Dans l’app, vous pouvez supprimer les équipements, les images LiveView Mix et les réglages de commande, supprimer séparément une sauvegarde iCloud et retirer les autorisations système dans les Réglages de votre appareil Apple.
 
-Nous pouvons mettre à jour cette politique en cas d’évolution des fonctions, de la loi ou des exigences de la boutique et publierons la date révisée.
+Les données iCloud facultatives sont gérées via votre compte Apple et les services iCloud. Les e-mails que vous adressez volontairement à l’assistance ne sont conservés que le temps nécessaire pour y répondre et conserver les justificatifs requis. Pour exercer vos droits, écrivez à l’adresse indiquée ci-dessus.
+
+Enfants et modifications de la politique
+
+Cam-Hub ne s’adresse pas aux enfants et ne collecte pas sciemment de données personnelles les concernant. Nous pouvons mettre à jour cette politique lorsque les fonctionnalités, la loi ou les exigences de la boutique évoluent. La date de révision sera publiée sur cette page.

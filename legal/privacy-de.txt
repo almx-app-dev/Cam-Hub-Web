@@ -37,22 +37,26 @@ Sie können mit Apples System-Fotoauswahl ein bestimmtes Foto wählen oder den K
 
 Bilder verbleiben auf Ihrem Gerät; der Cam-Hub-Entwickler erhält sie nicht und kann nicht darauf zugreifen. Nur wenn Sie selbst ein verschlüsseltes Cam-Hub-iCloud-Backup erstellen, können die Bilder zur Gerätewiederherstellung mit diesem Backup in Ihrer eigenen iCloud gespeichert werden. Sie können Bilder in LiveView Mix entfernen und Kamera- oder Fotoberechtigungen in den Systemeinstellungen ändern.
 
-Kamera-Übertragungscodes
+Codes zum Teilen von Kameras
 
-Sie können einen Übertragungscode exportieren, der Adressen, Benutzernamen, Kanalinformationen und Passwörter ausgewählter Kameras oder Rekorder enthält. Der Verschlüsselungsschlüssel wird mittels PBKDF2-HMAC-SHA256 mit 600.000 Iterationen aus einer in kompatiblen Cam-Hub-Versionen fest eingebetteten Zeichenfolge und einem für jeden Code neu erzeugten zufälligen Salt abgeleitet. Anschließend wird der Code mit AES-256-GCM authentifiziert verschlüsselt. Die eingebettete Zeichenfolge ist weder ein von Ihnen gewähltes Passwort noch ein individueller Schlüssel je Empfänger.
+Sie können einen verschlüsselten Code mit Adressen, Benutzernamen, Kanalinformationen und Passwörtern ausgewählter Kameras oder Rekorder teilen. Dabei wählen Sie, ob der Code mit einer sechsstelligen PIN gesperrt wird. Der Entwickler speichert die PIN nicht und kann sie nicht wiederherstellen.
 
-Jede Person mit dem vollständigen Code und einer kompatiblen Cam-Hub-Version kann die Zugangsdaten entschlüsseln und importieren. Übertragungscodes laufen nicht automatisch ab; das Löschen eines Geräts oder der App auf dem Quellgerät widerruft bereits geteilte Kopien nicht.
+Ein PIN-gesperrter Code erfordert beim Importieren oder Wiederherstellen der geteilten Kameras die richtige PIN. Ohne PIN lässt sich der vollständige Code direkt mit einer kompatiblen Cam-Hub-Version importieren. Codes laufen nicht automatisch ab; das Löschen eines Geräts oder der App auf dem Quellgerät widerruft bereits geteilte Kopien nicht.
 
 Optionales iCloud-Backup
 
-Wenn Sie diese Funktion wählen, verschlüsselt die App unterstützte Konfigurationen und Zugangsdaten mit einer sechsstelligen PIN und legt sie in Ihrer privaten iCloud ab. Wir können die PIN nicht wiederherstellen und das Backup nicht entschlüsseln.
+Die App verschlüsselt unterstützte Konfigurationen und Zugangsdaten und legt sie in Ihrer privaten iCloud ab. Sicherung und Wiederherstellung auf iPhone, iPad und Apple TV verwenden keine PIN; wählen Sie zur Wiederherstellung einfach ein verfügbares Backup aus.
 
-Käufe, Aufbewahrung, Löschung und Wahlmöglichkeiten
+Käufe und Abonnements
 
-Käufe und Abonnements verarbeitet Apple; vollständige Zahlungsdaten erhalten wir nicht.
+Käufe und Abonnements werden von Apple abgewickelt. Vollständige Karten- oder Bankdaten erhalten wir nicht. Die App liest den von Apple bereitgestellten Kaufstatus aus, um die entsprechenden Limits und Funktionen freizuschalten.
 
-Lokale Einstellungen bleiben gespeichert, bis Sie die betreffenden Inhalte löschen oder die App deinstallieren. In der App können Sie Geräte, LiveView-Mix-Bilder und Steuerungseinstellungen sowie das iCloud-Backup löschen; Systemberechtigungen können Sie in den Einstellungen Ihres Apple-Geräts widerrufen. iCloud-Daten verwalten Sie über Ihren Apple Account. Support-E-Mails bewahren wir nur zur Bearbeitung und für erforderliche Nachweise auf. Für anwendbare Datenschutzrechte wenden Sie sich an die oben genannte Adresse.
+Weitergabe, Aufbewahrung, Löschung und Wahlmöglichkeiten
 
-Änderungen
+Wir verkaufen keine personenbezogenen Daten. Lokale Einstellungen bleiben auf Ihrem Gerät, bis Sie die betreffenden Inhalte löschen oder die App entfernen. In der App können Sie Geräte, LiveView-Mix-Bilder und Steuerungseinstellungen löschen, ein iCloud-Backup separat löschen und Systemberechtigungen in den Einstellungen Ihres Apple-Geräts widerrufen.
 
-Wir können diese Erklärung bei Änderungen von Funktionen, Recht oder Store-Anforderungen aktualisieren und das Änderungsdatum veröffentlichen.
+Optionale iCloud-Daten verwalten Sie über Ihren Apple Account und die iCloud-Dienste. Freiwillig an den Support gesendete E-Mails bewahren wir nur so lange auf, wie es zur Beantwortung und für erforderliche Support-Nachweise nötig ist. Zur Wahrnehmung Ihrer Datenschutzrechte wenden Sie sich an die oben genannte Adresse.
+
+Kinder und Änderungen dieser Erklärung
+
+Cam-Hub richtet sich nicht an Kinder und erhebt nicht wissentlich personenbezogene Daten von Kindern. Wir können diese Erklärung aktualisieren, wenn sich Funktionen, Gesetze oder Store-Anforderungen ändern. Das Datum der Änderung wird auf dieser Seite veröffentlicht.
