@@ -1,0 +1,102 @@
+PRIVACY POLICY
+Privacy policy
+
+Cam Hub is designed around device-side processing and user control. It does not require a service account or include third-party advertising tracking.
+
+Effective date: October 10, 2026
+App: Cam Hub
+Contact: app-dev@almx.cc
+
+Overview
+
+Cam Hub does not require you to create a Cam Hub service account and does not include third-party advertising or advertising tracking. The app is designed to connect to cameras and recorders that you configure.
+
+Equipment information and credentials
+
+Camera and recorder names, addresses, ports, usernames, channel information, and app settings are stored on your device. Passwords are stored in Apple Keychain. Cam Hub uses this information only to perform the connections and actions you request.
+
+Camera connections and media
+
+When you view live or recorded video, the app connects to the equipment address you provided. Your equipment, network provider, VPN provider, DNS provider, or any remote endpoint you choose may process connection information under its own policies. Cam Hub does not use camera video for advertising or behavioral profiling.
+
+Webhook control panels and third-party endpoints
+
+You can create LiveView Mix control buttons by configuring an HTTP or HTTPS method, endpoint URL, custom headers, and request body. These settings may contain Authorization tokens or other sensitive data. They are stored in the LiveView Mix configuration on your device and may be included in an encrypted iCloud backup that you choose to create.
+
+Only when you tap a button does the app send the request directly from your device to the endpoint you specified, such as Home Assistant, Node-RED, or another third-party service. That endpoint and network providers may process your source IP address, headers, and request body under their own policies. The Cam Hub developer does not choose, control, or receive data sent to those endpoints. HTTP is not encrypted in transit; use HTTPS for sensitive data and review the recipient’s privacy and security practices.
+
+Local network access and scanning
+
+Cam Hub requests Local Network permission to connect directly to cameras and recorders. When you start a scan in the Tools tab, the app probes the subnet you select and common camera service ports, and may read responding equipment addresses, open ports, and HTTP Server names to help identify equipment.
+
+A scan starts only when you request it. Results are processed on your device and are not sent to the Cam Hub developer.
+
+Device report (experimental)
+
+If adding a camera or recorder fails, Cam Hub offers an optional, experimental device report to help the developer understand why. It is offered only after an attempt to add equipment has failed. It starts only when you tap “Send details to the developer” and have accepted the notice shown before first use, and it runs only while its screen is open. You can stop it at any time.
+
+While it runs, your Apple device sends read-only requests directly to the equipment address you entered: to the ports you entered and, for equipment on your local network, to common camera ports. The requests check which ports answer, read the equipment’s model, firmware and supported protocols (such as ISAPI, ONVIF and RTSP), and briefly test whether a video stream delivers data. They change nothing on the equipment, and none of them goes to the developer or to any other server.
+
+The requests sign in with the username and password you entered, as adding the equipment does. If the failed attempt was itself a rejected sign-in, the report sends no sign-in at all. Failed sign-ins are counted, and may be logged, by the equipment.
+
+The report contains: the app version, iOS version, Apple device model and language settings; the connection mode you chose and the error the app showed; the equipment address with its last number hidden (an address on the internet is left out); the ports you entered and the ports that answered; brand, model, firmware and supported protocols as the equipment reports them; status codes and short excerpts of the equipment’s answers; how your Apple device is connected (for example Wi-Fi, cellular or VPN); and counts and sizes from the test video stream, never pictures.
+
+Before anything is shown or saved, an automatic filter replaces passwords, usernames, tokens, cookies, serial numbers, MAC addresses, public IP addresses, host names, email addresses, equipment and channel names, Wi-Fi network names, phone numbers and long keys or identifiers with visible placeholders. Web page text is not kept. The filter is automatic and not perfect, so please read the report before you send it.
+
+Nothing is sent to the developer automatically. The report is first shown on screen, where you can switch sections off or close it without sending anything. To send it, you choose “Email to developer”: the report opens in the Mail compose window, addressed to the support address, in the message and as a text file attachment, and nothing is sent until you press Send there; you can cancel instead. If Mail is not set up, the report is copied to the clipboard and a pre-addressed message opens in your mail app. You can also copy the report or share it with the iOS share sheet.
+
+A copied report is kept off Universal Clipboard and expires from the clipboard after 120 seconds.
+
+Up to five of the most recent reports are kept on your device so that you can send one later. They are excluded from device backups and from the Cam Hub iCloud backup. You can delete them at any time with “Delete saved reports” on the device report screen; the oldest is also deleted when a sixth is saved, and all are removed when you delete the app.
+
+If you email a report, the developer receives that email and your email address. The report is used to look into the problem you reported and is retained only as needed to respond and maintain necessary support records.
+
+The device report is experimental and may change or be removed at any time. Sending a report does not guarantee support for your equipment, a reply or a fix.
+
+Photos and camera
+
+You can use Apple’s system photo picker to select a specific photo, or grant Camera access to capture a new photo, for a LiveView Mix blank slot. The app receives only the image you select or capture, not your entire photo library. It downsizes and compresses the image and stores it in the LiveView Mix configuration on your device.
+
+Images remain on your device and are not received or accessed by the Cam Hub developer. Only if you choose to create an encrypted Cam Hub iCloud backup may the images be stored with that backup in your own iCloud for device restoration. You can remove an image in LiveView Mix and change Camera or Photos permissions in system Settings.
+
+Location
+
+Cam Hub asks for location permission only “While Using the App”. Your location and compass heading are read only while a screen that needs them is open, such as the Speedometer in the Tools tab, which shows your speed and compass heading. The app does not track your location in the background.
+
+Your location and compass heading are processed on your device to show your speed and direction. They are not stored, not included in backups, and not sent to the Cam Hub developer or any other party. If the Speedometer announces your speed aloud, the announcement is produced by the speech voice built into iOS on your device, and you can turn it off on that screen. You can refuse or withdraw location permission at any time in Settings on your Apple device; the rest of the app keeps working without it.
+
+Camera sharing codes
+
+You can share a code containing the selected cameras’ or recorders’ addresses, usernames, channel information, and passwords. If you turn on “Include app settings”, the code also carries your app settings, which can include LiveView Mix configuration such as webhook settings that may contain tokens. The code is encrypted with AES-256-GCM, using a key derived with PBKDF2-HMAC-SHA256 (600,000 iterations). When you share, you choose one of three ways to lock it.
+
+Open (no lock): the key comes from a secret built into Cam Hub, so any compatible version of Cam Hub can open the code. This only keeps the contents from being read at a glance; it does not protect them from anyone who holds both the code and the app.
+
+Six-digit PIN: the code can be opened only with the PIN you choose. A six-digit PIN has only a million possibilities, so someone who obtains the code could try them all offline on their own computer.
+
+Complex encryption (password): the code can be opened only with the password you choose. It must be at least eight characters long and can use any letters, numbers or symbols. Only a long, unique password makes guessing impractical.
+
+Cam Hub does not send the code, the PIN or the password to the developer, and the developer cannot recover a forgotten PIN or password. Send the PIN or password separately from the code.
+
+Codes do not expire. Deleting the cameras or the app on the source device does not revoke copies already shared; if a code may have been exposed, change the passwords of the equipment concerned.
+
+The code is passed on by whichever app you share it with, under that app’s own policies. If you share it as a link to the Cam Hub website, the code follows a “#” in the link, which browsers do not send to the website’s server.
+
+Optional iCloud backup
+
+If you choose iCloud Backup, the app encrypts supported camera and recorder configuration, credentials, channels, and app settings before placing the backup in your private iCloud key-value storage. Backup and restore on iPhone, iPad, and Apple TV do not use a PIN. The backup is encrypted with a key built into the app, not a password you choose; it relies on the protection of your Apple Account and iCloud.
+
+Backup time, device count, and site name are stored separately so the app can display backup status. To restore, select an available backup and continue directly.
+
+Purchases and subscriptions
+
+Purchases and subscriptions are processed by Apple. We do not receive your full payment card or bank information. The app reads purchase status supplied by Apple to unlock the corresponding limits or features.
+
+Sharing, retention, deletion, and choices
+
+We do not sell personal data. Local configuration remains on your device until you delete the relevant content or remove the app. You can delete equipment, LiveView Mix images, and control settings in the app, delete an iCloud backup separately, and withdraw system permissions in Settings on your Apple device.
+
+Optional iCloud data is managed through your Apple Account and iCloud services. Information you voluntarily email to support is retained only as needed to respond and maintain necessary support records.
+
+Children and policy changes
+
+Cam Hub is not directed to children and does not intentionally collect children’s personal information. We may update this policy when app features, laws, or store requirements change. The revised date will be published on this page.
