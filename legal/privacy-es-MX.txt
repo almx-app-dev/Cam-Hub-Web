@@ -1,0 +1,102 @@
+PRIVACY POLICY
+Política de privacidad
+
+Cam Hub está diseñada para procesar la información en tu dispositivo y dejarte el control. No requiere una cuenta de servicio ni incluye rastreo publicitario de terceros.
+
+Vigente desde: 10 de octubre de 2026
+App: Cam Hub
+Contacto: app-dev@almx.cc
+
+Descripción general
+
+Cam Hub no requiere que crees una cuenta de servicio de Cam Hub y no incluye publicidad de terceros ni rastreo publicitario. La app está diseñada para conectarse a las cámaras y los grabadores que tú configures.
+
+Información de los equipos y credenciales
+
+Los nombres, las direcciones, los puertos, los nombres de usuario y la información de canales de las cámaras y los grabadores, así como la configuración de la app, se guardan en tu dispositivo. Las contraseñas se guardan en el Llavero de Apple. Cam Hub usa esta información solo para realizar las conexiones y las acciones que solicitas.
+
+Conexiones de cámaras y video
+
+Cuando ves video en vivo o grabado, la app se conecta a la dirección del equipo que proporcionaste. Tu equipo, tu proveedor de red, tu proveedor de VPN, tu proveedor de DNS o cualquier destino remoto que elijas pueden procesar información de la conexión conforme a sus propias políticas. Cam Hub no usa el video de las cámaras para publicidad ni para crear perfiles de comportamiento.
+
+Paneles de control con webhook y destinos de terceros
+
+Puedes crear botones de control en LiveView Mix configurando un método HTTP o HTTPS, la URL de destino, encabezados personalizados y el cuerpo de la solicitud. Esta configuración puede contener tokens de Authorization u otros datos sensibles. Se guarda en la configuración de LiveView Mix de tu dispositivo y puede incluirse en un respaldo cifrado de iCloud que decidas crear.
+
+Solo cuando tocas un botón, la app envía la solicitud directamente desde tu dispositivo al destino que indicaste, como Home Assistant, Node-RED u otro servicio de terceros. Ese destino y los proveedores de red pueden procesar tu dirección IP de origen, los encabezados y el cuerpo de la solicitud conforme a sus propias políticas. El desarrollador de Cam Hub no elige ni controla esos destinos, y tampoco recibe los datos que se les envían. HTTP no cifra los datos en tránsito; usa HTTPS para datos sensibles y revisa las prácticas de privacidad y seguridad del destinatario.
+
+Acceso a la red local y escaneo
+
+Cam Hub solicita el permiso de Red local para conectarse directamente a las cámaras y los grabadores. Cuando inicias un escaneo en la pestaña Herramientas, la app sondea la subred que seleccionas y los puertos habituales de servicios de cámaras, y puede leer las direcciones de los equipos que responden, los puertos abiertos y los nombres del encabezado HTTP Server para ayudar a identificar los equipos.
+
+El escaneo solo se inicia cuando tú lo solicitas. Los resultados se procesan en tu dispositivo y no se envían al desarrollador de Cam Hub.
+
+Informe del dispositivo (experimental)
+
+Si no se puede agregar una cámara o un grabador, Cam Hub ofrece un informe del dispositivo opcional y experimental para ayudar al desarrollador a entender el motivo. Solo se ofrece después de que falla un intento de agregar un equipo. Se inicia únicamente cuando tocas “Enviar los detalles al desarrollador” y ya aceptaste el aviso que aparece antes del primer uso, y solo se ejecuta mientras su pantalla está abierta. Puedes detenerlo en cualquier momento.
+
+Mientras se ejecuta, tu dispositivo Apple envía solicitudes de solo lectura directamente a la dirección del equipo que ingresaste: a los puertos que ingresaste y, en el caso de equipos de tu red local, a los puertos habituales de las cámaras. Las solicitudes verifican qué puertos responden, leen el modelo, el firmware y los protocolos compatibles del equipo (como ISAPI, ONVIF y RTSP) y prueban brevemente si una transmisión de video entrega datos. No cambian nada en el equipo, y ninguna se envía al desarrollador ni a ningún otro servidor.
+
+Las solicitudes inician sesión con el nombre de usuario y la contraseña que ingresaste, igual que al agregar el equipo. Si el intento fallido fue justamente un inicio de sesión rechazado, el informe no envía ningún inicio de sesión. El equipo cuenta los inicios de sesión fallidos y puede registrarlos.
+
+El informe contiene: la versión de la app, la versión de iOS, el modelo de tu dispositivo Apple y la configuración de idioma; el modo de conexión que elegiste y el error que mostró la app; la dirección del equipo con el último número oculto (si es una dirección de internet, se omite); los puertos que ingresaste y los que respondieron; la marca, el modelo, el firmware y los protocolos compatibles, tal como los informa el equipo; códigos de estado y fragmentos breves de las respuestas del equipo; la forma en que está conectado tu dispositivo Apple (por ejemplo, Wi-Fi, datos celulares o VPN); y conteos y tamaños de la transmisión de video de prueba, nunca imágenes.
+
+Antes de que se muestre o se guarde algo, un filtro automático reemplaza con marcadores visibles las contraseñas, los nombres de usuario, los tokens, las cookies, los números de serie, las direcciones MAC, las direcciones IP públicas, los nombres de host, las direcciones de correo electrónico, los nombres de equipos y de canales, los nombres de redes Wi-Fi, los números de teléfono y las claves o los identificadores largos. No se conserva el texto de las páginas web. El filtro es automático y no es perfecto, así que revisa el informe antes de enviarlo.
+
+No se envía nada al desarrollador de forma automática. Primero, el informe se muestra en pantalla, donde puedes desactivar secciones o cerrarlo sin enviar nada. Para enviarlo, eliges “Enviar correo al desarrollador”: el informe se abre en la ventana de redacción de Mail, dirigido a la dirección de soporte, en el cuerpo del mensaje y como archivo de texto adjunto, y no se envía nada hasta que tocas Enviar ahí; también puedes cancelar. Si Mail no está configurado, el informe se copia al portapapeles y se abre en tu app de correo un mensaje ya dirigido. También puedes copiar el informe o compartirlo con la hoja para compartir de iOS.
+
+Un informe copiado no pasa a tus otros dispositivos mediante el Portapapeles universal y caduca en el portapapeles a los 120 segundos.
+
+En tu dispositivo se conservan hasta cinco de los informes más recientes para que puedas enviar uno más tarde. Se excluyen de los respaldos del dispositivo y del respaldo de Cam Hub en iCloud. Puedes eliminarlos en cualquier momento con “Eliminar informes guardados” en la pantalla del informe del dispositivo; además, el más antiguo se elimina cuando se guarda un sexto informe, y todos se eliminan cuando eliminas la app.
+
+Si envías un informe por correo, el desarrollador recibe ese correo y tu dirección de correo electrónico. El informe se usa para investigar el problema que reportaste y se conserva solo el tiempo necesario para responder y mantener los registros de soporte indispensables.
+
+El informe del dispositivo es experimental y puede cambiar o eliminarse en cualquier momento. Enviar un informe no garantiza compatibilidad con tu equipo, una respuesta ni una solución.
+
+Fotos y cámara
+
+Puedes usar el selector de fotos del sistema de Apple para elegir una foto específica, o dar acceso a la Cámara para tomar una foto nueva, y colocarla en un recuadro vacío de LiveView Mix. La app solo recibe la imagen que eliges o tomas, no toda tu biblioteca de fotos. Reduce el tamaño de la imagen, la comprime y la guarda en la configuración de LiveView Mix de tu dispositivo.
+
+Las imágenes permanecen en tu dispositivo, y el desarrollador de Cam Hub no las recibe ni accede a ellas. Solo si decides crear un respaldo cifrado de Cam Hub en iCloud, las imágenes pueden guardarse con ese respaldo en tu propio iCloud para restaurar tus dispositivos. Puedes quitar una imagen en LiveView Mix y cambiar los permisos de Cámara o Fotos en Configuración.
+
+Ubicación
+
+Cam Hub solicita el permiso de ubicación solo “Al usar la app”. Tu ubicación y la dirección de la brújula se leen únicamente mientras está abierta una pantalla que las necesita, como el Velocímetro de la pestaña Herramientas, que muestra tu velocidad y la dirección de la brújula. La app no rastrea tu ubicación en segundo plano.
+
+Tu ubicación y la dirección de la brújula se procesan en tu dispositivo para mostrar tu velocidad y tu dirección. No se almacenan, no se incluyen en los respaldos y no se envían al desarrollador de Cam Hub ni a ningún otro tercero. Si el Velocímetro anuncia tu velocidad en voz alta, el anuncio lo produce la voz sintetizada integrada en iOS en tu dispositivo, y puedes desactivarlo en esa misma pantalla. Puedes rechazar o retirar el permiso de ubicación en cualquier momento en Configuración de tu dispositivo Apple; el resto de la app sigue funcionando sin él.
+
+Códigos para compartir cámaras
+
+Puedes compartir un código que contiene las direcciones, los nombres de usuario, la información de canales y las contraseñas de las cámaras o los grabadores que selecciones. Si activas “Incluir la configuración de la app”, el código también lleva la configuración de tu app, que puede incluir la configuración de LiveView Mix, como la de los webhooks, que a su vez puede contener tokens. El código se cifra con AES-256-GCM, con una clave derivada mediante PBKDF2-HMAC-SHA256 (600,000 iteraciones). Al compartir, eliges una de tres formas de bloquearlo.
+
+Abierto (sin bloqueo): la clave sale de un secreto integrado en Cam Hub, por lo que cualquier versión compatible de Cam Hub puede abrir el código. Esto solo evita que el contenido se lea a simple vista; no lo protege de quien tenga tanto el código como la app.
+
+PIN de seis dígitos: el código solo se puede abrir con el PIN que elijas. Un PIN de seis dígitos tiene apenas un millón de posibilidades, así que quien obtenga el código podría probarlas todas sin conexión en su propia computadora.
+
+Cifrado complejo (contraseña): el código solo se puede abrir con la contraseña que elijas. Debe tener al menos ocho caracteres y puede usar cualquier letra, número o símbolo. Solo una contraseña larga y única hace que adivinarla sea inviable.
+
+Cam Hub no envía el código, el PIN ni la contraseña al desarrollador, y el desarrollador no puede recuperar un PIN o una contraseña olvidados. Envía el PIN o la contraseña por separado del código.
+
+Los códigos no caducan. Eliminar las cámaras o la app en el dispositivo de origen no revoca las copias que ya se compartieron; si un código pudo haber quedado expuesto, cambia las contraseñas de los equipos correspondientes.
+
+El código lo transmite la app con la que lo compartas, conforme a las políticas de esa app. Si lo compartes como un enlace al sitio web de Cam Hub, el código va después de un “#” en el enlace, y los navegadores no envían esa parte al servidor del sitio web.
+
+Respaldo opcional en iCloud
+
+Si eliges el respaldo de iCloud, la app cifra la configuración compatible de las cámaras y los grabadores, las credenciales, los canales y la configuración de la app antes de colocar el respaldo en tu almacenamiento privado de clave-valor de iCloud. El respaldo y la restauración en iPhone, iPad y Apple TV no usan un PIN. El respaldo se cifra con una clave integrada en la app, no con una contraseña que tú elijas; se apoya en la protección de tu cuenta de Apple y de iCloud.
+
+La hora del respaldo, la cantidad de dispositivos y el nombre del sitio se guardan por separado para que la app pueda mostrar el estado del respaldo. Para restaurar, selecciona un respaldo disponible y continúa directamente.
+
+Compras y suscripciones
+
+Apple procesa las compras y las suscripciones. No recibimos la información completa de tu tarjeta de pago ni de tu cuenta bancaria. La app lee el estado de compra que proporciona Apple para desbloquear los límites o las funciones correspondientes.
+
+Compartir datos, conservación, eliminación y opciones
+
+No vendemos datos personales. La configuración local permanece en tu dispositivo hasta que elimines el contenido correspondiente o desinstales la app. En la app puedes eliminar equipos, imágenes de LiveView Mix y configuración de los controles; también puedes eliminar un respaldo de iCloud por separado y retirar los permisos del sistema en Configuración de tu dispositivo Apple.
+
+Los datos opcionales de iCloud se administran mediante tu cuenta de Apple y los servicios de iCloud. La información que envíes voluntariamente por correo al soporte se conserva solo el tiempo necesario para responderte y mantener los registros de soporte indispensables.
+
+Niños y cambios a la política
+
+Cam Hub no está dirigida a niños y no recopila intencionalmente información personal de niños. Podemos actualizar esta política cuando cambien las funciones de la app, las leyes o los requisitos de la tienda. La fecha de revisión se publicará en esta página.

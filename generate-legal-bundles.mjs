@@ -7,7 +7,7 @@ const websiteRoot = path.dirname(fileURLToPath(import.meta.url));
 const repositoryRoot = path.dirname(websiteRoot);
 const appLegalRoot = path.join(repositoryRoot, "Cam-Hub", "Resources", "Legal");
 const webLegalRoot = path.join(websiteRoot, "legal");
-const localeOrder = ["en", "zh-Hant", "zh-Hans", "ja", "ko", "de", "es", "fr", "ar"];
+const localeOrder = ["en", "zh-Hant", "zh-Hans", "ja", "ko", "de", "es", "es-MX", "fr", "ar"];
 
 // Evaluate only the translation declarations. site.js also contains browser UI
 // code, so stop before it merges translations and starts rendering the page.

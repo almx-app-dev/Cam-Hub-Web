@@ -640,6 +640,166 @@
       ],
       note: "Cam Hub no elude los controles de acceso del equipo. Las funciones varían según el modelo, firmware, implementación del protocolo, permisos de la cuenta, códec y condiciones de red."
     },
+    "es-MX": {
+      documentTitle: "Cam Hub — Funciones",
+      topline: "Funciones",
+      eyebrow: "FUNCIONES DE CAM HUB",
+      title: '<span class="page-title-line">Conoce Cam Hub.</span><span class="page-title-line">Función por función.</span>',
+      summary: "Sigue los mismos accesos y controles que ves en la app. Ve directo a agregar dispositivos, a LiveView Mix, a la reproducción, a la transferencia o al comportamiento de la app.",
+      wikiLabel: "Ir a un capítulo",
+      wiki: [
+        ["devices", "01", "Dispositivos y canales", "Primero conecta el equipo y después decide qué canales van en tus pantallas de monitoreo.", [
+          ["Prepara los datos de conexión", [
+            "Abre Dispositivos, toca Agregar dispositivo y se abrirá la pantalla para agregarlo.",
+            "El nombre es opcional. La dirección IP o el nombre de host y el nombre de usuario son obligatorios. El puerto HTTP es 80 de forma predeterminada y el RTSP, 554; si en tu equipo son distintos, usa los valores que aparecen en su interfaz de administración.",
+            "Escribe la contraseña y toca Agregar. La app muestra “Conectando con el dispositivo” y, si el intento falla, distingue entre errores de conexión, de credenciales y de equipo no compatible.",
+            "Conéctate solo a equipos y cuentas que sean tuyos, que administres o para los que tengas autorización expresa."
+          ]],
+          ["Detección automática u ONVIF", [
+            "Normalmente conviene dejar la opción Conectar mediante en Detección automática, para que Cam Hub pruebe una conexión nativa compatible y solicite el conjunto de funciones más completo disponible.",
+            "Si no se identifica el equipo, o si prefieres usar el protocolo abierto directamente, cambia la opción Conectar con a ONVIF y vuelve a agregarlo.",
+            "Es posible que debas activar ONVIF, crear una cuenta ONVIF con permiso de visualización y activar RTSP en la configuración del equipo. La Referencia de compatibilidad incluye notas de conexión."
+          ]],
+          ["Organiza los canales de las cámaras", [
+            "Después de agregar el equipo, tócalo en Dispositivos para abrir su página. Cámaras muestra los canales que ese equipo reporta.",
+            "Activa los canales que quieras ver y desactiva los que no uses. En los canales de un grabador también puedes usar Pausar video para detener la transmisión, en lugar de solo ocultar el recuadro.",
+            "Los canales sin conexión permanecen atenuados en la lista de Dispositivos. Si Ocultar cámaras sin conexión está activado, no aparecen en los muros de monitoreo en vivo."
+          ]],
+          ["Revisa y actualiza el equipo", [
+            "Despliega la tarjeta del equipo para ver su modelo, dirección, puerto, número de serie, firmware y cantidad de canales.",
+            "Usa el control de la esquina superior derecha para cambiar el nombre del equipo, o desliza hacia abajo para actualizar y pedir el estado más reciente de los canales.",
+            "El control de barras negras alterna entre Predeterminado, Ampliar para llenar y Estirar para llenar solo en la vista actual. El control Muro a pantalla completa abre el muro de canales de ese equipo."
+          ]]
+        ]],
+        ["mix", "02", "Muro de monitoreo LiveView Mix", "Reúne en una sola pantalla canales de distintas cámaras y grabadores, y ajusta la densidad a la pantalla que uses.", [
+          ["Elige las cámaras para LiveView Mix", [
+            "Ve a Configuración → LiveView Mix.",
+            "Selecciona los canales en la sección de cada equipo. Cada canal puede usar SD o HD de forma independiente, y Todo SD o Todo HD aplica la misma calidad a toda la selección.",
+            "Abre la pestaña LiveView Mix. Muestra una vista previa con desplazamiento; toca Pantalla completa para aplicar el diseño de muro de monitoreo que elegiste."
+          ]],
+          ["17 diseños a pantalla completa", [
+            "Cuadrículas uniformes: 2×2, 2×3, 3×3, 3×4, 4×4, 5×4, 6×4, 5×5, 7×4, 6×5, 6×6 y 7×7.",
+            "Diseños con recuadro principal: 1+3, 1+5, 1+7, 1+21 y 1+27. La primera cámara ocupa el recuadro principal, que es el más grande.",
+            "Los diseños con más de 16 recuadros muestran un ícono de pantalla, porque su densidad es más adecuada para una pantalla grande."
+          ]],
+          ["Organiza el muro y los recuadros vacíos", [
+            "Toca Organizar el muro en la configuración de LiveView Mix.",
+            "Arrastra un recuadro sobre otro para intercambiarlos, o toca Editar para reordenar la lista y desliza para eliminar. El orden de la lista llena el diseño página por página.",
+            "Toca Agregar recuadro vacío para dejar un hueco a propósito. Selecciona el recuadro vacío para configurar qué muestra."
+          ]],
+          ["Tres modos de relleno del video", [
+            "Predeterminado conserva la imagen completa y agrega barras negras cuando las proporciones no coinciden.",
+            "Ampliar para llenar conserva la proporción y agranda la imagen hasta llenar el recuadro, recortando los bordes que sobresalen.",
+            "Estirar para llenar llena el recuadro sin recortar, pero puede ensanchar o comprimir la imagen. Define el modo predeterminado general en Configuración → Barras negras, o cámbialo temporalmente para un equipo o un canal en particular."
+          ]],
+          ["Marcas de agua personalizadas", [
+            "Abre Marca de agua, activa Mostrar marca de agua y elige Nombre del dispositivo, Nombre de la cámara o Dirección IP.",
+            "Ajusta la posición, la opacidad, el color, el tamaño del texto y la fuente: Sistema, Redondeada, Monoespaciada o Serif.",
+            "Legibilidad ofrece Sombra, Contorno, Fondo o Ninguno. Usa las vistas previas clara y oscura para confirmar que la marca de agua se lea bien en imágenes de día y de noche."
+          ]],
+          ["Imágenes, relojes, etiquetas y controles", [
+            "En Organizar, usa Agregar recuadro vacío y luego selecciona ese recuadro para abrir su página (con el título Recuadro 1, Recuadro 2, etc.), donde Mostrar permite elegir Vacío, Imagen, Control, Reloj o Etiqueta.",
+            "Imagen permite elegir una foto o tomar una nueva. Reloj puede mostrar la fecha, los segundos y la hora en formato de 12 o 24 horas. Etiqueta admite texto personalizado, un SF Symbol y color.",
+            "Control crea botones de webhook HTTP a partir de las plantillas Portón / Cortina metálica, Puerta de garaje, Luz, Cerradura, Cortina / Persiana, Escena / Automatización, Alarma / Sirena, Ventilador, Enchufe inteligente, Aire acondicionado y Personalizado. Las acciones sensibles, como abrir o desbloquear, pueden pedir confirmación.",
+            "Las imágenes y la configuración de los recuadros que sean compatibles se incluyen en un respaldo cifrado. Tú sigues siendo responsable de crear y proteger cada endpoint de webhook."
+          ]]
+        ]],
+        ["viewing", "03", "Vista en vivo y reproducción de grabaciones", "La vista de una sola cámara permite priorizar la nitidez y la interacción; los muros con varias cámaras, la carga del dispositivo y el ancho de banda.", [
+          ["Calidad en una y en varias cámaras", [
+            "Ve a Configuración → Calidad predeterminada y define por separado HD o SD para Una sola cámara y para Varias cámaras. Estos valores se aplican solo a las pantallas de dispositivos: la página del dispositivo y los muros En vivo, el muro a pantalla completa de un dispositivo y una cámara que se abre desde un dispositivo.",
+            "Cuando el equipo indica que permite cambiar entre transmisión principal y secundaria, la barra de controles del canal individual muestra las opciones SD y HD.",
+            "LiveView Mix no usa estos valores: su muro con varias cámaras reproduce cada canal con la calidad asignada en la lista de canales, uno por uno o con Todo SD o Todo HD. Una calidad menor suele reducir la carga de la red y del dispositivo cuando se reproducen muchos recuadros a la vez.",
+            "Al abrir una sola cámara desde LiveView Mix, ya sea a pantalla completa o en primer plano, siempre empieza en HD. El botón SD/HD de la pantalla cambia solo esa vista y no modifica ninguna configuración."
+          ]],
+          ["Zoom y vista horizontal", [
+            "Pellizca para acercar en la vista de un solo canal y luego arrastra la imagen ampliada para revisar otra zona.",
+            "Toca dos veces para saltar a un zoom de 2.5× y vuelve a tocar dos veces para regresar a la imagen completa.",
+            "Gira el dispositivo a horizontal para ocultar la navegación, los controles y la barra de pestañas, y así dejar que el video aproveche la mayor parte de la pantalla."
+          ]],
+          ["Capturas y cómo compartirlas", [
+            "Toca Captura en la barra de controles del canal individual para pedirle al equipo su imagen actual.",
+            "Cuando llega la imagen, Cam Hub abre una vista previa. Toca Compartir para usar la hoja para compartir del sistema.",
+            "Una captura puede contener personas, direcciones, marcas de tiempo u otra información sensible. Revisa la imagen, a quién se la envías y los requisitos locales antes de enviarla."
+          ]],
+          ["Fecha, línea de tiempo y tipos de grabación", [
+            "Elige una fecha debajo de la vista del canal. Cam Hub le pide al equipo las grabaciones de ese día.",
+            "Las grabaciones pueden alternar entre Continua y Eventos. Arrastra la línea de tiempo o haz zoom en ella hasta que el cursor central llegue a la hora que buscas, o selecciona un segmento de la lista.",
+            "La reproducción muestra REPRODUCCIÓN y la hora del equipo. Toca Volver al vivo para regresar a la transmisión en vivo. Algunos equipos descargan primero un clip antes de abrirlo en el reproductor del sistema."
+          ]]
+        ], "Aviso de disponibilidad: la transmisión en vivo, las capturas, la selección de transmisión principal/secundaria, la búsqueda de grabaciones, la clasificación Continua/Eventos, el desplazamiento por la línea de tiempo y la reproducción dependen de las funciones que la cámara o el grabador reporten realmente y de los permisos de la cuenta con la que se inició sesión en el equipo."],
+        ["backup", "04", "Respaldo cifrado y cómo compartir cámaras", "El respaldo y la restauración de iCloud ya no usan PIN. Al compartir cámaras, puedes elegir si bloqueas el código para compartir con un PIN de seis dígitos.", [
+          ["Protección local de contraseñas", [
+            "Una vez agregado el equipo, su contraseña se guarda en el Llavero de Apple. El nombre, la dirección, los puertos, los canales y la configuración de la app permanecen en los datos del dispositivo.",
+            "Cam Hub usa esta información solo para las conexiones, las búsquedas de grabaciones, las capturas, los respaldos y las transferencias que tú pidas.",
+            "“Eliminar todos los datos” elimina los datos locales de los equipos y las contraseñas guardadas. Si desinstalas la app, la configuración que nunca se respaldó puede quedar irrecuperable."
+          ]],
+          ["Respaldo cifrado en iCloud sin PIN", [
+            "Ve a Configuración → Respaldar en iCloud, elige Mi respaldo (para iPhone y iPad) o Apple TV en la parte superior de la página y toca Respaldar ahora, sin configurar ningún PIN.",
+            "El respaldo incluye los equipos, las credenciales, los canales, LiveView Mix y la configuración de la app que sean compatibles. Cam Hub lo cifra antes de guardarlo en tu iCloud privado.",
+            "Confirma que Respaldo actual muestre la hora nueva y la cantidad de equipos."
+          ]],
+          ["Restaurar desde iCloud", [
+            "Abre Configuración → Restaurar desde iCloud y selecciona el respaldo para continuar. En iPhone, iPad y Apple TV no se pide verificar ningún PIN.",
+            "Si es posible, usa la misma versión de la app y confirma que hayas iniciado sesión con la cuenta de Apple que contiene el respaldo. Es posible que los respaldos de una versión anterior deban volver a crearse para que aparezcan.",
+            "La restauración está sujeta a los límites del plan actual. Después, verifica en la red actual la dirección y los canales de cada equipo, así como LiveView Mix."
+          ]],
+          ["Compartir cámaras con un PIN opcional", [
+            "En Configuración, abre Exportar cámaras (en la sección Compartir cámaras), selecciona las cámaras y crea un código para compartir cifrado. Decide si activas Bloquear con un PIN.",
+            "Si activas Bloquear con un PIN, escribe seis dígitos. Quien reciba el código deberá verificar el PIN al importar o restaurar las cámaras compartidas. Sin PIN, el código completo se importa directamente.",
+            "La importación incluye los equipos y sus credenciales, y está sujeta a los límites del plan de destino. Envía el código completo y el PIN solo a una persona de confianza; nunca los publiques en un chat público, un ticket ni un sitio web."
+          ]]
+        ]],
+        ["preferences", "05", "Pantalla, transmisión y control de datos", "Ajusta el comportamiento de la app a tu red y a tu dispositivo, y trata por separado las preferencias, los datos locales y el respaldo de iCloud al restablecer.", [
+          ["Ocultar cámaras sin conexión", [
+            "Activa Configuración → Ocultar cámaras sin conexión para quitar de En vivo y de los muros de monitoreo en vivo las cámaras que no tienen señal.",
+            "Siguen atenuadas en la lista de canales de Dispositivos, para que no se confundan con cámaras eliminadas y puedan reaparecer cuando regrese su señal."
+          ]],
+          ["Mantener las cámaras conectadas entre páginas", [
+            "Ve a Configuración → LiveView Mix y busca “Mantener las cámaras conectadas entre páginas” en Páginas; es más útil con equipos que tardan más en volver a conectarse.",
+            "Si está activada, los canales siguen conectados después de desplazarte y se reanudan más rápido cuando vuelves a ellos. Esto consume red, energía y recursos del sistema de forma continua, así que déjala desactivada si no necesitas que se reanuden de inmediato."
+          ]],
+          ["Elegir qué se abre al iniciar", [
+            "Ve a Configuración → Abrir al iniciar, en la sección LiveView Mix.",
+            "Visto por última vez regresa a la selección anterior, LiveView Mix abre el muro con varios equipos, LiveView Mix a pantalla completa abre ese muro a pantalla completa, y cada equipo individual abre ese dispositivo.",
+            "Si el equipo elegido se eliminó o LiveView Mix no está configurado, la app abre una pantalla disponible en lugar de conservar un destino que ya no es válido."
+          ]],
+          ["Planes y cámaras visibles", [
+            "Configuración → Planes muestra el plan de cámaras y de grabadores actual, junto con sus límites de uso.",
+            "Cuando no todos los canales están desbloqueados, “Elige qué cámaras se muestran” asigna los lugares disponibles. La lista deja de ser necesaria cuando la app queda totalmente desbloqueada.",
+            "Las compras y Restaurar compras se rigen por el estado que informa Apple. Un plan no cambia los protocolos, los permisos ni las funciones de reproducción que ofrece la propia cámara."
+          ]],
+          ["Restablecer y borrar por separado", [
+            "Restablecer configuración predeterminada reinicia el idioma, la calidad, LiveView Mix y otras preferencias, pero conserva los equipos agregados.",
+            "“Eliminar todos los datos” elimina los equipos, las cámaras y las contraseñas del Llavero en este dispositivo. No afecta los respaldos de iCloud ni las suscripciones.",
+            "Eliminar respaldo de iCloud quita el respaldo cifrado de la nube sin cambiar los equipos ni la configuración de este dispositivo. Si iCloud no está disponible, es posible que solo se borre el estado del respaldo que se muestra de forma local.",
+            "Antes de una eliminación irreversible, confirma que iCloud ya se sincronizó y que la versión del respaldo se puede restaurar en el dispositivo de destino."
+          ]]
+        ]],
+        ["tv-control", "06", "Apple TV y controles de webhook", "Lleva el muro de monitoreo a la televisión y agrega botones de control HTTP que se conectan a endpoints que tú administras.", [
+          ["Monitoreo en Apple TV", [
+            "La app para tvOS incluye LiveView Mix, muros de cámaras por equipo, vista de una sola cámara a pantalla completa y una línea de tiempo de grabaciones, todo diseñado para navegar por enfoque con el Siri Remote.",
+            "Los diseños densos van muy bien en una pantalla grande. Las cámaras y los botones de webhook se pueden seleccionar directamente en el muro de monitoreo, sin tener que salir antes de la vista actual.",
+            "La transmisión en vivo, la reproducción, la selección de transmisión principal/secundaria y las funciones de cada canal siguen dependiendo de lo que reporte el equipo, los permisos de la cuenta, el códec y las condiciones de la red."
+          ]],
+          ["Transferir la configuración desde iPhone o iPad", [
+            "En tu iPhone o iPad, abre Configuración → Respaldar en iCloud, elige Apple TV como destino y crea un respaldo cifrado exclusivo, sin configurar un PIN.",
+            "Inicia sesión con la misma cuenta de Apple en el Apple TV, abre Restaurar desde iCloud, selecciona el respaldo y restáuralo directamente.",
+            "Apple TV solo restaura el respaldo exclusivo para Apple TV. Después, verifica las direcciones de los equipos, los canales y LiveView Mix en la red actual de la televisión."
+          ]],
+          ["Crear un panel de control con webhook", [
+            "En la configuración de LiveView Mix, abre Organizar el muro, agrega un recuadro vacío y cambia su opción Mostrar a Control.",
+            "Elige la plantilla Portón / Cortina metálica, Puerta de garaje, Luz, Cerradura, Cortina / Persiana, Escena / Automatización, Alarma / Sirena, Ventilador, Enchufe inteligente, Aire acondicionado o Personalizado. Cada botón puede tener su propio ícono, etiqueta y opción Confirmar antes de ejecutar; el panel tiene su propio título y color.",
+            "Cada botón puede enviar GET, POST, PUT o DELETE a un endpoint HTTP o HTTPS que tú indiques, con encabezados, Content-Type y cuerpo JSON opcionales."
+          ]],
+          ["Usar los controles desde el muro de monitoreo", [
+            "Toca un botón en iPhone o iPad. En Apple TV, mueve el enfoque con el control remoto y presiona para ejecutarlo. El panel muestra ahí mismo si se está enviando, si funcionó o si falló.",
+            "Usa la confirmación para abrir, desbloquear, activar alarmas y otras acciones difíciles de revertir, y expón solo endpoints de alcance limitado para el fin que necesitas.",
+            "La configuración compatible del panel de control se incluye en los respaldos cifrados. Tú sigues siendo responsable de los endpoints de webhook, las credenciales, el acceso a la red y la seguridad del equipo físico conectado."
+          ]]
+        ], "Aviso de seguridad: los botones de webhook llaman a los endpoints de red que tú indiques. Cam Hub no valida la seguridad de los endpoints, los controles de acceso, las cerraduras, las alarmas ni otros equipos físicos. Restringe los permisos de los endpoints, protege las credenciales y exige confirmación para las acciones difíciles de revertir."]
+      ],
+      note: "Cam Hub no evade los controles de acceso del equipo. Las funciones varían según el modelo, el firmware, la implementación del protocolo, los permisos de la cuenta, el códec y las condiciones de la red."
+    },
     fr: {
       documentTitle: "Cam Hub — Fonctionnalités",
       topline: "Fonctionnalités",
@@ -934,6 +1094,22 @@
         ["Ejemplo", "Con <span class='keep-phrase'>Cam Plus</span> y <span class='keep-phrase'>NVR Pro</span>: 4 grabadores con todos sus canales y hasta 16 cámaras independientes."]
       ],
       more: "Ver las reglas completas y más ejemplos en el manual"
+    },
+    "es-MX": {
+      title: "Planes y límites",
+      summary: "Cam Hub incluye un cupo de uso gratuito. Los planes de cámaras y los planes NVR amplían cada uno un límite distinto.",
+      caption: "Planes y lo que desbloquea cada uno",
+      columns: ["Plan", "Facturación", "Qué desbloquea"],
+      rows: [
+        ["Gratis", "Ninguna", "Máximo 2 canales activados en toda la app (los canales de cámaras independientes y de grabadores se cuentan juntos) y máximo 1 grabador."],
+        ["Planes de cámaras", "Anual", "Aumentan a 8 (<span class='keep-phrase'>Cam Home</span>), 16 (<span class='keep-phrase'>Cam Plus</span>) o ilimitadas (<span class='keep-phrase'>Cam Max</span>) las cámaras independientes que puedes activar."],
+        ["Planes NVR", "Mensual", "Aumentan a 2 (<span class='keep-phrase'>NVR Starter</span>), 4 (<span class='keep-phrase'>NVR Pro</span>) o ilimitados (<span class='keep-phrase'>NVR Max</span>) los grabadores que puedes conectar, y se pueden usar todos los canales de esos grabadores."]
+      ],
+      notes: [
+        ["Dos tipos independientes", "Los planes de cámaras y los planes NVR son independientes y se pueden combinar. Un plan de cámaras no aumenta el número de grabadores, y un plan NVR no sube el límite de cámaras independientes. Los precios se muestran en la app."],
+        ["Ejemplo", "Con <span class='keep-phrase'>Cam Plus</span> y <span class='keep-phrase'>NVR Pro</span>: 4 grabadores con todos sus canales y hasta 16 cámaras independientes."]
+      ],
+      more: "Consulta las reglas completas y más ejemplos en el manual"
     },
     fr: {
       title: "Formules et limites",
