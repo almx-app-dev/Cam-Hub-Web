@@ -1,5 +1,4 @@
-PRIVACY POLICY
-Privacy policy
+Privacy Policy
 
 Cam Hub is designed around device-side processing and user control. It does not require a service account or include third-party advertising tracking.
 
@@ -21,13 +20,13 @@ When you view live or recorded video, the app connects to the equipment address 
 
 Webhook control panels and third-party endpoints
 
-You can create LiveView Mix control buttons by configuring an HTTP or HTTPS method, endpoint URL, custom headers, and request body. These settings may contain Authorization tokens or other sensitive data. They are stored in the LiveView Mix configuration on your device and may be included in an encrypted iCloud backup that you choose to create.
+You can create LiveView Mix control buttons by configuring an HTTP method, an HTTP or HTTPS endpoint URL, custom headers, and a request body. These settings may contain Authorization tokens or other sensitive data. They are stored in the LiveView Mix configuration on your device and may be included in an encrypted iCloud backup that you choose to create.
 
 Only when you tap a button does the app send the request directly from your device to the endpoint you specified, such as Home Assistant, Node-RED, or another third-party service. That endpoint and network providers may process your source IP address, headers, and request body under their own policies. The Cam Hub developer does not choose, control, or receive data sent to those endpoints. HTTP is not encrypted in transit; use HTTPS for sensitive data and review the recipient’s privacy and security practices.
 
 Local network access and scanning
 
-Cam Hub requests Local Network permission to connect directly to cameras and recorders. When you start a scan in the Tools tab, the app probes the subnet you select and common camera service ports, and may read responding equipment addresses, open ports, and HTTP Server names to help identify equipment.
+Cam Hub requests Local Network permission to connect directly to cameras and recorders. When you start a scan in the Tools tab, the app probes the subnet you select and common camera service ports, and may read responding equipment addresses, open ports, and HTTP server names to help identify equipment.
 
 A scan starts only when you request it. Results are processed on your device and are not sent to the Cam Hub developer.
 
@@ -35,15 +34,15 @@ Device report (experimental)
 
 If adding a camera or recorder fails, Cam Hub offers an optional, experimental device report to help the developer understand why. It is offered only after an attempt to add equipment has failed. It starts only when you tap “Send details to the developer” and have accepted the notice shown before first use, and it runs only while its screen is open. You can stop it at any time.
 
-While it runs, your Apple device sends read-only requests directly to the equipment address you entered: to the ports you entered and, for equipment on your local network, to common camera ports. The requests check which ports answer, read the equipment’s model, firmware and supported protocols (such as ISAPI, ONVIF and RTSP), and briefly test whether a video stream delivers data. They change nothing on the equipment, and none of them goes to the developer or to any other server.
+While it runs, your Apple device sends read-only requests directly to the equipment address you entered: to the ports you entered and, for equipment on your local network, to common camera ports. The requests check which ports answer, read the equipment’s model, firmware, and supported protocols (such as ISAPI, ONVIF, and RTSP), and briefly test whether a video stream delivers data. They change nothing on the equipment, and none of them goes to the developer or to any other server.
 
 The requests sign in with the username and password you entered, as adding the equipment does. If the failed attempt was itself a rejected sign-in, the report sends no sign-in at all. Failed sign-ins are counted, and may be logged, by the equipment.
 
-The report contains: the app version, iOS version, Apple device model and language settings; the connection mode you chose and the error the app showed; the equipment address with its last number hidden (an address on the internet is left out); the ports you entered and the ports that answered; brand, model, firmware and supported protocols as the equipment reports them; status codes and short excerpts of the equipment’s answers; how your Apple device is connected (for example Wi-Fi, cellular or VPN); and counts and sizes from the test video stream, never pictures.
+The report contains: the app version, iOS version, Apple device model, and language settings; the connection mode you chose and the error the app showed; the equipment address with its last number hidden (an address on the internet is left out); the ports you entered and the ports that answered; brand, model, firmware, and supported protocols as the equipment reports them; status codes and short excerpts of the equipment’s answers; how your Apple device is connected (for example, Wi-Fi, cellular, or VPN); and counts and sizes from the test video stream, never pictures.
 
-Before anything is shown or saved, an automatic filter replaces passwords, usernames, tokens, cookies, serial numbers, MAC addresses, public IP addresses, host names, email addresses, equipment and channel names, Wi-Fi network names, phone numbers and long keys or identifiers with visible placeholders. Web page text is not kept. The filter is automatic and not perfect, so please read the report before you send it.
+Before anything is shown or saved, an automatic filter replaces passwords, usernames, tokens, cookies, serial numbers, MAC addresses, public IP addresses, host names, email addresses, equipment and channel names, Wi-Fi network names, phone numbers, and long keys or identifiers with visible placeholders. Web page text is not kept. The filter is automatic and not perfect, so please read the report before you send it.
 
-Nothing is sent to the developer automatically. The report is first shown on screen, where you can switch sections off or close it without sending anything. To send it, you choose “Email to developer”: the report opens in the Mail compose window, addressed to the support address, in the message and as a text file attachment, and nothing is sent until you press Send there; you can cancel instead. If Mail is not set up, the report is copied to the clipboard and a pre-addressed message opens in your mail app. You can also copy the report or share it with the iOS share sheet.
+Nothing is sent to the developer automatically. The report is first shown on screen, where you can switch sections off or close it without sending anything. To send it, you choose “Email to developer”: the report opens in a Mail compose window addressed to the support address, both in the message body and as a text file attachment, and nothing is sent until you tap Send there; you can cancel instead. If Mail is not set up, the report is copied to the clipboard and a pre-addressed message opens in your mail app. You can also copy the report or share it with the iOS share sheet.
 
 A copied report is kept off Universal Clipboard and expires from the clipboard after 120 seconds.
 
@@ -51,11 +50,11 @@ Up to five of the most recent reports are kept on your device so that you can se
 
 If you email a report, the developer receives that email and your email address. The report is used to look into the problem you reported and is retained only as needed to respond and maintain necessary support records.
 
-The device report is experimental and may change or be removed at any time. Sending a report does not guarantee support for your equipment, a reply or a fix.
+The device report is experimental and may change or be removed at any time. Sending a report does not guarantee support for your equipment, a reply, or a fix.
 
 Photos and camera
 
-You can use Apple’s system photo picker to select a specific photo, or grant Camera access to capture a new photo, for a LiveView Mix blank slot. The app receives only the image you select or capture, not your entire photo library. It downsizes and compresses the image and stores it in the LiveView Mix configuration on your device.
+You can use Apple’s system photo picker to select a specific photo, or grant Camera access to capture a new photo, for an empty LiveView Mix slot. The app receives only the image you select or capture, not your entire photo library. It downsizes and compresses the image and stores it in the LiveView Mix configuration on your device.
 
 Images remain on your device and are not received or accessed by the Cam Hub developer. Only if you choose to create an encrypted Cam Hub iCloud backup may the images be stored with that backup in your own iCloud for device restoration. You can remove an image in LiveView Mix and change Camera or Photos permissions in system Settings.
 
@@ -73,7 +72,7 @@ Open (no lock): the key comes from a secret built into Cam Hub, so any compatibl
 
 Six-digit PIN: the code can be opened only with the PIN you choose. A six-digit PIN has only a million possibilities, so someone who obtains the code could try them all offline on their own computer.
 
-Complex encryption (password): the code can be opened only with the password you choose. It must be at least eight characters long and can use any letters, numbers or symbols. Only a long, unique password makes guessing impractical.
+Complex encryption (password): the code can be opened only with the password you choose. It must be at least eight characters long and can use any letters, numbers, or symbols. Only a long, unique password makes guessing impractical.
 
 Cam Hub does not send the code, the PIN or the password to the developer, and the developer cannot recover a forgotten PIN or password. Send the PIN or password separately from the code.
 

@@ -11,7 +11,7 @@ Contrato de licencia estándar de Apple (EULA)
 
 Cam Hub usa el Contrato de Licencia de Usuario Final estándar de Apple. Si estos términos entran en conflicto con el EULA de Apple que corresponda o con las reglas de la App Store, prevalecen los términos de Apple que sean aplicables.
 
-Apple Standard End User License Agreement
+Apple Standard End User License Agreement: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 
 Finalidad y uso autorizado
 
@@ -57,7 +57,7 @@ Política de privacidad de Cam Hub
 
 Nombres y servicios de terceros
 
-Hikvision, Dahua, Synology, ONVIF y otros nombres relacionados son marcas o identificadores de sus respectivos propietarios. Cam Hub es de desarrollo independiente.
+Hikvision, Dahua, Synology, ONVIF y otros nombres relacionados son marcas o identificadores de sus respectivos propietarios. Cam Hub se desarrolla de forma independiente.
 
 Una conexión exitosa significa que el equipo y los protocolos o las funciones que usa Cam Hub son técnicamente compatibles; no implica afiliación, alianza, patrocinio ni aval de parte de esos propietarios.
 

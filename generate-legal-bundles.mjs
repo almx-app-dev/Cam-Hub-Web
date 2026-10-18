@@ -23,8 +23,13 @@ const translations = {
   ...(globalThis.CamHubAdditionalTranslations || {})
 };
 
+// Plain-text copies have no links, so a web link keeps its address after
+// its text; otherwise a line such as the Apple EULA would not say where the
+// document is. Mail links already show the address and stay as they are.
 function plain(value) {
   return String(value)
+    .replace(/<a [^>]*href="(https?:[^"]+)"[^>]*>([^<]*)<\/a>/g,
+      (match, href, text) => (text === href ? text : `${text}: ${href}`))
     .replace(/<[^>]+>/g, "")
     .replaceAll("&amp;", "&")
     .replaceAll("&lt;", "<")
@@ -34,19 +39,26 @@ function plain(value) {
     .trim();
 }
 
+// "Label: value" in each language's own punctuation: a full-width colon in
+// Chinese and Japanese, a no-break space before the colon in French.
+function metaSeparator(locale) {
+  if (["zh-Hant", "zh-Hans", "ja"].includes(locale)) return "：";
+  if (locale === "fr") return " : ";
+  return ": ";
+}
+
 function renderDocument(locale, key, fallbackHeading) {
   const document = translations[locale]?.[key];
   if (!document) throw new Error(`Missing ${key} translation for ${locale}`);
 
-  const lines = [
-    fallbackHeading,
-    plain(document.title),
-    "",
-    plain(document.summary),
-    ""
-  ];
+  // The upper-case heading marks the document in any language; when the
+  // title already says the same words (English), it is not printed twice.
+  const documentTitle = plain(document.title);
+  const lines = documentTitle.toUpperCase() === fallbackHeading
+    ? [documentTitle, "", plain(document.summary), ""]
+    : [fallbackHeading, documentTitle, "", plain(document.summary), ""];
   for (const [label, value] of document.meta) {
-    lines.push(`${plain(label)}: ${plain(value)}`);
+    lines.push(`${plain(label)}${metaSeparator(locale)}${plain(value)}`);
   }
   for (const [title, paragraphs] of document.sections) {
     lines.push("", plain(title), "");

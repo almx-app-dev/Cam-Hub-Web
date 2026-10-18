@@ -1,7 +1,7 @@
 TERMS OF USE
 Términos de uso
 
-El uso de Cam Hub está sujeto a estos términos y a las normas aplicables del Apple App Store.
+Al usar Cam Hub, aceptas estos términos y las normas de licencia y compra aplicables del App Store de Apple.
 
 Vigente desde: 26 de julio de 2026
 App: Cam Hub
@@ -9,17 +9,17 @@ Contacto: app-dev@almx.cc
 
 EULA estándar de Apple
 
-Cam Hub utiliza el acuerdo de licencia estándar de Apple. Si existe conflicto, prevalecen los términos aplicables de Apple.
+Cam Hub utiliza el Contrato de licencia de usuario final (EULA) estándar de Apple. Si estos términos entran en conflicto con el EULA de Apple aplicable o con las normas del App Store, prevalecen los términos aplicables de Apple.
 
-Apple Standard End User License Agreement
+Apple Standard End User License Agreement: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 
-Uso legal y autorizado
+Finalidad y uso autorizado
 
-Conecta únicamente equipos y redes que poseas, administres o estés expresamente autorizado a utilizar. Debes cumplir las leyes locales de privacidad, supervisión, grabación, trabajo y propiedad.
+Cam Hub es una herramienta de visualización y gestión para cámaras y grabadores compatibles. Solo puedes conectarte a equipos y redes que te pertenezcan, que administres o a los que tengas autorización expresa para acceder. Eres responsable de cumplir las leyes aplicables de privacidad, vigilancia, grabación, ámbito laboral y propiedad.
 
 Acceso a los equipos y seguridad
 
-Debes proporcionar direcciones y credenciales válidas. Cam Hub no elude los controles de acceso. Eres responsable de proteger equipos, red, cuentas, contraseñas, acceso remoto y contenidos exportados o compartidos.
+Debes proporcionar direcciones y credenciales válidas. Cam Hub no elude los controles de acceso. Eres responsable de proteger los equipos, la red, las cuentas, las contraseñas, la configuración de acceso remoto y cualquier contenido exportado o compartido.
 
 Botones de control y equipos conectados
 
@@ -33,7 +33,7 @@ La pestaña Herramientas sondea direcciones y puertos de una red que selecciones
 
 Códigos para compartir
 
-Eres responsable de quién recibe un código para compartir y de cambiar de inmediato las contraseñas del equipo si el código pudiera haberse expuesto. Consulta la Política de privacidad para conocer su contenido, cifrado y vigencia.
+Eres responsable de quién recibe un código para compartir y de cambiar las contraseñas de los equipos afectados si el código pudiera haberse expuesto. Consulta la Política de privacidad para conocer su contenido, cifrado y vigencia.
 
 Compatibilidad y disponibilidad
 
@@ -45,9 +45,9 @@ Cam Hub no es un servicio de vigilancia de emergencias y no garantiza vídeo ini
 
 Compras y suscripciones
 
-Las compras, renovaciones, cancelaciones, reembolsos y gestión de la cuenta siguen la información de Apple y la configuración de tu cuenta de Apple.
+Apple procesa las compras dentro de la app y las suscripciones. Los precios, la renovación, la cancelación, los reembolsos y la gestión de la cuenta se rigen por la información que muestra Apple y por la configuración de tu cuenta de Apple. Las compras y suscripciones activas determinan los límites o las funciones disponibles en la app.
 
-Si caduca una suscripción, los canales que superen el límite gratuito dejan de transmitir. Los equipos, nombres y ajustes permanecen en el dispositivo y vuelven a estar disponibles al renovar una suscripción aplicable. Los precios y contenidos de los planes pueden cambiar conforme a los avisos de Apple y la ley aplicable. Los cambios de precio de una suscripción solo se aplican en una renovación futura según indique Apple. Estos términos no limitan derechos imperativos del consumidor.
+Si caduca una suscripción, los canales que superen el límite gratuito dejan de transmitir. Los equipos, nombres y ajustes permanecen en el dispositivo y vuelven a estar disponibles al renovar una suscripción aplicable. Los precios y contenidos de los planes pueden cambiar conforme a los avisos de Apple y la ley aplicable. Los cambios de precio de una suscripción solo se aplican en una renovación futura según indique Apple.
 
 Privacidad
 
@@ -55,9 +55,11 @@ El tratamiento de datos se describe en una Política de privacidad independiente
 
 Política de privacidad de Cam Hub
 
-Nombres de terceros
+Nombres y servicios de terceros
 
-Hikvision, Dahua, Synology, ONVIF y otros nombres pertenecen a sus titulares. La compatibilidad técnica no implica afiliación, patrocinio ni aprobación oficial.
+Hikvision, Dahua, Synology, ONVIF y otros nombres relacionados son marcas o identificadores de sus respectivos propietarios. Cam Hub se desarrolla de forma independiente.
+
+Una conexión correcta significa que el equipo y los protocolos o funciones que usa Cam Hub son técnicamente compatibles; no implica afiliación, asociación, patrocinio ni respaldo por parte de esos propietarios.
 
 Exclusión de garantías y limitación de responsabilidad
 
@@ -65,4 +67,4 @@ Además de las exclusiones del EULA estándar de Apple, Cam Hub se proporciona �
 
 Cambios
 
-Podemos actualizar estos términos por cambios de funciones, legislación o requisitos de la tienda y publicaremos la fecha revisada.
+Podemos actualizar estos términos cuando cambien las funciones de la app, la legislación o los requisitos de la tienda. La fecha de revisión se publicará en esta página.

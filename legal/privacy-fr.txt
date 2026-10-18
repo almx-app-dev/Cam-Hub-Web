@@ -1,33 +1,33 @@
 PRIVACY POLICY
 Politique de confidentialité
 
-Cam Hub privilégie le traitement sur l’appareil et le contrôle par l’utilisateur, sans suivi publicitaire tiers.
+Cam Hub est conçu autour du traitement sur l’appareil et du contrôle par l’utilisateur. Il n’exige aucun compte de service et n’intègre aucun suivi publicitaire tiers.
 
-Date d’effet: 10 octobre 2026
-App: Cam Hub
-Contact: app-dev@almx.cc
+Date d’effet : 10 octobre 2026
+App : Cam Hub
+Contact : app-dev@almx.cc
 
 Aperçu
 
-Cam Hub n’exige aucun compte de service supplémentaire et n’intègre ni publicité tierce ni suivi publicitaire. L’App se connecte aux caméras et enregistreurs configurés et autorisés par l’utilisateur.
+Cam Hub ne vous demande pas de créer de compte de service Cam Hub et n’intègre ni publicité tierce ni suivi publicitaire. L’app est conçue pour se connecter aux caméras et enregistreurs que vous configurez.
 
-Informations et identifiants
+Informations sur les équipements et identifiants
 
-Noms, adresses, ports, utilisateurs, canaux et réglages sont stockés sur l’appareil ; les mots de passe dans le trousseau Apple. Ils servent uniquement aux connexions et actions demandées.
+Les noms, adresses, ports, noms d’utilisateur et informations de canaux des caméras et enregistreurs, ainsi que les réglages de l’app, sont stockés sur votre appareil. Les mots de passe sont stockés dans le trousseau Apple. Cam Hub n’utilise ces informations que pour effectuer les connexions et les actions que vous demandez.
 
-Connexions et vidéo
+Connexions aux caméras et médias
 
-Lors de l’affichage en direct ou enregistré, l’App se connecte à l’adresse indiquée. L’équipement, le réseau, le VPN, le DNS ou les services distants peuvent traiter des données de connexion selon leurs politiques. Cam Hub n’utilise pas la vidéo pour la publicité ou le profilage comportemental.
+Lorsque vous regardez une vidéo en direct ou enregistrée, l’app se connecte à l’adresse d’équipement que vous avez indiquée. Votre équipement, votre fournisseur réseau, votre fournisseur de VPN, votre fournisseur DNS ou tout point de terminaison distant que vous choisissez peuvent traiter des informations de connexion selon leurs propres politiques. Cam Hub n’utilise pas la vidéo des caméras à des fins publicitaires ni de profilage comportemental.
 
 Panneaux Webhook et destinations tierces
 
 Vous pouvez définir pour les boutons de commande LiveView Mix une méthode HTTP ou HTTPS, une URL de destination, des en-têtes personnalisés et un corps de requête. Ces réglages peuvent contenir des jetons Authorization ou d’autres données sensibles. Ils sont stockés dans la configuration LiveView Mix de l’appareil et peuvent être inclus dans une sauvegarde iCloud chiffrée que vous choisissez de créer.
 
-Ce n’est qu’au toucher d’un bouton que l’App envoie la requête directement depuis votre appareil vers la destination indiquée, par exemple Home Assistant, Node-RED ou un autre service tiers. Cette destination et les fournisseurs réseau peuvent traiter l’adresse IP source, les en-têtes et le corps selon leurs propres politiques. Le développeur de Cam Hub ne choisit ni ne contrôle ces destinations et ne reçoit pas les données qui leur sont envoyées. HTTP ne chiffre pas le transit ; utilisez HTTPS pour les données sensibles et vérifiez les pratiques de confidentialité et de sécurité du destinataire.
+Ce n’est que lorsque vous touchez un bouton que l’app envoie la requête directement depuis votre appareil vers la destination indiquée, par exemple Home Assistant, Node-RED ou un autre service tiers. Cette destination et les fournisseurs réseau peuvent traiter l’adresse IP source, les en-têtes et le corps selon leurs propres politiques. Le développeur de Cam Hub ne choisit ni ne contrôle ces destinations et ne reçoit pas les données qui leur sont envoyées. HTTP ne chiffre pas le transit ; utilisez HTTPS pour les données sensibles et vérifiez les pratiques de confidentialité et de sécurité du destinataire.
 
 Accès et analyse du réseau local
 
-Cam Hub demande l’autorisation Réseau local afin de se connecter directement aux caméras et enregistreurs. Lorsque vous lancez une analyse dans l’onglet Outils, l’App sonde le sous-réseau choisi et des ports courants de services de caméra, et peut lire les adresses des équipements qui répondent, les ports ouverts et les noms HTTP Server pour aider à les identifier.
+Cam Hub demande l’autorisation Réseau local afin de se connecter directement aux caméras et enregistreurs. Lorsque vous lancez une analyse dans l’onglet Outils, l’app sonde le sous-réseau choisi et des ports courants de services de caméra, et peut lire les adresses des équipements qui répondent, les ports ouverts et les noms HTTP Server pour aider à les identifier.
 
 L’analyse ne commence qu’à votre demande. Les résultats sont traités sur l’appareil et ne sont pas envoyés au développeur de Cam Hub.
 
@@ -53,11 +53,11 @@ Si vous envoyez un rapport par e-mail, le développeur reçoit cet e-mail et vot
 
 Le rapport sur l’appareil est expérimental et peut être modifié ou supprimé à tout moment. L’envoi d’un rapport ne garantit ni la prise en charge de votre équipement, ni une réponse, ni une correction.
 
-Photos et caméra
+Photos et appareil photo
 
-Vous pouvez utiliser le sélecteur de photos système d’Apple pour choisir une photo précise, ou autoriser la caméra à en prendre une nouvelle, pour une case vide LiveView Mix. L’App reçoit uniquement l’image choisie ou capturée et ne parcourt pas toute votre photothèque. L’image est redimensionnée, compressée et stockée dans la configuration LiveView Mix de l’appareil.
+Vous pouvez utiliser le sélecteur de photos système d’Apple pour choisir une photo précise, ou autoriser l’accès à l’appareil photo pour en prendre une nouvelle, pour une case vide LiveView Mix. L’app reçoit uniquement l’image choisie ou prise, et non toute votre photothèque. L’image est redimensionnée, compressée et stockée dans la configuration LiveView Mix de l’appareil.
 
-Les images restent sur votre appareil ; le développeur de Cam Hub ne les reçoit pas et n’y accède pas. Elles ne peuvent être enregistrées dans votre propre iCloud, avec une sauvegarde chiffrée Cam Hub destinée à restaurer vos appareils, que si vous choisissez de créer cette sauvegarde. Vous pouvez retirer une image dans LiveView Mix et modifier les autorisations Caméra ou Photos dans les Réglages du système.
+Les images restent sur votre appareil ; le développeur de Cam Hub ne les reçoit pas et n’y accède pas. Elles ne peuvent être enregistrées dans votre propre iCloud, avec une sauvegarde chiffrée Cam Hub destinée à restaurer vos appareils, que si vous choisissez de créer cette sauvegarde. Vous pouvez retirer une image dans LiveView Mix et modifier les autorisations Appareil photo ou Photos dans les Réglages du système.
 
 Localisation
 
@@ -73,27 +73,29 @@ Ouvert (sans verrou) : la clé provient d’un secret intégré à Cam Hub, si b
 
 PIN à six chiffres : le code ne s’ouvre qu’avec le PIN que vous choisissez. Un PIN à six chiffres n’offre qu’un million de possibilités ; qui obtient le code peut toutes les essayer hors connexion sur son propre ordinateur.
 
-Chiffrement complexe (mot de passe) : le code ne s’ouvre qu’avec le mot de passe que vous choisissez, d’au moins huit caractères, avec toutes lettres, tous chiffres et tous symboles. Seul un mot de passe long et unique rend toute devinette irréalisable.
+Chiffrement complexe (mot de passe) : le code ne s’ouvre qu’avec le mot de passe que vous choisissez. Il doit comporter au moins huit caractères et peut contenir n’importe quels lettres, chiffres ou symboles. Seul un mot de passe long et unique le rend impossible à deviner en pratique.
 
 Cam Hub n’envoie ni le code, ni le PIN, ni le mot de passe au développeur, et le développeur ne peut pas récupérer un PIN ou un mot de passe oublié. Transmettez le PIN ou le mot de passe séparément du code.
 
-Les codes n’expirent pas automatiquement. Supprimer l’équipement ou l’app de l’appareil source ne révoque pas les copies déjà partagées ; si un code a pu être exposé, changez les mots de passe des équipements concernés.
+Les codes n’expirent pas. Supprimer les caméras ou l’app sur l’appareil source ne révoque pas les copies déjà partagées ; si un code a pu être exposé, changez les mots de passe des équipements concernés.
 
 Le code est transmis par l’app avec laquelle vous le partagez, selon ses propres politiques. Si vous le partagez sous forme de lien vers le site web de Cam Hub, le code se trouve après le « # » du lien, et les navigateurs n’envoient pas cette partie au serveur du site.
 
 Sauvegarde iCloud facultative
 
-L’App chiffre les configurations et identifiants pris en charge et les place dans votre iCloud privé. La sauvegarde et la restauration sur iPhone, iPad et Apple TV n’utilisent aucun PIN ; pour restaurer, sélectionnez simplement une sauvegarde disponible. La sauvegarde est chiffrée avec une clé intégrée à l’app, et non avec un mot de passe que vous choisissez ; sa protection repose sur votre compte Apple et iCloud.
+Si vous choisissez Sauvegarde iCloud, l’app chiffre la configuration des caméras et enregistreurs pris en charge, les identifiants, les canaux et les réglages de l’app avant de placer la sauvegarde dans le stockage clé-valeur de votre iCloud privé. La sauvegarde et la restauration sur iPhone, iPad et Apple TV n’utilisent aucun PIN. La sauvegarde est chiffrée avec une clé intégrée à l’app, et non avec un mot de passe que vous choisissez ; sa protection repose sur votre compte Apple et iCloud.
+
+L’heure de la sauvegarde, le nombre d’appareils et le nom du site sont stockés séparément pour que l’app puisse afficher l’état de la sauvegarde. Pour restaurer, sélectionnez une sauvegarde disponible et poursuivez directement.
 
 Achats et abonnements
 
-Les achats et les abonnements sont traités par Apple. Nous ne recevons pas vos coordonnées bancaires complètes. L’app lit l’état d’achat transmis par Apple afin de débloquer les limites et les fonctionnalités correspondantes.
+Les achats et les abonnements sont traités par Apple. Nous ne recevons pas les informations complètes de votre carte de paiement ni de votre compte bancaire. L’app lit l’état d’achat transmis par Apple afin de débloquer les limites et les fonctionnalités correspondantes.
 
 Partage, conservation, suppression et choix
 
 Nous ne vendons aucune donnée personnelle. Les réglages locaux restent sur votre appareil jusqu’à ce que vous supprimiez le contenu concerné ou désinstalliez l’app. Dans l’app, vous pouvez supprimer les équipements, les images LiveView Mix et les réglages de commande, supprimer séparément une sauvegarde iCloud et retirer les autorisations système dans les Réglages de votre appareil Apple.
 
-Les données iCloud facultatives sont gérées via votre compte Apple et les services iCloud. Les e-mails que vous adressez volontairement à l’assistance ne sont conservés que le temps nécessaire pour y répondre et conserver les justificatifs requis. Pour exercer vos droits, écrivez à l’adresse indiquée ci-dessus.
+Les données iCloud facultatives sont gérées via votre compte Apple et les services iCloud. Les e-mails que vous adressez volontairement à l’assistance ne sont conservés que le temps nécessaire pour y répondre et conserver les justificatifs requis.
 
 Enfants et modifications de la politique
 

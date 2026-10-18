@@ -1,5 +1,4 @@
-TERMS OF USE
-Terms of use
+Terms of Use
 
 By using Cam Hub, you agree to these terms and the applicable Apple App Store license and purchase rules.
 
@@ -7,11 +6,11 @@ Effective date: July 26, 2026
 App: Cam Hub
 Contact: app-dev@almx.cc
 
-Apple standard EULA
+Apple Standard EULA
 
 Cam Hub uses Apple’s Standard End User License Agreement. If these terms conflict with Apple’s applicable EULA or App Store rules, Apple’s applicable terms control.
 
-Apple Standard End User License Agreement
+Apple Standard End User License Agreement: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 
 Purpose and authorized use
 

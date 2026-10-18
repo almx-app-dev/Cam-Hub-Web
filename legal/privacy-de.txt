@@ -1,7 +1,7 @@
 PRIVACY POLICY
 Datenschutzerklärung
 
-Cam Hub setzt auf Verarbeitung auf dem Gerät und Nutzerkontrolle und enthält kein Werbetracking durch Dritte.
+Cam Hub ist auf Verarbeitung auf dem Gerät und die Kontrolle durch die Nutzer ausgelegt. Es ist kein Dienstkonto erforderlich, und die App enthält kein Werbetracking durch Dritte.
 
 Gültig ab: 10. Oktober 2026
 App: Cam Hub
@@ -9,15 +9,15 @@ Kontakt: app-dev@almx.cc
 
 Überblick
 
-Cam Hub verlangt kein zusätzliches Dienstkonto und enthält keine Drittanbieterwerbung oder Werbeverfolgung. Die App verbindet sich mit Kameras und Recordern, die Sie konfigurieren und verwenden dürfen.
+Cam Hub verlangt nicht, dass Sie ein Cam-Hub-Dienstkonto anlegen, und enthält weder Drittanbieterwerbung noch Werbetracking. Die App ist dafür ausgelegt, sich mit Kameras und Recordern zu verbinden, die Sie konfigurieren.
 
 Geräte- und Zugangsdaten
 
-Gerätenamen, Adressen, Ports, Benutzernamen, Kanäle und App-Einstellungen werden auf Ihrem Gerät gespeichert; Passwörter im Apple-Schlüsselbund. Sie werden nur für die von Ihnen angeforderten Verbindungen und Aktionen verwendet.
+Namen, Adressen, Ports und Benutzernamen von Kameras und Recordern, Kanalinformationen und App-Einstellungen werden auf Ihrem Gerät gespeichert. Passwörter werden im Apple-Schlüsselbund gespeichert. Cam Hub verwendet diese Angaben nur, um die von Ihnen angeforderten Verbindungen und Aktionen auszuführen.
 
 Verbindungen und Video
 
-Bei Live- oder Aufzeichnungsansichten verbindet sich die App mit der von Ihnen angegebenen Geräteadresse. Gerät, Netzwerk, VPN, DNS oder gewählte Ferndienste können Verbindungsdaten nach eigenen Richtlinien verarbeiten. Cam Hub nutzt Video nicht für Werbung oder Verhaltensprofile.
+Wenn Sie Live- oder aufgezeichnetes Video ansehen, verbindet sich die App mit der von Ihnen angegebenen Geräteadresse. Ihr Gerät, Ihr Netzanbieter, Ihr VPN-Anbieter, Ihr DNS-Anbieter oder ein von Ihnen gewählter entfernter Endpunkt können Verbindungsdaten nach ihren eigenen Richtlinien verarbeiten. Cam Hub nutzt Kameravideo nicht für Werbung oder verhaltensbasierte Profilbildung.
 
 Webhook-Bedienfelder und Drittanbieter-Endpunkte
 
@@ -35,17 +35,17 @@ Gerätebericht (experimentell)
 
 Wenn das Hinzufügen einer Kamera oder eines Recorders fehlschlägt, bietet Cam Hub einen optionalen, experimentellen Gerätebericht an, der dem Entwickler hilft, die Ursache zu verstehen. Er wird nur angeboten, nachdem ein Versuch, ein Gerät hinzuzufügen, fehlgeschlagen ist. Er startet nur, wenn Sie „Details an den Entwickler senden“ antippen und den vor der ersten Nutzung angezeigten Hinweis akzeptiert haben, und er läuft nur, solange sein Bildschirm geöffnet ist. Sie können ihn jederzeit stoppen.
 
-Während er läuft, sendet Ihr Apple-Gerät schreibgeschützte Anfragen direkt an die eingegebene Geräteadresse: an die von Ihnen eingegebenen Ports und, bei einem Gerät im lokalen Netzwerk, an gängige Kameraports. Die Anfragen prüfen, welche Ports antworten, lesen Modell, Firmware und unterstützte Protokolle des Geräts aus (etwa ISAPI, ONVIF und RTSP) und testen kurz, ob ein Videostream Daten liefert. Sie ändern nichts am Gerät, und keine davon geht an den Entwickler oder an einen anderen Server.
+Während er läuft, sendet Ihr Apple-Gerät rein lesende Anfragen direkt an die eingegebene Geräteadresse: an die von Ihnen eingegebenen Ports und, bei einem Gerät im lokalen Netzwerk, an gängige Kameraports. Die Anfragen prüfen, welche Ports antworten, lesen Modell, Firmware und unterstützte Protokolle des Geräts aus (etwa ISAPI, ONVIF und RTSP) und testen kurz, ob ein Videostream Daten liefert. Sie ändern nichts am Gerät, und keine davon geht an den Entwickler oder an einen anderen Server.
 
 Die Anfragen melden sich wie beim Hinzufügen des Geräts mit dem von Ihnen eingegebenen Benutzernamen und Passwort an. War der fehlgeschlagene Versuch selbst eine abgelehnte Anmeldung, sendet der Bericht überhaupt keine Anmeldung. Fehlgeschlagene Anmeldungen werden vom Gerät gezählt und können protokolliert werden.
 
-Der Bericht enthält: App-Version, iOS-Version, Modell Ihres Apple-Geräts und Spracheinstellungen; den gewählten Verbindungsmodus und den von der App angezeigten Fehler; die Geräteadresse mit verborgener letzter Zahl (eine Adresse im Internet wird weggelassen); die von Ihnen eingegebenen Ports und die Ports, die geantwortet haben; Marke, Modell, Firmware und unterstützte Protokolle, wie das Gerät sie meldet; Statuscodes und kurze Auszüge der Antworten des Geräts; die Verbindungsart Ihres Apple-Geräts (zum Beispiel WLAN, Mobilfunk oder VPN) sowie Anzahl und Größe der Pakete des Test-Videostreams, niemals Bilder.
+Der Bericht enthält: App-Version, iOS-Version, Modell Ihres Apple-Geräts und Spracheinstellungen; den gewählten Verbindungsmodus und den von der App angezeigten Fehler; die Geräteadresse mit verborgener letzter Zahl (eine Adresse im Internet wird weggelassen); die von Ihnen eingegebenen Ports und die Ports, die geantwortet haben; Marke, Modell, Firmware und unterstützte Protokolle, wie das Gerät sie meldet; Statuscodes und kurze Auszüge der Antworten des Geräts; die Verbindungsart Ihres Apple-Geräts (zum Beispiel WLAN, Mobilfunk oder VPN) sowie Zählwerte und Größenangaben aus dem Test-Videostream, niemals Bilder.
 
 Bevor etwas angezeigt oder gespeichert wird, ersetzt ein automatischer Filter Passwörter, Benutzernamen, Token, Cookies, Seriennummern, MAC-Adressen, öffentliche IP-Adressen, Hostnamen, E-Mail-Adressen, Geräte- und Kanalnamen, WLAN-Namen, Telefonnummern sowie lange Schlüssel oder Kennungen durch sichtbare Platzhalter. Text von Webseiten wird nicht aufbewahrt. Der Filter arbeitet automatisch und ist nicht perfekt; bitte lesen Sie den Bericht, bevor Sie ihn senden.
 
 Nichts wird automatisch an den Entwickler gesendet. Der Bericht wird zuerst auf dem Bildschirm angezeigt; dort können Sie Abschnitte abschalten oder ihn schließen, ohne etwas zu senden. Zum Senden wählen Sie „E-Mail an den Entwickler“: Der Bericht öffnet sich im Verfassen-Fenster von Mail, an die Support-Adresse adressiert, im Nachrichtentext und als Textdatei-Anhang; erst wenn Sie dort auf „Senden“ tippen, wird etwas gesendet, und Sie können stattdessen abbrechen. Ist Mail nicht eingerichtet, wird der Bericht in die Zwischenablage kopiert und in Ihrer Mail-App eine bereits adressierte Nachricht geöffnet. Sie können den Bericht auch kopieren oder über das iOS-Teilen-Menü teilen.
 
-Ein kopierter Bericht wird nicht über die universelle Zwischenablage an Ihre anderen Geräte weitergegeben und verfällt nach 120 Sekunden aus der Zwischenablage.
+Ein kopierter Bericht wird von der Universellen Zwischenablage ausgenommen und nach 120 Sekunden aus der Zwischenablage entfernt.
 
 Bis zu fünf der neuesten Berichte bleiben auf Ihrem Gerät gespeichert, damit Sie einen später senden können. Sie sind von Geräte-Backups und vom Cam-Hub-iCloud-Backup ausgenommen. Mit „Gespeicherte Berichte löschen“ auf dem Gerätebericht-Bildschirm können Sie sie jederzeit löschen; beim Speichern eines sechsten wird außerdem der älteste gelöscht, und beim Löschen der App werden alle entfernt.
 
@@ -55,7 +55,7 @@ Der Gerätebericht ist experimentell und kann jederzeit geändert oder entfernt 
 
 Fotos und Kamera
 
-Sie können mit Apples System-Fotoauswahl ein bestimmtes Foto wählen oder den Kamerazugriff erlauben, um ein neues Foto für ein freies LiveView-Mix-Feld aufzunehmen. Die App erhält nur das ausgewählte oder aufgenommene Bild und durchsucht nicht Ihre gesamte Fotomediathek. Das Bild wird verkleinert, komprimiert und in der LiveView-Mix-Konfiguration auf Ihrem Gerät gespeichert.
+Sie können mit Apples System-Fotoauswahl ein bestimmtes Foto wählen oder den Kamerazugriff erlauben, um ein neues Foto für einen leeren Platz im LiveView Mix aufzunehmen. Die App erhält nur das ausgewählte oder aufgenommene Bild, nicht Ihre gesamte Fotomediathek. Das Bild wird verkleinert, komprimiert und in der LiveView-Mix-Konfiguration auf Ihrem Gerät gespeichert.
 
 Bilder verbleiben auf Ihrem Gerät; der Cam-Hub-Entwickler erhält sie nicht und kann nicht darauf zugreifen. Nur wenn Sie selbst ein verschlüsseltes Cam-Hub-iCloud-Backup erstellen, können die Bilder zur Gerätewiederherstellung mit diesem Backup in Ihrer eigenen iCloud gespeichert werden. Sie können Bilder in LiveView Mix entfernen und Kamera- oder Fotoberechtigungen in den Systemeinstellungen ändern.
 
@@ -63,7 +63,7 @@ Standort
 
 Cam Hub fragt die Standortberechtigung nur „Beim Verwenden der App“ ab. Standort und Kompassrichtung werden nur gelesen, solange ein Bildschirm geöffnet ist, der sie braucht, etwa der Tacho im Tab „Werkzeuge“, der Geschwindigkeit und Kompassrichtung anzeigt. Die App verfolgt Ihren Standort nicht im Hintergrund.
 
-Standort und Kompassrichtung werden auf Ihrem Gerät verarbeitet, um Geschwindigkeit und Fahrtrichtung anzuzeigen. Sie werden nicht gespeichert, nicht in Backups aufgenommen und weder an den Cam-Hub-Entwickler noch an andere Dritte gesendet. Wenn der Tacho Ihre Geschwindigkeit ansagt, wird die Ansage mit der in iOS eingebauten Sprachausgabe auf Ihrem Gerät erzeugt und lässt sich auf diesem Bildschirm abschalten. Sie können die Standortberechtigung jederzeit in den Einstellungen Ihres Apple-Geräts verweigern oder widerrufen; die übrigen Funktionen der App funktionieren auch ohne sie weiter.
+Standort und Kompassrichtung werden auf Ihrem Gerät verarbeitet, um Geschwindigkeit und Richtung anzuzeigen. Sie werden nicht gespeichert, nicht in Backups aufgenommen und weder an den Cam-Hub-Entwickler noch an andere Dritte gesendet. Wenn der Tacho Ihre Geschwindigkeit ansagt, wird die Ansage mit der in iOS eingebauten Sprachausgabe auf Ihrem Gerät erzeugt und lässt sich auf diesem Bildschirm abschalten. Sie können die Standortberechtigung jederzeit in den Einstellungen Ihres Apple-Geräts verweigern oder widerrufen; die übrigen Funktionen der App funktionieren auch ohne sie weiter.
 
 Codes zum Teilen von Kameras
 
@@ -77,13 +77,15 @@ Komplexe Verschlüsselung (Passwort): Der Code lässt sich nur mit dem von Ihnen
 
 Cam Hub sendet den Code, die PIN oder das Passwort nicht an den Entwickler, und der Entwickler kann eine vergessene PIN oder ein vergessenes Passwort nicht wiederherstellen. Senden Sie PIN oder Passwort getrennt vom Code.
 
-Codes laufen nicht automatisch ab. Das Löschen eines Geräts oder der App auf dem Quellgerät widerruft bereits geteilte Kopien nicht; ändern Sie die Passwörter der betroffenen Geräte, falls ein Code offengelegt worden sein könnte.
+Codes laufen nicht automatisch ab. Das Löschen der Kameras oder der App auf dem Quellgerät widerruft bereits geteilte Kopien nicht; ändern Sie die Passwörter der betroffenen Geräte, falls ein Code offengelegt worden sein könnte.
 
 Der Code wird von der App weitergegeben, mit der Sie ihn teilen, und unterliegt deren Richtlinien. Teilen Sie ihn als Link zur Cam-Hub-Website, steht der Code hinter dem „#“ im Link, und Browser senden diesen Teil nicht an den Server der Website.
 
 Optionales iCloud-Backup
 
-Die App verschlüsselt unterstützte Konfigurationen und Zugangsdaten und legt sie in Ihrer privaten iCloud ab. Backup und Wiederherstellung auf iPhone, iPad und Apple TV verwenden keine PIN; wählen Sie zur Wiederherstellung einfach ein verfügbares Backup aus. Das Backup wird mit einem in die App eingebauten Schlüssel verschlüsselt, nicht mit einem von Ihnen gewählten Passwort; sein Schutz beruht auf Ihrem Apple Account und iCloud.
+Wenn Sie das iCloud-Backup wählen, verschlüsselt die App unterstützte Konfigurationen von Kameras und Recordern, Zugangsdaten, Kanäle und App-Einstellungen, bevor sie das Backup in Ihrem privaten iCloud-Schlüssel-Wert-Speicher ablegt. Backup und Wiederherstellung auf iPhone, iPad und Apple TV verwenden keine PIN. Das Backup wird mit einem in die App eingebauten Schlüssel verschlüsselt, nicht mit einem von Ihnen gewählten Passwort; sein Schutz beruht auf Ihrem Apple Account und iCloud.
+
+Zeitpunkt des Backups, Anzahl der Geräte und Standortname werden separat gespeichert, damit die App den Backup-Status anzeigen kann. Wählen Sie zur Wiederherstellung ein verfügbares Backup aus und fahren Sie direkt fort.
 
 Käufe und Abonnements
 
@@ -93,7 +95,7 @@ Weitergabe, Aufbewahrung, Löschung und Wahlmöglichkeiten
 
 Wir verkaufen keine personenbezogenen Daten. Lokale Einstellungen bleiben auf Ihrem Gerät, bis Sie die betreffenden Inhalte löschen oder die App entfernen. In der App können Sie Geräte, LiveView-Mix-Bilder und Steuerungseinstellungen löschen, ein iCloud-Backup separat löschen und Systemberechtigungen in den Einstellungen Ihres Apple-Geräts widerrufen.
 
-Optionale iCloud-Daten verwalten Sie über Ihren Apple Account und die iCloud-Dienste. Freiwillig an den Support gesendete E-Mails bewahren wir nur so lange auf, wie es zur Beantwortung und für erforderliche Support-Nachweise nötig ist. Zur Wahrnehmung Ihrer Datenschutzrechte wenden Sie sich an die oben genannte Adresse.
+Optionale iCloud-Daten verwalten Sie über Ihren Apple Account und die iCloud-Dienste. Freiwillig an den Support gesendete E-Mails bewahren wir nur so lange auf, wie es zur Beantwortung und für erforderliche Support-Nachweise nötig ist.
 
 Kinder und Änderungen dieser Erklärung
 

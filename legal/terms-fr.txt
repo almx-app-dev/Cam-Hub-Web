@@ -1,21 +1,21 @@
 TERMS OF USE
 Conditions d’utilisation
 
-L’utilisation de Cam Hub est soumise à ces conditions et aux règles applicables de l’Apple App Store.
+En utilisant Cam Hub, vous acceptez les présentes conditions ainsi que les règles de licence et d’achat applicables de l’App Store d’Apple.
 
-Date d’effet: 26 juillet 2026
-App: Cam Hub
-Contact: app-dev@almx.cc
+Date d’effet : 26 juillet 2026
+App : Cam Hub
+Contact : app-dev@almx.cc
 
 CLUF standard Apple
 
-Cam Hub utilise le contrat de licence utilisateur final standard d’Apple. En cas de conflit, les conditions Apple applicables prévalent.
+Cam Hub utilise le contrat de licence utilisateur final (CLUF) standard d’Apple. En cas de conflit entre les présentes conditions et le CLUF d’Apple ou les règles de l’App Store applicables, les conditions d’Apple applicables prévalent.
 
-Apple Standard End User License Agreement
+Apple Standard End User License Agreement: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 
-Utilisation légale et autorisée
+Objet et utilisation autorisée
 
-Connectez uniquement les équipements et réseaux que vous possédez, gérez ou êtes expressément autorisé à utiliser. Vous devez respecter les lois locales relatives à la vie privée, la surveillance, l’enregistrement, le travail et la propriété.
+Cam Hub est un outil de visualisation et de gestion pour caméras et enregistreurs compatibles. Vous ne pouvez vous connecter qu’aux équipements et réseaux que vous possédez, que vous gérez ou auxquels vous êtes expressément autorisé à accéder. Il vous incombe de respecter les lois applicables en matière de vie privée, de surveillance, d’enregistrement, de droit du travail et de propriété.
 
 Accès aux équipements et sécurité
 
@@ -33,7 +33,7 @@ L’onglet Outils sonde les adresses et ports d’un réseau que vous sélection
 
 Codes de partage
 
-Vous êtes responsable des destinataires d’un code de partage et devez changer immédiatement les mots de passe des équipements si le code a pu être exposé. Son contenu, son chiffrement et sa durée de validité sont décrits dans la Politique de confidentialité.
+Vous êtes responsable des destinataires d’un code de partage ainsi que du changement des mots de passe des équipements concernés si le code a pu être exposé. Son contenu, son chiffrement et sa durée de validité sont décrits dans la Politique de confidentialité.
 
 Compatibilité et disponibilité
 
@@ -45,9 +45,9 @@ Cam Hub n’est pas un service de surveillance d’urgence et ne garantit ni vid
 
 Achats et abonnements
 
-Les achats, renouvellements, résiliations, remboursements et la gestion du compte suivent les informations d’Apple et les réglages de votre compte Apple.
+Les achats intégrés et les abonnements sont traités par Apple. Les prix, les renouvellements, les résiliations, les remboursements et la gestion du compte suivent les informations affichées par Apple et les réglages de votre compte Apple. Les droits actifs déterminent les limites ou les fonctionnalités disponibles dans l’app.
 
-Si un abonnement expire, les canaux dépassant le quota gratuit cessent de diffuser. Les équipements, noms et réglages restent sur l’appareil et redeviennent disponibles après le renouvellement d’un abonnement applicable. Les prix et contenus des offres peuvent changer selon les avis d’Apple et le droit applicable. Tout changement de prix d’un abonnement ne prend effet que lors d’un renouvellement futur indiqué par Apple. Ces conditions ne limitent aucun droit impératif du consommateur.
+Si un abonnement expire, les canaux dépassant le quota gratuit cessent de diffuser. Les équipements, noms et réglages restent sur l’appareil et redeviennent disponibles après le renouvellement d’un abonnement applicable. Les prix et contenus des offres peuvent changer selon les avis d’Apple et le droit applicable. Tout changement de prix d’un abonnement ne prend effet que lors d’un renouvellement futur indiqué par Apple.
 
 Confidentialité
 
@@ -55,9 +55,11 @@ Le traitement des données est décrit dans une Politique de confidentialité di
 
 Politique de confidentialité de Cam Hub
 
-Noms de tiers
+Noms et services tiers
 
-Hikvision, Dahua, Synology, ONVIF et les autres noms appartiennent à leurs titulaires. La compatibilité technique n’implique aucune affiliation, aucun parrainage ni aucune approbation officielle.
+Hikvision, Dahua, Synology, ONVIF et les autres noms associés sont des marques ou des identifiants de leurs propriétaires respectifs. Cam Hub est développé de manière indépendante.
+
+Une connexion réussie signifie que l’équipement et les protocoles ou fonctions utilisés par Cam Hub sont techniquement compatibles ; elle n’implique aucune affiliation, aucun partenariat, aucun parrainage ni aucune approbation de la part de ces propriétaires.
 
 Absence de garantie et limitation de responsabilité
 
@@ -65,4 +67,4 @@ Outre les exclusions du CLUF standard Apple, Cam Hub est fourni « en l’état 
 
 Modifications
 
-Nous pouvons mettre à jour ces conditions en cas d’évolution des fonctions, de la loi ou des exigences de la boutique et publierons la date révisée.
+Nous pouvons mettre à jour ces conditions lorsque les fonctions de l’app, la loi ou les exigences de la boutique évoluent. La date de révision sera publiée sur cette page.
