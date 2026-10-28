@@ -3,13 +3,15 @@ Política de privacidad
 
 Cam Hub está diseñada para procesar la información en tu dispositivo y dejarte el control. No requiere una cuenta de servicio ni incluye rastreo publicitario de terceros.
 
-Vigente desde: 10 de octubre de 2026
+Vigente desde: 29 de octubre de 2026
 App: Cam Hub
 Contacto: app-dev@almx.cc
 
 Descripción general
 
 Cam Hub no requiere que crees una cuenta de servicio de Cam Hub y no incluye publicidad de terceros ni rastreo publicitario. La app está diseñada para conectarse a las cámaras y los grabadores que tú configures.
+
+Si agregas transmisiones de YouTube o Twitch, se reproducen con los reproductores propios de esos servicios, que pueden mostrar sus propios anuncios y recibir información de tu dispositivo; consulta “Transmisiones de YouTube y Twitch” más abajo.
 
 Información de los equipos y credenciales
 
@@ -18,6 +20,18 @@ Los nombres, las direcciones, los puertos, los nombres de usuario y la informaci
 Conexiones de cámaras y video
 
 Cuando ves video en vivo o grabado, la app se conecta a la dirección del equipo que proporcionaste. Tu equipo, tu proveedor de red, tu proveedor de VPN, tu proveedor de DNS o cualquier destino remoto que elijas pueden procesar información de la conexión conforme a sus propias políticas. Cam Hub no usa el video de las cámaras para publicidad ni para crear perfiles de comportamiento.
+
+Transmisiones de YouTube y Twitch
+
+Si agregas una transmisión en vivo o un canal de YouTube, o un canal de Twitch, Cam Hub lo reproduce con el reproductor integrado propio de ese servicio: el reproductor de YouTube (YouTube API Services) o el de Twitch. Antes de reproducir la primera transmisión de cualquiera de los dos servicios, la app te pide que aceptes los términos de ese servicio. Si nunca agregas una transmisión de este tipo, esta sección no aplica para ti.
+
+El reproductor se carga desde YouTube o Twitch y se conecta directamente a sus servidores. Mientras se reproduce, el servicio recibe tu dirección IP e información sobre tu dispositivo y navegador, y puede usar cookies o tecnologías similares, medir la reproducción y mostrar anuncios, como se describe en la Política de Privacidad de Google (YouTube) o el Aviso de Privacidad de Twitch (Twitch), enlazados más abajo. Cam Hub conserva las cookies y los datos guardados del reproductor solo mientras la app está abierta y no recibe esta información.
+
+Cam Hub solo guarda los enlaces y nombres de canal que agregas, en tu dispositivo y, si los creas, en un código para compartir o un respaldo en iCloud. Al eliminar la transmisión en la app, se borran.
+
+Política de Privacidad de Google: https://policies.google.com/privacy
+
+Aviso de Privacidad de Twitch: https://www.twitch.tv/p/legal/privacy-notice/
 
 Paneles de control con webhook y destinos de terceros
 

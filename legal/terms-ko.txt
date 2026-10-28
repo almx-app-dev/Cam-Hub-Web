@@ -3,7 +3,7 @@ TERMS OF USE
 
 Cam Hub를 사용하면 본 약관과 적용되는 Apple App Store 사용권 및 구매 규정에 동의하는 것입니다.
 
-시행일: 2026년 7월 26일
+시행일: 2026년 10월 29일
 앱: Cam Hub
 문의: app-dev@almx.cc
 
@@ -60,6 +60,14 @@ Cam Hub 개인정보 처리방침
 Hikvision, Dahua, Synology, ONVIF 및 기타 관련 명칭은 각 소유자의 상표 또는 식별자입니다. Cam Hub는 독립적으로 개발되었습니다.
 
 연결에 성공했다는 것은 장비와 Cam Hub가 사용하는 프로토콜 또는 기능이 기술적으로 호환된다는 뜻이며, 해당 소유자와의 제휴, 파트너십, 후원 또는 보증을 의미하지 않습니다.
+
+YouTube 및 Twitch 스트림
+
+YouTube 및 Twitch 스트림은 Cam Hub 개발자가 아닌 해당 서비스가 제공하며, 언제든지 중단, 변경되거나 이용할 수 없게 될 수 있습니다. Cam Hub에서 이를 추가하거나 시청하면 아래 링크의 YouTube 서비스 약관 및 Twitch 서비스 약관을 준수하는 데 동의하는 것입니다.
+
+YouTube 서비스 약관: https://www.youtube.com/t/terms
+
+Twitch 서비스 약관: https://www.twitch.tv/p/legal/terms-of-service/
 
 보증 부인 및 책임 제한
 

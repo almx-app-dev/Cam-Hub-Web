@@ -3,7 +3,7 @@ Términos de uso
 
 Al usar Cam Hub, aceptas estos términos y las reglas de licencia y de compra de la App Store de Apple que sean aplicables.
 
-Vigente desde: 26 de julio de 2026
+Vigente desde: 29 de octubre de 2026
 App: Cam Hub
 Contacto: app-dev@almx.cc
 
@@ -60,6 +60,14 @@ Nombres y servicios de terceros
 Hikvision, Dahua, Synology, ONVIF y otros nombres relacionados son marcas o identificadores de sus respectivos propietarios. Cam Hub se desarrolla de forma independiente.
 
 Una conexión exitosa significa que el equipo y los protocolos o las funciones que usa Cam Hub son técnicamente compatibles; no implica afiliación, alianza, patrocinio ni aval de parte de esos propietarios.
+
+Transmisiones de YouTube y Twitch
+
+Las transmisiones de YouTube y Twitch las proporcionan esos servicios, no el desarrollador de Cam Hub, y pueden interrumpirse, cambiar o dejar de estar disponibles en cualquier momento. Al agregarlas o verlas en Cam Hub, aceptas quedar sujeto a los Términos del Servicio de YouTube y los Términos de Servicio de Twitch, enlazados más abajo.
+
+Términos del Servicio de YouTube: https://www.youtube.com/t/terms
+
+Términos de Servicio de Twitch: https://www.twitch.tv/p/legal/terms-of-service/
 
 Sin garantía y limitación de responsabilidad
 

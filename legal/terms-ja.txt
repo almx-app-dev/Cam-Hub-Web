@@ -3,7 +3,7 @@ TERMS OF USE
 
 Cam Hub を利用することにより、ユーザーは本規約、および適用される Apple App Store の使用許諾と購入に関する規則に同意したものとします。
 
-施行日：2026年7月26日
+施行日：2026年10月29日
 アプリ：Cam Hub
 お問い合わせ：app-dev@almx.cc
 
@@ -60,6 +60,14 @@ Cam Hub プライバシーポリシー
 Hikvision、Dahua、Synology、ONVIF およびその他の関連名称は、それぞれの権利者の商標または識別名です。Cam Hub は独立して開発されています。
 
 接続に成功することは、デバイスと、Cam Hub が使用するプロトコルや機能とが技術的に互換性があることを意味するにすぎず、それらの権利者との提携、パートナーシップ、スポンサーシップ、または推奨を意味するものではありません。
+
+YouTube と Twitch のライブ配信
+
+YouTube と Twitch のライブ配信は、Cam Hub の開発者ではなく各サービスが提供するもので、いつでも停止、変更、または利用できなくなる場合があります。Cam Hub でこれらを追加または視聴することにより、下記リンクの YouTube 利用規約および Twitch 利用規約に拘束されることに同意したものとみなされます。
+
+YouTube 利用規約: https://www.youtube.com/t/terms
+
+Twitch 利用規約: https://www.twitch.tv/p/legal/terms-of-service/
 
 無保証と責任制限
 

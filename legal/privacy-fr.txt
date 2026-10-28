@@ -3,13 +3,15 @@ Politique de confidentialité
 
 Cam Hub est conçu autour du traitement sur l’appareil et du contrôle par l’utilisateur. Il n’exige aucun compte de service et n’intègre aucun suivi publicitaire tiers.
 
-Date d’effet : 10 octobre 2026
+Date d’effet : 29 octobre 2026
 App : Cam Hub
 Contact : app-dev@almx.cc
 
 Aperçu
 
 Cam Hub ne vous demande pas de créer de compte de service Cam Hub et n’intègre ni publicité tierce ni suivi publicitaire. L’app est conçue pour se connecter aux caméras et enregistreurs que vous configurez.
+
+Si vous ajoutez des diffusions YouTube ou Twitch, elles sont lues par les lecteurs propres à ces services, qui peuvent afficher leurs propres publicités et recevoir des informations de votre appareil ; voir « Diffusions YouTube et Twitch » ci-dessous.
 
 Informations sur les équipements et identifiants
 
@@ -18,6 +20,18 @@ Les noms, adresses, ports, noms d’utilisateur et informations de canaux des ca
 Connexions aux caméras et médias
 
 Lorsque vous regardez une vidéo en direct ou enregistrée, l’app se connecte à l’adresse d’équipement que vous avez indiquée. Votre équipement, votre fournisseur réseau, votre fournisseur de VPN, votre fournisseur DNS ou tout point de terminaison distant que vous choisissez peuvent traiter des informations de connexion selon leurs propres politiques. Cam Hub n’utilise pas la vidéo des caméras à des fins publicitaires ni de profilage comportemental.
+
+Diffusions YouTube et Twitch
+
+Si vous ajoutez une diffusion en direct ou une chaîne YouTube, ou une chaîne Twitch, Cam Hub la lit avec le lecteur intégré propre à ce service : le lecteur de YouTube (YouTube API Services) ou celui de Twitch. Avant la lecture de la première diffusion de l’un ou l’autre service, l’app vous demande d’accepter les conditions de ce service. Si vous n’ajoutez jamais une telle diffusion, cette section ne vous concerne pas.
+
+Le lecteur est chargé depuis YouTube ou Twitch et se connecte directement à leurs serveurs. Pendant la lecture, le service reçoit votre adresse IP et des informations sur votre appareil et votre navigateur, et peut utiliser des cookies ou des technologies similaires, mesurer la lecture et afficher des publicités, comme le décrivent les Règles de confidentialité de Google (YouTube) ou l’Avis de confidentialité de Twitch (Twitch), liés ci-dessous. Cam Hub ne conserve les cookies et les données stockées du lecteur que pendant l’exécution de l’app et ne reçoit pas ces informations.
+
+Cam Hub enregistre uniquement les liens et noms de chaînes que vous ajoutez, sur votre appareil et, si vous en créez, dans un code de partage ou une sauvegarde iCloud. Supprimer la diffusion dans l’app les efface.
+
+Règles de confidentialité de Google: https://policies.google.com/privacy
+
+Avis de confidentialité de Twitch: https://www.twitch.tv/p/legal/privacy-notice/
 
 Panneaux Webhook et destinations tierces
 

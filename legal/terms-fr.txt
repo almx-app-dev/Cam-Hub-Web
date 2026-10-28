@@ -3,7 +3,7 @@ Conditions d’utilisation
 
 En utilisant Cam Hub, vous acceptez les présentes conditions ainsi que les règles de licence et d’achat applicables de l’App Store d’Apple.
 
-Date d’effet : 26 juillet 2026
+Date d’effet : 29 octobre 2026
 App : Cam Hub
 Contact : app-dev@almx.cc
 
@@ -60,6 +60,14 @@ Noms et services tiers
 Hikvision, Dahua, Synology, ONVIF et les autres noms associés sont des marques ou des identifiants de leurs propriétaires respectifs. Cam Hub est développé de manière indépendante.
 
 Une connexion réussie signifie que l’équipement et les protocoles ou fonctions utilisés par Cam Hub sont techniquement compatibles ; elle n’implique aucune affiliation, aucun partenariat, aucun parrainage ni aucune approbation de la part de ces propriétaires.
+
+Diffusions YouTube et Twitch
+
+Les diffusions YouTube et Twitch sont fournies par ces services, et non par le développeur de Cam Hub, et peuvent s’arrêter, changer ou devenir indisponibles à tout moment. En les ajoutant ou en les regardant dans Cam Hub, vous acceptez d’être lié par les Conditions d’utilisation de YouTube et les Conditions d’utilisation de Twitch, liées ci-dessous.
+
+Conditions d’utilisation de YouTube: https://www.youtube.com/t/terms
+
+Conditions d’utilisation de Twitch: https://www.twitch.tv/p/legal/terms-of-service/
 
 Absence de garantie et limitation de responsabilité
 
