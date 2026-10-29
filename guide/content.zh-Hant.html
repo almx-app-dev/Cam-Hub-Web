@@ -156,7 +156,7 @@
       <p class="check"><b class="check-label">確認：</b>表單顯示<span class="ui">正在連線到設備…</span>，下方顯示目前的步驟，例如<span class="ui">正在尋找開放的連接埠…</span>或<span class="ui">正在嘗試 ONVIF（連接埠 8899）…</span>。連線成功後表單關閉，新設備出現在設備清單中。</p>
     </li>
   </ol>
-  <p>連線期間，<span class="ui">新增</span>按鈕的位置改為顯示進度指示，表單也無法以下滑手勢關閉。點選<span class="ui">取消</span>會停止嘗試，不會儲存任何內容。Cam Hub 連線後會辨識設備是錄影主機還是單支攝影機，讀取通道清單並儲存設備。</p>
+  <p>連線期間，<span class="ui">新增</span>按鈕的位置改為顯示進度指示，表單也無法以下滑手勢關閉。點選<span class="ui">取消</span>會停止嘗試，不會儲存任何內容。Cam Hub 連線後會辨識設備是錄影主機還是獨立攝影機，讀取通道清單並儲存設備。</p>
   <p>新加入的設備是 Cam Hub 可透過 SNMP 讀取硬碟資訊的網路儲存設備（NAS）時，接著會出現<span class="ui">SNMP 設定</span>畫面。此步驟可略過：點選<span class="ui">稍後再說</span>即關閉畫面，日後可在硬碟健康頁面設定 SNMP，見<a class="xref" href="#devices-health">「硬碟健康」</a>。無論是否設定，設備都已儲存。</p>
   <p>免費方案只會自動啟用額度內的通道，其餘通道顯示為<span class="ui">已停用</span>。已達方案允許的錄影主機數量時，畫面開啟方案頁。範例設備占用免費方案的錄影主機名額時，方案頁會說明此情況；刪除範例設備即可釋出名額。YouTube 直播與 Twitch 頻道一律不計入方案額度。額度說明見<a class="xref" href="#plans">第 11 章「方案與限制」</a>。</p>
   <div class="callout note">
@@ -173,7 +173,7 @@
   <ul>
     <li>在<span class="ui">進階</span>中填入的連接埠會優先嘗試。填入的連接埠不是預設值（<code>80</code> 或 <code>554</code>）且為開放時，只使用該連接埠，因為在轉送多台設備的位址上，其他連接埠可能屬於另一台設備。</li>
     <li>為保護帳號，原廠通訊協定拒絕登入時，嘗試會立即結束，並顯示<span class="ui">使用者名稱或密碼錯誤。</span>ONVIF 與 RTSP 可能使用各自的帳號，因此在第二次登入被拒絕後才結束。登入被拒絕之後，串流路徑改為一次只嘗試一條。</li>
-    <li>只能以 RTSP 連到的攝影機，一律加入為單支攝影機。只提供 RTSP 的錄影主機，須選擇其品牌並輸入攝影機數量，見<a class="xref" href="#add-methods">「連線方式的選擇」</a>。</li>
+    <li>只能以 RTSP 連到的攝影機，一律加入為獨立攝影機。只提供 RTSP 的錄影主機，須選擇其品牌並輸入攝影機數量，見<a class="xref" href="#add-methods">「連線方式的選擇」</a>。</li>
     <li>某一設備系列的專用協定，只會在區域網路內的位址、以其預設連接埠自動嘗試。這類設備位於區域網路之外或使用其他連接埠時，請在<span class="ui">進階</span>中選擇其連線方式，見<a class="xref" href="#brands-methods">「連線方式」</a>。</li>
     <li>嘗試大量串流路徑需要時間。遇到錯誤路徑時不回應的攝影機，加入可能要一分鐘以上才會成功或失敗。</li>
     <li>加入失敗時，錯誤訊息下方會列出找到的開放連接埠，例如<span class="ui">找到的開放連接埠：80, 554</span>，或顯示<span class="ui">這個位址沒有找到任何開放的連接埠。</span>前者表示設備有回應但無法連線；後者表示完全沒有回應。</li>
@@ -214,7 +214,7 @@
     <li><b>某一設備系列的專用協定</b>：在<span class="ui">設備連接埠</span>上以該協定連線；除非已更改或轉送，連接埠為 <code>34567</code>。適用於自動偵測找不到的錄影主機，或從區域網路之外連入的主機。位址在區域網路之外時，表單以橘色顯示警告：此協定不會加密影像，許多設備對密碼的保護也很薄弱；請盡量使用 VPN。該設備系列的名稱見<a class="xref" href="#brands-methods">「連線方式」</a>。</li>
     <li><b>清單中的品牌</b>：依該品牌文件所載的串流路徑，直接以 RTSP 連線。適用於設備已關閉 ONVIF，或要加入只提供 RTSP 的錄影主機。增加的區塊有兩個欄位：
       <ul>
-        <li><span class="ui">攝影機</span>：可填 1 到 64。填 <code>1</code> 時加入為單支攝影機；填 <code>2</code> 以上時加入為錄影主機，並占用錄影主機額度。網段掃描得知通道數量時，會自動帶入。</li>
+        <li><span class="ui">攝影機</span>：可填 1 到 64。填 <code>1</code> 時加入為獨立攝影機；填 <code>2</code> 以上時加入為錄影主機，並占用錄影主機額度。網段掃描得知通道數量時，會自動帶入。</li>
         <li>路徑欄位：留白時，Cam Hub 依序嘗試該品牌文件所載的路徑，並保留設備有回應的路徑。欄位中顯示的是第一條嘗試的路徑。只有需要指定特定路徑時才填寫。</li>
       </ul>
     </li>
@@ -571,7 +571,7 @@
   <ul>
     <li><b>資訊卡片</b>：顯示設備名稱與類型，以及<span class="ui">型號</span>、<span class="ui">IP 位址</span>、<span class="ui">連接埠</span>（設備的 HTTP 連接埠）、<span class="ui">序號</span>、<span class="ui">韌體</span>與<span class="ui">攝影機</span>（通道數量）。序號與韌體只在設備有回報時顯示。YouTube 直播或 Twitch 頻道以<span class="ui">連結</span>列取代<span class="ui">IP 位址</span>與<span class="ui">連接埠</span>。</li>
     <li><b><span class="ui">硬碟健康</span></b>：開啟設備的硬碟報告，見<a class="xref" href="#devices-health">「硬碟健康」</a>。該列右側的橘色三角形或紅色符號，表示上一次讀取時最嚴重的硬碟判定結果。</li>
-    <li><b>縮圖</b>：錄影主機的每個通道各顯示一個縮圖；單機攝影機只有一個通道，顯示一個縮圖。每個縮圖的左下角顯示通道編號與名稱。縮圖依<span class="path"><span class="ui">設定</span> › <span class="ui">預設畫質</span> › <span class="ui">多支攝影機</span></span>使用 SD 或 HD，未變更時為 SD。設定變更後，此頁立即套用；此頁本身沒有 SD 與 HD 的切換按鈕。</li>
+    <li><b>縮圖</b>：錄影主機的每個通道各顯示一個縮圖；獨立攝影機只有一個通道，顯示一個縮圖。每個縮圖的左下角顯示通道編號與名稱。縮圖依<span class="path"><span class="ui">設定</span> › <span class="ui">預設畫質</span> › <span class="ui">多支攝影機</span></span>使用 SD 或 HD，未變更時為 SD。設定變更後，此頁立即套用；此頁本身沒有 SD 與 HD 的切換按鈕。</li>
     <li><b>重新整理</b>：開啟設備頁時（同一台設備每分鐘最多一次），以及每次在頁面上向下拉時，Cam Hub 會向設備重新讀取通道清單。名稱與連線狀態會更新，設備新增的通道會出現，設備已移除的通道會消失。新出現的通道只有在方案允許時才會啟用，否則顯示為<span class="ui">已停用</span>。在 Cam Hub 中設定的名稱會保留。設備沒有回應，或回傳的清單看起來不完整（完全沒有通道，或以單一通道取代多個通道）時，清單維持原狀，也不顯示訊息。</li>
     <li><b>登入遭拒</b>：重新整理時設備拒絕已儲存的使用者名稱或密碼，縮圖上方會出現訊息<span class="ui">使用者名稱或密碼錯誤。</span>與<span class="ui">編輯帳號密碼</span>按鈕，見<a class="xref" href="#devices-credentials">「變更設備的使用者名稱與密碼」</a>。</li>
     <li><b>沒有通道</b>：設備沒有回報任何通道時，頁面顯示<span class="ui">找不到攝影機。</span>與<span class="ui">重新整理</span>按鈕，點選後重新讀取通道清單。</li>
@@ -735,7 +735,7 @@
     </li>
   </ol>
   <p>以<span class="ui">自動偵測</span>加入的 NAS 尚無 SNMP 設定時，加入完成後會立即開啟同一個畫面，作為選擇性的步驟：<span class="ui">儲存</span>會儲存設定，<span class="ui">稍後再說</span>則關閉畫面。無論選擇哪一項，設備都已加入，之後也可以從<span class="ui">硬碟健康</span>設定 SNMP，見<a class="xref" href="#add">第 3 章「加入設備」</a>。</p>
-  <p>SNMP 設定依設備分別儲存在 iPhone 或 iPad 的 Keychain 中，刪除設備時一併刪除。分享碼與 iCloud 備份都包含這些設定，因此匯入或還原後，<span class="ui">硬碟健康</span>不需重新設定即可使用，見<a class="xref" href="#share">第 10 章「分享與備份」</a>。</p>
+  <p>SNMP 設定依設備分別儲存在 iPhone 或 iPad 的鑰匙圈中，刪除設備時一併刪除。分享代碼與 iCloud 備份都包含這些設定，因此匯入或還原後，<span class="ui">硬碟健康</span>不需重新設定即可使用，見<a class="xref" href="#share">第 10 章「分享與備份」</a>。</p>
 
   <h3 id="devices-streams">YouTube 直播與 Twitch 頻道</h3>
   <p>以攝影機形式加入的 YouTube 直播或 Twitch 頻道（見<a class="xref" href="#add-streams">「加入 YouTube 直播與 Twitch 頻道」</a>），在設備清單中顯示為只有一個通道的攝影機。該列顯示名稱、型號（<span class="ui" data-ui="value">YouTube Live</span>或<span class="ui" data-ui="value">Twitch</span>）與短連結，例如 <code>youtu.be/…</code> 或 <code>twitch.tv/…</code>。連線指示符號的位置，YouTube 顯示紅色播放符號，Twitch 顯示紫色電視符號。</p>
@@ -743,7 +743,7 @@
     <li><b>設備頁</b>：資訊卡片顯示<span class="ui">型號</span>、<span class="ui">連結</span>（短連結）與<span class="ui">攝影機</span>。沒有<span class="ui">硬碟健康</span>列，也沒有<span class="ui">編輯帳號密碼</span>；鉛筆按鈕用於重新命名。</li>
     <li><b>縮圖</b>：由該服務本身的播放器顯示直播，不播放聲音，畫面上也不疊加名稱標籤。點選後以全螢幕開啟直播，見<a class="xref" href="#single-streams">「YouTube 與 Twitch 直播」</a>。長按選單提供<span class="ui">重新命名攝影機</span>與<span class="ui">停用</span>或<span class="ui">啟用</span>。</li>
     <li><b>方案</b>：這類直播一律不計入方案，也不會顯示<span class="ui">方案未包含</span>，通道隨時可以啟用。</li>
-    <li><b>尚未同意條款</b>：不是透過新增表單、而是經由分享碼或備份等方式來到這支 iPhone 或 iPad 的直播，只顯示名稱與<span class="ui">同意 YouTube 的條款後即可播放此直播。</span>或<span class="ui">同意 Twitch 的條款後即可播放此頻道。</span>點選後開啟全螢幕畫面，其中的<span class="ui">查看條款…</span>會顯示條款與<span class="ui">同意並繼續</span>。同意後，該服務的所有直播都可以播放。</li>
+    <li><b>尚未同意條款</b>：不是透過新增表單、而是經由分享代碼或備份等方式來到這支 iPhone 或 iPad 的直播，只顯示名稱與<span class="ui">同意 YouTube 的條款後即可播放此直播。</span>或<span class="ui">同意 Twitch 的條款後即可播放此頻道。</span>點選後開啟全螢幕畫面，其中的<span class="ui">查看條款…</span>會顯示條款與<span class="ui">同意並繼續</span>。同意後，該服務的所有直播都可以播放。</li>
     <li><b>未提供服務的地區</b>：YouTube 與 Twitch 在部分國家或地區不提供服務，這時清單中的直播只顯示名稱與<span class="ui">此地區或語言不提供這項功能。</span></li>
     <li><b>刪除</b>：與其他設備相同，在該列向左滑動並確認，見<a class="xref" href="#devices-list">「設備清單」</a>。由於沒有儲存密碼，對話框不會提到密碼。</li>
   </ul>
@@ -823,7 +823,7 @@
   <h3 id="devices-plan">方案限額與啟用通道</h3>
   <p>每個通道不是已啟用，就是已停用。已啟用的通道占用方案的一個名額。只有在方案限額內的已啟用通道才會顯示畫面；超出限額的已啟用通道顯示<span class="ui">方案未包含</span>。限額如下表；各方案的內容見<a class="xref" href="#plans">第 11 章「方案與限制」</a>。</p>
   <div class="table-wrap"><table>
-    <thead><tr><th>方案</th><th>單機攝影機</th><th>錄影主機的通道</th><th>可加入的錄影主機數量</th></tr></thead>
+    <thead><tr><th>方案</th><th>獨立攝影機</th><th>錄影主機的通道</th><th>可加入的錄影主機數量</th></tr></thead>
     <tbody>
       <tr><td>免費</td><td colspan="2">已啟用的通道合計最多 2 個，攝影機與錄影主機通道合併計算。已啟用的錄影主機通道必須都屬於同一台錄影主機。</td><td>1</td></tr>
       <tr><td>攝影機方案</td><td>已啟用的攝影機最多為方案的上限：8、16 或不限。</td><td>與免費方案相同：最多 2 個已啟用通道，且都在同一台錄影主機上。</td><td>1</td></tr>
@@ -831,11 +831,11 @@
     </tbody>
   </table></div>
   <ul>
-    <li>兩種方案可同時持有。兩項限額各自獨立：攝影機方案提高單機攝影機的上限，NVR 方案提高可使用全部通道的錄影主機數量。</li>
+    <li>兩種方案可同時持有。兩項限額各自獨立：攝影機方案提高獨立攝影機的上限，NVR 方案提高可使用全部通道的錄影主機數量。</li>
     <li>顯示中的 LiveView Mix 頁面上，每個控制面板各計為占用攝影機上限的一支攝影機。真實的攝影機優先保留畫面；超出上限的控制面板顯示<span class="ui">方案未包含</span>。見<a class="xref" href="#lvm">第 8 章「LiveView Mix 多機牆」</a>。</li>
     <li>錄影主機一加入，無論是否有已啟用的通道，即計入錄影主機的數量。範例攝影機與真實設備同樣計入。</li>
     <li>YouTube 直播與 Twitch 頻道不計入方案，也一律不會被鎖定，見<a class="xref" href="#devices-streams">「YouTube 直播與 Twitch 頻道」</a>。</li>
-    <li>方案到期，或限額低於已啟用的通道數量時，已儲存的選擇會保留。超出限額的通道顯示<span class="ui">方案未包含</span>：單機攝影機優先保留畫面，其次是錄影主機的通道，各依設備加入的先後與通道編號的順序。</li>
+    <li>方案到期，或限額低於已啟用的通道數量時，已儲存的選擇會保留。超出限額的通道顯示<span class="ui">方案未包含</span>：獨立攝影機優先保留畫面，其次是錄影主機的通道，各依設備加入的先後與通道編號的順序。</li>
     <li>兩項限額都是不限時，所有通道自動啟用，也不再提供<span class="ui">選擇顯示哪些攝影機</span>頁面。</li>
   </ul>
 
@@ -849,7 +849,7 @@
     </li>
     <li class="step">
       <p>點選<span class="ui">啟用</span>。</p>
-      <p class="check"><b class="check-label">確認：</b>方案還有空的名額時，縮圖開始顯示即時影像，程序到此結束。已達限額時，畫面開啟方案畫面並顯示訊息，通道維持停用。單機攝影機在免費方案中的訊息為<span class="ui">您已達免費方案可啟用 2 支攝影機的上限。</span>；在攝影機方案中則為<span class="ui">您已達目前方案可啟用 8 支攝影機的上限。</span>，數字為該方案的上限。錄影主機通道的訊息為<span class="ui">訂閱 NVR 方案，解鎖所有通道。</span></p>
+      <p class="check"><b class="check-label">確認：</b>方案還有空的名額時，縮圖開始顯示即時影像，程序到此結束。已達限額時，畫面開啟方案畫面並顯示訊息，通道維持停用。獨立攝影機在免費方案中的訊息為<span class="ui">您已達免費方案可啟用 2 支攝影機的上限。</span>；在攝影機方案中則為<span class="ui">您已達目前方案可啟用 8 支攝影機的上限。</span>，數字為該方案的上限。錄影主機通道的訊息為<span class="ui">訂閱 NVR 方案，解鎖所有通道。</span></p>
       <figure class="phone"><img src="guide/img/devices-plan-reason.jpg" alt="從已鎖定的錄影主機通道開啟的方案頁：上方的橫幅帶有鎖頭符號與訊息「訂閱 NVR 方案，解鎖所有通道。」，其下為標題「解鎖所有攝影機」、說明免費方案的句子與數條簡短的功能說明" loading="lazy" decoding="async" width="900" height="1440"><figcaption>方案畫面上方顯示原因</figcaption></figure>
     </li>
     <li class="step">
@@ -961,7 +961,7 @@
 
   <h3 id="live-tab">即時分頁</h3>
   <p>路徑：畫面底部的<span class="ui">即時</span>分頁。</p>
-  <p>此分頁一次顯示一台設備：一台錄影主機及其所有已啟用的通道，或一支單機攝影機。畫面標題為該設備的名稱。要把不同設備的攝影機放在同一面牆上，請使用 LiveView Mix，見<a class="xref" href="#lvm">第 8 章「LiveView Mix 多機牆」</a>。</p>
+  <p>此分頁一次顯示一台設備：一台錄影主機及其所有已啟用的通道，或一支獨立攝影機。畫面標題為該設備的名稱。要把不同設備的攝影機放在同一面牆上，請使用 LiveView Mix，見<a class="xref" href="#lvm">第 8 章「LiveView Mix 多機牆」</a>。</p>
   <ul>
     <li><b>只顯示已啟用的通道</b>：已停用的通道不會出現在此分頁。通道在設備頁啟用，見<a class="xref" href="#devices-menu">「通道選項（長按）」</a>。</li>
     <li><b>縮圖沒有聲音</b>：牆面的縮圖不播放聲音，YouTube 與 Twitch 的縮圖也一樣。聲音在單機畫面與直播的全螢幕畫面提供，見<a class="xref" href="#single-controls">「快照、聲音與畫質」</a>。</li>
@@ -1036,7 +1036,7 @@
     </li>
     <li class="step">
       <p>點選顯示<span class="ui">方案未包含</span>的縮圖。</p>
-      <p class="check"><b class="check-label">確認：</b>開啟方案畫面，頂部有一段訊息：錄影主機的通道顯示<span class="ui">訂閱 NVR 方案，解鎖所有通道。</span>，免費方案的單機攝影機顯示<span class="ui">您已達免費方案可啟用 2 支攝影機的上限。</span>點選<span class="ui">完成</span>可關閉該畫面。</p>
+      <p class="check"><b class="check-label">確認：</b>開啟方案畫面，頂部有一段訊息：錄影主機的通道顯示<span class="ui">訂閱 NVR 方案，解鎖所有通道。</span>，免費方案的獨立攝影機顯示<span class="ui">您已達免費方案可啟用 2 支攝影機的上限。</span>點選<span class="ui">完成</span>可關閉該畫面。</p>
       <figure class="phone"><img src="guide/img/live-locked-tile.jpg" alt="即時分頁：兩個即時畫面的下方有一個縮圖顯示鎖頭與方案未包含" loading="lazy" decoding="async" width="900" height="1956"><figcaption>方案未涵蓋的縮圖</figcaption></figure>
     </li>
   </ol>
@@ -1280,8 +1280,8 @@
   <p>此切換開關只在即時模式、且設備對該攝影機提供兩路串流時才會顯示。回放時，<span class="ui">回到即時</span>取代此開關的位置。起始畫質取自<span class="path"><span class="ui">設定</span> › <span class="ui">預設畫質</span> › <span class="ui">單支攝影機</span></span>。HD 較清晰，使用較多頻寬與 iPhone 的資源。每個通道只提供一路串流的設備，SD 與 HD 是同一個畫面。各畫面的規則見<a class="xref" href="#devices-quality">「設備畫面上的 SD 與 HD」</a>。</p>
 
   <h3 id="single-talk">雙向對講</h3>
-  <p>具備喇叭的單機攝影機可以對講。對講的方式與無線電對講機相同：按住按鈕說話，放開按鈕聆聽。單機畫面開啟時，Cam Hub 會向攝影機詢問對講通道；攝影機回報有對講通道時，喇叭按鈕右側會出現對講按鈕（麥克風符號）。</p>
-  <p>前提：支援的品牌的單機攝影機、攝影機回報具備雙向音訊通道、處於即時模式，且通道在方案範圍內。錄影主機的通道沒有對講按鈕：錄影主機的對講通道是錄影主機本身的音訊輸出，不是攝影機的喇叭。</p>
+  <p>具備喇叭的獨立攝影機可以對講。對講的方式與無線電對講機相同：按住按鈕說話，放開按鈕聆聽。單機畫面開啟時，Cam Hub 會向攝影機詢問對講通道；攝影機回報有對講通道時，喇叭按鈕右側會出現對講按鈕（麥克風符號）。</p>
+  <p>前提：支援的品牌的獨立攝影機、攝影機回報具備雙向音訊通道、處於即時模式，且通道在方案範圍內。錄影主機的通道沒有對講按鈕：錄影主機的對講通道是錄影主機本身的音訊輸出，不是攝影機的喇叭。</p>
   <figure class="phone"><img src="guide/img/single-talk.jpg" alt="支援對講的攝影機單機畫面：快照旁的麥克風對講按鈕，以及 SD 與 HD 切換" loading="lazy" decoding="async" width="900" height="1947"><figcaption>快照旁的對講按鈕</figcaption></figure>
   <p>第一次按下對講按鈕時，系統會以對話框詢問麥克風的取用權限。請允許，再重新按住按鈕。</p>
   <ol class="steps">
@@ -1578,7 +1578,7 @@
   </table></div>
   <ul>
     <li><b>錄影主機的通道</b>：該通道的錄影來自錄影主機的儲存空間。某個通道的單機畫面只顯示該通道的錄影。</li>
-    <li><b>單機攝影機</b>：錄影來自攝影機本身的儲存空間，且攝影機須提供錄影搜尋。沒有錄影的攝影機，該日顯示為空。攝影機回報本身不保存錄影時（例如由錄影主機替它錄影），清單的位置改為顯示<span class="ui">這支攝影機本身不保存錄影。如果有錄影主機替它錄影，請從錄影主機回放。</span></li>
+    <li><b>獨立攝影機</b>：錄影來自攝影機本身的儲存空間，且攝影機須提供錄影搜尋。沒有錄影的攝影機，該日顯示為空。攝影機回報本身不保存錄影時（例如由錄影主機替它錄影），清單的位置改為顯示<span class="ui">這支攝影機本身不保存錄影。如果有錄影主機替它錄影，請從錄影主機回放。</span></li>
     <li>兩者的畫面與操作相同。錄影主機與攝影機的差別，只在錄影存放的位置，以及設備是否支援錄影回放。</li>
     <li>以設備專用的協定或 ONVIF 連線的設備，在該連線支援時提供錄影回放。哪些品牌與連線方式提供錄影回放，見<a class="xref" href="#brands">第 16 章「支援的品牌與連線方式」</a>。</li>
     <li>以 ONVIF 加入的設備，須提供 ONVIF 的錄影搜尋與回放服務，才支援錄影回放；否則該日顯示為空的清單。</li>
@@ -1829,7 +1829,7 @@
   <h2><span class="num">8</span>LiveView Mix 多機牆</h2>
   <p class="lead">LiveView Mix 把不同設備的攝影機放在同一面牆上，牆上也可以加入圖片、時鐘、標籤、控制面板與 YouTube 或 Twitch 直播，而且每一項都能放在任何一格。本章依操作順序說明分頁與預覽、選擇攝影機、版面、排列、選用的直向頁面、iPhone Duo 的兩張畫布、全螢幕牆面，以及方案限制對牆面的影響。</p>
 
-  <figure class="mixmap" aria-label="多台錄影主機與單機攝影機合成同一面牆">
+  <figure class="mixmap" aria-label="多台錄影主機與獨立攝影機合成同一面牆">
     <div class="mm-sources">
       <div class="mm-src"><b>NVR 1</b><span>後院</span>
         <div class="mm-thumbs"><img src="guide/img/src/nvr1-gate.jpg" alt="NVR 1 的大門" loading="lazy" decoding="async" width="480" height="270"><img src="guide/img/src/nvr1-lawn.jpg" alt="NVR 1 的草地" loading="lazy" decoding="async" width="480" height="270"><img src="guide/img/src/nvr1-patio.jpg" alt="NVR 1 的露臺" loading="lazy" decoding="async" width="480" height="270"></div></div>
@@ -1841,8 +1841,8 @@
         <div class="mm-thumbs"><img src="guide/img/src/solo1-entrance.jpg" alt="單機 1 的玄關" loading="lazy" decoding="async" width="480" height="270"><img src="guide/img/src/solo2-tank.jpg" alt="單機 2 的魚缸" loading="lazy" decoding="async" width="480" height="270"></div></div>
     </div>
     <div class="mm-arrow" aria-hidden="true"><i>⟶</i><small>同一面牆</small></div>
-    <div class="mm-wall"><img src="guide/img/lvm-wall-fullscreen.jpg" alt="三台錄影主機與兩支單機攝影機放在同一面橫向的 LiveView Mix 牆上，另有控制面板與時鐘" loading="lazy" decoding="async" width="1600" height="736"></div>
-    <figcaption>三台錄影主機與兩支單機攝影機的畫面，放在同一面牆上。這面牆使用自己畫的版面，詳見<a class="xref" href="#lvm-special">「特殊版面：大小混排的牆」</a>。</figcaption>
+    <div class="mm-wall"><img src="guide/img/lvm-wall-fullscreen.jpg" alt="三台錄影主機與兩支獨立攝影機放在同一面橫向的 LiveView Mix 牆上，另有控制面板與時鐘" loading="lazy" decoding="async" width="1600" height="736"></div>
+    <figcaption>三台錄影主機與兩支獨立攝影機的畫面，放在同一面牆上。這面牆使用自己畫的版面，詳見<a class="xref" href="#lvm-special">「特殊版面：大小混排的牆」</a>。</figcaption>
   </figure>
 
   <div class="callout note">
@@ -1885,7 +1885,7 @@
   </div>
 
   <h4 id="lvm-preview-grid">預覽的排列</h4>
-  <p>預覽說明尾端的<span class="ui">排列：自動</span>按鈕，決定預覽每一頁顯示幾欄幾列的格子。這項選擇只屬於這台裝置：不會改變全螢幕牆面，也不會隨分享代碼帶走牆面設定。無論裝置橫放或直放，所選的欄數與列數都維持不變。</p>
+  <p>預覽說明尾端的<span class="ui">排列：自動</span>按鈕，決定預覽每一頁顯示幾欄幾列的格子。這項選擇屬於 App 設定，不是牆面的一部分：不會改變全螢幕牆面，並會隨 App 設定一起存入備份或分享代碼（見<a class="xref" href="#share-contents">「備份與代碼的內容」</a>）。無論裝置橫放或直放，所選的欄數與列數都維持不變。</p>
   <ol class="steps">
     <li class="step">
       <p>在 LiveView Mix 分頁點選預覽下方的<span class="ui">排列：自動</span>。</p>
@@ -2489,7 +2489,7 @@
     <li class="step">
       <p>在切換鈕上點選<span class="ui">直向頁面</span>。</p>
       <p class="check"><b class="check-label">確認：</b>頁面顯示直向頁面的攝影機，切換鈕下方出現<span class="ui">手機直拿時顯示此頁面</span>開關，目前為關閉。</p>
-      <figure class="phone"><img src="guide/img/lvm-page-switch.jpg" alt="選擇攝影機頁選取了直向頁面：「手機直拿時顯示此頁面」已開啟，已選 2 台攝影機" loading="lazy" decoding="async" width="900" height="1947"><figcaption>選擇直向頁面的攝影機</figcaption></figure>
+      <figure class="phone"><img src="guide/img/lvm-page-switch.jpg" alt="選擇攝影機頁選取了直向頁面：「手機直拿時顯示此頁面」已開啟，已選 2 支攝影機" loading="lazy" decoding="async" width="900" height="1947"><figcaption>選擇直向頁面的攝影機</figcaption></figure>
     </li>
     <li class="step">
       <p>勾選直放時要顯示的攝影機。</p>
@@ -2506,7 +2506,7 @@
     <li class="step">
       <p>手機直放時點選<span class="ui">調整版面</span>。</p>
       <p class="check"><b class="check-label">確認：</b>畫面在直向頁面上開啟<span class="ui">調整版面</span>頁面，版面縮圖為直長的形狀。選擇版面並排列格子，方式與橫向頁面相同，見<a class="xref" href="#lvm-layout">「調整版面」</a>與<a class="xref" href="#lvm-arrange">「排列牆面與格子」</a>。</p>
-      <figure class="phone"><img src="guide/img/lvm-portrait-wall.jpg" alt="iPhone 直拿時的直向頁面全螢幕多機牆：2 × 3 版面，上排有兩台攝影機，左上角是關閉按鈕" loading="lazy" decoding="async" width="900" height="1947"><figcaption>全螢幕的直向頁面</figcaption></figure>
+      <figure class="phone"><img src="guide/img/lvm-portrait-wall.jpg" alt="iPhone 直拿時的直向頁面全螢幕多機牆：2 × 3 版面，上排有兩支攝影機，左上角是關閉按鈕" loading="lazy" decoding="async" width="900" height="1947"><figcaption>全螢幕的直向頁面</figcaption></figure>
     </li>
   </ol>
   <h4>在兩個頁面之間複製控制面板、時鐘、標籤與圖片</h4>
@@ -2679,9 +2679,9 @@
   <p>LiveView Mix 本身不限制牆上的攝影機數量。能同時顯示畫面的通道數由方案決定，額度細節見<a class="xref" href="#plans">第 11 章「方案與限制」</a>。</p>
   <ul>
     <li><b>免費方案</b>：全 App 合計最多啟用 2 個通道（單機與錄影主機通道合計），錄影主機最多 1 台。超出額度的通道在牆上顯示為<span class="ui">已停用</span>；已啟用卻超出額度的通道顯示為<span class="ui">方案未包含</span>。兩種情況的格子位置都會保留。</li>
-    <li><b>攝影機方案與錄影主機方案</b>：分別提高單機攝影機的啟用上限與錄影主機的數量。錄影主機方案下，所訂閱錄影主機的所有通道都可使用。</li>
+    <li><b>攝影機方案與NVR 方案</b>：分別提高獨立攝影機的啟用上限與錄影主機的數量。NVR 方案下，所訂閱錄影主機的所有通道都可使用。</li>
     <li><b>啟用通道</b>：升級方案後，原本已停用的通道不會自動啟用，須在設備頁或<span class="path"><span class="ui">設定</span> › <span class="ui">選擇顯示哪些攝影機</span></span>開啟。兩個軸向都沒有上限的方案會自動啟用所有通道，此時設定中不顯示<span class="ui">選擇顯示哪些攝影機</span>。</li>
-    <li><b>控制面板占用攝影機額度，排在攝影機之後</b>：每個控制面板算作一支單機攝影機，計入方案的攝影機額度，不計入錄影主機額度。控制面板只使用攝影機用剩的額度（免費方案則是攝影機與錄影主機通道用剩的額度），因此控制面板不會讓攝影機失去畫面。額度用完時，控制面板保留在原位，但按鈕被鎖住，格子顯示鎖頭、面板標題與<span class="ui">方案未包含</span>。圖片、時鐘與標籤不占用額度。</li>
+    <li><b>控制面板占用攝影機額度，排在攝影機之後</b>：每個控制面板算作一支獨立攝影機，計入方案的攝影機額度，不計入錄影主機額度。控制面板只使用攝影機用剩的額度（免費方案則是攝影機與錄影主機通道用剩的額度），因此控制面板不會讓攝影機失去畫面。額度用完時，控制面板保留在原位，但按鈕被鎖住，格子顯示鎖頭、面板標題與<span class="ui">方案未包含</span>。圖片、時鐘與標籤不占用額度。</li>
     <li><b>每一面牆上的每個控制面板各自計算</b>：橫向頁面的控制面板一律計入；直向頁面的控制面板在直向頁面開啟期間計入，下方畫布的控制面板在 iPhone Duo 的兩張畫布開啟期間計入。複製到另一個頁面的控制面板單獨計算。額度依橫向頁面、下方畫布、直向頁面的順序分配，同一面牆內依格子編號的順序分配。</li>
     <li><b>YouTube 與 Twitch 直播</b>：不計入方案額度，也不會被鎖住。</li>
     <li><b>鎖住的通道</b>：在預覽中點選方案未涵蓋的攝影機，會開啟方案頁；在選擇攝影機頁面與排列畫布中，這些通道不顯示即時畫面。</li>
@@ -3144,13 +3144,13 @@ Content-Type: application/json
     <thead><tr><th>項目</th><th>分享代碼</th><th>iCloud 備份</th></tr></thead>
     <tbody>
       <tr><td>入口</td><td><span class="path"><span class="ui">設定</span> › <span class="ui">匯出攝影機</span></span>與<span class="path"><span class="ui">設定</span> › <span class="ui">匯入攝影機</span></span>，位於<span class="ui">分享攝影機</span>區塊</td><td><span class="path"><span class="ui">設定</span> › <span class="ui">備份到 iCloud</span></span>與<span class="path"><span class="ui">設定</span> › <span class="ui">從 iCloud 還原</span></span>，位於<span class="ui">備份與還原</span>區塊</td></tr>
-      <tr><td>是否需要 iCloud</td><td>不需要。代碼以使用者選擇的任何方式傳送。</td><td>需要。兩台裝置須以同一個 Apple Account 登入 iCloud。</td></tr>
+      <tr><td>是否需要 iCloud</td><td>不需要。代碼以使用者選擇的任何方式傳送。</td><td>需要。兩台裝置須以同一個 Apple 帳號登入 iCloud。</td></tr>
       <tr><td>可選擇的設備</td><td>可勾選要匯出的設備。</td><td>所有設備。</td></tr>
       <tr><td>App 設定</td><td>選用，開啟<span class="ui">包含 App 設定</span>才會帶上，且須收到的人同意才會套用。</td><td>一律包含。</td></tr>
       <tr><td>保留的份數</td><td>每次匯出產生一組獨立的代碼。</td><td><span class="ui">我的備份</span>可保留多份備份，每份可另取名稱；<span class="ui">Apple TV</span>目的地只保留一份。</td></tr>
       <tr><td>鎖定</td><td>可選擇不鎖定、六位數 PIN 或密碼。</td><td>沒有 PIN。以 App 內建的金鑰加密。</td></tr>
       <tr><td>可使用的裝置</td><td>他人的 Cam Hub，以及自己的 iPhone、iPad。Apple TV 只能匯入。</td><td>自己的 iPhone、iPad 與 Apple TV。</td></tr>
-      <tr><td>適用情況</td><td>分享給他人，或兩台裝置不是同一個 Apple Account。</td><td>換手機、保留設定先前的狀態，或把設定帶到 Apple TV。</td></tr>
+      <tr><td>適用情況</td><td>分享給他人，或兩台裝置不是同一個 Apple 帳號。</td><td>換手機、保留設定先前的狀態，或把設定帶到 Apple TV。</td></tr>
     </tbody>
   </table></div>
 
@@ -3343,7 +3343,7 @@ Content-Type: application/json
   </table></div>
   <p>App 設定包括：語言；LiveView Mix，也就是橫向頁面、直向頁面與<span class="ui">直向頁面</span>開關，以及 iPhone Duo 的兩張畫布與<span class="ui">兩張畫布</span>開關，各含版面、格子圖片與控制面板（含標頭中的值）；LiveView Mix 分頁預覽的排列方式；<span class="ui">翻頁時保持攝影機連線</span>選項；<span class="ui">啟動時開啟</span>的選擇；即時分頁的設備與全螢幕牆的<span class="ui">版面</span>；<span class="ui">預設畫質</span>、<span class="ui">黑邊</span>、<span class="ui">滿版畫面</span>與<span class="ui">隱藏無訊號攝影機</span>；聲音偏好；以及網段掃描的範圍。LiveView Mix 各頁面的說明見<a class="xref" href="#lvm-pages">「直向頁面」</a>。</p>
   <p>在 iPhone Duo 以外的裝置上，下方畫布與<span class="ui">兩張畫布</span>開關會保留，但不會使用；設定再帶到 iPhone Duo 時，便恢復作用。Apple TV 只顯示橫向頁面。</p>
-  <p>不包含：方案與訂閱狀態（跟隨 Apple Account，以<span class="ui">還原購買項目</span>取回，見<a class="xref" href="#plans-subscribe">「訂閱、還原購買與兌換代碼」</a>）、已儲存的設備報告、對 YouTube 或 Twitch 條款的同意（每台裝置各詢問一次），以及未列於上方的其他資料。</p>
+  <p>不包含：方案與訂閱狀態（跟隨 Apple 帳號，以<span class="ui">還原購買項目</span>取回，見<a class="xref" href="#plans-subscribe">「訂閱、還原購買與兌換代碼」</a>）、已儲存的設備報告、對 YouTube 或 Twitch 條款的同意（每台裝置各詢問一次），以及未列於上方的其他資料。</p>
 
   <h3 id="share-icloud">備份到 iCloud</h3>
   <p>前置條件：這台裝置已在系統設定中登入 iCloud。未登入時，備份只留在這台裝置上，不會到達其他裝置。</p>
@@ -3387,7 +3387,7 @@ Content-Type: application/json
   </ul>
   <div class="callout note">
     <strong class="t">備份的加密與保護方式</strong>
-    <p>備份加密後存放在使用者的私人 iCloud，只同步到使用同一個 Apple Account 的裝置。備份沒有 PIN。加密金鑰內建在 App 中，每一份安裝都相同，所以任何一台自己的裝置都能還原，不必記住密碼。這把金鑰只避免備份以明文形式存放；它不是對抗同時取得備份與 App 者的保密手段。備份的保護依靠 Apple Account 與 iCloud 的安全，請保護好 Apple Account。</p>
+    <p>備份加密後存放在使用者的私人 iCloud，只同步到使用同一個 Apple 帳號的裝置。備份沒有 PIN。加密金鑰內建在 App 中，每一份安裝都相同，所以任何一台自己的裝置都能還原，不必記住密碼。這把金鑰只避免備份以明文形式存放；它不是對抗同時取得備份與 App 者的保密手段。備份的保護依靠 Apple 帳號與 iCloud 的安全，請保護好 Apple 帳號。</p>
   </div>
 
   <h3 id="share-versions">多份具名備份：重新命名與刪除</h3>
@@ -3427,14 +3427,14 @@ Content-Type: application/json
   </ol>
   <ul>
     <li>名稱開頭與結尾的空格會被移除。重新命名只改變名稱，備份的內容與日期維持不變。</li>
-    <li>在使用同一個 Apple Account 的其他裝置上建立、重新命名或刪除的備份，會在 iCloud 同步後反映在清單中，頁面開啟時也是如此。</li>
+    <li>在使用同一個 Apple 帳號的其他裝置上建立、重新命名或刪除的備份，會在 iCloud 同步後反映在清單中，頁面開啟時也是如此。</li>
     <li>以較早版本的 Cam Hub 製作的備份，會以其中一份備份的形式出現在清單中。</li>
     <li>新名稱無法儲存時，出現警示<span class="ui">無法儲存備份。請確認您已登入 iCloud。</span></li>
     <li>要一次刪除所有備份，見<a class="xref" href="#share-delete">「刪除所有 iCloud 備份」</a>。</li>
   </ul>
 
   <h3 id="share-restore">從 iCloud 還原</h3>
-  <p>前置條件：這台裝置已登入備份所屬的 Apple Account，且 iCloud 上已有備份。剛備份完成時，備份可能需要一些時間才會同步到另一台裝置。</p>
+  <p>前置條件：這台裝置已登入備份所屬的 Apple 帳號，且 iCloud 上已有備份。剛備份完成時，備份可能需要一些時間才會同步到另一台裝置。</p>
   <ol class="steps">
     <li class="step">
       <p>點選底部的<span class="ui">設定</span>分頁。</p>
@@ -3479,7 +3479,7 @@ Content-Type: application/json
   </ol>
   <ul>
     <li>在 iPhone 或 iPad 上，此操作會刪除 iCloud 中的所有備份，包括<span class="ui">我的備份</span>的每一份，以及另外為<span class="ui">Apple TV</span>製作的副本。在 Apple TV 上的同一列只刪除為 Apple TV 製作的那一份。</li>
-    <li>其他已登入同一個 Apple Account 的裝置，會在下次同步時失去這些備份。這台裝置上的設備與設定不受影響。</li>
+    <li>其他已登入同一個 Apple 帳號的裝置，會在下次同步時失去這些備份。這台裝置上的設備與設定不受影響。</li>
     <li>未登入 iCloud 時，此操作只清除這台裝置上的副本；雲端的備份可能保留到登入為止。</li>
   </ul>
 
@@ -3487,7 +3487,7 @@ Content-Type: application/json
   <p>LiveView Mix 各頁面與控制面板屬於 App 設定。下列兩種方式都能帶走它們：iCloud 備份一律包含；分享代碼須開啟<span class="ui">包含 App 設定</span>，並在新手機上選擇<span class="ui">同時使用對方的設定</span>。</p>
 
   <h4>方式一：以 iCloud 備份搬移（建議）</h4>
-  <p>前置條件：新手機已安裝 Cam Hub，並以同一個 Apple Account 登入 iCloud。</p>
+  <p>前置條件：新手機已安裝 Cam Hub，並以同一個 Apple 帳號登入 iCloud。</p>
   <ol class="steps">
     <li class="step">
       <p>在舊手機開啟<span class="ui">設定</span>分頁，點選<span class="ui">備份到 iCloud</span>。</p>
@@ -3538,7 +3538,7 @@ Content-Type: application/json
       <p class="check"><b class="check-label">確認：</b>畫面顯示<span class="ui">已新增 5 支攝影機</span>。LiveView Mix 分頁顯示舊手機上的牆。</p>
     </li>
   </ol>
-  <p>兩種方式都不會帶走方案。新手機以同一個 Apple Account 登入後，以<span class="ui">還原購買項目</span>取回，見<a class="xref" href="#plans-subscribe">「訂閱、還原購買與兌換代碼」</a>。</p>
+  <p>兩種方式都不會帶走方案。新手機以同一個 Apple 帳號登入後，以<span class="ui">還原購買項目</span>取回，見<a class="xref" href="#plans-subscribe">「訂閱、還原購買與兌換代碼」</a>。</p>
 
   <h3 id="share-appletv">帶到 Apple TV</h3>
   <p>Apple TV 上不建立也不編輯牆，也很難用遙控器輸入長代碼。建議先在 iPhone 或 iPad 上完成設定，再以<span class="ui">目的地</span>為<span class="ui">Apple TV</span>的備份（見<a class="xref" href="#share-icloud">「備份到 iCloud」</a>）或分享代碼（見<a class="xref" href="#share-export">「匯出攝影機（產生代碼）」</a>），把設備與牆面帶到電視。Apple TV 只能還原 Apple TV 副本，無法還原<span class="ui">我的備份</span>的備份；YouTube 與 Twitch 串流在 Apple TV 上只顯示名稱。Apple TV 上的步驟與差異，見<a class="xref" href="#appletv">第 14 章「Apple TV」</a>。</p>
@@ -3632,7 +3632,7 @@ Content-Type: application/json
   </ul>
 
   <h3 id="plans-subscribe">訂閱、還原購買與兌換代碼</h3>
-  <p>前置條件：這台裝置已在系統設定中登入 Apple Account，且可使用購買功能。訂閱跟著 Apple Account 走，在 iPhone、iPad 與 Apple TV 上共用同一份。</p>
+  <p>前置條件：這台裝置已在系統設定中登入 Apple 帳號，且可使用購買功能。訂閱跟著 Apple 帳號走，在 iPhone、iPad 與 Apple TV 上共用同一份。</p>
   <ol class="steps">
     <li class="step">
       <p>點選底部的<span class="ui">設定</span>分頁，在<span class="ui">訂閱</span>區塊點選<span class="ui">方案</span>。</p>
@@ -3645,7 +3645,7 @@ Content-Type: application/json
       <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="方案頁的上半部：Cam Hub 標誌、標題「解鎖所有攝影機」、說明免費方案可顯示內容的句子、五條簡短的方案說明，最下方為「攝影機方案 · 年繳」的標題" loading="lazy" decoding="async" width="900" height="1215"><figcaption>方案頁的上半部，方案卡片在其下方</figcaption></figure>
     </li>
     <li class="step">
-      <p>依系統畫面的提示，以 Apple Account 確認購買。</p>
+      <p>依系統畫面的提示，以 Apple 帳號確認購買。</p>
       <p class="check"><b class="check-label">確認：</b>該方案的卡片改顯示<span class="ui">目前方案</span>，額度立即更新。<span class="ui">設定</span>分頁的<span class="ui">方案</span>一列顯示方案名稱。</p>
     </li>
     <li class="step">
@@ -3691,7 +3691,7 @@ Content-Type: application/json
   <h3 id="plans-lapse">方案到期或降級時</h3>
   <ul>
     <li>Cam Hub 在回到前景時重新檢查方案。訂閱到期而沒有續訂，或改為較低的方案後，額度隨之縮小。</li>
-    <li>系統的購買服務無法確認購買時（例如裝置離線，或購買用的 Apple Account 已登出），最後一次確認的方案最多維持 14 天。Apple 回報已結束、已退款，或已被同組其他方案取代的方案，則立即結束。</li>
+    <li>系統的購買服務無法確認購買時（例如裝置離線，或購買用的 Apple 帳號已登出），最後一次確認的方案最多維持 14 天。Apple 回報已結束、已退款，或已被同組其他方案取代的方案，則立即結束。</li>
     <li>通道的啟用狀態不會被改寫，設備、名稱、牆的版面與設定都保留。超出新額度的通道停止串流，縮圖顯示<span class="ui">方案未包含</span>與鎖頭。點選這類縮圖會開啟方案畫面，並顯示原因。被鎖住的通道同樣無法錄影回放。</li>
     <li>保留的順序同<a class="xref" href="#plans-count">「哪些項目占用額度」</a>：獨立攝影機先保留，其次是錄影主機的通道，最後是控制面板。被鎖住的控制面板顯示鎖頭、標題與<span class="ui">方案未包含</span>，按鈕無法使用。YouTube 與 Twitch 串流不會被鎖住。</li>
     <li>重新訂閱或還原購買後，被鎖住的通道恢復串流，不必重新加入設備。</li>
@@ -3889,7 +3889,7 @@ Content-Type: application/json
     <tbody>
       <tr><td><span class="ui">方案</span></td><td>在設定上方開啟方案頁。名稱下方的灰色文字顯示目前的方案，或<span class="ui">免費</span>。同時持有攝影機方案與 NVR 方案時，兩個名稱以加號相連。方案名稱尚未載入時，該行顯示<span class="ui">攝影機方案</span>或<span class="ui">NVR 方案</span>。</td></tr>
       <tr><td><span class="ui">管理訂閱項目</span></td><td>開啟系統的訂閱頁面，可在其中變更或取消方案，並查看續訂日期。</td></tr>
-      <tr><td><span class="ui">還原購買項目</span></td><td>將 Apple Account 的購買項目與 App 同步，並顯示結果。</td></tr>
+      <tr><td><span class="ui">還原購買項目</span></td><td>將 Apple 帳號的購買項目與 App 同步，並顯示結果。</td></tr>
       <tr><td><span class="ui">兌換代碼</span></td><td>開啟系統的畫面，輸入可取得方案的代碼。無法開啟該畫面時，出現警示<span class="ui">無法開啟代碼兌換。請檢查網路連線，或到 App Store 兌換代碼。</span></td></tr>
       <tr><td><span class="ui">選擇顯示哪些攝影機</span></td><td>開啟同名的頁面，逐一開啟或關閉每台設備的每個通道。方案的兩項限額都是不限時，不提供此列，見<a class="xref" href="#plans-choose">「選擇顯示哪些攝影機」</a>。</td></tr>
     </tbody>
@@ -4005,7 +4005,7 @@ Content-Type: application/json
   </ol>
 
   <h3 id="settings-backup">攝影機的備份與分享</h3>
-  <p>兩個區塊用來把設備搬到另一支 iPhone、iPad 或 Apple TV。iCloud 備份供同一個 Apple Account 使用；代碼則適用於任何其他裝置，不需要 iCloud，也可以交給其他人。</p>
+  <p>兩個區塊用來把設備搬到另一支 iPhone、iPad 或 Apple TV。iCloud 備份供同一個 Apple 帳號使用；代碼則適用於任何其他裝置，不需要 iCloud，也可以交給其他人。</p>
   <div class="table-wrap"><table>
     <thead><tr><th>項目</th><th>作用</th><th>詳細說明</th></tr></thead>
     <tbody>
@@ -4098,7 +4098,7 @@ Content-Type: application/json
   <ol class="steps">
     <li class="step">
       <p>在<span class="ui">重設</span>區塊中，點選<span class="ui">刪除 iCloud 備份</span>。沒有備份時，此列無法使用。</p>
-      <p class="check"><b class="check-label">確認：</b>出現對話框<span class="ui">要刪除 iCloud 備份嗎？</span>，說明 iCloud 上所有的加密備份（包括 Apple TV 那一份）會被永久移除，使用同一個 Apple Account 登入的其他裝置在下次同步時也會失去這些備份，而這台裝置上的設備與設定不受影響。</p>
+      <p class="check"><b class="check-label">確認：</b>出現對話框<span class="ui">要刪除 iCloud 備份嗎？</span>，說明 iCloud 上所有的加密備份（包括 Apple TV 那一份）會被永久移除，使用同一個 Apple 帳號登入的其他裝置在下次同步時也會失去這些備份，而這台裝置上的設備與設定不受影響。</p>
       <figure class="phone"><img src="guide/img/settings-delete-icloud.jpg" alt="「要刪除 iCloud 備份嗎？」對話框，此為尚未登入 iCloud 時的版本：說明只會清除這台裝置上的副本，雲端備份可能保留到登入為止，並有「刪除 iCloud 備份」按鈕" loading="lazy" decoding="async" width="900" height="1956"><figcaption>尚未登入 iCloud 時的刪除確認</figcaption></figure>
     </li>
     <li class="step">
@@ -4152,7 +4152,7 @@ Content-Type: application/json
   </ul>
 
   <h3 id="appletv-bring">把設定帶到 Apple TV</h3>
-  <p>前置條件：iPhone 或 iPad 與 Apple TV 以同一個 Apple Account 登入 iCloud，而且兩者的 Cam Hub 版本相同。舊版本建立的備份不會出現在 Apple TV 上。</p>
+  <p>前置條件：iPhone 或 iPad 與 Apple TV 以同一個 Apple 帳號登入 iCloud，而且兩者的 Cam Hub 版本相同。舊版本建立的備份不會出現在 Apple TV 上。</p>
   <ol class="steps">
     <li class="step">
       <p>在 iPhone 或 iPad 完成設定：設備、LiveView Mix 牆、方案，以及要顯示的攝影機。</p>
@@ -4172,11 +4172,11 @@ Content-Type: application/json
     </li>
     <li class="step">
       <p>在 Apple TV 的<span class="ui">設定</span>分頁選取<span class="ui">方案</span>。</p>
-      <p class="check"><b class="check-label">確認：</b>畫面顯示這個 Apple Account 的方案。尚未顯示的方案，在選取<span class="ui">還原購買項目</span>之後出現。</p>
+      <p class="check"><b class="check-label">確認：</b>畫面顯示這個 Apple 帳號的方案。尚未顯示的方案，在選取<span class="ui">還原購買項目</span>之後出現。</p>
     </li>
   </ol>
   <p>Apple TV 只還原為它建立的那一份備份。<span class="ui">我的備份</span>中具名的多份備份，只列在 iPhone 與 iPad 上，見<a class="xref" href="#share-versions">「多份具名備份：重新命名與刪除」</a>。</p>
-  <p>兩台裝置不是同一個 Apple Account 時，以分享代碼取代備份。在 iPhone 或 iPad 依<a class="xref" href="#share-export">「匯出攝影機（產生代碼）」</a>產生代碼並複製。在 Apple TV 的<span class="ui">設定</span>分頁選取<span class="path"><span class="ui">分享攝影機</span> › <span class="ui">匯入攝影機</span></span>，輸入代碼；鍵盤出現時，附近的 iPhone 可以代為輸入。已鎖定的代碼會要求輸入 PIN 或密碼。代碼的長度可達數百到數千個字元，因此 Apple Account 相同時，優先採用 iCloud 備份。</p>
+  <p>兩台裝置不是同一個 Apple 帳號時，以分享代碼取代備份。在 iPhone 或 iPad 依<a class="xref" href="#share-export">「匯出攝影機（產生代碼）」</a>產生代碼並複製。在 Apple TV 的<span class="ui">設定</span>分頁選取<span class="path"><span class="ui">分享攝影機</span> › <span class="ui">匯入攝影機</span></span>，輸入代碼；鍵盤出現時，附近的 iPhone 可以代為輸入。已鎖定的代碼會要求輸入 PIN 或密碼。代碼的長度可達數百到數千個字元，因此 Apple 帳號相同時，優先採用 iCloud 備份。</p>
   <div class="callout note">
     <strong class="t">之後的變更須重新備份才會到 Apple TV</strong>
     <p>在 iPhone 或 iPad 變更設備、牆面或方案之後，重複步驟 2 到步驟 4。Apple TV 不會自行跟進變更。設備的密碼變更後，也可以在 Apple TV 的設備頁以<span class="ui">編輯帳號密碼</span>輸入新密碼。</p>
@@ -4195,7 +4195,7 @@ Content-Type: application/json
       <tr><td>錄影回放</td><td>標出有錄影日期的月曆、可拖曳的時間軸、2×、4× 與 8× 的速度、人員搜尋。</td><td>支援回放的設備可使用。以遙控器移動時間列，有前一天與後一天的按鈕、縮放時間列的按鈕；設備提供時，另有偵測到人員的清單。沒有月曆，也沒有加速。必須先下載的錄影不會播放，畫面顯示<span class="ui">這段錄影請在 iPhone 或 iPad 上觀看。</span></td></tr>
       <tr><td>LiveView Mix</td><td>選擇攝影機、排列、繪製版面、編輯格子、浮水印、保持攝影機連線、直向頁面，以及 iPhone Duo 的兩張畫布。</td><td>只顯示橫向的牆面。隨備份帶來的直向頁面或下方畫布會保留，但不會顯示，其中的控制面板也不占用額度。牆面以遙控器操作。<span class="path"><span class="ui">設定</span> › <span class="ui">LiveView Mix</span></span>中有精簡的編輯畫面，可選擇攝影機與 SD 或 HD、現成版面與黑邊。超過 16 格的現成版面只在這裡提供。在 iPhone 或 iPad 繪製的自訂版面會顯示，但無法編輯。控制面板可以按下，但無法編輯。排列、編輯格子、浮水印與保持攝影機連線都沒有提供。</td></tr>
       <tr><td>備份與分享</td><td>建立具名的備份、還原、匯出代碼、匯入代碼。</td><td>還原備份中<span class="ui">Apple TV</span>那一份，以及匯入輸入的代碼。無法建立備份或代碼。<span class="ui">刪除 iCloud 備份</span>只會移除 Apple TV 那一份。</td></tr>
-      <tr><td>方案</td><td><span class="ui">方案</span>、<span class="ui">管理訂閱項目</span>、<span class="ui">還原購買項目</span>與<span class="ui">兌換代碼</span>。</td><td><span class="ui">方案</span>與<span class="ui">還原購買項目</span>。沒有<span class="ui">管理訂閱項目</span>，也沒有<span class="ui">兌換代碼</span>。一份訂閱涵蓋使用同一個 Apple Account 的每一台裝置。</td></tr>
+      <tr><td>方案</td><td><span class="ui">方案</span>、<span class="ui">管理訂閱項目</span>、<span class="ui">還原購買項目</span>與<span class="ui">兌換代碼</span>。</td><td><span class="ui">方案</span>與<span class="ui">還原購買項目</span>。沒有<span class="ui">管理訂閱項目</span>，也沒有<span class="ui">兌換代碼</span>。一份訂閱涵蓋使用同一個 Apple 帳號的每一台裝置。</td></tr>
       <tr><td>法律條款</td><td><span class="ui">設定</span>分頁中的<span class="ui">使用條款</span>與<span class="ui">隱私權政策</span>會開啟 Cam Hub 網站。</td><td><span class="ui">設定</span>分頁<span class="ui">法律條款</span>區塊與<span class="ui">方案</span>頁面中的使用條款與<span class="ui">隱私權政策</span>，會在 App 內顯示全文，頂端並列出網址。全文隨 App 提供，不需要網路連線。點選<span class="ui">完成</span>即可返回。</td></tr>
       <tr><td>權限</td><td>本地網路；<span class="ui">拍照</span>使用相機；透過攝影機對講時使用麥克風；時速表使用位置。</td><td>只有本地網路，見<a class="xref" href="#trouble-permissions">「權限要求與系統對話框」</a>。</td></tr>
     </tbody>
@@ -4401,12 +4401,12 @@ Content-Type: application/json
       <tr><td><span class="ui">無法儲存備份。請確認您已登入 iCloud。</span>或<span class="ui">備份失敗。請確認已登入 iCloud 後再試一次。</span></td><td>裝置未登入 iCloud，或無法連上 iCloud。</td><td>在系統設定中登入 iCloud，檢查連線後再備份一次。見<a class="xref" href="#share-icloud">「備份到 iCloud」</a>。</td></tr>
       <tr><td><span class="ui">Cam Hub 在 iCloud 的備份空間已滿。請刪除較舊的備份或移除一些格子圖片後再試。</span></td><td>Cam Hub 的所有備份，包括具名的備份與 Apple TV 那一份，共用 iCloud 中約 <code>1 MB</code> 的空間。牆面格子中的圖片占用其中大部分。</td><td>在<span class="ui">iCloud 中的備份</span>清單刪除較舊的備份（見<a class="xref" href="#share-versions">「多份具名備份：重新命名與刪除」</a>），或移除牆面格子中的部分圖片，再備份一次。</td></tr>
       <tr><td><span class="ui">僅儲存在這台裝置上。登入 iCloud 後才會在雲端保留一份備份。</span></td><td>裝置未登入 iCloud。備份只保留在這台裝置上，不會傳到其他裝置。</td><td>在系統設定中登入 iCloud，再備份一次。</td></tr>
-      <tr><td><span class="ui">iCloud 中還沒有備份。</span>或<span class="ui">iCloud 中找不到備份。請先用登入相同 Apple 帳號的 iPhone 進行備份。</span></td><td>這個 Apple Account 沒有備份、備份尚未同步完成，或備份建立在另一個目的地（<span class="ui">我的備份</span>或<span class="ui">Apple TV</span>）。</td><td>先在來源裝置以相同的 Apple Account 備份，並選擇相符的目的地。等待 iCloud 同步，再重新開啟還原頁面。見<a class="xref" href="#share-restore">「從 iCloud 還原」</a>。</td></tr>
-      <tr><td>備份清單中少了某一份備份</td><td>該備份已在登入相同 Apple Account 的另一台裝置上刪除，或<span class="ui">設定</span>分頁的<span class="ui">刪除 iCloud 備份</span>移除了所有備份，包括 Apple TV 那一份。</td><td>在存有這些設備的裝置上重新備份。見<a class="xref" href="#share-versions">「多份具名備份：重新命名與刪除」</a>。</td></tr>
+      <tr><td><span class="ui">iCloud 中還沒有備份。</span>或<span class="ui">iCloud 中找不到備份。請先用登入相同 Apple 帳號的 iPhone 進行備份。</span></td><td>這個 Apple 帳號沒有備份、備份尚未同步完成，或備份建立在另一個目的地（<span class="ui">我的備份</span>或<span class="ui">Apple TV</span>）。</td><td>先在來源裝置以相同的 Apple 帳號備份，並選擇相符的目的地。等待 iCloud 同步，再重新開啟還原頁面。見<a class="xref" href="#share-restore">「從 iCloud 還原」</a>。</td></tr>
+      <tr><td>備份清單中少了某一份備份</td><td>該備份已在登入相同 Apple 帳號的另一台裝置上刪除，或<span class="ui">設定</span>分頁的<span class="ui">刪除 iCloud 備份</span>移除了所有備份，包括 Apple TV 那一份。</td><td>在存有這些設備的裝置上重新備份。見<a class="xref" href="#share-versions">「多份具名備份：重新命名與刪除」</a>。</td></tr>
       <tr><td><span class="ui">無法讀取這個備份，請重新備份以取代它。</span></td><td>備份已損壞，或由舊版 App 建立。</td><td>在原來的裝置上重新備份。</td></tr>
       <tr><td><span class="ui">還原失敗。請再試一次。</span>或<span class="ui">沒有可還原的備份。</span></td><td>沒有可讀取的備份，或還原過程中斷。</td><td>確認 iCloud 已登入並完成同步，再試一次。</td></tr>
-      <tr><td>Apple TV 顯示<span class="ui">iCloud 上尚未有備份</span></td><td>備份建立在<span class="ui">我的備份</span>、Apple Account 不同，或兩台裝置的 App 版本不同。舊版本建立的備份不會出現。</td><td>在相同的 App 版本與相同的 Apple Account 下，以<span class="ui">Apple TV</span>為目的地重新備份，見<a class="xref" href="#appletv">第 14 章「Apple TV」</a>。</td></tr>
-      <tr><td>還原之後，沒有方案</td><td>購買項目不屬於備份的內容，它們跟著 Apple Account 走。</td><td>點選<span class="ui">還原購買項目</span>，見<a class="xref" href="#plans-subscribe">「訂閱、還原購買與兌換代碼」</a>。</td></tr>
+      <tr><td>Apple TV 顯示<span class="ui">iCloud 上尚未有備份</span></td><td>備份建立在<span class="ui">我的備份</span>、Apple 帳號不同，或兩台裝置的 App 版本不同。舊版本建立的備份不會出現。</td><td>在相同的 App 版本與相同的 Apple 帳號下，以<span class="ui">Apple TV</span>為目的地重新備份，見<a class="xref" href="#appletv">第 14 章「Apple TV」</a>。</td></tr>
+      <tr><td>還原之後，沒有方案</td><td>購買項目不屬於備份的內容，它們跟著 Apple 帳號走。</td><td>點選<span class="ui">還原購買項目</span>，見<a class="xref" href="#plans-subscribe">「訂閱、還原購買與兌換代碼」</a>。</td></tr>
     </tbody>
   </table></div>
   <p>分享代碼對持有它的任何人都有效，可使用任意次數，也不會過期。請以 PIN 或密碼鎖定代碼，並以與代碼不同的管道傳送 PIN 或密碼，見<a class="xref" href="#share-lock">「鎖定代碼」</a>。</p>
@@ -4421,9 +4421,9 @@ Content-Type: application/json
       <tr><td><span class="ui">訂閱 NVR 方案，解鎖所有通道。</span></td><td>該通道屬於方案未涵蓋的錄影主機。</td><td>訂閱 NVR 方案，或關閉不需要的通道。</td></tr>
       <tr><td>縮圖顯示<span class="ui">方案未包含</span>與鎖頭</td><td>通道已啟用，但額度涵蓋的通道比已啟用的少。</td><td>點選縮圖查看原因，依<a class="xref" href="#plans-choose">「選擇顯示哪些攝影機」</a>空出額度，或訂閱方案。通道的保留順序見<a class="xref" href="#plans-count">「哪些項目占用額度」</a>。</td></tr>
       <tr><td><span class="ui">已鎖定——升級以啟用</span>與按鈕<span class="ui">方案</span></td><td>畫面開啟期間，該通道不再屬於方案，例如訂閱已到期。</td><td>點選<span class="ui">方案</span>，見<a class="xref" href="#plans-lapse">「方案到期或降級時」</a>。</td></tr>
-      <tr><td>重新安裝後或在新裝置上，沒有顯示方案</td><td>方案綁定 Apple Account，而不是 App，須重新取回。</td><td>在系統設定中以相同的 Apple Account 登入，再點選<span class="ui">還原購買項目</span>。出現<span class="ui">已還原購買項目。</span>表示成功；出現<span class="ui">沒有可還原的購買項目。</span>表示該 Apple Account 沒有購買紀錄。</td></tr>
+      <tr><td>重新安裝後或在新裝置上，沒有顯示方案</td><td>方案綁定 Apple 帳號，而不是 App，須重新取回。</td><td>在系統設定中以相同的 Apple 帳號登入，再點選<span class="ui">還原購買項目</span>。出現<span class="ui">已還原購買項目。</span>表示成功；出現<span class="ui">沒有可還原的購買項目。</span>表示該 Apple 帳號沒有購買紀錄。</td></tr>
       <tr><td><span class="ui">無法載入方案。請檢查網路連線後再試一次。</span></td><td><span class="ui" data-ui="system">App Store</span> 沒有回應。</td><td>檢查網際網路連線，再重新開啟方案頁。</td></tr>
-      <tr><td><span class="ui">購買失敗。請再試一次。</span></td><td>購買沒有完成，例如 Apple Account 的付款方式遭到拒絕。</td><td>在系統設定中檢查 Apple Account 的付款設定，再試一次。</td></tr>
+      <tr><td><span class="ui">購買失敗。請再試一次。</span></td><td>購買沒有完成，例如 Apple 帳號的付款方式遭到拒絕。</td><td>在系統設定中檢查 Apple 帳號的付款設定，再試一次。</td></tr>
       <tr><td>需要取消或變更訂閱</td><td>訂閱由蘋果公司管理。</td><td>點選<span class="ui">管理訂閱項目</span>。扣款、續訂與退款由蘋果公司處理，不是 Cam Hub 的開發者。</td></tr>
     </tbody>
   </table></div>
@@ -4463,8 +4463,8 @@ Content-Type: application/json
       <tr><td>相機</td><td>只有在 LiveView Mix 空格的圖片選擇<span class="ui">拍照</span>時。要求的說明文字為「只有在您為 LiveView Mix 格子選擇「拍照」時，Cam Hub 才會使用相機。」</td><td>權限遭拒絕時，改用<span class="ui">選擇照片</span>。相機權限可在系統設定中變更。</td></tr>
       <tr><td>照片</td><td>不會要求。<span class="ui">選擇照片</span>使用系統的照片選取器，快照則透過分享選單傳出。</td><td>Cam Hub 不會自行寫入照片圖庫。要儲存快照，請從分享選單儲存。</td></tr>
       <tr><td>位置（使用 App 期間）</td><td>第一次開啟<span class="ui">工具</span>分頁的時速表時，見<a class="xref" href="#tools-speedometer">「時速表與羅盤」</a>。</td><td>只用於時速與羅盤方向，不會儲存或分享。不會在背景取得位置。權限遭拒絕時，時速表顯示橘色文字與按鈕<span class="ui">開啟設定</span>。</td></tr>
-      <tr><td>iCloud</td><td>不會要求。備份與還原需要裝置已以 Apple Account 登入 iCloud。</td><td>備份失敗時，見<a class="xref" href="#trouble-share">「分享、匯入與 iCloud 備份」</a>。</td></tr>
-      <tr><td>購買、<span class="ui">管理訂閱項目</span>與<span class="ui">兌換代碼</span></td><td><span class="ui" data-ui="system">App Store</span> 的系統畫面，從<span class="ui">設定</span>分頁或方案頁開啟。</td><td>以 Apple Account 確認。見<a class="xref" href="#plans-subscribe">「訂閱、還原購買與兌換代碼」</a>。</td></tr>
+      <tr><td>iCloud</td><td>不會要求。備份與還原需要裝置已以 Apple 帳號登入 iCloud。</td><td>備份失敗時，見<a class="xref" href="#trouble-share">「分享、匯入與 iCloud 備份」</a>。</td></tr>
+      <tr><td>購買、<span class="ui">管理訂閱項目</span>與<span class="ui">兌換代碼</span></td><td><span class="ui" data-ui="system">App Store</span> 的系統畫面，從<span class="ui">設定</span>分頁或方案頁開啟。</td><td>以 Apple 帳號確認。見<a class="xref" href="#plans-subscribe">「訂閱、還原購買與兌換代碼」</a>。</td></tr>
       <tr><td>分享連結</td><td>形如 <code>https://cam-hub.almx.cc/i#…</code> 的連結會開啟 Cam Hub 的匯入頁面，並帶入代碼。</td><td>代碼位於位址中 <code>#</code> 後面的部分，這一部分不會傳到伺服器。見<a class="xref" href="#share-import">「匯入攝影機」</a>。</td></tr>
       <tr><td>郵件</td><td>設備報告中的<span class="ui">以電子郵件寄給開發者</span>會開啟系統的郵件撰寫頁面，收件者已填入開發者。</td><td>在撰寫頁面按下傳送之前，不會寄出任何內容。沒有郵件帳號時，畫面顯示<span class="ui">此裝置尚未設定郵件</span>；報告已複製，只留在這台裝置上，複製的內容約 2 分鐘後失效。見<a class="xref" href="#add-report">「設備報告（實驗性功能）」</a>。</td></tr>
       <tr><td>評分要求</td><td>備份成功後，系統可能詢問評分。</td><td>可以直接關閉。</td></tr>
@@ -4565,8 +4565,8 @@ Content-Type: application/json
     <p>整個 App 合計 2 個已啟用的通道，以及一台錄影主機。YouTube 直播與 Twitch 頻道不計入。見<a class="xref" href="#plans-tiers">「各方案的額度」</a>。</p>
   </details>
   <details class="faq">
-    <summary>方案可以用在所有使用同一個 Apple Account 的裝置嗎？</summary>
-    <p>可以，在以相同 Apple Account 登入的每一台 iPhone、iPad 與 Apple TV 上都有效。在新裝置上，點選<span class="ui">還原購買項目</span>。見<a class="xref" href="#plans-subscribe">「訂閱、還原購買與兌換代碼」</a>。</p>
+    <summary>方案可以用在所有使用同一個 Apple 帳號的裝置嗎？</summary>
+    <p>可以，在以相同 Apple 帳號登入的每一台 iPhone、iPad 與 Apple TV 上都有效。在新裝置上，點選<span class="ui">還原購買項目</span>。見<a class="xref" href="#plans-subscribe">「訂閱、還原購買與兌換代碼」</a>。</p>
   </details>
   <details class="faq">
     <summary>所有資料都被刪除了，攝影機可以找回來嗎？</summary>
@@ -4661,21 +4661,21 @@ Content-Type: application/json
     <li><b>對準</b>：Hikvision 攝影機回報支援以畫面中的點或區域定位時提供。</li>
     <li><b>快照</b>：Xiongmai 的快照取自即時串流的第一個完整畫格。使用 ONVIF 時，設備須提供快照位址。</li>
     <li><b>聲音</b>：Synology <span class="ui" data-ui="value">Surveillance Station</span> 走系統通常使用的串流路徑時，只支援 <code>G.711</code>。Xiongmai 設備傳送 <code>G.711</code>。</li>
-    <li><b>說話</b>：回報有 <code>G.711</code> 雙向語音通道的 Hikvision 單支攝影機提供此功能；錄影主機的通道不提供。見<a class="xref" href="#single-talk">「雙向對講」</a>。</li>
+    <li><b>說話</b>：回報有 <code>G.711</code> 雙向語音通道的 Hikvision 獨立攝影機提供此功能；錄影主機的通道不提供。見<a class="xref" href="#single-talk">「雙向對講」</a>。</li>
     <li><b>硬碟健康</b>：Hikvision 回報每顆硬碟的狀態，設備提供時並有 S.M.A.R.T. 詳細資料。Dahua 回報狀態、容量，以及可取得時的溫度，但沒有 S.M.A.R.T. 詳細資料。Synology 的 NAS 透過 SNMP 讀取，須在 NAS 上開啟 SNMP，並在 Cam Hub 中設定。見<a class="xref" href="#devices-health">「硬碟健康」</a>。</li>
     <li><b>通道清單</b>：Hikvision 與 Dahua 的錄影主機會列出各通道的名稱與訊號狀態，不是錄影主機的設備只有一個通道。Synology <span class="ui" data-ui="value">Surveillance Station</span> 將系統中的每支攝影機列為一個通道，並有訊號狀態。Xiongmai 設備回報通道數量與各通道的名稱，不回報訊號狀態。ONVIF 每個獨立的影像來源列為一個通道，不回報訊號狀態。RTSP 與清單中的品牌沒有清單：攝影機數量由使用者輸入（1 到 64），每個通道都顯示為在線。</li>
   </ul>
   <p>任何方式都沒有的功能：對焦與光圈控制、儲存或匯出錄影、登入雲端帳號，以及以 HTTPS 連線。</p>
 
   <h3 id="brands-profiles">清單中的品牌</h3>
-  <p><span class="ui">品牌</span>區塊中的品牌以純 RTSP 連線。選擇品牌後，表單增加以該品牌命名的區塊，內有<span class="ui">攝影機</span>欄位（1 到 64）與路徑欄位。填 <code>1</code> 時，加入為以品牌命名的單支攝影機；填較大的數字時，加入為錄影主機，通道為 <code>CH1</code> 到 <code>CHn</code>，並占用方案的錄影主機額度。路徑欄位留白時，Cam Hub 依序嘗試文件所載的路徑，並保留設備有回應的那一條。只有需要指定特定路徑時才填寫。RTSP 選項的運作方式相同，使用的是多數攝影機使用的路徑。</p>
+  <p><span class="ui">品牌</span>區塊中的品牌以純 RTSP 連線。選擇品牌後，表單增加以該品牌命名的區塊，內有<span class="ui">攝影機</span>欄位（1 到 64）與路徑欄位。填 <code>1</code> 時，加入為以品牌命名的獨立攝影機；填較大的數字時，加入為錄影主機，通道為 <code>CH1</code> 到 <code>CHn</code>，並占用方案的錄影主機額度。路徑欄位留白時，Cam Hub 依序嘗試文件所載的路徑，並保留設備有回應的那一條。只有需要指定特定路徑時才填寫。RTSP 選項的運作方式相同，使用的是多數攝影機使用的路徑。</p>
   <p>71 個品牌：<span class="ui" data-ui="value">2N</span>、<span class="ui" data-ui="value">3S Vision / A-Linking</span>、<span class="ui" data-ui="value">ACTi</span>、<span class="ui" data-ui="value">Acumen</span>、<span class="ui" data-ui="value">AirLive</span>、<span class="ui" data-ui="value">ANNKE</span>、<span class="ui" data-ui="value">Apexis / Sumpple</span>、<span class="ui" data-ui="value">Arecont Vision</span>、<span class="ui" data-ui="value">Avigilon</span>、<span class="ui" data-ui="value">AVTECH</span>、<span class="ui" data-ui="value">Axis</span>、<span class="ui" data-ui="value">Basler</span>、<span class="ui" data-ui="value">Beward</span>、<span class="ui" data-ui="value">Bosch Security</span>、<span class="ui" data-ui="value">Brickcom</span>、<span class="ui" data-ui="value">Canon</span>、<span class="ui" data-ui="value">COMPRO</span>、<span class="ui" data-ui="value">D-Link</span>、<span class="ui" data-ui="value">DIGITUS</span>、<span class="ui" data-ui="value">DynaColor</span>、<span class="ui" data-ui="value">EDIMAX</span>、<span class="ui" data-ui="value">eneo</span>、<span class="ui" data-ui="value">EnGenius</span>、<span class="ui" data-ui="value">Etrovision</span>、<span class="ui" data-ui="value">eufy</span>、<span class="ui" data-ui="value">EverFocus</span>、<span class="ui" data-ui="value">EZVIZ</span>、<span class="ui" data-ui="value">FlexWATCH</span>、<span class="ui" data-ui="value">Foscam</span>、<span class="ui" data-ui="value">GeoVision</span>、<span class="ui" data-ui="value">Grandstream</span>、<span class="ui" data-ui="value">Hanwha Vision (Wisenet)</span>、<span class="ui" data-ui="value">HVIEW</span>、<span class="ui" data-ui="value">i-PRO (Panasonic)</span>、<span class="ui" data-ui="value">IDIS</span>、<span class="ui" data-ui="value">Imou</span>、<span class="ui" data-ui="value">INSTAR</span>、<span class="ui" data-ui="value">iPUX</span>、<span class="ui" data-ui="value">IQinVision (IQeye)</span>、<span class="ui" data-ui="value">Jovision</span>、<span class="ui" data-ui="value">JVC</span>、<span class="ui" data-ui="value">LILIN</span>、<span class="ui" data-ui="value">Lorex</span>、<span class="ui" data-ui="value">Messoa</span>、<span class="ui" data-ui="value">Milesight</span>、<span class="ui" data-ui="value">MOBOTIX</span>、<span class="ui" data-ui="value">NEXCOM</span>、<span class="ui" data-ui="value">Night Owl</span>、<span class="ui" data-ui="value">Oncam</span>、<span class="ui" data-ui="value">Pelco</span>、<span class="ui" data-ui="value">PiXORD</span>、<span class="ui" data-ui="value">Reolink</span>、<span class="ui" data-ui="value">SHANY</span>、<span class="ui" data-ui="value">Siemens</span>、<span class="ui" data-ui="value">Sony</span>、<span class="ui" data-ui="value">Sricam</span>、<span class="ui" data-ui="value">StarDot</span>、<span class="ui" data-ui="value">Sunell</span>、<span class="ui" data-ui="value">Swann</span>、<span class="ui" data-ui="value">TP-Link (Tapo / VIGI)</span>、<span class="ui" data-ui="value">TRENDnet</span>、<span class="ui" data-ui="value">TVT</span>、<span class="ui" data-ui="value">UniFi (Ubiquiti)</span>、<span class="ui" data-ui="value">Uniview (UNV)</span>、<span class="ui" data-ui="value">VIVOTEK</span>、<span class="ui" data-ui="value">Vstarcam</span>、<span class="ui" data-ui="value">Wansview</span>、<span class="ui" data-ui="value">Wyze</span>、<span class="ui" data-ui="value">Y-cam</span>、<span class="ui" data-ui="value">YI / Kami</span>、<span class="ui" data-ui="value">Zavio</span>。</p>
   <ul>
     <li><b>專用帳號</b>：<span class="ui" data-ui="value">Axis</span>、<span class="ui" data-ui="value">TP-Link (Tapo / VIGI)</span>、<span class="ui" data-ui="value">ANNKE</span>、<span class="ui" data-ui="value">MOBOTIX</span>與<span class="ui" data-ui="value">2N</span>須先在原廠的網頁介面或 App 建立專用的攝影機或 ONVIF 帳號，RTSP 才能連線。只用管理員帳號登入可能會被拒絕。</li>
     <li><b>RTSP 連接埠</b>：三個品牌使用其他預設連接埠，選擇品牌時表單會自動帶入：<span class="ui" data-ui="value">ACTi</span> <code>7070</code>、<span class="ui" data-ui="value">Foscam</span> <code>88</code>、<span class="ui" data-ui="value">Vstarcam</span> <code>10554</code>。</li>
     <li><b>錄影主機</b>：文件載有錄影主機形式的品牌為<span class="ui" data-ui="value">3S Vision / A-Linking</span>、<span class="ui" data-ui="value">ANNKE</span>、<span class="ui" data-ui="value">AVTECH</span>、<span class="ui" data-ui="value">Beward</span>、<span class="ui" data-ui="value">DIGITUS</span>、<span class="ui" data-ui="value">eneo</span>、<span class="ui" data-ui="value">eufy</span>、<span class="ui" data-ui="value">GeoVision</span>、<span class="ui" data-ui="value">Hanwha Vision (Wisenet)</span>、<span class="ui" data-ui="value">IDIS</span>、<span class="ui" data-ui="value">Imou</span>、<span class="ui" data-ui="value">Lorex</span>、<span class="ui" data-ui="value">Milesight</span>、<span class="ui" data-ui="value">Night Owl</span>、<span class="ui" data-ui="value">Pelco</span>（編碼器）、<span class="ui" data-ui="value">Reolink</span>、<span class="ui" data-ui="value">Sunell</span>、<span class="ui" data-ui="value">Swann</span>、<span class="ui" data-ui="value">TP-Link (Tapo / VIGI)</span>（VIGI 錄影主機）、<span class="ui" data-ui="value">TRENDnet</span>、<span class="ui" data-ui="value">TVT</span>、<span class="ui" data-ui="value">Uniview (UNV)</span>與<span class="ui" data-ui="value">VIVOTEK</span>。其他品牌的每個通道都使用攝影機路徑；只有含通道編號的路徑，才會在各通道連到不同的攝影機。</li>
     <li><b>會變動的路徑</b>：許多品牌的部分路徑會因型號或韌體而異，第一次嘗試不一定符合。這些品牌在表單的路徑欄位下方會顯示說明。</li>
-    <li><b>自動偵測使用相同的路徑</b>：其他方式都無法連線時，自動偵測會自行嘗試清單中所有品牌的路徑，並加入為單支攝影機。需要手動選擇品牌的情況，主要是加入錄影主機以輸入攝影機數量，或指定特定路徑。</li>
+    <li><b>自動偵測使用相同的路徑</b>：其他方式都無法連線時，自動偵測會自行嘗試清單中所有品牌的路徑，並加入為獨立攝影機。需要手動選擇品牌的情況，主要是加入錄影主機以輸入攝影機數量，或指定特定路徑。</li>
   </ul>
   <p>部分品牌的注意事項：</p>
   <div class="table-wrap"><table>
@@ -4713,7 +4713,7 @@ Content-Type: application/json
       <tr><td>同一個網路，沒有雲端</td><td>Cam Hub 直接連到設備的位址，沒有雲端中繼。在家中網路以外，只能透過可從網際網路連到的位址，或經由 VPN 連線。只能透過原廠雲端 App 使用的設備無法加入，Cam Hub 也不提供登入雲端帳號。</td></tr>
       <tr><td>區域網路之外的 Xiongmai 設備</td><td>自動偵測只對區域網路內的位址使用 Xiongmai 的專用協定。位於轉送連接埠或動態網域名稱之後的 Xiongmai 設備，請以<span class="ui">Xiongmai (XMEye)</span>加入。此協定不會加密影像，許多設備對密碼的保護也很薄弱，經由 VPN 連線較為安全。</td></tr>
       <tr><td>影像格式</td><td>Cam Hub 播放 <code>H.264</code> 與 <code>H.265</code>，由手機以硬體解碼。手機沒有 <code>H.265</code> 的硬體支援，或畫面尺寸超出解碼器的上限時，不會有畫面。<code>MJPEG</code> 只作為其中一個系列即時影像的備援。</td></tr>
-      <tr><td>聲音</td><td>收聽時支援 <code>G.711</code>（<code>A-law</code> 與 <code>µ-law</code>）與 <code>AAC-LC</code>，其他格式沒有聲音。透過攝影機說話，只適用於提供 <code>G.711</code> 雙向語音的 Hikvision 單支攝影機。</td></tr>
+      <tr><td>聲音</td><td>收聽時支援 <code>G.711</code>（<code>A-law</code> 與 <code>µ-law</code>）與 <code>AAC-LC</code>，其他格式沒有聲音。透過攝影機說話，只適用於提供 <code>G.711</code> 雙向語音的 Hikvision 獨立攝影機。</td></tr>
       <tr><td>帳號鎖定</td><td>輸入錯誤多次後，設備可能鎖定帳號，常見約 30 分鐘。自動偵測的連接埠檢查不會送出登入。Cam Hub 在品牌專用協定第一次拒絕登入時就停止，以 ONVIF 或 RTSP 連線時則在第二次被拒絕後停止；設備報告在被拒絕之後也不再送出登入。</td></tr>
       <tr><td>再次加入設備</td><td>相同的位址、連接埠與使用者名稱，會更新已儲存的設備，而不是建立第二台。</td></tr>
     </tbody>
