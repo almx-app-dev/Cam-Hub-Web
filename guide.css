@@ -359,6 +359,7 @@
     margin-block: 0;
   }
   .guide li.step:has(> figure, > .shots) > figure.land,
+  .guide li.step:has(> figure, > .shots) > figure.device,
   .guide li.step:has(> figure, > .shots) > .shots.pair,
   .guide li.step:has(> figure, > .shots) > .shots.triple,
   .guide li.step:has(> figure, > .shots) > .shots.quad,
@@ -446,6 +447,16 @@
 }
 .guide .shots.pair figure.phone img { border-radius: 18px; }
 .guide .shots.triple figure.phone img, .guide .shots.quad figure.phone img { border-radius: 13px; }
+/* iPhone Duo pictures taken with the device itself in view: the frame is the border, the background is clear */
+.guide figure.device { text-align: center; margin: 18px 0; }
+.guide figure.device img {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  margin-inline: auto;
+  filter: drop-shadow(0 12px 22px var(--shadow));
+}
+.guide figure.device.tall img { max-width: 380px; }
 .guide figure.land { text-align: center; }
 .guide figure.land img {
   display: block;
