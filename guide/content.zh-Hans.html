@@ -235,9 +235,6 @@
   </div>
   <p>无法确定设备能否使用时，点击表单中的<span class="ui">兼容性参考</span>，查看支持和不支持的设备。表单从已指明设备品牌的扫描结果打开且地址未被更改时，不显示该入口，也不显示<span class="ui">添加示例摄像头</span>。</p>
 
-  <h3 id="add-streams">仅在部分地区提供的功能</h3>
-  <p>Cam Hub 的一项视频功能仅在部分地区提供，简体中文版中不提供该功能。通过共享代码或备份带入的此类项目只显示名称和提示<span class="ui">此地区或语言不提供此功能。</span>这类项目可以像其他设备一样删除。</p>
-
   <h3 id="add-failed">添加失败时：检查清单</h3>
   <p>添加失败时，表单用红色显示错误信息。使用<span class="ui">自动检测</span>时，其下方列出找到的开放端口。再往下，表单列出<span class="ui">请先检查这些</span>。列表的顺序随失败类型而定，最可能的原因排在最前面。从上到下逐项检查，然后再次点击<span class="ui">添加</span>。</p>
   <div class="table-wrap"><table>
@@ -670,9 +667,6 @@
   </ol>
   <p>用<span class="ui">自动检测</span>添加的 NAS 尚无 SNMP 设置时，添加完成后会立即打开同一界面，作为可选步骤：<span class="ui">保存</span>保存设置，<span class="ui">以后再说</span>关闭界面。无论选择哪一项，设备都已添加，之后也可以从<span class="ui">磁盘健康</span>设置 SNMP，参见<a class="xref" href="#add">第 3 章“添加设备”</a>。</p>
   <p>SNMP 设置按设备保存在 iPhone 或 iPad 的钥匙串中，并随设备一起删除。它们包含在共享代码和 iCloud 备份中，因此导入或恢复之后，<span class="ui">磁盘健康</span>无需重新设置即可使用，参见<a class="xref" href="#share">第 10 章“共享与备份”</a>。</p>
-
-  <h3 id="devices-streams">仅在部分地区提供的功能</h3>
-  <p>Cam Hub 的一项视频功能仅在部分地区提供，简体中文版中不提供该功能。通过共享代码或备份带入的此类项目在设备列表中只显示名称和提示<span class="ui">此地区或语言不提供此功能。</span>这类项目可以像其他设备一样删除。</p>
 
   <h3 id="devices-states">缩略图显示的内容</h3>
   <p>缩略图的内容取决于通道的状态。下表按 Cam Hub 判断状态的先后顺序列出各状态。只有在线、已启用、在套餐范围内且未暂停的通道，点击后才会打开单摄像头视图，参见<a class="xref" href="#single">第 6 章“单摄像头视图”</a>。点击已停用或已暂停的缩略图，会提供重新开启的选项。</p>
@@ -1397,9 +1391,6 @@
     </li>
   </ol>
   <p>像书一样手持时，设备页的一半显示摄像头墙，另一半显示所选摄像头的视图。点击缩略图会在另一半显示该摄像头，而不是打开新的界面，所选缩略图带有彩色边框。最初选中的是第一个在线、已启用、在套餐范围内且未暂停的摄像头。</p>
-
-  <h3 id="single-streams">仅在部分地区提供的功能</h3>
-  <p>Cam Hub 的一项视频功能仅在部分地区提供，简体中文版中不提供该功能。通过共享代码或备份带入的此类项目只显示名称和提示<span class="ui">此地区或语言不提供此功能。</span>这类项目可以像其他设备一样删除。</p>
 
   <h3 id="single-states">连接状态与提示</h3>
   <p>视频流的状态显示在画面上方。</p>
@@ -2525,9 +2516,6 @@
     <li>左下角的扬声器按钮仅在画面带有声音时出现。</li>
   </ul>
   <p>点击预览中套餐未涵盖的摄像头（<span class="ui">不在您的套餐内</span>）会打开套餐页面，参见<a class="xref" href="#plans">第 11 章“套餐与额度”</a>。点击离线、已停用或已暂停的摄像头没有反应。声音只在单摄像头视图和这个全屏查看器中播放；开启方法参见<a class="xref" href="#single">第 6 章“单摄像头视图”</a>。</p>
-
-  <h3 id="lvm-streams">仅在部分地区提供的功能</h3>
-  <p>Cam Hub 的一项视频功能仅在部分地区提供，简体中文版中不提供该功能。通过共享代码或备份带到墙上的此类项目，其图块只显示名称和提示<span class="ui">此地区或语言不提供此功能。</span>这类项目可以像其他设备一样删除。</p>
 
   <h3 id="lvm-states">图块无法显示摄像头时</h3>
   <p>无法显示的摄像头保留它在墙上的位置，其图块显示带状态文字的深色底板。由于位置得以保留，其他图块都不会移动。</p>
@@ -4093,7 +4081,6 @@ Content-Type: application/json
       <tr><td>摄像头不显示画面、画面全黑、出现错误提示或没有声音，或者无法通过摄像头对讲</td><td><a class="xref" href="#trouble-live">“实时观看”</a></td></tr>
       <tr><td>录像列表为空、时间不一致，或回放无法加速</td><td><a class="xref" href="#trouble-playback">“录像回放”</a></td></tr>
       <tr><td>LiveView Mix 墙的某个图块显示状态文字，或墙发生了变化</td><td><a class="xref" href="#trouble-lvm">“LiveView Mix”</a></td></tr>
-      <tr><td>某个图块只显示名称和<span class="ui">此地区或语言不提供此功能。</span></td><td><a class="xref" href="#trouble-streams">“仅在部分地区提供的功能”</a></td></tr>
       <tr><td>控制面板按钮显示橙色三角形</td><td><a class="xref" href="#trouble-panels">“控制面板与 Webhook”</a></td></tr>
       <tr><td><span class="ui">磁盘健康</span>页面显示提示，而不是磁盘</td><td><a class="xref" href="#trouble-health">“磁盘健康”</a></td></tr>
       <tr><td>无法导入或恢复代码或备份</td><td><a class="xref" href="#trouble-share">“共享、导入与 iCloud 备份”</a></td></tr>
@@ -4204,9 +4191,6 @@ Content-Type: application/json
     </tbody>
   </table></div>
   <p>墙的若干设置在<a class="xref" href="#lvm-settings">““设置”中的 LiveView Mix”</a>中说明。图块的状态文字在<a class="xref" href="#lvm-states">“图块无法显示摄像头时”</a>中说明。</p>
-
-  <h3 id="trouble-streams">仅在部分地区提供的功能</h3>
-  <p>Cam Hub 的一项视频功能仅在部分地区提供，简体中文版中不提供该功能。通过共享代码或备份带入的此类项目只显示名称和提示<span class="ui">此地区或语言不提供此功能。</span>这类项目可以像其他设备一样删除。</p>
 
   <h3 id="trouble-panels">控制面板与 Webhook</h3>
   <div class="table-wrap"><table>
