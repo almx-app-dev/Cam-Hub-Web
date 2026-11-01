@@ -40,10 +40,11 @@ function plain(value) {
 }
 
 // "Label: value" in each language's own punctuation: a full-width colon in
-// Chinese and Japanese, a no-break space before the colon in French.
+// Chinese and Japanese, a narrow no-break space (U+202F) before the colon in
+// French, as in the rest of the French legal text.
 function metaSeparator(locale) {
   if (["zh-Hant", "zh-Hans", "ja"].includes(locale)) return "：";
-  if (locale === "fr") return " : ";
+  if (locale === "fr") return " : ";
   return ": ";
 }
 

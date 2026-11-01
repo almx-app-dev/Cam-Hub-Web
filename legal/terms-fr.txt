@@ -3,9 +3,9 @@ Conditions d’utilisation
 
 En utilisant Cam Hub, vous acceptez les présentes conditions ainsi que les règles de licence et d’achat applicables de l’App Store d’Apple.
 
-Date d’effet : 29 octobre 2026
-App : Cam Hub
-Contact : app-dev@almx.cc
+Date d’effet : 29 octobre 2026
+App : Cam Hub
+Contact : app-dev@almx.cc
 
 CLUF standard Apple
 
@@ -39,7 +39,7 @@ Compatibilité et disponibilité
 
 Les fonctions varient selon le modèle, le micrologiciel, l’implémentation des protocoles, les autorisations, le codec, la configuration d’enregistrement et le réseau. La prise en charge d’ONVIF, de RTSP ou d’une gamme de produits ne garantit pas le fonctionnement de chaque modèle ou fonction.
 
-La prise en charge de certaines marques est déduite de la documentation publique du fabricant et n’a pas été vérifiée sur tous les modèles. Cam Hub confirme un chemin de flux fonctionnel lors de l’ajout d’un équipement ; avant cela, la compatibilité n’est pas garantie.
+La prise en charge de certaines marques est déduite de la documentation publique du fabricant et n’a pas été vérifiée sur tous les modèles. Cam Hub confirme un chemin de flux fonctionnel lors de l’ajout d’un équipement ; avant cela, la compatibilité n’est pas garantie.
 
 Cam Hub n’est pas un service de surveillance d’urgence et ne garantit ni vidéo ininterrompue, ni disponibilité des enregistrements, ni réception des alertes, ni résultat de sécurité particulier.
 
@@ -71,7 +71,7 @@ Conditions d’utilisation de Twitch: https://www.twitch.tv/p/legal/terms-of-ser
 
 Absence de garantie et limitation de responsabilité
 
-Outre les exclusions du CLUF standard Apple, Cam Hub est fourni « en l’état » et « selon disponibilité », sans garantie d’aucune sorte. Dans la mesure permise par la loi, le développeur n’est pas responsable des pertes indirectes, accessoires, spéciales ou consécutives, notamment les séquences perdues, événements manqués, dommages matériels ou interruptions d’activité. Rien dans ces conditions n’exclut ou ne limite une responsabilité que la loi interdit d’exclure ou de limiter, ne restreint les droits impératifs des consommateurs, ni ne remplace les droits accordés par les conditions d’Apple.
+Outre les exclusions du CLUF standard Apple, Cam Hub est fourni « en l’état » et « selon disponibilité », sans garantie d’aucune sorte. Dans la mesure permise par la loi, le développeur n’est pas responsable des pertes indirectes, accessoires, spéciales ou consécutives, notamment les séquences perdues, événements manqués, dommages matériels ou interruptions d’activité. Rien dans ces conditions n’exclut ou ne limite une responsabilité que la loi interdit d’exclure ou de limiter, ne restreint les droits impératifs des consommateurs, ni ne remplace les droits accordés par les conditions d’Apple.
 
 Modifications
 

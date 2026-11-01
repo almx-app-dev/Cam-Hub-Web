@@ -3,15 +3,15 @@ Politique de confidentialité
 
 Cam Hub est conçu autour du traitement sur l’appareil et du contrôle par l’utilisateur. Il n’exige aucun compte de service et n’intègre aucun suivi publicitaire tiers.
 
-Date d’effet : 29 octobre 2026
-App : Cam Hub
-Contact : app-dev@almx.cc
+Date d’effet : 29 octobre 2026
+App : Cam Hub
+Contact : app-dev@almx.cc
 
 Aperçu
 
 Cam Hub ne vous demande pas de créer de compte de service Cam Hub et n’intègre ni publicité tierce ni suivi publicitaire. L’app est conçue pour se connecter aux caméras et enregistreurs que vous configurez.
 
-Si vous ajoutez des diffusions YouTube ou Twitch, elles sont lues par les lecteurs propres à ces services, qui peuvent afficher leurs propres publicités et recevoir des informations de votre appareil ; voir « Diffusions YouTube et Twitch » ci-dessous.
+Si vous ajoutez des diffusions YouTube ou Twitch, elles sont lues par les lecteurs propres à ces services, qui peuvent afficher leurs propres publicités et recevoir des informations de votre appareil ; voir « Diffusions YouTube et Twitch » ci-dessous.
 
 Informations sur les équipements et identifiants
 
@@ -23,7 +23,7 @@ Lorsque vous regardez une vidéo en direct ou enregistrée, l’app se connecte 
 
 Diffusions YouTube et Twitch
 
-Si vous ajoutez une diffusion en direct ou une chaîne YouTube, ou une chaîne Twitch, Cam Hub la lit avec le lecteur intégré propre à ce service : le lecteur de YouTube (YouTube API Services) ou celui de Twitch. Avant la lecture de la première diffusion de l’un ou l’autre service, l’app vous demande d’accepter les conditions de ce service. Si vous n’ajoutez jamais une telle diffusion, cette section ne vous concerne pas.
+Si vous ajoutez une diffusion en direct ou une chaîne YouTube, ou une chaîne Twitch, Cam Hub la lit avec le lecteur intégré propre à ce service : le lecteur de YouTube (YouTube API Services) ou celui de Twitch. Avant la lecture de la première diffusion de l’un ou l’autre service, l’app vous demande d’accepter les conditions de ce service. Si vous n’ajoutez jamais une telle diffusion, cette section ne vous concerne pas.
 
 Le lecteur est chargé depuis YouTube ou Twitch et se connecte directement à leurs serveurs. Pendant la lecture, le service reçoit votre adresse IP et des informations sur votre appareil et votre navigateur, et peut utiliser des cookies ou des technologies similaires, mesurer la lecture et afficher des publicités, comme le décrivent les Règles de confidentialité de Google (YouTube) ou l’Avis de confidentialité de Twitch (Twitch), liés ci-dessous. Cam Hub ne conserve les cookies et les données stockées du lecteur que pendant l’exécution de l’app et ne reçoit pas ces informations.
 
@@ -37,7 +37,7 @@ Panneaux Webhook et destinations tierces
 
 Vous pouvez définir pour les boutons de commande LiveView Mix une méthode HTTP ou HTTPS, une URL de destination, des en-têtes personnalisés et un corps de requête. Ces réglages peuvent contenir des jetons Authorization ou d’autres données sensibles. Ils sont stockés dans la configuration LiveView Mix de l’appareil et peuvent être inclus dans une sauvegarde iCloud chiffrée que vous choisissez de créer.
 
-Ce n’est que lorsque vous touchez un bouton que l’app envoie la requête directement depuis votre appareil vers la destination indiquée, par exemple Home Assistant, Node-RED ou un autre service tiers. Cette destination et les fournisseurs réseau peuvent traiter l’adresse IP source, les en-têtes et le corps selon leurs propres politiques. Le développeur de Cam Hub ne choisit ni ne contrôle ces destinations et ne reçoit pas les données qui leur sont envoyées. HTTP ne chiffre pas le transit ; utilisez HTTPS pour les données sensibles et vérifiez les pratiques de confidentialité et de sécurité du destinataire.
+Ce n’est que lorsque vous touchez un bouton que l’app envoie la requête directement depuis votre appareil vers la destination indiquée, par exemple Home Assistant, Node-RED ou un autre service tiers. Cette destination et les fournisseurs réseau peuvent traiter l’adresse IP source, les en-têtes et le corps selon leurs propres politiques. Le développeur de Cam Hub ne choisit ni ne contrôle ces destinations et ne reçoit pas les données qui leur sont envoyées. HTTP ne chiffre pas le transit ; utilisez HTTPS pour les données sensibles et vérifiez les pratiques de confidentialité et de sécurité du destinataire.
 
 Accès et analyse du réseau local
 
@@ -47,21 +47,21 @@ L’analyse ne commence qu’à votre demande. Les résultats sont traités sur 
 
 Rapport sur l’appareil (expérimental)
 
-Si l’ajout d’une caméra ou d’un enregistreur échoue, Cam Hub propose un rapport sur l’appareil facultatif et expérimental, destiné à aider le développeur à comprendre la cause. Il n’est proposé qu’après l’échec d’une tentative d’ajout d’équipement. Il ne démarre que si vous touchez « Envoyer les détails au développeur » et avez accepté l’avis affiché avant la première utilisation, et il ne s’exécute que tant que son écran est ouvert. Vous pouvez l’arrêter à tout moment.
+Si l’ajout d’une caméra ou d’un enregistreur échoue, Cam Hub propose un rapport sur l’appareil facultatif et expérimental, destiné à aider le développeur à comprendre la cause. Il n’est proposé qu’après l’échec d’une tentative d’ajout d’équipement. Il ne démarre que si vous touchez « Envoyer les détails au développeur » et avez accepté l’avis affiché avant la première utilisation, et il ne s’exécute que tant que son écran est ouvert. Vous pouvez l’arrêter à tout moment.
 
-Pendant son exécution, votre appareil Apple envoie des requêtes en lecture seule directement à l’adresse de l’équipement que vous avez saisie : aux ports que vous avez indiqués et, pour un équipement du réseau local, aux ports courants des caméras. Ces requêtes vérifient quels ports répondent, lisent le modèle, le micrologiciel et les protocoles pris en charge de l’équipement (comme ISAPI, ONVIF et RTSP) et testent brièvement si un flux vidéo fournit des données. Elles ne modifient rien sur l’équipement, et aucune n’est envoyée au développeur ni à un autre serveur.
+Pendant son exécution, votre appareil Apple envoie des requêtes en lecture seule directement à l’adresse de l’équipement que vous avez saisie : aux ports que vous avez indiqués et, pour un équipement du réseau local, aux ports courants des caméras. Ces requêtes vérifient quels ports répondent, lisent le modèle, le micrologiciel et les protocoles pris en charge de l’équipement (comme ISAPI, ONVIF et RTSP) et testent brièvement si un flux vidéo fournit des données. Elles ne modifient rien sur l’équipement, et aucune n’est envoyée au développeur ni à un autre serveur.
 
 Les requêtes se connectent avec le nom d’utilisateur et le mot de passe que vous avez saisis, comme lors de l’ajout de l’équipement. Si la tentative échouée était elle-même une connexion refusée, le rapport n’envoie aucune connexion. Les connexions échouées sont comptées, et peuvent être enregistrées, par l’équipement.
 
-Le rapport contient : la version de l’app, la version d’iOS, le modèle de votre appareil Apple et les réglages de langue ; le mode de connexion choisi et l’erreur affichée par l’app ; l’adresse de l’équipement dont le dernier nombre est masqué (une adresse sur Internet est omise) ; les ports saisis et ceux qui ont répondu ; la marque, le modèle, le micrologiciel et les protocoles pris en charge, tels que l’équipement les indique ; des codes d’état et de courts extraits des réponses de l’équipement ; le mode de connexion de votre appareil Apple (par exemple Wi-Fi, cellulaire ou VPN) ; ainsi que le nombre et la taille des paquets du flux vidéo de test, jamais d’images.
+Le rapport contient : la version de l’app, la version d’iOS, le modèle de votre appareil Apple et les réglages de langue ; le mode de connexion choisi et l’erreur affichée par l’app ; l’adresse de l’équipement dont le dernier nombre est masqué (une adresse sur Internet est omise) ; les ports saisis et ceux qui ont répondu ; la marque, le modèle, le micrologiciel et les protocoles pris en charge, tels que l’équipement les indique ; des codes d’état et de courts extraits des réponses de l’équipement ; le mode de connexion de votre appareil Apple (par exemple Wi-Fi, cellulaire ou VPN) ; ainsi que le nombre et la taille des paquets du flux vidéo de test, jamais d’images.
 
-Avant tout affichage ou enregistrement, un filtre automatique remplace par des repères visibles les mots de passe, noms d’utilisateur, jetons, cookies, numéros de série, adresses MAC, adresses IP publiques, noms d’hôte, adresses e-mail, noms d’équipements et de canaux, noms de réseaux Wi-Fi, numéros de téléphone et clés ou identifiants longs. Le texte des pages web n’est pas conservé. Le filtre est automatique et imparfait : relisez le rapport avant de l’envoyer.
+Avant tout affichage ou enregistrement, un filtre automatique remplace par des repères visibles les mots de passe, noms d’utilisateur, jetons, cookies, numéros de série, adresses MAC, adresses IP publiques, noms d’hôte, adresses e-mail, noms d’équipements et de canaux, noms de réseaux Wi-Fi, numéros de téléphone et clés ou identifiants longs. Le texte des pages web n’est pas conservé. Le filtre est automatique et imparfait : relisez le rapport avant de l’envoyer.
 
-Rien n’est envoyé automatiquement au développeur. Le rapport s’affiche d’abord à l’écran, où vous pouvez désactiver des sections ou le fermer sans rien envoyer. Pour l’envoyer, vous choisissez « Envoyer par e-mail au développeur » : le rapport s’ouvre dans la fenêtre de rédaction de Mail, adressé à l’adresse d’assistance, dans le message et en pièce jointe sous forme de fichier texte ; rien n’est envoyé tant que vous n’appuyez pas sur Envoyer à cet endroit, et vous pouvez annuler à la place. Si Mail n’est pas configuré, le rapport est copié dans le presse-papiers et un message déjà adressé s’ouvre dans votre app de messagerie. Vous pouvez aussi copier le rapport ou le partager avec la feuille de partage d’iOS.
+Rien n’est envoyé automatiquement au développeur. Le rapport s’affiche d’abord à l’écran, où vous pouvez désactiver des sections ou le fermer sans rien envoyer. Pour l’envoyer, vous choisissez « Envoyer par e-mail au développeur » : le rapport s’ouvre dans la fenêtre de rédaction de Mail, adressé à l’adresse d’assistance, dans le message et en pièce jointe sous forme de fichier texte ; rien n’est envoyé tant que vous n’appuyez pas sur Envoyer à cet endroit, et vous pouvez annuler à la place. Si Mail n’est pas configuré, le rapport est copié dans le presse-papiers et un message déjà adressé s’ouvre dans votre app de messagerie. Vous pouvez aussi copier le rapport ou le partager avec la feuille de partage d’iOS.
 
 Un rapport copié n’est pas transmis à vos autres appareils par le Presse-papiers universel et expire du presse-papiers au bout de 120 secondes.
 
-Jusqu’à cinq des rapports les plus récents sont conservés sur votre appareil afin que vous puissiez en envoyer un plus tard. Ils sont exclus des sauvegardes de l’appareil et de la sauvegarde iCloud de Cam Hub. Vous pouvez les supprimer à tout moment avec « Supprimer les rapports enregistrés » sur l’écran du rapport sur l’appareil ; l’enregistrement d’un sixième supprime en outre le plus ancien, et tous sont supprimés avec l’app.
+Jusqu’à cinq des rapports les plus récents sont conservés sur votre appareil afin que vous puissiez en envoyer un plus tard. Ils sont exclus des sauvegardes de l’appareil et de la sauvegarde iCloud de Cam Hub. Vous pouvez les supprimer à tout moment avec « Supprimer les rapports enregistrés » sur l’écran du rapport sur l’appareil ; l’enregistrement d’un sixième supprime en outre le plus ancien, et tous sont supprimés avec l’app.
 
 Si vous envoyez un rapport par e-mail, le développeur reçoit cet e-mail et votre adresse e-mail. Le rapport sert à examiner le problème signalé et n’est conservé que le temps nécessaire pour répondre et tenir les justificatifs d’assistance requis.
 
@@ -71,29 +71,29 @@ Photos et appareil photo
 
 Vous pouvez utiliser le sélecteur de photos système d’Apple pour choisir une photo précise, ou autoriser l’accès à l’appareil photo pour en prendre une nouvelle, pour une case vide LiveView Mix. L’app reçoit uniquement l’image choisie ou prise, et non toute votre photothèque. L’image est redimensionnée, compressée et stockée dans la configuration LiveView Mix de l’appareil.
 
-Les images restent sur votre appareil ; le développeur de Cam Hub ne les reçoit pas et n’y accède pas. Elles ne peuvent être enregistrées dans votre propre iCloud, avec une sauvegarde chiffrée Cam Hub destinée à restaurer vos appareils, que si vous choisissez de créer cette sauvegarde. Vous pouvez retirer une image dans LiveView Mix et modifier les autorisations Appareil photo ou Photos dans les Réglages du système.
+Les images restent sur votre appareil ; le développeur de Cam Hub ne les reçoit pas et n’y accède pas. Elles ne peuvent être enregistrées dans votre propre iCloud, avec une sauvegarde chiffrée Cam Hub destinée à restaurer vos appareils, que si vous choisissez de créer cette sauvegarde. Vous pouvez retirer une image dans LiveView Mix et modifier les autorisations Appareil photo ou Photos dans les Réglages du système.
 
 Localisation
 
-Cam Hub ne demande l’autorisation de localisation que « Lorsque l’app est active ». La position et le cap de la boussole ne sont lus que tant qu’un écran qui en a besoin est ouvert, comme le Compteur de vitesse de l’onglet Outils, qui affiche votre vitesse et le cap de la boussole. L’app ne suit pas votre position en arrière-plan.
+Cam Hub ne demande l’autorisation de localisation que « Lorsque l’app est active ». La position et le cap de la boussole ne sont lus que tant qu’un écran qui en a besoin est ouvert, comme le Compteur de vitesse de l’onglet Outils, qui affiche votre vitesse et le cap de la boussole. L’app ne suit pas votre position en arrière-plan.
 
-La position et le cap de la boussole sont traités sur votre appareil pour afficher la vitesse et la direction. Ils ne sont ni enregistrés, ni inclus dans les sauvegardes, ni envoyés au développeur de Cam Hub ou à un autre tiers. Si le compteur de vitesse annonce votre vitesse à voix haute, l’annonce est produite sur votre appareil par la synthèse vocale intégrée à iOS et peut être désactivée sur cet écran. Vous pouvez refuser ou retirer l’autorisation de localisation à tout moment dans les Réglages de votre appareil Apple ; le reste de l’app continue de fonctionner sans elle.
+La position et le cap de la boussole sont traités sur votre appareil pour afficher la vitesse et la direction. Ils ne sont ni enregistrés, ni inclus dans les sauvegardes, ni envoyés au développeur de Cam Hub ou à un autre tiers. Si le compteur de vitesse annonce votre vitesse à voix haute, l’annonce est produite sur votre appareil par la synthèse vocale intégrée à iOS et peut être désactivée sur cet écran. Vous pouvez refuser ou retirer l’autorisation de localisation à tout moment dans les Réglages de votre appareil Apple ; le reste de l’app continue de fonctionner sans elle.
 
 Codes de partage des caméras
 
-Vous pouvez partager un code contenant les adresses, noms d’utilisateur, informations de canaux et mots de passe des caméras ou enregistreurs sélectionnés. Si vous activez « Inclure les réglages de l’app », le code transporte aussi vos réglages de l’app, qui peuvent comprendre la configuration LiveView Mix, par exemple des réglages de webhook pouvant contenir des jetons. Le code est chiffré avec AES-256-GCM, à partir d’une clé dérivée par PBKDF2-HMAC-SHA256 (600 000 itérations). Lors du partage, vous choisissez l’une des trois façons de le verrouiller.
+Vous pouvez partager un code contenant les adresses, noms d’utilisateur, informations de canaux et mots de passe des caméras ou enregistreurs sélectionnés. Si vous activez « Inclure les réglages de l’app », le code transporte aussi vos réglages de l’app, qui peuvent comprendre la configuration LiveView Mix, par exemple des réglages de webhook pouvant contenir des jetons. Le code est chiffré avec AES-256-GCM, à partir d’une clé dérivée par PBKDF2-HMAC-SHA256 (600 000 itérations). Lors du partage, vous choisissez l’une des trois façons de le verrouiller.
 
-Ouvert (sans verrou) : la clé provient d’un secret intégré à Cam Hub, si bien que toute version compatible de Cam Hub peut ouvrir le code. Cela empêche seulement de lire le contenu d’un coup d’œil ; cela ne le protège pas contre quiconque détient à la fois le code et l’app.
+Ouvert (sans verrou) : la clé provient d’un secret intégré à Cam Hub, si bien que toute version compatible de Cam Hub peut ouvrir le code. Cela empêche seulement de lire le contenu d’un coup d’œil ; cela ne le protège pas contre quiconque détient à la fois le code et l’app.
 
-PIN à six chiffres : le code ne s’ouvre qu’avec le PIN que vous choisissez. Un PIN à six chiffres n’offre qu’un million de possibilités ; qui obtient le code peut toutes les essayer hors connexion sur son propre ordinateur.
+PIN à six chiffres : le code ne s’ouvre qu’avec le PIN que vous choisissez. Un PIN à six chiffres n’offre qu’un million de possibilités ; qui obtient le code peut toutes les essayer hors connexion sur son propre ordinateur.
 
-Chiffrement complexe (mot de passe) : le code ne s’ouvre qu’avec le mot de passe que vous choisissez. Il doit comporter au moins huit caractères et peut contenir n’importe quels lettres, chiffres ou symboles. Seul un mot de passe long et unique le rend impossible à deviner en pratique.
+Chiffrement complexe (mot de passe) : le code ne s’ouvre qu’avec le mot de passe que vous choisissez. Il doit comporter au moins huit caractères et peut contenir n’importe quels lettres, chiffres ou symboles. Seul un mot de passe long et unique le rend impossible à deviner en pratique.
 
 Cam Hub n’envoie ni le code, ni le PIN, ni le mot de passe au développeur, et le développeur ne peut pas récupérer un PIN ou un mot de passe oublié. Transmettez le PIN ou le mot de passe séparément du code.
 
-Les codes n’expirent pas. Supprimer les caméras ou l’app sur l’appareil source ne révoque pas les copies déjà partagées ; si un code a pu être exposé, changez les mots de passe des équipements concernés.
+Les codes n’expirent pas. Supprimer les caméras ou l’app sur l’appareil source ne révoque pas les copies déjà partagées ; si un code a pu être exposé, changez les mots de passe des équipements concernés.
 
-Le code est transmis par l’app avec laquelle vous le partagez, selon ses propres politiques. Si vous le partagez sous forme de lien vers le site web de Cam Hub, le code se trouve après le « # » du lien, et les navigateurs n’envoient pas cette partie au serveur du site.
+Le code est transmis par l’app avec laquelle vous le partagez, selon ses propres politiques. Si vous le partagez sous forme de lien vers le site web de Cam Hub, le code se trouve après le « # » du lien, et les navigateurs n’envoient pas cette partie au serveur du site.
 
 Sauvegarde iCloud facultative
 
