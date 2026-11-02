@@ -76,6 +76,7 @@ const translations = {
     navPrivacy: "隱私權",
     navTerms: "使用條款",
     navGuide: "操作手冊",
+    navDevices: "機型差異",
     manualLink: "閱讀操作手冊",
     storeCTA: "在 App Store 下載",
     storeShort: "下載 App",
@@ -382,6 +383,7 @@ const translations = {
     navPrivacy: "Privacy",
     navTerms: "Terms",
     navGuide: "Manual",
+    navDevices: "Device differences",
     manualLink: "Read the operation manual",
     storeCTA: "Download on the App Store",
     storeShort: "Get the app",
@@ -678,6 +680,11 @@ const translations = {
 
 Object.assign(translations, globalThis.CamHubAdditionalTranslations || {});
 
+// The device-differences page keeps its texts in devices-locales.js, which only devices.html loads.
+Object.entries(globalThis.CamHubDevicesPage || {}).forEach(([language, data]) => {
+  if (translations[language]) translations[language].devices = data;
+});
+
 function productWikiShape(product) {
   if (!Array.isArray(product?.wiki)) return null;
   return product.wiki.map(([id, , title, summary, topics, warning]) => ({
@@ -912,8 +919,23 @@ function renderWebsiteNotice(locale) {
   return `<section id="website-statistics"><h2>${locale.siteNoticeTitle}</h2><p>${locale.siteNoticeBody}</p></section>`;
 }
 
+// The device-differences page: the feature table (it scrolls sideways on a phone, the feature column stays in view),
+// its notes, the iPhone Duo table and links into the manual.
+function renderDevices(data) {
+  const table = (columns, rows, caption, kind) => `<div class="plans-table-wrap devices-table-wrap"><table class="devices-table devices-${kind}">
+      ${caption ? `<caption class="sr-only">${caption}</caption>` : ""}
+      <thead><tr>${columns.map((column) => `<th scope="col">${column}</th>`).join("")}</tr></thead>
+      <tbody>${rows.map(([head, ...cells]) => `<tr><th scope="row">${head}</th>${cells.map((cell) => `<td${cell === "—" ? ' class="devices-none"' : ""}>${cell}</td>`).join("")}</tr>`).join("")}</tbody>
+    </table></div>`;
+  return `<section id="devices-features"><h2>${data.tableTitle}</h2>${table(data.columns, data.rows, data.caption, "features")}
+      <p class="devices-legend">${data.legend}</p><ul>${data.notes.map((note) => `<li>${note}</li>`).join("")}</ul></section>
+    <section id="devices-duo"><h2>${data.duoTitle}</h2><p>${data.duoIntro}</p>${table(data.duoColumns, data.duoRows, "", "duo")}<p>${data.duoNote}</p></section>
+    <section id="devices-more"><h2>${data.moreTitle}</h2><ul>${data.more.map(([href, text]) => `<li><a href="${href}">${text}</a></li>`).join("")}</ul></section>`;
+}
+
 function renderPage(data, locale) {
   if (page === "product") return renderProduct(data);
+  if (page === "devices") return renderDevices(data);
   // The app's Settings screen links here as its "User Manual" entry, so the manual is offered first.
   if (page === "support") return `${renderMeta(data.meta)}<p class="manual-cta"><a class="button primary" href="guide.html">${locale.navGuide}</a></p>${renderSections(data.sections)}`;
   if (page === "privacy") return `${renderMeta(data.meta)}${renderSections(data.sections)}${renderWebsiteNotice(locale)}`;
@@ -1738,7 +1760,8 @@ function initGuide() {
 
 function applyLanguage(language, persist = false) {
   const locale = translations[language] || translations.en;
-  const localizedPageData = locale[page] || locale.home;
+  // A page that a language has no texts for (the device-differences page, until it is translated) shows English.
+  const localizedPageData = locale[page] || translations.en[page] || locale.home;
   const pageData = page === "product"
     ? productPageDataWithEnglishFallback(localizedPageData)
     : localizedPageData;

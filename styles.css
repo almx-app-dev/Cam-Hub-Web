@@ -711,6 +711,27 @@ html:lang(ko) .plans-table { word-break: keep-all; }
 .plans-table tbody th { color: var(--text); font-size: 17px; font-weight: 800; line-height: 1.45; }
 .plans-table td { color: var(--muted); }
 .plans-table td.plans-billing { color: var(--text); font-weight: 650; }
+
+/* Device-differences page (devices.html): a wider card for the six-column table. On a narrow screen the table scrolls
+   sideways inside its frame while the feature column stays in view. */
+body[data-page="devices"] .article-card { max-width: 1180px; }
+.devices-table { width: 100%; min-width: 820px; border-collapse: collapse; overflow-wrap: break-word; line-break: strict; }
+.devices-table.devices-duo { min-width: 0; }
+html:lang(zh-Hant) .devices-table,
+html:lang(zh-Hans) .devices-table,
+html:lang(ja) .devices-table,
+html:lang(ko) .devices-table { word-break: keep-all; }
+.devices-table th,
+.devices-table td { padding: 12px 14px; font-size: 14px; line-height: 1.6; text-align: start; vertical-align: top; }
+.devices-table thead th { color: var(--cyan); background: var(--panel-strong); border-bottom: 1px solid var(--line); font-size: 12px; font-weight: 850; line-height: 1.4; }
+.devices-table tbody tr + tr { border-top: 1px solid var(--line); }
+.devices-table tbody th { width: 15%; color: var(--text); font-weight: 800; }
+.devices-table.devices-duo tbody th { width: 32%; }
+.devices-table td { color: var(--muted); }
+.devices-table td.devices-none { text-align: center; }
+.devices-features tbody th,
+.devices-features thead th:first-child { position: sticky; inset-inline-start: 0; z-index: 1; background: var(--panel-strong); }
+.article-card .devices-legend { margin: 0 0 6px; font-size: 14px; }
 .plans-notes { margin-top: 12px; }
 .plans-more { margin: 22px 0 0; font-size: 15px; font-weight: 700; text-align: center; }
 .plans-chapter .keep-phrase { white-space: nowrap; }
@@ -727,7 +748,7 @@ html:lang(ko) .plans-table { word-break: keep-all; }
   border-top: 1px solid rgba(100, 142, 230, 0.14);
   font-size: 12px;
 }
-.footer nav { display: flex; gap: 20px; }
+.footer nav { display: flex; flex-wrap: wrap; gap: 10px 20px; }   /* wraps on a phone since the footer gained the device-differences link */
 .footer a { color: #aebbd8; }
 
 :focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }

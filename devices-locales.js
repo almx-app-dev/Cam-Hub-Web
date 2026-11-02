@@ -1,0 +1,446 @@
+// The "device differences" page (devices.html): what Cam Hub offers on iPhone, iPhone Duo, iPad, Apple TV and Apple
+// Watch, and how iPhone Duo uses its displays. One entry per site language; site.js renders it (renderDevices) and
+// falls back to English for a language without an entry. "—" in a cell means "not offered on this device".
+// Rows: [feature, iPhone, iPhone Duo, iPad, Apple TV, Apple Watch]. The Simplified Chinese entry leaves out the
+// YouTube/Twitch row on purpose (those services are never named in Simplified Chinese).
+globalThis.CamHubDevicesPage = {
+  en: {
+    documentTitle: "Cam Hub — Device differences",
+    topline: "Device differences",
+    eyebrow: "DEVICES",
+    title: "Cam Hub on each device",
+    summary: "Cam Hub runs on iPhone, iPad and Apple TV, and an Apple Watch app fires the buttons of the control panels. The tables show what each device offers, and how iPhone Duo uses its displays when it is closed, open or half folded.",
+    tableTitle: "What each device offers",
+    caption: "Features of Cam Hub on iPhone, iPhone Duo, iPad, Apple TV and Apple Watch",
+    columns: ["Feature", "iPhone", "iPhone Duo", "iPad", "Apple TV", "Apple Watch"],
+    rows: [
+      ["Tabs", "Five: LiveView Mix, Live, Devices, Tools, Settings", "Five, as on iPhone", "Five, as on iPhone", "Four, without Tools", "One list of control buttons"],
+      ["Live view", "Yes", "Yes", "Yes", "Yes, operated with the remote", "—"],
+      ["Recording playback", "Calendar, draggable timeline, 2×, 4× and 8× where the device allows it, search for people", "As on iPhone; half folded, the timeline stays on the lower half", "As on iPhone", "A bar moved with the remote, with day and zoom buttons; no calendar and no faster speeds. A recording that must be downloaded first plays only on iPhone or iPad", "—"],
+      ["Snapshot, talk, PTZ, pinch zoom", "Yes, where the device supports them", "As on iPhone", "As on iPhone", "No", "—"],
+      ["Adding devices", "Full form (Auto-detect, brand list, HTTPS, checklist, device report) and network scan", "As on iPhone", "As on iPhone", "Short form (address, ports, account, ONVIF, HTTPS); no scan, brand list, checklist or device report", "—"],
+      ["Speedometer with compass", "In the Tools tab, depending on the region and the language setting", "As on iPhone", "As on iPhone", "—", "—"],
+      ["YouTube and Twitch, where offered", "Played in tiles and full screen", "As on iPhone", "As on iPhone", "Shown by name only", "—"],
+      ["LiveView Mix wall", "Landscape page, and an optional portrait page for the phone held upright", "As on iPhone; half folded with the hinge across the screen, optionally two canvases", "Landscape page, and an optional portrait page for an upright screen or a narrow window", "Landscape wall only; a reduced editor in Settings (cameras, ready-made layout, black bars)", "—"],
+      ["Control panels", "Set up and press", "As on iPhone", "As on iPhone", "Press only", "Press; sent by the watch or through the iPhone"],
+      ["Camera in a window of its own", "—", "On the inner display", "Yes", "—", "—"],
+      ["Screen orientation", "Upright and both landscape orientations", "As on iPhone, and follows the fold", "All four orientations", "—", "—"],
+      ["Backup and sharing", "Named iCloud backups, restoring, exporting and importing sharing codes", "As on iPhone", "As on iPhone", "Restoring the Apple TV copy of a backup, importing a typed code; no backup or code is created", "—"],
+      ["Plans", "Plans, Manage Subscription, Restore Purchases, Redeem Code", "As on iPhone", "As on iPhone", "Plans, Restore Purchases", "Follows the paired iPhone"],
+      ["Permissions asked", "Local Network; Camera for Take Photo; Microphone for talking; Location for the speedometer", "As on iPhone", "As on iPhone", "Local Network only", "—"]
+    ],
+    legend: "— means that the feature is not offered on that device.",
+    notes: [
+      "One subscription covers every iPhone, iPad and Apple TV that uses the same Apple Account.",
+      "The Apple TV adds devices itself, or takes them from an iPhone or iPad through the Apple TV copy of an iCloud backup or a sharing code. The Apple Watch shows the buttons of the control panels set up on the paired iPhone, and no video.",
+      "On a Mac with Apple silicon, Cam Hub can be installed from the App Store as an iPad app."
+    ],
+    duoTitle: "iPhone Duo: closed, open and half folded",
+    duoIntro: "On iPhone Duo, Cam Hub uses the outer display while the phone is closed and the larger inner display while it is open. The screens lay themselves out again whenever the phone is folded, unfolded or turned.",
+    duoColumns: ["How the phone is held", "What Cam Hub shows"],
+    duoRows: [
+      ["Closed (outer display)", "The same screens as on other iPhones."],
+      ["Open flat (inner display)", "The camera walls of the Live tab and of the device pages show two columns, as on an iPad. The full-screen LiveView Mix wall fills the whole inner display. A camera can open in a window of its own with Open in New Window, so that one window keeps a wall and another the camera with its recordings."],
+      ["Half folded, hinge across the screen (standing like a small laptop)", "The camera page shows the picture above the fold and the controls, the recordings and the PTZ pad below it. With Two canvases switched on in Settings, LiveView Mix is cut at the hinge into an upper and a lower canvas, each with its own cameras and control panels."],
+      ["Half folded, held upright like a book", "For a camera with recording playback, the camera page shows the live picture on one half and the same camera at the same time of day yesterday on the other. The device page shows its camera wall on one half and the camera that was tapped on the other."]
+    ],
+    duoNote: "The Two canvases switch appears only on iPhone Duo. Opened flat or closed, the phone shows one LiveView Mix wall again.",
+    moreTitle: "More in the user manual",
+    more: [["guide.html#tour-duo", "iPhone Duo"], ["guide.html#single-window", "A camera in a window of its own"], ["guide.html#appletv", "Apple TV"], ["guide.html#webhook-watch", "Buttons on Apple Watch"]]
+  },
+  "zh-Hant": {
+    documentTitle: "Cam Hub — 各機型功能差異",
+    topline: "各機型功能差異",
+    eyebrow: "DEVICES",
+    title: "各機型功能差異",
+    summary: "Cam Hub 可在 iPhone、iPad 與 Apple TV 上使用，Apple Watch App 則可以按下控制面板的按鈕。下表列出各機型提供的功能，以及 iPhone Duo 在闔上、展開與半開時如何使用螢幕。",
+    tableTitle: "各機型提供的功能",
+    caption: "Cam Hub 在 iPhone、iPhone Duo、iPad、Apple TV 與 Apple Watch 上的功能",
+    columns: ["功能", "iPhone", "iPhone Duo", "iPad", "Apple TV", "Apple Watch"],
+    rows: [
+      ["分頁", "五個：LiveView Mix、即時、設備、工具、設定", "五個，與 iPhone 相同", "五個，與 iPhone 相同", "四個，沒有「工具」", "只有一份控制按鈕清單"],
+      ["即時影像", "有", "有", "有", "有，以遙控器操作", "—"],
+      ["錄影回放", "月曆、可拖曳的時間軸、設備允許時的 2×、4×、8× 速度，以及人員搜尋", "與 iPhone 相同；半開時時間軸固定在下半部", "與 iPhone 相同", "以遙控器移動的時間列，附切換日期與縮放的按鈕；沒有月曆，也沒有加速。須先下載的錄影只能在 iPhone 或 iPad 播放", "—"],
+      ["快照、對講、PTZ、捏合縮放", "有（設備支援時）", "與 iPhone 相同", "與 iPhone 相同", "沒有", "—"],
+      ["加入設備", "完整表單（自動偵測、品牌清單、HTTPS、檢查清單、設備報告）與網段掃描", "與 iPhone 相同", "與 iPhone 相同", "簡短表單（位址、連接埠、帳號、ONVIF、HTTPS）；沒有掃描、品牌清單、檢查清單與設備報告", "—"],
+      ["時速表與指南針", "在「工具」分頁，依地區與語言設定提供", "與 iPhone 相同", "與 iPhone 相同", "—", "—"],
+      ["YouTube 與 Twitch（有提供的地區）", "在格子中與全螢幕播放", "與 iPhone 相同", "與 iPhone 相同", "只顯示名稱", "—"],
+      ["LiveView Mix 牆面", "橫向頁面，以及手機直拿時可選用的直向頁面", "與 iPhone 相同；半開且摺線橫越螢幕時，可選用兩張畫布", "橫向頁面，以及螢幕直立或視窗較窄時可選用的直向頁面", "只有橫向牆面；「設定」中有精簡的編輯器（攝影機、現成版面、黑邊）", "—"],
+      ["控制面板", "設定與按下", "與 iPhone 相同", "與 iPhone 相同", "只能按下", "可以按下；由手錶直接送出或透過 iPhone 送出"],
+      ["以獨立視窗開啟攝影機", "—", "在內螢幕上", "有", "—", "—"],
+      ["螢幕方向", "直立與左右兩個橫向", "與 iPhone 相同，並隨摺疊狀態調整", "四個方向", "—", "—"],
+      ["備份與分享", "多份命名的 iCloud 備份、還原、匯出與匯入分享代碼", "與 iPhone 相同", "與 iPhone 相同", "還原 iCloud 備份的 Apple TV 副本、匯入輸入的代碼；無法建立備份或代碼", "—"],
+      ["方案", "方案、管理訂閱項目、還原購買項目、兌換代碼", "與 iPhone 相同", "與 iPhone 相同", "方案、還原購買項目", "依配對的 iPhone"],
+      ["要求的權限", "本地網路；「拍照」使用相機；對講使用麥克風；時速表使用位置", "與 iPhone 相同", "與 iPhone 相同", "只有本地網路", "—"]
+    ],
+    legend: "「—」表示該機型不提供這項功能。",
+    notes: [
+      "同一個 Apple 帳號的 iPhone、iPad 與 Apple TV 共用同一份訂閱。",
+      "Apple TV 可以自行加入設備，也可以透過 iCloud 備份的 Apple TV 副本或分享代碼，取得 iPhone 或 iPad 上的設備。Apple Watch 顯示配對 iPhone 上設定的控制面板按鈕，不顯示影像。",
+      "在搭載 Apple 晶片的 Mac 上，可以從 App Store 安裝 iPad 版的 Cam Hub。"
+    ],
+    duoTitle: "iPhone Duo：闔上、展開與半開",
+    duoIntro: "在 iPhone Duo 上，手機闔上時 Cam Hub 使用外螢幕，展開時使用較大的內螢幕。每次摺疊、展開或轉動手機，畫面都會重新排版。",
+    duoColumns: ["手機的拿法", "Cam Hub 顯示的畫面"],
+    duoRows: [
+      ["闔上（外螢幕）", "與其他 iPhone 相同的畫面。"],
+      ["完全展開（內螢幕）", "「即時」分頁與設備頁的攝影機牆以兩欄顯示，與 iPad 相同。全螢幕的 LiveView Mix 牆面佔滿整個內螢幕。可以用「在新視窗中開啟」讓攝影機在獨立視窗中開啟，一個視窗保留牆面，另一個視窗顯示攝影機與錄影。"],
+      ["半開，摺線橫越螢幕（像小筆電一樣立著）", "單機畫面把影像放在摺線上方，控制列、錄影與 PTZ 方向盤放在下方。在「設定」中開啟「兩張畫布」後，LiveView Mix 會在摺線處分成上下兩張畫布，各有自己的攝影機與控制面板。"],
+      ["半開，像書本一樣直拿", "支援錄影回放的攝影機，單機畫面一半顯示即時影像，另一半顯示同一支攝影機昨天同一時刻的錄影。設備頁一半顯示攝影機牆，另一半顯示點選的攝影機。"]
+    ],
+    duoNote: "「兩張畫布」開關只在 iPhone Duo 上出現。手機完全展開或闔上時，LiveView Mix 恢復為單一牆面。",
+    moreTitle: "操作手冊中的詳細說明",
+    more: [["guide.html#tour-duo", "iPhone Duo"], ["guide.html#single-window", "以獨立視窗開啟攝影機"], ["guide.html#appletv", "Apple TV"], ["guide.html#webhook-watch", "Apple Watch 上的按鈕"]]
+  },
+  "zh-Hans": {
+    documentTitle: "Cam Hub — 各机型功能差异",
+    topline: "各机型功能差异",
+    eyebrow: "DEVICES",
+    title: "各机型功能差异",
+    summary: "Cam Hub 可在 iPhone、iPad 和 Apple TV 上使用，Apple Watch App 则用于按下控制面板的按钮。下表列出各机型提供的功能，以及 iPhone Duo 在合上、完全展开和半折叠时如何使用屏幕。",
+    tableTitle: "各机型提供的功能",
+    caption: "Cam Hub 在 iPhone、iPhone Duo、iPad、Apple TV 和 Apple Watch 上的功能",
+    columns: ["功能", "iPhone", "iPhone Duo", "iPad", "Apple TV", "Apple Watch"],
+    rows: [
+      ["标签页", "五个：LiveView Mix、实时、设备、工具、设置", "五个，与 iPhone 相同", "五个，与 iPhone 相同", "四个，没有“工具”", "只有一个控制按钮列表"],
+      ["实时观看", "支持", "支持", "支持", "支持，用遥控器操作", "—"],
+      ["录像回放", "录像日历、可拖动的时间轴、设备允许时的 2×、4× 和 8× 倍速、人员搜索", "与 iPhone 相同；半折叠时时间轴保持在下半部分", "与 iPhone 相同", "用遥控器移动的进度条，带有切换日期和缩放的按钮；没有日历，也没有加速播放。需要先下载的录像只能在 iPhone 或 iPad 上播放", "—"],
+      ["快照、对讲、PTZ、捏合缩放", "支持（设备支持时）", "与 iPhone 相同", "与 iPhone 相同", "不支持", "—"],
+      ["添加设备", "完整表单（自动检测、品牌列表、HTTPS、检查清单、设备报告）和网络扫描", "与 iPhone 相同", "与 iPhone 相同", "简短表单（地址、端口、账号、ONVIF、HTTPS）；没有扫描、品牌列表、检查清单和设备报告", "—"],
+      ["带指南针的速度计", "在“工具”标签页中，取决于地区和语言设置", "与 iPhone 相同", "与 iPhone 相同", "—", "—"],
+      ["LiveView Mix 墙", "横向页面，以及竖持手机时可选用的竖向页面", "与 iPhone 相同；半折叠且铰链横穿屏幕时，可选用两张画布", "横向页面，以及屏幕竖放或窗口较窄时可选用的竖向页面", "只有横向墙；“设置”中有精简编辑器（摄像头、现成布局、黑边）", "—"],
+      ["控制面板", "设置和按下", "与 iPhone 相同", "与 iPhone 相同", "只能按下", "可以按下；由手表直接发送或通过 iPhone 发送"],
+      ["在独立窗口中打开摄像头", "—", "在内屏上", "支持", "—", "—"],
+      ["屏幕方向", "竖屏，以及向左和向右横屏", "与 iPhone 相同，并跟随折叠状态", "全部四个方向", "—", "—"],
+      ["备份与共享", "命名 iCloud 备份、恢复、导出和导入共享代码", "与 iPhone 相同", "与 iPhone 相同", "恢复为 Apple TV 制作的备份、导入手动输入的代码；无法创建备份或代码", "—"],
+      ["套餐", "套餐、管理订阅、恢复购买、兑换代码", "与 iPhone 相同", "与 iPhone 相同", "套餐、恢复购买", "跟随配对的 iPhone"],
+      ["请求的权限", "本地网络；用于“拍照”的相机；用于对讲的麦克风；用于速度计的位置", "与 iPhone 相同", "与 iPhone 相同", "仅本地网络", "—"]
+    ],
+    legend: "“—”表示该机型不提供这项功能。",
+    notes: [
+      "一个订阅涵盖使用同一个 Apple 账户的所有 iPhone、iPad 和 Apple TV。",
+      "Apple TV 可以自行添加设备，也可以通过为 Apple TV 制作的 iCloud 备份或共享代码，获取 iPhone 或 iPad 上的设备。Apple Watch 显示配对的 iPhone 上所设置的控制面板按钮，不显示视频。",
+      "在搭载 Apple 芯片的 Mac 上，可以从 App Store 安装 iPad 版 Cam Hub。"
+    ],
+    duoTitle: "iPhone Duo：合上、完全展开与半折叠",
+    duoIntro: "在 iPhone Duo 上，手机合上时 Cam Hub 使用外屏，打开时使用更大的内屏。每当手机折叠、展开或转动时，界面都会重新排布。",
+    duoColumns: ["手机的持握方式", "Cam Hub 显示的内容"],
+    duoRows: [
+      ["合上（外屏）", "与其他 iPhone 上的界面相同。"],
+      ["完全展开（内屏）", "“实时”标签页和设备页上的摄像头墙与 iPad 上一样分两列显示。全屏 LiveView Mix 墙铺满整个内屏。可用“在新窗口中打开”在独立窗口中打开摄像头，这样一个窗口保留墙，另一个窗口显示该摄像头及其录像。"],
+      ["半折叠，铰链横穿屏幕（像小型笔记本电脑一样立放）", "摄像头页把画面放在折痕上方，把控件、录像和 PTZ 控制盘放在折痕下方。在“设置”中打开“两张画布”后，LiveView Mix 在铰链处分成上方画布和下方画布，各有自己的摄像头和控制面板。"],
+      ["半折叠，像书一样竖持", "对于支持录像回放的摄像头，摄像头页在一半显示实时画面，在另一半显示同一摄像头昨天同一时刻的录像。设备页在一半显示其摄像头墙，在另一半显示所点击的摄像头。"]
+    ],
+    duoNote: "“两张画布”开关只在 iPhone Duo 上出现。完全展开或合上时，手机重新显示一面 LiveView Mix 墙。",
+    moreTitle: "操作手册中的详细说明",
+    more: [["guide.html#tour-duo", "iPhone Duo"], ["guide.html#single-window", "在独立窗口中打开摄像头"], ["guide.html#appletv", "Apple TV"], ["guide.html#webhook-watch", "Apple Watch 上的按钮"]]
+  },
+  "ja": {
+    documentTitle: "Cam Hub — 端末ごとの違い",
+    topline: "端末ごとの違い",
+    eyebrow: "DEVICES",
+    title: "端末ごとの Cam Hub",
+    summary: "Cam Hub は iPhone、iPad、Apple TV で動作し、Apple Watch アプリではコントロールパネルのボタンを実行できます。以下の表では、端末ごとに利用できる機能と、閉じたとき、開いたとき、半分に折り曲げたときに iPhone Duo のディスプレイがどう使われるかを示します。",
+    tableTitle: "端末ごとの機能",
+    caption: "iPhone、iPhone Duo、iPad、Apple TV、Apple Watch での Cam Hub の機能",
+    columns: ["機能", "iPhone", "iPhone Duo", "iPad", "Apple TV", "Apple Watch"],
+    rows: [
+      ["タブ", "5 つ：LiveView Mix、ライブ、デバイス、ツール、設定", "5 つ（iPhone と同じ）", "5 つ（iPhone と同じ）", "4 つ（「ツール」なし）", "コントロールボタンの一覧のみ"],
+      ["ライブ表示", "あり", "あり", "あり", "あり（リモコンで操作）", "—"],
+      ["録画再生", "カレンダー、ドラッグできるタイムライン、デバイスが対応していれば 2×、4×、8× の速度、人物の検索", "iPhone と同じ。半分に折り曲げた状態では、タイムラインは下半分に固定", "iPhone と同じ", "リモコンで動かすバーと、日付の切り替えと拡大縮小のボタン。カレンダーと高速再生はなし。先にダウンロードが必要な録画は iPhone または iPad でのみ再生", "—"],
+      ["スナップショット、トーク、PTZ、ピンチズーム", "あり（デバイスが対応している場合）", "iPhone と同じ", "iPhone と同じ", "なし", "—"],
+      ["デバイスの追加", "すべての項目を備えたフォーム（自動判別、ブランドの一覧、HTTPS、チェックリスト、デバイスレポート）とネットワークスキャン", "iPhone と同じ", "iPhone と同じ", "短いフォーム（アドレス、ポート、アカウント、ONVIF、HTTPS）。スキャン、ブランドの一覧、チェックリスト、デバイスレポートはなし", "—"],
+      ["コンパス付きスピードメーター", "「ツール」タブ内。地域と言語の設定に応じて表示", "iPhone と同じ", "iPhone と同じ", "—", "—"],
+      ["YouTube と Twitch（利用できる国や地域）", "タイルとフルスクリーンで再生", "iPhone と同じ", "iPhone と同じ", "名前のみ表示", "—"],
+      ["LiveView Mix ウォール", "横向きページと、縦に持ったときに使える縦向きページ（オプション）", "iPhone と同じ。ヒンジが画面を横切る向きに半分折り曲げた状態では、2 つのキャンバスに分けることも可能（オプション）", "横向きページと、縦向きの画面や幅の狭いウインドウで使える縦向きページ（オプション）", "横向きのウォールのみ。「設定」に簡易エディタ（カメラ、用意されたレイアウト、黒帯）", "—"],
+      ["コントロールパネル", "設定とボタンの操作", "iPhone と同じ", "iPhone と同じ", "ボタンの操作のみ", "ボタンの操作。Apple Watch から直接、または iPhone 経由で送信"],
+      ["カメラを独立したウインドウで開く", "—", "内側ディスプレイで可能", "あり", "—", "—"],
+      ["画面の向き", "縦向きと左右の横向き", "iPhone と同じ。折り曲げの状態にも追従", "4 つの向きすべて", "—", "—"],
+      ["バックアップと共有", "名前付きの iCloud バックアップ、復元、共有コードの書き出しと取り込み", "iPhone と同じ", "iPhone と同じ", "バックアップの Apple TV 用コピーの復元、入力したコードの取り込み。バックアップやコードの作成はなし", "—"],
+      ["プラン", "「プラン」「サブスクリプションを管理」「購入を復元」「コードを使う」", "iPhone と同じ", "iPhone と同じ", "「プラン」「購入を復元」", "ペアリングされた iPhone に従う"],
+      ["要求される許可", "ローカルネットワーク、「写真を撮る」のためのカメラ、トークのためのマイク、スピードメーターのための位置情報", "iPhone と同じ", "iPhone と同じ", "ローカルネットワークのみ", "—"]
+    ],
+    legend: "「—」は、その端末ではその機能を利用できないことを表します。",
+    notes: [
+      "1 つのサブスクリプションで、同じ Apple アカウントを使うすべての iPhone、iPad、Apple TV が対象になります。",
+      "Apple TV では、自分でデバイスを追加することも、iCloud バックアップの Apple TV 用コピーや共有コードを使って、iPhone や iPad のデバイスを取り込むこともできます。Apple Watch には、ペアリングされた iPhone で設定したコントロールパネルのボタンが表示されます。映像は表示されません。",
+      "Apple シリコン搭載の Mac では、App Store から Cam Hub を iPad アプリとしてインストールできます。"
+    ],
+    duoTitle: "iPhone Duo：閉じた状態、開いた状態、半分に折り曲げた状態",
+    duoIntro: "iPhone Duo では、Cam Hub は端末を閉じている間は外側ディスプレイを、開いている間はより大きな内側ディスプレイを使用します。端末を折りたたむ、開く、または回転させるたびに、画面はレイアウトし直されます。",
+    duoColumns: ["端末の持ち方", "Cam Hub の表示"],
+    duoRows: [
+      ["閉じた状態（外側ディスプレイ）", "ほかの iPhone と同じ画面が表示されます。"],
+      ["完全に開いた状態（内側ディスプレイ）", "「ライブ」タブとデバイスのページのカメラウォールは、iPad と同様に 2 列で表示されます。フルスクリーンの LiveView Mix ウォールは、内側ディスプレイ全体に表示されます。「新しいウインドウで開く」で、カメラを独立したウインドウで開けます。これにより、一方のウインドウにウォールを、もう一方のウインドウにカメラとその録画を表示しておけます。"],
+      ["半分に折り曲げ、ヒンジが画面を横切る向き（小さなノートパソコンのように立てた状態）", "1 台表示では、折り目の上に映像が、下に操作ボタン、録画、PTZ パッドが表示されます。「設定」で「2 つのキャンバス」をオンにすると、LiveView Mix はヒンジの位置で上下 2 つのキャンバスに分かれ、それぞれに独自のカメラとコントロールパネルを配置できます。"],
+      ["半分に折り曲げ、本のように縦に持った状態", "録画再生に対応したカメラでは、1 台表示の一方の半分にライブ映像が、もう一方の半分に同じカメラの前日の同じ時刻の映像が表示されます。デバイスのページでは、一方の半分にカメラウォールが、もう一方の半分にタップしたカメラが表示されます。"]
+    ],
+    duoNote: "「2 つのキャンバス」のスイッチは、iPhone Duo でのみ表示されます。完全に開いた状態または閉じた状態では、LiveView Mix のウォールは再び 1 つになります。",
+    moreTitle: "マニュアルの詳しい説明",
+    more: [["guide.html#tour-duo", "iPhone Duo"], ["guide.html#single-window", "カメラを独立したウインドウで開く"], ["guide.html#appletv", "Apple TV"], ["guide.html#webhook-watch", "Apple Watch のボタン"]]
+  },
+  "ko": {
+    documentTitle: "Cam Hub — Apple 기기별 차이",
+    topline: "Apple 기기별 차이",
+    eyebrow: "DEVICES",
+    title: "Apple 기기별 Cam Hub 기능",
+    summary: "Cam Hub는 iPhone, iPad, Apple TV에서 실행되며, Apple Watch 앱으로는 제어 패널의 버튼을 실행할 수 있습니다. 아래 표에서 각 기기가 제공하는 기능과, iPhone Duo가 접혀 있을 때, 펼쳐져 있을 때, 반쯤 접혀 있을 때 디스플레이를 어떻게 사용하는지 확인할 수 있습니다.",
+    tableTitle: "기기별 제공 기능",
+    caption: "iPhone, iPhone Duo, iPad, Apple TV, Apple Watch의 Cam Hub 기능",
+    columns: ["기능", "iPhone", "iPhone Duo", "iPad", "Apple TV", "Apple Watch"],
+    rows: [
+      ["탭", "5개: LiveView Mix, 실시간, 기기, 도구, 설정", "5개, iPhone과 같음", "5개, iPhone과 같음", "4개, ‘도구’ 없음", "제어 버튼 목록 하나"],
+      ["실시간 보기", "제공", "제공", "제공", "제공, 리모컨으로 조작", "—"],
+      ["녹화 재생", "캘린더, 끌어서 이동하는 타임라인, 기기가 허용하는 경우 2×, 4×, 8× 속도, 사람 검색", "iPhone과 같음. 반쯤 접은 상태에서는 타임라인이 아래쪽 절반에 고정", "iPhone과 같음", "리모컨으로 이동하는 막대와 날짜 이동·확대/축소 버튼. 캘린더와 더 빠른 속도는 없음. 먼저 내려받아야 하는 녹화 영상은 iPhone 또는 iPad에서만 재생", "—"],
+      ["스냅샷, 대화, PTZ, 두 손가락 확대", "기기가 지원하는 경우 제공", "iPhone과 같음", "iPhone과 같음", "없음", "—"],
+      ["기기 추가", "전체 양식(자동 감지, 브랜드 목록, HTTPS, 점검 목록, 기기 보고서)과 네트워크 검색", "iPhone과 같음", "iPhone과 같음", "짧은 양식(주소, 포트, 계정, ONVIF, HTTPS). 검색, 브랜드 목록, 점검 목록, 기기 보고서는 없음", "—"],
+      ["나침반이 있는 속도계", "‘도구’ 탭에 있으며, 지역과 언어 설정에 따라 제공", "iPhone과 같음", "iPhone과 같음", "—", "—"],
+      ["YouTube와 Twitch(제공되는 국가와 지역)", "타일과 전체 화면에서 재생", "iPhone과 같음", "iPhone과 같음", "이름만 표시", "—"],
+      ["LiveView Mix 비디오 월", "가로 페이지, 그리고 iPhone을 세로로 들 때 쓸 수 있는 세로 페이지(선택 사항)", "iPhone과 같음. 힌지가 화면을 가로지르도록 반쯤 접으면 캔버스 2개로 나눌 수도 있음(선택 사항)", "가로 페이지, 그리고 세로로 세운 화면이나 좁은 윈도우에서 쓸 수 있는 세로 페이지(선택 사항)", "가로 비디오 월만 표시. ‘설정’의 간소화된 편집기(카메라, 기본 제공 레이아웃, 검은 여백)", "—"],
+      ["제어 패널", "설정과 버튼 누르기", "iPhone과 같음", "iPhone과 같음", "버튼 누르기만 가능", "버튼 누르기. Apple Watch에서 직접 또는 iPhone을 거쳐 전송"],
+      ["별도의 윈도우에서 카메라 열기", "—", "안쪽 디스플레이에서 제공", "제공", "—", "—"],
+      ["화면 방향", "세로 방향과 양쪽 가로 방향", "iPhone과 같으며, 접힌 상태에 따라 바뀜", "네 방향 모두", "—", "—"],
+      ["백업과 공유", "이름을 붙인 iCloud 백업, 복원, 공유 코드 내보내기와 가져오기", "iPhone과 같음", "iPhone과 같음", "백업의 Apple TV 사본 복원, 직접 입력한 코드 가져오기. 백업이나 코드는 만들 수 없음", "—"],
+      ["요금제", "요금제, 구독 관리, 구매 복원, 코드 사용", "iPhone과 같음", "iPhone과 같음", "요금제, 구매 복원", "페어링된 iPhone을 따름"],
+      ["요청하는 권한", "로컬 네트워크, ‘사진 촬영’을 위한 카메라, 대화를 위한 마이크, 속도계를 위한 위치", "iPhone과 같음", "iPhone과 같음", "로컬 네트워크만", "—"]
+    ],
+    legend: "‘—’ 표시는 해당 기기에서 그 기능을 제공하지 않는다는 뜻입니다.",
+    notes: [
+      "구독 하나가 같은 Apple 계정을 사용하는 모든 iPhone, iPad, Apple TV에 적용됩니다.",
+      "Apple TV에서는 기기를 직접 추가하거나, iCloud 백업의 Apple TV 사본 또는 공유 코드를 통해 iPhone이나 iPad의 기기를 가져올 수 있습니다. Apple Watch는 페어링된 iPhone에 설정된 제어 패널의 버튼을 표시하며, 영상은 표시하지 않습니다.",
+      "Apple 실리콘을 탑재한 Mac에서는 App Store에서 Cam Hub를 iPad 앱으로 설치할 수 있습니다."
+    ],
+    duoTitle: "iPhone Duo: 접은 상태, 펼친 상태, 반쯤 접은 상태",
+    duoIntro: "iPhone Duo에서 Cam Hub는 접혀 있을 때는 바깥쪽 디스플레이를, 펼쳐져 있을 때는 더 큰 안쪽 디스플레이를 사용합니다. iPhone을 접거나 펼치거나 돌릴 때마다 화면 레이아웃이 다시 배치됩니다.",
+    duoColumns: ["iPhone을 든 상태", "Cam Hub에 표시되는 내용"],
+    duoRows: [
+      ["접은 상태(바깥쪽 디스플레이)", "다른 iPhone과 같은 화면이 표시됩니다."],
+      ["평평하게 펼친 상태(안쪽 디스플레이)", "‘실시간’ 탭과 기기 페이지의 카메라 비디오 월이 iPad처럼 2열로 표시됩니다. 전체 화면 LiveView Mix 비디오 월은 안쪽 디스플레이 전체를 채웁니다. ‘새 윈도우에서 열기’로 카메라를 별도의 윈도우에서 열 수 있으므로, 한 윈도우에는 비디오 월을, 다른 윈도우에는 카메라와 그 녹화 영상을 띄워 둘 수 있습니다."],
+      ["반쯤 접은 상태, 힌지가 화면을 가로지름(작은 노트북처럼 세워 둔 상태)", "단일 카메라 화면에서는 접히는 선 위쪽에 영상이, 아래쪽에 조작 버튼, 녹화 영상, PTZ 패드가 표시됩니다. ‘설정’에서 ‘캔버스 2개’를 켜면 LiveView Mix가 힌지를 기준으로 위쪽 캔버스와 아래쪽 캔버스로 나뉘며, 각 캔버스에 별도의 카메라와 제어 패널을 둘 수 있습니다."],
+      ["반쯤 접어 책처럼 세워 든 상태", "녹화 재생을 지원하는 카메라라면 단일 카메라 화면의 한쪽 절반에 실시간 영상이, 다른 쪽 절반에 같은 카메라의 어제 같은 시각 영상이 표시됩니다. 기기 페이지에서는 한쪽 절반에 카메라 비디오 월이, 다른 쪽 절반에 탭한 카메라가 표시됩니다."]
+    ],
+    duoNote: "‘캔버스 2개’ 스위치는 iPhone Duo에서만 표시됩니다. 평평하게 펼치거나 접으면 다시 하나의 LiveView Mix 비디오 월이 표시됩니다.",
+    moreTitle: "사용 설명서에서 자세히 보기",
+    more: [["guide.html#tour-duo", "iPhone Duo"], ["guide.html#single-window", "별도의 윈도우에서 카메라 열기"], ["guide.html#appletv", "Apple TV"], ["guide.html#webhook-watch", "Apple Watch의 버튼"]]
+  },
+  "de": {
+    documentTitle: "Cam Hub — Unterschiede je nach Gerät",
+    topline: "Unterschiede je nach Gerät",
+    eyebrow: "DEVICES",
+    title: "Cam Hub auf den einzelnen Geräten",
+    summary: "Cam Hub läuft auf iPhone, iPad und Apple TV, und mit einer App für die Apple Watch lassen sich die Tasten der Bedienfelder drücken. Die Tabellen zeigen, was jedes Gerät bietet und wie das iPhone Duo seine Displays nutzt, wenn es zugeklappt, ganz aufgeklappt oder halb zugeklappt ist.",
+    tableTitle: "Was jedes Gerät bietet",
+    caption: "Funktionen von Cam Hub auf iPhone, iPhone Duo, iPad, Apple TV und Apple Watch",
+    columns: ["Funktion", "iPhone", "iPhone Duo", "iPad", "Apple TV", "Apple Watch"],
+    rows: [
+      ["Tabs", "Fünf: LiveView Mix, Live, Geräte, Werkzeuge, Einstellungen", "Fünf, wie auf dem iPhone", "Fünf, wie auf dem iPhone", "Vier, ohne „Werkzeuge“", "Eine einzige Liste mit Steuertasten"],
+      ["Live-Ansicht", "Ja", "Ja", "Ja", "Ja, mit der Fernbedienung bedient", "—"],
+      ["Aufzeichnungswiedergabe", "Kalender, verschiebbare Zeitleiste, 2×, 4× und 8× (sofern das Gerät es zulässt), Suche nach Personen", "Wie auf dem iPhone; halb zugeklappt bleibt die Zeitleiste auf der unteren Hälfte", "Wie auf dem iPhone", "Eine Leiste, die mit der Fernbedienung bewegt wird, mit Tasten für Tag und Zoom; kein Kalender und keine höheren Geschwindigkeiten. Eine Aufnahme, die zuerst heruntergeladen werden muss, lässt sich nur auf dem iPhone oder iPad abspielen", "—"],
+      ["Schnappschuss, Gegensprechen, PTZ, Zoomen durch Auseinanderziehen", "Ja, sofern das Gerät sie unterstützt", "Wie auf dem iPhone", "Wie auf dem iPhone", "Nein", "—"],
+      ["Geräte hinzufügen", "Vollständiges Formular (automatische Erkennung, Markenliste, HTTPS, Checkliste, Gerätebericht) und Netzwerk-Scan", "Wie auf dem iPhone", "Wie auf dem iPhone", "Kurzes Formular (Adresse, Ports, Konto, ONVIF, HTTPS); kein Scan, keine Markenliste, keine Checkliste und kein Gerätebericht", "—"],
+      ["Tacho mit Kompass", "Im Tab „Werkzeuge“, je nach Region und Spracheinstellung", "Wie auf dem iPhone", "Wie auf dem iPhone", "—", "—"],
+      ["YouTube und Twitch, wo verfügbar", "Wiedergabe in Kacheln und im Vollbild", "Wie auf dem iPhone", "Wie auf dem iPhone", "Nur mit Namen angezeigt", "—"],
+      ["LiveView-Mix-Wand", "Querformat-Seite und optional eine Hochformat-Seite für das aufrecht gehaltene Telefon", "Wie auf dem iPhone; halb zugeklappt, mit dem Scharnier quer über dem Bildschirm, optional zwei Flächen", "Querformat-Seite und optional eine Hochformat-Seite für einen hochkant stehenden Bildschirm oder ein schmales Fenster", "Nur die Querformat-Wand; ein reduzierter Editor unter „Einstellungen“ (Kameras, vorgefertigtes Layout, schwarze Balken)", "—"],
+      ["Bedienfelder", "Einrichten und drücken", "Wie auf dem iPhone", "Wie auf dem iPhone", "Nur drücken", "Drücken; gesendet von der Uhr selbst oder über das iPhone"],
+      ["Kamera in einem eigenen Fenster", "—", "Auf dem inneren Display", "Ja", "—", "—"],
+      ["Bildschirmausrichtung", "Hochformat und beide Querformate", "Wie auf dem iPhone; passt sich zudem dem Auf- und Zuklappen an", "Alle vier Ausrichtungen", "—", "—"],
+      ["Backup und Teilen", "Benannte iCloud-Backups, Wiederherstellen, Exportieren und Importieren von Freigabecodes", "Wie auf dem iPhone", "Wie auf dem iPhone", "Wiederherstellen der Apple-TV-Kopie eines Backups, Importieren eines eingegebenen Codes; Backups und Codes werden nicht erstellt", "—"],
+      ["Abos", "Abos, Abo verwalten, Käufe wiederherstellen, Code einlösen", "Wie auf dem iPhone", "Wie auf dem iPhone", "Abos, Käufe wiederherstellen", "Richtet sich nach dem gekoppelten iPhone"],
+      ["Angeforderte Berechtigungen", "Lokales Netzwerk; Kamera für „Foto aufnehmen“; Mikrofon für das Gegensprechen; Standort für den Tacho", "Wie auf dem iPhone", "Wie auf dem iPhone", "Nur Lokales Netzwerk", "—"]
+    ],
+    legend: "„—“ bedeutet, dass die Funktion auf diesem Gerät nicht angeboten wird.",
+    notes: [
+      "Ein Abonnement gilt für jedes iPhone, iPad und Apple TV, das denselben Apple Account verwendet.",
+      "Das Apple TV fügt Geräte selbst hinzu oder übernimmt sie von einem iPhone oder iPad, entweder über die Apple-TV-Kopie eines iCloud-Backups oder über einen Freigabecode. Die Apple Watch zeigt die Tasten der Bedienfelder, die auf dem gekoppelten iPhone eingerichtet sind, aber kein Video.",
+      "Auf einem Mac mit Apple Chip lässt sich Cam Hub aus dem App Store als iPad-App installieren."
+    ],
+    duoTitle: "iPhone Duo: zugeklappt, ganz aufgeklappt und halb zugeklappt",
+    duoIntro: "Auf dem iPhone Duo verwendet Cam Hub im zugeklappten Zustand das äußere Display und im aufgeklappten Zustand das größere innere Display. Die Bildschirme ordnen sich jedes Mal neu an, wenn das Telefon zugeklappt, aufgeklappt oder gedreht wird.",
+    duoColumns: ["Haltung des Telefons", "Was Cam Hub zeigt"],
+    duoRows: [
+      ["Zugeklappt (äußeres Display)", "Dieselben Bildschirme wie auf anderen iPhone-Modellen."],
+      ["Ganz aufgeklappt (inneres Display)", "Die Kamerawände des Tabs „Live“ und der Geräteseiten zeigen wie auf dem iPad zwei Spalten. Die Vollbild-Wand von LiveView Mix füllt das gesamte innere Display. Mit „In neuem Fenster öffnen“ lässt sich eine Kamera in einem eigenen Fenster öffnen, sodass ein Fenster eine Wand behält und ein anderes die Kamera mit ihren Aufnahmen zeigt."],
+      ["Halb zugeklappt, Scharnier quer über dem Bildschirm (aufgestellt wie ein kleiner Laptop)", "Die Kameraseite zeigt das Bild oberhalb der Faltkante und die Bedienelemente, die Aufnahmen und das PTZ-Feld darunter. Ist der Schalter „Zwei Flächen“ unter „Einstellungen“ eingeschaltet, wird LiveView Mix am Scharnier in eine obere und eine untere Fläche geteilt, jede mit eigenen Kameras und Bedienfeldern."],
+      ["Halb zugeklappt, aufrecht wie ein Buch gehalten", "Bei einer Kamera mit Aufzeichnungswiedergabe zeigt die Kameraseite auf der einen Hälfte das Livebild und auf der anderen dieselbe Kamera zur selben Uhrzeit am Vortag. Die Geräteseite zeigt auf der einen Hälfte ihre Kamerawand und auf der anderen die angetippte Kamera."]
+    ],
+    duoNote: "Der Schalter „Zwei Flächen“ erscheint nur auf dem iPhone Duo. Ganz aufgeklappt oder zugeklappt zeigt das Telefon wieder eine einzige LiveView-Mix-Wand.",
+    moreTitle: "Mehr dazu im Handbuch",
+    more: [["guide.html#tour-duo", "iPhone Duo"], ["guide.html#single-window", "Eine Kamera in einem eigenen Fenster"], ["guide.html#appletv", "Apple TV"], ["guide.html#webhook-watch", "Tasten auf der Apple Watch"]]
+  },
+  "es": {
+    documentTitle: "Cam Hub — Diferencias entre dispositivos",
+    topline: "Diferencias entre dispositivos",
+    eyebrow: "DEVICES",
+    title: "Cam Hub en cada dispositivo",
+    summary: "Cam Hub funciona en iPhone, iPad y Apple TV, y una app para Apple Watch permite pulsar los botones de los paneles de control. Las tablas muestran qué ofrece cada dispositivo y cómo usa sus pantallas el iPhone Duo cuando está cerrado, abierto del todo o medio plegado.",
+    tableTitle: "Qué ofrece cada dispositivo",
+    caption: "Funciones de Cam Hub en iPhone, iPhone Duo, iPad, Apple TV y Apple Watch",
+    columns: ["Función", "iPhone", "iPhone Duo", "iPad", "Apple TV", "Apple Watch"],
+    rows: [
+      ["Pestañas", "Cinco: LiveView Mix, En directo, Dispositivos, Herramientas, Ajustes", "Cinco, como en el iPhone", "Cinco, como en el iPhone", "Cuatro, sin «Herramientas»", "Una única lista de botones de control"],
+      ["Vista en directo", "Sí", "Sí", "Sí", "Sí, con el mando", "—"],
+      ["Reproducción de grabaciones", "Calendario, cronología que se arrastra, 2×, 4× y 8× si el dispositivo lo permite, búsqueda de personas", "Como en el iPhone; medio plegado, la cronología se queda en la mitad inferior", "Como en el iPhone", "Una barra que se mueve con el mando, con botones para cambiar de día y ampliar; sin calendario ni velocidades mayores. Una grabación que hay que descargar antes solo se reproduce en el iPhone o el iPad", "—"],
+      ["Captura, hablar a través de la cámara, PTZ, zoom por pellizco", "Sí, siempre que el dispositivo las admita", "Como en el iPhone", "Como en el iPhone", "No", "—"],
+      ["Añadir dispositivos", "Formulario completo (detección automática, lista de marcas, HTTPS, lista de comprobaciones, informe del dispositivo) y análisis de la red", "Como en el iPhone", "Como en el iPhone", "Formulario breve (dirección, puertos, cuenta, ONVIF, HTTPS); sin análisis, lista de marcas, lista de comprobaciones ni informe del dispositivo", "—"],
+      ["Velocímetro con brújula", "En la pestaña «Herramientas», según la región y el idioma configurado", "Como en el iPhone", "Como en el iPhone", "—", "—"],
+      ["YouTube y Twitch, donde se ofrecen", "Se reproducen en las casillas y a pantalla completa", "Como en el iPhone", "Como en el iPhone", "Solo se muestra el nombre", "—"],
+      ["Mural de LiveView Mix", "Página horizontal y una página vertical opcional para el teléfono en posición vertical", "Como en el iPhone; medio plegado, con la bisagra a lo ancho de la pantalla, dos lienzos opcionales", "Página horizontal y una página vertical opcional para una pantalla en posición vertical o una ventana estrecha", "Solo el mural horizontal; un editor reducido en «Ajustes» (cámaras, diseño predefinido, franjas negras)", "—"],
+      ["Paneles de control", "Configurar y pulsar", "Como en el iPhone", "Como en el iPhone", "Solo pulsar", "Pulsar; la solicitud la envía el reloj o pasa por el iPhone"],
+      ["Cámara en una ventana propia", "—", "En la pantalla interior", "Sí", "—", "—"],
+      ["Orientación de la pantalla", "Vertical y las dos orientaciones horizontales", "Como en el iPhone, y se adapta al plegado", "Las cuatro orientaciones", "—", "—"],
+      ["Copia de seguridad y uso compartido", "Copias en iCloud con nombre, restauración, exportación e importación de códigos para compartir", "Como en el iPhone", "Como en el iPhone", "Restauración de la copia para Apple TV de una copia en iCloud e importación de un código escrito; no se crean copias ni códigos", "—"],
+      ["Planes", "Planes, Gestionar suscripción, Restaurar compras, Canjear código", "Como en el iPhone", "Como en el iPhone", "Planes, Restaurar compras", "Según el iPhone enlazado"],
+      ["Permisos solicitados", "Red local; Cámara para «Tomar foto»; Micrófono para hablar a través de una cámara; Ubicación para el velocímetro", "Como en el iPhone", "Como en el iPhone", "Solo Red local", "—"]
+    ],
+    legend: "«—» indica que la función no se ofrece en ese dispositivo.",
+    notes: [
+      "Una suscripción cubre todos los iPhone, iPad y Apple TV que usan la misma Cuenta de Apple.",
+      "El Apple TV añade dispositivos por sí mismo o los recibe de un iPhone o iPad mediante la copia para Apple TV de una copia en iCloud o mediante un código para compartir. El Apple Watch muestra los botones de los paneles de control configurados en el iPhone enlazado, sin vídeo.",
+      "En un Mac con chip de Apple, Cam Hub se puede instalar desde el App Store como app para iPad."
+    ],
+    duoTitle: "iPhone Duo: cerrado, abierto del todo y medio plegado",
+    duoIntro: "En un iPhone Duo, Cam Hub usa la pantalla exterior mientras el teléfono está cerrado y la pantalla interior, más grande, mientras está abierto. Las pantallas se reorganizan cada vez que el teléfono se pliega, se despliega o se gira.",
+    duoColumns: ["Cómo se sostiene el teléfono", "Qué muestra Cam Hub"],
+    duoRows: [
+      ["Cerrado (pantalla exterior)", "Las mismas pantallas que en los demás iPhone."],
+      ["Abierto del todo (pantalla interior)", "Los murales de cámaras de la pestaña «En directo» y de las páginas de dispositivo muestran dos columnas, como en un iPad. El mural de LiveView Mix a pantalla completa ocupa toda la pantalla interior. Con «Abrir en una ventana nueva», una cámara se abre en una ventana propia, de modo que una ventana conserva un mural y otra la cámara con sus grabaciones."],
+      ["Medio plegado, con la bisagra a lo ancho de la pantalla (apoyado como un pequeño portátil)", "La página de la cámara coloca la imagen por encima del pliegue y los controles, las grabaciones y el panel PTZ por debajo. Con «Dos lienzos» activado en «Ajustes», LiveView Mix se divide por la bisagra en un lienzo superior y otro inferior, cada uno con sus propias cámaras y paneles de control."],
+      ["Medio plegado, sostenido en vertical como un libro", "En una cámara con reproducción de grabaciones, la página de la cámara muestra la imagen en directo en una mitad y, en la otra, la misma cámara a la misma hora del día anterior. La página del dispositivo muestra su mural de cámaras en una mitad y la cámara tocada en la otra."]
+    ],
+    duoNote: "El interruptor «Dos lienzos» solo aparece en el iPhone Duo. Abierto del todo o cerrado, el teléfono vuelve a mostrar un único mural de LiveView Mix.",
+    moreTitle: "Más información en el manual",
+    more: [["guide.html#tour-duo", "iPhone Duo"], ["guide.html#single-window", "Una cámara en una ventana propia"], ["guide.html#appletv", "Apple TV"], ["guide.html#webhook-watch", "Botones en el Apple Watch"]]
+  },
+  "es-MX": {
+    documentTitle: "Cam Hub — Diferencias por dispositivo",
+    topline: "Diferencias por dispositivo",
+    eyebrow: "DEVICES",
+    title: "Cam Hub en cada dispositivo",
+    summary: "Cam Hub funciona en iPhone, iPad y Apple TV, y una app para Apple Watch permite presionar los botones de los paneles de control. Las tablas muestran lo que ofrece cada dispositivo y cómo el iPhone Duo usa sus pantallas cuando está cerrado, abierto por completo o medio doblado.",
+    tableTitle: "Lo que ofrece cada dispositivo",
+    caption: "Funciones de Cam Hub en iPhone, iPhone Duo, iPad, Apple TV y Apple Watch",
+    columns: ["Función", "iPhone", "iPhone Duo", "iPad", "Apple TV", "Apple Watch"],
+    rows: [
+      ["Pestañas", "Cinco: LiveView Mix, En vivo, Dispositivos, Herramientas, Configuración", "Cinco, igual que en el iPhone", "Cinco, igual que en el iPhone", "Cuatro, sin “Herramientas”", "Una sola lista de botones de control"],
+      ["Vista en vivo", "Sí", "Sí", "Sí", "Sí, con el control remoto", "—"],
+      ["Reproducción de grabaciones", "Calendario, línea de tiempo que se arrastra, 2×, 4× y 8× cuando el dispositivo lo permite, búsqueda de personas", "Igual que en el iPhone; medio doblado, la línea de tiempo se queda en la mitad inferior", "Igual que en el iPhone", "Una barra que se mueve con el control remoto, con botones para cambiar de día y para acercar o alejar; sin calendario ni velocidades mayores. Una grabación que primero se debe descargar solo se reproduce en el iPhone o el iPad", "—"],
+      ["Captura, conversación en dos sentidos, PTZ, zoom con pellizco", "Sí, cuando el dispositivo las admite", "Igual que en el iPhone", "Igual que en el iPhone", "No", "—"],
+      ["Agregar dispositivos", "Formulario completo (detección automática, lista de marcas, HTTPS, lista de verificación, informe del dispositivo) y escaneo de la red", "Igual que en el iPhone", "Igual que en el iPhone", "Formulario breve (dirección, puertos, cuenta, ONVIF, HTTPS); sin escaneo, lista de marcas, lista de verificación ni informe del dispositivo", "—"],
+      ["Velocímetro con brújula", "En la pestaña “Herramientas”, según la región y la configuración de idioma", "Igual que en el iPhone", "Igual que en el iPhone", "—", "—"],
+      ["YouTube y Twitch, donde estén disponibles", "Se reproducen en recuadros y a pantalla completa", "Igual que en el iPhone", "Igual que en el iPhone", "Solo se muestran por su nombre", "—"],
+      ["Muro de LiveView Mix", "Página horizontal y una página vertical opcional para usar el celular en vertical", "Igual que en el iPhone; medio doblado, con la bisagra de lado a lado de la pantalla, dos lienzos opcionales", "Página horizontal y una página vertical opcional para una pantalla en vertical o una ventana angosta", "Solo el muro horizontal; un editor reducido en “Configuración” (cámaras, diseño predefinido, barras negras)", "—"],
+      ["Paneles de control", "Configurar y presionar", "Igual que en el iPhone", "Igual que en el iPhone", "Solo presionar", "Presionar; el reloj envía la solicitud directamente o a través del iPhone"],
+      ["Cámara en una ventana propia", "—", "En la pantalla interior", "Sí", "—", "—"],
+      ["Orientación de la pantalla", "Vertical y las dos orientaciones horizontales", "Igual que en el iPhone, y se adapta al doblar el celular", "Las cuatro orientaciones", "—", "—"],
+      ["Respaldo y uso compartido", "Respaldos de iCloud con nombre, restauración, exportación e importación de códigos para compartir", "Igual que en el iPhone", "Igual que en el iPhone", "Restaurar la copia para Apple TV de un respaldo e importar un código escrito; no se crean respaldos ni códigos", "—"],
+      ["Planes", "Planes, Administrar suscripción, Restaurar compras, Canjear código", "Igual que en el iPhone", "Igual que en el iPhone", "Planes, Restaurar compras", "Depende del iPhone enlazado"],
+      ["Permisos solicitados", "Red local; Cámara para “Tomar foto”; Micrófono para hablar a través de una cámara; Ubicación para el velocímetro", "Igual que en el iPhone", "Igual que en el iPhone", "Solo Red local", "—"]
+    ],
+    legend: "“—” significa que la función no está disponible en ese dispositivo.",
+    notes: [
+      "Una sola suscripción cubre todos los iPhone, iPad y Apple TV que usan la misma cuenta de Apple.",
+      "El Apple TV agrega dispositivos por su cuenta o los toma de un iPhone o iPad, ya sea con la copia para Apple TV de un respaldo de iCloud o con un código para compartir. El Apple Watch muestra los botones de los paneles de control configurados en el iPhone enlazado, pero no muestra video.",
+      "En una Mac con chip de Apple, Cam Hub se puede instalar desde el App Store como app para iPad."
+    ],
+    duoTitle: "iPhone Duo: cerrado, abierto por completo y medio doblado",
+    duoIntro: "En el iPhone Duo, Cam Hub usa la pantalla exterior mientras el celular está cerrado y la pantalla interior, más grande, mientras está abierto. Las pantallas se vuelven a acomodar cada vez que el celular se dobla, se abre o se gira.",
+    duoColumns: ["Cómo se sostiene el celular", "Qué muestra Cam Hub"],
+    duoRows: [
+      ["Cerrado (pantalla exterior)", "Las mismas pantallas que en otros iPhone."],
+      ["Abierto por completo (pantalla interior)", "Los muros de cámaras de la pestaña “En vivo” y de las páginas de los dispositivos muestran dos columnas, como en un iPad. El muro de LiveView Mix a pantalla completa ocupa toda la pantalla interior. Una cámara se puede abrir en una ventana propia con “Abrir en una ventana nueva”, de modo que una ventana conserve un muro y otra la cámara con sus grabaciones."],
+      ["Medio doblado, con la bisagra de lado a lado de la pantalla (apoyado como una laptop pequeña)", "La página de la cámara coloca la imagen arriba del pliegue, y los botones, las grabaciones y los controles PTZ debajo. Con “Dos lienzos” activado en “Configuración”, LiveView Mix se divide en la bisagra en un lienzo superior y otro inferior, cada uno con sus propias cámaras y paneles de control."],
+      ["Medio doblado, sostenido en vertical como un libro", "En una cámara con reproducción de grabaciones, la página de la cámara muestra la imagen en vivo en una mitad y, en la otra, la misma cámara a la misma hora del día anterior. La página del dispositivo muestra su muro de cámaras en una mitad y la cámara que se tocó en la otra."]
+    ],
+    duoNote: "El interruptor “Dos lienzos” solo aparece en el iPhone Duo. Abierto por completo o cerrado, el celular vuelve a mostrar un solo muro de LiveView Mix.",
+    moreTitle: "Más detalles en el manual",
+    more: [["guide.html#tour-duo", "iPhone Duo"], ["guide.html#single-window", "Una cámara en una ventana propia"], ["guide.html#appletv", "Apple TV"], ["guide.html#webhook-watch", "Botones en el Apple Watch"]]
+  },
+  "fr": {
+    documentTitle: "Cam Hub — Différences selon l’appareil",
+    topline: "Différences selon l’appareil",
+    eyebrow: "DEVICES",
+    title: "Cam Hub sur chaque appareil",
+    summary: "Cam Hub fonctionne sur iPhone, iPad et Apple TV, et une app Apple Watch permet d’appuyer sur les boutons des panneaux de commande. Les tableaux indiquent ce que propose chaque appareil, et comment l’iPhone Duo utilise ses écrans lorsqu’il est fermé, complètement ouvert ou à moitié plié.",
+    tableTitle: "Ce que propose chaque appareil",
+    caption: "Fonctions de Cam Hub sur iPhone, iPhone Duo, iPad, Apple TV et Apple Watch",
+    columns: ["Fonction", "iPhone", "iPhone Duo", "iPad", "Apple TV", "Apple Watch"],
+    rows: [
+      ["Onglets", "Cinq : LiveView Mix, En direct, Appareils, Outils, Réglages", "Cinq, comme sur l’iPhone", "Cinq, comme sur l’iPhone", "Quatre, sans « Outils »", "Une seule liste de boutons de commande"],
+      ["Vue en direct", "Oui", "Oui", "Oui", "Oui, avec la télécommande", "—"],
+      ["Lecture des enregistrements", "Calendrier, frise chronologique à faire glisser, 2×, 4× et 8× si l’appareil le permet, recherche de personnes", "Comme sur l’iPhone ; à moitié plié, la frise chronologique reste sur la moitié basse", "Comme sur l’iPhone", "Une barre déplacée à la télécommande, avec des boutons pour changer de jour et zoomer ; ni calendrier ni vitesses supérieures. Un enregistrement qui doit d’abord être téléchargé ne se lit que sur iPhone ou iPad", "—"],
+      ["Instantané, conversation, PTZ, zoom par pincement", "Oui, si l’appareil les prend en charge", "Comme sur l’iPhone", "Comme sur l’iPhone", "Non", "—"],
+      ["Ajout d’appareils", "Formulaire complet (détection automatique, liste des marques, HTTPS, liste de vérification, rapport sur l’appareil) et analyse du réseau", "Comme sur l’iPhone", "Comme sur l’iPhone", "Formulaire court (adresse, ports, compte, ONVIF, HTTPS) ; ni analyse, ni liste des marques, ni liste de vérification, ni rapport sur l’appareil", "—"],
+      ["Compteur de vitesse avec boussole", "Dans l’onglet « Outils », selon la région et la langue choisie", "Comme sur l’iPhone", "Comme sur l’iPhone", "—", "—"],
+      ["YouTube et Twitch, là où ils sont proposés", "Lus dans les cases et en plein écran", "Comme sur l’iPhone", "Comme sur l’iPhone", "Affichés uniquement par leur nom", "—"],
+      ["Mur LiveView Mix", "Page paysage, et une page portrait facultative pour le téléphone tenu à la verticale", "Comme sur l’iPhone ; à moitié plié, charnière en travers de l’écran, deux zones en option", "Page paysage, et une page portrait facultative pour un écran à la verticale ou une fenêtre étroite", "Mur paysage uniquement ; un éditeur réduit dans « Réglages » (caméras, disposition prête à l’emploi, bandes noires)", "—"],
+      ["Panneaux de commande", "Configuration et utilisation", "Comme sur l’iPhone", "Comme sur l’iPhone", "Utilisation seulement", "Utilisation ; la requête part de la montre ou passe par l’iPhone"],
+      ["Caméra dans sa propre fenêtre", "—", "Sur l’écran intérieur", "Oui", "—", "—"],
+      ["Orientation de l’écran", "Verticale et les deux orientations horizontales", "Comme sur l’iPhone, et suit le pliage", "Les quatre orientations", "—", "—"],
+      ["Sauvegarde et partage", "Sauvegardes iCloud nommées, restauration, export et import de codes de partage", "Comme sur l’iPhone", "Comme sur l’iPhone", "Restauration de la copie Apple TV d’une sauvegarde, import d’un code saisi ; aucune sauvegarde ni aucun code n’est créé", "—"],
+      ["Formules", "Formules, Gérer l’abonnement, Restaurer les achats, Utiliser un code", "Comme sur l’iPhone", "Comme sur l’iPhone", "Formules, Restaurer les achats", "Dépend de l’iPhone jumelé"],
+      ["Autorisations demandées", "Réseau local ; Appareil photo pour « Prendre une photo » ; Micro pour parler via une caméra ; Localisation pour le compteur de vitesse", "Comme sur l’iPhone", "Comme sur l’iPhone", "Réseau local uniquement", "—"]
+    ],
+    legend: "« — » signifie que la fonction n’est pas proposée sur cet appareil.",
+    notes: [
+      "Un seul abonnement couvre tous les iPhone, iPad et Apple TV qui utilisent le même compte Apple.",
+      "L’Apple TV ajoute elle-même des appareils, ou les reprend d’un iPhone ou d’un iPad grâce à la copie Apple TV d’une sauvegarde iCloud ou à un code de partage. L’Apple Watch affiche les boutons des panneaux de commande configurés sur l’iPhone jumelé, sans aucune vidéo.",
+      "Sur un Mac doté d’une puce Apple, Cam Hub peut être installé depuis l’App Store en tant qu’app pour iPad."
+    ],
+    duoTitle: "iPhone Duo : fermé, complètement ouvert et à moitié plié",
+    duoIntro: "Sur l’iPhone Duo, Cam Hub utilise l’écran extérieur lorsque le téléphone est fermé et le grand écran intérieur lorsqu’il est ouvert. Les écrans se recomposent chaque fois que le téléphone est plié, déplié ou tourné.",
+    duoColumns: ["Position du téléphone", "Ce qu’affiche Cam Hub"],
+    duoRows: [
+      ["Fermé (écran extérieur)", "Les mêmes écrans que sur les autres iPhone."],
+      ["Complètement ouvert (écran intérieur)", "Les murs de caméras de l’onglet « En direct » et des pages d’appareil affichent deux colonnes, comme sur un iPad. Le mur LiveView Mix en plein écran occupe tout l’écran intérieur. Une caméra peut s’ouvrir dans sa propre fenêtre avec « Ouvrir dans une nouvelle fenêtre » : une fenêtre garde ainsi un mur et une autre la caméra avec ses enregistrements."],
+      ["À moitié plié, charnière en travers de l’écran (posé comme un petit ordinateur portable)", "La page de la caméra place l’image au-dessus du pli, et les commandes, les enregistrements et le pavé PTZ en dessous. Lorsque « Deux zones » est activé dans « Réglages », LiveView Mix est divisé au niveau de la charnière en une zone haute et une zone basse, chacune avec ses propres caméras et panneaux de commande."],
+      ["À moitié plié, tenu debout comme un livre", "Pour une caméra dotée de la lecture des enregistrements, la page de la caméra affiche l’image en direct sur une moitié et, sur l’autre, la même caméra à la même heure la veille. La page de l’appareil affiche son mur de caméras sur une moitié et la caméra touchée sur l’autre."]
+    ],
+    duoNote: "L’interrupteur « Deux zones » n’apparaît que sur l’iPhone Duo. Complètement ouvert ou fermé, le téléphone affiche à nouveau un seul mur LiveView Mix.",
+    moreTitle: "En savoir plus dans le manuel",
+    more: [["guide.html#tour-duo", "iPhone Duo"], ["guide.html#single-window", "Une caméra dans sa propre fenêtre"], ["guide.html#appletv", "Apple TV"], ["guide.html#webhook-watch", "Les boutons sur l’Apple Watch"]]
+  },
+  "ar": {
+    documentTitle: "Cam Hub — الفروق بين أجهزة Apple",
+    topline: "الفروق بين أجهزة Apple",
+    eyebrow: "DEVICES",
+    title: "Cam Hub على كل جهاز من أجهزة Apple",
+    summary: "يعمل Cam Hub على iPhone وiPad وApple TV، ويتيح تطبيق Apple Watch تنفيذ أزرار لوحات التحكم. وتبيّن الجداول ما يوفره كل جهاز، وكيف يستخدم iPhone Duo شاشتيه وهو مغلق أو مفتوح أو مطوي جزئيًا.",
+    tableTitle: "ما يوفره كل جهاز",
+    caption: "ميزات Cam Hub على iPhone وiPhone Duo وiPad وApple TV وApple Watch",
+    columns: ["الميزة", "iPhone", "iPhone Duo", "iPad", "Apple TV", "Apple Watch"],
+    rows: [
+      ["علامات التبويب", "خمس: LiveView Mix و«مباشر» و«الأجهزة» و«الأدوات» و«الإعدادات»", "خمس، كما في iPhone", "خمس، كما في iPhone", "أربع، بدون «الأدوات»", "قائمة واحدة بأزرار التحكم"],
+      ["البث المباشر", "متاح", "متاح", "متاح", "متاح، ويُشغَّل بجهاز التحكم عن بُعد", "—"],
+      ["تشغيل التسجيلات", "تقويم، وخط زمني يُسحب، وسرعات ‎2×‎ و‎4×‎ و‎8×‎ حيث يسمح الجهاز، وبحث عن الأشخاص", "كما في iPhone؛ وعند الطي الجزئي يبقى الخط الزمني في النصف السفلي", "كما في iPhone", "شريط يُحرَّك بجهاز التحكم عن بُعد، مع أزرار لتغيير اليوم وللتكبير؛ بدون تقويم ولا سرعات أعلى. والتسجيل الذي يلزم تنزيله أولًا لا يُشغَّل إلا على iPhone أو iPad", "—"],
+      ["اللقطة والتحدث وPTZ والتكبير بالتقريب", "متاحة حيث يدعمها الجهاز", "كما في iPhone", "كما في iPhone", "غير متاحة", "—"],
+      ["إضافة الأجهزة", "نموذج كامل (كشف تلقائي، وقائمة علامات تجارية، وHTTPS، وقائمة تحقق، وتقرير جهاز) وفحص الشبكة", "كما في iPhone", "كما في iPhone", "نموذج قصير (العنوان والمنافذ والحساب وONVIF وHTTPS)؛ بدون فحص ولا قائمة علامات تجارية ولا قائمة تحقق ولا تقرير جهاز", "—"],
+      ["عداد السرعة مع البوصلة", "في علامة التبويب «الأدوات»، بحسب المنطقة وإعداد اللغة", "كما في iPhone", "كما في iPhone", "—", "—"],
+      ["YouTube وTwitch، حيث تتوفر الخدمتان", "يُشغَّلان في المربّعات وبملء الشاشة", "كما في iPhone", "كما في iPhone", "يُعرضان بالاسم فقط", "—"],
+      ["جدار LiveView Mix", "الصفحة الأفقية، والصفحة العمودية اختياريًا عند إمساك الهاتف عموديًا", "كما في iPhone؛ ومع الطي الجزئي والمفصلة تعبر الشاشة أفقيًا، يمكن اختياريًا تقسيمه إلى مساحتين", "الصفحة الأفقية، والصفحة العمودية اختياريًا لشاشة قائمة أو نافذة ضيقة", "الجدار الأفقي فقط؛ ومحرر مبسّط في «الإعدادات» (الكاميرات، وتخطيط جاهز، والأشرطة السوداء)", "—"],
+      ["لوحات التحكم", "الإعداد والضغط", "كما في iPhone", "كما في iPhone", "الضغط فقط", "الضغط؛ ويُرسَل الطلب من الساعة مباشرةً أو عبر iPhone"],
+      ["كاميرا في نافذة خاصة بها", "—", "على الشاشة الداخلية", "متاح", "—", "—"],
+      ["اتجاه الشاشة", "الاتجاه العمودي والاتجاهان الأفقيان", "كما في iPhone، ويتبع الطيّ", "الاتجاهات الأربعة كلها", "—", "—"],
+      ["النسخ الاحتياطي والمشاركة", "نسخ iCloud احتياطية مسمّاة، واستعادتها، وتصدير رموز المشاركة واستيرادها", "كما في iPhone", "كما في iPhone", "استعادة نسخة Apple TV من نسخة احتياطية، واستيراد رمز يُكتب؛ لا تُنشأ نسخة احتياطية ولا رمز", "—"],
+      ["الخطط", "«الخطط» و«إدارة الاشتراك» و«استعادة المشتريات» و«استرداد رمز»", "كما في iPhone", "كما في iPhone", "«الخطط» و«استعادة المشتريات»", "يتبع iPhone المقترن"],
+      ["الأذونات المطلوبة", "الشبكة المحلية؛ والكاميرا لـ «التقاط صورة»؛ والميكروفون للتحدث؛ والموقع لعداد السرعة", "كما في iPhone", "كما في iPhone", "الشبكة المحلية فقط", "—"]
+    ],
+    legend: "تعني «—» أن الميزة غير متاحة على ذلك الجهاز.",
+    notes: [
+      "يغطي اشتراك واحد كل أجهزة iPhone وiPad وApple TV التي تستخدم حساب Apple نفسه.",
+      "يضيف Apple TV الأجهزة بنفسه، أو يأخذها من iPhone أو iPad عبر نسخة Apple TV من نسخة iCloud الاحتياطية أو عبر رمز مشاركة. وتعرض Apple Watch أزرار لوحات التحكم المُعدّة على iPhone المقترن، ولا تعرض أي فيديو.",
+      "على أجهزة Mac المزوّدة بشريحة Apple، يمكن تثبيت Cam Hub من App Store بوصفه تطبيقًا لـ iPad."
+    ],
+    duoTitle: "iPhone Duo: مغلقًا ومفتوحًا بالكامل ومطويًا جزئيًا",
+    duoIntro: "على iPhone Duo، يستخدم Cam Hub الشاشة الخارجية ما دام الهاتف مغلقًا، والشاشة الداخلية الأكبر ما دام مفتوحًا. وتعيد الشاشات ترتيب نفسها كلما طُوي الهاتف أو فُتح أو أُدير.",
+    duoColumns: ["وضع الهاتف", "ما يعرضه Cam Hub"],
+    duoRows: [
+      ["مغلق (الشاشة الخارجية)", "الشاشات نفسها كما في أجهزة iPhone الأخرى."],
+      ["مفتوح بالكامل (الشاشة الداخلية)", "تعرض جدران الكاميرات في علامة التبويب «مباشر» وفي صفحات الأجهزة عمودين، كما في iPad. ويملأ جدار LiveView Mix بملء الشاشة الشاشةَ الداخلية كلها. ويمكن فتح كاميرا في نافذة خاصة بها بالخيار «فتح في نافذة جديدة»، بحيث تحتفظ نافذة بجدار وأخرى بالكاميرا مع تسجيلاتها."],
+      ["مطوي جزئيًا، والمفصلة تعبر الشاشة أفقيًا (قائمًا مثل حاسوب محمول صغير)", "تعرض صفحة الكاميرا الصورة فوق الطيّة، وعناصر التحكم والتسجيلات ولوحة PTZ تحتها. وعند تشغيل «مساحتان» في «الإعدادات»، يُقسَم LiveView Mix عند المفصلة إلى مساحة علوية وأخرى سفلية، لكل منهما كاميراتها ولوحات التحكم الخاصة بها."],
+      ["مطوي جزئيًا، ومُمسَك عموديًا مثل كتاب", "للكاميرا التي تدعم تشغيل التسجيلات، تعرض صفحة الكاميرا الصورة المباشرة في أحد النصفين، والكاميرا نفسها في الوقت نفسه من يوم أمس في النصف الآخر. وتعرض صفحة الجهاز جدار كاميراتها في أحد النصفين، والكاميرا التي ضُغط عليها في النصف الآخر."]
+    ],
+    duoNote: "لا يظهر المفتاح «مساحتان» إلا على iPhone Duo. وعندما يُفتح الهاتف بالكامل أو يُغلق، يعود إلى عرض جدار LiveView Mix واحد.",
+    moreTitle: "المزيد في دليل المستخدم",
+    more: [["guide.html#tour-duo", "iPhone Duo"], ["guide.html#single-window", "كاميرا في نافذة خاصة بها"], ["guide.html#appletv", "Apple TV"], ["guide.html#webhook-watch", "الأزرار على Apple Watch"]]
+  }
+};
