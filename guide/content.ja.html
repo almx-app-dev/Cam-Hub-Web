@@ -123,6 +123,8 @@
       <tr><td><span class="path"><span class="ui">詳細</span> › <span class="ui">接続方法</span></span></td><td><span class="ui">自動判別</span>、<span class="ui">ONVIF</span>、RTSP、特定のデバイスファミリー独自のプロトコル、または一覧にあるブランドから選びます。選び方は<a class="xref" href="#add-methods">「接続方法の選び方」</a>を参照してください。</td><td><span class="ui">自動判別</span></td></tr>
       <tr><td><span class="path"><span class="ui">詳細</span> › <span class="ui">HTTP ポート</span></span></td><td>デバイスの制御インターフェースのポートです。<span class="ui">自動判別</span>では、Cam Hub が開いているポートを自動で探し、ここに入力したポートを最初に試します。<span class="ui">ONVIF</span>では、この欄にデバイスの ONVIF サービスのポートを指定する必要があります。たとえば、一部のデバイスでは <code>2020</code> または <code>8899</code> です。</td><td><code>80</code></td></tr>
       <tr><td><span class="path"><span class="ui">詳細</span> › <span class="ui">RTSP ポート</span></span></td><td>映像ストリームのポートです。<span class="ui">自動判別</span>は、ここに入力したポートを最初に試します。RTSP ポートが <code>554</code> ではないブランドを選択すると、欄が前のデフォルト値のままであれば、そのブランドのポートが入力されます。</td><td><code>554</code></td></tr>
+      <tr><td><span class="path"><span class="ui">詳細</span> › <span class="ui">HTTPS を使用</span></span></td><td><span class="ui">自動判別</span>と<span class="ui">ONVIF</span>で使用できます。Web ページが HTTPS を使うデバイスでのみオンにしてください。オンにすると、Cam Hub はサインインせずにそのアドレスで HTTPS を探し、HTTPS でデバイスを追加して、その時点でデバイスが提示した証明書を信頼します。<a class="xref" href="#add-https">「HTTPS でデバイスを追加する」</a>を参照してください。</td><td>オフ</td></tr>
+      <tr><td><span class="path"><span class="ui">詳細</span> › <span class="ui">HTTPS ポート</span></span></td><td><span class="ui">HTTPS を使用</span>がオンのときに表示されます。<code>443</code> のままにすると、Cam Hub は <code>5001</code> と <code>8443</code> も探します。それ以外のポートを入力した場合は、そのポートだけを使用します。</td><td><code>443</code></td></tr>
       <tr><td><span class="path"><span class="ui">詳細</span> › <span class="ui">デバイスのポート</span></span></td><td>デバイスファミリー独自のプロトコルを選択したときに、上の 2 つのポートの代わりに表示されます。デバイスがそのプロトコルで応答するポートです。</td><td><code>34567</code></td></tr>
     </tbody>
   </table></div>
@@ -186,8 +188,8 @@
   <ol class="steps">
     <li class="step">
       <p>デバイス追加フォームで、<span class="ui">詳細</span>をタップします。</p>
-      <p class="check"><b class="check-label">確認：</b>セクションが開き、<span class="ui">接続方法</span>、<span class="ui">HTTP ポート</span>、<span class="ui">RTSP ポート</span>が表示されます。</p>
-      <figure class="phone"><img src="guide/img/add-advanced.jpg" alt="「詳細」を開いたデバイス追加フォーム。「接続方法」が「自動判別」、HTTP ポートが 80、RTSP ポートが 554 で、自動判別についての注記がある" loading="lazy" decoding="async" width="900" height="1947"><figcaption>「詳細」を開いた状態</figcaption></figure>
+      <p class="check"><b class="check-label">確認：</b>セクションが開き、<span class="ui">接続方法</span>、<span class="ui">HTTP ポート</span>、<span class="ui">RTSP ポート</span>、<span class="ui">HTTPS を使用</span>スイッチが表示されます。</p>
+      <figure class="phone"><img src="guide/img/add-advanced.jpg" alt="「詳細」を開いたデバイス追加フォーム。「接続方法」が「自動判別」、HTTP ポートが 80、RTSP ポートが 554、「HTTPS を使用」がオフで、自動判別についての注記がある" loading="lazy" decoding="async" width="900" height="1947"><figcaption>「詳細」を開いた状態</figcaption></figure>
     </li>
     <li class="step">
       <p><span class="ui">接続方法</span>をタップします。</p>
@@ -200,7 +202,7 @@
     </li>
     <li class="step">
       <p>接続方法をタップします。</p>
-      <p class="check"><b class="check-label">確認：</b>フォームの<span class="ui">接続方法</span>の行に選択した方法が表示され、セクションの下に説明が表示されます。一覧のブランドと RTSP では、<span class="ui">カメラ</span>とパスの欄があるセクションが追加されます。デバイスファミリー独自のプロトコルでは、2 つのポートが<span class="ui">デバイスのポート</span>に置き換わります。</p>
+      <p class="check"><b class="check-label">確認：</b>フォームの<span class="ui">接続方法</span>の行に選択した方法が表示され、セクションの下に説明が表示されます。一覧のブランドと RTSP では、<span class="ui">カメラ</span>とパスの欄があるセクションが追加されます。デバイスファミリー独自のプロトコルでは、2 つのポートが<span class="ui">デバイスのポート</span>に置き換わります。<span class="ui">HTTPS を使用</span>は、<span class="ui">自動判別</span>と<span class="ui">ONVIF</span>でのみ表示されます。</p>
     </li>
     <li class="step">
       <p>デバイスがデフォルトのポートを使用していない場合は、ポートの欄を変更します。</p>
@@ -226,14 +228,42 @@
     <p>これらの接続方法では、録画再生、PTZ 操作、スナップショットを利用できません。デバイスが提供している場合、SD にはそのブランドの 2 番目のストリームが使われます。提供していない場合、SD は HD と同じストリームになります。</p>
   </div>
   <div class="callout note">
-    <strong class="t">デバイスの制御には HTTP のみを使用します</strong>
-    <p>デバイスの制御（デバイスの判別、チャンネル一覧の読み取り、録画の検索）には <code>http://address:port</code> を使用します。独自のプロトコルを持つデバイスファミリーでは、代わりにそのプロトコルを使用します。HTTPS のみを受け付けるデバイスは、現在は追加できません。</p>
+    <strong class="t">HTTPS をオンにしない限り、デバイスの制御には HTTP を使用します</strong>
+    <p>デバイスの制御（デバイスの判別、チャンネル一覧の読み取り、録画の検索）には <code>http://address:port</code> を使用し、デバイスで HTTPS をオンにした場合は HTTPS を使用します。独自のプロトコルを持つデバイスファミリーでは、代わりにそのプロトコルを使用します。HTTPS のみを受け付けるデバイスは、<span class="ui">HTTPS を使用</span>をオンにして追加します。<a class="xref" href="#add-https">「HTTPS でデバイスを追加する」</a>を参照してください。</p>
   </div>
   <div class="callout note">
     <strong class="t">RTSP と一覧のブランドでは、失敗時のメッセージが異なります</strong>
     <p>デバイスに到達できない場合やタイムアウトした場合は、<span class="ui">問題が発生しました。もう一度お試しください。</span>のみが表示されます。これらの接続方法で<span class="ui">対応していないデバイスです。</span>と表示された場合は、候補のパスのどれからもストリームが返されなかったことを意味します。主な原因は、RTSP ポートの誤りと、デバイス側で映像ストリームがオフになっていることです。</p>
   </div>
   <p>デバイスを使用できるかどうかがわからない場合は、フォームの<span class="ui">対応リファレンス</span>をタップして、対応しているデバイスと対応していないデバイスを確認します。デバイスのブランドが判明したスキャン結果からフォームを開き、アドレスを変更していない場合は、この項目も<span class="ui">デモカメラを追加</span>も表示されません。</p>
+
+  <h3 id="add-https">HTTPS でデバイスを追加する</h3>
+  <p>Web ページが HTTPS を使うデバイスは、通常の HTTP がオフになっている場合でも、HTTPS で追加できます。HTTPS は、オンにしない限りオフのままです。また、使用できるのは<span class="ui">自動判別</span>と<span class="ui">ONVIF</span>だけです。デバイスファミリー独自のプロトコル、RTSP、一覧にあるブランドには、HTTPS で保護する Web インターフェースがないためです。追加済みのデバイスは、代わりにデバイスのページで HTTPS に切り替えます。<a class="xref" href="#devices-https">「保存したデバイスの HTTPS」</a>を参照してください。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>デバイス追加フォームで、アドレス、ユーザー名、パスワードを入力し、<span class="ui">詳細</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>セクションに、オフの状態の<span class="ui">HTTPS を使用</span>スイッチが表示されます。</p>
+    </li>
+    <li class="step">
+      <p><span class="ui">HTTPS を使用</span>をオンにします。</p>
+      <p class="check"><b class="check-label">確認：</b><code>443</code> が入力された<span class="ui">HTTPS ポート</span>欄が表示され、セクションの下にこのオプションの説明が表示されます。</p>
+      <figure class="phone"><img src="guide/img/add-https.jpg" alt="「詳細」を開き、「HTTPS を使用」をオンにしたデバイス追加フォーム。443 が入力された「HTTPS ポート」欄と、セクションの下の HTTPS についての注記がある" loading="lazy" decoding="async" width="900" height="1947"><figcaption>「HTTPS を使用」をオンにした状態</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>デバイスが別の HTTPS ポートを使用している場合は、<span class="ui">HTTPS ポート</span>にそのポートを入力します。</p>
+      <p class="check"><b class="check-label">確認：</b>欄にポートが表示されます。<code>443</code> のままにすると、Cam Hub は <code>5001</code> と <code>8443</code> も探します。それ以外のポートを入力した場合は、そのポートだけが使われます。</p>
+    </li>
+    <li class="step">
+      <p>右上の<span class="ui">追加</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>フォームに<span class="ui">デバイスに接続中…</span>と表示されます。接続に成功するとフォームが閉じ、新しいデバイスがデバイスの一覧に表示されます。そのデバイスのページの情報カードには、ポートとともに<span class="ui">HTTPS</span>の行が表示されます。</p>
+    </li>
+  </ol>
+  <ul>
+    <li>注記には<span class="ui">ウェブページが HTTPS を使うデバイス専用です。わからない場合はオフのままにしてください。Cam Hub はこのポートで HTTPS を探し（443 のままなら 5001 と 8443 も試します）、デバイスがいま提示している証明書を信頼します。あとでデバイスのページの「HTTPS」で確認できます。</span>と書かれています。スイッチがオンの間は、<span class="ui">詳細</span>を折りたたんでも表示されたままです。</li>
+    <li>HTTPS を探すときは、ユーザー名もパスワードも送信しません。Cam Hub は、どのポートが証明書を提示するかを確認するだけです。証明書を提示するポートがない場合は、フォームに<span class="ui">このデバイスは先ほど HTTPS で応答しませんでした。</span>と表示されます。複数のポートが証明書を提示した場合は、順に試します。そのため、別のデバイスに転送されているポートがあっても、試行はそこで終わりません。</li>
+    <li>信頼されるのは、追加したときにデバイスが提示した証明書です。この証明書は、後からデバイス自体の Web ページの証明書と照合できます。<a class="xref" href="#devices-https">「保存したデバイスの HTTPS」</a>を参照してください。</li>
+    <li>HTTPS で暗号化されるのは、デバイスの制御です。RTSP で取得する映像は、HTTPS では暗号化されません。</li>
+  </ul>
 
   <h3 id="add-streams">YouTube のライブ配信と Twitch のチャンネルを追加する</h3>
   <p>YouTube のライブ配信や Twitch のチャンネルは、デバイスの一覧に追加して、カメラと同じように表示できます。再生はそのサービス自身のプレーヤーで行われ、アカウントは不要で、プランに数えられることもありません。録画、PTZ 操作、スナップショットはありません。配信は iPhone と iPad で再生され、Apple TV では名前だけが表示されます。YouTube と Twitch は一部の国や地域ではご利用いただけず、その場合、これらの選択肢は表示されません。</p>
@@ -349,6 +379,14 @@
         </ol></td>
       </tr>
       <tr>
+        <td><span class="ui">このデバイスは先ほど HTTPS で応答しませんでした。</span></td>
+        <td><ol>
+          <li>ブラウザで、<code>https://</code> で始まるアドレスを使ってデバイスの Web ページを開き、デバイスが HTTPS を使っているかどうかと、そのポートを確認します。</li>
+          <li>そのポートを<span class="ui">HTTPS ポート</span>に入力します。<code>443</code> のままの場合、確認されるのは <code>443</code>、<code>5001</code>、<code>8443</code> だけです。</li>
+          <li>通常の HTTP でデバイスを追加するには、<span class="ui">HTTPS を使用</span>をオフにします。</li>
+        </ol></td>
+      </tr>
+      <tr>
         <td><span class="ui">問題が発生しました。もう一度お試しください。</span>と、上記にないその他のメッセージ</td>
         <td><ol>
           <li>IP アドレスを確認します。</li>
@@ -424,11 +462,11 @@
   </ul>
 
   <h4>サインインの動作</h4>
-  <p>収集中は、サインインが必要なリクエストを 1 つずつ送信し、デバイスが認証情報を受け入れるか拒否するまで続けます。デバイスが拒否した後は、レポートはそれ以上サインインを送信しません。レポートのきっかけになった追加の失敗が、すでにサインインの拒否（<span class="ui">ユーザー名またはパスワードが違います。</span>）だった場合は、デバイスによるアカウントのロックを避けるため、レポートはサインインをまったく試みません。収集では読み取り専用のリクエストだけを送信し、デバイスの設定は変更しません。</p>
+  <p>収集中は、サインインが必要なリクエストを 1 つずつ送信し、デバイスが認証情報を受け入れるか拒否するまで続けます。デバイスが拒否した後は、レポートはそれ以上サインインを送信しません。レポートのきっかけになった追加の失敗が、すでにサインインの拒否（<span class="ui">ユーザー名またはパスワードが違います。</span>）だった場合は、デバイスによるアカウントのロックを避けるため、レポートはサインインをまったく試みません。<span class="ui">HTTPS を使用</span>がオンだった場合、レポートはまずサインインせずにデバイスの証明書を探し、その証明書を使って HTTPS で試行を繰り返します。デバイスが証明書を提示しない場合、レポートはサインインしません。収集では読み取り専用のリクエストだけを送信し、デバイスの設定は変更しません。</p>
 
   <h4>レポートに含まれる内容と含まれない内容</h4>
   <ul>
-    <li><b>含まれるもの</b>：アプリとシステムのバージョン、端末のモデル識別子、言語設定、選択した接続方法、デバイスのアドレス（プライベートネットワークのアドレスは末尾の部分が <code>x</code> でマスクされ、パブリックなアドレスは種別のみ）、ポート、失敗した追加のエラーコード、判別されたブランドとモデル、開いているポート、デバイスの応答のヘッダーと構造（マスク済み）、ストリームのエンコードとパラメータ、時計とタイムゾーンのずれ、実行した手順とその結果。</li>
+    <li><b>含まれるもの</b>：アプリとシステムのバージョン、端末のモデル識別子、言語設定、選択した接続方法（<span class="ui">HTTPS を使用</span>がオンだった場合は HTTPS ポートも）、デバイスのアドレス（プライベートネットワークのアドレスは末尾の部分が <code>x</code> でマスクされ、パブリックなアドレスは種別のみ）、ポート、失敗した追加のエラーコード、判別されたブランドとモデル、開いているポート、デバイスの応答のヘッダーと構造（マスク済み）、ストリームのエンコードとパラメータ、時計とタイムゾーンのずれ、実行した手順とその結果。</li>
     <li><b>含まれないもの</b>：パスワード、ユーザー名、デバイスに付けた名前、パブリックなアドレスやダイナミック DNS のドメイン名、ネットワークアダプタのハードウェアアドレス、メールアドレス、トークンなどの識別情報、画像、映像。長いシリアル番号は、末尾の 4 文字だけが残ります。</li>
     <li>マスクは自動で行われ、マスクした項目ごとに印が残ります。それでも、送信前にレポートを確認してください。どの項目もオフにできます。</li>
   </ul>
@@ -570,14 +608,15 @@
   <p>デバイスのページの上部には情報カードがあり、対応するデバイスでは<span class="ui">ディスクの状態</span>の行が続きます。その下の<span class="ui">カメラ</span>の見出しの下に、デバイスのチャンネルがサムネイルで表示されます。タイトルはデバイスの名前です。サムネイルは、画面に収まる列数で並びます。</p>
   <figure class="phone"><img src="guide/img/device-detail.jpg" alt="レコーダーのデバイスのページ。上部に情報カード、その下に「カメラ」の見出しと 3 つのチャンネルのライブサムネイル、右上に 3 つのボタンがある" loading="lazy" decoding="async" width="900" height="1956"><figcaption>デバイスのページ</figcaption></figure>
   <ul>
-    <li><b>情報カード</b>：デバイスの名前と種類のほか、<span class="ui">モデル</span>、<span class="ui">IP アドレス</span>、<span class="ui">ポート</span>（HTTP ポート）、<span class="ui">シリアル番号</span>、<span class="ui">ファームウェア</span>、<span class="ui">カメラ</span>（チャンネル数）の行を表示します。シリアル番号とファームウェアは、デバイスが報告した場合にのみ表示されます。YouTube または Twitch の配信では、<span class="ui">IP アドレス</span>と<span class="ui">ポート</span>の代わりに<span class="ui">リンク</span>の行が表示されます。</li>
+    <li><b>情報カード</b>：デバイスの名前と種類のほか、<span class="ui">モデル</span>、<span class="ui">IP アドレス</span>、<span class="ui">ポート</span>（HTTP ポート）、<span class="ui">HTTPS</span>（HTTPS ポート。HTTPS がオンの場合のみ）、<span class="ui">シリアル番号</span>、<span class="ui">ファームウェア</span>、<span class="ui">カメラ</span>（チャンネル数）の行を表示します。シリアル番号とファームウェアは、デバイスが報告した場合にのみ表示されます。YouTube または Twitch の配信では、<span class="ui">IP アドレス</span>と<span class="ui">ポート</span>の代わりに<span class="ui">リンク</span>の行が表示されます。</li>
     <li><b><span class="ui">ディスクの状態</span></b>：デバイスのディスクのレポートを開きます。詳しくは<a class="xref" href="#devices-health">「ディスクの状態」</a>を参照してください。行の右側のオレンジ色の三角形または赤い記号は、前回の読み取りで最も悪かったディスクの判定を示します。</li>
     <li><b>サムネイル</b>：レコーダーではチャンネルごとに 1 つ、単体カメラではチャンネルが 1 つなのでサムネイルも 1 つ表示されます。各サムネイルの左下には、チャンネルの番号と名前が表示されます。サムネイルは、<span class="path"><span class="ui">設定</span> › <span class="ui">デフォルトの画質</span> › <span class="ui">複数のカメラ</span></span>に従って SD または HD になります（変更しない限り SD）。設定を変更すると、このページにすぐに反映されます。このページには、SD と HD を切り替える専用のボタンはありません。</li>
     <li><b>更新</b>：Cam Hub は、ページを開いたとき（同じデバイスについては最大で 1 分に 1 回）と、ページを下に引いたときに毎回、デバイスからチャンネルの一覧を読み取ります。名前とオンラインの状態が更新され、デバイスに追加されたチャンネルが表示され、デバイスから削除されたチャンネルが消えます。新しいチャンネルは、プランで許可されている場合にのみ有効になり、許可されていない場合は<span class="ui">無効</span>と表示されます。Cam Hub で付けた名前は保持されます。デバイスが応答しない場合や、不完全に見える一覧（チャンネルがまったくない、または複数あるはずのチャンネルが 1 つだけ）が返された場合は、一覧はそのままで、メッセージは表示されません。</li>
     <li><b>サインインの拒否</b>：更新中に、保存されたユーザー名またはパスワードをデバイスが拒否した場合は、サムネイルの上に<span class="ui">ユーザー名またはパスワードが違います。</span>のメッセージと<span class="ui">認証情報を編集</span>ボタンが表示されます。詳しくは<a class="xref" href="#devices-credentials">「デバイスのユーザー名とパスワードの変更」</a>を参照してください。</li>
+    <li><b>パスワード未保存</b>：この iPhone または iPad にデバイスのパスワードが保存されていない場合は、サムネイルの上に、<span class="ui">パスワードを入力</span>ボタンと<span class="ui">iCloud から復元</span>ボタンの付いたメッセージが表示されます。詳しくは<a class="xref" href="#devices-password-missing">「パスワードが保存されていないデバイス」</a>を参照してください。</li>
     <li><b>チャンネルなし</b>：デバイスがチャンネルを報告しない場合、ページには<span class="ui">カメラが見つかりません。</span>と、チャンネルの一覧をもう一度読み取る<span class="ui">更新</span>ボタンが表示されます。</li>
   </ul>
-  <p>右上の 3 つのボタンは、左から順に、黒帯ボタン、<span class="ui">フルスクリーンウォール</span>、鉛筆ボタンです。ユーザー名とパスワードでサインインするデバイスでは、鉛筆ボタン（<span class="ui">デバイスを編集</span>）で<span class="ui">名前を変更</span>と<span class="ui">認証情報を編集</span>のメニューが開きます。サンプルカメラと、YouTube および Twitch の配信では、鉛筆ボタンがそのまま<span class="ui">名前を変更</span>ボタンになります。</p>
+  <p>右上の 3 つのボタンは、左から順に、黒帯ボタン、<span class="ui">フルスクリーンウォール</span>、鉛筆ボタンです。ユーザー名とパスワードでサインインするデバイスでは、鉛筆ボタン（<span class="ui">デバイスを編集</span>）で<span class="ui">名前を変更</span>と<span class="ui">認証情報を編集</span>のメニューが開きます。デバイスが HTTPS を提供している場合や、HTTPS がオンになっている場合は、メニューに<span class="ui">HTTPS</span>も表示されます。<a class="xref" href="#devices-https">「保存したデバイスの HTTPS」</a>を参照してください。サンプルカメラと、YouTube および Twitch の配信では、鉛筆ボタンがそのまま<span class="ui">名前を変更</span>ボタンになります。</p>
   <div class="callout note">
     <strong class="t">本のように持った iPhone Duo</strong>
     <p>iPhone Duo を半分に折り曲げ、折り目が上から下に通る向きで持つと、デバイスのページの一方の半分にサムネイルが、もう一方の半分に 1 台のカメラのページが表示されます。サムネイルをタップすると、新しいページを開く代わりに、そのカメラがもう一方の半分に表示されます。最初は、映像を表示できる最初のカメラが表示されます。詳しくは<a class="xref" href="#single-duo">「折り曲げた iPhone Duo での表示」</a>を参照してください。</p>
@@ -595,7 +634,7 @@
   <ol class="steps">
     <li class="step">
       <p>デバイスのページの右上にある鉛筆ボタンをタップします。</p>
-      <p class="check"><b class="check-label">確認：</b>ユーザー名とパスワードでサインインするデバイスでは、<span class="ui">名前を変更</span>と<span class="ui">認証情報を編集</span>のメニューが開きます。それ以外のデバイスでは、次の手順のダイアログがすぐに開きます。</p>
+      <p class="check"><b class="check-label">確認：</b>ユーザー名とパスワードでサインインするデバイスでは、<span class="ui">名前を変更</span>と<span class="ui">認証情報を編集</span>（デバイスによっては<span class="ui">HTTPS</span>も）のメニューが開きます。それ以外のデバイスでは、次の手順のダイアログがすぐに開きます。</p>
     </li>
     <li class="step">
       <p>メニューが表示された場合は、<span class="ui">名前を変更</span>をタップします。</p>
@@ -637,11 +676,11 @@
     <li class="step">
       <p>対象のデバイスのページを開きます。</p>
       <p class="check"><b class="check-label">確認：</b>デバイスのページが表示されます。前回の更新が拒否された場合は、サムネイルの上に<span class="ui">ユーザー名またはパスワードが違います。</span>のメッセージと<span class="ui">認証情報を編集</span>ボタンが表示されます。このボタンでも、手順 3 と同じ画面が開きます。</p>
-      <figure class="phone"><img src="guide/img/device-credentials-banner.jpg" alt="パスワードが拒否されたサンプルレコーダーのデバイスのページ。「認証情報を編集」ボタンが付いた「ユーザー名またはパスワードが違います。」のメッセージと、同じメッセージを表示しているサムネイルが 1 つある" loading="lazy" decoding="async" width="900" height="1947"><figcaption>サインインが拒否された後のメッセージ</figcaption></figure>
+      <figure class="phone"><img src="guide/img/device-credentials-banner.jpg" alt="パスワードが拒否されたサンプルレコーダーのデバイスのページ。「認証情報を編集」ボタンが付いた「ユーザー名またはパスワードが違います。」のメッセージと、チャンネル名の上に同じメッセージを表示しているサムネイルがある" loading="lazy" decoding="async" width="900" height="1947"><figcaption>サインインが拒否された後のメッセージ</figcaption></figure>
     </li>
     <li class="step">
       <p>右上の鉛筆ボタン（<span class="ui">デバイスを編集</span>）をタップします。</p>
-      <p class="check"><b class="check-label">確認：</b><span class="ui">名前を変更</span>と<span class="ui">認証情報を編集</span>のメニューが開きます。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">名前を変更</span>と<span class="ui">認証情報を編集</span>のメニューが開きます。HTTPS を提供するデバイスでは、その下に<span class="ui">HTTPS</span>が続きます。</p>
       <figure class="phone"><img src="guide/img/device-edit-menu.jpg" alt="デバイスのページの右上で開いた鉛筆ボタンのメニュー。「名前を変更」と「認証情報を編集」がある" loading="lazy" decoding="async" width="900" height="1947"><figcaption>鉛筆ボタンのメニュー</figcaption></figure>
     </li>
     <li class="step">
@@ -667,6 +706,49 @@
     <strong class="t">デバイスごとに 1 回のサインイン</strong>
     <p>多くのレコーダーや NAS は、サインインに数回失敗すると、アカウントまたは iPhone や iPad のアドレスをロックします。このロックは、ほかのアプリにも影響します。そのため Cam Hub は、複数の接続方法を試すのではなく、デバイスを追加したときの接続方法で 1 回だけサインインして、新しい認証情報を確認します。ほとんどのデバイスでは、ウォールのサムネイルも、デバイス全体で 1 回だけサインインします。デバイスが拒否すると、そのデバイスのすべてのサムネイルに一度に失敗が表示され、Cam Hub は約 1 分後か、Cam Hub がフォアグラウンドに戻ったときにのみ、同じ認証情報でもう一度試します。新しい認証情報を保存すると、すぐにやり直します。</p>
   </div>
+
+  <h3 id="devices-password-missing">パスワードが保存されていないデバイス</h3>
+  <p>Cam Hub は、各デバイスのパスワードを iPhone または iPad のキーチェーンに保存します。iPhone や iPad の内容を新しい端末に移行すると、パスワードも一緒に移行できます。Cam Hub の iCloud バックアップと共有コードには、パスワードが必ず含まれます（<a class="xref" href="#share-contents">「バックアップとコードに含まれる内容」</a>を参照）。デバイスの一覧だけがパスワードなしで移行された場合（たとえば、古い端末のキーチェーンを引き継がずに設定した新しい iPhone、iPad、Mac）は、次の状態になります。このとき Cam Hub は、デバイスに何も送信しません。空のパスワードでサインインすることも、パスワードが違うと報告することもありません。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>対象のデバイスのページを開きます。</p>
+      <p class="check"><b class="check-label">確認：</b>サムネイルの上に<span class="ui">この iPhone、iPad、Mac には、このデバイスのパスワードが保存されていません。新しい機種に移行した後に起こることがあります。もう一度入力するか、iCloud バックアップから復元してください。</span>と表示され、<span class="ui">パスワードを入力</span>ボタンと<span class="ui">iCloud から復元</span>ボタンがあります。サムネイルには<span class="ui">パスワードが保存されていません。「デバイス」でもう一度入力してください。</span>と表示されます。</p>
+      <figure class="phone"><img src="guide/img/device-password-missing.jpg" alt="パスワードが保存されていないサンプルレコーダーのデバイスのページ。「パスワードを入力」ボタンと「iCloud から復元」ボタンが付いたメッセージと、「パスワードが保存されていません。『デバイス』でもう一度入力してください。」と表示されたサムネイルがある" loading="lazy" decoding="async" width="900" height="1947"><figcaption>パスワードが保存されていないデバイス</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>このデバイスのパスワードを入力するには<span class="ui">パスワードを入力</span>を、iCloud バックアップからすべてのデバイスのパスワードを戻すには<span class="ui">iCloud から復元</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">パスワードを入力</span>では、<a class="xref" href="#devices-credentials">「デバイスのユーザー名とパスワードの変更」</a>で説明している<span class="ui">認証情報を編集</span>の画面が開きます。<span class="ui">iCloud から復元</span>では、<a class="xref" href="#share-restore">「iCloud から復元する」</a>で説明しているページが開きます。</p>
+    </li>
+  </ol>
+  <p>パスワードを保存または復元すると、メッセージが消え、サムネイルが再接続します。復元では、すべてのデバイスのパスワードが一度に戻ります。バックアップがない場合は、デバイスごとに入力します。</p>
+
+  <h3 id="devices-https">保存したデバイスの HTTPS</h3>
+  <p>Web インターフェースで HTTPS を提供しているデバイスは、通常の HTTP の代わりに HTTPS で制御できます。HTTPS は、デバイスごとにオンにしない限りオフのままです。HTTPS では、Cam Hub は、HTTPS をオンにしたときに信頼した証明書か、デバイスのアドレス向けに公的な認証局が発行した証明書だけを受け入れます。そのため、そのような証明書が自動更新されても、接続は続きます。RTSP で取得する映像は、この設定では暗号化されません。</p>
+  <p>鉛筆ボタンのメニューの<span class="ui">HTTPS</span>は、HTTPS で応答したデバイスと、HTTPS がオンになっているデバイスに表示されます。Cam Hub はサインインせずにデバイスに問い合わせ、ポートが証明書を提示するかどうかだけを確認します。応答したデバイスの結果は 1 週間、応答しなかったデバイスの結果は 1 日記憶されます。デバイスのページを下に引くと、すぐに問い合わせ直します。デバイスファミリー独自のプロトコル、RTSP、一覧にあるブランドで接続したデバイスや、サンプルカメラ、YouTube と Twitch の配信には、この項目は表示されません。</p>
+  <h4>HTTPS をオンにする</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>デバイスのページで、右上の鉛筆ボタン（<span class="ui">デバイスを編集</span>）をタップし、<span class="ui">HTTPS</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">HTTPS</span>の画面が開き、セクションの見出しにデバイスの名前が表示されます。Cam Hub がデバイスに問い合わせている間は<span class="ui">HTTPS を確認しています…</span>と表示され、その後、<span class="ui">ポート</span>（デバイスが応答したポート）と<span class="ui">証明書（SHA-256）</span>（デバイスが現在提示している証明書のフィンガープリント。4 行で表示）が表示されます。</p>
+      <figure class="phone"><img src="guide/img/device-https.jpg" alt="サンプルレコーダーの HTTPS の画面。「HTTPS を使用」スイッチ、ポート、4 行で表示された証明書のフィンガープリント、セクションの下のメモがある" loading="lazy" decoding="async" width="900" height="1947"><figcaption>HTTPS の画面</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>可能であれば、ブラウザの証明書の詳細などで、フィンガープリントをデバイス自体の Web ページの証明書と照合します。</p>
+      <p class="check"><b class="check-label">確認：</b>フィンガープリントが一致します。異なる場合は、通信の途中に別の機器が割り込んでいる可能性があります。HTTPS はオフのままにしてください。</p>
+    </li>
+    <li class="step">
+      <p><span class="ui">HTTPS を使用</span>をオンにし、<span class="ui">保存</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>Cam Hub が保存済みの認証情報を使って HTTPS でデバイスにサインインし、チャンネルの一覧を読み取る間、<span class="ui">保存</span>の代わりにスピナーが表示されます。成功すると、画面が閉じ、サムネイルが再接続して、情報カードにポートとともに<span class="ui">HTTPS</span>の行が表示されます。失敗した場合は、画面は開いたままで何も保存されず、理由が赤色で表示されます。</p>
+    </li>
+  </ol>
+  <ul>
+    <li>デバイスが HTTPS で応答しない場合は、画面に<span class="ui">このデバイスは先ほど HTTPS で応答しませんでした。</span>がオレンジ色で表示され、スイッチをオンにできません。</li>
+    <li>セクションの下のメモには、<span class="ui">オンにしない限りオフのままです。HTTPS をオンにすると、Cam Hub はこのデバイスと暗号化して通信し、ここに表示された証明書、またはこのアドレス向けに公的な認証局が発行した証明書だけを受け入れます（自動更新された証明書でも接続が続きます）。可能であれば、デバイス自体のウェブページに表示される証明書と照合してください。RTSP で送られる映像は、この設定では暗号化されません。</span>と書かれています。</li>
+    <li><b>HTTPS をオフにする</b>：<span class="ui">HTTPS を使用</span>をオフにし、<span class="ui">保存</span>をタップします。Cam Hub はまず、保存済みの認証情報でデバイスが通常の HTTP で応答することを確認します。応答しない場合は何も変更されず、画面に<span class="ui">このデバイスは通常の HTTP で応答しなかったため、HTTPS はオンのままです。</span>と表示されます。HTTPS をオフにすると、信頼した証明書は破棄されます。そのため、もう一度オンにするときは、証明書を改めて確認します。</li>
+    <li><b>証明書の変更</b>：デバイスが信頼した証明書とは別の証明書を提示し、それがそのアドレス向けに公的な認証局が発行したものでもない場合、Cam Hub は接続せず、サムネイルに<span class="ui">このデバイスのセキュリティ証明書が変更されました。デバイスの編集メニューの「HTTPS」で確認してください。</span>と表示されます。このとき HTTPS の画面には、新しいフィンガープリントとともに<span class="ui">このデバイスは現在、HTTPS をオンにしたときに信頼した証明書とは別の証明書を提示しています。変わった理由（リセット後など）がわかっている場合にのみ、「保存」をタップして信頼してください。</span>と表示されます。<span class="ui">保存</span>をタップすると、HTTPS をオンにするときと同じ確認を経て、新しい証明書が信頼されます。</li>
+    <li>デバイスが同じ証明書のまま別の HTTPS ポートで応答した場合は、画面に新しいポートが表示され、<span class="ui">保存</span>で警告なしにそのポートが保存されます。</li>
+    <li>HTTPS の設定は、ポートと信頼した証明書を含めて、iCloud バックアップと共有コードに引き継がれます。<a class="xref" href="#share-contents">「バックアップとコードに含まれる内容」</a>を参照してください。</li>
+  </ul>
 
   <h3 id="devices-health">ディスクの状態</h3>
   <p><span class="ui">ディスクの状態</span>は、レコーダーまたは NAS のディスクの状態を報告します。各ディスクが正常かどうか、その温度、ドライブ自身の S.M.A.R.T. データがわかるので、録画が失われる前に、故障しかけているディスクを交換できます。Cam Hub はこの情報を読み取るだけで、デバイスでは何も変更しません。</p>
@@ -758,7 +840,7 @@
       <tr><td><span class="ui">無効</span></td><td>チャンネルが無効です。ストリーミングを行わず、プランの枠も使用しません。</td><td>チャンネルの名前が付いたダイアログに、<span class="ui">有効にする</span>と<span class="ui">キャンセル</span>が表示されます。詳しくは<a class="xref" href="#devices-plan">「プランの上限とチャンネルの有効化」</a>を参照してください。</td></tr>
       <tr><td>ロックの記号と<span class="ui">プランに含まれていません</span></td><td>チャンネルは有効ですが、プランの対象外です。</td><td>プランの画面が開きます。詳しくは<a class="xref" href="#plans">第11章「プランと上限」</a>を参照してください。</td></tr>
       <tr><td>ライブ映像</td><td>チャンネルが有効で、プランの範囲内にあり、一時停止されておらず、デバイスが信号を報告しています。接続中はスピナーが表示されます。</td><td>1 台表示が開きます。</td></tr>
-      <tr><td>暗い背景に失敗メッセージ</td><td>チャンネルに問題はありませんが、ストリームを開けませんでした。Cam Hub は、試行の間隔を徐々に広げながら自動的に再試行します。ユーザー名またはパスワードが拒否された後は、デバイスがアカウントをロックしないように、Cam Hub は最大でもう 1 回だけ試して停止します。メッセージは、ページをもう一度開くか、Cam Hub がフォアグラウンドに戻るまで表示されたままです。</td><td>1 台表示が開きます。</td></tr>
+      <tr><td>暗い背景に失敗メッセージ</td><td>チャンネルに問題はありませんが、ストリームを開けませんでした。Cam Hub は、試行の間隔を徐々に広げながら自動的に再試行します。ユーザー名またはパスワードが拒否された後は、デバイスがアカウントをロックしないように、Cam Hub は最大でもう 1 回だけ試して停止します。メッセージは、ページをもう一度開くか、Cam Hub がフォアグラウンドに戻るまで表示されたままです。パスワードが保存されていない場合は、メッセージが<span class="ui">パスワードが保存されていません。「デバイス」でもう一度入力してください。</span>となり、Cam Hub はデバイスに接続しません。<a class="xref" href="#devices-password-missing">「パスワードが保存されていないデバイス」</a>を参照してください。メッセージは、チャンネルの番号と名前の上に表示されます。小さなサムネイルでは、メッセージ全体が収まるように記号が省略されます。</td><td>1 台表示が開きます。</td></tr>
       <tr><td>グレー表示で、斜線の入ったカメラの記号と<span class="ui">信号なし</span></td><td>デバイスが、そのチャンネルには信号がないと報告しています。</td><td>何も起きません。</td></tr>
     </tbody>
   </table></div>
@@ -1504,15 +1586,16 @@
       <tr><td>サービスのプレーヤー</td><td>配信がライブ中です。</td></tr>
       <tr><td>チャンネルの名前と<span class="ui">オフライン</span></td><td>Twitch チャンネルがライブ配信をしていません。画面に表示されている間は 2 分ごとに確認し直され、チャンネルの配信が始まると自動的に再生されます。存在しないチャンネル名でも<span class="ui">オフライン</span>と表示されます。</td></tr>
       <tr><td><span class="ui">このチャンネルは現在ライブ配信をしていないか、ほかのアプリでのライブ配信の再生を許可していません。</span></td><td>フォローしている YouTube チャンネルがライブ配信をしていないか、ほかのアプリでの配信の再生を許可していません。画面に表示されている間は 1 分ごとに確認し直され、配信が始まると自動的に再生されます。</td></tr>
-      <tr><td><span class="ui">ライブ配信ではないか、配信が終了しています。表示できるのはライブ配信のみです。</span></td><td>YouTube の動画がライブ配信ではないか、配信が終了しています。1 回限りの配信は戻りません。<span class="ui">もう一度試す</span>で、もう一度だけ問い合わせます。</td></tr>
-      <tr><td><span class="ui">この動画は利用できません。非公開にされたか、削除された可能性があります。</span>または<span class="ui">この動画の所有者は、ほかのアプリでの再生を許可していません。</span></td><td>YouTube がこの動画を Cam Hub で再生しません。</td></tr>
-      <tr><td><span class="ui">YouTube のプレーヤーを読み込めませんでした。接続を確認して、もう一度お試しください。</span>または<span class="ui">Twitch のプレーヤーを読み込めませんでした。接続を確認して、もう一度お試しください。</span></td><td>プレーヤーが読み込まれなかったか、約 30 秒以内に応答しませんでした。インターネット接続を確認して、<span class="ui">もう一度試す</span>をタップします。</td></tr>
+      <tr><td><span class="ui">ライブ配信ではないか、配信が終了しています。表示できるのはライブ配信のみです。</span></td><td>YouTube の動画がライブ配信ではないか、配信が終了しています。1 回限りの配信は戻りません。フルスクリーンでは、<span class="ui">もう一度試す</span>で、もう一度だけ問い合わせます。</td></tr>
+      <tr><td><span class="ui">この動画は利用できません。非公開にされたか、削除された可能性があります。</span>または<span class="ui">この動画の所有者は、ほかのアプリでの再生を許可していません。</span></td><td>YouTube がこの動画を Cam Hub で再生しません。動画が存在しないか、非公開になっているか、所有者がほかのアプリでの再生を許可していません。</td></tr>
+      <tr><td><span class="ui">YouTube のプレーヤーを読み込めませんでした。接続を確認して、もう一度お試しください。</span>または<span class="ui">Twitch のプレーヤーを読み込めませんでした。接続を確認して、もう一度お試しください。</span></td><td>プレーヤーが読み込まれなかったか、約 30 秒以内に応答しませんでした。インターネット接続を確認して、<span class="ui">もう一度試す</span>をタップします。ウォールのタイルでは、自動的に再試行します。YouTube のタイルは 1 分後、2 分後、4 分後、8 分後、その後は 10 分ごとに、Twitch のタイルは 2 分ごとに再試行します。</td></tr>
       <tr><td>名前と、<span class="ui">このライブ配信を再生するには、YouTube の規約に同意してください。</span>または<span class="ui">このチャンネルを再生するには、Twitch の規約に同意してください。</span></td><td>この iPhone または iPad で、まだサービスの規約に同意していません。たとえば、共有コードやバックアップで届いた配信です。フルスクリーンでは、<span class="ui">規約を確認…</span>で案内が開きます。<span class="ui">同意して続ける</span>でプレーヤーが始まり、<span class="ui">キャンセル</span>では配信はそのままです。規約への同意は、サービスごとに 1 回です。</td></tr>
       <tr><td>名前と<span class="ui">この地域または言語ではご利用いただけません。</span></td><td>YouTube と Twitch は、一部の国や地域では利用できません。配信の名前は残り、ほかのデバイスと同様に削除できます。</td></tr>
     </tbody>
   </table></div>
   <ul>
     <li>サービスが、プレーヤー内に独自の広告やお知らせを表示することがあります。</li>
+    <li>ウォールのタイルでは、メッセージは 2 行に短縮され、ボタンは表示されません。タイルをタップすると配信がフルスクリーンで開き、そこに<span class="ui">もう一度試す</span>があります。</li>
     <li>配信には、スナップショット、PTZ 操作、トーク、ズーム、録画、SD と HD のスイッチ、黒帯のモードはありません。<span class="ui">ライブ</span>タブとフルスクリーンウォールでは、配信に対して SD と HD を切り替えるボタンも黒帯ボタンも表示されません。</li>
     <li>独立したウインドウ（<a class="xref" href="#single-window">「カメラを独立したウインドウで開く」</a>を参照）では、配信はサービスのコントロール付きのプレーヤーで表示され、その下に<span class="ui">YouTube で開く</span>または<span class="ui">Twitch で開く</span>と、配信のリンクが表示されます。</li>
     <li>Apple TV では、配信は名前だけが表示されます。詳しくは<a class="xref" href="#appletv">第14章「Apple TV」</a>を参照してください。</li>
@@ -1528,6 +1611,8 @@
       <tr><td>警告の記号付きのメッセージと<span class="ui">再試行</span></td><td>ストリームを開けませんでした。メッセージには、デバイスに到達できないなどの原因が示されます。文言は、デバイスの追加時と同じです（<a class="xref" href="#add-failed">「追加に失敗したとき：チェックリスト」</a>を参照）。もう一度試すには、<span class="ui">再試行</span>をタップします。</td></tr>
       <tr><td><span class="ui">ユーザー名またはパスワードが違います。</span>と<span class="ui">再試行</span></td><td>デバイスがアカウントを拒否しました。Cam Hub は、デバイスのすべてのカメラについて 1 回だけサインインし、拒否された後は、アカウントがロックされないように約 1 分間はそのデバイスにサインインし直しません。その 1 分以内に<span class="ui">再試行</span>をタップしても、同じメッセージが表示されます。デバイスでパスワードを変更した場合は、<span class="ui">認証情報を編集</span>で新しいパスワードを入力します。詳しくは<a class="xref" href="#devices-credentials">「デバイスのユーザー名とパスワードの変更」</a>を参照してください。</td></tr>
       <tr><td><span class="ui">短時間にリクエストが多すぎます。1 分ほど待ってからもう一度お試しください。</span>と<span class="ui">再試行</span></td><td>短時間に、デバイスまたはそのサービスに届いたリクエストが多すぎます。この場合、Cam Hub は自動では再試行しません。1 分待ってから、<span class="ui">再試行</span>をタップします。</td></tr>
+      <tr><td><span class="ui">パスワードが保存されていません。「デバイス」でもう一度入力してください。</span>と<span class="ui">再試行</span></td><td>新しい端末に移行した後など、この iPhone または iPad にデバイスのパスワードが保存されていません。デバイスには何も送信されません。パスワードを入力するか、iCloud バックアップを復元します。詳しくは<a class="xref" href="#devices-password-missing">「パスワードが保存されていないデバイス」</a>を参照してください。</td></tr>
+      <tr><td><span class="ui">このデバイスのセキュリティ証明書が変更されました。デバイスの編集メニューの「HTTPS」で確認してください。</span>と<span class="ui">再試行</span></td><td>デバイスの HTTPS がオンになっていて、デバイスが信頼した証明書とは別の証明書を提示しています。証明書を確認するまで、Cam Hub は接続しません。詳しくは<a class="xref" href="#devices-https">「保存したデバイスの HTTPS」</a>を参照してください。</td></tr>
       <tr><td><span class="ui">このデバイスの保存済みパスワードを読み込めませんでした。</span>と<span class="ui">再試行</span></td><td>保存されたパスワードを読み取れません。デバイスのページの<span class="ui">認証情報を編集</span>で、パスワードをもう一度入力します。詳しくは<a class="xref" href="#devices-credentials">「デバイスのユーザー名とパスワードの変更」</a>を参照してください。</td></tr>
       <tr><td><span class="ui">このレコーダーは映像を暗号化しているため、Cam Hub は独自のプロトコルでは読み取れません。もう一度追加し、「接続方法」で ONVIF を選んでください。</span></td><td>レコーダーが、独自のプロトコルで暗号化された映像を送っています。接続方法に ONVIF を選んで、もう一度追加します。詳しくは<a class="xref" href="#add-methods">「接続方法の選び方」</a>を参照してください。</td></tr>
       <tr><td><span class="ui">レコーダーがこの録画を再生しませんでした。上書きされた可能性があります。別の時間を選んでください。</span></td><td>上書きされたなどの理由で、レコーダーがこの録画を拒否しました。タイムラインで別の時刻を選びます。</td></tr>
@@ -2528,7 +2613,7 @@
       <p class="check"><b class="check-label">確認：</b>一覧が閉じ、タップしたタイルにコピーが表示されます。</p>
     </li>
   </ol>
-  <p>一覧の下のメモにあるとおり、コピーは元のものから独立しています：<span class="ui">コピーは独立しています。あとで変更しても、もう一方のページはそのままです。</span>コピーしたコントロールパネルは、それ自体がプランに数えられます。コピーした画像は 2 回保存されるため、バックアップのサイズが増えます。</p>
+  <p>一覧の下のメモにあるとおり、コピーは元のものから独立しています：<span class="ui">コピーは独立しています。あとで変更しても、もう一方のページはそのままです。</span>コピーしたコントロールパネルは、それ自体がプランに数えられます。コピーした画像は 2 回保存されます。もう一方のページに画像がある場合は、そのことを示す 2 つ目のメモが表示されます：<span class="ui">コピーした画像は 2 つ保存されるため、iCloud バックアップのサイズにも 2 つ分として数えられます。</span></p>
 
   <h3 id="lvm-canvases">iPhone Duo の 2 つのキャンバス</h3>
   <p>iPhone Duo を半分に折り曲げ、折り目が画面を横切る向きで持つと、LiveView Mix を折り目の位置で 2 つのキャンバスに分けられます。折り目の上が上のキャンバス、下が下のキャンバスです。各キャンバスは独立したウォールで、それぞれ独自のカメラ、レイアウト、ウォールのページ、コントロールパネル、拡大表示を持ちます。典型的な使い方は、上のキャンバスにカメラ、下のキャンバスにコントロールパネルを置くことです。この設定は iPhone Duo でのみ表示されます。iPhone Duo 全般については、<a class="xref" href="#tour-duo">「iPhone Duo」</a>を参照してください。</p>
@@ -3340,7 +3425,7 @@ Content-Type: application/json
     <thead><tr><th>項目</th><th>iCloud バックアップ</th><th>共有コード</th></tr></thead>
     <tbody>
       <tr><td>デバイス</td><td>YouTube と Twitch の配信を含む、すべてのデバイス</td><td>YouTube と Twitch の配信を含む、チェックを入れたデバイス</td></tr>
-      <tr><td>各デバイスのデータ</td><td colspan="2">名前、アドレス、ポート、ユーザー名、パスワード、接続方法、モデル、シリアル番号、ファームウェアのバージョン、一覧でのデバイスの位置、NAS の場合はディスクの状態で使う SNMP 設定（コミュニティ名とポート）。</td></tr>
+      <tr><td>各デバイスのデータ</td><td colspan="2">名前、アドレス、ポート、ユーザー名、パスワード、接続方法、HTTPS の設定（ポートと信頼した証明書を含む）、モデル、シリアル番号、ファームウェアのバージョン、一覧でのデバイスの位置、NAS の場合はディスクの状態で使う SNMP 設定（コミュニティ名とポート）。</td></tr>
       <tr><td>チャンネル</td><td colspan="2">チャンネル名とカスタム名、有効状態、一時停止状態。</td></tr>
       <tr><td>アプリ設定</td><td>常に含まれます</td><td><span class="ui">アプリ設定を含める</span>がオンの場合にのみ含まれ、受信者が<span class="ui">送信者の設定も使う</span>を選んだ場合にのみ適用されます</td></tr>
     </tbody>
@@ -4084,7 +4169,7 @@ Content-Type: application/json
   </ol>
 
   <h4>すべてのデータを削除する</h4>
-  <p>この操作は、アプリを空にするために使用します。たとえば、端末を手放す前に使います。取り消しはできません。iCloud バックアップや書き出したコードがない場合、カメラのパスワードはこの端末にしか保存されていないため、復元できません。</p>
+  <p>この操作は、アプリを空にするために使用します。たとえば、端末を手放す前に使います。取り消しはできません。iCloud バックアップや書き出したコードがない場合、この操作でカメラのパスワードがこの端末から削除されるため、パスワードは復元できません。</p>
   <ol class="steps">
     <li class="step">
       <p><span class="ui">リセット</span>セクションで、<span class="ui">すべてのデータを削除</span>をタップします。</p>
@@ -4192,8 +4277,8 @@ Content-Type: application/json
     <tbody>
       <tr><td>タブと起動</td><td>5 つのタブ。アプリは<span class="ui">LiveView Mix</span>で開くか、<span class="ui">起動時に開く</span>で選んだ画面で開きます。</td><td>4 つのタブで、<span class="ui">ツール</span>はありません。アプリは常に<span class="ui">LiveView Mix</span>で開きます。フルスクリーンウォールを開いていた場合は、アプリの再起動後に再び表示されます。<span class="ui">起動時に開く</span>はありません。</td></tr>
       <tr><td>操作</td><td>タッチ操作で、ピンチ、ドラッグ、長押しなどのジェスチャを使います。</td><td>リモコン。方向パッドまたはスワイプで選択を移動し、「選択」はタップに相当し、「メニュー」で前の画面に戻ります。タッチのジェスチャはありません。</td></tr>
-      <tr><td>デバイスの追加</td><td>接続方法とポートを自動で見つけるフォーム（どちらも<span class="ui">詳細</span>の下にあります）、ネットワークスキャン、チェックリスト、デバイスレポート、YouTube ライブ配信と Twitch チャンネル用の個別のフォーム。</td><td><span class="ui">IP デバイスを追加</span>から開く短いフォーム：名前、アドレス、<span class="ui">HTTP ポート</span>、<span class="ui">RTSP ポート</span>、ユーザー名、パスワード、<span class="ui">ONVIF で接続</span>スイッチ、特定のデバイスファミリー独自のプロトコルを使うスイッチ（<a class="xref" href="#brands-methods">「接続方法」</a>を参照）があり、その後に<span class="ui">デモカメラを追加</span>と<span class="ui">デモ環境を追加</span>が続きます。スキャン、ブランドの一覧、チェックリスト、デバイスレポートはありません。YouTube や Twitch のリンクは受け付けません。レコーダーの上限に達した場合は、プランの画面ではなく、フォームに<span class="ui">無料プランにはレコーダー 1 台が含まれます。NVR プランでさらに追加できます。</span>が表示されます。サンプルデバイスがその枠を使っている場合は、より長い文が表示されます。</td></tr>
-      <tr><td>デバイスのページ</td><td>名前の変更、<span class="ui">認証情報を編集</span>、デバイスが報告する場合は<span class="ui">ディスクの状態</span>、カメラごとのメニュー（名前の変更、有効化と無効化、一時停止）。デバイスは一覧から削除します。</td><td>ウォールの上に<span class="ui">詳細を表示</span>または<span class="ui">詳細を非表示</span>、<span class="ui">名前を変更</span>、<span class="ui">認証情報を編集</span>が、ウォールの下に<span class="ui">デバイスを削除</span>があります。カメラごとのメニューと<span class="ui">ディスクの状態</span>はありません。チャンネルは、<span class="path"><span class="ui">設定</span> › <span class="ui">表示するカメラを選択</span></span>でオンとオフを切り替えます。</td></tr>
+      <tr><td>デバイスの追加</td><td>接続方法とポートを自動で見つけるフォーム（どちらも<span class="ui">詳細</span>の下にあります）、ネットワークスキャン、チェックリスト、デバイスレポート、YouTube ライブ配信と Twitch チャンネル用の個別のフォーム。</td><td><span class="ui">IP デバイスを追加</span>から開く短いフォーム：名前、アドレス、<span class="ui">HTTP ポート</span>、<span class="ui">RTSP ポート</span>、ユーザー名、パスワード、<span class="ui">ONVIF で接続</span>スイッチ、特定のデバイスファミリー独自のプロトコルを使うスイッチ（<a class="xref" href="#brands-methods">「接続方法」</a>を参照）、そのプロトコル以外では<span class="ui">HTTPS を使用</span>と<span class="ui">HTTPS ポート</span>（<a class="xref" href="#add-https">「HTTPS でデバイスを追加する」</a>を参照）があり、その後に<span class="ui">デモカメラを追加</span>と<span class="ui">デモ環境を追加</span>が続きます。スキャン、ブランドの一覧、チェックリスト、デバイスレポートはありません。YouTube や Twitch のリンクは受け付けません。レコーダーの上限に達した場合は、プランの画面ではなく、フォームに<span class="ui">無料プランにはレコーダー 1 台が含まれます。NVR プランでさらに追加できます。</span>が表示されます。サンプルデバイスがその枠を使っている場合は、より長い文が表示されます。</td></tr>
+      <tr><td>デバイスのページ</td><td>名前の変更、<span class="ui">認証情報を編集</span>、デバイスが提供する場合は<span class="ui">HTTPS</span>、デバイスが報告する場合は<span class="ui">ディスクの状態</span>、カメラごとのメニュー（名前の変更、有効化と無効化、一時停止）。デバイスは一覧から削除します。</td><td>ウォールの上に<span class="ui">詳細を表示</span>または<span class="ui">詳細を非表示</span>、<span class="ui">名前を変更</span>、<span class="ui">認証情報を編集</span>、表示される場合は<span class="ui">HTTPS</span>が、ウォールの下に<span class="ui">デバイスを削除</span>があります。パスワードが保存されていないデバイスでは、サムネイルに<span class="ui">パスワードが保存されていません。「デバイス」でもう一度入力してください。</span>と表示されるだけです。パスワードは<span class="ui">認証情報を編集</span>で入力します。カメラごとのメニューと<span class="ui">ディスクの状態</span>はありません。チャンネルは、<span class="path"><span class="ui">設定</span> › <span class="ui">表示するカメラを選択</span></span>でオンとオフを切り替えます。</td></tr>
       <tr><td>ライブ表示と 1 台表示</td><td>SD と HD、音声、スナップショット、双方向のトーク、PTZ、ピンチズーム、横向き表示。</td><td>SD と HD、音声、映像を収める表示と画面を埋める表示の選択。スナップショット、トーク、PTZ、ピンチズームはありません。</td></tr>
       <tr><td>YouTube と Twitch</td><td>タイル、1 台表示、フルスクリーンで、各サービス独自のプレーヤーにより再生されます。</td><td>名前だけが表示され、<span class="ui">YouTube のライブ配信は iPhone と iPad でのみ再生できます。</span>または<span class="ui">Twitch の配信は iPhone と iPad でのみ再生できます。</span>というメッセージが付きます。デバイスの一覧では<span class="ui">iPhone / iPad のみ</span>と表示されます。Apple TV で再生されることはありません。詳しくは<a class="xref" href="#trouble-streams">「YouTube と Twitch」</a>を参照してください。</td></tr>
       <tr><td>録画再生</td><td>録画のある日に印が付くカレンダー、ドラッグするタイムライン、2×、4×、8× の速度、人物の検索。</td><td>再生に対応したデバイスで利用できます。バーをリモコンで動かし、前の日と次の日のボタン、バーを拡大縮小するボタンがあり、デバイスが対応している場合は検出された人物の一覧もあります。カレンダーと高速再生はありません。先にダウンロードが必要な録画は再生されず、画面に<span class="ui">この録画は iPhone または iPad でご覧ください。</span>と表示されます。</td></tr>
@@ -4268,8 +4353,10 @@ Content-Type: application/json
       <tr><td>デバイスの一覧の、赤い斜線入りの Wi-Fi 記号</td><td>デバイスが約 4 秒以内に、HTTP ポートでの接続を受け付けませんでした。電源が切れている、別のネットワークにある、またはファイアウォールでブロックされている可能性があります。<span class="ui">接続方法</span>でブランドを選んで追加したデバイスや、映像に別のポートを使うデバイスでは、映像は動作していても赤い記号が表示されることがあります。</td><td>電源とネットワークを確認します。映像が再生されていれば、記号は無視して構いません。詳しくは<a class="xref" href="#devices-list">「デバイスの一覧」</a>を参照してください。</td></tr>
       <tr><td>昨日まで使えていたデバイスが、今日は接続できない</td><td>デバイスのアドレスが変わりました。デバイスは、追加したときのアドレスを保持します。</td><td>ルーターで新しいアドレスを調べ、古いデバイスを削除して、新しいアドレスでデバイスをもう一度追加します。詳しくは<a class="xref" href="#add-form">「デバイス追加フォーム」</a>を参照してください。デバイスまたはルーターで固定アドレスにしておくと、再発を防げます。</td></tr>
       <tr><td>保存したパスワードが使えなくなり、デバイスのページに<span class="ui">ユーザー名またはパスワードが違います。</span>と<span class="ui">認証情報を編集</span>ボタンが表示される</td><td>デバイスでパスワードまたはユーザー名が変更されました。</td><td><span class="ui">認証情報を編集</span>をタップし、新しいアカウントを入力します。アカウントは保存する前にデバイスで確認されます。カメラ、その名前、ウォールはそのままです。詳しくは<a class="xref" href="#devices-credentials">「デバイスのユーザー名とパスワードの変更」</a>を参照してください。</td></tr>
+      <tr><td>新しい iPhone、iPad、Mac などで、すべてのサムネイルに<span class="ui">パスワードが保存されていません。「デバイス」でもう一度入力してください。</span>と表示される</td><td>デバイスの一覧だけが、パスワードなしで移行されています。古い端末のキーチェーンを引き継がずに新しい端末を設定した場合などに起こります。</td><td>すべてのパスワードを含む Cam Hub の iCloud バックアップを復元するか、各デバイスのページの<span class="ui">パスワードを入力</span>で、パスワードを 1 つずつ入力します。詳しくは<a class="xref" href="#devices-password-missing">「パスワードが保存されていないデバイス」</a>を参照してください。</td></tr>
+      <tr><td>サムネイルに<span class="ui">このデバイスのセキュリティ証明書が変更されました。デバイスの編集メニューの「HTTPS」で確認してください。</span>と表示される</td><td>デバイスの HTTPS がオンになっていて、デバイスが信頼した証明書とは別の証明書を提示しています。リセットした後や、デバイスで新しい証明書を作成した後などに起こります。</td><td>デバイスのページの鉛筆ボタンのメニューから<span class="ui">HTTPS</span>を開き、新しいフィンガープリントをデバイスの Web ページと照合してから、<span class="ui">保存</span>をタップします。詳しくは<a class="xref" href="#devices-https">「保存したデバイスの HTTPS」</a>を参照してください。</td></tr>
       <tr><td>レコーダーを追加するとプランの画面が開く</td><td>プランのレコーダーの上限を使い切っています。サンプルデバイスも実際のデバイスと同じように数えられます。</td><td>詳しくは<a class="xref" href="#trouble-plans">「プランと購入」</a>を参照してください。</td></tr>
-      <tr><td>デバイスをまったく追加できず、メーカーのアプリでしか動作しない</td><td>デバイスがローカルネットワークでの接続を提供していないか、HTTPS しか受け付けません。</td><td>詳しくは<a class="xref" href="#brands-requirements">「要件と制限」</a>を参照してください。</td></tr>
+      <tr><td>デバイスをまったく追加できず、メーカーのアプリでしか動作しない</td><td>デバイスがローカルネットワークでの接続を提供していません。または、HTTPS しか受け付けないデバイスを、<span class="ui">HTTPS を使用</span>をオフのまま追加しようとしています。</td><td>HTTPS しか受け付けないデバイスは、追加するときに<span class="ui">HTTPS を使用</span>をオンにします。<a class="xref" href="#add-https">「HTTPS でデバイスを追加する」</a>を参照してください。それ以外の場合は、<a class="xref" href="#brands-requirements">「要件と制限」</a>を参照してください。</td></tr>
     </tbody>
   </table></div>
 
@@ -4433,7 +4520,7 @@ Content-Type: application/json
   </table></div>
 
   <h3 id="trouble-errors">その他のエラーメッセージ</h3>
-  <p>これらの文は、映像の上の失敗メッセージ、録画パネルのタイムラインの上、デバイス追加フォーム、<span class="ui">認証情報を編集</span>に表示されます。最初の 4 つは、<a class="xref" href="#add-failed">「追加に失敗したとき：チェックリスト」</a>の確認事項とともに説明しています。</p>
+  <p>これらの文は、映像の上の失敗メッセージ、録画パネルのタイムラインの上、デバイス追加フォーム、<span class="ui">認証情報を編集</span>、<span class="ui">HTTPS</span>の画面に表示されます。最初の 4 つは、<a class="xref" href="#add-failed">「追加に失敗したとき：チェックリスト」</a>の確認事項とともに説明しています。</p>
   <div class="table-wrap"><table>
     <thead><tr><th>メッセージ</th><th>意味</th><th>対処</th></tr></thead>
     <tbody>
@@ -4445,6 +4532,10 @@ Content-Type: application/json
       <tr><td><span class="ui" data-ui="value">デバイスが映像ストリームを拒否しました（HTTP 404）。</span></td><td>デバイスが、サインインの拒否以外のステータスで、映像のリクエストに応答しました。数字はデバイスのステータスです。</td><td>ライブ表示のアカウント権限、ストリームの設定、デバイスの視聴者数を確認します。</td></tr>
       <tr><td><span class="ui" data-ui="value">レコーダーが HTTP 500 を返しました。</span></td><td>レコーダーが、リクエストにエラーのステータスで応答しました。</td><td>しばらくしてからもう一度試し、必要に応じてレコーダーを再起動して、ファームウェアを確認します。</td></tr>
       <tr><td><span class="ui">このレコーダーは映像を暗号化しているため、Cam Hub は独自のプロトコルでは読み取れません。もう一度追加し、「接続方法」で ONVIF を選んでください。</span></td><td>レコーダーが独自のプロトコルで追加されていて、その方法で送る映像を暗号化しています。</td><td>デバイスを削除し、<span class="path"><span class="ui">詳細</span> › <span class="ui">接続方法</span></span>で<span class="ui">ONVIF</span>を選んで、もう一度追加します。</td></tr>
+      <tr><td><span class="ui">パスワードが保存されていません。「デバイス」でもう一度入力してください。</span></td><td>この iPhone または iPad に、デバイスのパスワードが保存されていません。デバイスには何も送信されていません。</td><td>デバイスのページの<span class="ui">パスワードを入力</span>でパスワードを入力するか、iCloud バックアップを復元します。詳しくは<a class="xref" href="#devices-password-missing">「パスワードが保存されていないデバイス」</a>を参照してください。</td></tr>
+      <tr><td><span class="ui">このデバイスのセキュリティ証明書が変更されました。デバイスの編集メニューの「HTTPS」で確認してください。</span></td><td>HTTPS がオンになっていて、デバイスが信頼した証明書とは別の証明書を提示しています。</td><td><span class="ui">HTTPS</span>の画面で新しい証明書を確認します。詳しくは<a class="xref" href="#devices-https">「保存したデバイスの HTTPS」</a>を参照してください。</td></tr>
+      <tr><td><span class="ui">このデバイスは先ほど HTTPS で応答しませんでした。</span></td><td>Cam Hub が HTTPS を探したとき、証明書を提示したポートがありませんでした。</td><td>HTTPS ポートを確認するか、<span class="ui">HTTPS を使用</span>をオフにしてデバイスを追加します。詳しくは<a class="xref" href="#add-https">「HTTPS でデバイスを追加する」</a>を参照してください。</td></tr>
+      <tr><td><span class="ui">このデバイスは通常の HTTP で応答しなかったため、HTTPS はオンのままです。</span></td><td>HTTPS をオフにしようとしましたが、デバイスで HTTP がオフになっているなどの理由で、デバイスが通常の HTTP で応答しません。</td><td>先にデバイスで HTTP をオンにするか、HTTPS をオンのままにします。詳しくは<a class="xref" href="#devices-https">「保存したデバイスの HTTPS」</a>を参照してください。</td></tr>
       <tr><td><span class="ui">このデバイスの保存済みパスワードを読み込めませんでした。</span></td><td>この iPhone または iPad に保存されているパスワードを読み取れませんでした。</td><td><span class="ui">認証情報を編集</span>でパスワードをもう一度入力します。詳しくは<a class="xref" href="#devices-credentials">「デバイスのユーザー名とパスワードの変更」</a>を参照してください。</td></tr>
       <tr><td><span class="ui">このアドレスの別のデバイスが、すでにそのユーザー名を使用しています。</span></td><td><span class="ui">認証情報を編集</span>で入力したユーザー名が、同じアドレスと HTTP ポートを持つ、保存済みの別のデバイスと一致しています。</td><td>別のユーザー名を使うか、重複しているデバイスを削除します。</td></tr>
       <tr><td><span class="ui">パスワードを安全に保存できませんでした。もう一度お試しください。</span></td><td>新しいパスワードをこの端末に保存できませんでした。以前のパスワードは保持されています。</td><td>もう一度試します。</td></tr>
@@ -4558,7 +4649,11 @@ Content-Type: application/json
   </details>
   <details class="faq">
     <summary>HTTPS のみを受け付けるデバイスは追加できますか。</summary>
-    <p>いいえ。Cam Hub は、プレーンな HTTP でデバイスを制御します。HTTP がオフになっているデバイスは追加できません。ネットワークストレージデバイスでは、HTTPS ではなく HTTP の Web インターフェースのポートを入力します。詳しくは<a class="xref" href="#brands-requirements">「要件と制限」</a>を参照してください。</p>
+    <p>はい。デバイス追加フォームで<span class="path"><span class="ui">詳細</span> › <span class="ui">HTTPS を使用</span></span>をオンにすると、Cam Hub は HTTPS でデバイスを追加し、デバイスが提示した証明書を信頼します。対象は、<span class="ui">自動判別</span>または<span class="ui">ONVIF</span>で接続するデバイスです。追加済みのデバイスは、デバイスのページで切り替えます。詳しくは<a class="xref" href="#add-https">「HTTPS でデバイスを追加する」</a>と<a class="xref" href="#devices-https">「保存したデバイスの HTTPS」</a>を参照してください。</p>
+  </details>
+  <details class="faq">
+    <summary>新しい iPhone、iPad、Mac に移行した後、Cam Hub でパスワードの入力を再び求められるのはなぜですか。</summary>
+    <p>パスワードが、デバイスの一覧と一緒に移行されなかったためです。すべてのパスワードを含む Cam Hub の iCloud バックアップを復元するか、各デバイスのページの<span class="ui">パスワードを入力</span>で、もう一度入力します。詳しくは<a class="xref" href="#devices-password-missing">「パスワードが保存されていないデバイス」</a>を参照してください。</p>
   </details>
   <details class="faq">
     <summary>保存したデバイスのアドレスやパスワードはどのように変更しますか。</summary>
@@ -4651,6 +4746,7 @@ Content-Type: application/json
       <tr><th scope="row">音声（聞くだけ）</th><td>対応時のみ</td><td>対応時のみ</td><td>対応時のみ</td><td>対応時のみ</td><td>対応時のみ</td><td>対応時のみ</td></tr>
       <tr><th scope="row">カメラを通したトーク</th><td>対応時のみ</td><td>いいえ</td><td>いいえ</td><td>いいえ</td><td>いいえ</td><td>いいえ</td></tr>
       <tr><th scope="row">ディスクの状態</th><td>はい</td><td>はい</td><td>設定時のみ</td><td>いいえ</td><td>いいえ</td><td>いいえ</td></tr>
+      <tr><th scope="row">HTTPS</th><td>対応時のみ</td><td>対応時のみ</td><td>対応時のみ</td><td>いいえ</td><td>対応時のみ</td><td>いいえ</td></tr>
       <tr><th scope="row">チャンネル一覧</th><td>レコーダーのみ</td><td>レコーダーのみ</td><td>はい</td><td>はい</td><td>はい</td><td>入力した数</td></tr>
     </tbody>
   </table></div>
@@ -4668,8 +4764,9 @@ Content-Type: application/json
     <li><b>トーク</b>：<code>G.711</code> の双方向音声チャンネルを報告する Hikvision の単体カメラで提供されます。レコーダーのチャンネルでは提供されません。詳しくは<a class="xref" href="#single-talk">「双方向のトーク」</a>を参照してください。</li>
     <li><b>ディスクの状態</b>：Hikvision は各ディスクの状態を報告し、デバイスが提供する場合は S.M.A.R.T. の詳細も報告します。Dahua は、状態、容量、可能な場合は温度を報告しますが、S.M.A.R.T. の詳細は報告しません。Synology NAS は SNMP で読み取ります。SNMP は、NAS でオンにし、Cam Hub で設定する必要があります。詳しくは<a class="xref" href="#devices-health">「ディスクの状態」</a>を参照してください。</li>
     <li><b>チャンネル一覧</b>：Hikvision と Dahua は、レコーダーのチャンネルを名前と信号の状態とともに一覧にし、レコーダーでないデバイスにはチャンネルが 1 つあります。Synology Surveillance Station は、システムのすべてのカメラを、信号の状態とともにチャンネルとして一覧にします。Xiongmai のデバイスは、チャンネル数と、チャンネルに付けられた名前を報告しますが、信号の状態は報告しません。ONVIF は、独立した映像ソースごとに 1 つのチャンネルを一覧にし、信号の状態は報告しません。RTSP と一覧のブランドには一覧がありません。カメラの数（1 から 64）を入力し、すべてのチャンネルがオンラインとして表示されます。</li>
+    <li><b>HTTPS</b>：デバイスが Web インターフェースで HTTPS を提供している場合に使用でき、デバイスごとにオンにします。<a class="xref" href="#add-https">「HTTPS でデバイスを追加する」</a>と<a class="xref" href="#devices-https">「保存したデバイスの HTTPS」</a>を参照してください。Xiongmai の独自のプロトコルと通常の RTSP には、HTTPS で保護する Web インターフェースがありません。RTSP の映像は、HTTPS では暗号化されません。</li>
   </ul>
-  <p>どの方法でも提供されないもの：フォーカスとアイリスの操作、録画の保存や書き出し、クラウドアカウントへのサインイン、HTTPS での接続。</p>
+  <p>どの方法でも提供されないもの：フォーカスとアイリスの操作、録画の保存や書き出し、クラウドアカウントへのサインイン。</p>
 
   <h3 id="brands-profiles">一覧のブランド</h3>
   <p><span class="ui">ブランド</span>セクションのブランドは、プレーンな RTSP で接続します。ブランドを選ぶと、そのブランド名のセクションが追加され、<span class="ui">カメラ</span>欄（1 から 64）とパスの欄が表示されます。<code>1</code> の場合、デバイスはブランド名の付いたカメラとして追加されます。それより大きい数の場合は、チャンネル <code>CH1</code> から <code>CHn</code> を持つレコーダーとして追加され、プランではレコーダーとして数えられます。パス欄が空の場合、Cam Hub は公開されているパスを順に試し、デバイスが応答したものを採用します。入力が必要なのは、特定のパスを指定する場合だけです。選択肢の RTSP も、多くのカメラが使うパスで同じように動作します。</p>
@@ -4708,7 +4805,7 @@ Content-Type: application/json
   <div class="table-wrap"><table>
     <thead><tr><th>項目</th><th>要件または制限</th></tr></thead>
     <tbody>
-      <tr><td>プレーンな HTTP のみ</td><td>Cam Hub は、デバイスにプレーンな HTTP で接続します。Xiongmai のデバイスには、代わりにその独自のプロトコルで接続します。映像は RTSP で取得し、まず TCP を使い、デバイスが TCP を拒否した場合は UDP を使います。HTTPS と自己署名証明書は、デバイスに対してはサポートされません。HTTP がオフになっているデバイスや、HTTPS しか受け付けないデバイスは追加できません。ネットワークストレージデバイスでは、HTTPS のインターフェースのポートではなく、HTTP の Web インターフェースのポートを入力します。例：<code>5000</code></td></tr>
+      <tr><td>HTTP と HTTPS</td><td>Cam Hub は、デバイスにプレーンな HTTP で接続し、デバイスで HTTPS をオンにした場合は HTTPS で接続します。Xiongmai のデバイスには、代わりにその独自のプロトコルで接続します。映像は RTSP で取得し、まず TCP を使い、デバイスが TCP を拒否した場合は UDP を使います。映像は HTTPS では暗号化されません。HTTPS では、Cam Hub は、HTTPS をオンにしたときにデバイスが提示した証明書（自己署名証明書を含む）か、そのアドレス向けに公的な認証局が発行した証明書を信頼します。HTTP がオフになっているデバイスや、HTTPS しか受け付けないデバイスは、<span class="ui">HTTPS を使用</span>をオンにして追加します。<a class="xref" href="#add-https">「HTTPS でデバイスを追加する」</a>を参照してください。ネットワークストレージデバイスでは、<span class="ui">HTTP ポート</span>に HTTP の Web インターフェースのポート（例：<code>5000</code>）を入力します。<span class="ui">HTTPS を使用</span>をオンにすると、Cam Hub は HTTPS のポート <code>5001</code> も自動で見つけます。</td></tr>
       <tr><td>ONVIF をオンにする</td><td><span class="ui">ONVIF</span>を選ぶ場合は、デバイスで ONVIF をオンにする必要があります。Cam Hub は、<span class="ui">HTTP ポート</span>に入力したポートの <code>/onvif/device_service</code>、<code>/onvif/service</code>、<code>/onvif/device</code> でサービスを探します。工場出荷時の設定で ONVIF がオフになっているデバイスもあります。</td></tr>
       <tr><td>RTSP をオンにする</td><td>映像は RTSP で取得します。自動判別では、Cam Hub が RTSP ポートを見つけます。それ以外では、<span class="ui">RTSP ポート</span>に入力したポート（通常は <code>554</code>）を使います。ネットワークストレージデバイスは、独自のストリーミングパスを先に使用することがあります。デバイスに RTSP 認証の設定がある場合は、<code>Digest</code> を選択します。</td></tr>
       <tr><td>専用の ONVIF ユーザー</td><td>Web インターフェースのユーザーとは別の ONVIF ユーザーの一覧を持ち、管理者アカウントでのサインインが ONVIF では使えないデバイスがあります。その一覧にユーザーを作成します。一覧のうち 5 つのブランドは、RTSP を使えるようにするために専用のカメラアカウントまたは ONVIF アカウントが必要です：<span class="ui" data-ui="value">Axis</span>、<span class="ui" data-ui="value">TP-Link (Tapo / VIGI)</span>、<span class="ui" data-ui="value">ANNKE</span>、<span class="ui" data-ui="value">MOBOTIX</span>、<span class="ui" data-ui="value">2N</span>。</td></tr>
@@ -4756,7 +4853,7 @@ Content-Type: application/json
   </ul>
   <div class="callout warn">
     <strong class="t">追加できないデバイス</strong>
-    <p>メーカーのクラウドアプリ経由でしか動作しない、ローカルネットワークでの接続を提供しない、または HTTPS しか受け付けないデバイスは、Cam Hub に追加できません。</p>
+    <p>メーカーのクラウドアプリ経由でしか動作しないデバイスや、ローカルネットワークでの接続を提供しないデバイスは、Cam Hub に追加できません。HTTPS しか受け付けないデバイスは、<span class="ui">HTTPS を使用</span>をオンにして追加します。<a class="xref" href="#add-https">「HTTPS でデバイスを追加する」</a>を参照してください。</p>
   </div>
 
   <h3 id="brands-activate">新しいデバイスのアクティベート</h3>

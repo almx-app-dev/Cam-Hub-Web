@@ -123,6 +123,8 @@
       <tr><td><span class="path"><span class="ui">高级</span> › <span class="ui">连接方式</span></span></td><td><span class="ui">自动检测</span>、<span class="ui">ONVIF</span>、RTSP、某一设备系列的自有协议，或列表中的品牌。如何选择，参见<a class="xref" href="#add-methods">“选择连接方式”</a>。</td><td><span class="ui">自动检测</span></td></tr>
       <tr><td><span class="path"><span class="ui">高级</span> › <span class="ui">HTTP 端口</span></span></td><td>设备控制接口的端口。使用<span class="ui">自动检测</span>时，Cam Hub 会自行查找开放的端口，并优先尝试此处输入的端口。使用 <span class="ui">ONVIF</span> 时，此处必须填写设备的 ONVIF 服务端口，例如部分设备使用 <code>2020</code> 或 <code>8899</code>。</td><td><code>80</code></td></tr>
       <tr><td><span class="path"><span class="ui">高级</span> › <span class="ui">RTSP 端口</span></span></td><td>视频流的端口。<span class="ui">自动检测</span>会优先尝试此处输入的端口。选择 RTSP 端口不是 <code>554</code> 的品牌时，只要此处仍是原来的默认值，就会自动填入该品牌的端口。</td><td><code>554</code></td></tr>
+      <tr><td><span class="path"><span class="ui">高级</span> › <span class="ui">使用 HTTPS</span></span></td><td>选择<span class="ui">自动检测</span>和 <span class="ui">ONVIF</span> 时提供。仅当设备的网页使用 HTTPS 时才开启：开启后，Cam Hub 会在不登录的情况下查找该地址上的 HTTPS，通过 HTTPS 添加设备，并信任设备此时出示的证书。参见<a class="xref" href="#add-https">“通过 HTTPS 添加设备”</a>。</td><td>关</td></tr>
+      <tr><td><span class="path"><span class="ui">高级</span> › <span class="ui">HTTPS 端口</span></span></td><td>开启<span class="ui">使用 HTTPS</span>后显示。保持 <code>443</code> 时，Cam Hub 还会在 <code>5001</code> 和 <code>8443</code> 上查找；填写其他端口时，只使用该端口。</td><td><code>443</code></td></tr>
       <tr><td><span class="path"><span class="ui">高级</span> › <span class="ui">设备端口</span></span></td><td>选择某一设备系列的自有协议时，取代上面两个端口显示：设备以该协议响应的端口。</td><td><code>34567</code></td></tr>
     </tbody>
   </table></div>
@@ -186,8 +188,8 @@
   <ol class="steps">
     <li class="step">
       <p>在添加设备表单中，点击<span class="ui">高级</span>。</p>
-      <p class="check"><b class="check-label">确认：</b>该部分展开，显示<span class="ui">连接方式</span>、<span class="ui">HTTP 端口</span>和 <span class="ui">RTSP 端口</span>。</p>
-      <figure class="phone"><img src="guide/img/add-advanced.jpg" alt="展开“高级”后的添加设备表单：“连接方式”为“自动检测”，“HTTP 端口”为 80，“RTSP 端口”为 554，以及关于自动检测的说明" loading="lazy" decoding="async" width="900" height="1947"><figcaption>展开后的“高级”</figcaption></figure>
+      <p class="check"><b class="check-label">确认：</b>该部分展开，显示<span class="ui">连接方式</span>、<span class="ui">HTTP 端口</span>、<span class="ui">RTSP 端口</span>以及<span class="ui">使用 HTTPS</span>开关。</p>
+      <figure class="phone"><img src="guide/img/add-advanced.jpg" alt="展开“高级”后的添加设备表单：“连接方式”为“自动检测”，“HTTP 端口”为 80，“RTSP 端口”为 554，“使用 HTTPS”处于关闭状态，以及关于自动检测的说明" loading="lazy" decoding="async" width="900" height="1947"><figcaption>展开后的“高级”</figcaption></figure>
     </li>
     <li class="step">
       <p>点击<span class="ui">连接方式</span>。</p>
@@ -200,7 +202,7 @@
     </li>
     <li class="step">
       <p>点击连接方式。</p>
-      <p class="check"><b class="check-label">确认：</b>表单在<span class="ui">连接方式</span>一行显示所选方式，并在该部分下方显示说明。选择列表中的品牌或 RTSP 时，会增加一个包含<span class="ui">摄像头</span>和路径输入框的部分；选择某一设备系列的自有协议时，两个端口会被<span class="ui">设备端口</span>取代。</p>
+      <p class="check"><b class="check-label">确认：</b>表单在<span class="ui">连接方式</span>一行显示所选方式，并在该部分下方显示说明。选择列表中的品牌或 RTSP 时，会增加一个包含<span class="ui">摄像头</span>和路径输入框的部分；选择某一设备系列的自有协议时，两个端口会被<span class="ui">设备端口</span>取代。只有选择<span class="ui">自动检测</span>和 <span class="ui">ONVIF</span> 时才提供<span class="ui">使用 HTTPS</span>。</p>
     </li>
     <li class="step">
       <p>设备不使用默认端口时，修改端口输入框。</p>
@@ -226,14 +228,42 @@
     <p>这两种连接方式没有录像回放、PTZ 控制和快照。设备提供该品牌的第二路视频流时，SD 使用这一路；否则 SD 与 HD 显示同一路视频流。</p>
   </div>
   <div class="callout note">
-    <strong class="t">设备控制仅使用 HTTP</strong>
-    <p>设备控制（识别设备、读取通道列表、搜索录像）使用 <code>http://address:port</code>；具有自有协议的设备系列改用该协议。目前无法添加只接受 HTTPS 的设备。</p>
+    <strong class="t">未开启 HTTPS 时，设备控制使用 HTTP</strong>
+    <p>设备控制（识别设备、读取通道列表、搜索录像）使用 <code>http://address:port</code>，为设备开启 HTTPS 后则使用 HTTPS；具有自有协议的设备系列改用该协议。只接受 HTTPS 的设备，可通过<span class="ui">使用 HTTPS</span>添加，参见<a class="xref" href="#add-https">“通过 HTTPS 添加设备”</a>。</p>
   </div>
   <div class="callout note">
     <strong class="t">RTSP 和列表中的品牌的失败提示有所不同</strong>
     <p>设备无法连接或超时时，只显示<span class="ui">出错了。请重试。</span>使用这两种连接方式时，<span class="ui">不支持的设备。</span>表示所有候选路径都没有返回视频流。常见原因是 RTSP 端口有误，或设备上的视频流已关闭。</p>
   </div>
   <p>无法确定设备能否使用时，点击表单中的<span class="ui">兼容性参考</span>，查看支持和不支持的设备。表单从已指明设备品牌的扫描结果打开且地址未被更改时，不显示该入口，也不显示<span class="ui">添加示例摄像头</span>。</p>
+
+  <h3 id="add-https">通过 HTTPS 添加设备</h3>
+  <p>网页使用 HTTPS 的设备可以通过 HTTPS 添加，即使设备上的普通 HTTP 已关闭也可以。HTTPS 默认关闭，需要手动开启，并且只在选择<span class="ui">自动检测</span>和 <span class="ui">ONVIF</span> 时提供：某一设备系列的自有协议、RTSP 和列表中的品牌都没有可供 HTTPS 保护的网页界面。已添加的设备则在其设备页上切换到 HTTPS，参见<a class="xref" href="#devices-https">“已保存设备的 HTTPS”</a>。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>在添加设备表单中输入地址、用户名和密码，然后点击<span class="ui">高级</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>该部分显示<span class="ui">使用 HTTPS</span>开关，处于关闭状态。</p>
+    </li>
+    <li class="step">
+      <p>开启<span class="ui">使用 HTTPS</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>出现 <span class="ui">HTTPS 端口</span>输入框，其中为 <code>443</code>；该部分下方显示关于此选项的说明。</p>
+      <figure class="phone"><img src="guide/img/add-https.jpg" alt="展开“高级”并开启“使用 HTTPS”的添加设备表单：“HTTPS 端口”输入框为 443，该部分下方是关于 HTTPS 的说明" loading="lazy" decoding="async" width="900" height="1947"><figcaption>已开启“使用 HTTPS”</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>设备使用其他 HTTPS 端口时，在 <span class="ui">HTTPS 端口</span>中输入该端口。</p>
+      <p class="check"><b class="check-label">确认：</b>输入框显示该端口。保持 <code>443</code> 时，Cam Hub 还会在 <code>5001</code> 和 <code>8443</code> 上查找；填写其他端口时，只使用该端口。</p>
+    </li>
+    <li class="step">
+      <p>点击右上角的<span class="ui">添加</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>表单显示<span class="ui">正在连接设备…</span>。连接成功后，表单自动关闭，新设备出现在设备列表中。其设备页的信息卡片中显示 <span class="ui">HTTPS</span> 一行及端口。</p>
+    </li>
+  </ol>
+  <ul>
+    <li>说明文字为<span class="ui">仅适用于网页使用 HTTPS 的设备；如果不确定，请保持关闭。Cam Hub 会在此端口查找 HTTPS（保持 443 时，也会尝试 5001 和 8443），并信任设备当前出示的证书。之后可以在设备页面的“HTTPS”中查看。</span>开关开启期间，即使折叠<span class="ui">高级</span>，该说明也会一直显示。</li>
+    <li>查找 HTTPS 时不发送用户名和密码：Cam Hub 只检查哪些端口出示证书。没有任何端口出示证书时，表单显示<span class="ui">这台设备刚才没有通过 HTTPS 响应。</span>有多个端口出示证书时，会依次尝试，因此即使其中某个端口被转发到另一台设备，尝试也不会就此结束。</li>
+    <li>Cam Hub 信任的是添加时设备出示的证书。之后可以把它与设备自身网页上的证书进行核对，参见<a class="xref" href="#devices-https">“已保存设备的 HTTPS”</a>。</li>
+    <li>HTTPS 加密的是对设备的控制。通过 RTSP 获取的视频不会因此加密。</li>
+  </ul>
 
   <h3 id="add-failed">添加失败时：检查清单</h3>
   <p>添加失败时，表单用红色显示错误信息。使用<span class="ui">自动检测</span>时，其下方列出找到的开放端口。再往下，表单列出<span class="ui">请先检查这些</span>。列表的顺序随失败类型而定，最可能的原因排在最前面。从上到下逐项检查，然后再次点击<span class="ui">添加</span>。</p>
@@ -277,6 +307,14 @@
         <td><ol>
           <li>等待一分钟，再试一次。</li>
           <li>仍被拒绝时，可能是错误尝试次数过多，账号被暂时锁定，通常约 30 分钟。请等待，然后用正确的密码只尝试一次。</li>
+        </ol></td>
+      </tr>
+      <tr>
+        <td><span class="ui">这台设备刚才没有通过 HTTPS 响应。</span></td>
+        <td><ol>
+          <li>在浏览器中用以 <code>https://</code> 开头的地址打开设备的网页，确认设备是否使用 HTTPS 以及使用哪个端口。</li>
+          <li>在 <span class="ui">HTTPS 端口</span>中输入该端口。保持 <code>443</code> 时，只检查 <code>443</code>、<code>5001</code> 和 <code>8443</code>。</li>
+          <li>关闭<span class="ui">使用 HTTPS</span>，通过普通 HTTP 添加设备。</li>
         </ol></td>
       </tr>
       <tr>
@@ -355,11 +393,11 @@
   </ul>
 
   <h4>登录行为</h4>
-  <p>收集期间，需要登录的请求逐个发送，直到设备接受或拒绝凭据。设备拒绝凭据后，报告不再发送任何登录请求。导致生成报告的那次失败尝试本身就是登录被拒绝（<span class="ui">用户名或密码错误。</span>）时，报告根本不会尝试登录，以免账号被设备锁定。收集期间只发送只读请求，不会更改设备上的任何设置。</p>
+  <p>收集期间，需要登录的请求逐个发送，直到设备接受或拒绝凭据。设备拒绝凭据后，报告不再发送任何登录请求。导致生成报告的那次失败尝试本身就是登录被拒绝（<span class="ui">用户名或密码错误。</span>）时，报告根本不会尝试登录，以免账号被设备锁定。开启了<span class="ui">使用 HTTPS</span>时，报告会先在不登录的情况下查找设备的证书，再用该证书通过 HTTPS 重复尝试；设备没有出示证书时，报告不会登录。收集期间只发送只读请求，不会更改设备上的任何设置。</p>
 
   <h4>报告包含和不包含的内容</h4>
   <ul>
-    <li><b>包含</b>：App 和系统的版本、手机的型号标识、语言设置、所选的连接方式、设备地址（私有网络地址的最后一段以 <code>x</code> 遮蔽；公网地址只给出其类别）、端口、失败尝试的错误代码、检测到的品牌和型号、开放的端口、设备响应的标头和结构（已遮蔽）、视频流的编码和参数、时钟和时区的差异，以及已执行的步骤及其结果。</li>
+    <li><b>包含</b>：App 和系统的版本、手机的型号标识、语言设置、所选的连接方式（开启<span class="ui">使用 HTTPS</span>时包括 HTTPS 端口）、设备地址（私有网络地址的最后一段以 <code>x</code> 遮蔽；公网地址只给出其类别）、端口、失败尝试的错误代码、检测到的品牌和型号、开放的端口、设备响应的标头和结构（已遮蔽）、视频流的编码和参数、时钟和时区的差异，以及已执行的步骤及其结果。</li>
     <li><b>不包含</b>：密码、用户名、为设备设置的名称、公网地址或动态域名、网络适配器的硬件地址、电子邮件地址、令牌及其他可识别身份的数据、图片和视频。较长的序列号只保留最后四个字符。</li>
     <li>遮蔽是自动进行的，每个被遮蔽的项目都会留下标记。发送前仍应检阅报告，任何项目都可以关闭。</li>
   </ul>
@@ -500,14 +538,15 @@
   <p>设备页顶部是一张信息卡片，支持的设备在其下方有<span class="ui">磁盘健康</span>一行，再往下是标题<span class="ui">摄像头</span>，以缩略图显示设备的各个通道。页面标题为设备名称。缩略图按屏幕能容纳的列数排列。</p>
   <figure class="phone"><img src="guide/img/device-detail.jpg" alt="录像机的设备页：顶部是信息卡片，下方是标题“摄像头”和三个通道的实时缩略图，右上角有三个按钮" loading="lazy" decoding="async" width="900" height="1956"><figcaption>设备页</figcaption></figure>
   <ul>
-    <li><b>信息卡片</b>：显示设备的名称和类型，以及<span class="ui">型号</span>、<span class="ui">IP 地址</span>、<span class="ui">端口</span>（HTTP 端口）、<span class="ui">序列号</span>、<span class="ui">固件</span>和<span class="ui">摄像头</span>（通道数量）各行。序列号和固件仅在设备上报时才会显示。</li>
+    <li><b>信息卡片</b>：显示设备的名称和类型，以及<span class="ui">型号</span>、<span class="ui">IP 地址</span>、<span class="ui">端口</span>（HTTP 端口）、<span class="ui">HTTPS</span>（HTTPS 端口，仅在开启 HTTPS 时显示）、<span class="ui">序列号</span>、<span class="ui">固件</span>和<span class="ui">摄像头</span>（通道数量）各行。序列号和固件仅在设备上报时才会显示。</li>
     <li><b><span class="ui">磁盘健康</span></b>：打开设备的磁盘报告，参见<a class="xref" href="#devices-health">“磁盘健康”</a>。该行右侧的橙色三角形或红色符号表示上一次读数中最差的磁盘判定结果。</li>
     <li><b>缩略图</b>：录像机的每个通道显示一个缩略图；单独的摄像头只有一个通道，显示一个缩略图。每个缩略图的左下角显示通道的编号和名称。缩略图使用 SD 还是 HD，取决于<span class="path"><span class="ui">设置</span> › <span class="ui">默认画质</span> › <span class="ui">多个摄像头</span></span>（未更改时为 SD）。在“设置”中所做的更改会立即作用于此页；此页自身没有 SD/HD 按钮。</li>
     <li><b>刷新</b>：打开设备页时（同一台设备每分钟最多一次），以及每次下拉页面时，Cam Hub 会从设备读取通道列表。名称和在线状态会更新，设备新增的通道会出现，设备移除的通道会消失。新通道仅在套餐允许时才会启用，否则显示为<span class="ui">已停用</span>。在 Cam Hub 中设置的名称会保留。设备没有响应，或返回的列表看起来不完整（一个通道都没有，或本应有多个通道却只有一个）时，列表保持原样，也不显示任何提示。</li>
     <li><b>登录被拒绝</b>：刷新时设备拒绝已保存的用户名或密码，缩略图上方会出现提示<span class="ui">用户名或密码错误。</span>和<span class="ui">编辑凭据</span>按钮，参见<a class="xref" href="#devices-credentials">“更改设备的用户名和密码”</a>。</li>
+    <li><b>没有保存密码</b>：这台 iPhone 或 iPad 上没有保存该设备的密码时，缩略图上方会出现一条提示，带有<span class="ui">重新输入密码</span>和<span class="ui">从 iCloud 恢复</span>按钮，参见<a class="xref" href="#devices-password-missing">“没有保存密码的设备”</a>。</li>
     <li><b>没有通道</b>：设备没有上报任何通道时，页面显示<span class="ui">未找到摄像头。</span>和<span class="ui">刷新</span>按钮，点击该按钮会重新读取通道列表。</li>
   </ul>
-  <p>右上角的三个按钮从左到右依次为：黑边按钮、<span class="ui">全屏墙</span>和铅笔按钮。对于用用户名和密码登录的设备，铅笔按钮（<span class="ui">编辑设备</span>）会打开一个菜单，其中有<span class="ui">重命名</span>和<span class="ui">编辑凭据</span>。对于示例摄像头，铅笔按钮本身就是<span class="ui">重命名</span>按钮。</p>
+  <p>右上角的三个按钮从左到右依次为：黑边按钮、<span class="ui">全屏墙</span>和铅笔按钮。对于用用户名和密码登录的设备，铅笔按钮（<span class="ui">编辑设备</span>）会打开一个菜单，其中有<span class="ui">重命名</span>和<span class="ui">编辑凭据</span>；设备提供 HTTPS 或已开启 HTTPS 时，还有 <span class="ui">HTTPS</span>，参见<a class="xref" href="#devices-https">“已保存设备的 HTTPS”</a>。对于示例摄像头，铅笔按钮本身就是<span class="ui">重命名</span>按钮。</p>
   <div class="callout note">
     <strong class="t">像书一样持握 iPhone Duo</strong>
     <p>iPhone Duo 半折叠、折痕从上到下贯穿屏幕时，设备页在一半屏幕上显示缩略图，在另一半显示某个摄像头的页面。点击缩略图会在另一半显示该摄像头，而不是打开新页面；起初显示的是第一个能显示画面的摄像头。参见<a class="xref" href="#single-duo">“iPhone Duo 折叠时的视图”</a>。</p>
@@ -525,7 +564,7 @@
   <ol class="steps">
     <li class="step">
       <p>点击设备页右上角的铅笔按钮。</p>
-      <p class="check"><b class="check-label">确认：</b>对于用用户名和密码登录的设备，会打开一个菜单，其中有<span class="ui">重命名</span>和<span class="ui">编辑凭据</span>。对于其他设备，会直接打开下一步中的对话框。</p>
+      <p class="check"><b class="check-label">确认：</b>对于用用户名和密码登录的设备，会打开一个菜单，其中有<span class="ui">重命名</span>、<span class="ui">编辑凭据</span>，以及在提供时出现的 <span class="ui">HTTPS</span>。对于其他设备，会直接打开下一步中的对话框。</p>
     </li>
     <li class="step">
       <p>显示菜单时，点击<span class="ui">重命名</span>。</p>
@@ -567,11 +606,11 @@
     <li class="step">
       <p>打开该设备的设备页。</p>
       <p class="check"><b class="check-label">确认：</b>显示设备页。上一次刷新被拒绝时，缩略图上方会出现提示<span class="ui">用户名或密码错误。</span>和<span class="ui">编辑凭据</span>按钮；该按钮打开的界面与第 3 步相同。</p>
-      <figure class="phone"><img src="guide/img/device-credentials-banner.jpg" alt="密码被拒绝的示例录像机的设备页：提示“用户名或密码错误。”和“编辑凭据”按钮，以及一个显示相同提示的缩略图" loading="lazy" decoding="async" width="900" height="1947"><figcaption>登录被拒绝后的提示</figcaption></figure>
+      <figure class="phone"><img src="guide/img/device-credentials-banner.jpg" alt="密码被拒绝的示例录像机的设备页：提示“用户名或密码错误。”和“编辑凭据”按钮，以及在通道名称上方显示相同提示的缩略图" loading="lazy" decoding="async" width="900" height="1947"><figcaption>登录被拒绝后的提示</figcaption></figure>
     </li>
     <li class="step">
       <p>点击右上角的铅笔按钮（<span class="ui">编辑设备</span>）。</p>
-      <p class="check"><b class="check-label">确认：</b>打开一个菜单，其中有<span class="ui">重命名</span>和<span class="ui">编辑凭据</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>打开一个菜单，其中有<span class="ui">重命名</span>和<span class="ui">编辑凭据</span>；对于提供 HTTPS 的设备，其后还有 <span class="ui">HTTPS</span>。</p>
       <figure class="phone"><img src="guide/img/device-edit-menu.jpg" alt="在设备页右上角打开的铅笔菜单，包含“重命名”和“编辑凭据”" loading="lazy" decoding="async" width="900" height="1947"><figcaption>铅笔菜单</figcaption></figure>
     </li>
     <li class="step">
@@ -597,6 +636,49 @@
     <strong class="t">每台设备只登录一次</strong>
     <p>许多录像机和 NAS 在几次登录失败后会锁定账号或 iPhone、iPad 的地址，这种锁定也会影响其他 App。因此，Cam Hub 验证新凭据时，只通过添加设备时所用的连接方式登录一次，而不会尝试多种连接方式。对大多数设备而言，墙上的缩略图也是整台设备只登录一次：设备拒绝登录时，该设备的所有缩略图会同时显示失败，Cam Hub 约一分钟后或回到前台时才会再次尝试相同的凭据。保存新凭据后会立即重新开始。</p>
   </div>
+
+  <h3 id="devices-password-missing">没有保存密码的设备</h3>
+  <p>Cam Hub 将每台设备的密码保存在 iPhone 或 iPad 的钥匙串中。iPhone 或 iPad 的内容迁移到新机时，密码可以一同迁移；Cam Hub 的 iCloud 备份和共享代码则始终包含密码（参见<a class="xref" href="#share-contents">“备份和代码包含的内容”</a>）。设备列表已迁移而密码没有随之迁移时（例如新 iPhone、iPad 或 Mac 在设置时没有带上旧机的钥匙串），会出现下面的状态。此时 Cam Hub 不会向设备发送任何内容：既不会用空密码登录，也不会报告密码错误。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>打开该设备的设备页。</p>
+      <p class="check"><b class="check-label">确认：</b>缩略图上方显示<span class="ui">此 iPhone、iPad 或 Mac 上没有保存这台设备的密码，换用新机后可能会出现这种情况。请重新输入，或从 iCloud 备份恢复。</span>以及<span class="ui">重新输入密码</span>和<span class="ui">从 iCloud 恢复</span>按钮。缩略图显示<span class="ui">没有保存密码，请到“设备”重新输入。</span></p>
+      <figure class="phone"><img src="guide/img/device-password-missing.jpg" alt="没有保存密码的示例录像机的设备页：带有“重新输入密码”和“从 iCloud 恢复”按钮的提示，以及显示“没有保存密码，请到‘设备’重新输入。”的缩略图" loading="lazy" decoding="async" width="900" height="1947"><figcaption>没有保存密码的设备</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>点击<span class="ui">重新输入密码</span>输入这台设备的密码，或点击<span class="ui">从 iCloud 恢复</span>从 iCloud 备份中恢复所有设备的密码。</p>
+      <p class="check"><b class="check-label">确认：</b><span class="ui">重新输入密码</span>打开<span class="ui">编辑凭据</span>界面，如<a class="xref" href="#devices-credentials">“更改设备的用户名和密码”</a>所述。<span class="ui">从 iCloud 恢复</span>打开<a class="xref" href="#share-restore">“从 iCloud 恢复”</a>中所述的页面。</p>
+    </li>
+  </ol>
+  <p>密码保存或恢复后，提示消失，缩略图重新连接。恢复会一次找回所有设备的密码；没有备份时，需要逐台设备输入。</p>
+
+  <h3 id="devices-https">已保存设备的 HTTPS</h3>
+  <p>网页界面提供 HTTPS 的设备，可以改用 HTTPS 代替普通 HTTP 进行控制。HTTPS 默认关闭，需要为设备单独开启。使用 HTTPS 时，Cam Hub 只接受开启 HTTPS 时所信任的证书，或公共证书颁发机构为设备地址签发的证书，因此这类证书自动续期后仍可正常连接。通过 RTSP 获取的视频不会因此设置而加密。</p>
+  <p>对于曾通过 HTTPS 响应的设备，以及已开启 HTTPS 的设备，铅笔菜单中提供 <span class="ui">HTTPS</span>。Cam Hub 检查时不登录设备，只确认是否有端口出示证书。检查结果会被记住：设备有响应时保留一周，没有响应时保留一天；下拉设备页会立即重新检查。通过某一设备系列的自有协议、RTSP 或列表中的品牌连接的设备不提供此项，示例摄像头也不提供。</p>
+  <h4>开启 HTTPS</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>在设备页上，点击右上角的铅笔按钮（<span class="ui">编辑设备</span>），然后点击 <span class="ui">HTTPS</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>打开 <span class="ui">HTTPS</span> 界面，其分区以设备名称为标题。Cam Hub 检查设备期间显示<span class="ui">正在检查 HTTPS…</span>；随后显示<span class="ui">端口</span>（设备响应的端口）和<span class="ui">证书（SHA-256）</span>（设备当前出示的证书的指纹，分四行显示）。</p>
+      <figure class="phone"><img src="guide/img/device-https.jpg" alt="示例录像机的 HTTPS 界面：“使用 HTTPS”开关、端口、分四行显示的证书指纹，以及该分区下方的说明" loading="lazy" decoding="async" width="900" height="1947"><figcaption>HTTPS 界面</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>尽可能将指纹与设备自身网页的证书进行核对，例如在浏览器的证书详细信息中查看。</p>
+      <p class="check"><b class="check-label">确认：</b>两个指纹完全相同。不一致时，通信中间可能插入了另一台设备；请保持 HTTPS 关闭。</p>
+    </li>
+    <li class="step">
+      <p>开启<span class="ui">使用 HTTPS</span>，然后点击<span class="ui">保存</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>Cam Hub 用已保存的凭据通过 HTTPS 登录设备并读取其通道列表，在此期间<span class="ui">保存</span>处显示转圈。成功时，界面关闭，缩略图重新连接，信息卡片中显示 <span class="ui">HTTPS</span> 一行及端口。不成功时，界面保持打开，不保存任何内容，并以红色显示原因。</p>
+    </li>
+  </ol>
+  <ul>
+    <li>设备没有通过 HTTPS 响应时，界面以橙色显示<span class="ui">这台设备刚才没有通过 HTTPS 响应。</span>此时开关无法开启。</li>
+    <li>该分区下方的说明为<span class="ui">除非您开启，否则保持关闭。开启 HTTPS 后，Cam Hub 与这台设备之间的通信会加密，并且只接受此处显示的证书，或公共证书颁发机构为此地址签发的证书（因此证书自动续期后仍可连接）；如有可能，请与设备自身网页上显示的证书核对。通过 RTSP 传输的视频不会因此设置而加密。</span></li>
+    <li><b>关闭 HTTPS</b>：关闭<span class="ui">使用 HTTPS</span>并点击<span class="ui">保存</span>。Cam Hub 会先确认设备能以已保存的凭据通过普通 HTTP 响应。不能时，不做任何更改，界面显示<span class="ui">这台设备没有通过普通 HTTP 响应，因此 HTTPS 保持开启。</span>关闭 HTTPS 会清除所信任的证书，因此再次开启时会重新检查证书。</li>
+    <li><b>证书已更改</b>：设备出示的证书与所信任的证书不同，且不是公共证书颁发机构为该地址签发的证书时，Cam Hub 不会连接，缩略图显示<span class="ui">这台设备的安全证书已更改。请在设备编辑菜单的“HTTPS”中检查。</span>此时 HTTPS 界面显示新的指纹，并附有<span class="ui">这台设备当前出示的证书与开启 HTTPS 时信任的证书不同。只有在您知道它为何改变时（例如设备重置后），才点击“保存”信任它。</span>点击<span class="ui">保存</span>后，Cam Hub 会进行与开启 HTTPS 时相同的检查，然后信任新证书。</li>
+    <li>设备在另一个 HTTPS 端口上以相同的证书响应时，界面显示新端口，<span class="ui">保存</span>会直接保存该端口，不显示警告。</li>
+    <li>HTTPS 设置连同其端口和所信任的证书，会随 iCloud 备份和共享代码一起转移，参见<a class="xref" href="#share-contents">“备份和代码包含的内容”</a>。</li>
+  </ul>
 
   <h3 id="devices-health">磁盘健康</h3>
   <p><span class="ui">磁盘健康</span>报告录像机或 NAS 的磁盘状态：每块磁盘是否健康、其温度以及硬盘自身的 S.M.A.R.T. 数据，以便在录像丢失之前更换即将故障的磁盘。Cam Hub 只读取这些信息，不会更改设备上的任何内容。</p>
@@ -677,7 +759,7 @@
       <tr><td><span class="ui">已停用</span></td><td>通道已停用。它不传输视频，也不占用套餐名额。</td><td>出现一个带通道名称的对话框，提供<span class="ui">启用</span>和<span class="ui">取消</span>，参见<a class="xref" href="#devices-plan">“套餐上限与启用通道”</a>。</td></tr>
       <tr><td><span class="ui">不在您的套餐内</span>，带锁</td><td>通道已启用，但套餐未涵盖它。</td><td>打开套餐界面，参见<a class="xref" href="#plans">第 11 章“套餐与额度”</a>。</td></tr>
       <tr><td>实时画面</td><td>通道已启用、在套餐范围内、未暂停，且设备报告有信号。连接过程中显示转圈。</td><td>打开单摄像头视图。</td></tr>
-      <tr><td>深色背景上的失败提示</td><td>通道本身没有问题，但视频流无法打开。Cam Hub 会自动重试，每次尝试之间的间隔逐渐加长。用户名或密码被拒绝后，Cam Hub 最多再尝试一次便停止，以免设备锁定账号；该提示会一直显示，直到再次打开此页或 Cam Hub 回到前台。</td><td>打开单摄像头视图。</td></tr>
+      <tr><td>深色背景上的失败提示</td><td>通道本身没有问题，但视频流无法打开。Cam Hub 会自动重试，每次尝试之间的间隔逐渐加长。用户名或密码被拒绝后，Cam Hub 最多再尝试一次便停止，以免设备锁定账号；该提示会一直显示，直到再次打开此页或 Cam Hub 回到前台。没有保存密码时，提示为<span class="ui">没有保存密码，请到“设备”重新输入。</span>此时 Cam Hub 不会联系设备，参见<a class="xref" href="#devices-password-missing">“没有保存密码的设备”</a>。提示位于通道编号和名称的上方；缩略图较小时会省略符号，以便完整显示提示。</td><td>打开单摄像头视图。</td></tr>
       <tr><td>灰色，带划掉的摄像头图标和<span class="ui">无信号</span></td><td>设备报告该通道没有信号。</td><td>无反应。</td></tr>
     </tbody>
   </table></div>
@@ -1402,6 +1484,8 @@
       <tr><td>带警告符号和<span class="ui">重试</span>的提示</td><td>视频流无法打开。提示会写明原因，例如设备无法连接；措辞与添加设备时相同（参见<a class="xref" href="#add-failed">“添加失败时：检查清单”</a>）。点击<span class="ui">重试</span>再次尝试。</td></tr>
       <tr><td><span class="ui">用户名或密码错误。</span>和<span class="ui">重试</span></td><td>设备拒绝了账号。Cam Hub 对同一设备的所有摄像头只登录一次；被拒绝后，约一分钟内不会再次登录该设备，以免账号被锁定，因此在这一分钟内点击<span class="ui">重试</span>会显示同样的提示。在设备上更改密码后，请用<span class="ui">编辑凭据</span>输入新密码，参见<a class="xref" href="#devices-credentials">“更改设备的用户名和密码”</a>。</td></tr>
       <tr><td><span class="ui">短时间内请求过于频繁，请稍等一分钟后重试。</span>和<span class="ui">重试</span></td><td>短时间内发往设备或其服务的请求过多。这种情况下 Cam Hub 不会自动重试。等待一分钟，然后点击<span class="ui">重试</span>。</td></tr>
+      <tr><td><span class="ui">没有保存密码，请到“设备”重新输入。</span>和<span class="ui">重试</span></td><td>这台 iPhone 或 iPad 上没有保存该设备的密码，例如换用新机之后。不会向设备发送任何内容。请输入密码，或恢复 iCloud 备份，参见<a class="xref" href="#devices-password-missing">“没有保存密码的设备”</a>。</td></tr>
+      <tr><td><span class="ui">这台设备的安全证书已更改。请在设备编辑菜单的“HTTPS”中检查。</span>和<span class="ui">重试</span></td><td>该设备已开启 HTTPS，而它出示的证书与所信任的证书不同。检查证书之前，Cam Hub 不会连接，参见<a class="xref" href="#devices-https">“已保存设备的 HTTPS”</a>。</td></tr>
       <tr><td><span class="ui">无法加载此设备已保存的密码。</span>和<span class="ui">重试</span></td><td>无法读取已保存的密码。请在设备页上用<span class="ui">编辑凭据</span>重新输入，参见<a class="xref" href="#devices-credentials">“更改设备的用户名和密码”</a>。</td></tr>
       <tr><td><span class="ui">此录像机对视频进行了加密，Cam Hub 无法通过其自有协议读取。请重新添加，并在“连接方式”中选择 ONVIF。</span></td><td>录像机通过其自有协议发送加密的视频。请以 ONVIF 作为连接方式重新添加该设备，参见<a class="xref" href="#add-methods">“选择连接方式”</a>。</td></tr>
       <tr><td><span class="ui">录像机没有播放这段录像，可能已被覆盖——请选择其他时间。</span></td><td>录像机拒绝播放该录像，例如录像已被覆盖。请在时间轴上选择其他时间。</td></tr>
@@ -2401,7 +2485,7 @@
       <p class="check"><b class="check-label">确认：</b>列表关闭，副本出现在所点击的图块中。</p>
     </li>
   </ol>
-  <p>副本独立于原图块，正如列表下方的说明所述：<span class="ui">副本独立设置：之后修改它，另一个页面保持不变。</span>复制的控制面板单独计入套餐，复制的图片会保存两份，从而增大备份。</p>
+  <p>副本独立于原图块，正如列表下方的说明所述：<span class="ui">副本独立设置：之后修改它，另一个页面保持不变。</span>复制的控制面板单独计入套餐。复制的图片会保存两份；另一个页面包含图片时，第二条说明会指出这一点：<span class="ui">复制的图片会保存两份，因此在 iCloud 备份的大小中也会计算两次。</span></p>
 
   <h3 id="lvm-canvases">iPhone Duo 上的两张画布</h3>
   <p>iPhone Duo 半折叠、折痕横贯屏幕时，LiveView Mix 可以在折痕处分成两张画布：折痕上方的上方画布和折痕下方的下方画布。每张画布都是一面独立的墙，有自己的摄像头、布局、墙页、控制面板和特写；典型的用法是在上方画布放摄像头，在下方画布放控制面板。该设置只在 iPhone Duo 上出现；iPhone Duo 的总体介绍参见<a class="xref" href="#tour-duo">“iPhone Duo”</a>。</p>
@@ -3197,7 +3281,7 @@ Content-Type: application/json
     <thead><tr><th>项目</th><th>iCloud 备份</th><th>共享代码</th></tr></thead>
     <tbody>
       <tr><td>设备</td><td>所有设备</td><td>已勾选的设备</td></tr>
-      <tr><td>每台设备的数据</td><td colspan="2">名称、地址、端口、用户名、密码、连接方式、型号、序列号、固件版本、设备在列表中的位置，以及 NAS 用于磁盘健康的 SNMP 设置（团体名称和端口）。</td></tr>
+      <tr><td>每台设备的数据</td><td colspan="2">名称、地址、端口、用户名、密码、连接方式、HTTPS 设置及其端口和所信任的证书、型号、序列号、固件版本、设备在列表中的位置，以及 NAS 用于磁盘健康的 SNMP 设置（团体名称和端口）。</td></tr>
       <tr><td>通道</td><td colspan="2">通道名称和自定义名称、启用状态、暂停状态。</td></tr>
       <tr><td>App 设置</td><td>始终包含</td><td>仅在开启<span class="ui">包含 App 设置</span>时包含，且仅在接收方选择<span class="ui">同时使用对方的设置</span>时应用</td></tr>
     </tbody>
@@ -3939,7 +4023,7 @@ Content-Type: application/json
   </ol>
 
   <h4>删除所有数据</h4>
-  <p>此操作用于清空 App，例如在转让设备之前。它无法撤销。没有 iCloud 备份或导出代码时，摄像头的密码无法找回，因为它们只保存在本设备上。</p>
+  <p>此操作用于清空 App，例如在转让设备之前。它无法撤销。没有 iCloud 备份或导出代码时，摄像头的密码无法找回，因为此操作会将其从本设备上删除。</p>
   <ol class="steps">
     <li class="step">
       <p>在<span class="ui">重置</span>部分点击<span class="ui">删除所有数据</span>。</p>
@@ -4047,8 +4131,8 @@ Content-Type: application/json
     <tbody>
       <tr><td>标签页与启动</td><td>五个标签页。App 打开 <span class="ui">LiveView Mix</span>，或按<span class="ui">启动时打开</span>中的选择打开。</td><td>四个标签页，没有<span class="ui">工具</span>。App 始终打开 <span class="ui">LiveView Mix</span>；App 重新启动后，会再次显示之前打开的全屏墙。没有<span class="ui">启动时打开</span>。</td></tr>
       <tr><td>操作</td><td>触摸，以及捏合、拖动和长按等手势。</td><td>遥控器。用方向键或滑动移动选择，“选择”相当于点击，“菜单”返回。没有触摸手势。</td></tr>
-      <tr><td>添加设备</td><td>一个自行查明连接方式和端口的表单，两者都可在<span class="ui">高级</span>中设置；网络扫描、检查清单和设备报告。</td><td>一个简短的表单，通过<span class="ui">添加 IP 设备</span>打开：名称、地址、<span class="ui">HTTP 端口</span>、<span class="ui">RTSP 端口</span>、用户名、密码、<span class="ui">通过 ONVIF 连接</span>开关，以及某一设备系列自有协议的开关（参见<a class="xref" href="#brands-methods">“连接方式”</a>），其下是<span class="ui">添加示例摄像头</span>和<span class="ui">添加演示系统</span>。没有扫描、品牌列表、检查清单和设备报告。达到录像机上限时，表单显示<span class="ui">免费版包含 1 台录像机。通过 NVR 套餐可添加更多。</span>（示例设备占用名额时显示更长的一句），而不是打开套餐界面。</td></tr>
-      <tr><td>设备页</td><td>重命名、<span class="ui">编辑凭据</span>、设备提供时的<span class="ui">磁盘健康</span>，以及每个摄像头的菜单：重命名、启用或停用、暂停。设备从列表中删除。</td><td>墙的上方有<span class="ui">显示详情</span>或<span class="ui">隐藏详情</span>、<span class="ui">重命名</span>和<span class="ui">编辑凭据</span>，下方有<span class="ui">删除设备</span>。摄像头没有菜单，也没有<span class="ui">磁盘健康</span>。通道在<span class="path"><span class="ui">设置</span> › <span class="ui">选择要显示的摄像头</span></span>中打开和关闭。</td></tr>
+      <tr><td>添加设备</td><td>一个自行查明连接方式和端口的表单，两者都可在<span class="ui">高级</span>中设置；网络扫描、检查清单和设备报告。</td><td>一个简短的表单，通过<span class="ui">添加 IP 设备</span>打开：名称、地址、<span class="ui">HTTP 端口</span>、<span class="ui">RTSP 端口</span>、用户名、密码、<span class="ui">通过 ONVIF 连接</span>开关、某一设备系列自有协议的开关（参见<a class="xref" href="#brands-methods">“连接方式”</a>），以及除该协议外均提供的<span class="ui">使用 HTTPS</span>和 <span class="ui">HTTPS 端口</span>（参见<a class="xref" href="#add-https">“通过 HTTPS 添加设备”</a>），其下是<span class="ui">添加示例摄像头</span>和<span class="ui">添加演示系统</span>。没有扫描、品牌列表、检查清单和设备报告。达到录像机上限时，表单显示<span class="ui">免费版包含 1 台录像机。通过 NVR 套餐可添加更多。</span>（示例设备占用名额时显示更长的一句），而不是打开套餐界面。</td></tr>
+      <tr><td>设备页</td><td>重命名、<span class="ui">编辑凭据</span>、设备支持时的 <span class="ui">HTTPS</span>、设备提供时的<span class="ui">磁盘健康</span>，以及每个摄像头的菜单：重命名、启用或停用、暂停。设备从列表中删除。</td><td>墙的上方有<span class="ui">显示详情</span>或<span class="ui">隐藏详情</span>、<span class="ui">重命名</span>、<span class="ui">编辑凭据</span>以及在提供时出现的 <span class="ui">HTTPS</span>，下方有<span class="ui">删除设备</span>。没有保存密码的设备只在缩略图上显示<span class="ui">没有保存密码，请到“设备”重新输入。</span>密码需通过<span class="ui">编辑凭据</span>输入。摄像头没有菜单，也没有<span class="ui">磁盘健康</span>。通道在<span class="path"><span class="ui">设置</span> › <span class="ui">选择要显示的摄像头</span></span>中打开和关闭。</td></tr>
       <tr><td>实时观看与单个摄像头</td><td>SD 和 HD、声音、快照、双向对讲、PTZ、捏合缩放、横屏视图。</td><td>SD 和 HD、声音，以及在适应画面和填满屏幕之间的选择。没有快照、对讲、PTZ 和捏合缩放。</td></tr>
       <tr><td>录像回放</td><td>标出有录像日期的日历、可拖动的时间轴、2×、4× 和 8× 倍速、人员搜索。</td><td>支持回放的设备可用。用遥控器移动一根进度条，带有上一天和下一天以及缩放进度条的按钮，设备提供时还有检测到人员的列表。没有日历，也没有加速播放。需要先下载的录像不会播放；屏幕显示<span class="ui">请在 iPhone 或 iPad 上观看此录像。</span></td></tr>
       <tr><td>LiveView Mix</td><td>选择摄像头、排列、绘制布局、编辑格子、水印、保持摄像头连接、竖向页面，以及 iPhone Duo 上的两张画布。</td><td>只显示横向的墙。随备份带来的竖向页面或下方画布会保留，但不显示，其中的控制面板也不占用额度。墙用遥控器操作。<span class="path"><span class="ui">设置</span> › <span class="ui">LiveView Mix</span></span> 中的精简编辑器提供：选择摄像头并设置 SD 或 HD、现成的布局和黑边。图块多于 16 个的现成布局只在这里提供。在 iPhone 或 iPad 上绘制的自定义布局可以显示，但无法编辑。控制面板可以按下，但无法编辑。不提供排列、格子编辑、水印和保持摄像头连接。</td></tr>
@@ -4121,8 +4205,10 @@ Content-Type: application/json
       <tr><td>设备列表中带斜线的红色 Wi-Fi 符号</td><td>设备在约 4 秒内没有接受其 HTTP 端口上的连接。设备可能已关机、位于其他网络，或被防火墙拦截。在<span class="ui">连接方式</span>中选择品牌添加的设备，或使用其他端口传输视频的设备，即使视频正常，也可能显示红色符号。</td><td>检查电源和网络。视频能播放时，可以忽略该符号。参见<a class="xref" href="#devices-list">“设备列表”</a>。</td></tr>
       <tr><td>昨天还能用的设备今天无法连接</td><td>设备的地址变了。设备保留添加时使用的地址。</td><td>在路由器上查出新地址，删除旧设备，并用新地址重新添加，参见<a class="xref" href="#add-form">“添加设备表单”</a>。在设备或路由器中设置固定地址可避免重复发生。</td></tr>
       <tr><td>已保存的密码不再有效，设备页显示<span class="ui">用户名或密码错误。</span>和<span class="ui">编辑凭据</span>按钮</td><td>设备上的密码或用户名被更改了。</td><td>点击<span class="ui">编辑凭据</span>并输入新的账号。保存之前会先在设备上验证；摄像头、其名称和墙都保持不变。参见<a class="xref" href="#devices-credentials">“更改设备的用户名和密码”</a>。</td></tr>
+      <tr><td>所有缩略图都显示<span class="ui">没有保存密码，请到“设备”重新输入。</span>（例如在新的 iPhone、iPad 或 Mac 上）</td><td>设备列表迁移过来时没有附带密码，例如新机在设置时没有带上旧机的钥匙串。</td><td>恢复 Cam Hub 的 iCloud 备份（其中包含所有密码），或在每台设备的设备页上用<span class="ui">重新输入密码</span>逐一输入密码。参见<a class="xref" href="#devices-password-missing">“没有保存密码的设备”</a>。</td></tr>
+      <tr><td>缩略图显示<span class="ui">这台设备的安全证书已更改。请在设备编辑菜单的“HTTPS”中检查。</span></td><td>该设备已开启 HTTPS，而设备出示的证书与所信任的证书不同，例如设备重置后，或在设备上生成了新证书之后。</td><td>从设备页的铅笔菜单打开 <span class="ui">HTTPS</span>，先将新的指纹与设备网页上的证书核对，再点击<span class="ui">保存</span>。参见<a class="xref" href="#devices-https">“已保存设备的 HTTPS”</a>。</td></tr>
       <tr><td>添加录像机时打开了套餐界面</td><td>套餐的录像机额度已用完。示例设备与真实设备一样计数。</td><td>参见<a class="xref" href="#trouble-plans">“套餐与购买”</a>。</td></tr>
-      <tr><td>设备完全无法添加，只能在其厂商的 App 中使用</td><td>设备不提供本地网络上的连接，或只接受 HTTPS。</td><td>参见<a class="xref" href="#brands-requirements">“要求与限制”</a>。</td></tr>
+      <tr><td>设备完全无法添加，只能在其厂商的 App 中使用</td><td>设备不提供本地网络上的连接，或只接受 HTTPS，而添加时没有开启<span class="ui">使用 HTTPS</span>。</td><td>对于只接受 HTTPS 的设备，添加时开启<span class="ui">使用 HTTPS</span>，参见<a class="xref" href="#add-https">“通过 HTTPS 添加设备”</a>。其他情况参见<a class="xref" href="#brands-requirements">“要求与限制”</a>。</td></tr>
     </tbody>
   </table></div>
 
@@ -4267,7 +4353,7 @@ Content-Type: application/json
   </table></div>
 
   <h3 id="trouble-errors">其他错误提示</h3>
-  <p>这些语句出现在画面上方的失败提示、录像面板时间轴上方、添加设备表单中以及<span class="ui">编辑凭据</span>中。前四条连同检查项在<a class="xref" href="#add-failed">“添加失败时：检查清单”</a>中说明。</p>
+  <p>这些语句出现在画面上方的失败提示、录像面板时间轴上方、添加设备表单中、<span class="ui">编辑凭据</span>中以及 <span class="ui">HTTPS</span> 界面上。前四条连同检查项在<a class="xref" href="#add-failed">“添加失败时：检查清单”</a>中说明。</p>
   <div class="table-wrap"><table>
     <thead><tr><th>语句</th><th>含义</th><th>处理方法</th></tr></thead>
     <tbody>
@@ -4279,6 +4365,10 @@ Content-Type: application/json
       <tr><td><span class="ui" data-ui="value">设备拒绝了视频流（HTTP 404）。</span></td><td>设备以登录被拒绝之外的状态应答了视频请求。数字是设备返回的状态。</td><td>检查账号的实时观看权限、视频流设置和设备的观看者数量。</td></tr>
       <tr><td><span class="ui" data-ui="value">录像机返回 HTTP 500。</span></td><td>录像机以错误状态应答了请求。</td><td>稍后重试，必要时重新启动录像机，并检查其固件。</td></tr>
       <tr><td><span class="ui">此录像机对视频进行了加密，Cam Hub 无法通过其自有协议读取。请重新添加，并在“连接方式”中选择 ONVIF。</span></td><td>该录像机是通过其自有协议添加的，而它会加密以这种方式发送的视频。</td><td>删除该设备，并在<span class="path"><span class="ui">高级</span> › <span class="ui">连接方式</span></span>中选择 <span class="ui">ONVIF</span> 重新添加。</td></tr>
+      <tr><td><span class="ui">没有保存密码，请到“设备”重新输入。</span></td><td>这台 iPhone 或 iPad 上没有保存该设备的密码。没有向设备发送任何内容。</td><td>在设备页上用<span class="ui">重新输入密码</span>输入密码，或恢复 iCloud 备份，参见<a class="xref" href="#devices-password-missing">“没有保存密码的设备”</a>。</td></tr>
+      <tr><td><span class="ui">这台设备的安全证书已更改。请在设备编辑菜单的“HTTPS”中检查。</span></td><td>已开启 HTTPS，而设备出示的证书与所信任的证书不同。</td><td>在 <span class="ui">HTTPS</span> 界面上检查新证书，参见<a class="xref" href="#devices-https">“已保存设备的 HTTPS”</a>。</td></tr>
+      <tr><td><span class="ui">这台设备刚才没有通过 HTTPS 响应。</span></td><td>Cam Hub 查找 HTTPS 时，没有任何端口出示证书。</td><td>检查 HTTPS 端口，或在不开启<span class="ui">使用 HTTPS</span>的情况下添加设备，参见<a class="xref" href="#add-https">“通过 HTTPS 添加设备”</a>。</td></tr>
+      <tr><td><span class="ui">这台设备没有通过普通 HTTP 响应，因此 HTTPS 保持开启。</span></td><td>尝试关闭 HTTPS 时，设备没有通过普通 HTTP 响应，例如设备上已关闭 HTTP。</td><td>先在设备上开启 HTTP，或保持 HTTPS 开启，参见<a class="xref" href="#devices-https">“已保存设备的 HTTPS”</a>。</td></tr>
       <tr><td><span class="ui">无法加载此设备已保存的密码。</span></td><td>无法读取保存在这台 iPhone 或 iPad 上的密码。</td><td>用<span class="ui">编辑凭据</span>重新输入密码，参见<a class="xref" href="#devices-credentials">“更改设备的用户名和密码”</a>。</td></tr>
       <tr><td><span class="ui">此地址上的另一台设备已在使用该用户名。</span></td><td>在<span class="ui">编辑凭据</span>中，该用户名与另一台已保存设备（地址和 HTTP 端口相同）的用户名一致。</td><td>使用其他用户名，或删除重复的设备。</td></tr>
       <tr><td><span class="ui">无法安全地保存密码。请重试。</span></td><td>新密码无法保存到本设备上。之前的密码已保留。</td><td>请重试。</td></tr>
@@ -4392,7 +4482,11 @@ Content-Type: application/json
   </details>
   <details class="faq">
     <summary>只接受 HTTPS 的设备能添加吗？</summary>
-    <p>不能。Cam Hub 通过普通 HTTP 控制设备。关闭了 HTTP 的设备无法添加。对网络存储设备，应输入 HTTP 网页界面的端口，而不是 HTTPS 的端口。参见<a class="xref" href="#brands-requirements">“要求与限制”</a>。</p>
+    <p>能。在添加设备表单中开启<span class="path"><span class="ui">高级</span> › <span class="ui">使用 HTTPS</span></span>，Cam Hub 就会通过 HTTPS 添加设备，并信任设备出示的证书。这适用于通过<span class="ui">自动检测</span>或 <span class="ui">ONVIF</span> 连接的设备。已添加的设备在其设备页上切换到 HTTPS。参见<a class="xref" href="#add-https">“通过 HTTPS 添加设备”</a>和<a class="xref" href="#devices-https">“已保存设备的 HTTPS”</a>。</p>
+  </details>
+  <details class="faq">
+    <summary>换用新的 iPhone、iPad 或 Mac 后，Cam Hub 为什么要求重新输入密码？</summary>
+    <p>密码没有随设备列表一起迁移。恢复 Cam Hub 的 iCloud 备份（其中包含所有密码），或在每台设备的设备页上用<span class="ui">重新输入密码</span>重新输入。参见<a class="xref" href="#devices-password-missing">“没有保存密码的设备”</a>。</p>
   </details>
   <details class="faq">
     <summary>如何更改已保存设备的地址或密码？</summary>
@@ -4485,6 +4579,7 @@ Content-Type: application/json
       <tr><th scope="row">声音（收听）</th><td>设备支持时</td><td>设备支持时</td><td>设备支持时</td><td>设备支持时</td><td>设备支持时</td><td>设备支持时</td></tr>
       <tr><th scope="row">通过摄像头说话</th><td>设备支持时</td><td>否</td><td>否</td><td>否</td><td>否</td><td>否</td></tr>
       <tr><th scope="row">磁盘健康</th><td>是</td><td>是</td><td>设置后</td><td>否</td><td>否</td><td>否</td></tr>
+      <tr><th scope="row">HTTPS</th><td>设备支持时</td><td>设备支持时</td><td>设备支持时</td><td>否</td><td>设备支持时</td><td>否</td></tr>
       <tr><th scope="row">通道列表</th><td>录像机适用</td><td>录像机适用</td><td>是</td><td>是</td><td>是</td><td>手动输入数量</td></tr>
     </tbody>
   </table></div>
@@ -4502,8 +4597,9 @@ Content-Type: application/json
     <li><b>对讲</b>：提供给报告具备 <code>G.711</code> 双向音频通道的单独 Hikvision 摄像头；录像机的通道不提供。参见<a class="xref" href="#single-talk">“双向对讲”</a>。</li>
     <li><b>磁盘健康</b>：Hikvision 报告每块磁盘的状态，设备提供时还有 S.M.A.R.T. 详细信息。Dahua 报告状态、容量以及（如果有）温度，但没有 S.M.A.R.T. 详细信息。Synology NAS 通过 SNMP 读取，须在 NAS 上开启 SNMP 并在 Cam Hub 中设置。参见<a class="xref" href="#devices-health">“磁盘健康”</a>。</li>
     <li><b>通道列表</b>：Hikvision 和 Dahua 列出录像机的通道及其名称和信号状态，不是录像机的设备只有一个通道。Synology Surveillance Station 把系统中的每个摄像头列为一个通道，并带信号状态。Xiongmai 设备报告其通道数量和为通道设置的名称，不带信号状态。ONVIF 为每个独立的视频源列出一个通道，不报告信号状态。RTSP 和列表中的品牌没有列表：需要输入摄像头数量（1 到 64），每个通道都显示为在线。</li>
+    <li><b>HTTPS</b>：设备的网页界面提供 HTTPS 时可用，需要为每台设备单独开启，参见<a class="xref" href="#add-https">“通过 HTTPS 添加设备”</a>和<a class="xref" href="#devices-https">“已保存设备的 HTTPS”</a>。Xiongmai 的自有协议和普通 RTSP 没有可供 HTTPS 保护的网页界面。通过 RTSP 传输的视频不会因 HTTPS 而加密。</li>
   </ul>
-  <p>无论哪种方式都不提供：对焦和光圈控制、保存或导出录像、登录云账号，以及通过 HTTPS 连接。</p>
+  <p>无论哪种方式都不提供：对焦和光圈控制、保存或导出录像，以及登录云账号。</p>
 
   <h3 id="brands-profiles">列表中的品牌</h3>
   <p><span class="ui">品牌</span>部分中的品牌通过普通 RTSP 连接。选择品牌会增加一个以该品牌命名的部分，其中有<span class="ui">摄像头</span>输入框（1 到 64）和一个路径输入框。填 <code>1</code> 时，设备作为以该品牌命名的摄像头添加；填更大的数字时，作为带通道 <code>CH1</code> 到 <code>CHn</code> 的录像机添加，并按录像机计入套餐。路径输入框留空时，Cam Hub 会依次尝试文档中公布的路径，并保留设备有响应的那一个。只有需要指定某个路径时才需要输入。选择 RTSP 时同样如此，使用的是大多数摄像头使用的路径。</p>
@@ -4542,7 +4638,7 @@ Content-Type: application/json
   <div class="table-wrap"><table>
     <thead><tr><th>主题</th><th>要求或限制</th></tr></thead>
     <tbody>
-      <tr><td>仅限普通 HTTP</td><td>Cam Hub 通过普通 HTTP 联系设备；Xiongmai 设备则改用其自有协议。视频通过 RTSP 获取，先用 TCP，设备拒绝 TCP 时改用 UDP。与设备的连接不支持 HTTPS 和自签名证书。关闭了 HTTP 的设备，或只接受 HTTPS 的设备，无法添加。对网络存储设备，应输入其 HTTP 网页界面的端口，例如 <code>5000</code>，而不是 HTTPS 界面的端口。</td></tr>
+      <tr><td>HTTP 和 HTTPS</td><td>Cam Hub 通过普通 HTTP 联系设备，为设备开启 HTTPS 后则通过 HTTPS；Xiongmai 设备则改用其自有协议。视频通过 RTSP 获取，先用 TCP，设备拒绝 TCP 时改用 UDP；HTTPS 不会加密视频。使用 HTTPS 时，Cam Hub 信任开启 HTTPS 时设备出示的证书（包括自签名证书），或公共证书颁发机构为该地址签发的证书。关闭了 HTTP 的设备，或只接受 HTTPS 的设备，通过<span class="ui">使用 HTTPS</span>添加，参见<a class="xref" href="#add-https">“通过 HTTPS 添加设备”</a>。对网络存储设备，在 <span class="ui">HTTP 端口</span>中输入其 HTTP 网页界面的端口，例如 <code>5000</code>；开启<span class="ui">使用 HTTPS</span>后，Cam Hub 也会自行找到其 HTTPS 端口 <code>5001</code>。</td></tr>
       <tr><td>开启 ONVIF</td><td>选择 <span class="ui">ONVIF</span> 时，设备上必须开启 ONVIF。Cam Hub 在 <span class="ui">HTTP 端口</span>中所填端口的 <code>/onvif/device_service</code>、<code>/onvif/service</code> 或 <code>/onvif/device</code> 查找该服务。有些设备在出厂设置中关闭了 ONVIF。</td></tr>
       <tr><td>开启 RTSP</td><td>视频通过 RTSP 获取。使用自动检测时，Cam Hub 会自行找到 RTSP 端口；否则使用 <span class="ui">RTSP 端口</span>中所填的端口（通常为 <code>554</code>）。网络存储设备可能优先使用自己的流传输路径。设备有 RTSP 认证设置时，应选择 <code>Digest</code> 方式。</td></tr>
       <tr><td>单独的 ONVIF 用户</td><td>有些设备保存的 ONVIF 用户列表与网页界面的用户相互独立，管理员登录对 ONVIF 无效。请在该列表中创建一个用户。列表中有五个品牌在 RTSP 可用之前需要自己的摄像头账号或 ONVIF 账号：<span class="ui" data-ui="value">Axis</span>、<span class="ui" data-ui="value">TP-Link (Tapo / VIGI)</span>、<span class="ui" data-ui="value">ANNKE</span>、<span class="ui" data-ui="value">MOBOTIX</span> 和 <span class="ui" data-ui="value">2N</span>。</td></tr>
@@ -4590,7 +4686,7 @@ Content-Type: application/json
   </ul>
   <div class="callout warn">
     <strong class="t">无法添加的设备</strong>
-    <p>只能通过厂商云端 App 使用、不提供本地网络连接，或只接受 HTTPS 的设备，无法添加到 Cam Hub。</p>
+    <p>只能通过厂商云端 App 使用或不提供本地网络连接的设备，无法添加到 Cam Hub。只接受 HTTPS 的设备通过<span class="ui">使用 HTTPS</span>添加，参见<a class="xref" href="#add-https">“通过 HTTPS 添加设备”</a>。</p>
   </div>
 
   <h3 id="brands-activate">激活新设备</h3>

@@ -123,6 +123,8 @@
       <tr><td><span class="path"><span class="ui">Advanced</span> › <span class="ui">Connect using</span></span></td><td><span class="ui">Auto-detect</span>, <span class="ui">ONVIF</span>, RTSP, the own protocol of one device family, or a brand from the list. For the choice, see <a class="xref" href="#add-methods">“Choosing the connection method”</a>.</td><td><span class="ui">Auto-detect</span></td></tr>
       <tr><td><span class="path"><span class="ui">Advanced</span> › <span class="ui">HTTP Port</span></span></td><td>The port of the control interface of the device. With <span class="ui">Auto-detect</span>, Cam Hub finds the open ports by itself and tries a port entered here first. With <span class="ui">ONVIF</span>, the field must hold the ONVIF service port of the device, for example <code>2020</code> or <code>8899</code> on some devices.</td><td><code>80</code></td></tr>
       <tr><td><span class="path"><span class="ui">Advanced</span> › <span class="ui">RTSP Port</span></span></td><td>The port of the video stream. <span class="ui">Auto-detect</span> tries a port entered here first. Selecting a brand whose RTSP port is not <code>554</code> fills in that brand's port, as long as the field still holds the previous default.</td><td><code>554</code></td></tr>
+      <tr><td><span class="path"><span class="ui">Advanced</span> › <span class="ui">Use HTTPS</span></span></td><td>Offered with <span class="ui">Auto-detect</span> and <span class="ui">ONVIF</span>. Turn it on only for a device whose web page uses HTTPS: Cam Hub then looks for HTTPS at the address without signing in, adds the device over HTTPS and trusts the certificate that the device presents at that moment. See <a class="xref" href="#add-https">“Adding a device over HTTPS”</a>.</td><td>Off</td></tr>
+      <tr><td><span class="path"><span class="ui">Advanced</span> › <span class="ui">HTTPS Port</span></span></td><td>Shown while <span class="ui">Use HTTPS</span> is on. Left at <code>443</code>, Cam Hub also looks on <code>5001</code> and <code>8443</code>; any other port is used alone.</td><td><code>443</code></td></tr>
       <tr><td><span class="path"><span class="ui">Advanced</span> › <span class="ui">Device Port</span></span></td><td>Shown instead of the two ports above when the own protocol of a device family is selected: the port on which the device answers that protocol.</td><td><code>34567</code></td></tr>
     </tbody>
   </table></div>
@@ -186,8 +188,8 @@
   <ol class="steps">
     <li class="step">
       <p>In the add-device form, tap <span class="ui">Advanced</span>.</p>
-      <p class="check"><b class="check-label">Check:</b> The section opens and shows <span class="ui">Connect using</span>, <span class="ui">HTTP Port</span> and <span class="ui">RTSP Port</span>.</p>
-      <figure class="phone"><img src="guide/img/add-advanced.jpg" alt="The Add Device form with Advanced unfolded: Connect using set to Auto-detect, HTTP Port 80, RTSP Port 554 and the note about Auto-detect" loading="lazy" decoding="async" width="900" height="1947"><figcaption>Advanced unfolded</figcaption></figure>
+      <p class="check"><b class="check-label">Check:</b> The section opens and shows <span class="ui">Connect using</span>, <span class="ui">HTTP Port</span>, <span class="ui">RTSP Port</span> and the switch <span class="ui">Use HTTPS</span>.</p>
+      <figure class="phone"><img src="guide/img/add-advanced.jpg" alt="The Add Device form with Advanced unfolded: Connect using set to Auto-detect, HTTP Port 80, RTSP Port 554, Use HTTPS turned off, and the note about Auto-detect" loading="lazy" decoding="async" width="900" height="1947"><figcaption>Advanced unfolded</figcaption></figure>
     </li>
     <li class="step">
       <p>Tap <span class="ui">Connect using</span>.</p>
@@ -200,7 +202,7 @@
     </li>
     <li class="step">
       <p>Tap the connection method.</p>
-      <p class="check"><b class="check-label">Check:</b> The form shows the method in the <span class="ui">Connect using</span> row, with an explanation below the section. A brand from the list, and RTSP, add a section with <span class="ui">Cameras</span> and a path field; the own protocol of a device family replaces the two ports with <span class="ui">Device Port</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The form shows the method in the <span class="ui">Connect using</span> row, with an explanation below the section. A brand from the list, and RTSP, add a section with <span class="ui">Cameras</span> and a path field; the own protocol of a device family replaces the two ports with <span class="ui">Device Port</span>. <span class="ui">Use HTTPS</span> is offered only with <span class="ui">Auto-detect</span> and <span class="ui">ONVIF</span>.</p>
     </li>
     <li class="step">
       <p>When the device does not use the default ports, change the port fields.</p>
@@ -226,14 +228,42 @@
     <p>These connection methods have no recording playback, no PTZ control and no snapshot. SD uses the second stream of the brand where the device serves it; otherwise SD shows the same stream as HD.</p>
   </div>
   <div class="callout note">
-    <strong class="t">Device control uses HTTP only</strong>
-    <p>Device control (identifying the device, reading the channel list, searching recordings) uses <code>http://address:port</code>; the device family with its own protocol uses that protocol instead. A device that accepts HTTPS only cannot be added at present.</p>
+    <strong class="t">Device control uses HTTP unless HTTPS is turned on</strong>
+    <p>Device control (identifying the device, reading the channel list, searching recordings) uses <code>http://address:port</code>, or HTTPS when it is turned on for the device; the device family with its own protocol uses that protocol instead. A device that accepts HTTPS only is added with <span class="ui">Use HTTPS</span>; see <a class="xref" href="#add-https">“Adding a device over HTTPS”</a>.</p>
   </div>
   <div class="callout note">
     <strong class="t">Failure messages differ for RTSP and a brand from the list</strong>
     <p>When the device cannot be reached or times out, only <span class="ui">Something went wrong. Please try again.</span> is shown. With these connection methods, <span class="ui">Not a supported device.</span> means that none of the candidate paths returned a stream. Common causes are a wrong RTSP port or a video stream that is turned off at the device.</p>
   </div>
   <p>When it is unclear whether a device can be used, tap <span class="ui">Compatibility reference</span> in the form to see the supported and unsupported devices. The entry is not shown, and neither is <span class="ui">Add Demo Cameras</span>, when the form was opened from a scan result that named the brand of the device and the address has not been changed.</p>
+
+  <h3 id="add-https">Adding a device over HTTPS</h3>
+  <p>A device whose web page uses HTTPS can be added over HTTPS, also when its plain HTTP is switched off. HTTPS is off unless it is turned on, and it is offered only with <span class="ui">Auto-detect</span> and <span class="ui">ONVIF</span>: the own protocol of a device family, RTSP and the brands from the list have no web interface for it to protect. A device that has already been added is switched to HTTPS on its device page instead; see <a class="xref" href="#devices-https">“HTTPS for a saved device”</a>.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>In the add-device form, enter the address, the username and the password, then tap <span class="ui">Advanced</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The section shows the switch <span class="ui">Use HTTPS</span>, turned off.</p>
+    </li>
+    <li class="step">
+      <p>Turn on <span class="ui">Use HTTPS</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The field <span class="ui">HTTPS Port</span> appears with <code>443</code>, and a note below the section explains the option.</p>
+      <figure class="phone"><img src="guide/img/add-https.jpg" alt="The Add Device form with Advanced unfolded and Use HTTPS turned on: the HTTPS Port field with 443 and the note about HTTPS below the section" loading="lazy" decoding="async" width="900" height="1947"><figcaption>Use HTTPS turned on</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>When the device uses another HTTPS port, enter it in <span class="ui">HTTPS Port</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The field shows the port. Left at <code>443</code>, Cam Hub also looks on <code>5001</code> and <code>8443</code>; any other port is used alone.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Add</span> in the top-right corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The form shows <span class="ui">Connecting to device…</span>. When the connection succeeds, the form closes and the new device appears in the device list. Its device page shows the row <span class="ui">HTTPS</span> with the port in the information card.</p>
+    </li>
+  </ol>
+  <ul>
+    <li>The note reads <span class="ui">Only for a device whose web page uses HTTPS; leave it off if you are not sure. Cam Hub looks for HTTPS on this port (left at 443, also on 5001 and 8443) and trusts the certificate the device presents now. You can check it later under HTTPS on the device's page.</span> It stays visible while the switch is on, also when <span class="ui">Advanced</span> is folded.</li>
+    <li>Looking for HTTPS sends no username and no password: Cam Hub only checks which ports present a certificate. When no port does, the form shows <span class="ui">This device did not answer over HTTPS just now.</span> When several ports do, they are tried in turn, so that a port forwarded to another device does not end the attempt.</li>
+    <li>The certificate is trusted as the device presents it while it is added. It can be compared with the certificate of the device's own web page afterwards; see <a class="xref" href="#devices-https">“HTTPS for a saved device”</a>.</li>
+    <li>HTTPS encrypts the control of the device. Video fetched over RTSP is not encrypted by it.</li>
+  </ul>
 
   <h3 id="add-streams">Adding YouTube live streams and Twitch channels</h3>
   <p>A YouTube live stream or a Twitch channel can be added to the device list and shown like a camera. It is played by the service's own player, needs no account and never counts toward a plan. It has no recordings, no PTZ control and no snapshot. Streams play on iPhone and iPad; Apple TV shows them by name only. YouTube and Twitch are not available in some countries and regions, and there these options do not appear.</p>
@@ -349,6 +379,14 @@
         </ol></td>
       </tr>
       <tr>
+        <td><span class="ui">This device did not answer over HTTPS just now.</span></td>
+        <td><ol>
+          <li>Open the web page of the device in a browser with an address that begins with <code>https://</code>, to check that the device uses HTTPS and on which port.</li>
+          <li>Enter that port in <span class="ui">HTTPS Port</span>. Left at <code>443</code>, only <code>443</code>, <code>5001</code> and <code>8443</code> are checked.</li>
+          <li>Turn off <span class="ui">Use HTTPS</span> to add the device over plain HTTP.</li>
+        </ol></td>
+      </tr>
+      <tr>
         <td><span class="ui">Something went wrong. Please try again.</span> and any other message not listed above</td>
         <td><ol>
           <li>Check the IP address.</li>
@@ -424,11 +462,11 @@
   </ul>
 
   <h4>Sign-in behavior</h4>
-  <p>During the collection, requests that need a sign-in are sent one at a time until the device has accepted or refused the credentials. After the device has refused them, the report sends no further sign-ins. When the failed attempt that led to the report was itself a refused sign-in (<span class="ui">Wrong username or password.</span>), the report does not try to sign in at all, so that the account is not locked by the device. The collection sends only read-only requests and does not change any setting on the device.</p>
+  <p>During the collection, requests that need a sign-in are sent one at a time until the device has accepted or refused the credentials. After the device has refused them, the report sends no further sign-ins. When the failed attempt that led to the report was itself a refused sign-in (<span class="ui">Wrong username or password.</span>), the report does not try to sign in at all, so that the account is not locked by the device. When <span class="ui">Use HTTPS</span> was on, the report first looks for the certificate of the device without signing in, and repeats the attempt over HTTPS with that certificate; when the device presents none, the report does not sign in. The collection sends only read-only requests and does not change any setting on the device.</p>
 
   <h4>What the report contains and does not contain</h4>
   <ul>
-    <li><b>Contains</b>: the versions of the app and the system, the model identifier of the phone, the language setting, the selected connection method, the device address (the last part of a private network address is masked with <code>x</code>; for a public address only its class is given), the ports, the error code of the failed attempt, the detected brand and model, open ports, the headers and structure of the answers of the device (masked), the encoding and parameters of the stream, the difference in clock and time zone, and the steps that were run with their results.</li>
+    <li><b>Contains</b>: the versions of the app and the system, the model identifier of the phone, the language setting, the selected connection method (with the HTTPS port when <span class="ui">Use HTTPS</span> was on), the device address (the last part of a private network address is masked with <code>x</code>; for a public address only its class is given), the ports, the error code of the failed attempt, the detected brand and model, open ports, the headers and structure of the answers of the device (masked), the encoding and parameters of the stream, the difference in clock and time zone, and the steps that were run with their results.</li>
     <li><b>Does not contain</b>: the password, the username, the name given to the device, a public address or dynamic domain name, the hardware address of the network adapter, email addresses, tokens and other identifying data, pictures and video. Of a long serial number, only the last four characters are kept.</li>
     <li>Masking is automatic, and each masked item leaves a marker. The report should still be reviewed before it is sent, and any item can be switched off.</li>
   </ul>
@@ -570,14 +608,15 @@
   <p>The device page shows an information card at the top, the <span class="ui">Disk Health</span> row for devices that support it, and, under the heading <span class="ui">Cameras</span>, the channels of the device as thumbnails. The title is the name of the device. The thumbnails are arranged in as many columns as fit on the screen.</p>
   <figure class="phone"><img src="guide/img/device-detail.jpg" alt="The device page of a recorder: the information card at the top, the heading Cameras with three live thumbnails of the channels below, and three buttons at the top right" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The device page</figcaption></figure>
   <ul>
-    <li><b>Information card</b>: shows the name and the type of the device and the rows <span class="ui">Model</span>, <span class="ui">IP address</span>, <span class="ui">Port</span> (the HTTP port), <span class="ui">Serial number</span>, <span class="ui">Firmware</span> and <span class="ui">Cameras</span> (the number of channels). The serial number and the firmware appear only when the device reports them. For a YouTube or Twitch stream, the row <span class="ui">Link</span> replaces <span class="ui">IP address</span> and <span class="ui">Port</span>.</li>
+    <li><b>Information card</b>: shows the name and the type of the device and the rows <span class="ui">Model</span>, <span class="ui">IP address</span>, <span class="ui">Port</span> (the HTTP port), <span class="ui">HTTPS</span> (the HTTPS port, only while HTTPS is on), <span class="ui">Serial number</span>, <span class="ui">Firmware</span> and <span class="ui">Cameras</span> (the number of channels). The serial number and the firmware appear only when the device reports them. For a YouTube or Twitch stream, the row <span class="ui">Link</span> replaces <span class="ui">IP address</span> and <span class="ui">Port</span>.</li>
     <li><b><span class="ui">Disk Health</span></b>: opens the disk report of the device; see <a class="xref" href="#devices-health">“Disk Health”</a>. An orange triangle or a red symbol on the right of the row repeats the worst disk verdict of the last reading.</li>
     <li><b>Thumbnails</b>: a recorder shows one thumbnail per channel; a standalone camera has one channel and shows one thumbnail. The lower-left corner of every thumbnail shows the number and the name of the channel. The thumbnails use SD or HD according to <span class="path"><span class="ui">Settings</span> › <span class="ui">Default quality</span> › <span class="ui">Multiple cameras</span></span> (SD unless changed). A change in Settings applies to this page at once; the page has no SD/HD button of its own.</li>
     <li><b>Refresh</b>: Cam Hub reads the channel list from the device when the page opens, at most once a minute for the same device, and every time the page is pulled down. Names and online states are updated, channels that the device has added appear, and channels that the device has removed disappear. A new channel is enabled only when the plan allows it; otherwise it is shown as <span class="ui">Disabled</span>. Names that were set in Cam Hub are kept. When the device does not answer, or returns a list that looks incomplete (no channel at all, or a single channel in place of several), the list stays as it was and no message is shown.</li>
     <li><b>Refused sign-in</b>: when the device refuses the saved user name or password during the refresh, the message <span class="ui">Wrong username or password.</span> and the button <span class="ui">Edit Credentials</span> appear above the thumbnails; see <a class="xref" href="#devices-credentials">“Changing the user name and password of a device”</a>.</li>
+    <li><b>No saved password</b>: when no password is saved for the device on this iPhone or iPad, a message with the buttons <span class="ui">Enter Password</span> and <span class="ui">Restore from iCloud</span> appears above the thumbnails; see <a class="xref" href="#devices-password-missing">“A device without a saved password”</a>.</li>
     <li><b>No channels</b>: when the device reports no channel, the page shows <span class="ui">No cameras found.</span> and the button <span class="ui">Refresh</span>, which reads the channel list again.</li>
   </ul>
-  <p>The three buttons at the top right are, from left to right: the black-bar button, <span class="ui">Full Screen Wall</span> and the pencil. For a device that signs in with a user name and password, the pencil (<span class="ui">Edit Device</span>) opens a menu with <span class="ui">Rename</span> and <span class="ui">Edit Credentials</span>. For the sample cameras and for YouTube and Twitch streams, the pencil is the <span class="ui">Rename</span> button itself.</p>
+  <p>The three buttons at the top right are, from left to right: the black-bar button, <span class="ui">Full Screen Wall</span> and the pencil. For a device that signs in with a user name and password, the pencil (<span class="ui">Edit Device</span>) opens a menu with <span class="ui">Rename</span> and <span class="ui">Edit Credentials</span>, and with <span class="ui">HTTPS</span> when the device serves HTTPS or has it turned on; see <a class="xref" href="#devices-https">“HTTPS for a saved device”</a>. For the sample cameras and for YouTube and Twitch streams, the pencil is the <span class="ui">Rename</span> button itself.</p>
   <div class="callout note">
     <strong class="t">iPhone Duo held like a book</strong>
     <p>When an iPhone Duo is half open with the fold running from top to bottom, the device page shows the thumbnails on one half and the page of one camera on the other. A tap on a thumbnail shows that camera on the other half instead of opening a new page; at first, the first camera that can show a picture is shown. See <a class="xref" href="#single-duo">“The view on a folded iPhone Duo”</a>.</p>
@@ -595,7 +634,7 @@
   <ol class="steps">
     <li class="step">
       <p>Tap the pencil button at the top right of the device page.</p>
-      <p class="check"><b class="check-label">Check:</b> For a device that signs in with a user name and password, a menu with <span class="ui">Rename</span> and <span class="ui">Edit Credentials</span> opens. For other devices, the dialog of the next step opens at once.</p>
+      <p class="check"><b class="check-label">Check:</b> For a device that signs in with a user name and password, a menu with <span class="ui">Rename</span>, <span class="ui">Edit Credentials</span> and, where offered, <span class="ui">HTTPS</span> opens. For other devices, the dialog of the next step opens at once.</p>
     </li>
     <li class="step">
       <p>When the menu is shown, tap <span class="ui">Rename</span>.</p>
@@ -637,11 +676,11 @@
     <li class="step">
       <p>Open the device page of the device.</p>
       <p class="check"><b class="check-label">Check:</b> The device page is shown. When the last refresh was refused, the message <span class="ui">Wrong username or password.</span> and the button <span class="ui">Edit Credentials</span> appear above the thumbnails; that button opens the same screen as step 3.</p>
-      <figure class="phone"><img src="guide/img/device-credentials-banner.jpg" alt="The device page of a sample recorder whose password was refused: the message Wrong username or password. with the Edit Credentials button, and one thumbnail with the same message" loading="lazy" decoding="async" width="900" height="1947"><figcaption>The message after a refused sign-in</figcaption></figure>
+      <figure class="phone"><img src="guide/img/device-credentials-banner.jpg" alt="The device page of a sample recorder whose password was refused: the message Wrong username or password. with the Edit Credentials button, and the thumbnails with the same message above the channel names" loading="lazy" decoding="async" width="900" height="1947"><figcaption>The message after a refused sign-in</figcaption></figure>
     </li>
     <li class="step">
       <p>Tap the pencil button (<span class="ui">Edit Device</span>) at the top right.</p>
-      <p class="check"><b class="check-label">Check:</b> A menu with <span class="ui">Rename</span> and <span class="ui">Edit Credentials</span> opens.</p>
+      <p class="check"><b class="check-label">Check:</b> A menu with <span class="ui">Rename</span> and <span class="ui">Edit Credentials</span> opens; <span class="ui">HTTPS</span> follows for a device that offers it.</p>
       <figure class="phone"><img src="guide/img/device-edit-menu.jpg" alt="The pencil menu open at the top right of a device page, with Rename and Edit Credentials" loading="lazy" decoding="async" width="900" height="1947"><figcaption>The pencil menu</figcaption></figure>
     </li>
     <li class="step">
@@ -667,6 +706,49 @@
     <strong class="t">One sign-in per device</strong>
     <p>Many recorders and NAS units lock the account, or the address of the iPhone or iPad, after a few failed sign-ins, and the lock also affects other apps. Cam Hub therefore checks new credentials with a single sign-in through the connection the device was added with, instead of trying several connection methods. For most devices, the thumbnails of a wall also sign in once for the whole device: when the device refuses, every thumbnail of that device shows the failure at once, and Cam Hub tries the same credentials again only after about a minute or when Cam Hub returns to the foreground. Saving new credentials starts over at once.</p>
   </div>
+
+  <h3 id="devices-password-missing">A device without a saved password</h3>
+  <p>Cam Hub stores the password of each device in the Keychain of the iPhone or iPad. When the contents of the iPhone or iPad move to a new one, the passwords can move with them; an iCloud backup or a sharing code of Cam Hub always carries them (see <a class="xref" href="#share-contents">“What backups and codes contain”</a>). A device list that arrives without its passwords, for example on a new iPhone, iPad or Mac that was set up without the Keychain of the old one, shows the state below. Cam Hub then sends nothing to the device: it does not sign in with an empty password, and it does not report a wrong password.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the device page of the device.</p>
+      <p class="check"><b class="check-label">Check:</b> Above the thumbnails, the page shows <span class="ui">No password is saved for this device on this iPhone, iPad or Mac. This can happen after moving to a new one. Enter it again, or restore your iCloud backup.</span> with the buttons <span class="ui">Enter Password</span> and <span class="ui">Restore from iCloud</span>. The thumbnails show <span class="ui">No password saved. Enter it again under Devices.</span></p>
+      <figure class="phone"><img src="guide/img/device-password-missing.jpg" alt="The device page of a sample recorder without a saved password: the message with the buttons Enter Password and Restore from iCloud, and thumbnails that read No password saved. Enter it again under Devices." loading="lazy" decoding="async" width="900" height="1947"><figcaption>A device without a saved password</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Enter Password</span> to type the password of this device, or <span class="ui">Restore from iCloud</span> to bring back the passwords of every device from an iCloud backup.</p>
+      <p class="check"><b class="check-label">Check:</b> <span class="ui">Enter Password</span> opens the screen <span class="ui">Edit Credentials</span>, described in <a class="xref" href="#devices-credentials">“Changing the user name and password of a device”</a>. <span class="ui">Restore from iCloud</span> opens the page described in <a class="xref" href="#share-restore">“Restoring from iCloud”</a>.</p>
+    </li>
+  </ol>
+  <p>Once the password is saved or restored, the message disappears and the thumbnails connect again. A restore brings back the passwords of all devices at once; without a backup, they are entered device by device.</p>
+
+  <h3 id="devices-https">HTTPS for a saved device</h3>
+  <p>A device that serves HTTPS on its web interface can be controlled over HTTPS instead of plain HTTP. HTTPS is off unless it is turned on for the device. With HTTPS, Cam Hub accepts only the certificate that was trusted when HTTPS was turned on, or a certificate that a public certificate authority issued for the address of the device, so that automatic renewals of such a certificate keep working. Video fetched over RTSP is not encrypted by this setting.</p>
+  <p>The pencil menu offers <span class="ui">HTTPS</span> for a device that answered over HTTPS, and for a device that has HTTPS turned on. Cam Hub asks the device without signing in: it only checks whether a port presents a certificate. A device that answered is remembered for a week, one that did not for a day; pulling the device page down asks again at once. The item is not offered for devices connected through the own protocol of a device family, through RTSP or through a brand from the list, nor for the sample cameras and YouTube and Twitch streams.</p>
+  <h4>Turning HTTPS on</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>On the device page, tap the pencil button (<span class="ui">Edit Device</span>) at the top right, then tap <span class="ui">HTTPS</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen <span class="ui">HTTPS</span> opens with the name of the device as the heading of its section. While Cam Hub asks the device, it shows <span class="ui">Checking HTTPS…</span>; then it shows <span class="ui">Port</span>, the port on which the device answered, and <span class="ui">Certificate (SHA-256)</span>, the fingerprint of the certificate that the device presents now, in four lines.</p>
+      <figure class="phone"><img src="guide/img/device-https.jpg" alt="The HTTPS screen of a sample recorder: the Use HTTPS switch, the port, the certificate fingerprint in four lines, and the note below the section" loading="lazy" decoding="async" width="900" height="1947"><figcaption>The HTTPS screen</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Where possible, compare the fingerprint with the certificate of the device's own web page, for example in the certificate details of a browser.</p>
+      <p class="check"><b class="check-label">Check:</b> The fingerprints are identical. When they differ, another device may be in between; leave HTTPS off.</p>
+    </li>
+    <li class="step">
+      <p>Turn on <span class="ui">Use HTTPS</span>, then tap <span class="ui">Save</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> A spinner replaces <span class="ui">Save</span> while Cam Hub signs in to the device over HTTPS with the saved credentials and reads its channel list. When this succeeds, the screen closes, the thumbnails connect again, and the information card shows the row <span class="ui">HTTPS</span> with the port. When it does not, the screen stays open, nothing is saved, and the reason appears in red.</p>
+    </li>
+  </ol>
+  <ul>
+    <li>When the device does not answer over HTTPS, the screen shows <span class="ui">This device did not answer over HTTPS just now.</span> in orange, and the switch cannot be turned on.</li>
+    <li>The note below the section reads <span class="ui">Off unless you turn it on. With HTTPS, Cam Hub talks to this device encrypted and accepts only the certificate shown here, or a certificate that a public certificate authority issued for this address, so automatic renewals keep working; if you can, compare it with the one on the device's own web page. Video sent over RTSP is not encrypted by this setting.</span></li>
+    <li><b>Turning HTTPS off</b>: turn off <span class="ui">Use HTTPS</span> and tap <span class="ui">Save</span>. Cam Hub first checks that the device answers over plain HTTP with the saved credentials. When it does not, nothing is changed and the screen shows <span class="ui">This device did not answer over plain HTTP, so HTTPS stays on.</span> Turning HTTPS off forgets the trusted certificate, so turning it on again checks the certificate afresh.</li>
+    <li><b>Changed certificate</b>: when the device presents a certificate other than the trusted one, and no public certificate authority issued it for the address, Cam Hub does not connect, and the thumbnails show <span class="ui">This device's security certificate has changed. Check it under HTTPS in the device's edit menu.</span> The HTTPS screen then shows the new fingerprint with <span class="ui">The device now presents a different certificate from the one trusted when HTTPS was turned on. Save to trust it only if you know why it changed, for example after a reset.</span> <span class="ui">Save</span> trusts the new certificate after the same check as when HTTPS is turned on.</li>
+    <li>When the device answers on another HTTPS port with the same certificate, the screen shows the new port, and <span class="ui">Save</span> stores it without a warning.</li>
+    <li>The HTTPS setting, with its port and trusted certificate, travels with iCloud backups and sharing codes; see <a class="xref" href="#share-contents">“What backups and codes contain”</a>.</li>
+  </ul>
 
   <h3 id="devices-health">Disk Health</h3>
   <p><span class="ui">Disk Health</span> reports the state of the disks of a recorder or a NAS: whether each disk is healthy, its temperature and the drive's own S.M.A.R.T. data, so that a failing disk can be replaced before recordings are lost. Cam Hub only reads this information; nothing on the device is changed.</p>
@@ -758,7 +840,7 @@
       <tr><td><span class="ui">Disabled</span></td><td>The channel is disabled. It does not stream and does not use a place in the plan.</td><td>A dialog with the name of the channel offers <span class="ui">Enable</span> and <span class="ui">Cancel</span>; see <a class="xref" href="#devices-plan">“Plan limits and enabling channels”</a>.</td></tr>
       <tr><td><span class="ui">Not in your plan</span> with a lock</td><td>The channel is enabled, but the plan does not cover it.</td><td>The plans screen opens; see <a class="xref" href="#plans">Chapter 11, “Plans and limits”</a>.</td></tr>
       <tr><td>Live picture</td><td>The channel is enabled, within the plan, not paused, and the device reports a signal. A spinner shows while the connection is made.</td><td>The single-camera view opens.</td></tr>
-      <tr><td>Failure message on a dark background</td><td>The channel is in order, but the stream could not be opened. Cam Hub tries again by itself, with growing pauses between the attempts. After a refused user name or password, Cam Hub tries at most once more and then stops, so that the device does not lock the account; the message stays until the page is opened again or Cam Hub returns to the foreground.</td><td>The single-camera view opens.</td></tr>
+      <tr><td>Failure message on a dark background</td><td>The channel is in order, but the stream could not be opened. Cam Hub tries again by itself, with growing pauses between the attempts. After a refused user name or password, Cam Hub tries at most once more and then stops, so that the device does not lock the account; the message stays until the page is opened again or Cam Hub returns to the foreground. Without a saved password, the message reads <span class="ui">No password saved. Enter it again under Devices.</span>, and Cam Hub does not contact the device; see <a class="xref" href="#devices-password-missing">“A device without a saved password”</a>. The message sits above the number and name of the channel; on a small thumbnail, the symbol is left out so that the whole message fits.</td><td>The single-camera view opens.</td></tr>
       <tr><td>Grey, with a crossed-out camera and <span class="ui">No signal</span></td><td>The device reports that the channel has no signal.</td><td>Nothing happens.</td></tr>
     </tbody>
   </table></div>
@@ -1504,15 +1586,16 @@
       <tr><td>The player of the service</td><td>The stream is live.</td></tr>
       <tr><td>The name of the channel with <span class="ui">Offline</span></td><td>The Twitch channel is not live. It is checked again every two minutes while it is on screen and starts by itself when the channel goes live. A channel name that does not exist also shows <span class="ui">Offline</span>.</td></tr>
       <tr><td><span class="ui">This channel isn't live right now, or it doesn't allow its live streams in other apps.</span></td><td>The followed YouTube channel has nothing live, or does not allow its streams in other apps. It is checked again every minute while it is on screen and starts by itself when a broadcast begins.</td></tr>
-      <tr><td><span class="ui">This isn't a live stream, or the broadcast has ended. Only live streams can be shown.</span></td><td>The YouTube video is not live, or its broadcast has ended. A single broadcast does not return; <span class="ui">Try Again</span> asks once more.</td></tr>
-      <tr><td><span class="ui">This video isn't available. It may be private or removed.</span> or <span class="ui">The owner of this video doesn't allow it to be played in other apps.</span></td><td>YouTube does not play the video in Cam Hub.</td></tr>
-      <tr><td><span class="ui">YouTube's player couldn't load. Check your connection and try again.</span> or <span class="ui">Twitch's player couldn't load. Check your connection and try again.</span></td><td>The player did not load, or did not answer within about 30 seconds. Check the internet connection and tap <span class="ui">Try Again</span>.</td></tr>
+      <tr><td><span class="ui">This isn't a live stream, or the broadcast has ended. Only live streams can be shown.</span></td><td>The YouTube video is not live, or its broadcast has ended. A single broadcast does not return; in full screen, <span class="ui">Try Again</span> asks once more.</td></tr>
+      <tr><td><span class="ui">This video isn't available. It may be private or removed.</span> or <span class="ui">The owner of this video doesn't allow it to be played in other apps.</span></td><td>YouTube does not play the video in Cam Hub: the video does not exist, is private, or its owner does not allow it in other apps.</td></tr>
+      <tr><td><span class="ui">YouTube's player couldn't load. Check your connection and try again.</span> or <span class="ui">Twitch's player couldn't load. Check your connection and try again.</span></td><td>The player did not load, or did not answer within about 30 seconds. Check the internet connection and tap <span class="ui">Try Again</span>. A tile of a wall tries again by itself: a YouTube tile after 1, 2, 4 and 8 minutes and then every 10 minutes, a Twitch tile every 2 minutes.</td></tr>
       <tr><td>The name with <span class="ui">Agree to YouTube's terms to play this stream.</span> or <span class="ui">Agree to Twitch's terms to play this channel.</span></td><td>The terms of the service have not been agreed on this iPhone or iPad yet, for example for a stream that arrived through a share code or a backup. In full screen, <span class="ui">Review Terms…</span> opens the notice; <span class="ui">Agree and Continue</span> starts the player, and <span class="ui">Cancel</span> leaves the stream as it is. The terms are agreed once per service.</td></tr>
       <tr><td>The name with <span class="ui">Not available in this region or language.</span></td><td>YouTube and Twitch are not available in some countries and regions. The stream keeps its name and can be deleted like any device.</td></tr>
     </tbody>
   </table></div>
   <ul>
     <li>The service may show its own ads or announcements in the player.</li>
+    <li>In a tile of a wall, a message is shortened to two lines and has no button. A tap on the tile opens the stream full screen, where <span class="ui">Try Again</span> is.</li>
     <li>Streams have no snapshot, PTZ control, talk, zoom, recordings, SD/HD switch or black-bar mode. The <span class="ui">Live</span> tab and the Full Screen Wall show neither the SD/HD button nor the black-bar button for a stream.</li>
     <li>In a window of its own (see <a class="xref" href="#single-window">“A camera in a window of its own”</a>), a stream shows the player with the controls of the service and, below it, <span class="ui">Open in YouTube</span> or <span class="ui">Open in Twitch</span> and the link of the stream.</li>
     <li>On Apple TV, a stream shows its name only; see <a class="xref" href="#appletv">Chapter 14, “Apple TV”</a>.</li>
@@ -1528,6 +1611,8 @@
       <tr><td>Message with a warning symbol and <span class="ui">Retry</span></td><td>The stream could not be opened. The message names the cause, for example an unreachable device; the wording is the same as when a device is added (see <a class="xref" href="#add-failed">“When adding fails: the checklist”</a>). Tap <span class="ui">Retry</span> to try again.</td></tr>
       <tr><td><span class="ui">Wrong username or password.</span> with <span class="ui">Retry</span></td><td>The device refused the account. Cam Hub signs in once for all cameras of a device, and after a refusal it does not sign in to the device again for about a minute, so that the account is not locked; <span class="ui">Retry</span> within that minute shows the same message. After a password change on the device, enter the new one with <span class="ui">Edit Credentials</span>; see <a class="xref" href="#devices-credentials">“Changing the user name and password of a device”</a>.</td></tr>
       <tr><td><span class="ui">Too many requests just now. Try again in a minute.</span> with <span class="ui">Retry</span></td><td>Too many requests reached the device or its service in a short time. Cam Hub does not try again by itself in this case. Wait a minute, then tap <span class="ui">Retry</span>.</td></tr>
+      <tr><td><span class="ui">No password saved. Enter it again under Devices.</span> with <span class="ui">Retry</span></td><td>No password is saved for the device on this iPhone or iPad, for example after a move to a new one. Nothing is sent to the device. Enter the password, or restore an iCloud backup; see <a class="xref" href="#devices-password-missing">“A device without a saved password”</a>.</td></tr>
+      <tr><td><span class="ui">This device's security certificate has changed. Check it under HTTPS in the device's edit menu.</span> with <span class="ui">Retry</span></td><td>HTTPS is on for the device, and it presents a certificate other than the trusted one. Cam Hub does not connect until the certificate has been checked; see <a class="xref" href="#devices-https">“HTTPS for a saved device”</a>.</td></tr>
       <tr><td><span class="ui">Could not load the saved password for this device.</span> with <span class="ui">Retry</span></td><td>The saved password cannot be read. Enter it again with <span class="ui">Edit Credentials</span> on the device page; see <a class="xref" href="#devices-credentials">“Changing the user name and password of a device”</a>.</td></tr>
       <tr><td><span class="ui">This recorder encrypts its video, which Cam Hub cannot read over its own protocol. Add it again and choose ONVIF under “Connect using”.</span></td><td>The recorder sends encrypted video over its own protocol. Add it again with ONVIF as the connection method; see <a class="xref" href="#add-methods">“Choosing the connection method”</a>.</td></tr>
       <tr><td><span class="ui">The recorder would not play this recording. It may have been overwritten — choose another time.</span></td><td>The recorder refused the recording, for example because it was overwritten. Choose another time on the timeline.</td></tr>
@@ -2528,7 +2613,7 @@
       <p class="check"><b class="check-label">Check:</b> The list closes, and the copy appears in the tile that was tapped.</p>
     </li>
   </ol>
-  <p>The copy is independent of the original, as the note under the list says: <span class="ui">The copy is set up on its own: changing it later leaves the other page as it is.</span> A copied control panel counts toward the plan on its own, and a copied picture is stored twice, which adds to the size of the backup.</p>
+  <p>The copy is independent of the original, as the note under the list says: <span class="ui">The copy is set up on its own: changing it later leaves the other page as it is.</span> A copied control panel counts toward the plan on its own. A copied picture is stored twice; when the other page holds a picture, a second note says so: <span class="ui">A copied picture is kept twice, so it counts twice towards the size of your iCloud backup.</span></p>
 
   <h3 id="lvm-canvases">Two canvases on iPhone Duo</h3>
   <p>On an iPhone Duo held half-folded, with the fold across the screen, LiveView Mix can be split at the fold into two canvases: the upper canvas above the fold and the lower canvas below it. Each canvas is a wall of its own, with its own cameras, layout, wall pages, control panels and close-up; a typical use is cameras on the upper canvas and control panels on the lower one. The setting appears only on an iPhone Duo; for the iPhone Duo in general, see <a class="xref" href="#tour-duo">“iPhone Duo”</a>.</p>
@@ -3340,7 +3425,7 @@ Content-Type: application/json
     <thead><tr><th>Item</th><th>iCloud backup</th><th>Sharing code</th></tr></thead>
     <tbody>
       <tr><td>Devices</td><td>All devices, including YouTube and Twitch streams</td><td>The ticked devices, including YouTube and Twitch streams</td></tr>
-      <tr><td>Data of each device</td><td colspan="2">Name, address, ports, username, password, connection method, model, serial number, firmware version, the position of the device in the list, and for a NAS the SNMP settings used by Disk Health (community name and port).</td></tr>
+      <tr><td>Data of each device</td><td colspan="2">Name, address, ports, username, password, connection method, the HTTPS setting with its port and trusted certificate, model, serial number, firmware version, the position of the device in the list, and for a NAS the SNMP settings used by Disk Health (community name and port).</td></tr>
       <tr><td>Channels</td><td colspan="2">Channel names and custom names, the enabled state, the paused state.</td></tr>
       <tr><td>App settings</td><td>Always included</td><td>Included only when <span class="ui">Include app settings</span> is on, and applied only when the recipient chooses <span class="ui">Also Use Their Settings</span></td></tr>
     </tbody>
@@ -4084,7 +4169,7 @@ Content-Type: application/json
   </ol>
 
   <h4>Deleting all data</h4>
-  <p>Use this action to empty the app, for example before the device is passed on. It cannot be undone. Without an iCloud backup or an export code, the passwords of the cameras cannot be recovered, because they are stored only on this device.</p>
+  <p>Use this action to empty the app, for example before the device is passed on. It cannot be undone. Without an iCloud backup or an export code, the passwords of the cameras cannot be recovered, because this action removes them from this device.</p>
   <ol class="steps">
     <li class="step">
       <p>In the section <span class="ui">Reset</span>, tap <span class="ui">Delete All Data</span>.</p>
@@ -4192,8 +4277,8 @@ Content-Type: application/json
     <tbody>
       <tr><td>Tabs and start</td><td>Five tabs. The app opens on <span class="ui">LiveView Mix</span>, or as chosen in <span class="ui">Open on launch</span>.</td><td>Four tabs, without <span class="ui">Tools</span>. The app always opens on <span class="ui">LiveView Mix</span>; a full-screen wall that was open is shown again after the app restarts. There is no <span class="ui">Open on launch</span>.</td></tr>
       <tr><td>Operation</td><td>Touch, with gestures such as pinch, drag and long press.</td><td>Remote. The selection moves with the directional pad or by swiping, Select acts like a tap and Menu goes back. There are no touch gestures.</td></tr>
-      <tr><td>Adding devices</td><td>A form that finds the connection method and the ports by itself, with both under <span class="ui">Advanced</span>; the network scan, the checklist, the device report, and separate forms for YouTube live streams and Twitch channels.</td><td>A short form, opened with <span class="ui">Add IP Device</span>: name, address, <span class="ui">HTTP Port</span>, <span class="ui">RTSP Port</span>, username, password, the switch <span class="ui">Connect via ONVIF</span> and a switch for the native protocol of one device family (see <a class="xref" href="#brands-methods">“Connection methods”</a>), followed by <span class="ui">Add Demo Cameras</span> and <span class="ui">Add Demo Estate</span>. There is no scan, no list of brands, no checklist and no device report. A YouTube or Twitch link is refused. At the recorder limit, the form shows <span class="ui">Free includes 1 recorder. Add more with an NVR plan.</span>, or a longer sentence when the sample devices hold the place, instead of the plans screen.</td></tr>
-      <tr><td>Device page</td><td>Rename, <span class="ui">Edit Credentials</span>, <span class="ui">Disk Health</span> where the device reports it, and a menu for each camera: rename, enable or disable, pause. A device is deleted from the list.</td><td><span class="ui">Show details</span> or <span class="ui">Hide details</span>, <span class="ui">Rename</span> and <span class="ui">Edit Credentials</span> above the wall, <span class="ui">Delete Device</span> below it. There is no menu for a camera and no <span class="ui">Disk Health</span>. Channels are switched on and off in <span class="path"><span class="ui">Settings</span> › <span class="ui">Choose which cameras to show</span></span>.</td></tr>
+      <tr><td>Adding devices</td><td>A form that finds the connection method and the ports by itself, with both under <span class="ui">Advanced</span>; the network scan, the checklist, the device report, and separate forms for YouTube live streams and Twitch channels.</td><td>A short form, opened with <span class="ui">Add IP Device</span>: name, address, <span class="ui">HTTP Port</span>, <span class="ui">RTSP Port</span>, username, password, the switch <span class="ui">Connect via ONVIF</span>, a switch for the native protocol of one device family (see <a class="xref" href="#brands-methods">“Connection methods”</a>) and, except with that protocol, <span class="ui">Use HTTPS</span> with <span class="ui">HTTPS Port</span> (see <a class="xref" href="#add-https">“Adding a device over HTTPS”</a>), followed by <span class="ui">Add Demo Cameras</span> and <span class="ui">Add Demo Estate</span>. There is no scan, no list of brands, no checklist and no device report. A YouTube or Twitch link is refused. At the recorder limit, the form shows <span class="ui">Free includes 1 recorder. Add more with an NVR plan.</span>, or a longer sentence when the sample devices hold the place, instead of the plans screen.</td></tr>
+      <tr><td>Device page</td><td>Rename, <span class="ui">Edit Credentials</span>, <span class="ui">HTTPS</span> where the device serves it, <span class="ui">Disk Health</span> where the device reports it, and a menu for each camera: rename, enable or disable, pause. A device is deleted from the list.</td><td><span class="ui">Show details</span> or <span class="ui">Hide details</span>, <span class="ui">Rename</span>, <span class="ui">Edit Credentials</span> and, where offered, <span class="ui">HTTPS</span> above the wall, <span class="ui">Delete Device</span> below it. A device without a saved password shows <span class="ui">No password saved. Enter it again under Devices.</span> on its thumbnails only; the password is entered with <span class="ui">Edit Credentials</span>. There is no menu for a camera and no <span class="ui">Disk Health</span>. Channels are switched on and off in <span class="path"><span class="ui">Settings</span> › <span class="ui">Choose which cameras to show</span></span>.</td></tr>
       <tr><td>Live view and single camera</td><td>SD and HD, sound, snapshot, two-way talk, PTZ, pinch zoom, landscape view.</td><td>SD and HD, sound, and a choice between fitting the picture and filling the screen. There is no snapshot, no talk, no PTZ and no pinch zoom.</td></tr>
       <tr><td>YouTube and Twitch</td><td>Played by the services' own players in tiles, on the camera page and full screen.</td><td>Shown by name only, with <span class="ui">YouTube live streams play only on iPhone and iPad.</span> or <span class="ui">Twitch streams play only on iPhone and iPad.</span>; the device list marks them <span class="ui">iPhone or iPad only</span>. They never play on the Apple TV; see <a class="xref" href="#trouble-streams">“YouTube and Twitch”</a>.</td></tr>
       <tr><td>Recording playback</td><td>A calendar that marks the days with recordings, a timeline that is dragged, speeds of 2×, 4× and 8×, search for people.</td><td>Available for devices that support playback. A bar is moved with the remote, with buttons for the previous and the next day and for zooming the bar, and a list of detected people where the device offers one. There is no calendar and no faster speed. A recording that has to be downloaded first is not played; the screen shows <span class="ui">Watch this recording on your iPhone or iPad.</span></td></tr>
@@ -4268,8 +4353,10 @@ Content-Type: application/json
       <tr><td>A red, crossed-out Wi-Fi symbol in the device list</td><td>The device did not accept a connection on its HTTP port within about 4 seconds. It may be switched off, on another network, or blocked by a firewall. A device that was added with a brand chosen under <span class="ui">Connect using</span>, or one that uses another port for video, can show the red symbol while its video works.</td><td>Check the power and the network. When the video plays, the symbol can be ignored. See <a class="xref" href="#devices-list">“The device list”</a>.</td></tr>
       <tr><td>A device that worked yesterday is unreachable today</td><td>The address of the device changed. A device keeps the address with which it was added.</td><td>Look up the new address on the router, delete the old device and add the device again with the new address; see <a class="xref" href="#add-form">“The Add Device form”</a>. A fixed address in the device or in the router prevents a repetition.</td></tr>
       <tr><td>A saved password no longer works, and the device page shows <span class="ui">Wrong username or password.</span> with the button <span class="ui">Edit Credentials</span></td><td>The password or the username was changed on the device.</td><td>Tap <span class="ui">Edit Credentials</span> and enter the new account. It is checked on the device before it is saved; the cameras, their names and the walls stay as they are. See <a class="xref" href="#devices-credentials">“Changing the user name and password of a device”</a>.</td></tr>
+      <tr><td>Every thumbnail shows <span class="ui">No password saved. Enter it again under Devices.</span>, for example on a new iPhone, iPad or Mac</td><td>The device list arrived without the passwords, for example on a device that was set up without the Keychain of the old one.</td><td>Restore an iCloud backup of Cam Hub, which carries every password, or enter the passwords one by one with <span class="ui">Enter Password</span> on each device page. See <a class="xref" href="#devices-password-missing">“A device without a saved password”</a>.</td></tr>
+      <tr><td>The thumbnails show <span class="ui">This device's security certificate has changed. Check it under HTTPS in the device's edit menu.</span></td><td>HTTPS is on for the device, and the device presents a certificate other than the trusted one, for example after a reset or after a new certificate was made on the device.</td><td>Open <span class="ui">HTTPS</span> from the pencil menu of the device page and compare the new fingerprint with the device's web page before tapping <span class="ui">Save</span>. See <a class="xref" href="#devices-https">“HTTPS for a saved device”</a>.</td></tr>
       <tr><td>The plans screen opens when a recorder is added</td><td>The recorder allowance of the plan is used up. Sample devices count like real ones.</td><td>See <a class="xref" href="#trouble-plans">“Plans and purchases”</a>.</td></tr>
-      <tr><td>A device cannot be added at all, and it only works in the app of its maker</td><td>The device offers no connection on the local network, or it accepts HTTPS only.</td><td>See <a class="xref" href="#brands-requirements">“Requirements and limits”</a>.</td></tr>
+      <tr><td>A device cannot be added at all, and it only works in the app of its maker</td><td>The device offers no connection on the local network, or it accepts HTTPS only and was added without <span class="ui">Use HTTPS</span>.</td><td>For a device that accepts HTTPS only, turn on <span class="ui">Use HTTPS</span> when adding it; see <a class="xref" href="#add-https">“Adding a device over HTTPS”</a>. Otherwise see <a class="xref" href="#brands-requirements">“Requirements and limits”</a>.</td></tr>
     </tbody>
   </table></div>
 
@@ -4433,7 +4520,7 @@ Content-Type: application/json
   </table></div>
 
   <h3 id="trouble-errors">Other error sentences</h3>
-  <p>These sentences appear in the failure message over a picture, above the timeline of the recordings panel, in the add-device form and in <span class="ui">Edit Credentials</span>. The first four are explained with the checks in <a class="xref" href="#add-failed">“When adding fails: the checklist”</a>.</p>
+  <p>These sentences appear in the failure message over a picture, above the timeline of the recordings panel, in the add-device form, in <span class="ui">Edit Credentials</span> and on the screen <span class="ui">HTTPS</span>. The first four are explained with the checks in <a class="xref" href="#add-failed">“When adding fails: the checklist”</a>.</p>
   <div class="table-wrap"><table>
     <thead><tr><th>Sentence</th><th>Meaning</th><th>What to do</th></tr></thead>
     <tbody>
@@ -4445,6 +4532,10 @@ Content-Type: application/json
       <tr><td><span class="ui" data-ui="value">The device refused the video stream (HTTP 404).</span></td><td>The device answered the video request with a status other than a sign-in refusal. The number is the status of the device.</td><td>Check the account rights for live view, the stream settings and the number of viewers of the device.</td></tr>
       <tr><td><span class="ui" data-ui="value">The recorder answered with HTTP 500.</span></td><td>The recorder answered a request with an error status.</td><td>Try again later, restart the recorder if needed, and check its firmware.</td></tr>
       <tr><td><span class="ui">This recorder encrypts its video, which Cam Hub cannot read over its own protocol. Add it again and choose ONVIF under “Connect using”.</span></td><td>The recorder was added through its own protocol, and it encrypts the video sent that way.</td><td>Delete the device and add it again with <span class="ui">ONVIF</span> chosen under <span class="path"><span class="ui">Advanced</span> › <span class="ui">Connect using</span></span>.</td></tr>
+      <tr><td><span class="ui">No password saved. Enter it again under Devices.</span></td><td>No password is saved for the device on this iPhone or iPad. Nothing was sent to the device.</td><td>Enter the password with <span class="ui">Enter Password</span> on the device page, or restore an iCloud backup; see <a class="xref" href="#devices-password-missing">“A device without a saved password”</a>.</td></tr>
+      <tr><td><span class="ui">This device's security certificate has changed. Check it under HTTPS in the device's edit menu.</span></td><td>HTTPS is on, and the device presents a certificate other than the trusted one.</td><td>Check the new certificate on the screen <span class="ui">HTTPS</span>; see <a class="xref" href="#devices-https">“HTTPS for a saved device”</a>.</td></tr>
+      <tr><td><span class="ui">This device did not answer over HTTPS just now.</span></td><td>No port presented a certificate when Cam Hub looked for HTTPS.</td><td>Check the HTTPS port, or add the device without <span class="ui">Use HTTPS</span>; see <a class="xref" href="#add-https">“Adding a device over HTTPS”</a>.</td></tr>
+      <tr><td><span class="ui">This device did not answer over plain HTTP, so HTTPS stays on.</span></td><td>HTTPS was to be turned off, but the device does not answer over plain HTTP, for example because HTTP is switched off on it.</td><td>Switch HTTP on at the device first, or keep HTTPS on; see <a class="xref" href="#devices-https">“HTTPS for a saved device”</a>.</td></tr>
       <tr><td><span class="ui">Could not load the saved password for this device.</span></td><td>The password stored on this iPhone or iPad could not be read.</td><td>Enter the password again with <span class="ui">Edit Credentials</span>; see <a class="xref" href="#devices-credentials">“Changing the user name and password of a device”</a>.</td></tr>
       <tr><td><span class="ui">Another device at this address already uses that username.</span></td><td>In <span class="ui">Edit Credentials</span>, the username matches another saved device with the same address and HTTP port.</td><td>Use another username, or delete the duplicate device.</td></tr>
       <tr><td><span class="ui">Could not save the password securely. Please try again.</span></td><td>The new password could not be stored on this device. The previous one was kept.</td><td>Try again.</td></tr>
@@ -4558,7 +4649,11 @@ Content-Type: application/json
   </details>
   <details class="faq">
     <summary>Can a device that accepts only HTTPS be added?</summary>
-    <p>No. Cam Hub controls devices over plain HTTP. A device with HTTP switched off cannot be added. For network storage devices, the port of the HTTP web interface is entered, not the port of the HTTPS one. See <a class="xref" href="#brands-requirements">“Requirements and limits”</a>.</p>
+    <p>Yes. Turn on <span class="path"><span class="ui">Advanced</span> › <span class="ui">Use HTTPS</span></span> in the add-device form; Cam Hub then adds the device over HTTPS and trusts the certificate that it presents. This applies to devices connected with <span class="ui">Auto-detect</span> or <span class="ui">ONVIF</span>. A device that has already been added is switched on its device page. See <a class="xref" href="#add-https">“Adding a device over HTTPS”</a> and <a class="xref" href="#devices-https">“HTTPS for a saved device”</a>.</p>
+  </details>
+  <details class="faq">
+    <summary>Why does Cam Hub ask for the passwords again after a move to a new iPhone, iPad or Mac?</summary>
+    <p>The passwords did not arrive with the device list. Restore an iCloud backup of Cam Hub, which carries every password, or enter them again with <span class="ui">Enter Password</span> on each device page. See <a class="xref" href="#devices-password-missing">“A device without a saved password”</a>.</p>
   </details>
   <details class="faq">
     <summary>How are the address or the password of a saved device changed?</summary>
@@ -4651,6 +4746,7 @@ Content-Type: application/json
       <tr><th scope="row">Sound (listening)</th><td>If supported</td><td>If supported</td><td>If supported</td><td>If supported</td><td>If supported</td><td>If supported</td></tr>
       <tr><th scope="row">Talking through the camera</th><td>If supported</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr>
       <tr><th scope="row">Disk Health</th><td>Yes</td><td>Yes</td><td>If set up</td><td>No</td><td>No</td><td>No</td></tr>
+      <tr><th scope="row">HTTPS</th><td>If supported</td><td>If supported</td><td>If supported</td><td>No</td><td>If supported</td><td>No</td></tr>
       <tr><th scope="row">Channel list</th><td>For recorders</td><td>For recorders</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Typed number</td></tr>
     </tbody>
   </table></div>
@@ -4668,8 +4764,9 @@ Content-Type: application/json
     <li><b>Talking</b>: offered for standalone Hikvision cameras that report a two-way audio channel in <code>G.711</code>; not for the channels of a recorder. See <a class="xref" href="#single-talk">“Two-way talk”</a>.</li>
     <li><b>Disk Health</b>: Hikvision reports the state of each disk, with S.M.A.R.T. details where the device provides them. Dahua reports state, capacity and, where available, temperature, but no S.M.A.R.T. details. A Synology NAS is read over SNMP, which must be switched on at the NAS and set up in Cam Hub. See <a class="xref" href="#devices-health">“Disk Health”</a>.</li>
     <li><b>Channel list</b>: Hikvision and Dahua list the channels of a recorder with names and signal state, and a device that is not a recorder has one channel. Synology Surveillance Station lists every camera of the system as a channel with its signal state. Xiongmai devices report their number of channels and the names given to them, without a signal state. ONVIF lists one channel for each separate video source and does not report a signal state. RTSP and the brands from the list have no list: the number of cameras is entered (1 to 64), and every channel is shown as online.</li>
+    <li><b>HTTPS</b>: offered when the device serves HTTPS on its web interface, and turned on for each device; see <a class="xref" href="#add-https">“Adding a device over HTTPS”</a> and <a class="xref" href="#devices-https">“HTTPS for a saved device”</a>. Xiongmai's own protocol and plain RTSP have no web interface for it. Video over RTSP is not encrypted by it.</li>
   </ul>
-  <p>Not available with any method: focus and iris control, saving or exporting recordings, logging in to a cloud account, and a connection over HTTPS.</p>
+  <p>Not available with any method: focus and iris control, saving or exporting recordings, and logging in to a cloud account.</p>
 
   <h3 id="brands-profiles">The brands in the list</h3>
   <p>The brands in the <span class="ui">Brands</span> section are connected over plain RTSP. Selecting a brand adds a section named after it, with the field <span class="ui">Cameras</span> (1 to 64) and a path field. With <code>1</code>, the device is added as a camera that is named after the brand; with a larger number, it is added as a recorder with channels <code>CH1</code> to <code>CHn</code>, and it counts as a recorder for the plan. A blank path field makes Cam Hub try the documented paths in turn and keep the one that the device answers. Only a particular path needs to be entered. The choice RTSP works the same way with the paths that most cameras use.</p>
@@ -4708,7 +4805,7 @@ Content-Type: application/json
   <div class="table-wrap"><table>
     <thead><tr><th>Topic</th><th>Requirement or limit</th></tr></thead>
     <tbody>
-      <tr><td>Plain HTTP only</td><td>Cam Hub contacts devices over plain HTTP; Xiongmai devices over their own protocol instead. Video is fetched over RTSP, on TCP first and on UDP when the device refuses TCP. HTTPS and self-signed certificates are not supported for devices. A device with HTTP switched off, or one that accepts HTTPS only, cannot be added. For a network storage device, enter the port of its HTTP web interface, for example <code>5000</code>, not the port of the HTTPS interface.</td></tr>
+      <tr><td>HTTP and HTTPS</td><td>Cam Hub contacts devices over plain HTTP, or over HTTPS where it is turned on for a device; Xiongmai devices over their own protocol instead. Video is fetched over RTSP, on TCP first and on UDP when the device refuses TCP; HTTPS does not encrypt it. With HTTPS, Cam Hub trusts the certificate that the device presented when HTTPS was turned on, a self-signed one included, or a certificate that a public certificate authority issued for the address. A device with HTTP switched off, or one that accepts HTTPS only, is added with <span class="ui">Use HTTPS</span>; see <a class="xref" href="#add-https">“Adding a device over HTTPS”</a>. For a network storage device, enter the port of its HTTP web interface in <span class="ui">HTTP Port</span>, for example <code>5000</code>; with <span class="ui">Use HTTPS</span>, Cam Hub also finds its HTTPS port <code>5001</code> by itself.</td></tr>
       <tr><td>ONVIF switched on</td><td>For the choice <span class="ui">ONVIF</span>, ONVIF must be switched on at the device. Cam Hub looks for the service at <code>/onvif/device_service</code>, <code>/onvif/service</code> or <code>/onvif/device</code> on the port entered in <span class="ui">HTTP Port</span>. Some devices have ONVIF switched off in the factory settings.</td></tr>
       <tr><td>RTSP switched on</td><td>Video is fetched over RTSP. With Auto-detect, Cam Hub finds the RTSP port; otherwise it uses the port entered in <span class="ui">RTSP Port</span> (usually <code>554</code>). A network storage device may use its own streaming path first. Where the device has a setting for RTSP authentication, <code>Digest</code> is the method to select.</td></tr>
       <tr><td>A separate ONVIF user</td><td>Some devices keep a list of ONVIF users that is separate from the users of the web interface, and the administrator login does not work for ONVIF. Create a user in that list. Five brands in the list need their own camera or ONVIF account before RTSP works: <span class="ui" data-ui="value">Axis</span>, <span class="ui" data-ui="value">TP-Link (Tapo / VIGI)</span>, <span class="ui" data-ui="value">ANNKE</span>, <span class="ui" data-ui="value">MOBOTIX</span> and <span class="ui" data-ui="value">2N</span>.</td></tr>
@@ -4756,7 +4853,7 @@ Content-Type: application/json
   </ul>
   <div class="callout warn">
     <strong class="t">Devices that cannot be added</strong>
-    <p>A device that works only through the cloud app of its maker, offers no connection on the local network, or accepts HTTPS only, cannot be added to Cam Hub.</p>
+    <p>A device that works only through the cloud app of its maker, or offers no connection on the local network, cannot be added to Cam Hub. A device that accepts HTTPS only is added with <span class="ui">Use HTTPS</span>; see <a class="xref" href="#add-https">“Adding a device over HTTPS”</a>.</p>
   </div>
 
   <h3 id="brands-activate">Activating a new device</h3>

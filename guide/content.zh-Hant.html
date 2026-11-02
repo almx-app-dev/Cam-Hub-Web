@@ -123,6 +123,8 @@
       <tr><td><span class="path"><span class="ui">進階</span> › <span class="ui">連線方式</span></span></td><td><span class="ui">自動偵測</span>、<span class="ui">ONVIF</span>、RTSP、某一設備系列的專用協定，或清單中的品牌。選擇方式見<a class="xref" href="#add-methods">「連線方式的選擇」</a>。</td><td><span class="ui">自動偵測</span></td></tr>
       <tr><td><span class="path"><span class="ui">進階</span> › <span class="ui">HTTP 連接埠</span></span></td><td>設備控制介面的連接埠。使用<span class="ui">自動偵測</span>時，Cam Hub 會自行找出開放的連接埠，並優先嘗試此處填入的連接埠。使用<span class="ui">ONVIF</span>時，此欄須填入設備的 ONVIF 服務埠，例如部分設備使用 <code>2020</code> 或 <code>8899</code>。</td><td><code>80</code></td></tr>
       <tr><td><span class="path"><span class="ui">進階</span> › <span class="ui">RTSP 連接埠</span></span></td><td>影像串流的連接埠。<span class="ui">自動偵測</span>會優先嘗試此處填入的連接埠。選擇 RTSP 連接埠不是 <code>554</code> 的品牌時，若欄位仍是先前的預設值，會自動改為該品牌的連接埠。</td><td><code>554</code></td></tr>
+      <tr><td><span class="path"><span class="ui">進階</span> › <span class="ui">使用 HTTPS</span></span></td><td>選擇<span class="ui">自動偵測</span>或<span class="ui">ONVIF</span>時提供。只在設備的網頁使用 HTTPS 時開啟：Cam Hub 會先在該位址尋找 HTTPS（不登入），再透過 HTTPS 加入設備，並信任設備當下出示的憑證。見<a class="xref" href="#add-https">「透過 HTTPS 加入設備」</a>。</td><td>關閉</td></tr>
+      <tr><td><span class="path"><span class="ui">進階</span> › <span class="ui">HTTPS 連接埠</span></span></td><td><span class="ui">使用 HTTPS</span>開啟時顯示。維持 <code>443</code> 時，Cam Hub 也會在 <code>5001</code> 與 <code>8443</code> 尋找；填入其他連接埠時只使用該連接埠。</td><td><code>443</code></td></tr>
       <tr><td><span class="path"><span class="ui">進階</span> › <span class="ui">設備連接埠</span></span></td><td>選擇某一設備系列的專用協定時，取代上面兩個連接埠欄位顯示：設備回應該協定的連接埠。</td><td><code>34567</code></td></tr>
     </tbody>
   </table></div>
@@ -186,8 +188,8 @@
   <ol class="steps">
     <li class="step">
       <p>在新增設備表單中點選<span class="ui">進階</span>。</p>
-      <p class="check"><b class="check-label">確認：</b>區塊展開，顯示<span class="ui">連線方式</span>、<span class="ui">HTTP 連接埠</span>與<span class="ui">RTSP 連接埠</span>。</p>
-      <figure class="phone"><img src="guide/img/add-advanced.jpg" alt="展開進階後的新增設備表單：連線方式為自動偵測、HTTP 連接埠 80、RTSP 連接埠 554，以及自動偵測的說明" loading="lazy" decoding="async" width="900" height="1947"><figcaption>展開的進階區塊</figcaption></figure>
+      <p class="check"><b class="check-label">確認：</b>區塊展開，顯示<span class="ui">連線方式</span>、<span class="ui">HTTP 連接埠</span>、<span class="ui">RTSP 連接埠</span>與<span class="ui">使用 HTTPS</span>開關。</p>
+      <figure class="phone"><img src="guide/img/add-advanced.jpg" alt="展開進階後的新增設備表單：連線方式為自動偵測、HTTP 連接埠 80、RTSP 連接埠 554、使用 HTTPS 為關閉，以及自動偵測的說明" loading="lazy" decoding="async" width="900" height="1947"><figcaption>展開的進階區塊</figcaption></figure>
     </li>
     <li class="step">
       <p>點選<span class="ui">連線方式</span>。</p>
@@ -200,7 +202,7 @@
     </li>
     <li class="step">
       <p>點選連線方式。</p>
-      <p class="check"><b class="check-label">確認：</b>表單的<span class="ui">連線方式</span>列顯示所選的方式，區塊下方附有說明。選擇清單中的品牌或 RTSP 時，表單增加含<span class="ui">攝影機</span>與路徑欄位的區塊；選擇某一設備系列的專用協定時，兩個連接埠欄位改為<span class="ui">設備連接埠</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>表單的<span class="ui">連線方式</span>列顯示所選的方式，區塊下方附有說明。選擇清單中的品牌或 RTSP 時，表單增加含<span class="ui">攝影機</span>與路徑欄位的區塊；選擇某一設備系列的專用協定時，兩個連接埠欄位改為<span class="ui">設備連接埠</span>。<span class="ui">使用 HTTPS</span>只在<span class="ui">自動偵測</span>與<span class="ui">ONVIF</span>時提供。</p>
     </li>
     <li class="step">
       <p>設備不使用預設連接埠時，修改連接埠欄位。</p>
@@ -226,14 +228,42 @@
     <p>這些連線方式沒有錄影回放、PTZ 控制與快照。設備提供該品牌的第二路串流時，SD 使用該串流；否則 SD 與 HD 顯示同一路串流。</p>
   </div>
   <div class="callout note">
-    <strong class="t">設備控制只使用 HTTP</strong>
-    <p>設備控制（辨識設備、讀取通道清單、搜尋錄影）使用 <code>http://位址:連接埠</code>；使用專用協定的設備系列則改用該協定。只開放 HTTPS 的設備目前無法加入。</p>
+    <strong class="t">設備控制使用 HTTP，開啟 HTTPS 時除外</strong>
+    <p>設備控制（辨識設備、讀取通道清單、搜尋錄影）使用 <code>http://位址:連接埠</code>，該設備開啟 HTTPS 時則改用 HTTPS；使用專用協定的設備系列則改用該協定。只接受 HTTPS 的設備，以<span class="ui">使用 HTTPS</span>加入，見<a class="xref" href="#add-https">「透過 HTTPS 加入設備」</a>。</p>
   </div>
   <div class="callout note">
     <strong class="t">以 RTSP 或清單中的品牌連線時，失敗訊息不同</strong>
     <p>連不上或逾時時，只會顯示<span class="ui">發生錯誤。請再試一次。</span>這些連線方式的<span class="ui">不支援的設備。</span>表示所有候選路徑都沒有串流，常見原因是 RTSP 連接埠錯誤，或設備的串流功能已關閉。</p>
   </div>
   <p>不確定設備能否使用時，點選表單中的<span class="ui">相容性參考</span>，查看支援與不支援的設備。表單是從已辨識出品牌的掃描結果開啟，且位址未經修改時，不會顯示此項目，也不會顯示<span class="ui">加入範例攝影機</span>。</p>
+
+  <h3 id="add-https">透過 HTTPS 加入設備</h3>
+  <p>網頁使用 HTTPS 的設備可以透過 HTTPS 加入，關閉了一般 HTTP 的設備也可以。HTTPS 預設關閉，而且只在<span class="ui">自動偵測</span>與<span class="ui">ONVIF</span>時提供：某一設備系列的專用協定、RTSP 與清單中的品牌，沒有需要 HTTPS 保護的網頁介面。已加入的設備改在設備頁切換為 HTTPS，見<a class="xref" href="#devices-https">「已儲存設備的 HTTPS」</a>。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>在新增設備表單中輸入位址、使用者名稱與密碼，再點選<span class="ui">進階</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>區塊中顯示<span class="ui">使用 HTTPS</span>開關，目前為關閉。</p>
+    </li>
+    <li class="step">
+      <p>開啟<span class="ui">使用 HTTPS</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>出現<span class="ui">HTTPS 連接埠</span>欄位，內容為 <code>443</code>；區塊下方出現這個選項的說明。</p>
+      <figure class="phone"><img src="guide/img/add-https.jpg" alt="展開進階、已開啟使用 HTTPS 的新增設備表單：HTTPS 連接埠欄位為 443，區塊下方是 HTTPS 的說明" loading="lazy" decoding="async" width="900" height="1947"><figcaption>已開啟使用 HTTPS</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>設備使用其他 HTTPS 連接埠時，在<span class="ui">HTTPS 連接埠</span>輸入該連接埠。</p>
+      <p class="check"><b class="check-label">確認：</b>欄位顯示該連接埠。維持 <code>443</code> 時，Cam Hub 也會在 <code>5001</code> 與 <code>8443</code> 尋找；填入其他連接埠時只使用該連接埠。</p>
+    </li>
+    <li class="step">
+      <p>點選右上角的<span class="ui">新增</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>表單顯示<span class="ui">正在連線到設備…</span>。連線成功後表單關閉，新設備出現在設備清單中；其設備頁的資訊卡片顯示<span class="ui">HTTPS</span>列與連接埠。</p>
+    </li>
+  </ol>
+  <ul>
+    <li>說明文字為<span class="ui">僅適用於網頁使用 HTTPS 的設備；不確定的話請保持關閉。Cam Hub 會在這個連接埠尋找 HTTPS（維持 443 時，也會試 5001 和 8443），並信任設備現在出示的憑證。之後可以在設備頁面的「HTTPS」中查看。</span>開關開啟期間，即使收合<span class="ui">進階</span>，說明仍會顯示。</li>
+    <li>尋找 HTTPS 時不會送出使用者名稱與密碼：Cam Hub 只檢查哪些連接埠會出示憑證。沒有任何連接埠出示憑證時，表單顯示<span class="ui">這台設備剛才沒有透過 HTTPS 回應。</span>有多個連接埠出示憑證時會逐一嘗試，轉送到其他設備的連接埠不會讓加入就此中止。</li>
+    <li>信任的是加入時設備出示的憑證。之後可以與設備自己網頁的憑證比對，見<a class="xref" href="#devices-https">「已儲存設備的 HTTPS」</a>。</li>
+    <li>HTTPS 加密的是設備控制。透過 RTSP 取得的影像不會因此加密。</li>
+  </ul>
 
   <h3 id="add-streams">加入 YouTube 直播與 Twitch 頻道</h3>
   <p>YouTube 直播或 Twitch 頻道可以加入設備清單，像攝影機一樣顯示。影像由該服務自己的播放器播放，不需要帳號，也一律不計入方案額度。這類串流沒有錄影、PTZ 控制與快照。串流可在 iPhone 與 iPad 上播放；Apple TV 只顯示名稱。YouTube 與 Twitch 在部分國家或地區不提供服務，這時不會出現這兩個選項。</p>
@@ -349,6 +379,14 @@
         </ol></td>
       </tr>
       <tr>
+        <td><span class="ui">這台設備剛才沒有透過 HTTPS 回應。</span></td>
+        <td><ol>
+          <li>以瀏覽器開啟設備的網頁，位址以 <code>https://</code> 開頭，確認設備是否使用 HTTPS 及其連接埠。</li>
+          <li>在<span class="ui">HTTPS 連接埠</span>輸入該連接埠。維持 <code>443</code> 時，只會檢查 <code>443</code>、<code>5001</code> 與 <code>8443</code>。</li>
+          <li>關閉<span class="ui">使用 HTTPS</span>，改以一般 HTTP 加入設備。</li>
+        </ol></td>
+      </tr>
+      <tr>
         <td><span class="ui">發生錯誤。請再試一次。</span>及上列以外的其他訊息</td>
         <td><ol>
           <li>檢查 IP 位址。</li>
@@ -424,11 +462,11 @@
   </ul>
 
   <h4>登入行為</h4>
-  <p>蒐集時，需要登入的請求一次只送出一個，直到設備表示接受或拒絕帳號密碼。設備拒絕之後，報告不再送出任何登入。導致報告的加入失敗本身就是登入被拒絕時（<span class="ui">使用者名稱或密碼錯誤。</span>），報告完全不會再嘗試登入，以免帳號被設備鎖定。蒐集只送出唯讀請求，不會變更設備上的任何設定。</p>
+  <p>蒐集時，需要登入的請求一次只送出一個，直到設備表示接受或拒絕帳號密碼。設備拒絕之後，報告不再送出任何登入。導致報告的加入失敗本身就是登入被拒絕時（<span class="ui">使用者名稱或密碼錯誤。</span>），報告完全不會再嘗試登入，以免帳號被設備鎖定。開啟<span class="ui">使用 HTTPS</span>時，報告會先在不登入的情況下尋找設備的憑證，再以該憑證透過 HTTPS 重做一次加入；設備沒有出示憑證時，報告不會登入。蒐集只送出唯讀請求，不會變更設備上的任何設定。</p>
 
   <h4>報告包含與不包含的內容</h4>
   <ul>
-    <li><b>包含</b>：App 與系統的版本、手機的機型代號、語言設定、所選的連線方式、設備位址（私人網路位址的最後一段以 <code>x</code> 遮蓋，公開位址只標示類別）、連接埠、加入失敗的錯誤代碼、偵測到的廠牌與型號、開放的連接埠、設備回應的標頭與結構（已遮蓋）、串流的編碼與參數、時鐘與時區的差異，以及各檢查步驟與結果。</li>
+    <li><b>包含</b>：App 與系統的版本、手機的機型代號、語言設定、所選的連線方式（開啟<span class="ui">使用 HTTPS</span>時連同 HTTPS 連接埠）、設備位址（私人網路位址的最後一段以 <code>x</code> 遮蓋，公開位址只標示類別）、連接埠、加入失敗的錯誤代碼、偵測到的廠牌與型號、開放的連接埠、設備回應的標頭與結構（已遮蓋）、串流的編碼與參數、時鐘與時區的差異，以及各檢查步驟與結果。</li>
     <li><b>不包含</b>：密碼、使用者名稱、您為設備取的名稱、公開位址與動態網域名稱、網卡的實體位址、電子郵件位址、權杖與識別用的資料、影像與畫面。長序號只保留最後四個字元。</li>
     <li>遮蓋是自動進行的，每處遮蓋都留有標記。寄出前仍請檢視報告，並可關閉任一項目。</li>
   </ul>
@@ -570,14 +608,15 @@
   <p>設備頁上方是資訊卡片；支援的設備在其下方顯示<span class="ui">硬碟健康</span>列；再往下，在<span class="ui">攝影機</span>標題下以縮圖顯示該設備的各個通道。標題為設備名稱。縮圖的欄數依畫面寬度自動調整。</p>
   <figure class="phone"><img src="guide/img/device-detail.jpg" alt="錄影主機的設備頁：上方為資訊卡片，其下為攝影機標題與三個通道的即時縮圖，右上角有三個按鈕" loading="lazy" decoding="async" width="900" height="1956"><figcaption>設備頁</figcaption></figure>
   <ul>
-    <li><b>資訊卡片</b>：顯示設備名稱與類型，以及<span class="ui">型號</span>、<span class="ui">IP 位址</span>、<span class="ui">連接埠</span>（設備的 HTTP 連接埠）、<span class="ui">序號</span>、<span class="ui">韌體</span>與<span class="ui">攝影機</span>（通道數量）。序號與韌體只在設備有回報時顯示。YouTube 直播或 Twitch 頻道以<span class="ui">連結</span>列取代<span class="ui">IP 位址</span>與<span class="ui">連接埠</span>。</li>
+    <li><b>資訊卡片</b>：顯示設備名稱與類型，以及<span class="ui">型號</span>、<span class="ui">IP 位址</span>、<span class="ui">連接埠</span>（設備的 HTTP 連接埠）、<span class="ui">HTTPS</span>（HTTPS 連接埠，只在開啟 HTTPS 時顯示）、<span class="ui">序號</span>、<span class="ui">韌體</span>與<span class="ui">攝影機</span>（通道數量）。序號與韌體只在設備有回報時顯示。YouTube 直播或 Twitch 頻道以<span class="ui">連結</span>列取代<span class="ui">IP 位址</span>與<span class="ui">連接埠</span>。</li>
     <li><b><span class="ui">硬碟健康</span></b>：開啟設備的硬碟報告，見<a class="xref" href="#devices-health">「硬碟健康」</a>。該列右側的橘色三角形或紅色符號，表示上一次讀取時最嚴重的硬碟判定結果。</li>
     <li><b>縮圖</b>：錄影主機的每個通道各顯示一個縮圖；獨立攝影機只有一個通道，顯示一個縮圖。每個縮圖的左下角顯示通道編號與名稱。縮圖依<span class="path"><span class="ui">設定</span> › <span class="ui">預設畫質</span> › <span class="ui">多支攝影機</span></span>使用 SD 或 HD，未變更時為 SD。設定變更後，此頁立即套用；此頁本身沒有 SD 與 HD 的切換按鈕。</li>
     <li><b>重新整理</b>：開啟設備頁時（同一台設備每分鐘最多一次），以及每次在頁面上向下拉時，Cam Hub 會向設備重新讀取通道清單。名稱與連線狀態會更新，設備新增的通道會出現，設備已移除的通道會消失。新出現的通道只有在方案允許時才會啟用，否則顯示為<span class="ui">已停用</span>。在 Cam Hub 中設定的名稱會保留。設備沒有回應，或回傳的清單看起來不完整（完全沒有通道，或以單一通道取代多個通道）時，清單維持原狀，也不顯示訊息。</li>
     <li><b>登入遭拒</b>：重新整理時設備拒絕已儲存的使用者名稱或密碼，縮圖上方會出現訊息<span class="ui">使用者名稱或密碼錯誤。</span>與<span class="ui">編輯帳號密碼</span>按鈕，見<a class="xref" href="#devices-credentials">「變更設備的使用者名稱與密碼」</a>。</li>
+    <li><b>沒有儲存密碼</b>：這部 iPhone 或 iPad 上沒有儲存該設備的密碼時，縮圖上方會出現訊息與<span class="ui">重新輸入密碼</span>、<span class="ui">從 iCloud 還原</span>兩個按鈕，見<a class="xref" href="#devices-password-missing">「沒有儲存密碼的設備」</a>。</li>
     <li><b>沒有通道</b>：設備沒有回報任何通道時，頁面顯示<span class="ui">找不到攝影機。</span>與<span class="ui">重新整理</span>按鈕，點選後重新讀取通道清單。</li>
   </ul>
-  <p>右上角的三個按鈕由左至右為：黑邊按鈕、<span class="ui">全螢幕牆</span>與鉛筆按鈕。以使用者名稱與密碼登入的設備，鉛筆按鈕（<span class="ui">編輯設備</span>）會開啟含有<span class="ui">重新命名</span>與<span class="ui">編輯帳號密碼</span>的選單。範例攝影機與 YouTube 直播、Twitch 頻道的鉛筆按鈕，本身就是<span class="ui">重新命名</span>按鈕。</p>
+  <p>右上角的三個按鈕由左至右為：黑邊按鈕、<span class="ui">全螢幕牆</span>與鉛筆按鈕。以使用者名稱與密碼登入的設備，鉛筆按鈕（<span class="ui">編輯設備</span>）會開啟含有<span class="ui">重新命名</span>與<span class="ui">編輯帳號密碼</span>的選單；設備提供 HTTPS 或已開啟 HTTPS 時，選單另有<span class="ui">HTTPS</span>，見<a class="xref" href="#devices-https">「已儲存設備的 HTTPS」</a>。範例攝影機與 YouTube 直播、Twitch 頻道的鉛筆按鈕，本身就是<span class="ui">重新命名</span>按鈕。</p>
   <div class="callout note">
     <strong class="t">像書本一樣握持 iPhone Duo</strong>
     <p>iPhone Duo 半開、摺痕由上而下時，設備頁的一半顯示縮圖，另一半顯示單一攝影機的頁面。點選縮圖會在另一半顯示該攝影機，而不開啟新頁面；一開始顯示第一支可以顯示畫面的攝影機。見<a class="xref" href="#single-duo">「摺疊 iPhone Duo 時的單機畫面」</a>。</p>
@@ -595,7 +634,7 @@
   <ol class="steps">
     <li class="step">
       <p>點選設備頁右上角的鉛筆按鈕。</p>
-      <p class="check"><b class="check-label">確認：</b>以使用者名稱與密碼登入的設備，會開啟含有<span class="ui">重新命名</span>與<span class="ui">編輯帳號密碼</span>的選單。其他設備會直接開啟下一步驟的對話框。</p>
+      <p class="check"><b class="check-label">確認：</b>以使用者名稱與密碼登入的設備，會開啟含有<span class="ui">重新命名</span>、<span class="ui">編輯帳號密碼</span>（以及提供時的<span class="ui">HTTPS</span>）的選單。其他設備會直接開啟下一步驟的對話框。</p>
     </li>
     <li class="step">
       <p>出現選單時，點選<span class="ui">重新命名</span>。</p>
@@ -637,11 +676,11 @@
     <li class="step">
       <p>開啟該設備的設備頁。</p>
       <p class="check"><b class="check-label">確認：</b>畫面顯示設備頁。上一次重新整理遭拒時，縮圖上方會出現訊息<span class="ui">使用者名稱或密碼錯誤。</span>與<span class="ui">編輯帳號密碼</span>按鈕；該按鈕開啟的畫面與步驟 3 相同。</p>
-      <figure class="phone"><img src="guide/img/device-credentials-banner.jpg" alt="密碼遭拒的示範錄影主機設備頁：「使用者名稱或密碼錯誤。」訊息與下方的編輯帳號密碼按鈕，一個縮圖也顯示相同訊息" loading="lazy" decoding="async" width="900" height="1947"><figcaption>登入遭拒後的訊息</figcaption></figure>
+      <figure class="phone"><img src="guide/img/device-credentials-banner.jpg" alt="密碼遭拒的示範錄影主機設備頁：「使用者名稱或密碼錯誤。」訊息與下方的編輯帳號密碼按鈕，縮圖在通道名稱上方顯示相同訊息" loading="lazy" decoding="async" width="900" height="1947"><figcaption>登入遭拒後的訊息</figcaption></figure>
     </li>
     <li class="step">
       <p>點選右上角的鉛筆按鈕（<span class="ui">編輯設備</span>）。</p>
-      <p class="check"><b class="check-label">確認：</b>開啟含有<span class="ui">重新命名</span>與<span class="ui">編輯帳號密碼</span>的選單。</p>
+      <p class="check"><b class="check-label">確認：</b>開啟含有<span class="ui">重新命名</span>與<span class="ui">編輯帳號密碼</span>的選單；提供 HTTPS 的設備，選單另有<span class="ui">HTTPS</span>。</p>
       <figure class="phone"><img src="guide/img/device-edit-menu.jpg" alt="設備頁右上角的鉛筆選單：重新命名與編輯帳號密碼" loading="lazy" decoding="async" width="900" height="1947"><figcaption>鉛筆選單</figcaption></figure>
     </li>
     <li class="step">
@@ -667,6 +706,49 @@
     <strong class="t">每台設備只登入一次</strong>
     <p>許多錄影主機與 NAS 在登入失敗數次後，會鎖定帳號或 iPhone、iPad 的位址，其他 App 也會一併受影響。因此 Cam Hub 驗證新的帳號密碼時，只透過加入設備時使用的連線方式登入一次，不會逐一嘗試多種連線方式。對大多數設備而言，牆面上的縮圖也是整台設備只登入一次：設備拒絕登入時，該設備的所有縮圖會同時顯示失敗，Cam Hub 要等約一分鐘，或 Cam Hub 回到前景時，才會以相同的帳號密碼再試一次。儲存新的帳號密碼後則立即重新開始。</p>
   </div>
+
+  <h3 id="devices-password-missing">沒有儲存密碼的設備</h3>
+  <p>Cam Hub 把每台設備的密碼儲存在 iPhone 或 iPad 的鑰匙圈中。iPhone 或 iPad 的內容搬到新機時，密碼可以一起搬過去；Cam Hub 的 iCloud 備份與分享代碼則一定包含密碼（見<a class="xref" href="#share-contents">「備份與代碼的內容」</a>）。設備清單到了新機卻沒有密碼時，例如新的 iPhone、iPad 或 Mac 沒有沿用舊機的鑰匙圈，就會出現以下狀態。此時 Cam Hub 不會向設備送出任何請求：不會以空白密碼登入，也不會顯示密碼錯誤。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>開啟該設備的設備頁。</p>
+      <p class="check"><b class="check-label">確認：</b>縮圖上方顯示<span class="ui">這部 iPhone、iPad 或 Mac 上沒有儲存這台設備的密碼，換用新機後可能會這樣。請重新輸入，或從 iCloud 備份還原。</span>，並有<span class="ui">重新輸入密碼</span>與<span class="ui">從 iCloud 還原</span>兩個按鈕。縮圖顯示<span class="ui">沒有儲存密碼，請到「設備」重新輸入。</span></p>
+      <figure class="phone"><img src="guide/img/device-password-missing.jpg" alt="沒有儲存密碼的示範錄影主機設備頁：訊息與重新輸入密碼、從 iCloud 還原兩個按鈕，縮圖顯示「沒有儲存密碼，請到「設備」重新輸入。」" loading="lazy" decoding="async" width="900" height="1947"><figcaption>沒有儲存密碼的設備</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>點選<span class="ui">重新輸入密碼</span>輸入這台設備的密碼，或點選<span class="ui">從 iCloud 還原</span>從 iCloud 備份取回所有設備的密碼。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">重新輸入密碼</span>開啟<span class="ui">編輯帳號密碼</span>畫面，說明見<a class="xref" href="#devices-credentials">「變更設備的使用者名稱與密碼」</a>。<span class="ui">從 iCloud 還原</span>開啟的頁面，說明見<a class="xref" href="#share-restore">「從 iCloud 還原」</a>。</p>
+    </li>
+  </ol>
+  <p>密碼儲存或還原後，訊息消失，縮圖重新連線。還原會一次取回所有設備的密碼；沒有備份時，須逐台輸入。</p>
+
+  <h3 id="devices-https">已儲存設備的 HTTPS</h3>
+  <p>網頁介面提供 HTTPS 的設備，可以改以 HTTPS 控制，而不使用一般 HTTP。HTTPS 預設關閉，須針對每台設備開啟。開啟後，Cam Hub 只接受開啟 HTTPS 時信任的憑證，或公開憑證機構為該設備位址簽發的憑證，因此這類憑證自動續期後仍可連線。透過 RTSP 取得的影像不會因此設定而加密。</p>
+  <p>設備曾透過 HTTPS 回應，或已開啟 HTTPS 時，鉛筆選單才會提供<span class="ui">HTTPS</span>。Cam Hub 詢問設備時不會登入，只檢查某個連接埠是否出示憑證。有回應的結果保留一週，沒有回應的結果保留一天；在設備頁向下拉，會立即重新詢問。以某一設備系列的專用協定、RTSP 或清單中的品牌連線的設備，以及範例攝影機與 YouTube 直播、Twitch 頻道，不提供這個項目。</p>
+  <h4>開啟 HTTPS</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>在設備頁點選右上角的鉛筆按鈕（<span class="ui">編輯設備</span>），再點選<span class="ui">HTTPS</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>開啟<span class="ui">HTTPS</span>畫面，區塊標題為設備名稱。Cam Hub 詢問設備期間顯示<span class="ui">正在檢查 HTTPS…</span>；之後顯示<span class="ui">連接埠</span>（設備回應的連接埠）與<span class="ui">憑證（SHA-256）</span>（設備目前出示的憑證指紋，分四行顯示）。</p>
+      <figure class="phone"><img src="guide/img/device-https.jpg" alt="示範錄影主機的 HTTPS 畫面：使用 HTTPS 開關、連接埠、分四行顯示的憑證指紋，以及區塊下方的說明" loading="lazy" decoding="async" width="900" height="1947"><figcaption>HTTPS 畫面</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>可以的話，將指紋與設備自己網頁的憑證比對，例如在瀏覽器的憑證詳細資訊中查看。</p>
+      <p class="check"><b class="check-label">確認：</b>兩者的指紋相同。指紋不同時，中間可能有其他設備，請保持 HTTPS 關閉。</p>
+    </li>
+    <li class="step">
+      <p>開啟<span class="ui">使用 HTTPS</span>，再點選<span class="ui">儲存</span>。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">儲存</span>變成轉圈圖示，Cam Hub 以已儲存的帳號密碼透過 HTTPS 登入設備一次，並讀取通道清單。成功時畫面關閉，縮圖重新連線，資訊卡片顯示<span class="ui">HTTPS</span>列與連接埠。失敗時畫面保持開啟、不儲存任何變更，並以紅字顯示原因。</p>
+    </li>
+  </ol>
+  <ul>
+    <li>設備沒有透過 HTTPS 回應時，畫面以橘字顯示<span class="ui">這台設備剛才沒有透過 HTTPS 回應。</span>，開關無法開啟。</li>
+    <li>區塊下方的說明為<span class="ui">除非您開啟，否則維持關閉。開啟 HTTPS 後，Cam Hub 與這台設備之間的通訊會加密，而且只接受這裡顯示的憑證，或公開憑證機構為此位址簽發的憑證（因此憑證自動續期後仍可連線）；可以的話，請與設備自己網頁上顯示的憑證比對。透過 RTSP 傳送的影像不會因此設定而加密。</span></li>
+    <li><b>關閉 HTTPS</b>：關閉<span class="ui">使用 HTTPS</span>，再點選<span class="ui">儲存</span>。Cam Hub 會先確認設備能以已儲存的帳號密碼透過一般 HTTP 回應；不能時不做任何變更，畫面顯示<span class="ui">這台設備沒有透過一般 HTTP 回應，因此 HTTPS 維持開啟。</span>關閉 HTTPS 會忘記已信任的憑證，再次開啟時會重新檢查憑證。</li>
+    <li><b>憑證變更</b>：設備出示的憑證與信任的憑證不同，而且不是公開憑證機構為該位址簽發的憑證時，Cam Hub 不會連線，縮圖顯示<span class="ui">這台設備的安全憑證已變更。請到設備編輯選單中的「HTTPS」檢查。</span>此時 HTTPS 畫面顯示新的指紋與<span class="ui">這台設備目前出示的憑證，與開啟 HTTPS 時信任的憑證不同。只有在您知道它為何改變時（例如設備重置後），才點選「儲存」信任它。</span>點選<span class="ui">儲存</span>後，經過與開啟 HTTPS 相同的確認，才會信任新的憑證。</li>
+    <li>設備改在其他 HTTPS 連接埠以相同憑證回應時，畫面顯示新的連接埠，點選<span class="ui">儲存</span>即儲存，不會出現警告。</li>
+    <li>HTTPS 設定連同連接埠與信任的憑證，會隨 iCloud 備份與分享代碼一起帶走，見<a class="xref" href="#share-contents">「備份與代碼的內容」</a>。</li>
+  </ul>
 
   <h3 id="devices-health">硬碟健康</h3>
   <p><span class="ui">硬碟健康</span>報告錄影主機或 NAS 的硬碟狀態：每顆硬碟是否健康、溫度，以及硬碟本身的 S.M.A.R.T. 資料，以便在錄影遺失之前更換即將故障的硬碟。Cam Hub 只讀取這些資訊，不會變更設備上的任何設定。</p>
@@ -758,7 +840,7 @@
       <tr><td><span class="ui">已停用</span></td><td>通道已停用，不會串流，也不占用方案的名額。</td><td>出現以通道名稱為標題的對話框，提供<span class="ui">啟用</span>與<span class="ui">取消</span>，見<a class="xref" href="#devices-plan">「方案限額與啟用通道」</a>。</td></tr>
       <tr><td><span class="ui">方案未包含</span>，附鎖頭符號</td><td>通道已啟用，但方案未涵蓋。</td><td>開啟方案畫面，見<a class="xref" href="#plans">第 11 章「方案與限制」</a>。</td></tr>
       <tr><td>即時影像</td><td>通道已啟用、在方案範圍內、未暫停，且設備回報有訊號。連線期間顯示轉圈圖示。</td><td>開啟單機畫面。</td></tr>
-      <tr><td>深色背景上的失敗訊息</td><td>通道狀態正常，但串流無法開啟。Cam Hub 會自行重試，每次重試的間隔逐漸拉長。使用者名稱或密碼遭拒時，Cam Hub 最多再試一次就停止，以免設備鎖定帳號；訊息會保留到再次開啟此頁，或 Cam Hub 回到前景為止。</td><td>開啟單機畫面。</td></tr>
+      <tr><td>深色背景上的失敗訊息</td><td>通道狀態正常，但串流無法開啟。Cam Hub 會自行重試，每次重試的間隔逐漸拉長。使用者名稱或密碼遭拒時，Cam Hub 最多再試一次就停止，以免設備鎖定帳號；訊息會保留到再次開啟此頁，或 Cam Hub 回到前景為止。沒有儲存密碼時，訊息為<span class="ui">沒有儲存密碼，請到「設備」重新輸入。</span>，Cam Hub 不會與設備連線，見<a class="xref" href="#devices-password-missing">「沒有儲存密碼的設備」</a>。訊息位於通道編號與名稱的上方；縮圖較小時省略圖示，讓整句訊息完整顯示。</td><td>開啟單機畫面。</td></tr>
       <tr><td>灰色，有斜線攝影機符號與<span class="ui">無訊號</span></td><td>設備回報此通道沒有訊號。</td><td>沒有反應。</td></tr>
     </tbody>
   </table></div>
@@ -1504,15 +1586,16 @@
       <tr><td>該服務的播放器</td><td>直播進行中。</td></tr>
       <tr><td>頻道名稱與<span class="ui">離線</span></td><td>Twitch 頻道目前沒有直播。顯示在畫面上期間，每兩分鐘重新檢查一次，頻道開播時自動開始播放。不存在的頻道名稱同樣顯示<span class="ui">離線</span>。</td></tr>
       <tr><td><span class="ui">這個頻道目前沒有直播，或不允許在其他 App 中播放它的直播。</span></td><td>追蹤的 YouTube 頻道目前沒有直播，或不允許在其他 App 中播放。顯示在畫面上期間，每分鐘重新檢查一次，開播時自動開始播放。</td></tr>
-      <tr><td><span class="ui">這不是直播，或直播已經結束。只能顯示直播。</span></td><td>該 YouTube 影片不是直播，或直播已經結束。單一場直播結束後不會再出現；點選<span class="ui">再試一次</span>會再詢問一次。</td></tr>
-      <tr><td><span class="ui">這部影片無法觀看，可能已設為私人或已移除。</span>或<span class="ui">這部影片的擁有者不允許在其他 App 中播放。</span></td><td>YouTube 不允許在 Cam Hub 中播放該影片。</td></tr>
-      <tr><td><span class="ui">YouTube 播放器無法載入。請檢查網路連線後再試一次。</span>或<span class="ui">Twitch 播放器無法載入。請檢查網路連線後再試一次。</span></td><td>播放器沒有載入，或約 30 秒內沒有回應。請檢查網際網路連線，再點選<span class="ui">再試一次</span>。</td></tr>
+      <tr><td><span class="ui">這不是直播，或直播已經結束。只能顯示直播。</span></td><td>該 YouTube 影片不是直播，或直播已經結束。單一場直播結束後不會再出現；全螢幕時點選<span class="ui">再試一次</span>會再詢問一次。</td></tr>
+      <tr><td><span class="ui">這部影片無法觀看，可能已設為私人或已移除。</span>或<span class="ui">這部影片的擁有者不允許在其他 App 中播放。</span></td><td>YouTube 不允許在 Cam Hub 中播放該影片：影片不存在、已設為私人，或擁有者不允許在其他 App 中播放。</td></tr>
+      <tr><td><span class="ui">YouTube 播放器無法載入。請檢查網路連線後再試一次。</span>或<span class="ui">Twitch 播放器無法載入。請檢查網路連線後再試一次。</span></td><td>播放器沒有載入，或約 30 秒內沒有回應。請檢查網際網路連線，再點選<span class="ui">再試一次</span>。牆面上的格子會自行重試：YouTube 格子在 1、2、4、8 分鐘後重試，之後每 10 分鐘一次；Twitch 格子每 2 分鐘一次。</td></tr>
       <tr><td>名稱與<span class="ui">同意 YouTube 的條款後即可播放此直播。</span>或<span class="ui">同意 Twitch 的條款後即可播放此頻道。</span></td><td>尚未在這台 iPhone 或 iPad 上同意該服務的條款，例如經由分享代碼或備份取得的直播。在全螢幕畫面中，點選<span class="ui">查看條款…</span>可開啟說明；點選<span class="ui">同意並繼續</span>開始播放，點選<span class="ui">取消</span>則維持原狀。每個服務只需同意一次。</td></tr>
       <tr><td>名稱與<span class="ui">此地區或語言不提供這項功能。</span></td><td>YouTube 與 Twitch 在部分國家或地區不提供服務。直播保留名稱，可像其他設備一樣刪除。</td></tr>
     </tbody>
   </table></div>
   <ul>
     <li>該服務可能在播放器中顯示自己的廣告或公告。</li>
+    <li>在牆面的格子中，訊息縮短為兩行，沒有按鈕。點選格子會以全螢幕開啟該直播，全螢幕畫面有<span class="ui">再試一次</span>。</li>
     <li>直播沒有快照、PTZ 控制、對講、放大、錄影、SD 與 HD 切換或黑邊模式。直播在<span class="ui">即時</span>分頁與全螢幕牆上，不顯示 SD 與 HD 按鈕，也不顯示黑邊按鈕。</li>
     <li>在獨立視窗中（見<a class="xref" href="#single-window">「在獨立視窗中顯示攝影機」</a>），直播顯示含該服務控制項目的播放器，其下為<span class="ui">在 YouTube 中開啟</span>或<span class="ui">在 Twitch 中開啟</span>，以及直播的連結。</li>
     <li>在 Apple TV 上，直播只顯示名稱，見<a class="xref" href="#appletv">第 14 章「Apple TV」</a>。</li>
@@ -1528,6 +1611,8 @@
       <tr><td>帶警告符號的訊息與<span class="ui">重試</span></td><td>串流無法開啟。訊息說明原因，例如設備無法連線；用語與加入設備時相同（見<a class="xref" href="#add-failed">「加入失敗時的檢查清單」</a>）。點選<span class="ui">重試</span>再試一次。</td></tr>
       <tr><td><span class="ui">使用者名稱或密碼錯誤。</span>與<span class="ui">重試</span></td><td>設備拒絕了帳號。Cam Hub 對一台設備的所有攝影機只登入一次；被拒絕後，約一分鐘內不會再登入該設備，以免帳號被鎖定，因此這段時間內點選<span class="ui">重試</span>會顯示相同的訊息。設備上的密碼變更後，請以<span class="ui">編輯帳號密碼</span>輸入新密碼，見<a class="xref" href="#devices-credentials">「變更設備的使用者名稱與密碼」</a>。</td></tr>
       <tr><td><span class="ui">短時間內要求太多次，請稍候一分鐘再試。</span>與<span class="ui">重試</span></td><td>短時間內有過多要求送到設備或其服務。此情況下 Cam Hub 不會自行重試。等待一分鐘後，點選<span class="ui">重試</span>。</td></tr>
+      <tr><td><span class="ui">沒有儲存密碼，請到「設備」重新輸入。</span>與<span class="ui">重試</span></td><td>這部 iPhone 或 iPad 上沒有儲存該設備的密碼，例如換用新機之後。Cam Hub 不會向設備送出任何請求。請重新輸入密碼，或還原 iCloud 備份，見<a class="xref" href="#devices-password-missing">「沒有儲存密碼的設備」</a>。</td></tr>
+      <tr><td><span class="ui">這台設備的安全憑證已變更。請到設備編輯選單中的「HTTPS」檢查。</span>與<span class="ui">重試</span></td><td>該設備已開啟 HTTPS，而設備出示的憑證與信任的憑證不同。在檢查憑證之前，Cam Hub 不會連線，見<a class="xref" href="#devices-https">「已儲存設備的 HTTPS」</a>。</td></tr>
       <tr><td><span class="ui">無法載入這台設備已儲存的密碼。</span>與<span class="ui">重試</span></td><td>無法讀取已儲存的密碼。請在設備頁以<span class="ui">編輯帳號密碼</span>重新輸入，見<a class="xref" href="#devices-credentials">「變更設備的使用者名稱與密碼」</a>。</td></tr>
       <tr><td><span class="ui">此錄影主機的影像經過加密，Cam Hub 無法透過它專用的協定讀取。請重新新增，並在「連線方式」選擇 ONVIF。</span></td><td>錄影主機以其專用的協定傳送加密的影像。請以 ONVIF 作為連線方式重新加入，見<a class="xref" href="#add-methods">「連線方式的選擇」</a>。</td></tr>
       <tr><td><span class="ui">錄影主機沒有播放這段錄影，可能已被覆寫——請選擇其他時間。</span></td><td>錄影主機拒絕播放該段錄影，例如錄影已被覆寫。請在時間軸上選擇其他時間。</td></tr>
@@ -2528,7 +2613,7 @@
       <p class="check"><b class="check-label">確認：</b>清單關閉，複本出現在點選的格子中。</p>
     </li>
   </ol>
-  <p>複本與原本的格子各自獨立，清單下方的說明為：<span class="ui">複本獨立設定：之後修改它，另一個頁面維持不變。</span>複製的控制面板會單獨計入方案額度，複製的圖片會儲存兩份，備份的大小也隨之增加。</p>
+  <p>複本與原本的格子各自獨立，清單下方的說明為：<span class="ui">複本獨立設定：之後修改它，另一個頁面維持不變。</span>複製的控制面板會單獨計入方案額度。複製的圖片會儲存兩份；另一個頁面有圖片時，清單下方另有一句說明：<span class="ui">複製的圖片會保存兩份，因此在 iCloud 備份的大小中也會計算兩次。</span></p>
 
   <h3 id="lvm-canvases">iPhone Duo 的兩張畫布</h3>
   <p>iPhone Duo 半摺、摺線橫越螢幕時，LiveView Mix 可以在摺線處分成兩張畫布：摺線上方是上方畫布，下方是下方畫布。每張畫布都是一面獨立的牆，有自己的攝影機、版面、牆面頁、控制面板與放大畫面；常見的用法是上方畫布放攝影機，下方畫布放控制面板。這項設定只出現在 iPhone Duo 上；iPhone Duo 的一般說明見<a class="xref" href="#tour-duo">「iPhone Duo」</a>。</p>
@@ -3340,7 +3425,7 @@ Content-Type: application/json
     <thead><tr><th>項目</th><th>iCloud 備份</th><th>分享代碼</th></tr></thead>
     <tbody>
       <tr><td>設備</td><td>全部設備，包括 YouTube 與 Twitch 串流</td><td>勾選的設備，包括 YouTube 與 Twitch 串流</td></tr>
-      <tr><td>每台設備的資料</td><td colspan="2">名稱、位址、連接埠、使用者名稱、密碼、連線方式、型號、序號、韌體版本、設備在清單中的順序，以及 NAS 供硬碟健康使用的 SNMP 設定（社群名稱與連接埠）。</td></tr>
+      <tr><td>每台設備的資料</td><td colspan="2">名稱、位址、連接埠、使用者名稱、密碼、連線方式、HTTPS 設定（含連接埠與信任的憑證）、型號、序號、韌體版本、設備在清單中的順序，以及 NAS 供硬碟健康使用的 SNMP 設定（社群名稱與連接埠）。</td></tr>
       <tr><td>通道</td><td colspan="2">通道名稱與自訂名稱、啟用狀態、暫停狀態。</td></tr>
       <tr><td>App 設定</td><td>一律包含</td><td>只在開啟<span class="ui">包含 App 設定</span>時包含，且收到的人選擇<span class="ui">同時使用對方的設定</span>才會套用</td></tr>
     </tbody>
@@ -4084,7 +4169,7 @@ Content-Type: application/json
   </ol>
 
   <h4>刪除所有資料</h4>
-  <p>這個動作用來清空 App，例如在轉讓裝置之前。此動作無法復原。沒有 iCloud 備份或匯出代碼時，攝影機的密碼無法找回，因為密碼只儲存在這台裝置上。</p>
+  <p>這個動作用來清空 App，例如在轉讓裝置之前。此動作無法復原。沒有 iCloud 備份或匯出代碼時，攝影機的密碼無法找回，因為這個動作會將密碼從這台裝置上移除。</p>
   <ol class="steps">
     <li class="step">
       <p>在<span class="ui">重設</span>區塊中，點選<span class="ui">刪除所有資料</span>。</p>
@@ -4192,8 +4277,8 @@ Content-Type: application/json
     <tbody>
       <tr><td>分頁與啟動</td><td>五個分頁。App 開啟時顯示<span class="ui">LiveView Mix</span>，或依<span class="ui">啟動時開啟</span>的選擇。</td><td>四個分頁，沒有<span class="ui">工具</span>。App 一律從<span class="ui">LiveView Mix</span>開啟；開啟過的全螢幕牆，在 App 重新啟動後會再次顯示。沒有<span class="ui">啟動時開啟</span>。</td></tr>
       <tr><td>操作方式</td><td>觸控，並有捏合、拖曳與長按等手勢。</td><td>遙控器。選取框以方向鍵或滑動移動，選取鍵相當於點選，返回鍵回到上一層。沒有觸控手勢。</td></tr>
-      <tr><td>加入設備</td><td>自動找出連線方式與連接埠的表單，兩者都收在<span class="ui">進階</span>之下；另有網段掃描、檢查清單、設備報告，以及加入 YouTube 直播與 Twitch 頻道的專用表單。</td><td>以<span class="ui">新增 IP 設備</span>開啟簡短的表單：名稱、位址、<span class="ui">HTTP 連接埠</span>、<span class="ui">RTSP 連接埠</span>、使用者名稱、密碼、開關<span class="ui">透過 ONVIF 連線</span>，以及某一類設備專用協定的開關（見<a class="xref" href="#brands-methods">「連線方式」</a>），下方另有<span class="ui">加入範例攝影機</span>與<span class="ui">加入示範系統</span>。沒有掃描、品牌清單、檢查清單與設備報告。YouTube 或 Twitch 的連結會被拒絕。已達錄影主機上限時，表單顯示<span class="ui">免費版含 1 台錄影主機。訂閱 NVR 方案可新增更多。</span>，範例設備占用名額時則顯示較長的說明，不會開啟方案頁。</td></tr>
-      <tr><td>設備頁</td><td>重新命名、<span class="ui">編輯帳號密碼</span>、設備有回報時的<span class="ui">硬碟健康</span>，以及每支攝影機的選單：重新命名、啟用或停用、暫停。設備從清單中刪除。</td><td>牆面上方有<span class="ui">顯示詳細資訊</span>或<span class="ui">隱藏詳細資訊</span>、<span class="ui">重新命名</span>與<span class="ui">編輯帳號密碼</span>，牆面下方有<span class="ui">刪除設備</span>。攝影機沒有選單，也沒有<span class="ui">硬碟健康</span>。通道的開關在<span class="path"><span class="ui">設定</span> › <span class="ui">選擇顯示哪些攝影機</span></span>。</td></tr>
+      <tr><td>加入設備</td><td>自動找出連線方式與連接埠的表單，兩者都收在<span class="ui">進階</span>之下；另有網段掃描、檢查清單、設備報告，以及加入 YouTube 直播與 Twitch 頻道的專用表單。</td><td>以<span class="ui">新增 IP 設備</span>開啟簡短的表單：名稱、位址、<span class="ui">HTTP 連接埠</span>、<span class="ui">RTSP 連接埠</span>、使用者名稱、密碼、開關<span class="ui">透過 ONVIF 連線</span>、某一類設備專用協定的開關（見<a class="xref" href="#brands-methods">「連線方式」</a>），以及不使用該協定時的<span class="ui">使用 HTTPS</span>與<span class="ui">HTTPS 連接埠</span>（見<a class="xref" href="#add-https">「透過 HTTPS 加入設備」</a>），下方另有<span class="ui">加入範例攝影機</span>與<span class="ui">加入示範系統</span>。沒有掃描、品牌清單、檢查清單與設備報告。YouTube 或 Twitch 的連結會被拒絕。已達錄影主機上限時，表單顯示<span class="ui">免費版含 1 台錄影主機。訂閱 NVR 方案可新增更多。</span>，範例設備占用名額時則顯示較長的說明，不會開啟方案頁。</td></tr>
+      <tr><td>設備頁</td><td>重新命名、<span class="ui">編輯帳號密碼</span>、設備提供時的<span class="ui">HTTPS</span>、設備有回報時的<span class="ui">硬碟健康</span>，以及每支攝影機的選單：重新命名、啟用或停用、暫停。設備從清單中刪除。</td><td>牆面上方有<span class="ui">顯示詳細資訊</span>或<span class="ui">隱藏詳細資訊</span>、<span class="ui">重新命名</span>、<span class="ui">編輯帳號密碼</span>，以及提供時的<span class="ui">HTTPS</span>，牆面下方有<span class="ui">刪除設備</span>。沒有儲存密碼的設備，只在縮圖上顯示<span class="ui">沒有儲存密碼，請到「設備」重新輸入。</span>，密碼以<span class="ui">編輯帳號密碼</span>輸入。攝影機沒有選單，也沒有<span class="ui">硬碟健康</span>。通道的開關在<span class="path"><span class="ui">設定</span> › <span class="ui">選擇顯示哪些攝影機</span></span>。</td></tr>
       <tr><td>即時影像與單機畫面</td><td>SD 與 HD、聲音、快照、雙向對講、PTZ、捏合縮放、橫向畫面。</td><td>SD 與 HD、聲音，以及符合畫面與填滿螢幕的選擇。沒有快照、對講、PTZ 與捏合縮放。</td></tr>
       <tr><td>YouTube 與 Twitch</td><td>在格子、單機畫面與全螢幕中，以各服務自己的播放器播放。</td><td>只顯示名稱，並附上<span class="ui">YouTube 直播只能在 iPhone 和 iPad 上播放。</span>或<span class="ui">Twitch 直播只能在 iPhone 和 iPad 上播放。</span>；設備清單標示<span class="ui">僅限 iPhone 或 iPad</span>。在 Apple TV 上一律不會播放，見<a class="xref" href="#trouble-streams">「YouTube 與 Twitch」</a>。</td></tr>
       <tr><td>錄影回放</td><td>標出有錄影日期的月曆、可拖曳的時間軸、2×、4× 與 8× 的速度、人員搜尋。</td><td>支援回放的設備可使用。以遙控器移動時間列，有前一天與後一天的按鈕、縮放時間列的按鈕；設備提供時，另有偵測到人員的清單。沒有月曆，也沒有加速。必須先下載的錄影不會播放，畫面顯示<span class="ui">這段錄影請在 iPhone 或 iPad 上觀看。</span></td></tr>
@@ -4268,8 +4353,10 @@ Content-Type: application/json
       <tr><td>設備清單中出現紅色、帶斜線的 Wi‑Fi 符號</td><td>設備在約 4 秒內沒有在 HTTP 連接埠接受連線。設備可能未開機、位於其他網路，或被防火牆擋住。在<span class="ui">連線方式</span>選擇品牌加入的設備，或影像使用其他連接埠的設備，影像可以播放，指示符號仍可能為紅色。</td><td>檢查電源與網路。影像可以播放時，可以忽略此符號。見<a class="xref" href="#devices-list">「設備清單」</a>。</td></tr>
       <tr><td>昨天還能用的設備，今天連不上</td><td>設備的位址改變了。設備沿用加入時的位址。</td><td>在路由器查出新位址，刪除舊設備，再以新位址重新加入，見<a class="xref" href="#add-form">「新增設備表單」</a>。在設備或路由器設定固定位址，可避免再次發生。</td></tr>
       <tr><td>已儲存的密碼失效，設備頁顯示<span class="ui">使用者名稱或密碼錯誤。</span>與按鈕<span class="ui">編輯帳號密碼</span></td><td>設備上的密碼或使用者名稱已變更。</td><td>點選<span class="ui">編輯帳號密碼</span>，輸入新的帳號。新的帳號會先在設備上確認後才儲存；攝影機、攝影機名稱與牆面都維持不變。見<a class="xref" href="#devices-credentials">「變更設備的使用者名稱與密碼」</a>。</td></tr>
+      <tr><td>所有縮圖都顯示<span class="ui">沒有儲存密碼，請到「設備」重新輸入。</span>，例如在新的 iPhone、iPad 或 Mac 上</td><td>設備清單搬過來了，密碼卻沒有，例如新機沒有沿用舊機的鑰匙圈。</td><td>還原 Cam Hub 的 iCloud 備份（備份包含所有密碼），或在每台設備的設備頁點選<span class="ui">重新輸入密碼</span>逐台輸入。見<a class="xref" href="#devices-password-missing">「沒有儲存密碼的設備」</a>。</td></tr>
+      <tr><td>縮圖顯示<span class="ui">這台設備的安全憑證已變更。請到設備編輯選單中的「HTTPS」檢查。</span></td><td>該設備已開啟 HTTPS，而設備出示的憑證與信任的憑證不同，例如設備重置後，或在設備上產生了新憑證。</td><td>從設備頁的鉛筆選單開啟<span class="ui">HTTPS</span>，先將新的指紋與設備網頁的憑證比對，再點選<span class="ui">儲存</span>。見<a class="xref" href="#devices-https">「已儲存設備的 HTTPS」</a>。</td></tr>
       <tr><td>加入錄影主機時開啟方案頁</td><td>方案的錄影主機額度已用完。範例設備與真實設備一樣計入額度。</td><td>見<a class="xref" href="#trouble-plans">「方案與購買」</a>。</td></tr>
-      <tr><td>設備完全無法加入，而且只能在原廠的 App 使用</td><td>設備不提供區域網路上的連線，或只接受 HTTPS。</td><td>見<a class="xref" href="#brands-requirements">「需求與限制」</a>。</td></tr>
+      <tr><td>設備完全無法加入，而且只能在原廠的 App 使用</td><td>設備不提供區域網路上的連線，或只接受 HTTPS，但加入時沒有開啟<span class="ui">使用 HTTPS</span>。</td><td>只接受 HTTPS 的設備，加入時開啟<span class="ui">使用 HTTPS</span>，見<a class="xref" href="#add-https">「透過 HTTPS 加入設備」</a>。其他情況見<a class="xref" href="#brands-requirements">「需求與限制」</a>。</td></tr>
     </tbody>
   </table></div>
 
@@ -4433,7 +4520,7 @@ Content-Type: application/json
   </table></div>
 
   <h3 id="trouble-errors">其他錯誤訊息</h3>
-  <p>以下句子會出現在畫面上方的失敗訊息、錄影面板的時間軸上方、新增設備表單，以及<span class="ui">編輯帳號密碼</span>畫面。前四句的檢查項目在<a class="xref" href="#add-failed">「加入失敗時的檢查清單」</a>說明。</p>
+  <p>以下句子會出現在畫面上方的失敗訊息、錄影面板的時間軸上方、新增設備表單、<span class="ui">編輯帳號密碼</span>畫面，以及<span class="ui">HTTPS</span>畫面。前四句的檢查項目在<a class="xref" href="#add-failed">「加入失敗時的檢查清單」</a>說明。</p>
   <div class="table-wrap"><table>
     <thead><tr><th>句子</th><th>意義</th><th>處理方式</th></tr></thead>
     <tbody>
@@ -4445,6 +4532,10 @@ Content-Type: application/json
       <tr><td><span class="ui" data-ui="value">設備拒絕了影像串流（HTTP 404）。</span></td><td>設備以登入遭拒以外的狀態回應影像要求。數字是設備回報的狀態碼。</td><td>檢查帳號的即時影像權限、串流設定，以及設備的觀看者數量。</td></tr>
       <tr><td><span class="ui" data-ui="value">錄影主機回應 HTTP 500。</span></td><td>錄影主機以錯誤狀態回應要求。</td><td>稍後再試，必要時重新啟動錄影主機，並檢查其韌體。</td></tr>
       <tr><td><span class="ui">此錄影主機的影像經過加密，Cam Hub 無法透過它專用的協定讀取。請重新新增，並在「連線方式」選擇 ONVIF。</span></td><td>錄影主機是透過它專用的協定加入的，而它以該方式傳送的影像經過加密。</td><td>刪除該設備，再於<span class="path"><span class="ui">進階</span> › <span class="ui">連線方式</span></span>選擇<span class="ui">ONVIF</span>重新加入。</td></tr>
+      <tr><td><span class="ui">沒有儲存密碼，請到「設備」重新輸入。</span></td><td>這部 iPhone 或 iPad 上沒有儲存該設備的密碼，Cam Hub 沒有向設備送出任何請求。</td><td>在設備頁點選<span class="ui">重新輸入密碼</span>輸入密碼，或還原 iCloud 備份，見<a class="xref" href="#devices-password-missing">「沒有儲存密碼的設備」</a>。</td></tr>
+      <tr><td><span class="ui">這台設備的安全憑證已變更。請到設備編輯選單中的「HTTPS」檢查。</span></td><td>已開啟 HTTPS，而設備出示的憑證與信任的憑證不同。</td><td>在<span class="ui">HTTPS</span>畫面檢查新的憑證，見<a class="xref" href="#devices-https">「已儲存設備的 HTTPS」</a>。</td></tr>
+      <tr><td><span class="ui">這台設備剛才沒有透過 HTTPS 回應。</span></td><td>Cam Hub 尋找 HTTPS 時，沒有任何連接埠出示憑證。</td><td>檢查 HTTPS 連接埠，或不開啟<span class="ui">使用 HTTPS</span>加入設備，見<a class="xref" href="#add-https">「透過 HTTPS 加入設備」</a>。</td></tr>
+      <tr><td><span class="ui">這台設備沒有透過一般 HTTP 回應，因此 HTTPS 維持開啟。</span></td><td>要關閉 HTTPS，但設備不透過一般 HTTP 回應，例如設備上的 HTTP 已關閉。</td><td>先在設備上開啟 HTTP，或保持 HTTPS 開啟，見<a class="xref" href="#devices-https">「已儲存設備的 HTTPS」</a>。</td></tr>
       <tr><td><span class="ui">無法載入這台設備已儲存的密碼。</span></td><td>無法讀取儲存在這台 iPhone 或 iPad 上的密碼。</td><td>以<span class="ui">編輯帳號密碼</span>重新輸入密碼，見<a class="xref" href="#devices-credentials">「變更設備的使用者名稱與密碼」</a>。</td></tr>
       <tr><td><span class="ui">此位址上的另一台設備已使用該使用者名稱。</span></td><td>在<span class="ui">編輯帳號密碼</span>中，該使用者名稱與另一台位址與 HTTP 連接埠相同的已儲存設備重複。</td><td>改用其他使用者名稱，或刪除重複的設備。</td></tr>
       <tr><td><span class="ui">無法安全地儲存密碼。請再試一次。</span></td><td>新密碼無法儲存在這台裝置上，原本的密碼已保留。</td><td>再試一次。</td></tr>
@@ -4558,7 +4649,11 @@ Content-Type: application/json
   </details>
   <details class="faq">
     <summary>只接受 HTTPS 的設備可以加入嗎？</summary>
-    <p>不行。Cam Hub 以純 HTTP 控制設備，關閉 HTTP 的設備無法加入。網路儲存設備須輸入 HTTP 管理介面的連接埠，而不是 HTTPS 的連接埠。見<a class="xref" href="#brands-requirements">「需求與限制」</a>。</p>
+    <p>可以。在新增設備表單中開啟<span class="path"><span class="ui">進階</span> › <span class="ui">使用 HTTPS</span></span>，Cam Hub 會透過 HTTPS 加入設備，並信任設備出示的憑證。適用於以<span class="ui">自動偵測</span>或<span class="ui">ONVIF</span>連線的設備。已加入的設備在設備頁切換。見<a class="xref" href="#add-https">「透過 HTTPS 加入設備」</a>與<a class="xref" href="#devices-https">「已儲存設備的 HTTPS」</a>。</p>
+  </details>
+  <details class="faq">
+    <summary>換用新的 iPhone、iPad 或 Mac 後，為什麼 Cam Hub 要求重新輸入密碼？</summary>
+    <p>密碼沒有隨設備清單一起搬過來。還原 Cam Hub 的 iCloud 備份（備份包含所有密碼），或在每台設備的設備頁點選<span class="ui">重新輸入密碼</span>重新輸入。見<a class="xref" href="#devices-password-missing">「沒有儲存密碼的設備」</a>。</p>
   </details>
   <details class="faq">
     <summary>已儲存設備的位址或密碼，要如何變更？</summary>
@@ -4651,6 +4746,7 @@ Content-Type: application/json
       <tr><th scope="row">聲音（收聽）</th><td>視設備而定</td><td>視設備而定</td><td>視設備而定</td><td>視設備而定</td><td>視設備而定</td><td>視設備而定</td></tr>
       <tr><th scope="row">透過攝影機說話</th><td>視設備而定</td><td>無</td><td>無</td><td>無</td><td>無</td><td>無</td></tr>
       <tr><th scope="row">硬碟健康</th><td>有</td><td>有</td><td>設定後提供</td><td>無</td><td>無</td><td>無</td></tr>
+      <tr><th scope="row">HTTPS</th><td>視設備而定</td><td>視設備而定</td><td>視設備而定</td><td>無</td><td>視設備而定</td><td>無</td></tr>
       <tr><th scope="row">通道清單</th><td>錄影主機有</td><td>錄影主機有</td><td>有</td><td>有</td><td>有</td><td>輸入數量</td></tr>
     </tbody>
   </table></div>
@@ -4668,8 +4764,9 @@ Content-Type: application/json
     <li><b>說話</b>：回報有 <code>G.711</code> 雙向語音通道的 Hikvision 獨立攝影機提供此功能；錄影主機的通道不提供。見<a class="xref" href="#single-talk">「雙向對講」</a>。</li>
     <li><b>硬碟健康</b>：Hikvision 回報每顆硬碟的狀態，設備提供時並有 S.M.A.R.T. 詳細資料。Dahua 回報狀態、容量，以及可取得時的溫度，但沒有 S.M.A.R.T. 詳細資料。Synology 的 NAS 透過 SNMP 讀取，須在 NAS 上開啟 SNMP，並在 Cam Hub 中設定。見<a class="xref" href="#devices-health">「硬碟健康」</a>。</li>
     <li><b>通道清單</b>：Hikvision 與 Dahua 的錄影主機會列出各通道的名稱與訊號狀態，不是錄影主機的設備只有一個通道。Synology <span class="ui" data-ui="value">Surveillance Station</span> 將系統中的每支攝影機列為一個通道，並有訊號狀態。Xiongmai 設備回報通道數量與各通道的名稱，不回報訊號狀態。ONVIF 每個獨立的影像來源列為一個通道，不回報訊號狀態。RTSP 與清單中的品牌沒有清單：攝影機數量由使用者輸入（1 到 64），每個通道都顯示為在線。</li>
+    <li><b>HTTPS</b>：設備的網頁介面提供 HTTPS 時可使用，須針對每台設備開啟，見<a class="xref" href="#add-https">「透過 HTTPS 加入設備」</a>與<a class="xref" href="#devices-https">「已儲存設備的 HTTPS」</a>。Xiongmai 的專用協定與純 RTSP 沒有可使用 HTTPS 的網頁介面。透過 RTSP 取得的影像不會因此加密。</li>
   </ul>
-  <p>任何方式都沒有的功能：對焦與光圈控制、儲存或匯出錄影、登入雲端帳號，以及以 HTTPS 連線。</p>
+  <p>任何方式都沒有的功能：對焦與光圈控制、儲存或匯出錄影，以及登入雲端帳號。</p>
 
   <h3 id="brands-profiles">清單中的品牌</h3>
   <p><span class="ui">品牌</span>區塊中的品牌以純 RTSP 連線。選擇品牌後，表單增加以該品牌命名的區塊，內有<span class="ui">攝影機</span>欄位（1 到 64）與路徑欄位。填 <code>1</code> 時，加入為以品牌命名的獨立攝影機；填較大的數字時，加入為錄影主機，通道為 <code>CH1</code> 到 <code>CHn</code>，並占用方案的錄影主機額度。路徑欄位留白時，Cam Hub 依序嘗試文件所載的路徑，並保留設備有回應的那一條。只有需要指定特定路徑時才填寫。RTSP 選項的運作方式相同，使用的是多數攝影機使用的路徑。</p>
@@ -4708,7 +4805,7 @@ Content-Type: application/json
   <div class="table-wrap"><table>
     <thead><tr><th>項目</th><th>需求或限制</th></tr></thead>
     <tbody>
-      <tr><td>只使用純 HTTP</td><td>Cam Hub 以純 HTTP 連到設備；Xiongmai 設備則改用其專用協定。影像以 RTSP 取得，先使用 <code>TCP</code>，設備拒絕 <code>TCP</code> 時改用 <code>UDP</code>。設備不支援 HTTPS 與自簽憑證。關閉 HTTP 的設備，或只接受 HTTPS 的設備，無法加入。網路儲存設備須輸入 HTTP 管理介面的連接埠，例如 <code>5000</code>，而不是 HTTPS 介面的連接埠。</td></tr>
+      <tr><td>HTTP 與 HTTPS</td><td>Cam Hub 以純 HTTP 連到設備，該設備開啟 HTTPS 時則改用 HTTPS；Xiongmai 設備則改用其專用協定。影像以 RTSP 取得，先使用 <code>TCP</code>，設備拒絕 <code>TCP</code> 時改用 <code>UDP</code>；HTTPS 不會加密影像。開啟 HTTPS 後，Cam Hub 信任開啟 HTTPS 時設備出示的憑證（自簽憑證亦可），或公開憑證機構為該位址簽發的憑證。關閉 HTTP 的設備，或只接受 HTTPS 的設備，以<span class="ui">使用 HTTPS</span>加入，見<a class="xref" href="#add-https">「透過 HTTPS 加入設備」</a>。網路儲存設備在<span class="ui">HTTP 連接埠</span>輸入 HTTP 管理介面的連接埠，例如 <code>5000</code>；開啟<span class="ui">使用 HTTPS</span>時，Cam Hub 也會自行找到其 HTTPS 連接埠 <code>5001</code>。</td></tr>
       <tr><td>開啟 ONVIF</td><td>選擇<span class="ui">ONVIF</span>時，設備上須已開啟 ONVIF。Cam Hub 在<span class="ui">HTTP 連接埠</span>所填連接埠的 <code>/onvif/device_service</code>、<code>/onvif/service</code> 或 <code>/onvif/device</code> 尋找服務。部分設備的出廠設定是關閉 ONVIF。</td></tr>
       <tr><td>開啟 RTSP</td><td>影像以 RTSP 取得。使用自動偵測時，Cam Hub 會自行找出 RTSP 連接埠；其他方式使用<span class="ui">RTSP 連接埠</span>所填的連接埠（通常是 <code>554</code>）。網路儲存設備可能先使用自己的串流路徑。設備有 RTSP 驗證方式的設定時，請選擇 <code>Digest</code>。</td></tr>
       <tr><td>獨立的 ONVIF 使用者</td><td>部分設備的 ONVIF 使用者清單與網頁介面的使用者分開，管理員登入無法用於 ONVIF。須在該清單中建立使用者。清單中有五個品牌須先建立專用的攝影機或 ONVIF 帳號，RTSP 才能連線：<span class="ui" data-ui="value">Axis</span>、<span class="ui" data-ui="value">TP-Link (Tapo / VIGI)</span>、<span class="ui" data-ui="value">ANNKE</span>、<span class="ui" data-ui="value">MOBOTIX</span>與<span class="ui" data-ui="value">2N</span>。</td></tr>
@@ -4756,7 +4853,7 @@ Content-Type: application/json
   </ul>
   <div class="callout warn">
     <strong class="t">無法加入的設備</strong>
-    <p>只能透過原廠雲端 App 使用、不提供區域網路連線，或只接受 HTTPS 的設備，無法加入 Cam Hub。</p>
+    <p>只能透過原廠雲端 App 使用，或不提供區域網路連線的設備，無法加入 Cam Hub。只接受 HTTPS 的設備，以<span class="ui">使用 HTTPS</span>加入，見<a class="xref" href="#add-https">「透過 HTTPS 加入設備」</a>。</p>
   </div>
 
   <h3 id="brands-activate">開通新設備</h3>
