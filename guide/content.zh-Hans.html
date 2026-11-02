@@ -1161,7 +1161,7 @@
 
 <section class="chapter" id="single">
   <h2><span class="num">6</span>单摄像头视图</h2>
-  <p class="lead">单摄像头视图以全宽显示一个摄像头的实时画面或录像。它提供缩放和平移、快照、声音、支持对讲的摄像头的双向对讲、SD 与 HD 切换，对带云台的摄像头还提供 PTZ 控制。支持回放的设备在此视图中还有录像时间轴，参见<a class="xref" href="#playback">第 7 章“录像回放与倍速”</a>。在 iPad 和 iPhone Duo 上，摄像头可以在独立窗口中打开。</p>
+  <p class="lead">单摄像头视图以全宽显示一个摄像头的实时画面或录像。它提供缩放和平移、快照、可共享的视频片段、声音、支持对讲的摄像头的双向对讲、SD 与 HD 切换，对带云台的摄像头还提供 PTZ 控制。支持回放的设备在此视图中还有录像时间轴，参见<a class="xref" href="#playback">第 7 章“录像回放与倍速”</a>。在 iPad 和 iPhone Duo 上，摄像头可以在独立窗口中打开。</p>
 
   <h3 id="single-open">打开视图</h3>
   <p>可从四个位置打开该视图：</p>
@@ -1191,7 +1191,7 @@
     <tbody>
       <tr><td>导航栏</td><td>返回按钮和摄像头名称。在 iPad 和 iPhone Duo 的内屏上，右侧是<span class="ui">在新窗口中打开</span>按钮，参见<a class="xref" href="#single-window">“在独立窗口中打开摄像头”</a>。</td></tr>
       <tr><td>画面（竖屏，16:9）</td><td>左上角的标记表示模式：<span class="ui">实时</span>（绿色），或带回放时间的<span class="ui">回放 15:00:03</span>（红色）。右下角的圆形按钮在实时模式下是用于 PTZ 的摄像头控制，参见<a class="xref" href="#single-ptz">“PTZ 控制：移动摄像头”</a>；录像播放时是速度按钮，参见<a class="xref" href="#playback-speed">“回放速度”</a>。</td></tr>
-      <tr><td>控制栏</td><td>左侧是<span class="ui">快照</span>；摄像头发送声音时，其旁边是扬声器按钮，可对讲的摄像头还有对讲按钮；右侧在实时模式下是 SD/HD 开关，回放时是<span class="ui">返回实时</span>。参见<a class="xref" href="#single-controls">“快照、声音与画质”</a>和<a class="xref" href="#single-talk">“双向对讲”</a>。</td></tr>
+      <tr><td>控制栏</td><td>左侧是<span class="ui">快照</span>，然后是红色录制按钮；摄像头发送声音时，旁边是扬声器按钮，可对讲的摄像头还有对讲按钮；右侧在实时模式下是 SD/HD 开关，回放时是<span class="ui">返回实时</span>。这一栏空间不足时（例如使用文字较长的语言），<span class="ui">快照</span>只显示相机符号。参见<a class="xref" href="#single-controls">“快照、声音与画质”</a>、<a class="xref" href="#single-clip">“录制片段”</a>和<a class="xref" href="#single-talk">“双向对讲”</a>。</td></tr>
       <tr><td>录像面板</td><td>标题为<span class="ui">录像</span>，下方有日期、时间轴和录像列表；在受支持的设备上，还有录像日历按钮。该面板仅在支持回放的设备上出现；其他设备的视图只有画面和控制栏。参见<a class="xref" href="#playback">第 7 章“录像回放与倍速”</a>。</td></tr>
     </tbody>
   </table></div>
@@ -1235,7 +1235,7 @@
     </li>
     <li class="step">
       <p>点击<span class="ui">共享</span>。</p>
-      <p class="check"><b class="check-label">确认：</b>打开系统的共享面板。可在其中使用系统提供的操作保存、复制或发送图片。</p>
+      <p class="check"><b class="check-label">确认：</b>打开系统的共享面板。可在其中使用系统提供的操作保存、复制或发送图片。<span class="ui" data-ui="system">存储图像</span>会把图片保存到照片图库；首次保存时，系统会询问是否允许 Cam Hub 添加到照片图库（参见<a class="xref" href="#trouble-permissions">“权限请求与系统对话框”</a>）。</p>
     </li>
     <li class="step">
       <p>点击右上角的<span class="ui">完成</span>。</p>
@@ -1276,6 +1276,47 @@
     </li>
   </ol>
   <p>该开关只在实时模式下、且设备为该摄像头提供两路视频流时显示。回放期间，<span class="ui">返回实时</span>占据它的位置。起始画质取自<span class="path"><span class="ui">设置</span> › <span class="ui">默认画质</span> › <span class="ui">单个摄像头</span></span>。HD 更清晰，但占用更多带宽和 iPhone 的更多资源。对每个通道只提供一路视频流的设备，SD 和 HD 是同一个画面。所有画面的规则参见<a class="xref" href="#devices-quality">“设备画面上的 SD 和 HD”</a>。</p>
+
+  <h3 id="single-clip">录制片段</h3>
+  <p>录制按钮把视图中显示的内容保存为视频，实时画面或录像均可，便于把某个时刻发送给他人或保存到照片图库，例如 17:08 出现在门口的访客。该按钮是<span class="ui">快照</span>旁边的红色圆形按钮（<span class="ui">录制片段</span>）。</p>
+  <p>前提条件：使用 iPhone 或 iPad，通道在套餐范围内，且视图中有画面。少数摄像头发送的画面格式无法保存为视频，其视图没有录制按钮。Apple TV 没有录制按钮。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>打开该摄像头的单摄像头视图。要录制录像中的某个时刻，请从该时刻稍早一点开始播放录像，参见<a class="xref" href="#playback-timeline">“使用时间轴”</a>。</p>
+      <p class="check"><b class="check-label">确认：</b>画面开始播放：实时画面，或从所选时间开始的录像。</p>
+    </li>
+    <li class="step">
+      <p>点击<span class="ui">快照</span>旁边的红色录制按钮（<span class="ui">录制片段</span>）。</p>
+      <p class="check"><b class="check-label">确认：</b>按钮变为红色停止按钮（<span class="ui">停止录制</span>），画面顶部出现带红点和已录制时长的标记，例如 <span class="ui" data-ui="value">0:08</span>。片段从摄像头发来的下一个完整画面开始，可能比点击晚一两秒。</p>
+      <figure class="phone"><img src="guide/img/single-clip-recording.jpg" alt="播放录像并录制片段时的单摄像头视图：左上角是“回放 15:00:11”标记，画面顶部是带红点的“0:08”标记，“快照”旁边是红色停止按钮" loading="lazy" decoding="async" width="900" height="1947"><figcaption>回放期间录制片段</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>点击停止按钮。</p>
+      <p class="check"><b class="check-label">确认：</b><span class="ui">片段</span>面板从底部滑出。面板播放该片段，并显示其名称、时长和<span class="ui">共享</span>按钮。</p>
+      <figure class="phone"><img src="guide/img/single-clip-sheet.jpg" alt="单摄像头视图上方的“片段”面板：播放器中的片段，下方是名称（摄像头名称加日期和时间）、时长“0:18”和“共享”按钮，右上角是“完成”" loading="lazy" decoding="async" width="900" height="1947"><figcaption>“片段”面板</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>点击<span class="ui">共享</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>打开系统的共享面板。可在其中通过消息 App 发送片段、用<span class="ui" data-ui="system">存储视频</span>保存到照片图库，或使用系统提供的其他操作传递片段。首次向照片图库保存内容时，系统会询问是否允许 Cam Hub 添加到照片图库。</p>
+    </li>
+    <li class="step">
+      <p>点击右上角的<span class="ui">完成</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>面板关闭，视图继续播放。</p>
+    </li>
+  </ol>
+  <ul>
+    <li>片段最长 10 分钟。录满 10 分钟时，录制自动停止，面板显示<span class="ui">片段最长 10 分钟。</span></li>
+    <li>画面变化时，录制也会自动停止：移动时间轴、选择 SD 或 HD、点击<span class="ui">返回实时</span>，或回放接续到下一个录像文件时。此时面板显示<span class="ui">画面已切换，录制已停止。</span>停止前录到的内容会保留。</li>
+    <li>App 离开前台时，录制停止，片段保留。回到 App 时出现面板，并显示<span class="ui">Cam Hub 转入后台时已停止录制。</span></li>
+    <li>录制片段期间离开该视图，片段会被丢弃。</li>
+    <li>片段保留摄像头发送的原始画面，画质与当前显示的相同（SD 或 HD）；摄像头有声音时也会录入声音，与扬声器按钮是否开启无关。</li>
+    <li>文件以摄像头名称和片段开始的时刻命名，时间按设备的时钟，例如 <code>Gate 2026-11-02 15.00.04.mp4</code>。该时间与画面上叠加显示的时间一致。</li>
+    <li>横屏时，录制按钮位于画面右上角，在扬声器按钮和对讲按钮旁边。录制片段期间，停止按钮一直显示在屏幕上。</li>
+    <li>录像以文件形式播放时（参见<a class="xref" href="#playback-playing">“录像播放期间”</a>），录制按钮的位置改为共享按钮（<span class="ui">共享录像</span>）。它打开同一个面板，提供整个录像文件。</li>
+    <li>片段在 iPhone 上保留一天，之后被删除；已发送或已保存的片段不受影响。<span class="ui">删除所有数据</span>会立即删除这些片段。</li>
+    <li>没有录到任何内容时（例如画面尚未出现），会显示提示<span class="ui">未录到任何画面。请等画面出现后重试。</span>片段无法写入时，提示为<span class="ui">无法保存片段。请检查这台设备的可用空间，然后重试。</span></li>
+  </ul>
+  <figure class="land"><img src="guide/img/single-clip-landscape.jpg" alt="回放期间横屏录制片段：顶部是带红点的“0:07”标记，右上角是红色停止按钮，底部是回放控制条" loading="lazy" decoding="async" width="1600" height="736"><figcaption>横屏录制片段</figcaption></figure>
 
   <h3 id="single-talk">双向对讲</h3>
   <p>带扬声器的单独摄像头可以用来对讲。对讲的方式与对讲机相同：按住按钮说话，松开按钮收听。视图打开时，Cam Hub 会向摄像头询问其对讲通道；摄像头上报对讲通道后，扬声器按钮右侧会出现对讲按钮（麦克风符号）。</p>
@@ -1325,14 +1366,14 @@
     </li>
     <li class="step">
       <p>点击一次画面。</p>
-      <p class="check"><b class="check-label">确认：</b>左上角出现返回按钮，旁边是标记。右上角在摄像头发送声音时出现扬声器按钮，在摄像头可对讲时出现对讲按钮。摄像头可移动时，右下角是摄像头控制按钮。约 5 秒后按钮再次淡出；再次点击画面可重新显示。</p>
+      <p class="check"><b class="check-label">确认：</b>左上角出现返回按钮，旁边是标记。右上角出现红色录制按钮，摄像头发送声音时还有扬声器按钮，摄像头可对讲时还有对讲按钮。摄像头可移动时，右下角是摄像头控制按钮。约 5 秒后按钮再次淡出；再次点击画面可重新显示。录制片段期间，这些按钮一直显示。</p>
     </li>
     <li class="step">
       <p>点击左上角的返回按钮，或把 iPhone 转回竖屏。</p>
       <p class="check"><b class="check-label">确认：</b>视图退出横屏布局或关闭。返回按钮回到打开该视图的页面。</p>
     </li>
   </ol>
-  <p>缩放、平移和 PTZ 控制在横屏下与竖屏下相同。<span class="ui">快照</span>、SD/HD 开关、日期和录像列表仅在竖屏下可用。回放期间横屏时出现的控制条，参见<a class="xref" href="#playback-landscape">“横屏回放”</a>。</p>
+  <p>缩放、平移、PTZ 控制和录制片段在横屏下与竖屏下相同。<span class="ui">快照</span>、SD/HD 开关、日期和录像列表仅在竖屏下可用。回放期间横屏时出现的控制条，参见<a class="xref" href="#playback-landscape">“横屏回放”</a>。</p>
 
   <h3 id="single-ptz">PTZ 控制：移动摄像头</h3>
   <p>前提条件：摄像头带有云台（可水平转动、垂直转动或变焦）；设备支持 PTZ 控制；账号在设备上有权控制 PTZ；处于实时模式。回放期间，摄像头控制隐藏。</p>
@@ -1518,7 +1559,7 @@
     <li>全屏按钮。把 iPhone 横过来即可代替。</li>
     <li>通过录像机的通道对讲，以及同时说话和收听：按住对讲按钮期间，摄像头的声音暂停。</li>
     <li>对焦、光圈和 PTZ 速度的控制，以及保存或修改预置位。</li>
-    <li>设备无法提供时的快照，以及保存或共享录像，参见<a class="xref" href="#playback-limits">“不提供的功能”</a>。</li>
+    <li>设备无法提供时的快照，以及超过 10 分钟的片段，参见<a class="xref" href="#single-clip">“录制片段”</a>。</li>
   </ul>
 </section>
 
@@ -1687,9 +1728,10 @@
     <li><b>连续播放</b>：一个录像文件播完后，回放自动接续下一段录像，因此观看一个晚上的内容时不必在每个文件处停顿。由于设备可能仍在写入，Cam Hub 会先查找更新的录像。</li>
     <li><b>声音</b>：扬声器按钮仅在正常速度下有效，参见<a class="xref" href="#single-controls">“快照、声音与画质”</a>。</li>
     <li><b>快照</b>：截取设备当前的实时画面，而不是录像中的某一帧。</li>
+    <li><b>片段</b>：录制按钮会录下正在播放的录像，用于发送给他人或保存到照片图库，参见<a class="xref" href="#single-clip">“录制片段”</a>。</li>
     <li><b>缩放与平移</b>：与实时模式相同，参见<a class="xref" href="#single-zoom">“缩放与平移”</a>。用于 PTZ 的摄像头控制和对讲按钮在回放期间隐藏。</li>
     <li><b>被拒绝的录像</b>：录像机不播放某段录像时（例如录像已被覆盖），画面显示<span class="ui">录像机没有播放这段录像，可能已被覆盖——请选择其他时间。</span>请在时间轴上选择其他时间。</li>
-    <li><b>以文件形式送达的录像</b>：有些设备以文件形式提供录像。此时画面区域显示带进度条的<span class="ui">正在下载录像… 45%</span>，录像在系统的视频播放器中播放，播放器有自己的控件。这种情况下时间轴游标不会跟随。下载的文件保存在 iPhone 上最多 <code>500 MB</code> 的缓存中，避免重复下载同一段录像；<span class="ui">删除所有数据</span>会清除该缓存。</li>
+    <li><b>以文件形式送达的录像</b>：有些设备以文件形式提供录像。此时画面区域显示带进度条的<span class="ui">正在下载录像… 45%</span>，录像在系统的视频播放器中播放，播放器有自己的控件。这种情况下时间轴游标不会跟随。下载的文件保存在 iPhone 上最多 <code>500 MB</code> 的缓存中，避免重复下载同一段录像；<span class="ui">删除所有数据</span>会清除该缓存。录制按钮的位置改为共享按钮（<span class="ui">共享录像</span>），用于共享整个文件，参见<a class="xref" href="#single-clip">“录制片段”</a>。</li>
     <li><b>后台</b>：App 离开前台或 iPhone 锁屏时，回放停止。App 回到前台后，回放从停止的位置继续。</li>
   </ul>
   <h4>返回实时画面</h4>
@@ -1770,7 +1812,7 @@
       <p class="check"><b class="check-label">确认：</b>恢复实时画面，或重新显示带录像面板的竖屏布局。</p>
     </li>
   </ol>
-  <p>控制条只在回放期间出现，因为实时画面没有可拖动的内容。日期、录像日历、录像列表、<span class="ui">快照</span>和 SD/HD 开关仅在竖屏下可用。</p>
+  <p>控制条只在回放期间出现，因为实时画面没有可拖动的内容。日期、录像日历、录像列表、<span class="ui">快照</span>和 SD/HD 开关仅在竖屏下可用。录制按钮位于画面右上角，参见<a class="xref" href="#single-clip">“录制片段”</a>。</p>
 
   <h3 id="playback-limits">不提供的功能</h3>
   <ul>
@@ -1778,7 +1820,7 @@
     <li>不保存按日划分的录像索引的设备的录像日历。</li>
     <li>人员以外的事件搜索。</li>
     <li>跨度超过所选日期及其前一天的时间轴。</li>
-    <li>保存、导出或删除录像。录像只能观看；快照始终显示当前的实时画面。</li>
+    <li>删除录像。要保留或发送录像中的一段，请将其录制为最长 10 分钟的片段，参见<a class="xref" href="#single-clip">“录制片段”</a>。快照始终显示当前的实时画面。</li>
     <li>回放期间在 SD 和 HD 之间选择、慢动作、倒放，以及 1×、2×、4×、8× 以外的速度。</li>
     <li>高于 1× 的速度下的声音。</li>
     <li>暂停按钮、逐帧步进、几秒的跳转、输入时间的输入框、上一段/下一段录像按钮，以及自由文本搜索。</li>
@@ -3981,7 +4023,7 @@ Content-Type: application/json
     <thead><tr><th>行</th><th>移除</th><th>保留</th></tr></thead>
     <tbody>
       <tr><td><span class="ui">恢复默认设置</span></td><td>下表所列的设置，包括每一个 LiveView Mix 页面。</td><td>设备、通道及其启用状态和名称、已保存的密码和 SNMP 设置、iCloud 备份、订阅。</td></tr>
-      <tr><td><span class="ui">删除所有数据</span></td><td>每台设备及其通道、每个已保存的密码和 SNMP 设置、已下载的录像片段和保存的最后画面。然后是<span class="ui">恢复默认设置</span>所重置的一切。</td><td>iCloud 备份和订阅。</td></tr>
+      <tr><td><span class="ui">删除所有数据</span></td><td>每台设备及其通道、每个已保存的密码和 SNMP 设置、已下载的录像、在单摄像头视图中录制的片段和保存的最后画面。然后是<span class="ui">恢复默认设置</span>所重置的一切。</td><td>iCloud 备份和订阅。</td></tr>
       <tr><td><span class="ui">删除 iCloud 备份</span></td><td>iCloud 中的每一份备份：<span class="ui">我的备份</span>的所有备份，以及为 Apple TV 单独制作的那一份。没有备份时，该行不可用。</td><td>本设备上的一切。</td></tr>
     </tbody>
   </table></div>
@@ -4133,13 +4175,13 @@ Content-Type: application/json
       <tr><td>操作</td><td>触摸，以及捏合、拖动和长按等手势。</td><td>遥控器。用方向键或滑动移动选择，“选择”相当于点击，“菜单”返回。没有触摸手势。</td></tr>
       <tr><td>添加设备</td><td>一个自行查明连接方式和端口的表单，两者都可在<span class="ui">高级</span>中设置；网络扫描、检查清单和设备报告。</td><td>一个简短的表单，通过<span class="ui">添加 IP 设备</span>打开：名称、地址、<span class="ui">HTTP 端口</span>、<span class="ui">RTSP 端口</span>、用户名、密码、<span class="ui">通过 ONVIF 连接</span>开关、某一设备系列自有协议的开关（参见<a class="xref" href="#brands-methods">“连接方式”</a>），以及除该协议外均提供的<span class="ui">使用 HTTPS</span>和 <span class="ui">HTTPS 端口</span>（参见<a class="xref" href="#add-https">“通过 HTTPS 添加设备”</a>），其下是<span class="ui">添加示例摄像头</span>和<span class="ui">添加演示系统</span>。没有扫描、品牌列表、检查清单和设备报告。达到录像机上限时，表单显示<span class="ui">免费版包含 1 台录像机。通过 NVR 套餐可添加更多。</span>（示例设备占用名额时显示更长的一句），而不是打开套餐界面。</td></tr>
       <tr><td>设备页</td><td>重命名、<span class="ui">编辑凭据</span>、设备支持时的 <span class="ui">HTTPS</span>、设备提供时的<span class="ui">磁盘健康</span>，以及每个摄像头的菜单：重命名、启用或停用、暂停。设备从列表中删除。</td><td>墙的上方有<span class="ui">显示详情</span>或<span class="ui">隐藏详情</span>、<span class="ui">重命名</span>、<span class="ui">编辑凭据</span>以及在提供时出现的 <span class="ui">HTTPS</span>，下方有<span class="ui">删除设备</span>。没有保存密码的设备只在缩略图上显示<span class="ui">没有保存密码，请到“设备”重新输入。</span>密码需通过<span class="ui">编辑凭据</span>输入。摄像头没有菜单，也没有<span class="ui">磁盘健康</span>。通道在<span class="path"><span class="ui">设置</span> › <span class="ui">选择要显示的摄像头</span></span>中打开和关闭。</td></tr>
-      <tr><td>实时观看与单个摄像头</td><td>SD 和 HD、声音、快照、双向对讲、PTZ、捏合缩放、横屏视图。</td><td>SD 和 HD、声音，以及在适应画面和填满屏幕之间的选择。没有快照、对讲、PTZ 和捏合缩放。</td></tr>
+      <tr><td>实时观看与单个摄像头</td><td>SD 和 HD、声音、快照、录制片段、双向对讲、PTZ、捏合缩放、横屏视图。</td><td>SD 和 HD、声音，以及在适应画面和填满屏幕之间的选择。没有快照、录制片段、对讲、PTZ 和捏合缩放。</td></tr>
       <tr><td>录像回放</td><td>标出有录像日期的日历、可拖动的时间轴、2×、4× 和 8× 倍速、人员搜索。</td><td>支持回放的设备可用。用遥控器移动一根进度条，带有上一天和下一天以及缩放进度条的按钮，设备提供时还有检测到人员的列表。没有日历，也没有加速播放。需要先下载的录像不会播放；屏幕显示<span class="ui">请在 iPhone 或 iPad 上观看此录像。</span></td></tr>
       <tr><td>LiveView Mix</td><td>选择摄像头、排列、绘制布局、编辑格子、水印、保持摄像头连接、竖向页面，以及 iPhone Duo 上的两张画布。</td><td>只显示横向的墙。随备份带来的竖向页面或下方画布会保留，但不显示，其中的控制面板也不占用额度。墙用遥控器操作。<span class="path"><span class="ui">设置</span> › <span class="ui">LiveView Mix</span></span> 中的精简编辑器提供：选择摄像头并设置 SD 或 HD、现成的布局和黑边。图块多于 16 个的现成布局只在这里提供。在 iPhone 或 iPad 上绘制的自定义布局可以显示，但无法编辑。控制面板可以按下，但无法编辑。不提供排列、格子编辑、水印和保持摄像头连接。</td></tr>
       <tr><td>备份与共享</td><td>创建命名备份、恢复、导出代码、导入代码。</td><td>恢复备份中 <span class="ui">Apple TV</span> 那一份，以及导入手动输入的代码。无法创建备份或代码。<span class="ui">删除 iCloud 备份</span>只删除为 Apple TV 制作的那一份。</td></tr>
       <tr><td>套餐</td><td><span class="ui">套餐</span>、<span class="ui">管理订阅</span>、<span class="ui">恢复购买</span>和<span class="ui">兑换代码</span>。</td><td><span class="ui">套餐</span>和<span class="ui">恢复购买</span>。没有<span class="ui">管理订阅</span>和<span class="ui">兑换代码</span>。一个订阅涵盖使用同一个 Apple 账户的所有设备。</td></tr>
       <tr><td>法律页面</td><td><span class="ui">设置</span>标签页中的<span class="ui">使用条款</span>和<span class="ui">隐私政策</span>打开 Cam Hub 网站。</td><td><span class="ui">设置</span>标签页<span class="ui">法律条款</span>部分和<span class="ui">套餐</span>页面上的<span class="ui">使用条款（EULA）</span>和<span class="ui">隐私政策</span>在 App 内显示全文，顶部附有网址。全文随 App 提供，因此无需联网。<span class="ui">完成</span>用于返回。</td></tr>
-      <tr><td>权限</td><td>本地网络；用于<span class="ui">拍照</span>的相机；用于通过摄像头对讲的麦克风；用于速度计的位置。</td><td>仅本地网络，参见<a class="xref" href="#trouble-permissions">“权限请求与系统对话框”</a>。</td></tr>
+      <tr><td>权限</td><td>本地网络；用于<span class="ui">拍照</span>的相机；用于通过摄像头对讲的麦克风；用于保存快照或片段的照片（仅添加）；用于速度计的位置。</td><td>仅本地网络，参见<a class="xref" href="#trouble-permissions">“权限请求与系统对话框”</a>。</td></tr>
     </tbody>
   </table></div>
   <p>语言、默认画质、黑边和<span class="ui">隐藏离线摄像头</span>（位于<span class="ui">实时墙</span>部分）的设置在 Apple TV 上同样可用。备份没有出现在 Apple TV 上的问题，参见<a class="xref" href="#trouble-share">“共享、导入与 iCloud 备份”</a>。</p>
@@ -4256,7 +4298,8 @@ Content-Type: application/json
       <tr><td><span class="ui">录像已播完</span></td><td>正在播放的录像之后没有其他录像。</td><td>点击<span class="ui">返回实时</span>，或选择其他时间。</td></tr>
       <tr><td>时间与手机时钟不一致</td><td>所有时间都是设备的时钟时间，原样显示，从不换算为手机的时区。</td><td>在设备上设置日期、时间和时区，例如使用网络校时，参见<a class="xref" href="#playback-playing">“录像播放期间”</a>。</td></tr>
       <tr><td>没有速度按钮，或<span class="ui">这台录像机不支持加速播放。</span></td><td>设备无法以更快的速度播放录像，或不接受该请求。提示显示约 4 秒，回放以正常速度继续。</td><td>没有可行的办法。对这类设备，只能以 1× 回放，参见<a class="xref" href="#playback-speed">“回放速度”</a>。</td></tr>
-      <tr><td>无法保存或导出录像</td><td>这是设计如此。录像只能观看。</td><td>快照始终显示当前的实时画面，参见<a class="xref" href="#playback-limits">“不提供的功能”</a>。</td></tr>
+      <tr><td>无法保存或导出整段录像</td><td>这是设计如此。录像保留在设备上。</td><td>将重要的部分录制为最长 10 分钟的片段并共享，参见<a class="xref" href="#single-clip">“录制片段”</a>。</td></tr>
+      <tr><td>单摄像头视图中没有录制按钮</td><td>摄像头发送的画面格式无法保存为视频，或正在使用 Apple TV，Apple TV 没有录制按钮。</td><td>改用<span class="ui">快照</span>拍摄静态图片，参见<a class="xref" href="#single-clip">“录制片段”</a>。</td></tr>
     </tbody>
   </table></div>
 
@@ -4382,14 +4425,14 @@ Content-Type: application/json
   <p>有些提示来自视频流本身，无论 App 使用哪种语言，都以英文显示，例如 <code>Connection closed</code> 或 <code>HTTP 404</code>。它们的含义与上面的语句相同。</p>
 
   <h3 id="trouble-permissions">权限请求与系统对话框</h3>
-  <p>Cam Hub 请求的权限尽可能少。它从不请求访问照片图库、通知、通讯录或蓝牙，也不发送通知。麦克风只在通过摄像头对讲时才会请求。</p>
+  <p>Cam Hub 请求的权限尽可能少。它从不请求通知、通讯录或蓝牙权限，不发送通知，也从不读取照片图库；只在保存快照或片段时请求添加到照片图库。麦克风只在通过摄像头对讲时才会请求。</p>
   <div class="table-wrap"><table>
     <thead><tr><th>请求</th><th>何时出现</th><th>须知</th></tr></thead>
     <tbody>
       <tr><td>本地网络</td><td>App 首次联系本地网络上的地址时：添加设备时、列表的连接指示器检测设备时、运行扫描时，或视频流启动时。提示文字为“Cam Hub 会连接本地网络中的摄像头与录像机，并扫描您选择的子网以查找设备。”</td><td>请允许；否则无法连接家庭网络中的任何设备。被拒绝时，添加设备会失败并显示<span class="ui">无法连接设备。请检查地址和您的网络。</span>画面无法加载，扫描也找不到任何设备。下面的步骤可重新开启该权限。</td></tr>
       <tr><td>麦克风</td><td>首次按住摄像头的对讲按钮时。提示文字为“只有在您按住‘对讲’通过摄像头的扬声器说话时，Cam Hub 才会使用麦克风。”</td><td>被拒绝时，按住对讲按钮会显示<span class="ui">Cam Hub 的麦克风访问权限已关闭。请在“设置”中打开，才能通过摄像头说话。</span>麦克风权限可在系统设置中更改。参见<a class="xref" href="#single-talk">“双向对讲”</a>。</td></tr>
       <tr><td>相机</td><td>仅当为 LiveView Mix 的空位选择<span class="ui">拍照</span>来添加图片时。提示文字为“只有当您选择为 LiveView Mix 的格子拍摄照片时，Cam Hub 才会使用相机。”</td><td>被拒绝时，改用<span class="ui">选择照片</span>。相机权限可在系统设置中更改。</td></tr>
-      <tr><td>照片</td><td>不请求。<span class="ui">选择照片</span>使用系统选取器，快照通过共享面板传递。</td><td>Cam Hub 从不自行写入照片图库。请通过共享面板保存快照。</td></tr>
+      <tr><td>照片</td><td>首次在共享面板中为快照或片段选择<span class="ui" data-ui="system">存储图像</span>或<span class="ui" data-ui="system">存储视频</span>时。提示文字为“只有在您选择保存时，Cam Hub 才会将快照或片段添加到您的照片图库。”</td><td>Cam Hub 只能向照片图库添加内容，无法查看其中的内容，也从不自行添加任何内容。<span class="ui">选择照片</span>使用系统选取器，不需要该权限。拒绝添加后，不会保存任何内容：请通过其他操作发送图片或片段，或在系统设置中允许 Cam Hub 添加到照片。</td></tr>
       <tr><td>位置（使用 App 期间）</td><td>首次打开<span class="ui">工具</span>标签页的速度计时，参见<a class="xref" href="#tools-speedometer">“速度计与指南针”</a>。</td><td>仅用于速度和指南针方向，不会被保存或共享。不在后台访问。被拒绝时，速度计显示一行橙色文字和<span class="ui">打开设置</span>按钮。</td></tr>
       <tr><td>iCloud</td><td>不请求。备份和恢复需要设备已用 Apple 账户登录 iCloud。</td><td>备份失败时，参见<a class="xref" href="#trouble-share">“共享、导入与 iCloud 备份”</a>。</td></tr>
       <tr><td>购买、<span class="ui">管理订阅</span>和<span class="ui">兑换代码</span></td><td>App Store 的系统面板，从<span class="ui">设置</span>标签页或套餐页面打开。</td><td>用 Apple 账户确认。参见<a class="xref" href="#plans-subscribe">“订阅、恢复购买与兑换代码”</a>。</td></tr>
@@ -4458,7 +4501,7 @@ Content-Type: application/json
   </details>
   <details class="faq">
     <summary>录像可以保存或导出吗？</summary>
-    <p>不可以。录像只能观看。快照是设备在点击那一刻提供的静态图像；回放期间，它显示的是当前的实时画面。参见<a class="xref" href="#playback-limits">“不提供的功能”</a>。</p>
+    <p>录像的一部分可以。播放录像，点击红色录制按钮，待那一刻过去后停止：最长 10 分钟的片段可以发送给他人，或保存到照片图库。完整的录像保留在设备上，Cam Hub 也无法删除它们。快照是设备在点击那一刻提供的静态图像；回放期间，它显示的是当前的实时画面。参见<a class="xref" href="#single-clip">“录制片段”</a>。</p>
   </details>
   <details class="faq">
     <summary>为什么没有声音？</summary>
@@ -4576,6 +4619,7 @@ Content-Type: application/json
       <tr><th scope="row">PTZ</th><td>设备支持时</td><td>设备支持时</td><td>设备支持时</td><td>设备支持时</td><td>设备支持时</td><td>否</td></tr>
       <tr><th scope="row">点击或框选定位</th><td>设备支持时</td><td>否</td><td>否</td><td>否</td><td>否</td><td>否</td></tr>
       <tr><th scope="row">快照</th><td>是</td><td>是</td><td>是</td><td>是</td><td>设备支持时</td><td>否</td></tr>
+      <tr><th scope="row">录制片段</th><td>是</td><td>是</td><td>是</td><td>是</td><td>设备支持时</td><td>是</td></tr>
       <tr><th scope="row">声音（收听）</th><td>设备支持时</td><td>设备支持时</td><td>设备支持时</td><td>设备支持时</td><td>设备支持时</td><td>设备支持时</td></tr>
       <tr><th scope="row">通过摄像头说话</th><td>设备支持时</td><td>否</td><td>否</td><td>否</td><td>否</td><td>否</td></tr>
       <tr><th scope="row">磁盘健康</th><td>是</td><td>是</td><td>设置后</td><td>否</td><td>否</td><td>否</td></tr>
@@ -4593,6 +4637,7 @@ Content-Type: application/json
     <li><b>PTZ</b>：使用 Hikvision 时，通道需要开启 PTZ；设备列出预置位时才会显示这些预置位，原点位置始终可用。使用 Dahua 时，PTZ 必须绑定到该通道；提供预置位，但没有原点位置。使用 Synology Surveillance Station 时，控件取决于系统为该摄像头报告的内容：四个方向，以及（如果报告）原点位置。使用 Xiongmai 时，带云台的摄像头提供方向、变焦以及按编号 1 到 16 调用的预置位，没有原点位置。使用 ONVIF 时，各个轴取决于设备报告的内容；只有变焦的摄像头没有方向控制盘。参见<a class="xref" href="#single-ptz">“PTZ 控制：移动摄像头”</a>。</li>
     <li><b>定位</b>：Hikvision 摄像头报告支持按画面中的点或区域定位时提供。</li>
     <li><b>快照</b>：使用 Xiongmai 时，图片取自实时视频流的第一个完整帧。使用 ONVIF 时，设备必须提供快照地址。</li>
+    <li><b>录制片段</b>：适用于视图播放的 <code>H.264</code> 和 <code>H.265</code> 画面，参见<a class="xref" href="#single-clip">“录制片段”</a>。使用 Synology Surveillance Station 时，没有获取视频流权限的账号只会收到单张图片（<code>MJPEG</code>），其视图没有录制按钮。Synology Surveillance Station 以文件形式提供的录像会整个共享。</li>
     <li><b>声音</b>：使用 Synology Surveillance Station 时，通过其常用的流传输路径只能播放 <code>G.711</code>。Xiongmai 设备发送 <code>G.711</code>。</li>
     <li><b>对讲</b>：提供给报告具备 <code>G.711</code> 双向音频通道的单独 Hikvision 摄像头；录像机的通道不提供。参见<a class="xref" href="#single-talk">“双向对讲”</a>。</li>
     <li><b>磁盘健康</b>：Hikvision 报告每块磁盘的状态，设备提供时还有 S.M.A.R.T. 详细信息。Dahua 报告状态、容量以及（如果有）温度，但没有 S.M.A.R.T. 详细信息。Synology NAS 通过 SNMP 读取，须在 NAS 上开启 SNMP 并在 Cam Hub 中设置。参见<a class="xref" href="#devices-health">“磁盘健康”</a>。</li>

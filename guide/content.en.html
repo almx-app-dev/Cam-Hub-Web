@@ -1246,7 +1246,7 @@
 
 <section class="chapter" id="single">
   <h2><span class="num">6</span>Single-camera view</h2>
-  <p class="lead">The single-camera view shows one camera at full width, live or from recordings. It offers zoom and pan, a snapshot, sound, two-way talk for cameras that support it, the choice between SD and HD and, for cameras with a movable head, PTZ control. For devices that support playback, the view also holds the recording timeline; see <a class="xref" href="#playback">Chapter 7, “Recording playback and speed”</a>. On an iPad and on iPhone Duo, a camera can have a window of its own. YouTube and Twitch streams open in a full-screen viewer of their own.</p>
+  <p class="lead">The single-camera view shows one camera at full width, live or from recordings. It offers zoom and pan, a snapshot, a clip of the picture to share, sound, two-way talk for cameras that support it, the choice between SD and HD and, for cameras with a movable head, PTZ control. For devices that support playback, the view also holds the recording timeline; see <a class="xref" href="#playback">Chapter 7, “Recording playback and speed”</a>. On an iPad and on iPhone Duo, a camera can have a window of its own. YouTube and Twitch streams open in a full-screen viewer of their own.</p>
 
   <h3 id="single-open">Opening the view</h3>
   <p>The view opens from four places:</p>
@@ -1276,7 +1276,7 @@
     <tbody>
       <tr><td>Navigation bar</td><td>The back button and the name of the camera. On an iPad and on the inner display of iPhone Duo, the <span class="ui">Open in New Window</span> button is at the right; see <a class="xref" href="#single-window">“A camera in a window of its own”</a>.</td></tr>
       <tr><td>Picture (upright, 16:9)</td><td>The badge at the top left names the mode: <span class="ui">LIVE</span> (green) or <span class="ui">PLAYBACK 15:00:03</span>, with the playback time (red). The round button at the lower right is the camera control for PTZ in live mode; see <a class="xref" href="#single-ptz">“PTZ control: moving the camera”</a>. While a recording plays, it is the speed button; see <a class="xref" href="#playback-speed">“Playback speed”</a>.</td></tr>
-      <tr><td>Controls bar</td><td><span class="ui">Snapshot</span> at the left; next to it the speaker button when the camera sends sound, and the talk button for a camera that can be talked through; at the right the SD/HD switch in live mode or <span class="ui">Back to Live</span> during playback. See <a class="xref" href="#single-controls">“Snapshot, sound and quality”</a> and <a class="xref" href="#single-talk">“Two-way talk”</a>.</td></tr>
+      <tr><td>Controls bar</td><td><span class="ui">Snapshot</span> at the left, then the red record button; next to them the speaker button when the camera sends sound, and the talk button for a camera that can be talked through; at the right the SD/HD switch in live mode or <span class="ui">Back to Live</span> during playback. When the row is short of room, for example in a long language, <span class="ui">Snapshot</span> shows only its camera symbol. See <a class="xref" href="#single-controls">“Snapshot, sound and quality”</a>, <a class="xref" href="#single-clip">“Recording a clip”</a> and <a class="xref" href="#single-talk">“Two-way talk”</a>.</td></tr>
       <tr><td>Recording panel</td><td>The heading <span class="ui">Recordings</span> with the day, the timeline and the list of recordings, and on supported devices the button for the recording calendar. The panel appears only for devices that support playback; for all other devices, the view consists of the picture and the controls bar. See <a class="xref" href="#playback">Chapter 7, “Recording playback and speed”</a>.</td></tr>
     </tbody>
   </table></div>
@@ -1320,7 +1320,7 @@
     </li>
     <li class="step">
       <p>Tap <span class="ui">Share</span>.</p>
-      <p class="check"><b class="check-label">Check:</b> The sharing sheet of the system opens. From there, the picture can be saved, copied or sent with the actions that the system offers.</p>
+      <p class="check"><b class="check-label">Check:</b> The sharing sheet of the system opens. From there, the picture can be saved, copied or sent with the actions that the system offers. <span class="ui" data-ui="system">Save Image</span> puts it in the photo library; the first time, the system asks whether Cam Hub may add to the photo library (see <a class="xref" href="#trouble-permissions">“Permission requests and system dialogs”</a>).</p>
     </li>
     <li class="step">
       <p>Tap <span class="ui">Done</span> in the top-right corner.</p>
@@ -1361,6 +1361,47 @@
     </li>
   </ol>
   <p>The switch is shown only in live mode and only when the device offers two streams for the camera. During playback, <span class="ui">Back to Live</span> takes its place. The starting quality comes from <span class="path"><span class="ui">Settings</span> › <span class="ui">Default quality</span> › <span class="ui">Single camera</span></span>. HD is sharper and uses more bandwidth and more resources of the iPhone. For devices that provide one stream per channel, SD and HD are the same picture. The rules for all screens are in <a class="xref" href="#devices-quality">“SD and HD on device screens”</a>.</p>
+
+  <h3 id="single-clip">Recording a clip</h3>
+  <p>The record button saves what the view shows as a video, live or from a recording, so that a moment can be sent to someone or kept in the photo library: for example the visitor at the door at 17:08. The button is the red circle next to <span class="ui">Snapshot</span> (<span class="ui">Record Clip</span>).</p>
+  <p>Prerequisites: an iPhone or iPad, a channel within the plan, and a picture in the view. A few cameras send their picture in a form that cannot be saved as a video; their view has no record button. Apple TV has no record button.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the single-camera view of the camera. For a moment in a recording, play the recording from a little before that moment; see <a class="xref" href="#playback-timeline">“Using the timeline”</a>.</p>
+      <p class="check"><b class="check-label">Check:</b> The picture plays, live or from the chosen time.</p>
+    </li>
+    <li class="step">
+      <p>Tap the red record button next to <span class="ui">Snapshot</span> (<span class="ui">Record Clip</span>).</p>
+      <p class="check"><b class="check-label">Check:</b> The button becomes a red stop button (<span class="ui">Stop Recording</span>), and a badge with a red dot and the recorded time, for example <span class="ui" data-ui="value">0:08</span>, appears at the top of the picture. The clip begins with the next full picture from the camera, which can be a second or two after the tap.</p>
+      <figure class="phone"><img src="guide/img/single-clip-recording.jpg" alt="The single-camera view while a recording plays and a clip is being recorded: the badge PLAYBACK 15:00:11 at the top left, the badge with a red dot and 0:08 at the top of the picture, and the red stop button next to Snapshot" loading="lazy" decoding="async" width="900" height="1947"><figcaption>A clip being recorded during playback</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap the stop button.</p>
+      <p class="check"><b class="check-label">Check:</b> The sheet <span class="ui">Clip</span> slides up. It plays the clip and shows its name, its length and the <span class="ui">Share</span> button.</p>
+      <figure class="phone"><img src="guide/img/single-clip-sheet.jpg" alt="The Clip sheet over the single-camera view: the clip in a player, below it the name Gate 2026-11-02 15.00.04, the length 0:18 and the Share button, and Done at the top right" loading="lazy" decoding="async" width="900" height="1947"><figcaption>The Clip sheet</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Share</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The sharing sheet of the system opens. From there, the clip can be sent with a messaging app, saved to the photo library with <span class="ui" data-ui="system">Save Video</span>, or passed on with the other actions that the system offers. The first time something is saved to the photo library, the system asks whether Cam Hub may add to it.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Done</span> in the top-right corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The sheet closes, and the view continues.</p>
+    </li>
+  </ol>
+  <ul>
+    <li>A clip is at most 10 minutes long. At 10 minutes, recording stops by itself, and the sheet says <span class="ui">A clip is at most 10 minutes long.</span></li>
+    <li>Recording also stops by itself when the picture changes: when the timeline is moved, SD or HD is chosen, <span class="ui">Back to Live</span> is tapped, or playback continues into the next recording file. The sheet then says <span class="ui">Recording stopped because the picture changed.</span> What was recorded up to that moment is kept.</li>
+    <li>When the app leaves the foreground, recording stops and the clip is kept. The sheet appears when the app returns, with <span class="ui">Recording stopped when Cam Hub went to the background.</span></li>
+    <li>Leaving the view while a clip is recording discards the clip.</li>
+    <li>The clip keeps the picture as the camera sent it, in the quality shown (SD or HD), and the sound of the camera when there is one, whether or not the speaker button is on.</li>
+    <li>The file is named after the camera and the moment the clip begins, on the clock of the device, for example <code>Gate 2026-11-02 15.00.04.mp4</code>. The time matches the time printed in the picture.</li>
+    <li>In landscape, the record button is at the top right of the picture, next to the speaker and talk buttons. While a clip records, the stop button stays on screen.</li>
+    <li>When a recording plays as a file (see <a class="xref" href="#playback-playing">“While a recording plays”</a>), a share button (<span class="ui">Share Recording</span>) takes the place of the record button. It opens the same sheet with the whole recording file.</li>
+    <li>Clips wait on the iPhone for one day after they were made and are then removed; a clip that was sent or saved is not affected. <span class="ui">Delete All Data</span> removes them at once.</li>
+    <li>When nothing could be recorded, for example because the picture had not appeared yet, the message <span class="ui">Nothing was recorded. Wait for the picture to appear, then try again.</span> appears. When the clip cannot be written, the message is <span class="ui">Couldn't save the clip. Check the free space on this device and try again.</span></li>
+  </ul>
+  <figure class="land"><img src="guide/img/single-clip-landscape.jpg" alt="A clip being recorded in landscape during playback: the badge with a red dot and 0:07 at the top, the red stop button at the top right, and the playback strip at the bottom" loading="lazy" decoding="async" width="1600" height="736"><figcaption>Recording a clip in landscape</figcaption></figure>
 
   <h3 id="single-talk">Two-way talk</h3>
   <p>A standalone camera with a speaker can be talked through. Talk works like a walkie-talkie: hold the button to speak, release it to listen. Cam Hub asks the camera for its talk channel when the view opens; the talk button (a microphone symbol) appears to the right of the speaker button when the camera reports one.</p>
@@ -1410,14 +1451,14 @@
     </li>
     <li class="step">
       <p>Tap the picture once.</p>
-      <p class="check"><b class="check-label">Check:</b> The back button appears at the top left, with the badge next to it. At the top right appear the speaker button when the camera sends sound and the talk button when the camera can be talked through. The camera control button is at the lower right when the camera can be moved. The buttons fade out again after about 5 seconds; another tap on the picture shows them again.</p>
+      <p class="check"><b class="check-label">Check:</b> The back button appears at the top left, with the badge next to it. At the top right appear the red record button, the speaker button when the camera sends sound and the talk button when the camera can be talked through. The camera control button is at the lower right when the camera can be moved. The buttons fade out again after about 5 seconds; another tap on the picture shows them again. While a clip records, they stay on screen.</p>
     </li>
     <li class="step">
       <p>Tap the back button at the top left, or turn the iPhone upright again.</p>
       <p class="check"><b class="check-label">Check:</b> The view leaves the landscape layout or closes. The back button returns to the page from which the view was opened.</p>
     </li>
   </ol>
-  <p>Zoom, pan and PTZ control work in landscape as in upright orientation. <span class="ui">Snapshot</span>, the SD/HD switch, the day and the list of recordings are available in upright orientation only. For the strip that appears in landscape during playback, see <a class="xref" href="#playback-landscape">“Playback in landscape”</a>.</p>
+  <p>Zoom, pan, PTZ control and clip recording work in landscape as in upright orientation. <span class="ui">Snapshot</span>, the SD/HD switch, the day and the list of recordings are available in upright orientation only. For the strip that appears in landscape during playback, see <a class="xref" href="#playback-landscape">“Playback in landscape”</a>.</p>
 
   <h3 id="single-ptz">PTZ control: moving the camera</h3>
   <p>Prerequisites: a camera with a movable head (pan, tilt or zoom), a device that supports PTZ control, an account that may control PTZ on the device, and live mode. During playback, the camera control is hidden.</p>
@@ -1645,7 +1686,7 @@
     <li>A button for full screen. Turning the iPhone sideways takes its place.</li>
     <li>Talk through the channels of a recorder, and talking and listening at the same time: the sound of the camera pauses while the talk button is held.</li>
     <li>Controls for focus, iris and PTZ speed, and storing or changing saved positions.</li>
-    <li>A snapshot for devices that cannot supply one, and saving or sharing recordings; see <a class="xref" href="#playback-limits">“What is not available”</a>.</li>
+    <li>A snapshot for devices that cannot supply one, and clips longer than 10 minutes; see <a class="xref" href="#single-clip">“Recording a clip”</a>.</li>
   </ul>
 </section>
 
@@ -1814,9 +1855,10 @@
     <li><b>Continuing</b>: when a recording file ends, playback continues into the next recording by itself, so that an evening can be watched without a stop at every file. Cam Hub looks for newer recordings first, because the device may still be writing.</li>
     <li><b>Sound</b>: the speaker button works at normal speed only; see <a class="xref" href="#single-controls">“Snapshot, sound and quality”</a>.</li>
     <li><b>Snapshot</b>: takes the current live picture of the device, not a frame of the recording.</li>
+    <li><b>Clip</b>: the record button records the recording as it plays, to send it or save it in the photo library; see <a class="xref" href="#single-clip">“Recording a clip”</a>.</li>
     <li><b>Zoom and pan</b>: work as in live mode; see <a class="xref" href="#single-zoom">“Zoom and pan”</a>. The camera control for PTZ and the talk button are hidden during playback.</li>
     <li><b>Refused recording</b>: when the recorder does not play a recording, for example because it was overwritten, the picture shows <span class="ui">The recorder would not play this recording. It may have been overwritten — choose another time.</span> Choose another time on the timeline.</li>
-    <li><b>Recordings that arrive as a file</b>: some devices deliver a recording as a file. The picture area then shows <span class="ui">Downloading recording… 45%</span> with a progress bar, and the recording plays in the video player of the system, which has its own controls. The timeline cursor does not follow in that case. The downloaded files are kept in a cache of up to <code>500 MB</code> on the iPhone, so that the same recording does not have to be downloaded again; <span class="ui">Delete All Data</span> removes the cache.</li>
+    <li><b>Recordings that arrive as a file</b>: some devices deliver a recording as a file. The picture area then shows <span class="ui">Downloading recording… 45%</span> with a progress bar, and the recording plays in the video player of the system, which has its own controls. The timeline cursor does not follow in that case. The downloaded files are kept in a cache of up to <code>500 MB</code> on the iPhone, so that the same recording does not have to be downloaded again; <span class="ui">Delete All Data</span> removes the cache. In place of the record button, the share button (<span class="ui">Share Recording</span>) offers the whole file; see <a class="xref" href="#single-clip">“Recording a clip”</a>.</li>
     <li><b>Background</b>: when the app leaves the foreground or the iPhone is locked, playback stops. When the app returns, playback resumes at the point it had reached.</li>
   </ul>
   <h4>Returning to the live picture</h4>
@@ -1897,7 +1939,7 @@
       <p class="check"><b class="check-label">Check:</b> The live picture returns, or the upright layout with the recording panel is shown again.</p>
     </li>
   </ol>
-  <p>The strip appears only during playback, because a live picture has nothing to scrub. The day, the recording calendar, the list of recordings, <span class="ui">Snapshot</span> and the SD/HD switch are available in upright orientation only.</p>
+  <p>The strip appears only during playback, because a live picture has nothing to scrub. The day, the recording calendar, the list of recordings, <span class="ui">Snapshot</span> and the SD/HD switch are available in upright orientation only. The record button is at the top right of the picture; see <a class="xref" href="#single-clip">“Recording a clip”</a>.</p>
 
   <h3 id="playback-limits">What is not available</h3>
   <ul>
@@ -1905,7 +1947,7 @@
     <li>A recording calendar for devices that keep no daily index of their recordings.</li>
     <li>A search for events other than people.</li>
     <li>A timeline that spans more than the chosen day and the day before it.</li>
-    <li>Saving, exporting or deleting recordings. Recordings can be watched only; a snapshot always shows the current live picture.</li>
+    <li>Deleting recordings. To keep or send a part of a recording, record it as a clip of up to 10 minutes; see <a class="xref" href="#single-clip">“Recording a clip”</a>. A snapshot always shows the current live picture.</li>
     <li>A choice between SD and HD during playback, slow motion, reverse playback, and speeds other than 1×, 2×, 4× and 8×.</li>
     <li>Sound at speeds above 1×.</li>
     <li>A pause button, frame-by-frame stepping, jumps of a few seconds, a box for entering a time, buttons for the next or previous recording, and a free-text search.</li>
@@ -4127,7 +4169,7 @@ Content-Type: application/json
     <thead><tr><th>Row</th><th>Removes</th><th>Keeps</th></tr></thead>
     <tbody>
       <tr><td><span class="ui">Restore Default Settings</span></td><td>The settings listed in the table below, including every LiveView Mix page.</td><td>Devices, channels with their enabled state and names, saved passwords and SNMP settings, iCloud backups, subscriptions.</td></tr>
-      <tr><td><span class="ui">Delete All Data</span></td><td>Every device with its channels, every saved password and SNMP setting, the downloaded recording clips and the stored last pictures. Then everything that <span class="ui">Restore Default Settings</span> resets.</td><td>iCloud backups and subscriptions.</td></tr>
+      <tr><td><span class="ui">Delete All Data</span></td><td>Every device with its channels, every saved password and SNMP setting, the downloaded recordings, the clips recorded in the single-camera view and the stored last pictures. Then everything that <span class="ui">Restore Default Settings</span> resets.</td><td>iCloud backups and subscriptions.</td></tr>
       <tr><td><span class="ui">Delete iCloud Backup</span></td><td>Every backup in iCloud: all backups of <span class="ui">My Backup</span> and the separate copy for Apple TV. The row is unavailable while no backup exists.</td><td>Everything on this device.</td></tr>
     </tbody>
   </table></div>
@@ -4279,14 +4321,14 @@ Content-Type: application/json
       <tr><td>Operation</td><td>Touch, with gestures such as pinch, drag and long press.</td><td>Remote. The selection moves with the directional pad or by swiping, Select acts like a tap and Menu goes back. There are no touch gestures.</td></tr>
       <tr><td>Adding devices</td><td>A form that finds the connection method and the ports by itself, with both under <span class="ui">Advanced</span>; the network scan, the checklist, the device report, and separate forms for YouTube live streams and Twitch channels.</td><td>A short form, opened with <span class="ui">Add IP Device</span>: name, address, <span class="ui">HTTP Port</span>, <span class="ui">RTSP Port</span>, username, password, the switch <span class="ui">Connect via ONVIF</span>, a switch for the native protocol of one device family (see <a class="xref" href="#brands-methods">“Connection methods”</a>) and, except with that protocol, <span class="ui">Use HTTPS</span> with <span class="ui">HTTPS Port</span> (see <a class="xref" href="#add-https">“Adding a device over HTTPS”</a>), followed by <span class="ui">Add Demo Cameras</span> and <span class="ui">Add Demo Estate</span>. There is no scan, no list of brands, no checklist and no device report. A YouTube or Twitch link is refused. At the recorder limit, the form shows <span class="ui">Free includes 1 recorder. Add more with an NVR plan.</span>, or a longer sentence when the sample devices hold the place, instead of the plans screen.</td></tr>
       <tr><td>Device page</td><td>Rename, <span class="ui">Edit Credentials</span>, <span class="ui">HTTPS</span> where the device serves it, <span class="ui">Disk Health</span> where the device reports it, and a menu for each camera: rename, enable or disable, pause. A device is deleted from the list.</td><td><span class="ui">Show details</span> or <span class="ui">Hide details</span>, <span class="ui">Rename</span>, <span class="ui">Edit Credentials</span> and, where offered, <span class="ui">HTTPS</span> above the wall, <span class="ui">Delete Device</span> below it. A device without a saved password shows <span class="ui">No password saved. Enter it again under Devices.</span> on its thumbnails only; the password is entered with <span class="ui">Edit Credentials</span>. There is no menu for a camera and no <span class="ui">Disk Health</span>. Channels are switched on and off in <span class="path"><span class="ui">Settings</span> › <span class="ui">Choose which cameras to show</span></span>.</td></tr>
-      <tr><td>Live view and single camera</td><td>SD and HD, sound, snapshot, two-way talk, PTZ, pinch zoom, landscape view.</td><td>SD and HD, sound, and a choice between fitting the picture and filling the screen. There is no snapshot, no talk, no PTZ and no pinch zoom.</td></tr>
+      <tr><td>Live view and single camera</td><td>SD and HD, sound, snapshot, clip recording, two-way talk, PTZ, pinch zoom, landscape view.</td><td>SD and HD, sound, and a choice between fitting the picture and filling the screen. There is no snapshot, no clip recording, no talk, no PTZ and no pinch zoom.</td></tr>
       <tr><td>YouTube and Twitch</td><td>Played by the services' own players in tiles, on the camera page and full screen.</td><td>Shown by name only, with <span class="ui">YouTube live streams play only on iPhone and iPad.</span> or <span class="ui">Twitch streams play only on iPhone and iPad.</span>; the device list marks them <span class="ui">iPhone or iPad only</span>. They never play on the Apple TV; see <a class="xref" href="#trouble-streams">“YouTube and Twitch”</a>.</td></tr>
       <tr><td>Recording playback</td><td>A calendar that marks the days with recordings, a timeline that is dragged, speeds of 2×, 4× and 8×, search for people.</td><td>Available for devices that support playback. A bar is moved with the remote, with buttons for the previous and the next day and for zooming the bar, and a list of detected people where the device offers one. There is no calendar and no faster speed. A recording that has to be downloaded first is not played; the screen shows <span class="ui">Watch this recording on your iPhone or iPad.</span></td></tr>
       <tr><td>LiveView Mix</td><td>Choosing cameras, arranging, drawing layouts, editing slots, watermark, keeping cameras connected, a portrait page and, on iPhone Duo, two canvases.</td><td>Only the landscape wall is shown. A portrait page or a lower canvas that arrives with a backup is kept but not shown, and its control panels use no allowance. The wall is operated with the remote. A reduced editor in <span class="path"><span class="ui">Settings</span> › <span class="ui">LiveView Mix</span></span> offers the choice of cameras with SD or HD, a ready-made layout and black bars. Ready-made layouts of more than 16 tiles are offered only there. A custom layout that was drawn on an iPhone or iPad is shown but cannot be edited. Control panels can be pressed but not edited. Arranging, slot editing, the watermark and keeping cameras connected are not offered.</td></tr>
       <tr><td>Backup and sharing</td><td>Creating named backups, restoring, exporting a code, importing a code.</td><td>Restoring the <span class="ui">Apple TV</span> copy of a backup and importing a typed code. A backup or a code cannot be created. <span class="ui">Delete iCloud Backup</span> removes only the Apple TV copy.</td></tr>
       <tr><td>Plans</td><td><span class="ui">Plans</span>, <span class="ui">Manage Subscription</span>, <span class="ui">Restore Purchases</span> and <span class="ui">Redeem Code</span>.</td><td><span class="ui">Plans</span> and <span class="ui">Restore Purchases</span>. There is no <span class="ui">Manage Subscription</span> and no <span class="ui">Redeem Code</span>. One subscription covers every device that uses the same Apple Account.</td></tr>
       <tr><td>Legal pages</td><td><span class="ui">Terms of Use</span> and <span class="ui">Privacy Policy</span> in the <span class="ui">Settings</span> tab open the Cam Hub website.</td><td><span class="ui">Terms of Use (EULA)</span> and <span class="ui">Privacy Policy</span>, in the <span class="ui">Legal</span> section of the <span class="ui">Settings</span> tab and on the <span class="ui">Plans</span> page, show the full text inside the app, with the web address at the top. The text ships with the app, so no connection is needed. <span class="ui">Done</span> returns.</td></tr>
-      <tr><td>Permissions</td><td>Local Network; Camera for <span class="ui">Take Photo</span>; Microphone for talking through a camera; Location for the Speedometer.</td><td>Local Network only; see <a class="xref" href="#trouble-permissions">“Permission requests and system dialogs”</a>.</td></tr>
+      <tr><td>Permissions</td><td>Local Network; Camera for <span class="ui">Take Photo</span>; Microphone for talking through a camera; adding to the photo library when a snapshot or clip is saved; Location for the Speedometer.</td><td>Local Network only; see <a class="xref" href="#trouble-permissions">“Permission requests and system dialogs”</a>.</td></tr>
     </tbody>
   </table></div>
   <p>The settings for the language, the default quality, the black bars and <span class="ui">Hide offline cameras</span> (in the <span class="ui">Live walls</span> section) are available on the Apple TV as well. Problems with a backup that does not appear on the Apple TV are covered in <a class="xref" href="#trouble-share">“Sharing, import and iCloud backup”</a>.</p>
@@ -4404,7 +4446,8 @@ Content-Type: application/json
       <tr><td><span class="ui">End of recording</span></td><td>No recording follows the one that was playing.</td><td>Tap <span class="ui">Back to Live</span>, or choose another time.</td></tr>
       <tr><td>The times differ from the clock of the phone</td><td>All times are the clock of the device, shown as it is and never converted to the time zone of the phone.</td><td>Set the date, time and time zone on the device, for example with network time; see <a class="xref" href="#playback-playing">“While a recording plays”</a>.</td></tr>
       <tr><td>No speed button, or <span class="ui">This recorder can't play faster than normal speed.</span></td><td>The device cannot play recordings faster, or does not accept the request. The notice appears for about 4 seconds, and playback continues at normal speed.</td><td>No action helps. Playback at 1× is the only speed for such a device; see <a class="xref" href="#playback-speed">“Playback speed”</a>.</td></tr>
-      <tr><td>No way to save or export a recording</td><td>This is intended. Recordings can only be watched.</td><td>A snapshot always shows the current live picture; see <a class="xref" href="#playback-limits">“What is not available”</a>.</td></tr>
+      <tr><td>No way to save or export a whole recording</td><td>This is intended. Recordings stay on the device.</td><td>Record the part that matters as a clip of up to 10 minutes and share it; see <a class="xref" href="#single-clip">“Recording a clip”</a>.</td></tr>
+      <tr><td>No record button in the single-camera view</td><td>The camera sends its picture in a form that cannot be saved as a video, or the view is on Apple TV, which has no record button.</td><td>Take a still picture with <span class="ui">Snapshot</span> instead; see <a class="xref" href="#single-clip">“Recording a clip”</a>.</td></tr>
     </tbody>
   </table></div>
 
@@ -4549,14 +4592,14 @@ Content-Type: application/json
   <p>Some messages come from the video stream itself and are shown in English whatever the language of the app, for example <code>Connection closed</code> or <code>HTTP 404</code>. They have the same meaning as the sentences above.</p>
 
   <h3 id="trouble-permissions">Permission requests and system dialogs</h3>
-  <p>Cam Hub asks for as few permissions as possible. It never asks for access to the photo library, notifications, contacts or Bluetooth, and it sends no notifications. The microphone is requested only for talking through a camera.</p>
+  <p>Cam Hub asks for as few permissions as possible. It never asks for notifications, contacts or Bluetooth, sends no notifications and never reads the photo library; it asks only to add to the photo library when a snapshot or clip is saved. The microphone is requested only for talking through a camera.</p>
   <div class="table-wrap"><table>
     <thead><tr><th>Request</th><th>When it appears</th><th>What to know</th></tr></thead>
     <tbody>
       <tr><td>Local Network</td><td>The first time the app contacts an address on the local network: when a device is added, when the connection indicator of the list checks a device, when a scan runs, or when a stream starts. The text reads “Cam Hub connects to cameras and recorders and scans a subnet you choose to find equipment on your local network.”</td><td>Allow it; without it, no device on the home network can be reached. When it was refused, adding a device fails with <span class="ui">Device unreachable. Check the address and your network.</span>, pictures do not load, and a scan finds nothing. The procedure below turns the permission on.</td></tr>
       <tr><td>Microphone</td><td>The first time the talk button of a camera is held. The text reads “Cam Hub uses the microphone only while you hold Talk to speak through a camera's speaker.”</td><td>When it was refused, holding the talk button shows <span class="ui">Microphone access is off for Cam Hub. Turn it on in Settings to talk through the camera.</span> Microphone access can be changed in the system settings. See <a class="xref" href="#single-talk">“Two-way talk”</a>.</td></tr>
       <tr><td>Camera</td><td>Only when <span class="ui">Take Photo</span> is chosen for a picture in an empty slot of LiveView Mix. The text reads “Cam Hub uses the camera only when you choose Take Photo for a LiveView Mix slot.”</td><td>When it was refused, use <span class="ui">Choose Photo</span> instead. Camera access can be changed in the system settings.</td></tr>
-      <tr><td>Photos</td><td>Not requested. <span class="ui">Choose Photo</span> uses the system picker, and a snapshot is passed on through the share sheet.</td><td>Cam Hub never writes to the photo library by itself. Save a snapshot from the share sheet.</td></tr>
+      <tr><td>Photos</td><td>The first time <span class="ui" data-ui="system">Save Image</span> or <span class="ui" data-ui="system">Save Video</span> is chosen in the sharing sheet for a snapshot or a clip. The text reads “Cam Hub adds a snapshot or clip to your photo library only when you choose to save it.”</td><td>Cam Hub can only add to the photo library and cannot see what is in it; it never adds anything by itself. <span class="ui">Choose Photo</span> uses the picker of the system and needs no permission. When adding was refused, nothing is saved: send the picture or clip with another action, or allow adding to Photos for Cam Hub in the system settings.</td></tr>
       <tr><td>Location, while in use</td><td>The first time the Speedometer of the <span class="ui">Tools</span> tab opens; see <a class="xref" href="#tools-speedometer">“Speedometer and compass”</a>.</td><td>It is used only for the speed and the compass heading, and is neither stored nor shared. There is no access in the background. When it is refused, the Speedometer shows an orange line and the button <span class="ui">Open Settings</span>.</td></tr>
       <tr><td>iCloud</td><td>No request. Backup and restore need a device that is signed in to iCloud with an Apple Account.</td><td>When backup fails, see <a class="xref" href="#trouble-share">“Sharing, import and iCloud backup”</a>.</td></tr>
       <tr><td>Purchases, <span class="ui">Manage Subscription</span> and <span class="ui">Redeem Code</span></td><td>System sheets of the App Store, opened from the <span class="ui">Settings</span> tab or from the plans page.</td><td>Confirm with the Apple Account. See <a class="xref" href="#plans-subscribe">“Subscribing, restoring purchases and redeeming a code”</a>.</td></tr>
@@ -4625,7 +4668,7 @@ Content-Type: application/json
   </details>
   <details class="faq">
     <summary>Can a recording be saved or exported?</summary>
-    <p>No. Recordings can only be watched. A snapshot is a still image that the device supplies at the moment of the tap; during playback it shows the current live picture. See <a class="xref" href="#playback-limits">“What is not available”</a>.</p>
+    <p>A part of a recording can. Play the recording, tap the red record button, and stop it when the moment has passed: the clip, up to 10 minutes long, can be sent or saved to the photo library. Whole recordings stay on the device, and Cam Hub cannot delete them. A snapshot is a still image that the device supplies at the moment of the tap; during playback it shows the current live picture. See <a class="xref" href="#single-clip">“Recording a clip”</a>.</p>
   </details>
   <details class="faq">
     <summary>Why is there no sound?</summary>
@@ -4743,6 +4786,7 @@ Content-Type: application/json
       <tr><th scope="row">PTZ</th><td>If supported</td><td>If supported</td><td>If supported</td><td>If supported</td><td>If supported</td><td>No</td></tr>
       <tr><th scope="row">Aiming by tapping or drawing a box</th><td>If supported</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr>
       <tr><th scope="row">Snapshot</th><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>If supported</td><td>No</td></tr>
+      <tr><th scope="row">Clip recording</th><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>If supported</td><td>Yes</td></tr>
       <tr><th scope="row">Sound (listening)</th><td>If supported</td><td>If supported</td><td>If supported</td><td>If supported</td><td>If supported</td><td>If supported</td></tr>
       <tr><th scope="row">Talking through the camera</th><td>If supported</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr>
       <tr><th scope="row">Disk Health</th><td>Yes</td><td>Yes</td><td>If set up</td><td>No</td><td>No</td><td>No</td></tr>
@@ -4760,6 +4804,7 @@ Content-Type: application/json
     <li><b>PTZ</b>: with Hikvision, a channel needs PTZ switched on; saved positions appear when the device lists them, and the home position is always available. With Dahua, PTZ must be bound to that channel; saved positions are offered, but there is no home position. With Synology Surveillance Station, the controls follow what the system reports for the camera: four directions, and the home position when it is reported. With Xiongmai, a camera with a head gets directions, zoom and saved positions 1 to 16 by number, without a home position. With ONVIF, the axes follow what the device reports; a camera with zoom only gets no direction pad. See <a class="xref" href="#single-ptz">“PTZ control: moving the camera”</a>.</li>
     <li><b>Aiming</b>: offered when a Hikvision camera reports that it supports positioning by a point or an area of the picture.</li>
     <li><b>Snapshot</b>: with Xiongmai, the picture is taken from the first full frame of the live stream. With ONVIF, the device must give a snapshot address.</li>
+    <li><b>Clip recording</b>: works with the pictures in <code>H.264</code> and <code>H.265</code> that the view plays; see <a class="xref" href="#single-clip">“Recording a clip”</a>. With Synology Surveillance Station, an account without permission to fetch the video stream receives single pictures (<code>MJPEG</code>) instead, and its view has no record button. A recording that Synology Surveillance Station delivers as a file is shared whole.</li>
     <li><b>Sound</b>: with Synology Surveillance Station, only <code>G.711</code> plays over its usual streaming path. Xiongmai devices send <code>G.711</code>.</li>
     <li><b>Talking</b>: offered for standalone Hikvision cameras that report a two-way audio channel in <code>G.711</code>; not for the channels of a recorder. See <a class="xref" href="#single-talk">“Two-way talk”</a>.</li>
     <li><b>Disk Health</b>: Hikvision reports the state of each disk, with S.M.A.R.T. details where the device provides them. Dahua reports state, capacity and, where available, temperature, but no S.M.A.R.T. details. A Synology NAS is read over SNMP, which must be switched on at the NAS and set up in Cam Hub. See <a class="xref" href="#devices-health">“Disk Health”</a>.</li>

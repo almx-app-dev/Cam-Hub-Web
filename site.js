@@ -194,7 +194,8 @@ const translations = {
           ["快照與分享", [
             "在單一通道控制列按「快照」，Cam Hub 會向設備要求目前畫面的快照。",
             "取得影像後會開啟預覽頁；按「分享」使用系統分享功能。",
-            "快照可能包含人物、地址、時間或其他敏感資訊。送出前請確認影像內容、接收對象與所在地規範。"
+            "按「快照」旁的紅色錄製按鈕，可把畫面上的即時影像或錄影錄成最長 10 分鐘的片段；停止後 Cam Hub 會顯示片段，可分享或存到「照片」。",
+            "快照或片段可能包含人物、聲音、地址、時間或其他敏感資訊。送出前請確認內容、接收對象與所在地規範。"
           ]],
           ["日期、時間軸與錄影分類", [
             "在通道頁下方選擇要查詢的日期；Cam Hub 會向設備要求該日的錄影片段。",
@@ -501,7 +502,8 @@ const translations = {
           ["Snapshots and sharing", [
             "Tap Snapshot in the single-channel control bar to ask the equipment for its current image.",
             "After the image arrives, Cam Hub opens a preview. Tap Share to use the system share sheet.",
-            "A snapshot may contain people, addresses, timestamps, or other sensitive information. Check the image, recipient, and local requirements before sending it."
+            "Tap the red record button beside Snapshot to record what the view shows, live or from a recording, for up to 10 minutes. When you stop, Cam Hub shows the clip so you can share it or save it to Photos.",
+            "A snapshot or clip may contain people, voices, addresses, timestamps, or other sensitive information. Check it, the recipient, and local requirements before sending it."
           ]],
           ["Date, timeline, and recording types", [
             "Choose a date below the channel view. Cam Hub asks the equipment for recordings from that day.",

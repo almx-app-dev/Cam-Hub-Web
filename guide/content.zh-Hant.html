@@ -1246,7 +1246,7 @@
 
 <section class="chapter" id="single">
   <h2><span class="num">6</span>單機畫面</h2>
-  <p class="lead">單機畫面以全寬顯示一支攝影機，可看即時影像，也可看錄影。畫面提供放大與平移、快照、聲音、支援的攝影機的雙向對講、SD 與 HD 的選擇，以及具備可轉動鏡頭的攝影機的 PTZ 控制。支援錄影回放的設備，畫面中還有錄影時間軸，見<a class="xref" href="#playback">第 7 章「錄影回放與加速」</a>。在 iPad 與 iPhone Duo 上，攝影機可以開在獨立的視窗中。YouTube 與 Twitch 的直播則以專屬的全螢幕畫面開啟。</p>
+  <p class="lead">單機畫面以全寬顯示一支攝影機，可看即時影像，也可看錄影。畫面提供放大與平移、快照、可分享的影片片段、聲音、支援的攝影機的雙向對講、SD 與 HD 的選擇，以及具備可轉動鏡頭的攝影機的 PTZ 控制。支援錄影回放的設備，畫面中還有錄影時間軸，見<a class="xref" href="#playback">第 7 章「錄影回放與加速」</a>。在 iPad 與 iPhone Duo 上，攝影機可以開在獨立的視窗中。YouTube 與 Twitch 的直播則以專屬的全螢幕畫面開啟。</p>
 
   <h3 id="single-open">開啟單機畫面</h3>
   <p>可從四個地方開啟單機畫面：</p>
@@ -1276,7 +1276,7 @@
     <tbody>
       <tr><td>導覽列</td><td>返回按鈕與攝影機名稱。在 iPad 與 iPhone Duo 的內螢幕上，右側有<span class="ui">在新視窗中開啟</span>按鈕，見<a class="xref" href="#single-window">「在獨立視窗中顯示攝影機」</a>。</td></tr>
       <tr><td>畫面（直向，16:9）</td><td>左上角的標籤標示模式：<span class="ui">即時</span>（綠色）或<span class="ui">回放 15:00:03</span>，附回放的時間（紅色）。右下角的圓形按鈕，在即時模式為 PTZ 的鏡頭控制，見<a class="xref" href="#single-ptz">「PTZ 控制：移動鏡頭」</a>；播放錄影時則為速度按鈕，見<a class="xref" href="#playback-speed">「播放速度」</a>。</td></tr>
-      <tr><td>控制列</td><td>左側為<span class="ui">快照</span>；攝影機傳送聲音時，其旁有喇叭按鈕；可對講的攝影機另有對講按鈕；右側在即時模式為 SD 與 HD 的切換，在回放時為<span class="ui">回到即時</span>。見<a class="xref" href="#single-controls">「快照、聲音與畫質」</a>與<a class="xref" href="#single-talk">「雙向對講」</a>。</td></tr>
+      <tr><td>控制列</td><td>左側為<span class="ui">快照</span>，其後為紅色錄製按鈕；攝影機傳送聲音時，旁邊有喇叭按鈕；可對講的攝影機另有對講按鈕；右側在即時模式為 SD 與 HD 的切換，在回放時為<span class="ui">回到即時</span>。這一列空間不足時，例如使用較長的語言，<span class="ui">快照</span>只顯示相機圖示。見<a class="xref" href="#single-controls">「快照、聲音與畫質」</a>、<a class="xref" href="#single-clip">「錄製片段」</a>與<a class="xref" href="#single-talk">「雙向對講」</a>。</td></tr>
       <tr><td>錄影面板</td><td>標題<span class="ui">錄影</span>，以及日期、時間軸與錄影清單；支援的設備另有錄影日曆的按鈕。面板只在支援錄影回放的設備上出現；其他設備的畫面只有影像與控制列。見<a class="xref" href="#playback">第 7 章「錄影回放與加速」</a>。</td></tr>
     </tbody>
   </table></div>
@@ -1320,7 +1320,7 @@
     </li>
     <li class="step">
       <p>點選<span class="ui">分享</span>。</p>
-      <p class="check"><b class="check-label">確認：</b>開啟系統的分享選單。可由系統提供的動作儲存、複製或傳送影像。</p>
+      <p class="check"><b class="check-label">確認：</b>開啟系統的分享選單。可由系統提供的動作儲存、複製或傳送影像。<span class="ui" data-ui="system">儲存影像</span>會將影像存進照片圖庫；第一次儲存時，系統會詢問是否允許 Cam Hub 加入照片（見<a class="xref" href="#trouble-permissions">「權限要求與系統對話框」</a>）。</p>
     </li>
     <li class="step">
       <p>點選右上角的<span class="ui">完成</span>。</p>
@@ -1361,6 +1361,47 @@
     </li>
   </ol>
   <p>此切換開關只在即時模式、且設備對該攝影機提供兩路串流時才會顯示。回放時，<span class="ui">回到即時</span>取代此開關的位置。起始畫質取自<span class="path"><span class="ui">設定</span> › <span class="ui">預設畫質</span> › <span class="ui">單支攝影機</span></span>。HD 較清晰，使用較多頻寬與 iPhone 的資源。每個通道只提供一路串流的設備，SD 與 HD 是同一個畫面。各畫面的規則見<a class="xref" href="#devices-quality">「設備畫面上的 SD 與 HD」</a>。</p>
+
+  <h3 id="single-clip">錄製片段</h3>
+  <p>錄製按鈕會把畫面上的內容存成影片，即時影像或錄影都可以，方便把某個時刻傳給別人，或存進照片圖庫，例如 17:08 來到門口的訪客。按鈕是<span class="ui">快照</span>旁的紅色圓形（<span class="ui">錄製片段</span>）。</p>
+  <p>前提：使用 iPhone 或 iPad、通道在方案範圍內，且畫面上有影像。少數攝影機傳送的影像格式無法存成影片，這類攝影機的畫面沒有錄製按鈕。Apple TV 沒有錄製按鈕。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>開啟該攝影機的單機畫面。要錄下錄影中的某個時刻，請從該時刻稍早之前開始播放錄影，見<a class="xref" href="#playback-timeline">「使用時間軸」</a>。</p>
+      <p class="check"><b class="check-label">確認：</b>畫面播放即時影像，或從選定的時間開始播放。</p>
+    </li>
+    <li class="step">
+      <p>點選<span class="ui">快照</span>旁的紅色錄製按鈕（<span class="ui">錄製片段</span>）。</p>
+      <p class="check"><b class="check-label">確認：</b>按鈕變成紅色的停止按鈕（<span class="ui">停止錄製</span>），影像上方出現帶紅點的標籤與已錄製的時間，例如 <span class="ui" data-ui="value">0:08</span>。片段從攝影機送來的下一個完整畫面開始，可能比點選時晚一兩秒。</p>
+      <figure class="phone"><img src="guide/img/single-clip-recording.jpg" alt="播放錄影時錄製片段的單機畫面：左上角為回放 15:00:11 標籤，影像上方為帶紅點的 0:08 標籤，快照旁為紅色停止按鈕" loading="lazy" decoding="async" width="900" height="1947"><figcaption>回放時錄製片段</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>點選停止按鈕。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">片段</span>頁面從下方滑出，播放片段，並顯示檔名、長度與<span class="ui">分享</span>按鈕。</p>
+      <figure class="phone"><img src="guide/img/single-clip-sheet.jpg" alt="單機畫面上方的片段頁面：播放器中的片段，其下為檔名（攝影機名稱加上日期與時間）、長度 0:18 與分享按鈕，右上角為完成" loading="lazy" decoding="async" width="900" height="1947"><figcaption>片段頁面</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>點選<span class="ui">分享</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>開啟系統的分享選單。可用通訊 App 傳送片段、以<span class="ui" data-ui="system">儲存影片</span>存進照片圖庫，或使用系統提供的其他動作。第一次存進照片圖庫時，系統會詢問是否允許 Cam Hub 加入照片。</p>
+    </li>
+    <li class="step">
+      <p>點選右上角的<span class="ui">完成</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>頁面關閉，畫面繼續播放。</p>
+    </li>
+  </ol>
+  <ul>
+    <li>片段最長 10 分鐘。錄滿 10 分鐘時會自動停止，頁面顯示<span class="ui">片段最長 10 分鐘。</span></li>
+    <li>畫面改變時也會自動停止：拖動時間軸、切換 SD 或 HD、點選<span class="ui">回到即時</span>，或回放接續播到下一個錄影檔案。頁面此時顯示<span class="ui">畫面已切換，錄製已停止。</span>停止前已錄到的內容會保留。</li>
+    <li>App 移到背景時，錄製會停止，片段保留。回到 App 時會顯示頁面，並附上<span class="ui">Cam Hub 移到背景時已停止錄製。</span></li>
+    <li>錄製中離開單機畫面，片段會被捨棄。</li>
+    <li>片段保留攝影機送來的原始影像與目前顯示的畫質（SD 或 HD）；攝影機有聲音時也會錄進片段，與喇叭按鈕是否開啟無關。</li>
+    <li>檔名是攝影機名稱加上片段開始的時刻，以設備的時鐘為準，例如 <code>Gate 2026-11-02 15.00.04.mp4</code>。這個時間與影像上印出的時間一致。</li>
+    <li>橫向時，錄製按鈕位於影像右上角，在喇叭與對講按鈕旁。錄製期間，停止按鈕會一直顯示。</li>
+    <li>錄影以檔案形式播放時（見<a class="xref" href="#playback-playing">「播放錄影期間」</a>），錄製按鈕的位置改為分享按鈕（<span class="ui">分享錄影</span>），會以同一個頁面提供整個錄影檔案。</li>
+    <li>片段在 iPhone 上保留一天後自動刪除；已傳送或已儲存的片段不受影響。<span class="ui">刪除所有資料</span>會立即清除。</li>
+    <li>什麼都沒錄到時，例如影像還沒出現，會出現訊息<span class="ui">沒有錄到任何畫面。請等畫面出現後再試一次。</span>片段無法寫入時，訊息為<span class="ui">無法儲存片段。請檢查這台裝置的可用空間，然後再試一次。</span></li>
+  </ul>
+  <figure class="land"><img src="guide/img/single-clip-landscape.jpg" alt="回放時以橫向錄製片段：上方為帶紅點的 0:07 標籤，右上角為紅色停止按鈕，下方為回放控制條" loading="lazy" decoding="async" width="1600" height="736"><figcaption>橫向錄製片段</figcaption></figure>
 
   <h3 id="single-talk">雙向對講</h3>
   <p>具備喇叭的獨立攝影機可以對講。對講的方式與無線電對講機相同：按住按鈕說話，放開按鈕聆聽。單機畫面開啟時，Cam Hub 會向攝影機詢問對講通道；攝影機回報有對講通道時，喇叭按鈕右側會出現對講按鈕（麥克風符號）。</p>
@@ -1410,14 +1451,14 @@
     </li>
     <li class="step">
       <p>在畫面上點選一下。</p>
-      <p class="check"><b class="check-label">確認：</b>左上角出現返回按鈕，其旁為標籤。攝影機傳送聲音時，右上角出現喇叭按鈕；攝影機可對講時，另有對講按鈕。攝影機可移動時，右下角有鏡頭控制按鈕。這些按鈕約 5 秒後再次淡出；再點選畫面一次，會重新顯示。</p>
+      <p class="check"><b class="check-label">確認：</b>左上角出現返回按鈕，其旁為標籤。右上角出現紅色錄製按鈕；攝影機傳送聲音時，另有喇叭按鈕；攝影機可對講時，另有對講按鈕。攝影機可移動時，右下角有鏡頭控制按鈕。這些按鈕約 5 秒後再次淡出；再點選畫面一次，會重新顯示。錄製片段期間，這些按鈕會一直顯示。</p>
     </li>
     <li class="step">
       <p>點選左上角的返回按鈕，或將 iPhone 轉回直向。</p>
       <p class="check"><b class="check-label">確認：</b>畫面離開橫向版面，或單機畫面關閉。返回按鈕會回到開啟單機畫面前的頁面。</p>
     </li>
   </ol>
-  <p>放大、平移與 PTZ 控制在橫向時的使用方式與直向相同。<span class="ui">快照</span>、SD 與 HD 的切換、日期與錄影清單只在直向時提供。回放時橫向出現的控制條，見<a class="xref" href="#playback-landscape">「橫向的錄影回放」</a>。</p>
+  <p>放大、平移、PTZ 控制與錄製片段在橫向時的使用方式與直向相同。<span class="ui">快照</span>、SD 與 HD 的切換、日期與錄影清單只在直向時提供。回放時橫向出現的控制條，見<a class="xref" href="#playback-landscape">「橫向的錄影回放」</a>。</p>
 
   <h3 id="single-ptz">PTZ 控制：移動鏡頭</h3>
   <p>前提：攝影機具備可轉動的鏡頭（水平轉動、垂直轉動或變焦）、設備支援 PTZ 控制、帳號在設備上具備 PTZ 控制的權限，且處於即時模式。回放時，鏡頭控制會隱藏。</p>
@@ -1645,7 +1686,7 @@
     <li>全螢幕按鈕。將 iPhone 轉為橫向即可代替。</li>
     <li>透過錄影主機的通道對講，以及同時說話與聆聽：按住對講按鈕期間，攝影機的聲音會暫停。</li>
     <li>對焦、光圈與 PTZ 速度的控制，以及儲存或修改已儲存的位置。</li>
-    <li>設備無法提供的快照，以及儲存或分享錄影，見<a class="xref" href="#playback-limits">「不提供的功能」</a>。</li>
+    <li>設備無法提供的快照，以及超過 10 分鐘的片段，見<a class="xref" href="#single-clip">「錄製片段」</a>。</li>
   </ul>
 </section>
 
@@ -1814,9 +1855,10 @@
     <li><b>接續播放</b>：一個錄影檔播完後，會自動接續播放下一段錄影，因此觀看一整個晚上時，不會在每個檔案的交界處停止。Cam Hub 會先尋找較新的錄影，因為設備可能仍在寫入。</li>
     <li><b>聲音</b>：喇叭按鈕只在一般速度下有作用，見<a class="xref" href="#single-controls">「快照、聲音與畫質」</a>。</li>
     <li><b>快照</b>：拍攝的是設備目前的即時影像，不是錄影中的一格畫面。</li>
+    <li><b>片段</b>：錄製按鈕會錄下正在播放的錄影，可傳送給別人或存進照片圖庫，見<a class="xref" href="#single-clip">「錄製片段」</a>。</li>
     <li><b>放大與平移</b>：與即時模式相同，見<a class="xref" href="#single-zoom">「放大與平移」</a>。PTZ 的鏡頭控制與對講按鈕在回放時隱藏。</li>
     <li><b>被拒絕的錄影</b>：錄影主機不播放某段錄影時（例如錄影已被覆寫），影像上顯示<span class="ui">錄影主機沒有播放這段錄影，可能已被覆寫——請選擇其他時間。</span>請在時間軸上選擇其他時間。</li>
-    <li><b>以檔案送達的錄影</b>：部分設備將錄影以檔案形式交付。此時影像區顯示<span class="ui">正在下載錄影… 45%</span>與進度條，之後錄影以系統的影片播放器播放，播放器有自己的控制項目。此情況下，時間軸的游標不會跟隨播放。下載的檔案保存在 iPhone 的快取中，上限約 <code>500 MB</code>，因此同一段錄影不必重複下載；<span class="ui">刪除所有資料</span>會清除快取。</li>
+    <li><b>以檔案送達的錄影</b>：部分設備將錄影以檔案形式交付。此時影像區顯示<span class="ui">正在下載錄影… 45%</span>與進度條，之後錄影以系統的影片播放器播放，播放器有自己的控制項目。此情況下，時間軸的游標不會跟隨播放。下載的檔案保存在 iPhone 的快取中，上限約 <code>500 MB</code>，因此同一段錄影不必重複下載；<span class="ui">刪除所有資料</span>會清除快取。錄製按鈕的位置改為分享按鈕（<span class="ui">分享錄影</span>），可分享整個檔案，見<a class="xref" href="#single-clip">「錄製片段」</a>。</li>
     <li><b>背景</b>：App 離開前景或 iPhone 鎖定時，回放會停止。App 回到前景後，回放從停止時的位置繼續。</li>
   </ul>
   <h4>回到即時影像</h4>
@@ -1897,7 +1939,7 @@
       <p class="check"><b class="check-label">確認：</b>即時影像重新出現，或重新顯示含錄影面板的直向版面。</p>
     </li>
   </ol>
-  <p>控制條只在回放時出現，因為即時影像沒有可拖曳的時間軸。日期、錄影日曆、錄影清單、<span class="ui">快照</span>與 SD、HD 的切換只在直向時提供。</p>
+  <p>控制條只在回放時出現，因為即時影像沒有可拖曳的時間軸。日期、錄影日曆、錄影清單、<span class="ui">快照</span>與 SD、HD 的切換只在直向時提供。錄製按鈕位於影像右上角，見<a class="xref" href="#single-clip">「錄製片段」</a>。</p>
 
   <h3 id="playback-limits">不提供的功能</h3>
   <ul>
@@ -1905,7 +1947,7 @@
     <li>不保有每日錄影索引的設備的錄影日曆。</li>
     <li>人員以外的事件搜尋。</li>
     <li>涵蓋範圍超過所選日期與前一天的時間軸。</li>
-    <li>儲存、匯出或刪除錄影。錄影只能觀看；快照一律是目前的即時影像。</li>
+    <li>刪除錄影。要保留或傳送錄影的某一段，請錄成最長 10 分鐘的片段，見<a class="xref" href="#single-clip">「錄製片段」</a>。快照一律是目前的即時影像。</li>
     <li>回放時選擇 SD 或 HD、慢動作、倒轉播放，以及 1×、2×、4×、8× 以外的速度。</li>
     <li>高於 1× 的速度下的聲音。</li>
     <li>暫停按鈕、逐格播放、跳前或跳後數秒、輸入時間的欄位、上一段或下一段錄影的按鈕，以及文字搜尋。</li>
@@ -4127,7 +4169,7 @@ Content-Type: application/json
     <thead><tr><th>項目</th><th>移除的內容</th><th>保留的內容</th></tr></thead>
     <tbody>
       <tr><td><span class="ui">還原預設設定</span></td><td>下表所列的設定，包含每一個 LiveView Mix 頁面。</td><td>設備、通道與其啟用狀態和名稱、已儲存的密碼與 SNMP 設定、iCloud 備份、訂閱。</td></tr>
-      <tr><td><span class="ui">刪除所有資料</span></td><td>所有設備及其通道、所有已儲存的密碼與 SNMP 設定、已下載的錄影片段，以及儲存的最後畫面。之後再重設<span class="ui">還原預設設定</span>所重設的一切。</td><td>iCloud 備份與訂閱。</td></tr>
+      <tr><td><span class="ui">刪除所有資料</span></td><td>所有設備及其通道、所有已儲存的密碼與 SNMP 設定、已下載的錄影、在單機畫面錄製的片段，以及儲存的最後畫面。之後再重設<span class="ui">還原預設設定</span>所重設的一切。</td><td>iCloud 備份與訂閱。</td></tr>
       <tr><td><span class="ui">刪除 iCloud 備份</span></td><td>iCloud 中的所有備份，包括<span class="ui">我的備份</span>的每一份與另外為 Apple TV 製作的副本。沒有任何備份時，此列無法使用。</td><td>這台裝置上的一切。</td></tr>
     </tbody>
   </table></div>
@@ -4279,14 +4321,14 @@ Content-Type: application/json
       <tr><td>操作方式</td><td>觸控，並有捏合、拖曳與長按等手勢。</td><td>遙控器。選取框以方向鍵或滑動移動，選取鍵相當於點選，返回鍵回到上一層。沒有觸控手勢。</td></tr>
       <tr><td>加入設備</td><td>自動找出連線方式與連接埠的表單，兩者都收在<span class="ui">進階</span>之下；另有網段掃描、檢查清單、設備報告，以及加入 YouTube 直播與 Twitch 頻道的專用表單。</td><td>以<span class="ui">新增 IP 設備</span>開啟簡短的表單：名稱、位址、<span class="ui">HTTP 連接埠</span>、<span class="ui">RTSP 連接埠</span>、使用者名稱、密碼、開關<span class="ui">透過 ONVIF 連線</span>、某一類設備專用協定的開關（見<a class="xref" href="#brands-methods">「連線方式」</a>），以及不使用該協定時的<span class="ui">使用 HTTPS</span>與<span class="ui">HTTPS 連接埠</span>（見<a class="xref" href="#add-https">「透過 HTTPS 加入設備」</a>），下方另有<span class="ui">加入範例攝影機</span>與<span class="ui">加入示範系統</span>。沒有掃描、品牌清單、檢查清單與設備報告。YouTube 或 Twitch 的連結會被拒絕。已達錄影主機上限時，表單顯示<span class="ui">免費版含 1 台錄影主機。訂閱 NVR 方案可新增更多。</span>，範例設備占用名額時則顯示較長的說明，不會開啟方案頁。</td></tr>
       <tr><td>設備頁</td><td>重新命名、<span class="ui">編輯帳號密碼</span>、設備提供時的<span class="ui">HTTPS</span>、設備有回報時的<span class="ui">硬碟健康</span>，以及每支攝影機的選單：重新命名、啟用或停用、暫停。設備從清單中刪除。</td><td>牆面上方有<span class="ui">顯示詳細資訊</span>或<span class="ui">隱藏詳細資訊</span>、<span class="ui">重新命名</span>、<span class="ui">編輯帳號密碼</span>，以及提供時的<span class="ui">HTTPS</span>，牆面下方有<span class="ui">刪除設備</span>。沒有儲存密碼的設備，只在縮圖上顯示<span class="ui">沒有儲存密碼，請到「設備」重新輸入。</span>，密碼以<span class="ui">編輯帳號密碼</span>輸入。攝影機沒有選單，也沒有<span class="ui">硬碟健康</span>。通道的開關在<span class="path"><span class="ui">設定</span> › <span class="ui">選擇顯示哪些攝影機</span></span>。</td></tr>
-      <tr><td>即時影像與單機畫面</td><td>SD 與 HD、聲音、快照、雙向對講、PTZ、捏合縮放、橫向畫面。</td><td>SD 與 HD、聲音，以及符合畫面與填滿螢幕的選擇。沒有快照、對講、PTZ 與捏合縮放。</td></tr>
+      <tr><td>即時影像與單機畫面</td><td>SD 與 HD、聲音、快照、錄製片段、雙向對講、PTZ、捏合縮放、橫向畫面。</td><td>SD 與 HD、聲音，以及符合畫面與填滿螢幕的選擇。沒有快照、錄製片段、對講、PTZ 與捏合縮放。</td></tr>
       <tr><td>YouTube 與 Twitch</td><td>在格子、單機畫面與全螢幕中，以各服務自己的播放器播放。</td><td>只顯示名稱，並附上<span class="ui">YouTube 直播只能在 iPhone 和 iPad 上播放。</span>或<span class="ui">Twitch 直播只能在 iPhone 和 iPad 上播放。</span>；設備清單標示<span class="ui">僅限 iPhone 或 iPad</span>。在 Apple TV 上一律不會播放，見<a class="xref" href="#trouble-streams">「YouTube 與 Twitch」</a>。</td></tr>
       <tr><td>錄影回放</td><td>標出有錄影日期的月曆、可拖曳的時間軸、2×、4× 與 8× 的速度、人員搜尋。</td><td>支援回放的設備可使用。以遙控器移動時間列，有前一天與後一天的按鈕、縮放時間列的按鈕；設備提供時，另有偵測到人員的清單。沒有月曆，也沒有加速。必須先下載的錄影不會播放，畫面顯示<span class="ui">這段錄影請在 iPhone 或 iPad 上觀看。</span></td></tr>
       <tr><td>LiveView Mix</td><td>選擇攝影機、排列、繪製版面、編輯格子、浮水印、保持攝影機連線、直向頁面，以及 iPhone Duo 的兩張畫布。</td><td>只顯示橫向的牆面。隨備份帶來的直向頁面或下方畫布會保留，但不會顯示，其中的控制面板也不占用額度。牆面以遙控器操作。<span class="path"><span class="ui">設定</span> › <span class="ui">LiveView Mix</span></span>中有精簡的編輯畫面，可選擇攝影機與 SD 或 HD、現成版面與黑邊。超過 16 格的現成版面只在這裡提供。在 iPhone 或 iPad 繪製的自訂版面會顯示，但無法編輯。控制面板可以按下，但無法編輯。排列、編輯格子、浮水印與保持攝影機連線都沒有提供。</td></tr>
       <tr><td>備份與分享</td><td>建立具名的備份、還原、匯出代碼、匯入代碼。</td><td>還原備份中<span class="ui">Apple TV</span>那一份，以及匯入輸入的代碼。無法建立備份或代碼。<span class="ui">刪除 iCloud 備份</span>只會移除 Apple TV 那一份。</td></tr>
       <tr><td>方案</td><td><span class="ui">方案</span>、<span class="ui">管理訂閱項目</span>、<span class="ui">還原購買項目</span>與<span class="ui">兌換代碼</span>。</td><td><span class="ui">方案</span>與<span class="ui">還原購買項目</span>。沒有<span class="ui">管理訂閱項目</span>，也沒有<span class="ui">兌換代碼</span>。一份訂閱涵蓋使用同一個 Apple 帳號的每一台裝置。</td></tr>
       <tr><td>法律條款</td><td><span class="ui">設定</span>分頁中的<span class="ui">使用條款</span>與<span class="ui">隱私權政策</span>會開啟 Cam Hub 網站。</td><td><span class="ui">設定</span>分頁<span class="ui">法律條款</span>區塊與<span class="ui">方案</span>頁面中的使用條款與<span class="ui">隱私權政策</span>，會在 App 內顯示全文，頂端並列出網址。全文隨 App 提供，不需要網路連線。點選<span class="ui">完成</span>即可返回。</td></tr>
-      <tr><td>權限</td><td>本地網路；<span class="ui">拍照</span>使用相機；透過攝影機對講時使用麥克風；時速表使用位置。</td><td>只有本地網路，見<a class="xref" href="#trouble-permissions">「權限要求與系統對話框」</a>。</td></tr>
+      <tr><td>權限</td><td>本地網路；<span class="ui">拍照</span>使用相機；透過攝影機對講時使用麥克風；儲存快照或片段時加入照片圖庫；時速表使用位置。</td><td>只有本地網路，見<a class="xref" href="#trouble-permissions">「權限要求與系統對話框」</a>。</td></tr>
     </tbody>
   </table></div>
   <p>語言、預設畫質、黑邊與<span class="ui">隱藏無訊號攝影機</span>（位於<span class="ui">即時牆</span>區塊）的設定，在 Apple TV 上同樣可用。備份沒有出現在 Apple TV 上的問題，見<a class="xref" href="#trouble-share">「分享、匯入與 iCloud 備份」</a>。</p>
@@ -4404,7 +4446,8 @@ Content-Type: application/json
       <tr><td><span class="ui">錄影已播完</span></td><td>正在播放的錄影之後沒有其他錄影。</td><td>點選<span class="ui">回到即時</span>，或選擇其他時間。</td></tr>
       <tr><td>時間與手機的時鐘不同</td><td>所有時間都是設備自己的時鐘，原樣顯示，不會轉換成手機的時區。</td><td>在設備上設定日期、時間與時區，例如使用網路校時，見<a class="xref" href="#playback-playing">「播放錄影期間」</a>。</td></tr>
       <tr><td>沒有加速按鈕，或出現<span class="ui">此錄影主機不支援加速播放。</span></td><td>設備無法加速播放錄影，或不接受該要求。提示約顯示 4 秒，錄影以正常速度繼續播放。</td><td>無法處理。此類設備只能以 1× 播放，見<a class="xref" href="#playback-speed">「播放速度」</a>。</td></tr>
-      <tr><td>無法儲存或匯出錄影</td><td>這是設計如此。錄影只能觀看。</td><td>快照一律是目前的即時影像，見<a class="xref" href="#playback-limits">「不提供的功能」</a>。</td></tr>
+      <tr><td>無法儲存或匯出整段錄影</td><td>這是設計如此。錄影保留在設備上。</td><td>把重要的部分錄成最長 10 分鐘的片段再分享，見<a class="xref" href="#single-clip">「錄製片段」</a>。</td></tr>
+      <tr><td>單機畫面沒有錄製按鈕</td><td>攝影機傳送的影像格式無法存成影片，或正在使用 Apple TV，Apple TV 沒有錄製按鈕。</td><td>改用<span class="ui">快照</span>拍攝靜態影像，見<a class="xref" href="#single-clip">「錄製片段」</a>。</td></tr>
     </tbody>
   </table></div>
 
@@ -4549,14 +4592,14 @@ Content-Type: application/json
   <p>部分訊息直接來自影像串流，無論 App 使用哪種語言，都以英文顯示，例如 <code>Connection closed</code> 或 <code>HTTP 404</code>。它們的意義與上列句子相同。</p>
 
   <h3 id="trouble-permissions">權限要求與系統對話框</h3>
-  <p>Cam Hub 僅要求必要的權限。App 不會要求使用照片圖庫、通知、聯絡人或藍牙，也不會發送通知。麥克風只在透過攝影機對講時要求。</p>
+  <p>Cam Hub 僅要求必要的權限。App 不會要求使用通知、聯絡人或藍牙，不會發送通知，也不會讀取照片圖庫；只在儲存快照或片段時，要求加入照片圖庫。麥克風只在透過攝影機對講時要求。</p>
   <div class="table-wrap"><table>
     <thead><tr><th>要求</th><th>出現時機</th><th>注意事項</th></tr></thead>
     <tbody>
       <tr><td>本地網路</td><td>App 第一次連線到本地網路上的位址時：加入設備、清單的連線指示符號檢查設備、執行掃描，或開始串流。要求的說明文字為「Cam Hub 會連接區域網路上的攝影機與錄影主機，並掃描您選擇的子網路以尋找設備。」</td><td>請允許；沒有這項權限，家中網路上的任何設備都連不上。權限遭拒絕時，加入設備會失敗並顯示<span class="ui">無法連線到設備。請檢查位址與您的網路。</span>，畫面無法載入，掃描也找不到任何設備。下列步驟可重新開啟權限。</td></tr>
       <tr><td>麥克風</td><td>第一次按住攝影機的對講按鈕時。要求的說明文字為「只有在您按住「對講」透過攝影機的喇叭說話時，Cam Hub 才會使用麥克風。」</td><td>權限遭拒絕時，按住對講按鈕會顯示<span class="ui">Cam Hub 的麥克風取用權限已關閉。請在「設定」中開啟，才能透過攝影機說話。</span>麥克風權限可在系統設定中變更。見<a class="xref" href="#single-talk">「雙向對講」</a>。</td></tr>
       <tr><td>相機</td><td>只有在 LiveView Mix 空格的圖片選擇<span class="ui">拍照</span>時。要求的說明文字為「只有在您為 LiveView Mix 格子選擇「拍照」時，Cam Hub 才會使用相機。」</td><td>權限遭拒絕時，改用<span class="ui">選擇照片</span>。相機權限可在系統設定中變更。</td></tr>
-      <tr><td>照片</td><td>不會要求。<span class="ui">選擇照片</span>使用系統的照片選取器，快照則透過分享選單傳出。</td><td>Cam Hub 不會自行寫入照片圖庫。要儲存快照，請從分享選單儲存。</td></tr>
+      <tr><td>照片</td><td>第一次在分享選單中為快照或片段選擇<span class="ui" data-ui="system">儲存影像</span>或<span class="ui" data-ui="system">儲存影片</span>時。說明文字為「只有在您選擇儲存時，Cam Hub 才會將快照或片段加入您的照片圖庫。」</td><td>Cam Hub 只能加入照片，看不到照片圖庫的內容，也不會自行加入任何東西。<span class="ui">選擇照片</span>使用系統的照片選取器，不需要這項權限。拒絕加入時，不會儲存任何東西：請改用其他動作傳送影像或片段，或在系統設定中允許 Cam Hub 加入照片。</td></tr>
       <tr><td>位置（使用 App 期間）</td><td>第一次開啟<span class="ui">工具</span>分頁的時速表時，見<a class="xref" href="#tools-speedometer">「時速表與羅盤」</a>。</td><td>只用於時速與羅盤方向，不會儲存或分享。不會在背景取得位置。權限遭拒絕時，時速表顯示橘色文字與按鈕<span class="ui">開啟設定</span>。</td></tr>
       <tr><td>iCloud</td><td>不會要求。備份與還原需要裝置已以 Apple 帳號登入 iCloud。</td><td>備份失敗時，見<a class="xref" href="#trouble-share">「分享、匯入與 iCloud 備份」</a>。</td></tr>
       <tr><td>購買、<span class="ui">管理訂閱項目</span>與<span class="ui">兌換代碼</span></td><td><span class="ui" data-ui="system">App Store</span> 的系統畫面，從<span class="ui">設定</span>分頁或方案頁開啟。</td><td>以 Apple 帳號確認。見<a class="xref" href="#plans-subscribe">「訂閱、還原購買與兌換代碼」</a>。</td></tr>
@@ -4625,7 +4668,7 @@ Content-Type: application/json
   </details>
   <details class="faq">
     <summary>可以儲存或匯出錄影嗎？</summary>
-    <p>不行。錄影只能觀看。快照是設備在點選當下提供的靜態影像；回放期間，快照顯示的是目前的即時影像。見<a class="xref" href="#playback-limits">「不提供的功能」</a>。</p>
+    <p>錄影的一部分可以。播放錄影，點選紅色錄製按鈕，等那個時刻過了再停止：最長 10 分鐘的片段可以傳送給別人，或存進照片圖庫。整段錄影保留在設備上，Cam Hub 也無法刪除。快照是設備在點選當下提供的靜態影像；回放期間，快照顯示的是目前的即時影像。見<a class="xref" href="#single-clip">「錄製片段」</a>。</p>
   </details>
   <details class="faq">
     <summary>為什麼沒有聲音？</summary>
@@ -4743,6 +4786,7 @@ Content-Type: application/json
       <tr><th scope="row">PTZ</th><td>視設備而定</td><td>視設備而定</td><td>視設備而定</td><td>視設備而定</td><td>視設備而定</td><td>無</td></tr>
       <tr><th scope="row">點選或框選畫面以對準</th><td>視設備而定</td><td>無</td><td>無</td><td>無</td><td>無</td><td>無</td></tr>
       <tr><th scope="row">快照</th><td>有</td><td>有</td><td>有</td><td>有</td><td>視設備而定</td><td>無</td></tr>
+      <tr><th scope="row">錄製片段</th><td>有</td><td>有</td><td>有</td><td>有</td><td>視設備而定</td><td>有</td></tr>
       <tr><th scope="row">聲音（收聽）</th><td>視設備而定</td><td>視設備而定</td><td>視設備而定</td><td>視設備而定</td><td>視設備而定</td><td>視設備而定</td></tr>
       <tr><th scope="row">透過攝影機說話</th><td>視設備而定</td><td>無</td><td>無</td><td>無</td><td>無</td><td>無</td></tr>
       <tr><th scope="row">硬碟健康</th><td>有</td><td>有</td><td>設定後提供</td><td>無</td><td>無</td><td>無</td></tr>
@@ -4760,6 +4804,7 @@ Content-Type: application/json
     <li><b>PTZ</b>：Hikvision 的通道須已開啟 PTZ；設備列出已儲存的位置時才會提供，並且一律可回到原點。Dahua 須在該通道綁定 PTZ；提供已儲存的位置，但沒有原點。Synology <span class="ui" data-ui="value">Surveillance Station</span> 依系統回報的攝影機功能提供控制：四個方向，以及系統回報時可回到原點。Xiongmai 有雲台的攝影機提供方向、變焦，以及以編號 1 到 16 指定的已儲存位置，沒有原點。ONVIF 依設備回報的軸向提供；只有變焦的攝影機沒有方向盤。見<a class="xref" href="#single-ptz">「PTZ 控制：移動鏡頭」</a>。</li>
     <li><b>對準</b>：Hikvision 攝影機回報支援以畫面中的點或區域定位時提供。</li>
     <li><b>快照</b>：Xiongmai 的快照取自即時串流的第一個完整畫格。使用 ONVIF 時，設備須提供快照位址。</li>
+    <li><b>錄製片段</b>：適用於畫面播放的 <code>H.264</code> 與 <code>H.265</code> 影像，見<a class="xref" href="#single-clip">「錄製片段」</a>。使用 Synology <span class="ui" data-ui="value">Surveillance Station</span> 時，沒有權限取得視訊串流的帳號只會收到一張張的靜態影像（<code>MJPEG</code>），其畫面沒有錄製按鈕。Synology <span class="ui" data-ui="value">Surveillance Station</span> 以檔案形式送達的錄影，則可整個分享。</li>
     <li><b>聲音</b>：Synology <span class="ui" data-ui="value">Surveillance Station</span> 走系統通常使用的串流路徑時，只支援 <code>G.711</code>。Xiongmai 設備傳送 <code>G.711</code>。</li>
     <li><b>說話</b>：回報有 <code>G.711</code> 雙向語音通道的 Hikvision 獨立攝影機提供此功能；錄影主機的通道不提供。見<a class="xref" href="#single-talk">「雙向對講」</a>。</li>
     <li><b>硬碟健康</b>：Hikvision 回報每顆硬碟的狀態，設備提供時並有 S.M.A.R.T. 詳細資料。Dahua 回報狀態、容量，以及可取得時的溫度，但沒有 S.M.A.R.T. 詳細資料。Synology 的 NAS 透過 SNMP 讀取，須在 NAS 上開啟 SNMP，並在 Cam Hub 中設定。見<a class="xref" href="#devices-health">「硬碟健康」</a>。</li>

@@ -18,6 +18,7 @@ globalThis.CamHubDevicesPage = {
       ["Live view", "Yes", "Yes", "Yes", "Yes, operated with the remote", "—"],
       ["Recording playback", "Calendar, draggable timeline, 2×, 4× and 8× where the device allows it, search for people", "As on iPhone; half folded, the timeline stays on the lower half", "As on iPhone", "A bar moved with the remote, with day and zoom buttons; no calendar and no faster speeds. A recording that must be downloaded first plays only on iPhone or iPad", "—"],
       ["Snapshot, talk, PTZ, pinch zoom", "Yes, where the device supports them", "As on iPhone", "As on iPhone", "No", "—"],
+      ["Recording a clip to share", "Yes, live or from a recording, up to 10 minutes", "As on iPhone", "As on iPhone", "No", "—"],
       ["Adding devices", "Full form (Auto-detect, brand list, HTTPS, checklist, device report) and network scan", "As on iPhone", "As on iPhone", "Short form (address, ports, account, ONVIF, HTTPS); no scan, brand list, checklist or device report", "—"],
       ["Speedometer with compass", "In the Tools tab, depending on the region and the language setting", "As on iPhone", "As on iPhone", "—", "—"],
       ["YouTube and Twitch, where offered", "Played in tiles and full screen", "As on iPhone", "As on iPhone", "Shown by name only", "—"],
@@ -27,7 +28,7 @@ globalThis.CamHubDevicesPage = {
       ["Screen orientation", "Upright and both landscape orientations", "As on iPhone, and follows the fold", "All four orientations", "—", "—"],
       ["Backup and sharing", "Named iCloud backups, restoring, exporting and importing sharing codes", "As on iPhone", "As on iPhone", "Restoring the Apple TV copy of a backup, importing a typed code; no backup or code is created", "—"],
       ["Plans", "Plans, Manage Subscription, Restore Purchases, Redeem Code", "As on iPhone", "As on iPhone", "Plans, Restore Purchases", "Follows the paired iPhone"],
-      ["Permissions asked", "Local Network; Camera for Take Photo; Microphone for talking; Location for the speedometer", "As on iPhone", "As on iPhone", "Local Network only", "—"]
+      ["Permissions asked", "Local Network; Camera for Take Photo; Microphone for talking; Photos (adding only) when you save a snapshot or clip; Location for the speedometer", "As on iPhone", "As on iPhone", "Local Network only", "—"]
     ],
     legend: "— means that the feature is not offered on that device.",
     notes: [
@@ -62,6 +63,7 @@ globalThis.CamHubDevicesPage = {
       ["即時影像", "有", "有", "有", "有，以遙控器操作", "—"],
       ["錄影回放", "月曆、可拖曳的時間軸、設備允許時的 2×、4×、8× 速度，以及人員搜尋", "與 iPhone 相同；半開時時間軸固定在下半部", "與 iPhone 相同", "以遙控器移動的時間列，附切換日期與縮放的按鈕；沒有月曆，也沒有加速。須先下載的錄影只能在 iPhone 或 iPad 播放", "—"],
       ["快照、對講、PTZ、捏合縮放", "有（設備支援時）", "與 iPhone 相同", "與 iPhone 相同", "沒有", "—"],
+      ["錄製片段並分享", "有，即時影像或錄影皆可，最長 10 分鐘", "與 iPhone 相同", "與 iPhone 相同", "沒有", "—"],
       ["加入設備", "完整表單（自動偵測、品牌清單、HTTPS、檢查清單、設備報告）與網段掃描", "與 iPhone 相同", "與 iPhone 相同", "簡短表單（位址、連接埠、帳號、ONVIF、HTTPS）；沒有掃描、品牌清單、檢查清單與設備報告", "—"],
       ["時速表與指南針", "在「工具」分頁，依地區與語言設定提供", "與 iPhone 相同", "與 iPhone 相同", "—", "—"],
       ["YouTube 與 Twitch（有提供的地區）", "在格子中與全螢幕播放", "與 iPhone 相同", "與 iPhone 相同", "只顯示名稱", "—"],
@@ -71,7 +73,7 @@ globalThis.CamHubDevicesPage = {
       ["螢幕方向", "直立與左右兩個橫向", "與 iPhone 相同，並隨摺疊狀態調整", "四個方向", "—", "—"],
       ["備份與分享", "多份命名的 iCloud 備份、還原、匯出與匯入分享代碼", "與 iPhone 相同", "與 iPhone 相同", "還原 iCloud 備份的 Apple TV 副本、匯入輸入的代碼；無法建立備份或代碼", "—"],
       ["方案", "方案、管理訂閱項目、還原購買項目、兌換代碼", "與 iPhone 相同", "與 iPhone 相同", "方案、還原購買項目", "依配對的 iPhone"],
-      ["要求的權限", "本地網路；「拍照」使用相機；對講使用麥克風；時速表使用位置", "與 iPhone 相同", "與 iPhone 相同", "只有本地網路", "—"]
+      ["要求的權限", "本地網路；「拍照」使用相機；對講使用麥克風；儲存快照或片段時加入照片（只能加入）；時速表使用位置", "與 iPhone 相同", "與 iPhone 相同", "只有本地網路", "—"]
     ],
     legend: "「—」表示該機型不提供這項功能。",
     notes: [
@@ -106,6 +108,7 @@ globalThis.CamHubDevicesPage = {
       ["实时观看", "支持", "支持", "支持", "支持，用遥控器操作", "—"],
       ["录像回放", "录像日历、可拖动的时间轴、设备允许时的 2×、4× 和 8× 倍速、人员搜索", "与 iPhone 相同；半折叠时时间轴保持在下半部分", "与 iPhone 相同", "用遥控器移动的进度条，带有切换日期和缩放的按钮；没有日历，也没有加速播放。需要先下载的录像只能在 iPhone 或 iPad 上播放", "—"],
       ["快照、对讲、PTZ、捏合缩放", "支持（设备支持时）", "与 iPhone 相同", "与 iPhone 相同", "不支持", "—"],
+      ["录制可共享的片段", "支持，实时画面或录像均可，最长 10 分钟", "与 iPhone 相同", "与 iPhone 相同", "不支持", "—"],
       ["添加设备", "完整表单（自动检测、品牌列表、HTTPS、检查清单、设备报告）和网络扫描", "与 iPhone 相同", "与 iPhone 相同", "简短表单（地址、端口、账号、ONVIF、HTTPS）；没有扫描、品牌列表、检查清单和设备报告", "—"],
       ["带指南针的速度计", "在“工具”标签页中，取决于地区和语言设置", "与 iPhone 相同", "与 iPhone 相同", "—", "—"],
       ["LiveView Mix 墙", "横向页面，以及竖持手机时可选用的竖向页面", "与 iPhone 相同；半折叠且铰链横穿屏幕时，可选用两张画布", "横向页面，以及屏幕竖放或窗口较窄时可选用的竖向页面", "只有横向墙；“设置”中有精简编辑器（摄像头、现成布局、黑边）", "—"],
@@ -114,7 +117,7 @@ globalThis.CamHubDevicesPage = {
       ["屏幕方向", "竖屏，以及向左和向右横屏", "与 iPhone 相同，并跟随折叠状态", "全部四个方向", "—", "—"],
       ["备份与共享", "命名 iCloud 备份、恢复、导出和导入共享代码", "与 iPhone 相同", "与 iPhone 相同", "恢复为 Apple TV 制作的备份、导入手动输入的代码；无法创建备份或代码", "—"],
       ["套餐", "套餐、管理订阅、恢复购买、兑换代码", "与 iPhone 相同", "与 iPhone 相同", "套餐、恢复购买", "跟随配对的 iPhone"],
-      ["请求的权限", "本地网络；用于“拍照”的相机；用于对讲的麦克风；用于速度计的位置", "与 iPhone 相同", "与 iPhone 相同", "仅本地网络", "—"]
+      ["请求的权限", "本地网络；用于“拍照”的相机；用于对讲的麦克风；保存快照或片段时的照片（仅添加）；用于速度计的位置", "与 iPhone 相同", "与 iPhone 相同", "仅本地网络", "—"]
     ],
     legend: "“—”表示该机型不提供这项功能。",
     notes: [
@@ -149,6 +152,7 @@ globalThis.CamHubDevicesPage = {
       ["ライブ表示", "あり", "あり", "あり", "あり（リモコンで操作）", "—"],
       ["録画再生", "カレンダー、ドラッグできるタイムライン、デバイスが対応していれば 2×、4×、8× の速度、人物の検索", "iPhone と同じ。半分に折り曲げた状態では、タイムラインは下半分に固定", "iPhone と同じ", "リモコンで動かすバーと、日付の切り替えと拡大縮小のボタン。カレンダーと高速再生はなし。先にダウンロードが必要な録画は iPhone または iPad でのみ再生", "—"],
       ["スナップショット、トーク、PTZ、ピンチズーム", "あり（デバイスが対応している場合）", "iPhone と同じ", "iPhone と同じ", "なし", "—"],
+      ["共有用のクリップの録画", "あり（ライブまたは録画から、最長 10 分）", "iPhone と同じ", "iPhone と同じ", "なし", "—"],
       ["デバイスの追加", "すべての項目を備えたフォーム（自動判別、ブランドの一覧、HTTPS、チェックリスト、デバイスレポート）とネットワークスキャン", "iPhone と同じ", "iPhone と同じ", "短いフォーム（アドレス、ポート、アカウント、ONVIF、HTTPS）。スキャン、ブランドの一覧、チェックリスト、デバイスレポートはなし", "—"],
       ["コンパス付きスピードメーター", "「ツール」タブ内。地域と言語の設定に応じて表示", "iPhone と同じ", "iPhone と同じ", "—", "—"],
       ["YouTube と Twitch（利用できる国や地域）", "タイルとフルスクリーンで再生", "iPhone と同じ", "iPhone と同じ", "名前のみ表示", "—"],
@@ -158,7 +162,7 @@ globalThis.CamHubDevicesPage = {
       ["画面の向き", "縦向きと左右の横向き", "iPhone と同じ。折り曲げの状態にも追従", "4 つの向きすべて", "—", "—"],
       ["バックアップと共有", "名前付きの iCloud バックアップ、復元、共有コードの書き出しと取り込み", "iPhone と同じ", "iPhone と同じ", "バックアップの Apple TV 用コピーの復元、入力したコードの取り込み。バックアップやコードの作成はなし", "—"],
       ["プラン", "「プラン」「サブスクリプションを管理」「購入を復元」「コードを使う」", "iPhone と同じ", "iPhone と同じ", "「プラン」「購入を復元」", "ペアリングされた iPhone に従う"],
-      ["要求される許可", "ローカルネットワーク、「写真を撮る」のためのカメラ、トークのためのマイク、スピードメーターのための位置情報", "iPhone と同じ", "iPhone と同じ", "ローカルネットワークのみ", "—"]
+      ["要求される許可", "ローカルネットワーク、「写真を撮る」のためのカメラ、トークのためのマイク、スナップショットやクリップを保存するときの写真（追加のみ）、スピードメーターのための位置情報", "iPhone と同じ", "iPhone と同じ", "ローカルネットワークのみ", "—"]
     ],
     legend: "「—」は、その端末ではその機能を利用できないことを表します。",
     notes: [
@@ -193,6 +197,7 @@ globalThis.CamHubDevicesPage = {
       ["실시간 보기", "제공", "제공", "제공", "제공, 리모컨으로 조작", "—"],
       ["녹화 재생", "캘린더, 끌어서 이동하는 타임라인, 기기가 허용하는 경우 2×, 4×, 8× 속도, 사람 검색", "iPhone과 같음. 반쯤 접은 상태에서는 타임라인이 아래쪽 절반에 고정", "iPhone과 같음", "리모컨으로 이동하는 막대와 날짜 이동·확대/축소 버튼. 캘린더와 더 빠른 속도는 없음. 먼저 내려받아야 하는 녹화 영상은 iPhone 또는 iPad에서만 재생", "—"],
       ["스냅샷, 대화, PTZ, 두 손가락 확대", "기기가 지원하는 경우 제공", "iPhone과 같음", "iPhone과 같음", "없음", "—"],
+      ["공유할 클립 녹화", "제공, 실시간 또는 녹화 영상에서 최대 10분", "iPhone과 같음", "iPhone과 같음", "없음", "—"],
       ["기기 추가", "전체 양식(자동 감지, 브랜드 목록, HTTPS, 점검 목록, 기기 보고서)과 네트워크 검색", "iPhone과 같음", "iPhone과 같음", "짧은 양식(주소, 포트, 계정, ONVIF, HTTPS). 검색, 브랜드 목록, 점검 목록, 기기 보고서는 없음", "—"],
       ["나침반이 있는 속도계", "‘도구’ 탭에 있으며, 지역과 언어 설정에 따라 제공", "iPhone과 같음", "iPhone과 같음", "—", "—"],
       ["YouTube와 Twitch(제공되는 국가와 지역)", "타일과 전체 화면에서 재생", "iPhone과 같음", "iPhone과 같음", "이름만 표시", "—"],
@@ -202,7 +207,7 @@ globalThis.CamHubDevicesPage = {
       ["화면 방향", "세로 방향과 양쪽 가로 방향", "iPhone과 같으며, 접힌 상태에 따라 바뀜", "네 방향 모두", "—", "—"],
       ["백업과 공유", "이름을 붙인 iCloud 백업, 복원, 공유 코드 내보내기와 가져오기", "iPhone과 같음", "iPhone과 같음", "백업의 Apple TV 사본 복원, 직접 입력한 코드 가져오기. 백업이나 코드는 만들 수 없음", "—"],
       ["요금제", "요금제, 구독 관리, 구매 복원, 코드 사용", "iPhone과 같음", "iPhone과 같음", "요금제, 구매 복원", "페어링된 iPhone을 따름"],
-      ["요청하는 권한", "로컬 네트워크, ‘사진 촬영’을 위한 카메라, 대화를 위한 마이크, 속도계를 위한 위치", "iPhone과 같음", "iPhone과 같음", "로컬 네트워크만", "—"]
+      ["요청하는 권한", "로컬 네트워크, ‘사진 촬영’을 위한 카메라, 대화를 위한 마이크, 스냅샷이나 클립을 저장할 때 사진(추가만), 속도계를 위한 위치", "iPhone과 같음", "iPhone과 같음", "로컬 네트워크만", "—"]
     ],
     legend: "‘—’ 표시는 해당 기기에서 그 기능을 제공하지 않는다는 뜻입니다.",
     notes: [
@@ -237,6 +242,7 @@ globalThis.CamHubDevicesPage = {
       ["Live-Ansicht", "Ja", "Ja", "Ja", "Ja, mit der Fernbedienung bedient", "—"],
       ["Aufzeichnungswiedergabe", "Kalender, verschiebbare Zeitleiste, 2×, 4× und 8× (sofern das Gerät es zulässt), Suche nach Personen", "Wie auf dem iPhone; halb zugeklappt bleibt die Zeitleiste auf der unteren Hälfte", "Wie auf dem iPhone", "Eine Leiste, die mit der Fernbedienung bewegt wird, mit Tasten für Tag und Zoom; kein Kalender und keine höheren Geschwindigkeiten. Eine Aufnahme, die zuerst heruntergeladen werden muss, lässt sich nur auf dem iPhone oder iPad abspielen", "—"],
       ["Schnappschuss, Gegensprechen, PTZ, Zoomen durch Auseinanderziehen", "Ja, sofern das Gerät sie unterstützt", "Wie auf dem iPhone", "Wie auf dem iPhone", "Nein", "—"],
+      ["Clip zum Teilen aufnehmen", "Ja, live oder aus einer Aufnahme, bis zu 10 Minuten", "Wie auf dem iPhone", "Wie auf dem iPhone", "Nein", "—"],
       ["Geräte hinzufügen", "Vollständiges Formular (automatische Erkennung, Markenliste, HTTPS, Checkliste, Gerätebericht) und Netzwerk-Scan", "Wie auf dem iPhone", "Wie auf dem iPhone", "Kurzes Formular (Adresse, Ports, Konto, ONVIF, HTTPS); kein Scan, keine Markenliste, keine Checkliste und kein Gerätebericht", "—"],
       ["Tacho mit Kompass", "Im Tab „Werkzeuge“, je nach Region und Spracheinstellung", "Wie auf dem iPhone", "Wie auf dem iPhone", "—", "—"],
       ["YouTube und Twitch, wo verfügbar", "Wiedergabe in Kacheln und im Vollbild", "Wie auf dem iPhone", "Wie auf dem iPhone", "Nur mit Namen angezeigt", "—"],
@@ -246,7 +252,7 @@ globalThis.CamHubDevicesPage = {
       ["Bildschirmausrichtung", "Hochformat und beide Querformate", "Wie auf dem iPhone; passt sich zudem dem Auf- und Zuklappen an", "Alle vier Ausrichtungen", "—", "—"],
       ["Backup und Teilen", "Benannte iCloud-Backups, Wiederherstellen, Exportieren und Importieren von Freigabecodes", "Wie auf dem iPhone", "Wie auf dem iPhone", "Wiederherstellen der Apple-TV-Kopie eines Backups, Importieren eines eingegebenen Codes; Backups und Codes werden nicht erstellt", "—"],
       ["Abos", "Abos, Abo verwalten, Käufe wiederherstellen, Code einlösen", "Wie auf dem iPhone", "Wie auf dem iPhone", "Abos, Käufe wiederherstellen", "Richtet sich nach dem gekoppelten iPhone"],
-      ["Angeforderte Berechtigungen", "Lokales Netzwerk; Kamera für „Foto aufnehmen“; Mikrofon für das Gegensprechen; Standort für den Tacho", "Wie auf dem iPhone", "Wie auf dem iPhone", "Nur Lokales Netzwerk", "—"]
+      ["Angeforderte Berechtigungen", "Lokales Netzwerk; Kamera für „Foto aufnehmen“; Mikrofon für das Gegensprechen; Fotos (nur Hinzufügen) beim Sichern eines Schnappschusses oder Clips; Standort für den Tacho", "Wie auf dem iPhone", "Wie auf dem iPhone", "Nur Lokales Netzwerk", "—"]
     ],
     legend: "„—“ bedeutet, dass die Funktion auf diesem Gerät nicht angeboten wird.",
     notes: [
@@ -281,6 +287,7 @@ globalThis.CamHubDevicesPage = {
       ["Vista en directo", "Sí", "Sí", "Sí", "Sí, con el mando", "—"],
       ["Reproducción de grabaciones", "Calendario, cronología que se arrastra, 2×, 4× y 8× si el dispositivo lo permite, búsqueda de personas", "Como en el iPhone; medio plegado, la cronología se queda en la mitad inferior", "Como en el iPhone", "Una barra que se mueve con el mando, con botones para cambiar de día y ampliar; sin calendario ni velocidades mayores. Una grabación que hay que descargar antes solo se reproduce en el iPhone o el iPad", "—"],
       ["Captura, hablar a través de la cámara, PTZ, zoom por pellizco", "Sí, siempre que el dispositivo las admita", "Como en el iPhone", "Como en el iPhone", "No", "—"],
+      ["Grabar un clip para compartir", "Sí, en directo o desde una grabación, hasta 10 minutos", "Como en el iPhone", "Como en el iPhone", "No", "—"],
       ["Añadir dispositivos", "Formulario completo (detección automática, lista de marcas, HTTPS, lista de comprobaciones, informe del dispositivo) y análisis de la red", "Como en el iPhone", "Como en el iPhone", "Formulario breve (dirección, puertos, cuenta, ONVIF, HTTPS); sin análisis, lista de marcas, lista de comprobaciones ni informe del dispositivo", "—"],
       ["Velocímetro con brújula", "En la pestaña «Herramientas», según la región y el idioma configurado", "Como en el iPhone", "Como en el iPhone", "—", "—"],
       ["YouTube y Twitch, donde se ofrecen", "Se reproducen en las casillas y a pantalla completa", "Como en el iPhone", "Como en el iPhone", "Solo se muestra el nombre", "—"],
@@ -290,7 +297,7 @@ globalThis.CamHubDevicesPage = {
       ["Orientación de la pantalla", "Vertical y las dos orientaciones horizontales", "Como en el iPhone, y se adapta al plegado", "Las cuatro orientaciones", "—", "—"],
       ["Copia de seguridad y uso compartido", "Copias en iCloud con nombre, restauración, exportación e importación de códigos para compartir", "Como en el iPhone", "Como en el iPhone", "Restauración de la copia para Apple TV de una copia en iCloud e importación de un código escrito; no se crean copias ni códigos", "—"],
       ["Planes", "Planes, Gestionar suscripción, Restaurar compras, Canjear código", "Como en el iPhone", "Como en el iPhone", "Planes, Restaurar compras", "Según el iPhone enlazado"],
-      ["Permisos solicitados", "Red local; Cámara para «Tomar foto»; Micrófono para hablar a través de una cámara; Ubicación para el velocímetro", "Como en el iPhone", "Como en el iPhone", "Solo Red local", "—"]
+      ["Permisos solicitados", "Red local; Cámara para «Tomar foto»; Micrófono para hablar a través de una cámara; Fotos (solo para añadir) al guardar una captura o un clip; Ubicación para el velocímetro", "Como en el iPhone", "Como en el iPhone", "Solo Red local", "—"]
     ],
     legend: "«—» indica que la función no se ofrece en ese dispositivo.",
     notes: [
@@ -325,6 +332,7 @@ globalThis.CamHubDevicesPage = {
       ["Vista en vivo", "Sí", "Sí", "Sí", "Sí, con el control remoto", "—"],
       ["Reproducción de grabaciones", "Calendario, línea de tiempo que se arrastra, 2×, 4× y 8× cuando el dispositivo lo permite, búsqueda de personas", "Igual que en el iPhone; medio doblado, la línea de tiempo se queda en la mitad inferior", "Igual que en el iPhone", "Una barra que se mueve con el control remoto, con botones para cambiar de día y para acercar o alejar; sin calendario ni velocidades mayores. Una grabación que primero se debe descargar solo se reproduce en el iPhone o el iPad", "—"],
       ["Captura, conversación en dos sentidos, PTZ, zoom con pellizco", "Sí, cuando el dispositivo las admite", "Igual que en el iPhone", "Igual que en el iPhone", "No", "—"],
+      ["Grabar un clip para compartir", "Sí, en vivo o desde una grabación, hasta 10 minutos", "Igual que en el iPhone", "Igual que en el iPhone", "No", "—"],
       ["Agregar dispositivos", "Formulario completo (detección automática, lista de marcas, HTTPS, lista de verificación, informe del dispositivo) y escaneo de la red", "Igual que en el iPhone", "Igual que en el iPhone", "Formulario breve (dirección, puertos, cuenta, ONVIF, HTTPS); sin escaneo, lista de marcas, lista de verificación ni informe del dispositivo", "—"],
       ["Velocímetro con brújula", "En la pestaña “Herramientas”, según la región y la configuración de idioma", "Igual que en el iPhone", "Igual que en el iPhone", "—", "—"],
       ["YouTube y Twitch, donde estén disponibles", "Se reproducen en recuadros y a pantalla completa", "Igual que en el iPhone", "Igual que en el iPhone", "Solo se muestran por su nombre", "—"],
@@ -334,7 +342,7 @@ globalThis.CamHubDevicesPage = {
       ["Orientación de la pantalla", "Vertical y las dos orientaciones horizontales", "Igual que en el iPhone, y se adapta al doblar el celular", "Las cuatro orientaciones", "—", "—"],
       ["Respaldo y uso compartido", "Respaldos de iCloud con nombre, restauración, exportación e importación de códigos para compartir", "Igual que en el iPhone", "Igual que en el iPhone", "Restaurar la copia para Apple TV de un respaldo e importar un código escrito; no se crean respaldos ni códigos", "—"],
       ["Planes", "Planes, Administrar suscripción, Restaurar compras, Canjear código", "Igual que en el iPhone", "Igual que en el iPhone", "Planes, Restaurar compras", "Depende del iPhone enlazado"],
-      ["Permisos solicitados", "Red local; Cámara para “Tomar foto”; Micrófono para hablar a través de una cámara; Ubicación para el velocímetro", "Igual que en el iPhone", "Igual que en el iPhone", "Solo Red local", "—"]
+      ["Permisos solicitados", "Red local; Cámara para “Tomar foto”; Micrófono para hablar a través de una cámara; Fotos (solo para agregar) al guardar una captura o un clip; Ubicación para el velocímetro", "Igual que en el iPhone", "Igual que en el iPhone", "Solo Red local", "—"]
     ],
     legend: "“—” significa que la función no está disponible en ese dispositivo.",
     notes: [
@@ -369,6 +377,7 @@ globalThis.CamHubDevicesPage = {
       ["Vue en direct", "Oui", "Oui", "Oui", "Oui, avec la télécommande", "—"],
       ["Lecture des enregistrements", "Calendrier, frise chronologique à faire glisser, 2×, 4× et 8× si l’appareil le permet, recherche de personnes", "Comme sur l’iPhone ; à moitié plié, la frise chronologique reste sur la moitié basse", "Comme sur l’iPhone", "Une barre déplacée à la télécommande, avec des boutons pour changer de jour et zoomer ; ni calendrier ni vitesses supérieures. Un enregistrement qui doit d’abord être téléchargé ne se lit que sur iPhone ou iPad", "—"],
       ["Instantané, conversation, PTZ, zoom par pincement", "Oui, si l’appareil les prend en charge", "Comme sur l’iPhone", "Comme sur l’iPhone", "Non", "—"],
+      ["Enregistrement d’un extrait à partager", "Oui, en direct ou depuis un enregistrement, jusqu’à 10 minutes", "Comme sur l’iPhone", "Comme sur l’iPhone", "Non", "—"],
       ["Ajout d’appareils", "Formulaire complet (détection automatique, liste des marques, HTTPS, liste de vérification, rapport sur l’appareil) et analyse du réseau", "Comme sur l’iPhone", "Comme sur l’iPhone", "Formulaire court (adresse, ports, compte, ONVIF, HTTPS) ; ni analyse, ni liste des marques, ni liste de vérification, ni rapport sur l’appareil", "—"],
       ["Compteur de vitesse avec boussole", "Dans l’onglet « Outils », selon la région et la langue choisie", "Comme sur l’iPhone", "Comme sur l’iPhone", "—", "—"],
       ["YouTube et Twitch, là où ils sont proposés", "Lus dans les cases et en plein écran", "Comme sur l’iPhone", "Comme sur l’iPhone", "Affichés uniquement par leur nom", "—"],
@@ -378,7 +387,7 @@ globalThis.CamHubDevicesPage = {
       ["Orientation de l’écran", "Verticale et les deux orientations horizontales", "Comme sur l’iPhone, et suit le pliage", "Les quatre orientations", "—", "—"],
       ["Sauvegarde et partage", "Sauvegardes iCloud nommées, restauration, export et import de codes de partage", "Comme sur l’iPhone", "Comme sur l’iPhone", "Restauration de la copie Apple TV d’une sauvegarde, import d’un code saisi ; aucune sauvegarde ni aucun code n’est créé", "—"],
       ["Formules", "Formules, Gérer l’abonnement, Restaurer les achats, Utiliser un code", "Comme sur l’iPhone", "Comme sur l’iPhone", "Formules, Restaurer les achats", "Dépend de l’iPhone jumelé"],
-      ["Autorisations demandées", "Réseau local ; Appareil photo pour « Prendre une photo » ; Micro pour parler via une caméra ; Localisation pour le compteur de vitesse", "Comme sur l’iPhone", "Comme sur l’iPhone", "Réseau local uniquement", "—"]
+      ["Autorisations demandées", "Réseau local ; Appareil photo pour « Prendre une photo » ; Micro pour parler via une caméra ; Photos (ajout uniquement) à l’enregistrement d’un instantané ou d’un extrait ; Localisation pour le compteur de vitesse", "Comme sur l’iPhone", "Comme sur l’iPhone", "Réseau local uniquement", "—"]
     ],
     legend: "« — » signifie que la fonction n’est pas proposée sur cet appareil.",
     notes: [
@@ -413,6 +422,7 @@ globalThis.CamHubDevicesPage = {
       ["البث المباشر", "متاح", "متاح", "متاح", "متاح، ويُشغَّل بجهاز التحكم عن بُعد", "—"],
       ["تشغيل التسجيلات", "تقويم، وخط زمني يُسحب، وسرعات ‎2×‎ و‎4×‎ و‎8×‎ حيث يسمح الجهاز، وبحث عن الأشخاص", "كما في iPhone؛ وعند الطي الجزئي يبقى الخط الزمني في النصف السفلي", "كما في iPhone", "شريط يُحرَّك بجهاز التحكم عن بُعد، مع أزرار لتغيير اليوم وللتكبير؛ بدون تقويم ولا سرعات أعلى. والتسجيل الذي يلزم تنزيله أولًا لا يُشغَّل إلا على iPhone أو iPad", "—"],
       ["اللقطة والتحدث وPTZ والتكبير بالتقريب", "متاحة حيث يدعمها الجهاز", "كما في iPhone", "كما في iPhone", "غير متاحة", "—"],
+      ["تسجيل مقطع للمشاركة", "متاح، مباشرةً أو من تسجيل، حتى 10 دقائق", "كما في iPhone", "كما في iPhone", "غير متاح", "—"],
       ["إضافة الأجهزة", "نموذج كامل (كشف تلقائي، وقائمة علامات تجارية، وHTTPS، وقائمة تحقق، وتقرير جهاز) وفحص الشبكة", "كما في iPhone", "كما في iPhone", "نموذج قصير (العنوان والمنافذ والحساب وONVIF وHTTPS)؛ بدون فحص ولا قائمة علامات تجارية ولا قائمة تحقق ولا تقرير جهاز", "—"],
       ["عداد السرعة مع البوصلة", "في علامة التبويب «الأدوات»، بحسب المنطقة وإعداد اللغة", "كما في iPhone", "كما في iPhone", "—", "—"],
       ["YouTube وTwitch، حيث تتوفر الخدمتان", "يُشغَّلان في المربّعات وبملء الشاشة", "كما في iPhone", "كما في iPhone", "يُعرضان بالاسم فقط", "—"],
@@ -422,7 +432,7 @@ globalThis.CamHubDevicesPage = {
       ["اتجاه الشاشة", "الاتجاه العمودي والاتجاهان الأفقيان", "كما في iPhone، ويتبع الطيّ", "الاتجاهات الأربعة كلها", "—", "—"],
       ["النسخ الاحتياطي والمشاركة", "نسخ iCloud احتياطية مسمّاة، واستعادتها، وتصدير رموز المشاركة واستيرادها", "كما في iPhone", "كما في iPhone", "استعادة نسخة Apple TV من نسخة احتياطية، واستيراد رمز يُكتب؛ لا تُنشأ نسخة احتياطية ولا رمز", "—"],
       ["الخطط", "«الخطط» و«إدارة الاشتراك» و«استعادة المشتريات» و«استرداد رمز»", "كما في iPhone", "كما في iPhone", "«الخطط» و«استعادة المشتريات»", "يتبع iPhone المقترن"],
-      ["الأذونات المطلوبة", "الشبكة المحلية؛ والكاميرا لـ «التقاط صورة»؛ والميكروفون للتحدث؛ والموقع لعداد السرعة", "كما في iPhone", "كما في iPhone", "الشبكة المحلية فقط", "—"]
+      ["الأذونات المطلوبة", "الشبكة المحلية؛ والكاميرا لـ «التقاط صورة»؛ والميكروفون للتحدث؛ والصور (الإضافة فقط) عند حفظ لقطة أو مقطع؛ والموقع لعداد السرعة", "كما في iPhone", "كما في iPhone", "الشبكة المحلية فقط", "—"]
     ],
     legend: "تعني «—» أن الميزة غير متاحة على ذلك الجهاز.",
     notes: [

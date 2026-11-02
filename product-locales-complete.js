@@ -79,7 +79,8 @@
           ["快照与共享", [
             "点击单通道控制栏中的“快照”，向设备请求当前画面。",
             "收到图片后，Cam Hub 会打开预览；点击“共享”即可使用系统共享面板。",
-            "快照可能包含人物、地址、时间或其他敏感信息。发送前请检查图片内容、接收对象及当地规定。"
+            "点击“快照”旁边的红色录制按钮，即可录下画面中显示的内容，实时画面或录像均可，最长 10 分钟。停止后，Cam Hub 会显示该片段，可直接共享或保存到“照片”。",
+            "快照或片段可能包含人物、声音、地址、时间或其他敏感信息。发送前请检查其内容、接收对象及当地规定。"
           ]],
           ["日期、时间轴与录像类型", [
             "在通道画面下方选择日期，Cam Hub 会向设备查询当天录像。",
@@ -239,7 +240,8 @@
           ["스냅샷과 공유", [
             "단일 채널 제어 막대에서 ‘스냅샷’을 눌러 기기에 현재 이미지를 요청합니다.",
             "이미지가 도착하면 Cam Hub가 미리보기를 열며 ‘공유’를 눌러 시스템 공유 시트를 사용할 수 있습니다.",
-            "스냅샷에는 사람, 주소, 시간이나 그 밖의 민감한 정보가 포함될 수 있습니다. 보내기 전에 이미지, 수신자와 현지 규정을 확인하세요."
+            "‘스냅샷’ 옆의 빨간색 녹화 버튼을 누르면 화면에 보이는 내용을 실시간 영상이든 녹화 영상이든 최대 10분까지 녹화합니다. 녹화를 멈추면 Cam Hub가 클립을 보여 주므로 공유하거나 사진 보관함에 저장할 수 있습니다.",
+            "스냅샷이나 클립에는 사람, 목소리, 주소, 시간이나 그 밖의 민감한 정보가 포함될 수 있습니다. 보내기 전에 내용, 수신자와 현지 규정을 확인하세요."
           ]],
           ["날짜, 타임라인과 녹화 유형", [
             "채널 화면 아래에서 날짜를 선택하면 Cam Hub가 기기에 해당 날짜의 녹화를 요청합니다.",
@@ -399,7 +401,8 @@
           ["Schnappschüsse und Teilen", [
             "Tippen Sie in der Steuerleiste des Einzelkanals auf „Schnappschuss“, um das aktuelle Bild vom Gerät anzufordern.",
             "Nach Empfang öffnet Cam Hub eine Vorschau. Über „Teilen“ steht das systemeigene Freigabemenü zur Verfügung.",
-            "Ein Schnappschuss kann Personen, Adressen, Zeitstempel oder andere vertrauliche Informationen enthalten. Prüfen Sie Bild, Empfänger und örtliche Vorgaben vor dem Versand."
+            "Tippen Sie auf die rote Aufnahmetaste neben „Schnappschuss“, um aufzunehmen, was die Ansicht zeigt, live oder aus einer Aufnahme, bis zu 10 Minuten lang. Nach dem Beenden zeigt Cam Hub den Clip, sodass Sie ihn teilen oder in Fotos sichern können.",
+            "Ein Schnappschuss oder Clip kann Personen, Stimmen, Adressen, Zeitstempel oder andere vertrauliche Informationen enthalten. Prüfen Sie Inhalt, Empfänger und örtliche Vorgaben vor dem Versand."
           ]],
           ["Datum, Zeitleiste und Aufnahmetypen", [
             "Wählen Sie unter der Kanalansicht ein Datum. Cam Hub fragt die Aufnahmen dieses Tages beim Gerät ab.",
@@ -559,7 +562,8 @@
           ["Capturas y uso compartido", [
             "Toca Captura en la vista individual para solicitar al equipo la imagen actual.",
             "Cuando se recibe, se abre una vista previa desde la que puedes usar el menú Compartir del sistema.",
-            "La captura puede mostrar personas, direcciones u otros datos sensibles; revisa el contenido, el destinatario y la normativa local antes de enviarla."
+            "Toca el botón rojo de grabación junto a Captura para grabar lo que muestra la vista, en directo o desde una grabación, durante un máximo de 10 minutos. Al detener la grabación, Cam Hub muestra el clip para que puedas compartirlo o guardarlo en Fotos.",
+            "Una captura o un clip pueden mostrar personas, voces, direcciones, marcas de tiempo u otros datos sensibles; revisa el contenido, el destinatario y la normativa local antes de enviarlos."
           ]],
           ["Fecha, cronología y tipos de grabación", [
             "Elige una fecha bajo la vista del canal para solicitar al equipo los segmentos de ese día.",
@@ -719,7 +723,8 @@
           ["Capturas y cómo compartirlas", [
             "Toca Captura en la barra de controles del canal individual para pedirle al equipo su imagen actual.",
             "Cuando llega la imagen, Cam Hub abre una vista previa. Toca Compartir para usar la hoja para compartir del sistema.",
-            "Una captura puede contener personas, direcciones, marcas de tiempo u otra información sensible. Revisa la imagen, a quién se la envías y los requisitos locales antes de enviarla."
+            "Toca el botón rojo de grabación junto a Captura para grabar lo que muestra la vista, en vivo o desde una grabación, por un máximo de 10 minutos. Cuando detienes la grabación, Cam Hub muestra el clip para que puedas compartirlo o guardarlo en Fotos.",
+            "Una captura o un clip pueden contener personas, voces, direcciones, marcas de tiempo u otra información sensible. Revisa el contenido, a quién se lo envías y los requisitos locales antes de enviarlo."
           ]],
           ["Fecha, línea de tiempo y tipos de grabación", [
             "Elige una fecha debajo de la vista del canal. Cam Hub le pide al equipo las grabaciones de ese día.",
@@ -879,7 +884,8 @@
           ["Instantanés et partage", [
             "Touchez Instantané dans la vue d’un canal pour demander l’image actuelle à l’appareil.",
             "Une fois reçue, elle s’ouvre dans un aperçu donnant accès au partage système.",
-            "L’image peut contenir des personnes, adresses ou données sensibles ; vérifiez le contenu, le destinataire et les règles locales avant l’envoi."
+            "Touchez le bouton d’enregistrement rouge à côté d’Instantané pour enregistrer ce que montre la vue, en direct ou depuis un enregistrement, jusqu’à 10 minutes. À l’arrêt, Cam Hub affiche l’extrait, que vous pouvez partager ou enregistrer dans Photos.",
+            "Un instantané ou un extrait peut contenir des personnes, voix, adresses ou données sensibles ; vérifiez le contenu, le destinataire et les règles locales avant l’envoi."
           ]],
           ["Date, chronologie et types d’enregistrement", [
             "Choisissez une date sous le canal pour demander les séquences de cette journée.",
@@ -985,7 +991,7 @@
         ["viewing", "03", "البث المباشر والتسجيلات", "تعطي الشاشة المنفردة أولوية للتفاصيل، وتوازن الشاشات المتعددة بين الجودة وعرض النطاق وحمل الجهاز.", [
           ["جودة العرض المنفرد والمتعدد", ["اضبط HD أو SD بصورة منفصلة لـ«كاميرا واحدة» و«كاميرات متعددة» من «الإعدادات» ← «الجودة الافتراضية». تنطبق هذه القيم على شاشات الأجهزة فقط: جدار الجهاز وجدار «مباشر»، وجدار الجهاز بملء الشاشة، والكاميرا المفتوحة من جهاز.", "يظهر اختيار SD/HD في القناة المنفردة إذا أبلغ الجهاز عن دعم التبديل بين البث الرئيسي والفرعي.", "لا يستخدم LiveView Mix هذه القيم: يعرض العرض المتعدد كل قناة بالجودة المحددة لها في قائمة القنوات، واحدة تلو الأخرى أو عبر «الكل SD» أو «الكل HD»؛ وتخفف SD عادة استهلاك الشبكة والموارد عند تشغيل مربّعات كثيرة.", "عند فتح كاميرا واحدة من LiveView Mix (ملء الشاشة أو التكبير) تُعرض دائمًا بدقة HD. زر SD/HD على الشاشة يبدّل لهذا العرض فقط ولا يغيّر أي إعداد."]],
           ["التكبير وملء الشاشة أفقياً", ["استخدم إصبعين لتكبير الكاميرا واسحب الصورة المكبرة.", "يبدّل النقر المزدوج سريعاً بين تكبير 2.5× والصورة الكاملة.", "عند تدوير الجهاز أفقياً تختفي أشرطة التنقل والتحكم للاستفادة من الشاشة."]],
-          ["اللقطات والمشاركة", ["اضغط «لقطة» في شاشة القناة لطلب الصورة الحالية من الجهاز.", "بعد استلامها تظهر المعاينة ويمكن فتح المشاركة الخاصة بالنظام.", "قد تتضمن اللقطة أشخاصاً أو عناوين أو بيانات حساسة؛ راجع المحتوى والمستلم والقوانين المحلية قبل الإرسال."]],
+          ["اللقطات والمشاركة", ["اضغط «لقطة» في شاشة القناة لطلب الصورة الحالية من الجهاز.", "بعد استلامها تظهر المعاينة ويمكن فتح المشاركة الخاصة بالنظام.", "اضغط زر التسجيل الأحمر بجانب «لقطة» لتسجيل ما يظهر في العرض، مباشرةً أو من تسجيل، لمدة تصل إلى 10 دقائق. وعند الإيقاف يعرض Cam Hub المقطع لتتمكن من مشاركته أو حفظه في مكتبة الصور.", "قد تتضمن اللقطة أو المقطع أشخاصاً أو أصواتاً أو عناوين أو بيانات حساسة؛ راجع المحتوى والمستلم والقوانين المحلية قبل الإرسال."]],
           ["التاريخ والخط الزمني وأنواع التسجيل", ["اختر تاريخاً أسفل القناة لطلب مقاطع ذلك اليوم من الجهاز.", "بدّل بين «تسجيل مستمر» و«الأحداث»، واسحب الخط الزمني أو كبّره إلى الوقت المطلوب، أو اضغط مقطعاً مباشرة.", "تعرض شاشة التشغيل كلمة «تشغيل» ووقت الجهاز؛ ويعيد «العودة إلى البث المباشر» البث. تنزّل بعض الأجهزة المقطع أولاً ثم تفتحه في مشغل النظام."]]
         ], "تنبيه التوفر: يعتمد البث واللقطات وتبديل البث الرئيسي/الفرعي والبحث وتصنيف «تسجيل مستمر» و«الأحداث» والخط الزمني والتشغيل على القدرات التي ترسلها الكاميرا أو المسجّل وعلى الصلاحيات الممنوحة للحساب."],
         ["backup", "04", "النسخ المشفرة ومشاركة الكاميرات", "لم يعد النسخ إلى iCloud والاستعادة منه يستخدمان رمز PIN. وعند مشاركة الكاميرات يمكنك اختيار قفل رمز المشاركة برمز PIN اختياري من ستة أرقام.", [
