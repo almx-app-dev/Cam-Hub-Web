@@ -1,0 +1,78 @@
+TERMS OF USE
+Pogoji uporabe
+
+Z uporabo aplikacije Cam Hub se strinjate s temi pogoji ter z veljavnimi pravili za licence in nakupe v trgovini Apple App Store.
+
+Velja od: 29. oktobra 2026
+Aplikacija: Cam Hub
+Kontakt: app-dev@almx.cc
+
+Standardna pogodba EULA družbe Apple
+
+Aplikacija Cam Hub uporablja standardno licenčno pogodbo za končnega uporabnika (EULA) družbe Apple. Če so ti pogoji v nasprotju z veljavno pogodbo EULA družbe Apple ali pravili trgovine App Store, prevladajo veljavni pogoji družbe Apple.
+
+Standardna licenčna pogodba za končnega uporabnika družbe Apple (Apple Standard End User License Agreement): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+
+Namen in dovoljena uporaba
+
+Aplikacija Cam Hub je orodje za ogled in upravljanje združljivih kamer in snemalnikov. Povezati se smete samo z opremo in omrežji, ki so v vaši lasti, ki jih upravljate ali za dostop do katerih imate izrecno pooblastilo. Odgovorni ste za spoštovanje veljavne zakonodaje s področja zasebnosti, videonadzora, snemanja, delovnih razmerij in lastnine.
+
+Dostop do opreme in varnost
+
+Navesti morate veljavne naslove opreme in poverilnice. Aplikacija Cam Hub ne zaobhaja nadzora dostopa. Odgovorni ste za zaščito opreme, omrežja, računov, gesel, konfiguracije oddaljenega dostopa ter vseh izvoženih ali deljenih predstavnostnih vsebin.
+
+Gumbi za upravljanje in povezana oprema
+
+Gumbi za upravljanje v pogledu LiveView Mix pošljejo zahtevo, ki jo nastavite, na končno točko, ki jo izberete. Aplikacija Cam Hub ne preverja, kaj ta končna točka naredi, ne potrjuje, da je bilo dejanje dokončano, in ne more zagotoviti, da bo zahteva dostavljena – gumb se lahko sproži, ko tega niste nameravali, ali pa se ne sproži, ko ste to nameravali.
+
+Odgovorni ste za to, s čim povežete gumb, in za posledice njegovega delovanja. Teh gumbov ne uporabljajte tam, kjer bi neuspelo, zakasnjeno, podvojeno ali nenamerno dejanje lahko povzročilo telesno poškodbo, ukleščenje, materialno škodo ali izgubo varnosti – vključno z vrati, dvoriščnimi vrati, ključavnicami, roletami in katero koli opremo, v katero se lahko ujame oseba ali vozilo. Vedno ohranite neodvisen način upravljanja takšne opreme.
+
+Preiskovanje omrežja
+
+Na zavihku „Orodja“ aplikacija preverja naslove in vrata v omrežju, ki ga izberete. Preiskujte samo omrežja, ki so v vaši lasti, ki jih upravljate ali za katerih preiskovanje imate izrecno pooblastilo. Preiskovanje brez pooblastila lahko krši zakone o zlorabi računalniških sistemov, pogoje vašega omrežnega operaterja ali pravila vašega delodajalca ali organizacije.
+
+Kode za deljenje
+
+Odgovorni ste za to, kdo prejme kodo za deljenje, in za spremembo gesel zadevne opreme, če je bila koda morda razkrita. Za vsebino, šifriranje in veljavnost kode glejte Pravilnik o zasebnosti.
+
+Združljivost in razpoložljivost
+
+Funkcije se razlikujejo glede na model opreme, vdelano programsko opremo, izvedbo protokola, dovoljenja, kodek, konfiguracijo snemanja in razmere v omrežju. Združljivost z ONVIF, RTSP ali določeno družino izdelkov ne zagotavlja, da bodo delovali vsi modeli in vse funkcije.
+
+Podpora za nekatere znamke temelji na objavljeni dokumentaciji proizvajalcev in ni bila preverjena na vseh modelih. Aplikacija Cam Hub ob dodajanju opreme potrdi delujočo pot pretoka; do takrat združljivost ni zagotovljena.
+
+Aplikacija Cam Hub ni storitev za nadzor v nujnih primerih in ne zagotavlja neprekinjenega videa, razpoložljivosti posnetkov, dostave opozoril ali določene ravni varnosti.
+
+Naročnine in nakupi
+
+Nakupe v aplikaciji in naročnine obdeluje družba Apple. Za cene, podaljšanje, preklic, vračila kupnine in upravljanje računa veljajo informacije, ki jih prikaže Apple, in nastavitve vašega računa Apple Account. Aktivne pravice do uporabe določajo, katere omejitve ali funkcije so na voljo v aplikaciji.
+
+Če naročnina poteče, se pretakanje kanalov, ki presegajo brezplačni obseg, ustavi; vaša oprema, imena in nastavitve ostanejo v napravi in so znova na voljo, ko se ustrezna naročnina podaljša. Cene in vsebina paketov se lahko spremenijo v skladu z obvestili družbe Apple in veljavno zakonodajo. Vsaka sprememba cene naročnine začne veljati šele ob prihodnjem podaljšanju, in sicer tako, kot navede Apple.
+
+Zasebnost
+
+Obdelava podatkov je opisana v ločenem Pravilniku o zasebnosti.
+
+Pravilnik o zasebnosti aplikacije Cam Hub
+
+Imena in storitve tretjih oseb
+
+Hikvision, Dahua, Synology, ONVIF in druga povezana imena so blagovne znamke ali oznake njihovih imetnikov. Aplikacija Cam Hub je razvita neodvisno.
+
+Uspešna povezava pomeni, da so oprema ter protokoli ali funkcije, ki jih uporablja aplikacija Cam Hub, tehnično združljivi; ne pomeni povezanosti, partnerstva, sponzorstva ali priporočila teh imetnikov.
+
+Pretoki YouTube in Twitch
+
+Pretoke YouTube in Twitch zagotavljata ti storitvi, ne razvijalec aplikacije Cam Hub. Ti pretoki se lahko kadar koli ustavijo, spremenijo ali postanejo nedosegljivi. Z dodajanjem ali ogledom teh pretokov v aplikaciji Cam Hub soglašate, da vas zavezujejo Pogoji storitve YouTube in Pogoji storitve Twitch; povezavi do njih sta navedeni spodaj.
+
+Pogoji storitve YouTube: https://www.youtube.com/t/terms
+
+Pogoji storitve Twitch: https://www.twitch.tv/p/legal/terms-of-service/
+
+Izključitev jamstva in omejitev odgovornosti
+
+Aplikacija Cam Hub se zagotavlja „takšna, kot je“ in „kot je na voljo“, brez kakršnega koli jamstva, poleg izjav o izključitvi jamstva v standardni pogodbi EULA družbe Apple. V obsegu, ki ga dovoljuje zakon, razvijalec ne odgovarja za posredno, naključno, posebno ali posledično škodo, vključno z izgubljenimi posnetki, zamujenimi dogodki, izgubo premoženja ali prekinitvijo poslovanja. Nič v teh pogojih ne izključuje ali omejuje odgovornosti, ki je po zakonu ni mogoče izključiti ali omejiti, ne omejuje obveznih pravic potrošnikov in ne nadomešča pravic, ki jih zagotavljajo pogoji družbe Apple.
+
+Spremembe
+
+Te pogoje lahko posodobimo, ko se spremenijo funkcije aplikacije, zakonodaja ali zahteve trgovin z aplikacijami. Datum spremenjene različice bo objavljen na tej strani.

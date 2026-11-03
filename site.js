@@ -1,7 +1,7 @@
 const shared = {
   contactEmail: "app-dev@almx.cc",
   eulaUrl: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
-  supportedLanguages: "English · 繁體中文 · 简体中文 · 日本語 · 한국어 · Deutsch · Español · Español (México) · Français · العربية",
+  supportedLanguages: "English · 繁體中文 · 简体中文 · 日本語 · 한국어 · Deutsch · Español · Español (México) · Français · Slovenščina · العربية",
   // Cloudflare Web Analytics site token: page-view statistics without cookies. Empty means no statistics are
   // collected and the privacy page carries no notice about them.
   cloudflareToken: "f39859f48b264dcf87afe45c6ebfdfec"
@@ -38,7 +38,8 @@ function supportedLanguageForPreferences(languages) {
     ["es", "es"],
     ["fr", "fr"],
     ["ja", "ja"],
-    ["ko", "ko"]
+    ["ko", "ko"],
+    ["sl", "sl"]
   ]);
 
   for (const preference of languages) {
@@ -752,6 +753,7 @@ const languageChoices = [
   ["es", "Español"],
   ["es-MX", "Español (México)"],
   ["fr", "Français"],
+  ["sl", "Slovenščina"],
   ["ar", "العربية"]
 ];
 
@@ -998,7 +1000,7 @@ function applyPhraseWrapping(language) {
 // hash names the chapter or any element inside it, so every older link keeps working; Previous / Next links close
 // each chapter; the language switch keeps the chapter and the reading position.
 // ---------------------------------------------------------------------------
-const guideLanguages = ["zh-Hant", "zh-Hans", "en", "ja", "ko", "de", "es", "es-MX", "fr", "ar"];
+const guideLanguages = ["zh-Hant", "zh-Hans", "en", "ja", "ko", "de", "es", "es-MX", "fr", "sl", "ar"];
 // Languages whose manual has pictures and clips of its own (guide/img/<lang>/NAME.jpg, guide/vid/<lang>/NAME.mp4: the
 // same screens shot with the app in that language). The files named in the fragments are the English ones; for these
 // languages the page asks for the local file first and falls back to the English one when it is missing or fails.

@@ -408,6 +408,51 @@ globalThis.CamHubDevicesPage = {
     moreTitle: "En savoir plus dans le manuel",
     more: [["guide.html#tour-duo", "iPhone Duo"], ["guide.html#single-window", "Une caméra dans sa propre fenêtre"], ["guide.html#appletv", "Apple TV"], ["guide.html#webhook-watch", "Les boutons sur l’Apple Watch"]]
   },
+  "sl": {
+    documentTitle: "Cam Hub — Razlike med napravami",
+    topline: "Razlike med napravami",
+    eyebrow: "DEVICES",
+    title: "Aplikacija Cam Hub v posameznih napravah",
+    summary: "Aplikacija Cam Hub deluje v napravah iPhone, iPad in Apple TV, aplikacija za uro Apple Watch pa sproži gumbe nadzornih plošč. Preglednici prikazujeta, kaj ponuja posamezna naprava in kako iPhone Duo uporablja svoja zaslona, ko je zaprt, povsem razprt ali napol prepognjen.",
+    tableTitle: "Kaj ponuja posamezna naprava",
+    caption: "Funkcije aplikacije Cam Hub v napravah iPhone, iPhone Duo, iPad, Apple TV in Apple Watch",
+    columns: ["Funkcija", "iPhone", "iPhone Duo", "iPad", "Apple TV", "Apple Watch"],
+    rows: [
+      ["Zavihki", "Pet: LiveView Mix, V živo, Naprave, Orodja, Nastavitve", "Pet, kot v napravi iPhone", "Pet, kot v napravi iPhone", "Štirje, brez zavihka „Orodja“", "En seznam gumbov za upravljanje"],
+      ["Prikaz v živo", "Da", "Da", "Da", "Da, z upravljalnikom", "—"],
+      ["Predvajanje posnetkov", "Koledar, časovnica, ki jo lahko vlečete, 2×, 4× in 8×, kjer naprava to omogoča, iskanje oseb", "Kot v napravi iPhone; ko je napol prepognjen, časovnica ostane na spodnji polovici", "Kot v napravi iPhone", "Vrstica, ki jo premikate z upravljalnikom, z gumbi za dan in povečavo; brez koledarja in višjih hitrosti. Posnetek, ki ga je treba najprej prenesti, se predvaja samo v napravi iPhone ali iPad", "—"],
+      ["Slika, govorjenje, PTZ, povečava s prsti", "Da, kjer jih naprava podpira", "Kot v napravi iPhone", "Kot v napravi iPhone", "Ne", "—"],
+      ["Snemanje izrezka za deljenje", "Da, v živo ali iz posnetka, do 10 minut", "Kot v napravi iPhone", "Kot v napravi iPhone", "Ne", "—"],
+      ["Dodajanje naprav", "Celoten obrazec (samodejno zaznavanje, seznam znamk, HTTPS, kontrolni seznam, poročilo o napravi) in iskanje v omrežju", "Kot v napravi iPhone", "Kot v napravi iPhone", "Kratek obrazec (naslov, vrata, račun, ONVIF, HTTPS); brez iskanja, seznama znamk, kontrolnega seznama in poročila o napravi", "—"],
+      ["Merilnik hitrosti s kompasom", "Na zavihku „Orodja“, odvisno od regije in jezikovne nastavitve", "Kot v napravi iPhone", "Kot v napravi iPhone", "—", "—"],
+      ["YouTube in Twitch, kjer sta na voljo", "Predvajanje v poljih in na celem zaslonu", "Kot v napravi iPhone", "Kot v napravi iPhone", "Prikazano samo z imenom", "—"],
+      ["Stena LiveView Mix", "Ležeča stran in neobvezna pokončna stran za telefon, ki ga držite pokončno", "Kot v napravi iPhone; ko je napol prepognjen s tečajem čez zaslon, po želji dve platni", "Ležeča stran in neobvezna pokončna stran za pokončen zaslon ali ozko okno", "Samo ležeča stena; poenostavljen urejevalnik na zavihku „Nastavitve“ (kamere, pripravljena postavitev, črni pasovi)", "—"],
+      ["Nadzorne plošče", "Nastavljanje in pritiskanje", "Kot v napravi iPhone", "Kot v napravi iPhone", "Samo pritiskanje", "Pritiskanje; ukaz pošlje ura sama ali prek naprave iPhone"],
+      ["Kamera v lastnem oknu", "—", "Na notranjem zaslonu", "Da", "—", "—"],
+      ["Usmerjenost zaslona", "Pokončno in obe ležeči usmerjenosti", "Kot v napravi iPhone, poleg tega sledi prepogibanju", "Vse štiri usmerjenosti", "—", "—"],
+      ["Varnostna kopija in deljenje", "Poimenovane varnostne kopije iCloud, obnovitev, izvoz in uvoz kod za deljenje", "Kot v napravi iPhone", "Kot v napravi iPhone", "Obnovitev različice varnostne kopije za Apple TV, uvoz vtipkane kode; varnostne kopije in kode ni mogoče ustvariti", "—"],
+      ["Paketi", "„Paketi“, „Upravljaj naročnino“, „Obnovi nakupe“, „Unovči kodo“", "Kot v napravi iPhone", "Kot v napravi iPhone", "„Paketi“, „Obnovi nakupe“", "Sledi seznanjeni napravi iPhone"],
+      ["Zahtevana dovoljenja", "Lokalno omrežje; Kamera za „Posnemi fotografijo“; Mikrofon za govorjenje; Fotografije (samo dodajanje), ko shranite sliko ali izrezek; Lokacija za merilnik hitrosti", "Kot v napravi iPhone", "Kot v napravi iPhone", "Samo Lokalno omrežje", "—"]
+    ],
+    legend: "„—“ pomeni, da funkcija v tej napravi ni na voljo.",
+    notes: [
+      "Ena naročnina velja za vse naprave iPhone, iPad in Apple TV, ki uporabljajo isti račun Apple Account.",
+      "V napravi Apple TV lahko naprave dodate neposredno ali jih prevzamete iz naprave iPhone ali iPad prek različice varnostne kopije iCloud za Apple TV ali s kodo za deljenje. Ura Apple Watch prikazuje gumbe nadzornih plošč, nastavljenih v seznanjeni napravi iPhone, videa pa ne prikazuje.",
+      "V računalniku Mac s čipom Apple lahko aplikacijo Cam Hub namestite iz trgovine App Store kot aplikacijo za iPad."
+    ],
+    duoTitle: "iPhone Duo: zaprt, povsem razprt in napol prepognjen",
+    duoIntro: "V napravi iPhone Duo aplikacija Cam Hub uporablja zunanji zaslon, ko je telefon zaprt, in večji notranji zaslon, ko je razprt. Zasloni se znova razporedijo vsakič, ko telefon zaprete, razprete ali zasukate.",
+    duoColumns: ["Kako držite telefon", "Kaj prikaže aplikacija Cam Hub"],
+    duoRows: [
+      ["Zaprt (zunanji zaslon)", "Iste zaslone kot v drugih napravah iPhone."],
+      ["Povsem razprt (notranji zaslon)", "Stene kamer na zavihku „V živo“ in na straneh naprav imajo dva stolpca, kot v napravi iPad. Celozaslonska stena LiveView Mix zapolni ves notranji zaslon. Kamero lahko z ukazom „Odpri v novem oknu“ odprete v lastnem oknu, tako da eno okno ohrani steno, drugo pa prikazuje kamero z njenimi posnetki."],
+      ["Napol prepognjen, tečaj čez zaslon (stoji kot majhen prenosnik)", "Stran kamere prikazuje sliko nad pregibom, pod njim pa kontrolnike, posnetke in kontrolnik PTZ. Če je na zavihku „Nastavitve“ vklopljeno stikalo „Dve platni“, je pogled LiveView Mix pri tečaju razdeljen na zgornje in spodnje platno, vsako z lastnimi kamerami in nadzornimi ploščami."],
+      ["Napol prepognjen, pokončno kot knjiga", "Pri kameri s predvajanjem posnetkov stran kamere na eni polovici prikazuje sliko v živo, na drugi pa isto kamero ob istem času prejšnjega dne. Stran naprave na eni polovici prikazuje svojo steno kamer, na drugi pa kamero, ki ste jo tapnili."]
+    ],
+    duoNote: "Stikalo „Dve platni“ se prikaže samo v napravi iPhone Duo. Ko je telefon povsem razprt ali zaprt, znova prikazuje eno steno LiveView Mix.",
+    moreTitle: "Več v uporabniškem priročniku",
+    more: [["guide.html#tour-duo", "iPhone Duo"], ["guide.html#single-window", "Kamera v lastnem oknu"], ["guide.html#appletv", "Apple TV"], ["guide.html#webhook-watch", "Gumbi na uri Apple Watch"]]
+  },
   "ar": {
     documentTitle: "Cam Hub — الفروق بين أجهزة Apple",
     topline: "الفروق بين أجهزة Apple",

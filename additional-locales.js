@@ -1,7 +1,7 @@
 (() => {
   const email = "app-dev@almx.cc";
   const contactLink = `<a href="mailto:${email}">${email}</a>`;
-  const languages = "English · 繁體中文 · 简体中文 · 日本語 · 한국어 · Deutsch · Español · Español (México) · Français · العربية";
+  const languages = "English · 繁體中文 · 简体中文 · 日本語 · 한국어 · Deutsch · Español · Español (México) · Français · Slovenščina · العربية";
   const eula = "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/";
 
   globalThis.CamHubAdditionalTranslations = {
@@ -1050,6 +1050,154 @@
         toTop: "Haut de page",
         prevChapter: "Chapitre précédent",
         nextChapter: "Chapitre suivant"
+      }
+    },
+
+    sl: {
+      htmlLang: "sl",
+      languageLabel: "Jezik",
+      themeLabel: "Videz",
+      themeAuto: "Samodejno",
+      themeLight: "Svetlo",
+      themeDark: "Temno",
+      menuLabel: "Odpri meni",
+      navHome: "Domov",
+      navProduct: "Funkcije",
+      navSupport: "Podpora",
+      navPrivacy: "Zasebnost",
+      navTerms: "Pogoji",
+      navGuide: "Priročnik",
+      navDevices: "Razlike med napravami",
+      manualLink: "Preberite uporabniški priročnik",
+      storeCTA: "Prenesite v trgovini App Store",
+      storeShort: "Prenesite aplikacijo",
+      siteNoticeTitle: "Statistika spletnega mesta",
+      siteNoticeBody: "To spletno mesto (in ne aplikacija Cam Hub) obiske šteje s storitvijo Cloudflare Web Analytics, ki jo zagotavlja družba Cloudflare, Inc. Storitev ne nastavlja piškotkov, ne uporablja lokalne shrambe, vam ne sledi na drugih spletnih mestih in o vas ne ustvarja profila. Beleži oglede po posameznih straneh, spletno mesto, s katerega ste prišli, državo, brskalnik in vrsto naprave. Če vaš brskalnik pošilja signal Do Not Track ali Global Privacy Control, se ne naloži. Aplikacija Cam Hub sama ne vsebuje nobene analitike.",
+      footer: "Copyright © 2026 ALMX. All rights reserved.",
+      home: {
+        documentTitle: "Cam Hub — Vaše kamere, brez vezanosti na oblak",
+        topline: "Neposredna povezava · Enoten prikaz",
+        eyebrow: "Neposredna povezava z vašo opremo",
+        title: '<span class="hero-line">Vaše kamere.</span><span class="hero-line hero-accent">Brez vezanosti na oblak.</span>',
+        summary: "Aplikacija Cam Hub se neposredno poveže z združljivimi kamerami in snemalniki, ne da bi za ogled videa potrebovali še en račun v oblaku proizvajalca.",
+        primaryCTA: "Raziščite funkcije",
+        secondaryCTA: "Preverite združljivost",
+        trustAccount: "Brez dodatnega računa",
+        trustProtocol: "ONVIF in protokoli združljive opreme",
+        trustMix: "LiveView Mix za več naprav",
+        statusLive: "V živo",
+        introKicker: "En račun manj. Več nadzora.",
+        introTitle: "Video iz različnih virov v enem preglednem prikazu.",
+        introBody: "Dodajte posamezno kamero ali povežite izbrane združljive sisteme za videonadzor NVR, DVR in NAS. Aplikacija Cam Hub njihove kanale uredi v enotnem vmesniku, da sta ogled in preklapljanje hitrejša.",
+        featureDirectTitle: "Neposredna povezava",
+        featureDirectBody: "Povežite se z naslovom in podatki za dostop, ki so že nastavljeni v vaši opremi, ne da bi se samo za ogled videa registrirali v oblaku proizvajalca.",
+        featureMixBody: "Kanale različnih kamer in snemalnikov združite v lasten prikaz za videonadzor.",
+        featureProtocolTitle: "Najprej odprti protokoli",
+        featureProtocolBody: "Podpira pretakanje prek ONVIF in RTSP ter združljive povezave z izbrano opremo.",
+        featurePlaybackTitle: "V živo in predvajanje",
+        featurePlaybackBody: "Glejte video v živo ter iščite in predvajajte posnetke, kadar oprema to podpira.",
+        featureTVTitle: "Videonadzor v napravi Apple TV",
+        featureTVBody: "V napravi Apple TV uporabljajte LiveView Mix, stene posameznih naprav in celozaslonski video. Šifrirano varnostno kopijo za Apple TV ustvarite v napravi iPhone ali iPad, nato jo obnovite brez kode PIN.",
+        featureWebhookTitle: "Nadzorne plošče z gumbi za webhook",
+        featureWebhookBody: "Prazno polje v pogledu LiveView Mix spremenite v gumbe za webhook HTTP za dostop, razsvetljavo, scene ali druge storitve, ki jih upravljate. Za občutljiva dejanja lahko zahtevate potrditev.",
+        compatibilityKicker: "Trenutna združljivost",
+        compatibilityTitle: "Odprti protokoli in preizkušene povezave z opremo.",
+        compatibilityNote: "* Pomeni, da je bila združljivost izbrane opreme in funkcij preizkušena. Ne pomeni povezanosti s proizvajalcem opreme, njegovega sponzorstva ali priporočila. Funkcije se razlikujejo glede na model, vdelano programsko opremo in nastavitve.",
+        closingTitle: "Nadzor nad svojimi kamerami znova vzemite v svoje roke.",
+        closingCTA: "Kako deluje"
+      },
+      product: {
+        documentTitle: "Cam Hub — Funkcije",
+        topline: "Funkcije",
+        eyebrow: "FUNKCIJE APLIKACIJE CAM HUB",
+        title: '<span class="page-title-line">Spoznajte aplikacijo Cam Hub.</span><span class="page-title-line">Funkcijo za funkcijo.</span>',
+        summary: "Uporabljajte iste vstopne točke in kontrolnike, kot jih vidite v aplikaciji. Skočite neposredno na dodajanje naprav, LiveView Mix, predvajanje, prenos ali delovanje aplikacije.",
+        steps: [
+          ["01", "Dodajte opremo", "Vnesite naslov in poverilnice opreme, ki je v vaši lasti, ki jo upravljate ali za katero imate izrecno pooblastilo. Povežete se lahko tudi prek ONVIF."],
+          ["02", "Izberite kanale", "Preglejte kanale kamere ali snemalnika in omogočite tiste, ki si jih želite ogledovati."],
+          ["03", "Ustvarite steno LiveView Mix", "Na eni steni združite kanale različnih kamer ter sistemov NVR, DVR ali NAS."],
+          ["04", "Video v živo in posnetki", "Odprite kanal v živo ter uporabljajte iskanje in predvajanje, kadar ju oprema podpira."],
+          ["05", "Neobvezna varnostna kopija iCloud", "Podprte nastavitve in poverilnice šifrirano shranite v svoj zasebni iCloud. Za varnostno kopiranje in obnovitev ne potrebujete kode PIN."],
+          ["06", "Prilagodite se opremi", "Protokoli, pretoki, iskanje in predvajanje se razlikujejo glede na model, vdelano programsko opremo, dovoljenja in nastavitve."]
+        ],
+        note: "Aplikacija Cam Hub ne zaobhaja nadzora dostopa do opreme. Funkcije se razlikujejo glede na model, vdelano programsko opremo, izvedbo protokola, dovoljenja računa, kodek in razmere v omrežju."
+      },
+      support: {
+        documentTitle: "Cam Hub — Podpora in združljivost",
+        topline: "Podpora in združljivost",
+        eyebrow: "SUPPORT",
+        title: "Podpora in združljivost",
+        summary: "Za težavami s povezavo so običajno protokoli, dovoljenja, vrata ali nastavitve omrežja. Tukaj je opisano, kaj preveriti najprej.",
+        meta: [["Kontakt", contactLink], ["Aplikacija", "Cam Hub"], ["Jeziki", languages]],
+        sections: [
+          ["Združljivost", ["Aplikacija Cam Hub podpira ogled prek protokolov ONVIF in RTSP in je bila preizkušena z izbranimi napravami ali sistemi Hikvision, Dahua in Synology. Združljivost se razlikuje glede na model, vdelano programsko opremo, dovoljenja računa, obliko pretoka in nastavitve omrežja.", "Pri nekaterih napravah je treba v skrbniškem vmesniku omogočiti ONVIF, RTSP ali drugo lokalno storitev. Navedbe o združljivosti ne pomenijo povezanosti s proizvajalcem opreme, njegovega sponzorstva ali priporočila."], "compatibility"],
+          ["Preden prijavite težavo s povezavo", ["Preverite, ali je oprema (kamera ali snemalnik) v omrežju in dosegljiva iz vaše naprave Apple.", "Preverite naslov opreme, vrata HTTP, vrata RTSP, uporabniško ime in geslo.", "Po potrebi v nastavitvah opreme omogočite ONVIF ali zahtevano lokalno storitev.", "Uporabite račun, ki ima dovoljenje za ogled izbranih kanalov in posnetkov.", "Če glavni pretok ni združljiv zaradi kodeka, ločljivosti ali pasovne širine, poskusite s pomožnim pretokom kamere."]],
+          ["Ko se obrnete na podporo", ["Navedite različico aplikacije, napravo Apple in različico operacijskega sistema.", "Navedite model kamere ali snemalnika in različico vdelane programske opreme.", "Opišite način povezave, natančne korake in celotno sporočilo o napaki.", "Nikoli nam ne pošiljajte gesla kamere, kode PIN za deljenje kamer, celotne kode za deljenje ali javnega naslova za povezavo."]],
+          ["Pogoste omejitve", ["Izvedbe ONVIF in RTSP se razlikujejo glede na proizvajalca, model in vdelano programsko opremo. Podpora za protokol ne pomeni, da so na voljo vse neobvezne funkcije.", "Za oddaljeni dostop morate sami nastaviti in zaščititi ustrezen VPN, usmerjevalnik ali način oddaljenega dostopa opreme. Aplikacija Cam Hub vrat v usmerjevalniku ne odpira samodejno.", "Iskanje in predvajanje posnetkov zahtevata podporo opreme in račun z ustreznimi dovoljenji."]]
+        ]
+      },
+      privacy: {
+        documentTitle: "Cam Hub — Pravilnik o zasebnosti",
+        topline: "Pravilnik o zasebnosti",
+        eyebrow: "PRIVACY POLICY",
+        title: "Pravilnik o zasebnosti",
+        summary: "Aplikacija Cam Hub je zasnovana tako, da podatke obdeluje v napravi in da imate nad njimi nadzor vi. Ne zahteva računa za storitev in ne vključuje oglaševalskega sledenja tretjih oseb.",
+        meta: [["Velja od", "29. oktobra 2026"], ["Aplikacija", "Cam Hub"], ["Kontakt", contactLink]],
+        sections: [
+          ["Pregled", ["Aplikacija Cam Hub od vas ne zahteva, da ustvarite račun za storitev Cam Hub, in ne vključuje oglasov tretjih oseb ali oglaševalskega sledenja. Aplikacija je zasnovana za povezovanje s kamerami in snemalniki, ki jih nastavite.", "Če dodate pretoke YouTube ali Twitch, jih predvajajo lastni predvajalniki teh storitev, ki lahko prikazujejo svoje oglase in prejemajo informacije iz vaše naprave; glejte razdelek „Pretoki YouTube in Twitch“ v nadaljevanju."]],
+          ["Podatki o opremi in poverilnice", ["Imena, naslovi, vrata in uporabniška imena kamer in snemalnikov, podatki o kanalih in nastavitve aplikacije so shranjeni v vaši napravi. Gesla so shranjena v obesku za ključe (Apple Keychain). Aplikacija Cam Hub te podatke uporablja samo za izvedbo povezav in dejanj, ki jih zahtevate."]],
+          ["Povezave s kamerami in videovsebine", ["Ko si ogledujete video v živo ali posnet video, se aplikacija poveže z naslovom opreme, ki ste ga navedli. Vaša oprema, ponudnik omrežja, ponudnik VPN, ponudnik DNS ali katera koli oddaljena končna točka, ki jo izberete, lahko podatke o povezavi obdeluje v skladu s svojimi pravili. Aplikacija Cam Hub videa s kamer ne uporablja za oglaševanje ali oblikovanje vedenjskih profilov."]],
+          ["Pretoki YouTube in Twitch", ["Če dodate pretok v živo ali kanal YouTube oziroma kanal Twitch, ga aplikacija Cam Hub predvaja z vdelanim predvajalnikom, ki ga zagotavlja ta storitev: s predvajalnikom YouTube (YouTube API Services) oziroma s predvajalnikom Twitch. Preden se začne predvajati prvi pretok katere koli od teh storitev, vas aplikacija prosi, da se strinjate s pogoji te storitve. Če takega pretoka nikoli ne dodate, ta razdelek za vas ne velja.", "Predvajalnik se naloži iz storitve YouTube ali Twitch in se neposredno poveže s strežniki te storitve. Med predvajanjem storitev prejme vaš naslov IP ter informacije o vaši napravi in brskalniku, lahko pa tudi uporablja piškotke ali podobne tehnologije, meri predvajanje in prikazuje oglase, kot je opisano v Pravilniku o zasebnosti družbe Google (YouTube) oziroma v Obvestilu o zasebnosti družbe Twitch (Twitch); povezavi do obeh dokumentov sta navedeni spodaj. Aplikacija Cam Hub piškotke in shranjene podatke predvajalnika hrani samo, dokler se aplikacija izvaja, in teh informacij ne prejme.", "Aplikacija Cam Hub shrani samo povezave in imena kanalov, ki jih dodate, in sicer v vaši napravi ter v kodi za deljenje ali varnostni kopiji iCloud, če jo ustvarite. Z izbrisom pretoka v aplikaciji se ti podatki odstranijo.", "<a href=\"https://policies.google.com/privacy\">Pravilnik o zasebnosti družbe Google</a>", "<a href=\"https://www.twitch.tv/p/legal/privacy-notice/\">Obvestilo o zasebnosti družbe Twitch</a>"]],
+          ["Nadzorne plošče z gumbi za webhook in končne točke tretjih oseb", ["V pogledu LiveView Mix lahko ustvarite gumbe za upravljanje, tako da nastavite metodo HTTP, URL končne točke HTTP ali HTTPS, glave po meri in telo zahteve. Te nastavitve lahko vsebujejo žetone za glavo Authorization ali druge občutljive podatke. Shranjene so v konfiguraciji pogleda LiveView Mix v vaši napravi in so lahko vključene v šifrirano varnostno kopijo iCloud, če se odločite, da jo ustvarite.", "Aplikacija pošlje zahtevo samo takrat, ko tapnete gumb, in sicer neposredno iz vaše naprave na končno točko, ki ste jo določili, na primer Home Assistant, Node-RED ali drugo storitev tretje osebe. Ta končna točka in ponudniki omrežja lahko vaš izvorni naslov IP, glave in telo zahteve obdelujejo v skladu s svojimi pravili. Razvijalec aplikacije Cam Hub teh končnih točk ne izbira in ne nadzoruje ter ne prejema podatkov, ki so poslani nanje. HTTP med prenosom ni šifriran; za občutljive podatke uporabite HTTPS in preverite, kako prejemnik ravna z zasebnostjo in varnostjo."]],
+          ["Dostop do lokalnega omrežja in preiskovanje", ["Aplikacija Cam Hub zahteva dovoljenje za dostop do lokalnega omrežja, da se lahko neposredno poveže s kamerami in snemalniki. Ko na zavihku „Orodja“ začnete preiskovanje, aplikacija preveri izbrano podomrežje in običajna vrata storitev kamer ter lahko prebere naslove opreme, ki se odziva, odprta vrata in imena strežnikov HTTP, da pomaga prepoznati opremo.", "Preiskovanje se začne samo, ko ga zahtevate. Rezultati se obdelajo v vaši napravi in se ne pošljejo razvijalcu aplikacije Cam Hub."]],
+          ["Poročilo o napravi (preizkusno)", ["Če dodajanje kamere ali snemalnika ne uspe, aplikacija Cam Hub ponudi neobvezno, preizkusno poročilo o napravi, ki razvijalcu pomaga razumeti vzrok. Ponudi se samo po neuspelem poskusu dodajanja opreme. Zažene se samo, ko tapnete „Pošlji podrobnosti razvijalcu“ in ste sprejeli obvestilo, prikazano pred prvo uporabo, deluje pa samo, dokler je odprt njegov zaslon. Kadar koli ga lahko ustavite.", "Med izvajanjem poročila vaša naprava Apple pošilja zahteve samo za branje neposredno na naslov opreme, ki ste ga vnesli: na vrata, ki ste jih vnesli, pri opremi v lokalnem omrežju pa tudi na običajna vrata kamer. Zahteve preverijo, katera vrata se odzivajo, preberejo model, vdelano programsko opremo in podprte protokole opreme (na primer ISAPI, ONVIF in RTSP) ter na kratko preizkusijo, ali videopretok dostavlja podatke. Na opremi ne spremenijo ničesar in nobena od njih ni poslana razvijalcu ali kateremu koli drugemu strežniku.", "Za prijavo zahteve uporabijo uporabniško ime in geslo, ki ste ju vnesli, enako kot pri dodajanju opreme. Če je dodajanje opreme spodletelo zaradi zavrnjene prijave, poročilo podatkov za prijavo sploh ne pošlje. Oprema neuspele prijave šteje in jih lahko tudi beleži.", "Poročilo vsebuje: različico aplikacije, različico sistema iOS, model naprave Apple in jezikovne nastavitve; način povezave, ki ste ga izbrali, in napako, ki jo je prikazala aplikacija; naslov opreme s skrito zadnjo številko (naslov v internetu je izpuščen); vrata, ki ste jih vnesli, in vrata, ki so se odzvala; znamko, model, vdelano programsko opremo in podprte protokole, kot jih sporoča oprema; kode stanja in kratke izseke odgovorov opreme; način povezave vaše naprave Apple (na primer Wi-Fi, mobilno omrežje ali VPN); ter števila in velikosti iz preizkusnega videopretoka, nikoli pa slik.", "Preden se kar koli prikaže ali shrani, samodejni filter z vidnimi nadomestnimi oznakami zamenja gesla, uporabniška imena, žetone, piškotke, serijske številke, naslove MAC, javne naslove IP, imena gostiteljev, e-poštne naslove, imena opreme in kanalov, imena omrežij Wi-Fi, telefonske številke ter dolge ključe ali identifikatorje. Besedilo spletnih strani se ne hrani. Filter je samodejen in ni popoln, zato vas prosimo, da poročilo preberete, preden ga pošljete.", "Razvijalcu se nič ne pošlje samodejno. Poročilo se najprej prikaže na zaslonu, kjer lahko posamezne razdelke izklopite ali poročilo zaprete, ne da bi kar koli poslali. Če ga želite poslati, izberite „Pošlji razvijalcu po e-pošti“: poročilo se odpre v novem sporočilu v aplikaciji Mail, naslovljenem na podporo, in sicer tako v besedilu sporočila kot v priloženi besedilni datoteki; nič se ne pošlje, dokler tam ne tapnete „Pošlji“, lahko pa pošiljanje tudi prekličete. Če aplikacija Mail ni nastavljena, se poročilo kopira v odložišče, v vaši aplikaciji za e-pošto pa se odpre sporočilo z že vnesenim naslovom. Poročilo lahko tudi kopirate ali ga delite z menijem za deljenje v sistemu iOS.", "Kopirano poročilo se ne prenese v Univerzalno odložišče in po 120 sekundah poteče ter se odstrani iz odložišča.", "V vaši napravi se hrani do pet najnovejših poročil, da lahko katero od njih pošljete pozneje. Izključena so iz varnostnih kopij naprave in iz varnostne kopije iCloud aplikacije Cam Hub. Kadar koli jih lahko izbrišete z možnostjo „Izbriši shranjena poročila“ na zaslonu poročila o napravi; najstarejše se izbriše tudi, ko se shrani šesto, ob izbrisu aplikacije pa se odstranijo vsa.", "Če poročilo pošljete po e-pošti, razvijalec prejme to e-poštno sporočilo in vaš e-poštni naslov. Poročilo se uporabi za preučitev težave, ki ste jo sporočili, in se hrani le toliko časa, kolikor je potrebno za odgovor in vodenje nujnih evidenc o podpori.", "Poročilo o napravi je preizkusno in se lahko kadar koli spremeni ali odstrani. Pošiljanje poročila ne zagotavlja podpore za vašo opremo, odgovora ali popravka."]],
+          ["Fotografije in kamera", ["Za prazno polje v pogledu LiveView Mix lahko s sistemskim izbirnikom fotografij družbe Apple izberete določeno fotografijo ali pa dovolite dostop do kamere, da posnamete novo fotografijo. Aplikacija prejme samo sliko, ki jo izberete ali posnamete, ne pa celotne knjižnice fotografij. Sliko pomanjša in stisne ter jo shrani v konfiguracijo pogleda LiveView Mix v vaši napravi.", "Slike ostanejo v vaši napravi; razvijalec aplikacije Cam Hub jih ne prejme in nima dostopa do njih. Samo če se odločite ustvariti šifrirano varnostno kopijo iCloud aplikacije Cam Hub, se lahko slike skupaj s to varnostno kopijo shranijo v vaš lastni iCloud za obnovitev naprave. Sliko lahko odstranite v pogledu LiveView Mix, dovoljenja za kamero ali fotografije pa spremenite v aplikaciji Nastavitve."]],
+          ["Lokacija", ["Aplikacija Cam Hub zahteva dovoljenje za lokacijo samo z možnostjo „Med uporabo aplikacije“. Vaša lokacija in smer po kompasu se bereta samo, dokler je odprt zaslon, ki ju potrebuje, na primer „Merilnik hitrosti“ na zavihku „Orodja“, ki prikazuje vašo hitrost in smer po kompasu. Aplikacija ne sledi vaši lokaciji v ozadju.", "Vaša lokacija in smer po kompasu se obdelujeta v vaši napravi za prikaz hitrosti in smeri. Ne shranjujeta se, nista vključeni v varnostne kopije in se ne pošiljata razvijalcu aplikacije Cam Hub ali komur koli drugemu. Če „Merilnik hitrosti“ vašo hitrost izgovarja na glas, jo izgovarja govorni glas, vgrajen v sistem iOS v vaši napravi, izgovarjanje pa lahko izklopite na tem zaslonu. Dovoljenje za lokacijo lahko kadar koli zavrnete ali prekličete v Nastavitvah v vaši napravi Apple; preostali del aplikacije deluje tudi brez njega."]],
+          ["Kode za deljenje kamer", ["Delite lahko kodo, ki vsebuje naslove, uporabniška imena, podatke o kanalih in gesla izbranih kamer ali snemalnikov. Če vklopite „Vključi nastavitve aplikacije“, koda vsebuje tudi nastavitve aplikacije, ki lahko vključujejo konfiguracijo pogleda LiveView Mix, na primer nastavitve webhookov, ki lahko vsebujejo žetone. Koda je šifrirana z AES-256-GCM s ključem, izpeljanim s PBKDF2-HMAC-SHA256 (600.000 iteracij). Ob deljenju izberete enega od treh načinov zaklepanja.", "Odprto (brez zaklepanja): ključ je izpeljan iz skrivnosti, vgrajene v aplikacijo Cam Hub, zato lahko kodo odpre katera koli združljiva različica aplikacije Cam Hub. To le preprečuje, da bi vsebino lahko prebrali na prvi pogled; ne ščiti je pred nikomer, ki ima tako kodo kot aplikacijo.", "Šestmestni PIN: kodo je mogoče odpreti samo s PIN-om, ki ga izberete. Šestmestni PIN ima samo milijon možnosti, zato bi jih lahko nekdo, ki pridobi kodo, brez povezave vse preizkusil na svojem računalniku.", "Kompleksno šifriranje (geslo): kodo je mogoče odpreti samo z geslom, ki ga izberete. Geslo mora biti dolgo vsaj osem znakov in lahko vsebuje poljubne črke, številke ali simbole. Le z dolgim, edinstvenim geslom postane ugibanje praktično neizvedljivo.", "Aplikacija Cam Hub kode, PIN-a ali gesla ne pošlje razvijalcu, razvijalec pa pozabljenega PIN-a ali gesla ne more obnoviti. PIN ali geslo pošljite ločeno od kode.", "Kode ne potečejo. Izbris kamer ali aplikacije v izvorni napravi ne prekliče že deljenih kopij; če je bila koda morda razkrita, spremenite gesla zadevne opreme.", "Kodo posreduje aplikacija, s katero jo delite, v skladu s svojimi pravili. Če jo delite kot povezavo do spletnega mesta Cam Hub, je koda v povezavi za znakom „#“, tega dela povezave pa brskalniki ne pošljejo strežniku spletnega mesta."]],
+          ["Neobvezna varnostna kopija iCloud", ["Če izberete varnostno kopiranje iCloud, aplikacija šifrira podprto konfiguracijo kamer in snemalnikov, poverilnice, kanale in nastavitve aplikacije, preden varnostno kopijo shrani v vašo zasebno shrambo ključ–vrednost v iCloudu. Varnostno kopiranje in obnovitev v napravah iPhone, iPad in Apple TV ne uporabljata PIN-a. Varnostna kopija je šifrirana s ključem, vgrajenim v aplikacijo, in ne z geslom, ki ga izberete; zanaša se na zaščito vašega računa Apple Account in storitve iCloud.", "Čas varnostne kopije, število naprav in ime lokacije so shranjeni ločeno, da lahko aplikacija prikaže stanje varnostne kopije. Za obnovitev izberite razpoložljivo varnostno kopijo in neposredno nadaljujte."]],
+          ["Nakupi in naročnine", ["Nakupe in naročnine obdeluje družba Apple. Ne prejemamo celotnih podatkov o vaši plačilni kartici ali bančnih podatkov. Aplikacija prebere stanje nakupov, ki ga posreduje Apple, da odklene ustrezne omejitve ali funkcije."]],
+          ["Deljenje, hramba, izbris in vaše izbire", ["Osebnih podatkov ne prodajamo. Lokalna konfiguracija ostane v vaši napravi, dokler ne izbrišete ustrezne vsebine ali ne odstranite aplikacije. V aplikaciji lahko izbrišete opremo, slike v pogledu LiveView Mix in nastavitve gumbov za upravljanje, ločeno izbrišete varnostno kopijo iCloud ter v Nastavitvah v vaši napravi Apple prekličete sistemska dovoljenja.", "Neobvezni podatki v iCloudu se upravljajo prek vašega računa Apple Account in storitev iCloud. Podatki, ki jih prostovoljno pošljete podpori po e-pošti, se hranijo le toliko časa, kolikor je potrebno za odgovor in vodenje nujnih evidenc o podpori."]],
+          ["Otroci in spremembe pravilnika", ["Aplikacija Cam Hub ni namenjena otrokom in namerno ne zbira osebnih podatkov otrok. Ta pravilnik lahko posodobimo, ko se spremenijo funkcije aplikacije, zakonodaja ali zahteve trgovin z aplikacijami. Datum spremenjene različice bo objavljen na tej strani."]]
+        ]
+      },
+      terms: {
+        documentTitle: "Cam Hub — Pogoji uporabe",
+        topline: "Pogoji uporabe",
+        eyebrow: "TERMS OF USE",
+        title: "Pogoji uporabe",
+        summary: "Z uporabo aplikacije Cam Hub se strinjate s temi pogoji ter z veljavnimi pravili za licence in nakupe v trgovini Apple App Store.",
+        meta: [["Velja od", "29. oktobra 2026"], ["Aplikacija", "Cam Hub"], ["Kontakt", contactLink]],
+        sections: [
+          ["Standardna pogodba EULA družbe Apple", ["Aplikacija Cam Hub uporablja standardno licenčno pogodbo za končnega uporabnika (EULA) družbe Apple. Če so ti pogoji v nasprotju z veljavno pogodbo EULA družbe Apple ali pravili trgovine App Store, prevladajo veljavni pogoji družbe Apple.", `<a href="${eula}">Standardna licenčna pogodba za končnega uporabnika družbe Apple (Apple Standard End User License Agreement)</a>`]],
+          ["Namen in dovoljena uporaba", ["Aplikacija Cam Hub je orodje za ogled in upravljanje združljivih kamer in snemalnikov. Povezati se smete samo z opremo in omrežji, ki so v vaši lasti, ki jih upravljate ali za dostop do katerih imate izrecno pooblastilo. Odgovorni ste za spoštovanje veljavne zakonodaje s področja zasebnosti, videonadzora, snemanja, delovnih razmerij in lastnine."]],
+          ["Dostop do opreme in varnost", ["Navesti morate veljavne naslove opreme in poverilnice. Aplikacija Cam Hub ne zaobhaja nadzora dostopa. Odgovorni ste za zaščito opreme, omrežja, računov, gesel, konfiguracije oddaljenega dostopa ter vseh izvoženih ali deljenih predstavnostnih vsebin."]],
+          ["Gumbi za upravljanje in povezana oprema", ["Gumbi za upravljanje v pogledu LiveView Mix pošljejo zahtevo, ki jo nastavite, na končno točko, ki jo izberete. Aplikacija Cam Hub ne preverja, kaj ta končna točka naredi, ne potrjuje, da je bilo dejanje dokončano, in ne more zagotoviti, da bo zahteva dostavljena – gumb se lahko sproži, ko tega niste nameravali, ali pa se ne sproži, ko ste to nameravali.", "Odgovorni ste za to, s čim povežete gumb, in za posledice njegovega delovanja. Teh gumbov ne uporabljajte tam, kjer bi neuspelo, zakasnjeno, podvojeno ali nenamerno dejanje lahko povzročilo telesno poškodbo, ukleščenje, materialno škodo ali izgubo varnosti – vključno z vrati, dvoriščnimi vrati, ključavnicami, roletami in katero koli opremo, v katero se lahko ujame oseba ali vozilo. Vedno ohranite neodvisen način upravljanja takšne opreme."]],
+          ["Preiskovanje omrežja", ["Na zavihku „Orodja“ aplikacija preverja naslove in vrata v omrežju, ki ga izberete. Preiskujte samo omrežja, ki so v vaši lasti, ki jih upravljate ali za katerih preiskovanje imate izrecno pooblastilo. Preiskovanje brez pooblastila lahko krši zakone o zlorabi računalniških sistemov, pogoje vašega omrežnega operaterja ali pravila vašega delodajalca ali organizacije."]],
+          ["Kode za deljenje", ["Odgovorni ste za to, kdo prejme kodo za deljenje, in za spremembo gesel zadevne opreme, če je bila koda morda razkrita. Za vsebino, šifriranje in veljavnost kode glejte Pravilnik o zasebnosti."]],
+          ["Združljivost in razpoložljivost", ["Funkcije se razlikujejo glede na model opreme, vdelano programsko opremo, izvedbo protokola, dovoljenja, kodek, konfiguracijo snemanja in razmere v omrežju. Združljivost z ONVIF, RTSP ali določeno družino izdelkov ne zagotavlja, da bodo delovali vsi modeli in vse funkcije.", "Podpora za nekatere znamke temelji na objavljeni dokumentaciji proizvajalcev in ni bila preverjena na vseh modelih. Aplikacija Cam Hub ob dodajanju opreme potrdi delujočo pot pretoka; do takrat združljivost ni zagotovljena.", "Aplikacija Cam Hub ni storitev za nadzor v nujnih primerih in ne zagotavlja neprekinjenega videa, razpoložljivosti posnetkov, dostave opozoril ali določene ravni varnosti."]],
+          ["Naročnine in nakupi", ["Nakupe v aplikaciji in naročnine obdeluje družba Apple. Za cene, podaljšanje, preklic, vračila kupnine in upravljanje računa veljajo informacije, ki jih prikaže Apple, in nastavitve vašega računa Apple Account. Aktivne pravice do uporabe določajo, katere omejitve ali funkcije so na voljo v aplikaciji.", "Če naročnina poteče, se pretakanje kanalov, ki presegajo brezplačni obseg, ustavi; vaša oprema, imena in nastavitve ostanejo v napravi in so znova na voljo, ko se ustrezna naročnina podaljša. Cene in vsebina paketov se lahko spremenijo v skladu z obvestili družbe Apple in veljavno zakonodajo. Vsaka sprememba cene naročnine začne veljati šele ob prihodnjem podaljšanju, in sicer tako, kot navede Apple."]],
+          ["Zasebnost", ["Obdelava podatkov je opisana v ločenem Pravilniku o zasebnosti.", `<a href="privacy.html">Pravilnik o zasebnosti aplikacije Cam Hub</a>`]],
+          ["Imena in storitve tretjih oseb", ["Hikvision, Dahua, Synology, ONVIF in druga povezana imena so blagovne znamke ali oznake njihovih imetnikov. Aplikacija Cam Hub je razvita neodvisno.", "Uspešna povezava pomeni, da so oprema ter protokoli ali funkcije, ki jih uporablja aplikacija Cam Hub, tehnično združljivi; ne pomeni povezanosti, partnerstva, sponzorstva ali priporočila teh imetnikov."]],
+          ["Pretoki YouTube in Twitch", ["Pretoke YouTube in Twitch zagotavljata ti storitvi, ne razvijalec aplikacije Cam Hub. Ti pretoki se lahko kadar koli ustavijo, spremenijo ali postanejo nedosegljivi. Z dodajanjem ali ogledom teh pretokov v aplikaciji Cam Hub soglašate, da vas zavezujejo Pogoji storitve YouTube in Pogoji storitve Twitch; povezavi do njih sta navedeni spodaj.", "<a href=\"https://www.youtube.com/t/terms\">Pogoji storitve YouTube</a>", "<a href=\"https://www.twitch.tv/p/legal/terms-of-service/\">Pogoji storitve Twitch</a>"]],
+          ["Izključitev jamstva in omejitev odgovornosti", ["Aplikacija Cam Hub se zagotavlja „takšna, kot je“ in „kot je na voljo“, brez kakršnega koli jamstva, poleg izjav o izključitvi jamstva v standardni pogodbi EULA družbe Apple. V obsegu, ki ga dovoljuje zakon, razvijalec ne odgovarja za posredno, naključno, posebno ali posledično škodo, vključno z izgubljenimi posnetki, zamujenimi dogodki, izgubo premoženja ali prekinitvijo poslovanja. Nič v teh pogojih ne izključuje ali omejuje odgovornosti, ki je po zakonu ni mogoče izključiti ali omejiti, ne omejuje obveznih pravic potrošnikov in ne nadomešča pravic, ki jih zagotavljajo pogoji družbe Apple."]],
+          ["Spremembe", ["Te pogoje lahko posodobimo, ko se spremenijo funkcije aplikacije, zakonodaja ali zahteve trgovin z aplikacijami. Datum spremenjene različice bo objavljen na tej strani."]]
+        ]
+      },
+      guide: {
+        documentTitle: "Cam Hub — Uporabniški priročnik",
+        topline: "Uporabniški priročnik",
+        eyebrow: "OPERATION MANUAL",
+        title: "Uporabniški priročnik",
+        summary: "Navodila po korakih za dodajanje naprav, prikaz v živo in predvajanje posnetkov, stene LiveView Mix, deljenje in varnostno kopiranje.",
+        tocLabel: "Vsebina",
+        fallbackNotice: "Priročnik je trenutno na voljo v tradicionalni kitajščini in angleščini. Tukaj je prikazana angleška različica.",
+        loading: "Nalaganje priročnika…",
+        loadError: "Priročnika ni bilo mogoče naložiti. Preverite povezavo in poskusite znova.",
+        unavailable: "Priročnik še ni na voljo.",
+        retry: "Poskusi znova",
+        toTop: "Na vrh",
+        prevChapter: "Prejšnje poglavje",
+        nextChapter: "Naslednje poglavje"
       }
     },
 

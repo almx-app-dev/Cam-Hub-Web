@@ -966,6 +966,167 @@
       ],
       note: "Cam Hub ne contourne pas les contrôles d’accès des appareils. Les fonctions varient selon le modèle, le micrologiciel, l’implémentation du protocole, les autorisations du compte, le codec et le réseau."
     },
+    sl: {
+      documentTitle: "Cam Hub — Funkcije",
+      topline: "Funkcije",
+      eyebrow: "FUNKCIJE APLIKACIJE CAM HUB",
+      title: '<span class="page-title-line">Spoznajte aplikacijo Cam Hub.</span><span class="page-title-line">Funkcijo za funkcijo.</span>',
+      summary: "Uporabljajte iste vstopne točke in kontrolnike, kot jih vidite v aplikaciji. Skočite neposredno na dodajanje naprav, LiveView Mix, predvajanje, prenos ali delovanje aplikacije.",
+      wikiLabel: "Pojdi na poglavje",
+      wiki: [
+        ["devices", "01", "Naprave in kanali", "Najprej povežite opremo, nato določite, kateri kanali bodo prikazani na zaslonih za videonadzor.", [
+          ["Pripravite podatke za povezavo", [
+            "Na zavihku „Naprave“ tapnite „Dodaj napravo“, da se odpre zaslon za dodajanje naprave.",
+            "Polje „Ime“ ni obvezno, polji „Naslov IP ali ime gostitelja“ in „Uporabniško ime“ pa sta obvezni. „Vrata HTTP“ so privzeto 80, „Vrata RTSP“ pa 554; če se razlikujejo, uporabite vrednosti iz skrbniškega vmesnika opreme.",
+            "Vnesite „Geslo“ in tapnite „Dodaj“. Aplikacija prikaže „Povezovanje z napravo…“, če poskus ne uspe, pa loči med napakami povezave, napakami poverilnic in nepodprto opremo.",
+            "Povezujte se samo z opremo in računi, ki so v vaši lasti, ki jih upravljate ali za uporabo katerih imate izrecno pooblastilo."
+          ]],
+          ["Samodejno zaznavanje ali ONVIF", [
+            "Za „Poveži prek“ običajno najprej pustite „Samodejno zaznavanje“, da aplikacija Cam Hub poskusi združljivo izvorno povezavo in pridobi čim več razpoložljivih funkcij.",
+            "Če oprema ni prepoznana ali želite neposredno uporabiti odprti protokol, za „Poveži prek“ izberite ONVIF in jo dodajte znova.",
+            "V nastavitvah opreme boste morda morali omogočiti ONVIF, ustvariti račun ONVIF z dovoljenjem za ogled in omogočiti RTSP. Napotki za povezavo so v razdelku „Pregled združljivosti“."
+          ]],
+          ["Uredite kanale kamer", [
+            "Ko je oprema dodana, jo tapnite na zavihku „Naprave“, da se odpre njena stran. Pod „Kamere“ so navedeni kanali, ki jih sporoča ta oprema.",
+            "Omogočite kanale, ki si jih želite ogledovati, in onemogočite tiste, ki jih ne uporabljate. Pri kanalih snemalnika lahko z možnostjo „Začasno ustavi video“ ustavite pretakanje, namesto da bi polje samo skrili.",
+            "Kanali brez povezave ostanejo na seznamu na zavihku „Naprave“ zatemnjeni. Če je vklopljena možnost „Skrij kamere brez povezave“, se ne prikažejo na stenah za prikaz v živo."
+          ]],
+          ["Preglejte in posodobite opremo", [
+            "Razširite kartico opreme, da si ogledate njen model, naslov, vrata, serijsko številko, vdelano programsko opremo in število kanalov.",
+            "S kontrolnikom zgoraj desno opremo preimenujete, s potegom navzdol pa zahtevate posodobljeno stanje kanalov.",
+            "Gumb za črne pasove samo za trenutni prikaz preklaplja med možnostmi „Privzeto“, „Povečaj do zapolnitve“ in „Raztegni na celo polje“. Gumb „Celozaslonska stena“ odpre steno kanalov te opreme."
+          ]]
+        ]],
+        ["mix", "02", "Stena LiveView Mix", "Kanale različnih kamer in snemalnikov postavite na en zaslon, nato gostoto prilagodite zaslonu, ki ga uporabljate.", [
+          ["Izberite kamere za LiveView Mix", [
+            "Odprite „Nastavitve“ → „LiveView Mix“.",
+            "Izberite kanale v razdelku posamezne opreme. Vsak kanal lahko uporablja SD ali HD posebej, z „Vse v SD“ ali „Vse v HD“ pa eno kakovost uporabite za celoten izbor.",
+            "Odprite zavihek „LiveView Mix“. Prikazuje predogled, po katerem se lahko pomikate; tapnite „Celoten zaslon“, da uporabite izbrano postavitev stene."
+          ]],
+          ["17 celozaslonskih postavitev", [
+            "Enakomerne mreže: 2×2, 2×3, 3×3, 3×4, 4×4, 5×4, 6×4, 5×5, 7×4, 6×5, 6×6 in 7×7.",
+            "Postavitve s poudarkom: 1+3, 1+5, 1+7, 1+21 in 1+27. Prva kamera zavzame največje, glavno polje.",
+            "Postavitve z več kot 16 polji imajo oznako zaslona, ker je njihova gostota primernejša za velik zaslon."
+          ]],
+          ["Razporedite steno in prazna polja", [
+            "V nastavitvah pogleda LiveView Mix tapnite „Razporedi steno“.",
+            "Povlecite eno polje na drugo, da ju zamenjate, ali tapnite „Uredi“, da spremenite vrstni red na seznamu, in podrsajte, da vnos izbrišete. Vrstni red na seznamu zapolnjuje postavitev stran za stranjo.",
+            "Tapnite „Dodaj prazno polje“, da namerno ohranite vrzel. Izberite prazno polje, da nastavite, kaj prikazuje."
+          ]],
+          ["Trije načini zapolnitve videa", [
+            "„Privzeto“ ohrani celotno sliko in doda črne pasove, kadar se razmerji stranic razlikujeta.",
+            "„Povečaj do zapolnitve“ ohrani razmerje stranic in sliko poveča, da zapolni polje, pri čemer odreže robove, ki segajo čezenj.",
+            "„Raztegni na celo polje“ zapolni polje brez obrezovanja, vendar lahko sliko razširi ali stisne. Način nastavite kot splošno privzeto vrednost v razdelku „Nastavitve“ → „Črni pasovi“ ali ga začasno spremenite za posamezno opremo ali kanale."
+          ]],
+          ["Vodni žigi po meri", [
+            "Odprite „Vodni žig“, vklopite „Pokaži vodni žig“ in izberite „Ime naprave“, „Ime kamere“ ali „Naslov IP“.",
+            "Prilagodite položaj, neprosojnost, barvo, velikost besedila in pisavo: „Sistem“, „Zaobljena“, „Neproporcionalna“ ali „Serifna“.",
+            "Pri možnosti „Berljivost“ so na voljo „Senca“, „Obroba“, „Podlaga“ in „Brez“. S svetlim in temnim predogledom preverite, ali je vodni žig berljiv na dnevnih in nočnih posnetkih."
+          ]],
+          ["Slike, ure, oznake in nadzorne plošče", [
+            "V razdelku „Razporedi“ uporabite „Dodaj prazno polje“, nato izberite to polje, da odprete njegovo stran (z naslovom „Polje 1“, „Polje 2“ in tako naprej), kjer pod „Vsebina“ izberete „Prazno“, „Slika“, „Nadzorna plošča“, „Ura“ ali „Oznaka“.",
+            "„Slika“ lahko uporabi obstoječo ali novo posneto fotografijo. „Ura“ lahko prikaže datum, sekunde in čas v 12- ali 24-urni obliki. „Oznaka“ podpira besedilo po meri, simbol SF Symbol in barvo.",
+            "„Nadzorna plošča“ ustvari gumbe za webhook HTTP iz predlog „Dvoriščna vrata / roleta“, „Garažna vrata“, „Luč“, „Vratna ključavnica“, „Zavesa / žaluzija“, „Scena / avtomatizacija“, „Alarm / sirena“, „Ventilator“, „Pametna vtičnica“, „Klimatska naprava“ in „Po meri“. Občutljiva dejanja, kot sta odpiranje ali odklepanje, lahko zahtevajo potrditev.",
+            "Podprte nastavitve slik in polj se lahko prenesejo s šifrirano varnostno kopijo. Za ustvarjanje in zaščito vseh končnih točk webhook ste odgovorni sami."
+          ]]
+        ]],
+        ["viewing", "03", "Prikaz v živo in predvajanje posnetkov", "Pri ogledu posamezne kamere imata lahko prednost jasnost slike in upravljanje, pri stenah z več kamerami pa obremenitev naprave in pasovna širina.", [
+          ["Kakovost za eno in več kamer", [
+            "Odprite „Nastavitve“ → „Privzeta kakovost“ in ločeno nastavite privzeto kakovost HD ali SD za „Posamezna kamera“ in „Več kamer“. Te privzete vrednosti veljajo samo za zaslone naprav: stran naprave in stene na zavihku „V živo“, celozaslonsko steno naprave in posamezno kamero, odprto iz naprave.",
+            "Kadar oprema sporoča, da podpira preklop med glavnim in pomožnim pretokom, vrstica s kontrolniki posameznega kanala prikaže izbiri SD in HD.",
+            "Pogled LiveView Mix teh privzetih vrednosti ne uporablja: njegova stena z več kamerami vsak kanal predvaja v kakovosti, ki mu je dodeljena na seznamu kanalov, posamično ali z „Vse v SD“ oziroma „Vse v HD“. Nižja kakovost pogosto zmanjša obremenitev omrežja in naprave, kadar se hkrati predvaja veliko polj.",
+            "Posamezna kamera, odprta iz pogleda LiveView Mix, na celem zaslonu ali v bližnjem pogledu, se vedno zažene v HD. Gumb SD/HD na zaslonu preklopi kakovost samo za ta ogled in ne spremeni nobene nastavitve."
+          ]],
+          ["Povečava in ležeči prikaz", [
+            "V prikazu posameznega kanala razprite prsta, da sliko povečate, nato povlecite povečano sliko, da si ogledate drug del.",
+            "Dvakrat tapnite za takojšnjo 2,5-kratno povečavo in znova dvakrat tapnite za vrnitev na celotno sliko.",
+            "Napravo zasukajte v ležeči položaj, da skrijete navigacijo, kontrolnike in vrstico z zavihki, tako da lahko video zavzame čim večji del zaslona."
+          ]],
+          ["Slike in deljenje", [
+            "V vrstici s kontrolniki posameznega kanala tapnite „Slika“, da od opreme zahtevate njeno trenutno sliko.",
+            "Ko slika prispe, aplikacija Cam Hub odpre predogled. Tapnite „Deli“, da uporabite sistemski list za deljenje.",
+            "Tapnite rdeči gumb za snemanje poleg gumba „Slika“, da do 10 minut snemate, kar prikazuje pogled, v živo ali iz posnetka. Ko snemanje ustavite, aplikacija Cam Hub prikaže izrezek, da ga lahko delite ali shranite v aplikacijo Fotografije.",
+            "Slika ali izrezek lahko vsebuje osebe, glasove, naslove, časovne žige ali druge občutljive podatke. Pred pošiljanjem preverite vsebino, prejemnika in lokalne predpise."
+          ]],
+          ["Datum, časovnica in vrste posnetkov", [
+            "Pod prikazom kanala izberite datum. Aplikacija Cam Hub od opreme zahteva posnetke tega dne.",
+            "Posnetke lahko preklapljate med „Neprekinjeno“ in „Dogodki“. Časovnico vlecite ali povečujte, dokler sredinski kazalec ne doseže želenega časa, ali izberite odsek na seznamu.",
+            "Med predvajanjem sta prikazana napis PREDVAJANJE in čas opreme. Tapnite „Nazaj v živo“, da se vrnete na pretok v živo. Nekatera oprema izrezek najprej prenese in ga nato odpre v sistemskem predvajalniku."
+          ]]
+        ], 'Obvestilo o razpoložljivosti: pretakanje v živo, slike, <span class="keep-phrase">izbira glavnega/pomožnega pretoka</span>, iskanje posnetkov, <span class="keep-phrase">razvrščanje na neprekinjeno/dogodke</span>, pomikanje po časovnici in predvajanje so odvisni od zmožnosti, ki jih kamera ali snemalnik dejansko sporoča, in od dovoljenj prijavljenega računa opreme.'],
+        ["backup", "04", "Šifrirana varnostna kopija in deljenje kamer", "Varnostno kopiranje in obnovitev iz iClouda ne uporabljata več kode PIN. Pri deljenju kamer lahko izberete, ali boste kodo za deljenje zaklenili s šestmestno kodo PIN.", [
+          ["Lokalna zaščita gesel", [
+            "Ko je oprema dodana, se njeno geslo shrani v obesek za ključe (Apple Keychain). Ime opreme, naslov, vrata, kanali in nastavitve aplikacije ostanejo med podatki naprave.",
+            "Aplikacija Cam Hub te podatke uporablja samo za povezave, iskanje posnetkov, slike, varnostne kopije in prenose, ki jih zahtevate.",
+            "„Izbriši vse podatke“ odstrani lokalne podatke o opremi in shranjena gesla. Z odstranitvijo aplikacije lahko nastavitve, ki niso bile nikoli varnostno kopirane, prav tako postanejo nepovratno izgubljene."
+          ]],
+          ["Šifrirana varnostna kopija iCloud brez kode PIN", [
+            "Odprite „Nastavitve“ → „Varnostno kopiraj v iCloud“, na vrhu strani izberite „Moja varnostna kopija“ (za iPhone in iPad) ali Apple TV in tapnite „Varnostno kopiraj zdaj“, ne da bi nastavili kodo PIN.",
+            "Varnostna kopija vključuje podprto opremo, poverilnice, kanale, nastavitve pogleda LiveView Mix in nastavitve aplikacije. Aplikacija Cam Hub jo šifrira, preden jo shrani v vaš zasebni iCloud.",
+            "Preverite, ali „Trenutna varnostna kopija“ prikazuje novi čas in število naprav."
+          ]],
+          ["Obnovitev iz iClouda", [
+            "Odprite „Nastavitve“ → „Obnovi iz iClouda“ in izberite varnostno kopijo, da nadaljujete. Naprave iPhone, iPad in Apple TV ne zahtevajo preverjanja kode PIN.",
+            "Po možnosti uporabite isto različico aplikacije in preverite, ali ste prijavljeni z računom Apple Account, v katerem je varnostna kopija. Varnostne kopije iz starejše različice bo morda treba ustvariti znova, preden se prikažejo.",
+            "Za obnovitev veljajo omejitve trenutnega paketa. Nato preverite vse naslove opreme, kanale in pogled LiveView Mix glede na trenutno omrežje."
+          ]],
+          ["Deljenje kamer z neobvezno kodo PIN", [
+            "Na zavihku „Nastavitve“ odprite „Izvozi kamere“ (v razdelku „Deli kamere“), izberite kamere in ustvarite šifrirano kodo za deljenje. Izberite, ali boste vklopili „Zakleni s kodo PIN“.",
+            "Če je možnost „Zakleni s kodo PIN“ vklopljena, vnesite šest števk. Prejemnik mora pri uvozu ali obnovitvi deljenih kamer opraviti preverjanje kode PIN. Brez kode PIN se celotna koda uvozi neposredno.",
+            "Uvoz vključuje opremo in poverilnice, zanj pa veljajo omejitve paketa v ciljni napravi. Celotno kodo in kodo PIN pošljite samo zaupanja vrednemu prejemniku; nikoli ju ne objavite v javnem klepetu, zahtevku za podporo ali na spletnem mestu."
+          ]]
+        ]],
+        ["preferences", "05", "Prikaz, pretakanje in upravljanje podatkov", "Delovanje aplikacije prilagodite svojemu omrežju in napravi, pri ponastavitvi pa nastavitve, lokalne podatke in varnostno kopijo iCloud obravnavajte ločeno.", [
+          ["Skrivanje kamer brez povezave", [
+            "Vklopite „Nastavitve“ → „Skrij kamere brez povezave“, da kamere brez signala izginejo z zavihka „V živo“ in s sten za prikaz v živo.",
+            "Na seznamu kanalov na zavihku „Naprave“ ostanejo zatemnjene, zato jih ne zamenjate z izbrisanimi kamerami, ko se signal vrne, pa se lahko znova prikažejo."
+          ]],
+          ["Ohranjanje povezave s kamerami ob menjavi strani", [
+            "Odprite „Nastavitve“ → „LiveView Mix“ in pod „Strani“ poiščite „Ohrani povezavo s kamerami ob menjavi strani“; to je najpomembnejše pri opremi, ki se dlje časa znova povezuje.",
+            "Ko je možnost vklopljena, kanali ostanejo povezani, tudi ko se pomaknete stran od njih, in se ob vrnitvi hitreje nadaljujejo. To nenehno porablja omrežje, energijo in sistemske vire, zato možnost pustite izklopljeno, če takojšnje nadaljevanje ni potrebno."
+          ]],
+          ["Izberite, kaj se odpre ob zagonu", [
+            "Odprite „Nastavitve“ → „Odpri ob zagonu“ v razdelku „LiveView Mix“.",
+            "„Nazadnje ogledano“ se vrne na prejšnjo izbiro, „LiveView Mix“ odpre skupno steno za vso opremo, „LiveView Mix na celem zaslonu“ odpre to steno na celem zaslonu, vnos posamezne opreme pa odpre to napravo.",
+            "Če je bila izbrana oprema izbrisana ali pogled LiveView Mix ni nastavljen, se aplikacija vrne na razpoložljiv zaslon, namesto da bi ohranila neveljaven cilj."
+          ]],
+          ["Paketi in prikazane kamere", [
+            "„Nastavitve“ → „Paketi“ prikazuje trenutni paket za kamere in snemalnike ter njegove omejitve uporabe.",
+            "Kadar niso odklenjeni vsi kanali, z „Izberi prikazane kamere“ dodelite razpoložljiva mesta. Ko je aplikacija v celoti odklenjena, seznam ni potreben.",
+            "Nakupi in „Obnovi nakupe“ sledijo stanju, ki ga posreduje Apple. Paket ne spremeni protokolov, dovoljenj ali funkcij predvajanja, ki jih zagotavlja kamera sama."
+          ]],
+          ["Ločena ponastavitev in izbris", [
+            "„Obnovi privzete nastavitve“ ponastavi jezik, kakovost, LiveView Mix in druge nastavitve, dodana oprema pa ostane.",
+            "„Izbriši vse podatke“ odstrani lokalno opremo, kamere in gesla v obesku za ključe. To ne vpliva na varnostne kopije iCloud ali naročnine.",
+            "„Izbriši varnostno kopijo iCloud“ odstrani šifrirano varnostno kopijo v oblaku, oprema in nastavitve v trenutni napravi pa ostanejo nespremenjene. Kadar iCloud ni na voljo, se lahko počisti samo lokalno prikazano stanje varnostne kopije.",
+            "Pred nepovratnim izbrisom preverite, ali se je iCloud sinhroniziral in ali je različico varnostne kopije mogoče obnoviti v ciljni napravi."
+          ]]
+        ]],
+        ["tv-control", "06", "Apple TV in upravljanje prek webhookov", "Steno za videonadzor prenesite na televizor in dodajte gumbe za upravljanje HTTP, ki se povezujejo s končnimi točkami, ki jih upravljate.", [
+          ["Videonadzor v napravi Apple TV", [
+            "Aplikacija za tvOS vključuje LiveView Mix, stene kamer posamezne opreme, celozaslonski ogled posamezne kamere in časovnico posnetkov, vse zasnovano za upravljanje s fokusom z upravljalnikom Siri Remote.",
+            "Goste postavitve so primerne za velik zaslon. Kamere in gumbe za webhook lahko izberete neposredno na steni, ne da bi prej zapustili trenutni pogled.",
+            "Pretakanje v živo, predvajanje, izbira glavnega/pomožnega pretoka in funkcije kanalov so še vedno odvisni od zmožnosti, ki jih sporoča oprema, dovoljenj računa, kodeka in razmer v omrežju."
+          ]],
+          ["Prenos nastavitev iz naprave iPhone ali iPad", [
+            "V napravi iPhone ali iPad odprite „Nastavitve“ → „Varnostno kopiraj v iCloud“, kot cilj izberite Apple TV in ustvarite namensko šifrirano varnostno kopijo, ne da bi nastavili kodo PIN.",
+            "V napravi Apple TV se prijavite z istim računom Apple Account, odprite „Obnovi iz iClouda“, izberite varnostno kopijo in jo neposredno obnovite.",
+            "Apple TV obnovi samo namensko varnostno kopijo za Apple TV. Nato preverite naslove opreme, kanale in pogled LiveView Mix glede na trenutno omrežje televizorja."
+          ]],
+          ["Ustvarite nadzorno ploščo z gumbi za webhook", [
+            "V nastavitvah pogleda LiveView Mix odprite „Razporedi steno“, dodajte prazno polje in za to polje pod „Vsebina“ izberite „Nadzorna plošča“.",
+            "Izberite predlogo „Dvoriščna vrata / roleta“, „Garažna vrata“, „Luč“, „Vratna ključavnica“, „Zavesa / žaluzija“, „Scena / avtomatizacija“, „Alarm / sirena“, „Ventilator“, „Pametna vtičnica“, „Klimatska naprava“ ali „Po meri“. Vsak gumb ima lahko svojo ikono, oznako in nastavitev „Potrditev pred sprožitvijo“; plošča ima svoj naslov in barvo.",
+            "Vsak gumb lahko pošlje GET, POST, PUT ali DELETE na končno točko HTTP ali HTTPS, ki jo določite, z neobveznimi glavami, Content-Type in telesom JSON."
+          ]],
+          ["Gumbi na steni za videonadzor", [
+            "V napravi iPhone ali iPad tapnite gumb. V napravi Apple TV premaknite fokus z upravljalnikom in pritisnite, da ga sprožite. Plošča na mestu prikaže pošiljanje, uspeh ali neuspeh.",
+            "Za odpiranje, odklepanje, alarm in druga dejanja, ki jih je težko razveljaviti, uporabite potrditev, končnim točkam pa dodelite samo ozko omejena dovoljenja, ki jih namen zahteva.",
+            "Podprte nastavitve nadzornih plošč se prenesejo s šifriranimi varnostnimi kopijami. Za končne točke webhook, poverilnice, omrežni dostop in varnost povezane fizične opreme ste odgovorni sami."
+          ]]
+        ], "Varnostno obvestilo: gumbi za webhook kličejo omrežne končne točke, ki jih določite. Aplikacija Cam Hub ne preverja varnosti končnih točk, nadzora dostopa, ključavnic, alarmov ali druge fizične opreme. Omejite dovoljenja končnih točk, zaščitite poverilnice in za dejanja, ki jih je težko razveljaviti, zahtevajte potrditev."]
+      ],
+      note: "Aplikacija Cam Hub ne zaobhaja nadzora dostopa do opreme. Funkcije se razlikujejo glede na model, vdelano programsko opremo, izvedbo protokola, dovoljenja računa, kodek in razmere v omrežju."
+    },
     ar: {
       documentTitle: "Cam Hub — الميزات",
       topline: "الميزات",
@@ -1132,6 +1293,22 @@
         ["Exemple", "Avec <span class='keep-phrase'>Cam Plus</span> et <span class='keep-phrase'>NVR Pro</span> : 4 enregistreurs avec tous leurs canaux et jusqu’à 16 caméras autonomes."]
       ],
       more: "Voir les règles complètes et d’autres exemples dans le manuel"
+    },
+    sl: {
+      title: "Paketi in omejitve",
+      summary: "Aplikacija Cam Hub vključuje brezplačni obseg. Paketi za kamere in paketi za snemalnike NVR zvišajo vsak svojo omejitev.",
+      caption: "Paketi in kaj odklene posamezni paket",
+      columns: ["Paket", "Obračun", "Kaj odklene"],
+      rows: [
+        ["Brezplačno", "Brez", "Največ 2 omogočena kanala v vsej aplikaciji (kanali samostojnih kamer in snemalnikov se štejejo skupaj) in največ 1 snemalnik."],
+        ["Paketi za kamere", "Letno", "Število samostojnih kamer, ki jih lahko omogočite, zvišajo na 8 (<span class='keep-phrase'>Cam Home</span>), 16 (<span class='keep-phrase'>Cam Plus</span>) ali neomejeno (<span class='keep-phrase'>Cam Max</span>)."],
+        ["Paketi za snemalnike NVR", "Mesečno", "Število snemalnikov zvišajo na 2 (<span class='keep-phrase'>NVR Starter</span>), 4 (<span class='keep-phrase'>NVR Pro</span>) ali neomejeno (<span class='keep-phrase'>NVR Max</span>), uporabljati pa je mogoče vse kanale teh snemalnikov."]
+      ],
+      notes: [
+        ["Dve neodvisni vrsti", "Paketi za kamere in paketi za snemalnike NVR so neodvisni drug od drugega in jih je mogoče kombinirati. Paket za kamere ne zviša dovoljenega števila snemalnikov, paket za snemalnike NVR pa ne zviša omejitve samostojnih kamer. Cene so prikazane v aplikaciji."],
+        ["Primer", "S paketoma <span class='keep-phrase'>Cam Plus</span> in <span class='keep-phrase'>NVR Pro</span>: 4 snemalniki z vsemi kanali in do 16 samostojnih kamer."]
+      ],
+      more: "Celotna pravila in več primerov najdete v priročniku"
     },
     ar: {
       title: "الخطط والحدود",
