@@ -336,7 +336,7 @@ const translations = {
       eyebrow: "TERMS OF USE",
       title: "使用條款",
       summary: "使用 Cam Hub 代表您同意以下條款，以及 Apple App Store 適用的授權與購買規則。",
-      meta: [["生效日期", "2026 年 10 月 29 日"], ["App", "Cam Hub"], ["聯絡信箱", `<a href="mailto:${shared.contactEmail}">${shared.contactEmail}</a>`]],
+      meta: [["生效日期", "2026 年 11 月 3 日"], ["App", "Cam Hub"], ["聯絡信箱", `<a href="mailto:${shared.contactEmail}">${shared.contactEmail}</a>`]],
       sections: [
         ["Apple 標準 EULA", ["Cam Hub 採用 Apple 標準終端使用者授權合約。若本條款與 Apple 適用的 EULA 或 App Store 規則衝突，應以 Apple 的適用條款為準。", `<a href="${shared.eulaUrl}">Apple Standard End User License Agreement</a>`]],
         ["用途與授權使用", ["Cam Hub 是相容攝影機與錄影主機的影像查看及管理工具。您只能連接自己擁有、管理或已獲明確授權存取的設備與網路。您有責任遵守所在地適用的隱私、監控、錄影、工作場所及財產相關法規。"]],
@@ -349,6 +349,7 @@ const translations = {
         ["隱私權", ["資料處理由獨立的隱私權政策說明。", `<a href="privacy.html">Cam Hub 隱私權政策</a>`]],
         ["第三方名稱與服務", ["Hikvision、Dahua、Synology、ONVIF 及其他相關名稱，均為其各自權利人的商標或識別名稱。Cam Hub 為獨立開發的應用程式。", "成功連線代表設備與 Cam Hub 使用的協定或功能在技術上相容，不代表與相關權利人存在隸屬、合作、贊助或官方認可關係。"]],
         ["YouTube 與 Twitch 直播", ["YouTube 與 Twitch 直播由這些服務提供，而非 Cam Hub 開發者，且可能隨時停止、變更或無法使用。在 Cam Hub 中加入或觀看這些直播，即表示您同意受下方連結的 YouTube 服務條款及 Twitch 服務條款約束。", "<a href=\"https://www.youtube.com/t/terms\">YouTube 服務條款</a>", "<a href=\"https://www.twitch.tv/p/legal/terms-of-service/\">Twitch 服務條款</a>"]],
+        ["開放資料來源", ["Cam Hub 中部分公開資訊來自開放資料，依其授權要求在此標示提供者。", "台灣政府開放資料：交通部高速公路局「交通資料庫」、交通部公路局、臺南市政府交通局。", `部分位置資料 © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap 貢獻者</a>，依開放資料庫授權（ODbL）提供。`, "上述資訊僅供參考，可能隨時中斷或停止提供，不保證正確性或可用性。Cam Hub 與上述提供者並無隸屬、合作或官方認可關係。"]],
         ["免責聲明與責任限制", ["Cam Hub 依「現狀」及「可提供狀態」提供，除 Apple 標準 EULA 所載免責外，不附任何形式之擔保。在法律允許的範圍內，開發者不對間接、附帶、特殊或衍生性損失負責，包括影像遺失、事件未被記錄、財物損失或營運中斷。本條款之任何內容均不排除或限制依法不得排除或限制的責任、不限制強制性消費者權利，亦不取代 Apple 條款賦予您的權利。"]],
         ["條款更新", ["當 App 功能、法規或商店要求變更時，我們可能更新本條款，並在本頁公布新的修訂日期。"]]
       ]

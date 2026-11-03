@@ -3,7 +3,7 @@ TERMS OF USE
 
 使用 Cam Hub 代表您同意以下條款，以及 Apple App Store 適用的授權與購買規則。
 
-生效日期：2026 年 10 月 29 日
+生效日期：2026 年 11 月 3 日
 App：Cam Hub
 聯絡信箱：app-dev@almx.cc
 
@@ -68,6 +68,16 @@ YouTube 與 Twitch 直播由這些服務提供，而非 Cam Hub 開發者，且�
 YouTube 服務條款: https://www.youtube.com/t/terms
 
 Twitch 服務條款: https://www.twitch.tv/p/legal/terms-of-service/
+
+開放資料來源
+
+Cam Hub 中部分公開資訊來自開放資料，依其授權要求在此標示提供者。
+
+台灣政府開放資料：交通部高速公路局「交通資料庫」、交通部公路局、臺南市政府交通局。
+
+部分位置資料 © OpenStreetMap 貢獻者: https://www.openstreetmap.org/copyright，依開放資料庫授權（ODbL）提供。
+
+上述資訊僅供參考，可能隨時中斷或停止提供，不保證正確性或可用性。Cam Hub 與上述提供者並無隸屬、合作或官方認可關係。
 
 免責聲明與責任限制
 
