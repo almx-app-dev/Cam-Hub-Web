@@ -767,7 +767,87 @@ languageSelect.innerHTML = languageChoices
   .map(([value, label]) => `<option value="${value}">${label}</option>`)
   .join("");
 
+// ---------------------------------------------------------------------------
+// One address per language (2026-11-04)
+// The plain address of a page is its English version and the default for everyone else; `?lang=<code>` names one of
+// the other languages. WHY: the page text is chosen in the browser, so a search engine used to see a single language per
+// page and the other ten could not be found. The <head> of every page lists the language addresses (hreflang links);
+// the code below makes the address and the page agree: it shows the language the address names, points the canonical
+// link at the address of that language (without referral or campaign parameters), keeps the language on the site's
+// own links, and gives the description tag the page's own summary in that language.
+// ---------------------------------------------------------------------------
+const siteOrigin = "https://cam-hub.almx.cc";
+const pagePaths = { home: "/", product: "/product.html", devices: "/devices.html", support: "/support.html", guide: "/guide.html", privacy: "/privacy.html", terms: "/terms.html" };
+// The site's own pages, as the links in the pages write them (relative, same folder).
+const sitePageLink = /^(?:\.\/)?(?:(?:index|product|devices|support|guide|privacy|terms)\.html)?$/;
+const staticDescription = document.querySelector('meta[name="description"]')?.content || "";
+
+// The language named by the address (`?lang=`, any letter case), or null when there is none or it is not offered.
+function addressLanguage() {
+  let requested = "";
+  try {
+    requested = (new URLSearchParams(location.search).get("lang") || "").toLowerCase();
+  } catch {
+    return null;
+  }
+  const choice = languageChoices.find(([code]) => code.toLowerCase() === requested);
+  return choice && translations[choice[0]] ? choice[0] : null;
+}
+
+// Set when the address names a language or the visitor picks one from the menu on this page. Only then do the site's
+// own links carry `?lang=`: a visitor whose browser chose the language keeps plain links.
+let explicitLanguage = addressLanguage();
+
+// The public address of this page in a language: English has the plain address, every other language `?lang=<code>`.
+function languageAddress(language) {
+  const path = pagePaths[page] || location.pathname;
+  return `${siteOrigin}${path}${language && language !== "en" ? `?lang=${language}` : ""}`;
+}
+
+// Text of a translation that may contain markup, for the description tag. A <template> keeps the markup inert.
+function plainText(html) {
+  const template = document.createElement("template");
+  template.innerHTML = html;
+  return template.content.textContent.replace(/\s+/g, " ").trim();
+}
+
+// Brings the canonical link, the description tag and the site's own links in line with the language on screen.
+function updateLanguageAddress(language, pageData) {
+  let canonical = document.querySelector('link[rel="canonical"]');
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.rel = "canonical";
+    document.head.append(canonical);
+  }
+  // Without a language in the address the plain (English) address is canonical, whatever the browser chose to show.
+  canonical.href = languageAddress(explicitLanguage);
+
+  // English keeps the hand-written description in the HTML; other languages use the page summary in their language.
+  const description = document.querySelector('meta[name="description"]');
+  if (description) {
+    const summary = language !== "en" && typeof pageData.summary === "string" ? plainText(pageData.summary) : "";
+    description.content = summary || staticDescription;
+  }
+
+  document.querySelectorAll("a[href]").forEach((link) => {
+    const href = link.getAttribute("href");
+    const hashAt = href.indexOf("#");
+    const hash = hashAt >= 0 ? href.slice(hashAt) : "";
+    const beforeHash = hashAt >= 0 ? href.slice(0, hashAt) : href;
+    const queryAt = beforeHash.indexOf("?");
+    const path = queryAt >= 0 ? beforeHash.slice(0, queryAt) : beforeHash;
+    // Hash-only links (chapters of the manual) and anything that is not one of the site's own pages stay as they are.
+    if ((!path && queryAt < 0) || !sitePageLink.test(path)) return;
+    const params = new URLSearchParams(queryAt >= 0 ? beforeHash.slice(queryAt + 1) : "");
+    if (explicitLanguage) params.set("lang", explicitLanguage);
+    else params.delete("lang");
+    const query = params.toString();
+    link.setAttribute("href", `${path}${query ? `?${query}` : ""}${hash}`);
+  });
+}
+
 function preferredLanguage() {
+  if (explicitLanguage) return explicitLanguage;
   const stored = localStorage.getItem("camHubSiteLanguage");
   const isManual = localStorage.getItem("camHubSiteLanguageManual") === "1";
   if (isManual && stored && translations[stored]) return stored;
@@ -1792,6 +1872,7 @@ function applyLanguage(language, persist = false) {
     if (rendered !== null) document.getElementById("content").innerHTML = rendered;
     applyPhraseWrapping(language);
     if (page === "guide") renderGuide(language, locale, pageData);
+    updateLanguageAddress(language, pageData);
     languageSelect.value = language;
     if (persist) {
       localStorage.setItem("camHubSiteLanguage", language);
@@ -1801,7 +1882,18 @@ function applyLanguage(language, persist = false) {
   }, 70);
 }
 
-languageSelect.addEventListener("change", (event) => applyLanguage(event.target.value, true));
+// A language picked from the menu also goes into the address (2026-11-04), so a copied link opens in that language.
+languageSelect.addEventListener("change", (event) => {
+  explicitLanguage = event.target.value;
+  try {
+    const address = new URL(location.href);
+    address.searchParams.set("lang", explicitLanguage);
+    history.replaceState(history.state, "", address);
+  } catch {
+    // The page still switches; only the address keeps its old language.
+  }
+  applyLanguage(event.target.value, true);
+});
 themeSelect.addEventListener("change", (event) => applyTheme(event.target.value));
 
 menuButton?.addEventListener("click", () => {

@@ -16,6 +16,12 @@ Open `http://localhost:8000`.
 
 Push the site to the repository's `main` branch. The included GitHub Pages workflow deploys the repository root, including the `.well-known` directory required for Universal Links.
 
+## Search engines
+
+Each page has one address per language: the plain address is the English version (and the default for visitors whose browser asks for another language), and `?lang=<code>` names one of the other ten (`zh-Hant`, `zh-Hans`, `ja`, `ko`, `de`, `es`, `es-MX`, `fr`, `sl`, `ar`). Every page lists all of its language addresses in `<head>` (`hreflang`, plus `x-default` for the plain address). `site.js` shows the language the address names, sets the canonical link to the address of the language on screen (without campaign or referral parameters), keeps `?lang=` on the site's own links when the address or the menu named the language, and fills the description tag with the page summary in that language (English keeps the hand-written one). Picking a language from the menu also puts it in the address.
+
+`sitemap.xml` lists every page in every language; `robots.txt` points to it. When a language or a page is added, add its `hreflang` line to every page and its addresses to `sitemap.xml`. The invite page (`i/`) is `noindex`.
+
 ## Website statistics
 
 Page views are counted with Cloudflare Web Analytics (cookie-free). The site token is `shared.cloudflareToken` at the top of `site.js`; an empty token turns statistics and the privacy-page notice off. The script is added by `loadWebAnalytics()` and is skipped on localhost, and for visitors whose browser sends Do Not Track or Global Privacy Control. The invite page (`i/index.html`) is deliberately left out: the transfer code travels in its URL fragment. The notice on the privacy page (`siteNoticeTitle` / `siteNoticeBody`, nine languages) is rendered by `site.js` and is not part of the legal text the app bundles.
