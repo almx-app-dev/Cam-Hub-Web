@@ -20,7 +20,9 @@ Push the site to the repository's `main` branch. The included GitHub Pages workf
 
 Each page has one address per language: the plain address is the English version (and the default for visitors whose browser asks for another language), and `?lang=<code>` names one of the other ten (`zh-Hant`, `zh-Hans`, `ja`, `ko`, `de`, `es`, `es-MX`, `fr`, `sl`, `ar`). Every page lists all of its language addresses in `<head>` (`hreflang`, plus `x-default` for the plain address). `site.js` shows the language the address names, sets the canonical link to the address of the language on screen (without campaign or referral parameters), keeps `?lang=` on the site's own links when the address or the menu named the language, and fills the description tag with the page summary in that language (English keeps the hand-written one). Picking a language from the menu also puts it in the address.
 
-`sitemap.xml` lists every page in every language; `robots.txt` points to it. When a language or a page is added, add its `hreflang` line to every page and its addresses to `sitemap.xml`. The invite page (`i/`) is `noindex`.
+The user manual has one address per chapter as well: `guide.html?chapter=<id>` (none for the first chapter), with the place inside the chapter after `#`, e.g. `guide.html?lang=de&chapter=devices#devices-add`. The contents list, the previous/next links and the manual's own cross-references use these addresses and open the chapter without reloading the page; older `#<id>` links still work (the chapter holding that id opens). The canonical link and the `hreflang` links follow the chapter on screen.
+
+`sitemap.xml` lists every page in every language, and every chapter of the manual in every language; `robots.txt` points to it. When a language, a page or a manual chapter is added, add its `hreflang` line to every page and its addresses to `sitemap.xml`. The invite page (`i/`) is `noindex`.
 
 ## Website statistics
 

@@ -798,10 +798,31 @@ function addressLanguage() {
 // own links carry `?lang=`: a visitor whose browser chose the language keeps plain links.
 let explicitLanguage = addressLanguage();
 
+// The manual's chapter named by the address (`?chapter=`), or "" (2026-11-04, see `guideChapterHref`).
+function addressChapter() {
+  try {
+    return new URLSearchParams(location.search).get("chapter") || "";
+  } catch {
+    return "";
+  }
+}
+
+// The query part of a site address: the language first (when there is one), then `rest` ([name, value] pairs) in
+// order, so the same place always gets the same address. "" when there is nothing to say.
+function addressQuery(language, rest = []) {
+  const params = new URLSearchParams();
+  if (language) params.set("lang", language);
+  rest.forEach(([name, value]) => params.append(name, value));
+  const query = params.toString();
+  return query ? `?${query}` : "";
+}
+
 // The public address of this page in a language: English has the plain address, every other language `?lang=<code>`.
+// On the manual it also names the chapter on screen (`guideAddressChapter`, 2026-11-04).
 function languageAddress(language) {
   const path = pagePaths[page] || location.pathname;
-  return `${siteOrigin}${path}${language && language !== "en" ? `?lang=${language}` : ""}`;
+  const chapter = page === "guide" ? guideAddressChapter() : "";
+  return `${siteOrigin}${path}${addressQuery(language && language !== "en" ? language : "", chapter ? [["chapter", chapter]] : [])}`;
 }
 
 // Text of a translation that may contain markup, for the description tag. A <template> keeps the markup inert.
@@ -811,8 +832,9 @@ function plainText(html) {
   return template.content.textContent.replace(/\s+/g, " ").trim();
 }
 
-// Brings the canonical link, the description tag and the site's own links in line with the language on screen.
-function updateLanguageAddress(language, pageData) {
+// Points the canonical link at the address of what is on screen. On the manual the language addresses (hreflang) name
+// the chapter on screen too (2026-11-04), so the languages of each chapter point at each other.
+function updateAddressTags() {
   let canonical = document.querySelector('link[rel="canonical"]');
   if (!canonical) {
     canonical = document.createElement("link");
@@ -821,6 +843,19 @@ function updateLanguageAddress(language, pageData) {
   }
   // Without a language in the address the plain (English) address is canonical, whatever the browser chose to show.
   canonical.href = languageAddress(explicitLanguage);
+  if (page !== "guide") return;
+  const chapter = guideAddressChapter();
+  document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((link) => {
+    if (!link.dataset.base) link.dataset.base = link.getAttribute("href");
+    const base = new URL(link.dataset.base);
+    const language = base.searchParams.get("lang") || "";
+    link.href = `${base.origin}${base.pathname}${addressQuery(language, chapter ? [["chapter", chapter]] : [])}`;
+  });
+}
+
+// Brings the canonical link, the description tag and the site's own links in line with the language on screen.
+function updateLanguageAddress(language, pageData) {
+  updateAddressTags();
 
   // English keeps the hand-written description in the HTML; other languages use the page summary in their language.
   const description = document.querySelector('meta[name="description"]');
@@ -838,11 +873,9 @@ function updateLanguageAddress(language, pageData) {
     const path = queryAt >= 0 ? beforeHash.slice(0, queryAt) : beforeHash;
     // Hash-only links (chapters of the manual) and anything that is not one of the site's own pages stay as they are.
     if ((!path && queryAt < 0) || !sitePageLink.test(path)) return;
-    const params = new URLSearchParams(queryAt >= 0 ? beforeHash.slice(queryAt + 1) : "");
-    if (explicitLanguage) params.set("lang", explicitLanguage);
-    else params.delete("lang");
-    const query = params.toString();
-    link.setAttribute("href", `${path}${query ? `?${query}` : ""}${hash}`);
+    // The language goes first, as in the canonical address (`addressQuery`).
+    const rest = [...new URLSearchParams(queryAt >= 0 ? beforeHash.slice(queryAt + 1) : "")].filter(([name]) => name !== "lang");
+    link.setAttribute("href", `${path}${addressQuery(explicitLanguage || "", rest)}${hash}`);
   });
 }
 
@@ -1125,6 +1158,41 @@ function guideHashId() {
   }
 }
 
+// One address per chapter (2026-11-04): a place in the manual is `guide.html?chapter=<chapter>#<place>` - the chapter
+// in the query (none for the first one), the place inside it after #. WHY: a search engine ignores everything after #,
+// so while the chapters had only #addresses it saw the first chapter of each language and nothing else. Older #-only
+// links still work: the # names the place, and the chapter that holds it opens.
+function guideChapterHref(chapterId, targetId = chapterId) {
+  const first = guide.data?.chapters[0]?.id;
+  const rest = chapterId && chapterId !== first ? [["chapter", chapterId]] : [];
+  const hash = targetId && targetId !== chapterId ? `#${encodeURIComponent(targetId)}` : "";
+  return `guide.html${addressQuery(explicitLanguage || "", rest)}${hash}`;
+}
+
+// The chapter the canonical address names: the one on screen, or before the manual has loaded the one the address
+// asks for; "" for the first chapter.
+function guideAddressChapter() {
+  if (!guide.chapter || !guide.data) return addressChapter();
+  return guide.chapter === guide.data.chapters[0] ? "" : guide.chapter.id;
+}
+
+// The place in the manual a link leads to - its #id, else its ?chapter=, else the first chapter - or "" when the link
+// leaves this page (another page, another language) or names nothing the manual has.
+function guideLinkTarget(link) {
+  let url;
+  let id = "";
+  try {
+    url = new URL(link.getAttribute("href"), location.href);
+    id = decodeURIComponent(url.hash.slice(1));
+  } catch {
+    return "";
+  }
+  const here = new URLSearchParams(location.search).get("lang") || "";
+  if (url.origin !== location.origin || url.pathname !== location.pathname || (url.searchParams.get("lang") || "") !== here) return "";
+  if (!id) id = url.searchParams.get("chapter") || guide.data.chapters[0].id;
+  return guide.data.byId.has(id) ? id : "";
+}
+
 function guideText(node) {
   return node ? (node.textContent || "").replace(/\s+/g, " ").trim() : "";
 }
@@ -1230,9 +1298,10 @@ function guideFetch(manualLanguage) {
   return guide.cache.get(manualLanguage);
 }
 
-function guideTocLink(id, title, badgeClass, badge) {
+// 2026-11-04: `href` - the place's own address (`guideChapterHref`); it was always `#<id>`.
+function guideTocLink(href, title, badgeClass, badge) {
   const link = document.createElement("a");
-  link.href = `#${id}`;
+  link.setAttribute("href", href);
   if (badge) {
     const mark = document.createElement("span");
     mark.className = badgeClass;
@@ -1254,14 +1323,14 @@ function guideBuildToc(chapters) {
   guide.active = null;
   chapters.forEach((chapter) => {
     const item = document.createElement("li");
-    const link = guideTocLink(chapter.id, chapter.title, "toc-num", chapter.num);
+    const link = guideTocLink(guideChapterHref(chapter.id), chapter.title, "toc-num", chapter.num);
     item.append(link);
     chapter.targets = [{ id: chapter.id, title: chapter.num ? `${chapter.num}. ${chapter.title}` : chapter.title, el: null, link, item }];
     if (chapter.subs.length) {
       const sub = document.createElement("ol");
       chapter.subs.forEach((entry) => {
         const subItem = document.createElement("li");
-        const subLink = guideTocLink(entry.id, entry.title, "toc-code", entry.code);
+        const subLink = guideTocLink(guideChapterHref(chapter.id, entry.id), entry.title, "toc-code", entry.code);
         subItem.append(subLink);
         sub.append(subItem);
         chapter.targets.push({ id: entry.id, title: entry.title, el: null, link: subLink, item });
@@ -1533,7 +1602,7 @@ function guidePagerLink(chapter, kind, label) {
   const link = document.createElement("a");
   link.className = `guide-${kind}`;
   link.rel = kind === "prev" ? "prev" : "next";
-  link.href = `#${chapter.id}`;
+  link.setAttribute("href", guideChapterHref(chapter.id)); // 2026-11-04: the chapter's own address
   const direction = document.createElement("span");
   direction.className = "pager-dir";
   direction.textContent = label;
@@ -1580,6 +1649,19 @@ function guideShow(chapter) {
   chapter.targets.forEach((target) => { target.el = document.getElementById(target.id); });
   guide.targets = chapter.targets.filter((target) => target.el);
   guide.media = guideMedia(article);
+  // 2026-11-04: cross-references inside the chapter get the address of the chapter they lead to, and the canonical
+  // and language addresses follow the chapter on screen.
+  article.querySelectorAll('a[href^="#"]').forEach((link) => {
+    let id = "";
+    try {
+      id = decodeURIComponent(link.getAttribute("href").slice(1));
+    } catch {
+      return;
+    }
+    const target = guide.data?.byId.get(id);
+    if (target) link.setAttribute("href", guideChapterHref(target.id, id));
+  });
+  updateAddressTags();
   guideRenderPager();
   guideMetrics();
   guideObserve();
@@ -1666,7 +1748,8 @@ async function guideLoad(manualLanguage) {
   if (first || !keepChapter) { // a first load, or a retry after a failure: the address says where to be
     id = guideHashId();
     scroll = data.byId.has(id);
-    if (!scroll) id = "";
+    // 2026-11-04: without a known #place, the chapter the address names (`?chapter=`) opens at its start.
+    if (!scroll) id = data.byId.has(addressChapter()) ? addressChapter() : "";
   } else if (keepSection && data.byId.has(keepSection)) {
     id = keepSection;
     scroll = true;
@@ -1773,20 +1856,18 @@ function initGuide() {
   document.addEventListener("click", (event) => {
     if (toc.classList.contains("is-open") && !side.contains(event.target)) guideSetToc(false);
     if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-    const link = event.target.closest?.("a[href^='#']");
+    // 2026-11-04: any link to a place in the manual (`guideLinkTarget`), not only #links - the contents and the pager
+    // now carry chapter addresses (`guideChapterHref`), which open here without loading the page again.
+    const link = event.target.closest?.("a[href]");
     if (!link || !layout.contains(link) || !guide.data) return;
-    let id = "";
-    try {
-      id = decodeURIComponent(link.getAttribute("href").slice(1));
-    } catch {
-      return;
-    }
-    if (!id || !guide.data.byId.has(id)) return;
+    const id = guideLinkTarget(link);
+    if (!id) return;
     event.preventDefault();
     guideSetToc(false);
-    if (location.hash !== `#${encodeURIComponent(id)}`) {
+    const url = new URL(link.getAttribute("href"), location.href);
+    if (`${location.search}${location.hash}` !== `${url.search}${url.hash}`) {
       rememberPosition();
-      history.pushState(null, "", `#${encodeURIComponent(id)}`);
+      history.pushState(null, "", `${location.pathname}${url.search}${url.hash}`);
     }
     guide.hash = location.hash;
     guideOpen(id, { smooth: true });
@@ -1796,7 +1877,7 @@ function initGuide() {
   const followAddress = (event) => {
     if (event.type === "hashchange" && location.hash === guide.hash) return;
     guide.hash = location.hash;
-    const id = guideHashId();
+    const id = guideHashId() || addressChapter(); // 2026-11-04: a chapter address without a #place
     if (id && !guide.data?.byId.has(id)) return;
     const y = event.type === "popstate" && event.state && typeof event.state.guideY === "number" ? event.state.guideY : null;
     guideOpen(id, { y });
@@ -1886,9 +1967,9 @@ function applyLanguage(language, persist = false) {
 languageSelect.addEventListener("change", (event) => {
   explicitLanguage = event.target.value;
   try {
-    const address = new URL(location.href);
-    address.searchParams.set("lang", explicitLanguage);
-    history.replaceState(history.state, "", address);
+    // The language first, as in every other address of the site (`addressQuery`).
+    const rest = [...new URLSearchParams(location.search)].filter(([name]) => name !== "lang");
+    history.replaceState(history.state, "", `${location.pathname}${addressQuery(explicitLanguage, rest)}${location.hash}`);
   } catch {
     // The page still switches; only the address keeps its old language.
   }
