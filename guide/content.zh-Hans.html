@@ -2985,9 +2985,9 @@
   <div class="table-wrap"><table>
     <thead><tr><th>选项</th><th>按下时的处理</th></tr></thead>
     <tbody>
-      <tr><td><span class="ui">自动</span>（默认）</td><td>公网地址直接从手表发送。家庭网络或 VPN 地址（例如 <code>192.168.x.x</code> 或以 <code>.local</code> 结尾的名称）先交给能够访问它的 iPhone 发送。</td></tr>
-      <tr><td><span class="ui">由手表直接发送</span></td><td>手表始终自己发送请求，使用其自身的 Wi-Fi 或蜂窝网络连接，或 iPhone 的连接。这是最快的方式，但手表可能无法访问家庭网络或 VPN 地址。</td></tr>
-      <tr><td><span class="ui">通过 iPhone</span></td><td>适用于只能通过 iPhone 上的 VPN 访问的服务器，尤其是其地址看起来像公网地址时：手表没有自己的 VPN。只有在 iPhone 不在附近时，手表才自己发送请求。</td></tr>
+      <tr><td><span class="ui">自动</span>（默认）</td><td>公网地址直接从手表发送。家庭网络地址（例如 <code>192.168.x.x</code> 或以 <code>.local</code> 结尾的名称）先交给能够访问它的 iPhone 发送。</td></tr>
+      <tr><td><span class="ui">由手表直接发送</span></td><td>手表始终自己发送请求，使用其自身的 Wi-Fi 或蜂窝网络连接，或 iPhone 的连接。这是最快的方式，但手表可能无法访问家庭网络地址。</td></tr>
+      <tr><td><span class="ui">通过 iPhone</span></td><td>适用于只能通过 iPhone 上的远程连接访问的服务器，尤其是其地址看起来像公网地址时：手表本身没有这类连接。只有在 iPhone 不在附近时，手表才自己发送请求。</td></tr>
     </tbody>
   </table></div>
   <ul>
@@ -3116,7 +3116,7 @@ Content-Type: application/json
       <tr><td>令牌和标识符的保存</td><td>标头的值在编辑界面中以明文显示，并以明文保存在本设备的 App 设置中。</td></tr>
       <tr><td>Apple Watch</td><td>到达手表的按钮带有完整的请求，包括 URL、标头和正文。它们会被复制到配对的 Apple Watch 并保存在那里，因此标头中的令牌也会保存在手表上。</td></tr>
       <tr><td>备份与共享代码</td><td>面板的设置会进入每一份 iCloud 备份，以及每一个开启<span class="ui">包含 App 设置</span>导出的共享代码。请像对待密码一样对待这样的代码，并用 PIN 或密码锁定，参见<a class="xref" href="#share-lock">“锁定代码”</a>。令牌一旦暴露，请在接收端吊销它并创建新的令牌。</td></tr>
-      <tr><td>外部网络</td><td>不建议把 Home Assistant 的端口 <code>8123</code> 直接开放到互联网。不在家时，请使用 VPN 或 Home Assistant 官方的远程访问方式，并把 URL 改为相应的地址。</td></tr>
+      <tr><td>外部网络</td><td>不建议把 Home Assistant 的端口 <code>8123</code> 直接开放到互联网。不在家时如何访问它（例如使用 Home Assistant 官方的远程访问方式）由您自行决定，并请把 URL 改为相应的地址。</td></tr>
       <tr><td>实体动作</td><td>对开门、解锁和鸣响警报的按钮，请开启<span class="ui">执行前先确认</span>。Cam Hub 对面板按钮没有其他锁定措施；任何能操作已解锁设备或手表的人都可以按下它们。</td></tr>
       <tr><td>名称解析</td><td>以 <code>.local</code> 结尾的名称在某些网络上可能无法解析。连接失败时，改为输入接收端的固定 IP 地址。</td></tr>
     </tbody>
@@ -4330,7 +4330,7 @@ Content-Type: application/json
       <tr><td>编辑界面中按钮下方显示<span class="ui">尚未设置端点</span></td><td>按钮的地址为空或无效。</td><td>在按钮的编辑界面中输入地址，参见<a class="xref" href="#webhook-button">“设置按钮”</a>。</td></tr>
       <tr><td>在排列界面点击面板时没有发送任何内容</td><td>这是设计如此。只有在墙上或标签页的预览中，才会发送请求。</td><td>在墙上按下按钮，参见<a class="xref" href="#webhook-use">“按下按钮并查看结果”</a>。</td></tr>
       <tr><td>请求发出之前出现确认对话框</td><td>该按钮开启了<span class="ui">执行前先确认</span>。</td><td>确认后发送，或在按钮的编辑界面中关闭该选项。</td></tr>
-      <tr><td>按钮在家里可用，在别处失败</td><td>地址指向家庭网络内部。没有 VPN 或其他路径时，请求无法从外部到达。</td><td>参见<a class="xref" href="#webhook-security">“安全说明”</a>。</td></tr>
+      <tr><td>按钮在家里可用，在别处失败</td><td>地址指向家庭网络内部。没有能到达家庭网络的路径时，请求无法从外部到达。</td><td>参见<a class="xref" href="#webhook-security">“安全说明”</a>。</td></tr>
       <tr><td>以 <code>.local</code> 结尾的地址失败</td><td>某些网络无法解析这类名称。</td><td>改为输入接收端的固定 IP 地址。</td></tr>
       <tr><td>按钮没有出现在 Apple Watch 上，或在手表上失败</td><td>手表只显示配对的 iPhone 上 LiveView Mix 墙中控制面板的按钮，而且只显示套餐允许的那些。</td><td>参见<a class="xref" href="#webhook-watch">“Apple Watch 上的按钮”</a>。</td></tr>
     </tbody>
@@ -4497,7 +4497,7 @@ Content-Type: application/json
   </details>
   <details class="faq">
     <summary>在家以外的地方可以观看摄像头吗？</summary>
-    <p>Cam Hub 直接连接设备，不使用自己的云服务。位于家庭网络之外的设备，只能通过可从互联网访问的地址，或通过回到家庭网络的 VPN 来连接。私人 VPN 更安全，因为它不会让设备暴露在公开的互联网上。</p>
+    <p>Cam Hub 直接连接设备，不使用自己的云服务。位于家庭网络之外的设备，只有在其地址能从外部到达时才能连接。如何从外部连接设备，由您自行决定。</p>
   </details>
   <details class="faq">
     <summary>录像可以保存或导出吗？</summary>
@@ -4689,8 +4689,8 @@ Content-Type: application/json
       <tr><td>单独的 ONVIF 用户</td><td>有些设备保存的 ONVIF 用户列表与网页界面的用户相互独立，管理员登录对 ONVIF 无效。请在该列表中创建一个用户。列表中有五个品牌在 RTSP 可用之前需要自己的摄像头账号或 ONVIF 账号：<span class="ui" data-ui="value">Axis</span>、<span class="ui" data-ui="value">TP-Link (Tapo / VIGI)</span>、<span class="ui" data-ui="value">ANNKE</span>、<span class="ui" data-ui="value">MOBOTIX</span> 和 <span class="ui" data-ui="value">2N</span>。</td></tr>
       <tr><td>账号权限</td><td>账号需要有观看实时视频的权限，回放则需要读取录像的权限。对 Synology，账号必须获准使用 Surveillance Station。Cam Hub 没有验证码输入框，因此要求两步验证的账号无法使用。</td></tr>
       <tr><td>设备时钟</td><td>ONVIF 登录带有设备的时间戳。时钟相差几分钟就会导致登录失败。请在设备上设置时间，例如使用网络校时。录像的时间是录像机的时钟时间。</td></tr>
-      <tr><td>同一网络，无云端</td><td>Cam Hub 直接连接设备的地址，没有云端中继。在家庭网络之外，只能通过可从互联网访问的地址，或通过 VPN 连接设备。只能通过厂商云端 App 使用的设备无法添加，Cam Hub 也不提供云账号登录。</td></tr>
-      <tr><td>本地网络之外的 Xiongmai 设备</td><td>自动检测只对本地地址使用 Xiongmai 的自有协议。位于端口转发或动态域名之后的 Xiongmai 设备，应使用 <span class="ui">Xiongmai (XMEye)</span> 添加。该协议不加密视频，而且许多设备对密码的保护很弱，因此使用 VPN 更安全。</td></tr>
+      <tr><td>同一网络，无云端</td><td>Cam Hub 直接连接设备的地址，没有云端中继。在家庭网络之外，只能通过能从外部到达的地址连接设备。只能通过厂商云端 App 使用的设备无法添加，Cam Hub 也不提供云账号登录。</td></tr>
+      <tr><td>本地网络之外的 Xiongmai 设备</td><td>自动检测只对本地地址使用 Xiongmai 的自有协议。位于端口转发或动态域名之后的 Xiongmai 设备，应使用 <span class="ui">Xiongmai (XMEye)</span> 添加。该协议不加密视频，而且许多设备对密码的保护很弱。</td></tr>
       <tr><td>视频格式</td><td>Cam Hub 播放 <code>H.264</code> 和 <code>H.265</code>，由手机硬件解码。不支持 <code>H.265</code> 硬件解码的手机，以及画面尺寸超出解码器上限的情况，都不会显示画面。<code>MJPEG</code> 仅作为其中一个系列实时观看的备选。</td></tr>
       <tr><td>声音</td><td>收听时播放 <code>G.711</code>（A-law 和 µ-law）和 <code>AAC-LC</code>；其他任何格式都没有声音。通过摄像头说话仅适用于提供 <code>G.711</code> 双向音频的单独 Hikvision 摄像头。</td></tr>
       <tr><td>被锁定的账号</td><td>多次输错后，设备可能把账号锁定，通常约 30 分钟。自动检测的端口检查不发送登录请求。品牌自有协议第一次拒绝登录时，Cam Hub 就会停止；通过 ONVIF 或 RTSP 时，在第二次被拒绝后停止。设备报告在被拒绝之后也不再发送登录请求。</td></tr>
@@ -4761,7 +4761,7 @@ Content-Type: application/json
   <ul>
     <li><span class="ui">支持</span>：Hikvision 和 Dahua（都标有<span class="ui">推荐</span>），然后是 Synology、<span class="ui">Xiongmai (XMEye)</span>、带有说明<span class="ui">局域网（LAN）连接</span>的 <span class="ui" data-ui="value">SoCatch (iWatch)</span>、<span class="ui">大多数 RTSP 摄像头</span>和<span class="ui">大多数 ONVIF 摄像头</span>。</li>
     <li><span class="ui">不支持</span>：<span class="ui" data-ui="value">SoCatch (iWatch)</span> 的广域网连接，因为它通过其厂商的远程访问服务运行，而该服务不向其他 App 开放。这类摄像头应在本地网络中添加。</li>
-    <li>Hikvision 条目有<span class="ui">如何让它不连接互联网</span>按钮，其中的说明涉及让摄像头不设置网关、阻止其访问互联网，以及通过私有 VPN 从家庭网络之外观看。在某些地区，该按钮或其中的某条说明不会显示。</li>
+    <li>Hikvision 条目有<span class="ui">如何让它不连接互联网</span>按钮，其中的说明涉及让摄像头不设置网关、阻止其访问互联网，以及这样一来只能在摄像头所在的网络中观看。在某些地区，该按钮不会显示。</li>
     <li>底部的说明声明：这些名称是其所有者的商标，Cam Hub 由开发者独立开发，连接成功只表示技术上兼容。</li>
     <li>表单从已指明设备品牌的扫描结果打开时，不显示<span class="ui">兼容性参考</span>入口。</li>
   </ul>

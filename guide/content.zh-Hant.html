@@ -3259,7 +3259,7 @@ Content-Type: application/json
       <tr><td>權杖與識別碼的保存</td><td>標頭的值在編輯畫面以明文顯示，並以明文保存在這台裝置的 App 設定中。</td></tr>
       <tr><td>Apple Watch</td><td>送到手錶的按鈕帶有完整的請求，包括網址、標頭與內容。這些按鈕會複製到配對的 Apple Watch 並保存在其中，因此標頭中的權杖也會儲存在手錶上。</td></tr>
       <tr><td>備份與分享代碼</td><td>面板的設定會進入每一份 iCloud 備份，以及開啟<span class="ui">包含 App 設定</span>的分享代碼。把這類代碼視同密碼，並加上 PIN 或密碼鎖定，見<a class="xref" href="#share-lock">「鎖定代碼」</a>。權杖外洩時，在接收端撤銷並重新建立。</td></tr>
-      <tr><td>外部網路</td><td>不建議把 Home Assistant 的連接埠 <code>8123</code> 直接開放到網際網路。外出時改用 VPN 或 Home Assistant 官方的遠端存取方式，再把網址改為對應的位址。</td></tr>
+      <tr><td>外部網路</td><td>不建議把 Home Assistant 的連接埠 <code>8123</code> 直接開放到網際網路。外出時要用什麼方式連線（例如 VPN 或 Home Assistant 官方的遠端存取方式），由您自行決定；再把網址改為對應的位址。</td></tr>
       <tr><td>實體動作</td><td>開門、解鎖與警報等按鈕務必開啟<span class="ui">執行前先確認</span>。Cam Hub 沒有針對面板按鈕的另外一道鎖；能操作已解鎖裝置或手錶的人，都能按下按鈕。</td></tr>
       <tr><td>名稱解析</td><td><code>.local</code> 名稱可能因網路環境而無法解析。出現連線失敗時，改填接收端的固定 IP 位址。</td></tr>
     </tbody>
@@ -4664,7 +4664,7 @@ Content-Type: application/json
   </details>
   <details class="faq">
     <summary>可以在家以外的地方觀看攝影機嗎？</summary>
-    <p>Cam Hub 直接連線到設備，沒有自己的雲端服務。位於家中網路以外的設備，只能透過可從網際網路連到的位址，或經由 VPN 連回家中網路來連線。私人 VPN 較為安全，因為它讓設備不必暴露在公開的網際網路上。</p>
+    <p>Cam Hub 直接連線到設備，沒有自己的雲端服務。位於家中網路以外的設備，只能透過可從網際網路連到的位址，或經由 VPN 連回家中網路來連線。要用什麼方式從外部連線，由您自行決定。</p>
   </details>
   <details class="faq">
     <summary>可以儲存或匯出錄影嗎？</summary>
@@ -4857,7 +4857,7 @@ Content-Type: application/json
       <tr><td>帳號權限</td><td>帳號須有觀看即時影像的權限；要回放時，須有讀取錄影的權限。Synology 的帳號須可使用 <span class="ui" data-ui="value">Surveillance Station</span>。Cam Hub 沒有輸入驗證碼的欄位，因此要求兩步驟驗證的帳號無法使用。</td></tr>
       <tr><td>設備的時鐘</td><td>ONVIF 登入帶有設備的時間戳記。時鐘相差數分鐘會使登入失敗。請在設備上設定時間，例如使用網路校時。錄影的時間是錄影主機的時鐘。</td></tr>
       <tr><td>同一個網路，沒有雲端</td><td>Cam Hub 直接連到設備的位址，沒有雲端中繼。在家中網路以外，只能透過可從網際網路連到的位址，或經由 VPN 連線。只能透過原廠雲端 App 使用的設備無法加入，Cam Hub 也不提供登入雲端帳號。</td></tr>
-      <tr><td>區域網路之外的 Xiongmai 設備</td><td>自動偵測只對區域網路內的位址使用 Xiongmai 的專用協定。位於轉送連接埠或動態網域名稱之後的 Xiongmai 設備，請以<span class="ui">Xiongmai (XMEye)</span>加入。此協定不會加密影像，許多設備對密碼的保護也很薄弱，經由 VPN 連線較為安全。</td></tr>
+      <tr><td>區域網路之外的 Xiongmai 設備</td><td>自動偵測只對區域網路內的位址使用 Xiongmai 的專用協定。位於轉送連接埠或動態網域名稱之後的 Xiongmai 設備，請以<span class="ui">Xiongmai (XMEye)</span>加入。此協定不會加密影像，許多設備對密碼的保護也很薄弱。要用什麼方式從外部連線（例如透過 VPN），由您自行決定。</td></tr>
       <tr><td>影像格式</td><td>Cam Hub 播放 <code>H.264</code> 與 <code>H.265</code>，由手機以硬體解碼。手機沒有 <code>H.265</code> 的硬體支援，或畫面尺寸超出解碼器的上限時，不會有畫面。<code>MJPEG</code> 只作為其中一個系列即時影像的備援。</td></tr>
       <tr><td>聲音</td><td>收聽時支援 <code>G.711</code>（<code>A-law</code> 與 <code>µ-law</code>）與 <code>AAC-LC</code>，其他格式沒有聲音。透過攝影機說話，只適用於提供 <code>G.711</code> 雙向語音的 Hikvision 獨立攝影機。</td></tr>
       <tr><td>帳號鎖定</td><td>輸入錯誤多次後，設備可能鎖定帳號，常見約 30 分鐘。自動偵測的連接埠檢查不會送出登入。Cam Hub 在品牌專用協定第一次拒絕登入時就停止，以 ONVIF 或 RTSP 連線時則在第二次被拒絕後停止；設備報告在被拒絕之後也不再送出登入。</td></tr>
@@ -4928,7 +4928,7 @@ Content-Type: application/json
   <ul>
     <li><span class="ui">支援</span>：Hikvision 與 Dahua，兩者都標示<span class="ui">建議使用</span>，接著是 Synology、<span class="ui">Xiongmai (XMEye)</span>、附註為區域網路連線的 <span class="ui" data-ui="value">SoCatch (iWatch)</span>、<span class="ui">多數 RTSP 攝影機</span>與<span class="ui">多數 ONVIF 攝影機</span>。</li>
     <li><span class="ui">不支援</span>：<span class="ui" data-ui="value">SoCatch (iWatch)</span> 的廣域網路連線，因為它經由原廠的遠端存取服務，而該服務不對其他 App 開放。這類攝影機請在區域網路上加入。</li>
-    <li>Hikvision 的項目有按鈕<span class="ui">如何讓它不連上網際網路</span>，內容是不給攝影機閘道、阻擋攝影機連上網際網路，以及在外時經由私人 VPN 觀看。在部分地區，這個按鈕或其中一項提示不會顯示。</li>
+    <li>Hikvision 的項目有按鈕<span class="ui">如何讓它不連上網際網路</span>，內容是不給攝影機閘道、阻擋攝影機連上網際網路，以及這樣做之後只能在攝影機所在的網路中觀看。在部分地區，這個按鈕不會顯示。</li>
     <li>頁面底部的說明指出：名稱為各權利人的商標，Cam Hub 為獨立開發，成功連線僅代表技術相容。</li>
     <li>從已辨識出品牌的掃描結果開啟的表單，不會顯示<span class="ui">相容性參考</span>項目。</li>
   </ul>
