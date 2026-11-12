@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="apple-itunes-app" content="app-id=6792057195"><meta name="color-scheme" content="dark light">
+  <meta name="description" content="لوحة التحكم مربّع على جدار LiveView Mix يضم صفاً من الأزرار. ويرسل كل زر عند الضغط عليه طلب HTTP إلى عنوان يختاره المستخدم، وهذا يناسب Webhook أو استدعاء خدمة…">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="Cam Hub"><meta property="og:image" content="https://cam-hub.almx.cc/assets/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+  <title>لوحات التحكم وWebhook — Cam Hub الدليل</title><link rel="icon" href="/assets/icon-48.png" sizes="48x48"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/icon-180.png"><link rel="stylesheet" href="/styles.css?v=20261112-1"><link rel="stylesheet" href="/guide.css?v=20261030-1">
+<meta property="og:description" content="لوحة التحكم مربّع على جدار LiveView Mix يضم صفاً من الأزرار. ويرسل كل زر عند الضغط عليه طلب HTTP إلى عنوان يختاره المستخدم، وهذا يناسب Webhook أو استدعاء خدمة…"><link rel="canonical" href="https://cam-hub.almx.cc/ar/guide/webhook.html"><link rel="alternate" hreflang="x-default" href="https://cam-hub.almx.cc/guide/webhook.html"><link rel="alternate" hreflang="en" href="https://cam-hub.almx.cc/guide/webhook.html"><link rel="alternate" hreflang="zh-Hant" href="https://cam-hub.almx.cc/zh-Hant/guide/webhook.html"><link rel="alternate" hreflang="zh-Hans" href="https://cam-hub.almx.cc/zh-Hans/guide/webhook.html"><link rel="alternate" hreflang="ja" href="https://cam-hub.almx.cc/ja/guide/webhook.html"><link rel="alternate" hreflang="ko" href="https://cam-hub.almx.cc/ko/guide/webhook.html"><link rel="alternate" hreflang="de" href="https://cam-hub.almx.cc/de/guide/webhook.html"><link rel="alternate" hreflang="es" href="https://cam-hub.almx.cc/es/guide/webhook.html"><link rel="alternate" hreflang="es-MX" href="https://cam-hub.almx.cc/es-MX/guide/webhook.html"><link rel="alternate" hreflang="fr" href="https://cam-hub.almx.cc/fr/guide/webhook.html"><link rel="alternate" hreflang="sl" href="https://cam-hub.almx.cc/sl/guide/webhook.html"><link rel="alternate" hreflang="ar" href="https://cam-hub.almx.cc/ar/guide/webhook.html"><meta property="og:url" content="https://cam-hub.almx.cc/ar/guide/webhook.html"><meta property="og:title" content="لوحات التحكم وWebhook — Cam Hub الدليل"></head>
+<body data-page="guide">
+  <header class="topbar" aria-label="Site header">
+    <a class="brand" href="/ar/"><img src="/assets/icon-96.png" alt="" width="42" height="42"><span><strong>Cam&nbsp;Hub</strong><small data-i18n="topline">دليل الاستخدام</small></span></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-controls" data-i18n-aria="menuLabel" aria-label="فتح القائمة"><span></span><span></span><span></span><span class="sr-only" data-i18n="menuLabel">فتح القائمة</span></button>
+    <div class="topbar-controls" id="site-controls"><nav class="navlinks" aria-label="Primary"><a href="/ar/" data-nav="home" data-i18n="navHome">الرئيسية</a><a href="/ar/product.html" data-nav="product" data-i18n="navProduct">الميزات</a><a href="/ar/guide.html" data-nav="guide" data-i18n="navGuide" aria-current="page">الدليل</a><a href="/ar/support.html" data-nav="support" data-i18n="navSupport">الدعم</a><a href="/ar/privacy.html" data-nav="privacy" data-i18n="navPrivacy">الخصوصية</a><a href="/ar/terms.html" data-nav="terms" data-i18n="navTerms">الشروط</a></nav><div class="pickers"><label><span class="sr-only" data-i18n="themeLabel">المظهر</span><select id="themeSelect" aria-label="Theme"><option value="auto" data-i18n="themeAuto" selected="">تلقائي</option><option value="light" data-i18n="themeLight">فاتح</option><option value="dark" data-i18n="themeDark">داكن</option></select></label><label><span class="sr-only" data-i18n="languageLabel">اللغة</span><select id="languageSelect" aria-label="Language"><option value="en">English</option><option value="zh-Hant">繁體中文</option><option value="zh-Hans">简体中文</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="de">Deutsch</option><option value="es">Español</option><option value="es-MX">Español (México)</option><option value="fr">Français</option><option value="sl">Slovenščina</option><option value="ar" selected="">العربية</option></select></label></div><a class="store-pill" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeShort">احصل على التطبيق</a></div>
+  </header>
+  <main class="inner-page guide" style="--g-topbar: 76px; --g-offset: 88px;">
+    <section class="page-hero"><div class="eyebrow" data-i18n="eyebrow">OPERATION MANUAL</div><h1 data-i18n="title">لوحات التحكم وWebhook</h1><p class="summary" data-i18n="summary">تعليمات خطوة بخطوة لإضافة الأجهزة وعرض الفيديو المباشر والمسجَّل وإنشاء جدران LiveView Mix والمشاركة والنسخ الاحتياطي.</p></section>
+    <p class="guide-notice" id="guide-notice" role="status" hidden=""></p>
+    <div id="guide-sentinel" aria-hidden="true"></div>
+    <div class="guide-layout has-toc" id="guide-layout" lang="ar" dir="rtl">
+      <aside class="guide-side" id="guide-side">
+        <button class="guide-toc-toggle" id="guide-toc-toggle" type="button" aria-expanded="false" aria-controls="guide-toc" lang="ar" dir="rtl"><span class="guide-toc-label" data-i18n="tocLabel">المحتويات</span><span class="guide-toc-current" id="guide-toc-current">9. لوحات التحكم وWebhook</span></button>
+        <nav class="guide-toc" id="guide-toc" aria-label="المحتويات"><ol><li><a href="/ar/guide.html"><span class="toc-num">1</span><span>البدء السريع</span></a><ol><li><a href="/ar/guide.html#start-prepare"><span>قبل البدء</span></a></li><li><a href="/ar/guide.html#start-path"><span>أقصر طريق إلى صورة مباشرة</span></a></li><li><a href="/ar/guide.html#start-demo"><span>تجربة التطبيق دون جهاز</span></a></li></ol></li><li><a href="/ar/guide/tour.html"><span class="toc-num">2</span><span>علامات التبويب والسلوك الأساسي</span></a><ol><li><a href="/ar/guide/tour.html#tour-tabs"><span>علامات التبويب في لمحة</span></a></li><li><a href="/ar/guide/tour.html#tour-launch"><span>ما يُفتح عند بدء التطبيق</span></a></li><li><a href="/ar/guide/tour.html#tour-look"><span>المظهر واللغة</span></a></li><li><a href="/ar/guide/tour.html#tour-rotate"><span>تدوير الجهاز</span></a></li><li><a href="/ar/guide/tour.html#tour-duo"><span>iPhone Duo</span></a></li><li><a href="/ar/guide/tour.html#tour-awake"><span>الشاشة والخلفية والإشعارات</span></a></li></ol></li><li><a href="/ar/guide/add.html"><span class="toc-num">3</span><span>إضافة جهاز</span></a><ol><li><a href="/ar/guide/add.html#add-form"><span>نموذج إضافة جهاز</span></a></li><li><a href="/ar/guide/add.html#add-auto"><span>الإضافة دون اختيار علامة تجارية</span></a></li><li><a href="/ar/guide/add.html#add-methods"><span>اختيار طريقة الاتصال</span></a></li><li><a href="/ar/guide/add.html#add-https"><span>إضافة جهاز عبر HTTPS</span></a></li><li><a href="/ar/guide/add.html#add-streams"><span>إضافة البث المباشر من YouTube وقنوات Twitch</span></a></li><li><a href="/ar/guide/add.html#add-failed"><span>عند فشل الإضافة: قائمة التحقق</span></a></li><li><a href="/ar/guide/add.html#add-report"><span>تقرير الجهاز (تجريبي)</span></a></li><li><a href="/ar/guide/add.html#add-scan"><span>العثور على الأجهزة بفحص الشبكة</span></a></li></ol></li><li><a href="/ar/guide/devices.html"><span class="toc-num">4</span><span>علامة التبويب «الأجهزة» والقنوات</span></a><ol><li><a href="/ar/guide/devices.html#devices-list"><span>قائمة الأجهزة</span></a></li><li><a href="/ar/guide/devices.html#devices-page"><span>صفحة الجهاز</span></a></li><li><a href="/ar/guide/devices.html#devices-credentials"><span>تغيير اسم المستخدم وكلمة المرور للجهاز</span></a></li><li><a href="/ar/guide/devices.html#devices-password-missing"><span>جهاز بلا كلمة مرور محفوظة</span></a></li><li><a href="/ar/guide/devices.html#devices-https"><span>HTTPS لجهاز محفوظ</span></a></li><li><a href="/ar/guide/devices.html#devices-health"><span>صحة القرص</span></a></li><li><a href="/ar/guide/devices.html#devices-streams"><span>بث YouTube وTwitch</span></a></li><li><a href="/ar/guide/devices.html#devices-states"><span>ما تعرضه الصورة المصغّرة</span></a></li><li><a href="/ar/guide/devices.html#devices-menu"><span>خيارات القناة (الضغط المطوّل)</span></a></li><li><a href="/ar/guide/devices.html#devices-plan"><span>حدود الخطة وتفعيل القنوات</span></a></li><li><a href="/ar/guide/devices.html#devices-choose"><span>اختيار الكاميرات التي تظهر</span></a></li><li><a href="/ar/guide/devices.html#devices-fullwall"><span>الجدار بملء الشاشة لجهاز</span></a></li><li><a href="/ar/guide/devices.html#devices-quality"><span>SD وHD في شاشات الأجهزة</span></a></li></ol></li><li><a href="/ar/guide/live.html"><span class="toc-num">5</span><span>علامة التبويب «مباشر» وجدار ملء الشاشة</span></a><ol><li><a href="/ar/guide/live.html#live-tab"><span>علامة التبويب «مباشر»</span></a></li><li><a href="/ar/guide/live.html#live-quality"><span>SD وHD على الجدار</span></a></li><li><a href="/ar/guide/live.html#live-wall"><span>جدار ملء الشاشة</span></a></li><li><a href="/ar/guide/live.html#live-hide"><span>إخفاء الكاميرات التي لا إشارة لها</span></a></li></ol></li><li><a href="/ar/guide/single.html"><span class="toc-num">6</span><span>عرض الكاميرا الواحدة</span></a><ol><li><a href="/ar/guide/single.html#single-open"><span>فتح العرض</span></a></li><li><a href="/ar/guide/single.html#single-screen"><span>أجزاء الشاشة</span></a></li><li><a href="/ar/guide/single.html#single-zoom"><span>التكبير والتحريك</span></a></li><li><a href="/ar/guide/single.html#single-controls"><span>اللقطة والصوت والجودة</span></a></li><li><a href="/ar/guide/single.html#single-clip"><span>تسجيل مقطع</span></a></li><li><a href="/ar/guide/single.html#single-talk"><span>التحدث باتجاهين</span></a></li><li><a href="/ar/guide/single.html#single-picture"><span>الأشرطة السوداء والتدوير والوضع الأفقي</span></a></li><li><a href="/ar/guide/single.html#single-ptz"><span>التحكم في PTZ: تحريك الكاميرا</span></a></li><li><a href="/ar/guide/single.html#single-window"><span>كاميرا في نافذة خاصة بها</span></a></li><li><a href="/ar/guide/single.html#single-duo"><span>العرض على iPhone Duo مطويّ</span></a></li><li><a href="/ar/guide/single.html#single-streams"><span>بث YouTube وTwitch</span></a></li><li><a href="/ar/guide/single.html#single-states"><span>حالات الاتصال والرسائل</span></a></li><li><a href="/ar/guide/single.html#single-limits"><span>ما هو غير متاح</span></a></li></ol></li><li><a href="/ar/guide/playback.html"><span class="toc-num">7</span><span>تشغيل التسجيلات والسرعة</span></a><ol><li><a href="/ar/guide/playback.html#playback-avail"><span>أين يتوفر التشغيل</span></a></li><li><a href="/ar/guide/playback.html#playback-day"><span>اختيار يوم</span></a></li><li><a href="/ar/guide/playback.html#playback-calendar"><span>تقويم التسجيلات</span></a></li><li><a href="/ar/guide/playback.html#playback-timeline"><span>استخدام الخط الزمني</span></a></li><li><a href="/ar/guide/playback.html#playback-list"><span>قائمة التسجيلات والبحث عن الأشخاص</span></a></li><li><a href="/ar/guide/playback.html#playback-playing"><span>أثناء تشغيل تسجيل</span></a></li><li><a href="/ar/guide/playback.html#playback-speed"><span>سرعة التشغيل</span></a></li><li><a href="/ar/guide/playback.html#playback-landscape"><span>التشغيل في الوضع الأفقي</span></a></li><li><a href="/ar/guide/playback.html#playback-limits"><span>ما هو غير متاح</span></a></li></ol></li><li><a href="/ar/guide/lvm.html"><span class="toc-num">8</span><span>LiveView Mix</span></a><ol><li><a href="/ar/guide/lvm.html#lvm-tab"><span>علامة التبويب LiveView Mix ومعاينتها</span></a></li><li><a href="/ar/guide/lvm.html#lvm-first"><span>بناء أول جدار من ست كاميرات</span></a></li><li><a href="/ar/guide/lvm.html#lvm-pick"><span>اختيار الكاميرات والجودة</span></a></li><li><a href="/ar/guide/lvm.html#lvm-layout"><span>تعديل التخطيط</span></a></li><li><a href="/ar/guide/lvm.html#lvm-custom"><span>رسم تخطيط مخصّص</span></a></li><li><a href="/ar/guide/lvm.html#lvm-special"><span>تخطيطات خاصة: مربّعات كبيرة وصغيرة على جدار واحد</span></a></li><li><a href="/ar/guide/lvm.html#lvm-arrange"><span>ترتيب الجدار ومربّعاته</span></a></li><li><a href="/ar/guide/lvm.html#lvm-move"><span>نقل مربّع إلى مربّع فارغ</span></a></li><li><a href="/ar/guide/lvm.html#lvm-slots"><span>ما يمكن أن يعرضه المربّع غير الكاميرا</span></a></li><li><a href="/ar/guide/lvm.html#lvm-watermark"><span>العلامة المائية</span></a></li><li><a href="/ar/guide/lvm.html#lvm-fit"><span>الأشرطة السوداء والفيديو حتى حواف الشاشة وزاوية الجهاز</span></a></li><li><a href="/ar/guide/lvm.html#lvm-pages"><span>الصفحة العمودية</span></a></li><li><a href="/ar/guide/lvm.html#lvm-canvases"><span>مساحتان على iPhone Duo</span></a></li><li><a href="/ar/guide/lvm.html#lvm-wall"><span>الجدار بملء الشاشة</span></a></li><li><a href="/ar/guide/lvm.html#lvm-closeup"><span>فتح كاميرا واحدة</span></a></li><li><a href="/ar/guide/lvm.html#lvm-streams"><span>بث YouTube وTwitch على الجدار</span></a></li><li><a href="/ar/guide/lvm.html#lvm-states"><span>عندما يعجز المربّع عن عرض كاميرا</span></a></li><li><a href="/ar/guide/lvm.html#lvm-limits"><span>أثر حدود الخطة في الجدار</span></a></li><li><a href="/ar/guide/lvm.html#lvm-settings"><span>LiveView Mix في الإعدادات</span></a></li><li><a href="/ar/guide/lvm.html#lvm-tv"><span>الفروق على Apple TV</span></a></li></ol></li><li class="is-current"><a href="/ar/guide/webhook.html" class="is-active" aria-current="location"><span class="toc-num">9</span><span>لوحات التحكم وWebhook</span></a><ol><li><a href="/ar/guide/webhook.html#webhook-what"><span>ما تفعله لوحة التحكم</span></a></li><li><a href="/ar/guide/webhook.html#webhook-add"><span>إضافة لوحة تحكم إلى الجدار</span></a></li><li><a href="/ar/guide/webhook.html#webhook-templates"><span>القوالب</span></a></li><li><a href="/ar/guide/webhook.html#webhook-fields"><span>إعدادات اللوحة</span></a></li><li><a href="/ar/guide/webhook.html#webhook-button"><span>إعداد زر</span></a></li><li><a href="/ar/guide/webhook.html#webhook-use"><span>الضغط على زر وقراءة النتيجة</span></a></li><li><a href="/ar/guide/webhook.html#webhook-wall"><span>كيف تبدو اللوحة على الجدار</span></a></li><li><a href="/ar/guide/webhook.html#webhook-watch"><span>الأزرار على Apple Watch</span></a></li><li><a href="/ar/guide/webhook.html#ha"><span>استخدام Home Assistant</span></a></li><li><a href="/ar/guide/webhook.html#webhook-security"><span>ملاحظات أمنية</span></a></li></ol></li><li><a href="/ar/guide/share.html"><span class="toc-num">10</span><span>المشاركة والنسخ الاحتياطي</span></a><ol><li><a href="/ar/guide/share.html#share-choose"><span>المقارنة بين الطريقتين</span></a></li><li><a href="/ar/guide/share.html#share-export"><span>تصدير الكاميرات (إنشاء رمز)</span></a></li><li><a href="/ar/guide/share.html#share-lock"><span>قفل الرمز</span></a></li><li><a href="/ar/guide/share.html#share-import"><span>استيراد الكاميرات</span></a></li><li><a href="/ar/guide/share.html#share-contents"><span>ما تحتويه النسخ الاحتياطية والرموز</span></a></li><li><a href="/ar/guide/share.html#share-icloud"><span>النسخ الاحتياطي إلى iCloud</span></a></li><li><a href="/ar/guide/share.html#share-versions"><span>عدة نسخ احتياطية مسمّاة: إعادة التسمية والحذف</span></a></li><li><a href="/ar/guide/share.html#share-restore"><span>الاستعادة من iCloud</span></a></li><li><a href="/ar/guide/share.html#share-delete"><span>حذف كل نسخ iCloud الاحتياطية</span></a></li><li><a href="/ar/guide/share.html#share-newphone"><span>نقل الأجهزة والجدران إلى هاتف جديد</span></a></li><li><a href="/ar/guide/share.html#share-appletv"><span>نقل الإعداد إلى Apple TV</span></a></li></ol></li><li><a href="/ar/guide/plans.html"><span class="toc-num">11</span><span>الخطط والحدود</span></a><ol><li><a href="/ar/guide/plans.html#plans-tiers"><span>الحد المتاح في كل خطة</span></a></li><li><a href="/ar/guide/plans.html#plans-stack"><span>كيف تتكامل مجموعتا الخطط</span></a></li><li><a href="/ar/guide/plans.html#plans-count"><span>ما يستهلك الحد</span></a></li><li><a href="/ar/guide/plans.html#plans-examples"><span>أمثلة على التوليفات</span></a></li><li><a href="/ar/guide/plans.html#plans-choose"><span>اختيار الكاميرات التي تظهر</span></a></li><li><a href="/ar/guide/plans.html#plans-subscribe"><span>الاشتراك واستعادة المشتريات واسترداد رمز</span></a></li><li><a href="/ar/guide/plans.html#plans-lapse"><span>عند انتهاء الخطة أو تخفيضها</span></a></li></ol></li><li><a href="/ar/guide/tools.html"><span class="toc-num">12</span><span>علامة التبويب «الأدوات»</span></a><ol><li><a href="/ar/guide/tools.html#tools-overview"><span>ما تضمه علامة التبويب «الأدوات»</span></a></li><li><a href="/ar/guide/tools.html#tools-speedometer"><span>عداد السرعة والبوصلة</span></a></li></ol></li><li><a href="/ar/guide/settings.html"><span class="toc-num">13</span><span>الإعدادات</span></a><ol><li><a href="/ar/guide/settings.html#settings-overview"><span>أقسام علامة التبويب «الإعدادات»</span></a></li><li><a href="/ar/guide/settings.html#settings-subscription"><span>الاشتراك</span></a></li><li><a href="/ar/guide/settings.html#settings-quality"><span>الجودة الافتراضية</span></a></li><li><a href="/ar/guide/settings.html#settings-picture"><span>الصورة: الأشرطة السوداء والعرض من حافة إلى حافة</span></a></li><li><a href="/ar/guide/settings.html#settings-hide"><span>إخفاء الكاميرات غير المتصلة</span></a></li><li><a href="/ar/guide/settings.html#settings-lvm"><span>LiveView Mix وصفحاته والفتح عند التشغيل</span></a></li><li><a href="/ar/guide/settings.html#settings-backup"><span>النسخ الاحتياطي ومشاركة الكاميرات</span></a></li><li><a href="/ar/guide/settings.html#settings-language"><span>اللغة</span></a></li><li><a href="/ar/guide/settings.html#settings-reset"><span>إعادة التعيين: الإعدادات الافتراضية وحذف كل البيانات وحذف نسخة iCloud الاحتياطية</span></a></li><li><a href="/ar/guide/settings.html#settings-legal"><span>شروط الاستخدام وسياسة الخصوصية</span></a></li><li><a href="/ar/guide/settings.html#settings-about"><span>حول التطبيق، ودليل المستخدم، وما لا تتضمنه الإعدادات</span></a></li></ol></li><li><a href="/ar/guide/appletv.html"><span class="toc-num">14</span><span>Apple TV</span></a><ol><li><a href="/ar/guide/appletv.html#appletv-prepare"><span>الإعداد على iPhone أو iPad أولاً</span></a></li><li><a href="/ar/guide/appletv.html#appletv-bring"><span>نقل الإعداد إلى Apple TV</span></a></li><li><a href="/ar/guide/appletv.html#appletv-differs"><span>ما يختلف على Apple TV</span></a></li></ol></li><li><a href="/ar/guide/trouble.html"><span class="toc-num">15</span><span>استكشاف الأخطاء وإصلاحها</span></a><ol><li><a href="/ar/guide/trouble.html#trouble-start"><span>من أين تبدأ</span></a></li><li><a href="/ar/guide/trouble.html#trouble-states"><span>ماذا تقول الشاشات الفارغة</span></a></li><li><a href="/ar/guide/trouble.html#trouble-add"><span>أُضيف الجهاز لكن لا يمكن الوصول إليه</span></a></li><li><a href="/ar/guide/trouble.html#trouble-live"><span>البث المباشر</span></a></li><li><a href="/ar/guide/trouble.html#trouble-playback"><span>تشغيل التسجيلات</span></a></li><li><a href="/ar/guide/trouble.html#trouble-lvm"><span>LiveView Mix</span></a></li><li><a href="/ar/guide/trouble.html#trouble-streams"><span>YouTube وTwitch</span></a></li><li><a href="/ar/guide/trouble.html#trouble-panels"><span>لوحات التحكم وWebhook</span></a></li><li><a href="/ar/guide/trouble.html#trouble-health"><span>صحة القرص</span></a></li><li><a href="/ar/guide/trouble.html#trouble-share"><span>المشاركة والاستيراد ونسخة iCloud الاحتياطية</span></a></li><li><a href="/ar/guide/trouble.html#trouble-plans"><span>الخطط والمشتريات</span></a></li><li><a href="/ar/guide/trouble.html#trouble-errors"><span>جمل أخطاء أخرى</span></a></li><li><a href="/ar/guide/trouble.html#trouble-permissions"><span>طلبات الأذونات ومربعات حوار النظام</span></a></li><li><a href="/ar/guide/trouble.html#trouble-contact"><span>التواصل مع المطوّر</span></a></li><li><a href="/ar/guide/trouble.html#trouble-faq"><span>أسئلة وأجوبة</span></a></li></ol></li><li><a href="/ar/guide/brands.html"><span class="toc-num">16</span><span>العلامات التجارية المدعومة وطرق الاتصال</span></a><ol><li><a href="/ar/guide/brands.html#brands-methods"><span>طرق الاتصال</span></a></li><li><a href="/ar/guide/brands.html#brands-matrix"><span>ما يعمل مع أي طريقة</span></a></li><li><a href="/ar/guide/brands.html#brands-profiles"><span>العلامات التجارية في القائمة</span></a></li><li><a href="/ar/guide/brands.html#brands-requirements"><span>المتطلبات والحدود</span></a></li><li><a href="/ar/guide/brands.html#brands-recorders"><span>الكاميرات والمسجّلات</span></a></li><li><a href="/ar/guide/brands.html#brands-prepare"><span>ما يجب تجهيزه على الجهاز</span></a></li><li><a href="/ar/guide/brands.html#brands-activate"><span>تنشيط جهاز جديد</span></a></li><li><a href="/ar/guide/brands.html#brands-compat"><span>مرجع التوافق في التطبيق</span></a></li></ol></li><li><a href="/ar/guide/about.html" class="no-num"><span>حول هذا الدليل</span></a><ol><li><a href="/ar/guide/about.html#about-scope"><span>النطاق</span></a></li><li><a href="/ar/guide/about.html#about-conventions"><span>الاصطلاحات</span></a></li><li><a href="/ar/guide/about.html#about-help"><span>أين تجد المساعدة</span></a></li></ol></li></ol></nav>
+      </aside>
+      <article class="guide-article" id="guide-content"><section class="chapter" id="webhook">
+  <h2><span class="num">9</span>لوحات التحكم وWebhook</h2>
+  <p class="lead">لوحة التحكم مربّع على جدار LiveView Mix يضم صفاً من الأزرار. ويرسل كل زر عند الضغط عليه طلب HTTP إلى عنوان يختاره المستخدم، وهذا يناسب Webhook أو استدعاء خدمة في Home Assistant، أو لوحة مرحّلات، أو Node-RED، أو أي خدمة HTTP أخرى يستطيع الهاتف الوصول إليها. ويمكن أيضاً الضغط على الأزرار نفسها على Apple Watch.</p>
+
+  <h3 id="webhook-what">ما تفعله لوحة التحكم</h3>
+  <p>تتكون لوحة التحكم من عنوان وعدد من الأزرار وساعة اختيارية. يخزّن كل زر طلب HTTP كاملاً: الطريقة وعنوان URL والترويسات والمحتوى. عند الضغط على زر، يذهب الطلب مباشرة من iPhone أو iPad أو Apple TV هذا إلى العنوان، دون المرور بأي خادم لـ Cam Hub. أما الزر الذي يُضغط على Apple Watch فترسله الساعة نفسها أو يُرسَل عبر iPhone المقترن بها؛ راجع <a class="xref" href="/ar/guide/webhook.html#webhook-watch">«الأزرار على Apple Watch»</a>.</p>
+  <ul>
+    <li>يقتصر Cam Hub على إرسال الطلب. وعنوان URL والمحتوى من اختيار المستخدم بالكامل. لا يتحقق Cam Hub من نوع الخدمة التي ترد، وليس وحدة تحكم مخصصة لأي منتج من منتجات المنزل الذكي.</li>
+    <li>لا يُرسل الطلب إلا عند الضغط على زر على الجدار أو على الساعة. والضغط على لوحة في شاشة الترتيب يفتح محررها ولا يرسل شيئاً.</li>
+    <li>تُنشأ لوحات التحكم وتُحرَّر على iPhone وiPad. ويعرض Apple TV لوحات الصفحة الأفقية ويشغّلها؛ راجع <a class="xref" href="/ar/guide/webhook.html#webhook-wall">«كيف تبدو اللوحة على الجدار»</a>. ويعرض Apple Watch أزرارها؛ راجع <a class="xref" href="/ar/guide/webhook.html#webhook-watch">«الأزرار على Apple Watch»</a>.</li>
+  </ul>
+  <div class="callout warn">
+    <strong class="t">لوحة التحكم تستخدم كاميرا واحدة من حد الكاميرات</strong>
+    <p>تُحتسب كل لوحة تحكم كاميرا واحدة ضمن حد الكاميرات في الخطة، مما تتركه الكاميرات من ذلك الحد، لذا لا تأخذ لوحة تحكم صورة كاميرا أبداً. عندما لا يكفي الحد، تُقفل اللوحة وتصبح أزرارها غير متاحة، على الجدار وعلى الساعة. للاطلاع على التفاصيل، راجع <a class="xref" href="/ar/guide/lvm.html#lvm-limits">«أثر حدود الخطة في الجدار»</a> و<a class="xref" href="/ar/guide/plans.html#plans-count">«ما يستهلك الحد»</a>.</p>
+  </div>
+
+  <h3 id="webhook-add">إضافة لوحة تحكم إلى الجدار</h3>
+  <p>المتطلب المسبق: أُعدّ LiveView Mix ويضم الجدار كاميرا واحدة على الأقل؛ وللإعداد، راجع <a class="xref" href="/ar/guide/lvm.html#lvm-first">«بناء أول جدار من ست كاميرات»</a>. ما دام لم يُعدّ، يمكن أيضاً الوصول إلى <span class="ui">ترتيب الجدار</span> عبر <span class="path"><span class="ui">الإعدادات</span> › <span class="ui">LiveView Mix</span></span> بمجرد إضافة جهاز. ويمكن وضع لوحة التحكم على الصفحة الأفقية أو على الصفحة العمودية أو على أيٍّ من مساحتَي iPhone Duo؛ والخطوات هي نفسها.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>اضغط على علامة التبويب <span class="ui">LiveView Mix</span> أسفل الشاشة.</p>
+      <p class="check"><b class="check-label">التحقق:</b> تعرض الشاشة جدار المعاينة، مع ثلاثة أزرار في الزاوية العلوية اليسرى.</p>
+    </li>
+    <li class="step">
+      <p>اضغط على الزر <span class="ui">تعديل التخطيط</span>، وهو الثالث من الأزرار الثلاثة الموجودة في الزاوية العلوية اليسرى.</p>
+      <p class="check"><b class="check-label">التحقق:</b> تُفتح صفحة <span class="ui">تعديل التخطيط</span>.</p>
+    </li>
+    <li class="step">
+      <p>اضغط على <span class="ui">ترتيب الجدار</span>.</p>
+      <p class="check"><b class="check-label">التحقق:</b> تُفتح صفحة <span class="ui">ترتيب</span>: منطقة الترتيب الخاصة بالجدار في الأعلى، وتسرد قائمة <span class="ui">الترتيب</span> تحتها كل مربّع مملوء تحت رقمه.</p>
+      <figure class="phone"><img src="/guide/img/lvm-arrange-full.jpg" alt="صفحة «ترتيب»: منطقة ترتيب الجدار في الأعلى مع لوحة تحكم في المربّع 9 وساعة في المربّع 10، وتحتها قائمة المربّعات المملوءة" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-arrange-full.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>صفحة «ترتيب»</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>اضغط على مربّع غير مستخدم في منطقة الترتيب، يظهر بإطار متقطع وعلامة +. وعندما تكون المربّعات غير المستخدمة في صفحة أخرى من صفحات الجدار، استخدم أولاً الأسهم تحت منطقة الترتيب أو اسحب جانبياً.</p>
+      <p class="check"><b class="check-label">التحقق:</b> تظهر قائمة عنوانها رقم المربّع، مثل <span class="ui" data-ui="value">الخانة 9</span>.</p>
+    </li>
+    <li class="step">
+      <p>اضغط على <span class="ui">صورة أو لوحة تحكم أو ساعة أو تسمية…</span>.</p>
+      <p class="check"><b class="check-label">التحقق:</b> يُفتح محرر المربّع من أسفل الشاشة، وعنوانه <span class="ui" data-ui="value">الخانة 9</span>. والصف الأول هو <span class="ui">المحتوى المعروض</span>، وقيمته الحالية <span class="ui">فارغ</span>.</p>
+    </li>
+    <li class="step">
+      <p>اضغط على <span class="ui">المحتوى المعروض</span> واختر <span class="ui">لوحة تحكم</span> من القائمة.</p>
+      <p class="check"><b class="check-label">التحقق:</b> تعرض الصفحة الأقسام الثلاثة <span class="ui">قالب</span> و<span class="ui">لوحة</span> و<span class="ui">الأزرار</span>. والقالب هو <span class="ui">بوابة / مصراع</span>، وعنوان اللوحة <span class="ui">بوابة</span> (بلغة التطبيق)، ويضم قسم الأزرار ثلاثة أزرار، تحت كل منها <span class="ui">لم تُحدَّد نقطة نهاية</span> باللون البرتقالي.</p>
+    </li>
+    <li class="step">
+      <p>اضغط على <span class="ui">قالب</span> واختر أقرب نوع.</p>
+      <p class="check"><b class="check-label">التحقق:</b> يُستبدل قسم الأزرار بالأزرار الافتراضية لذلك القالب. للاطلاع على محتوى القوالب، راجع <a class="xref" href="/ar/guide/webhook.html#webhook-templates">«القوالب»</a>.</p>
+    </li>
+    <li class="step">
+      <p>في القسم <span class="ui">لوحة</span>، أدخل اسم اللوحة في الحقل <span class="ui">العنوان</span>.</p>
+      <p class="check"><b class="check-label">التحقق:</b> يعرض الحقل الاسم، الذي سيظهر لاحقاً فوق أزرار اللوحة.</p>
+    </li>
+    <li class="step">
+      <p>اختياري: اضغط على <span class="ui">اللون</span> واختر لون الإطار والأزرار.</p>
+      <p class="check"><b class="check-label">التحقق:</b> تعرض أيقونة اللون اللون المختار. والافتراضي هو السماوي.</p>
+    </li>
+    <li class="step">
+      <p>اختياري: فعّل <span class="ui">إظهار الوقت</span>.</p>
+      <p class="check"><b class="check-label">التحقق:</b> تظهر أربعة مفاتيح: <span class="ui">الثواني</span> و<span class="ui">التاريخ</span> و<span class="ui">يوم الأسبوع</span> و<span class="ui">نظام 24 ساعة</span>. وتُعرض الساعة في المساحة الواقعة تحت الأزرار.</p>
+    </li>
+    <li class="step">
+      <p>اضبط عنوان URL ومحتوى كل زر كما هو موضح في <a class="xref" href="/ar/guide/webhook.html#webhook-button">«إعداد زر»</a>.</p>
+      <p class="check"><b class="check-label">التحقق:</b> يعرض كل صف في قسم الأزرار اسم مضيف عنوان URL تحت تسميته، بدلاً من <span class="ui">لم تُحدَّد نقطة نهاية</span>.</p>
+    </li>
+    <li class="step">
+      <p>اضغط على <span class="ui">تم</span> في الزاوية العلوية اليسرى من محرر المربّع.</p>
+      <p class="check"><b class="check-label">التحقق:</b> تعود الشاشة إلى صفحة <span class="ui">ترتيب</span>، ويعرض المربّع في منطقة الترتيب اللوحة كما تظهر على الجدار.</p>
+    </li>
+    <li class="step">
+      <p>اضغط على <span class="ui">تم</span> في الزاوية العلوية اليسرى من صفحة <span class="ui">ترتيب</span>.</p>
+      <p class="check"><b class="check-label">التحقق:</b> تعود الشاشة إلى صفحة <span class="ui">تعديل التخطيط</span>.</p>
+    </li>
+    <li class="step">
+      <p>اضغط على <span class="ui">تم</span> في الزاوية العلوية اليسرى من صفحة <span class="ui">تعديل التخطيط</span>.</p>
+      <p class="check"><b class="check-label">التحقق:</b> تعود الشاشة إلى علامة التبويب LiveView Mix، ويعرض جدار المعاينة لوحة التحكم الجديدة.</p>
+    </li>
+  </ol>
+  <div class="shots pair">
+    <figure class="phone"><img src="/guide/img/lvm-slot-kinds.jpg" alt="قائمة «المحتوى المعروض» في محرر المربّع: فارغ وصورة ولوحة تحكم والساعة وتسمية" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-slot-kinds.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>قائمة «المحتوى المعروض»</figcaption></figure>
+    <figure class="phone"><img src="/guide/img/lvm-control-panel.jpg" alt="إعدادات لوحة تحكم: القالب واللوحة وقائمة الأزرار، وتحت كل زر «لم تُحدَّد نقطة نهاية»" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-control-panel.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>إعدادات لوحة تحكم</figcaption></figure>
+  </div>
+  <ul>
+    <li>عندما تكون كل مربّعات التخطيط مملوءة، لا تعرض منطقة الترتيب أي مربّع غير مستخدم. اختر أولاً تخطيطاً بمربّعات أكثر في صف التخطيطات أعلى صفحة <span class="ui">ترتيب</span>، أو أفرِغ مربّعاً؛ راجع <a class="xref" href="/ar/guide/lvm.html#lvm-arrange">«ترتيب الجدار ومربّعاته»</a>.</li>
+    <li>يمكن نسخ لوحة موجودة أصلاً في الصفحة الأخرى بدلاً من بنائها من جديد؛ راجع <a class="xref" href="/ar/guide/lvm.html#lvm-pages">«الصفحة العمودية»</a>. ويمكن نقل لوحة موجودة في صفحة أخرى من صفحات الجدار إلى مربّع فارغ؛ راجع <a class="xref" href="/ar/guide/lvm.html#lvm-move">«نقل مربّع إلى مربّع فارغ»</a>.</li>
+    <li>يعيد الضغط على <span class="ui">إلغاء</span> في الزاوية العلوية اليمنى من محرر المربّع الجدار كله إلى الحالة التي كان عليها عند فتح المحرر، بما في ذلك كل تغيير في الأزرار.</li>
+    <li>تغيير <span class="ui">المحتوى المعروض</span> إلى عنصر آخر يمسح عنوان اللوحة وكل أزرارها. ولإزالة اللوحة، اضبط <span class="ui">المحتوى المعروض</span> على <span class="ui">فارغ</span>، أو اسحب صفها نحو اليمين في قائمة <span class="ui">الترتيب</span> في صفحة <span class="ui">ترتيب</span> واضغط على <span class="ui" data-ui="system">حذف</span>. وفي الحالتين يصبح المربّع فارغاً ولا يتحرك أي مربّع آخر.</li>
+    <li>وبالنسبة إلى مربّعات الصور والساعات والتسميات، راجع <a class="xref" href="/ar/guide/lvm.html#lvm-slots">«ما يمكن أن يعرضه المربّع غير الكاميرا»</a>.</li>
+    <li>عند الوصول إلى <span class="ui">ترتيب الجدار</span> عبر <span class="path"><span class="ui">الإعدادات</span> › <span class="ui">LiveView Mix</span></span>، يكون الإجراء اللاحق هو نفسه.</li>
+  </ul>
+
+  <h3 id="webhook-templates">القوالب</h3>
+  <p>تقدّم القائمة <span class="ui">قالب</span> أحد عشر قالباً. يحدد القالب فقط العنوان الافتراضي وعدد الأزرار وأيقوناتها والإعداد الابتدائي للخيار <span class="ui">التأكيد قبل التنفيذ</span>. لا يحتوي أي قالب على عنوان URL؛ ويحتاج كل زر إلى عنوان URL خاص به.</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>القالب</th><th>العنوان الافتراضي</th><th>الأزرار الافتراضية</th><th>الأزرار التي يكون «التأكيد قبل التنفيذ» مفعّلاً فيها افتراضياً</th></tr></thead>
+    <tbody>
+      <tr><td data-label="القالب"><span class="ui">بوابة / مصراع</span></td><td data-label="العنوان الافتراضي"><span class="ui">بوابة</span></td><td data-label="الأزرار الافتراضية"><span class="ui">فتح</span> و<span class="ui">إيقاف</span> و<span class="ui">إغلاق</span></td><td data-label="الأزرار التي يكون «التأكيد قبل التنفيذ» مفعّلاً فيها افتراضياً"><span class="ui">فتح</span></td></tr>
+      <tr><td data-label="القالب"><span class="ui">باب المرآب</span></td><td data-label="العنوان الافتراضي"><span class="ui">مرآب</span></td><td data-label="الأزرار الافتراضية"><span class="ui">فتح</span> و<span class="ui">إيقاف</span> و<span class="ui">إغلاق</span></td><td data-label="الأزرار التي يكون «التأكيد قبل التنفيذ» مفعّلاً فيها افتراضياً"><span class="ui">فتح</span></td></tr>
+      <tr><td data-label="القالب"><span class="ui">إضاءة</span></td><td data-label="العنوان الافتراضي"><span class="ui">إضاءة</span></td><td data-label="الأزرار الافتراضية"><span class="ui">تشغيل</span> و<span class="ui">إيقاف</span></td><td data-label="الأزرار التي يكون «التأكيد قبل التنفيذ» مفعّلاً فيها افتراضياً">لا يوجد</td></tr>
+      <tr><td data-label="القالب"><span class="ui">قفل الباب</span></td><td data-label="العنوان الافتراضي"><span class="ui">باب</span></td><td data-label="الأزرار الافتراضية"><span class="ui">إلغاء القفل</span> و<span class="ui">قفل</span></td><td data-label="الأزرار التي يكون «التأكيد قبل التنفيذ» مفعّلاً فيها افتراضياً"><span class="ui">إلغاء القفل</span></td></tr>
+      <tr><td data-label="القالب"><span class="ui">ستارة</span></td><td data-label="العنوان الافتراضي"><span class="ui">ستارة</span></td><td data-label="الأزرار الافتراضية"><span class="ui">فتح</span> و<span class="ui">إيقاف</span> و<span class="ui">إغلاق</span></td><td data-label="الأزرار التي يكون «التأكيد قبل التنفيذ» مفعّلاً فيها افتراضياً">لا يوجد</td></tr>
+      <tr><td data-label="القالب"><span class="ui">مشهد / أتمتة</span></td><td data-label="العنوان الافتراضي"><span class="ui">مشهد</span></td><td data-label="الأزرار الافتراضية"><span class="ui">تشغيل</span></td><td data-label="الأزرار التي يكون «التأكيد قبل التنفيذ» مفعّلاً فيها افتراضياً">لا يوجد</td></tr>
+      <tr><td data-label="القالب"><span class="ui">إنذار / صفّارة</span></td><td data-label="العنوان الافتراضي"><span class="ui">إنذار</span></td><td data-label="الأزرار الافتراضية"><span class="ui">تفعيل الحماية</span> و<span class="ui">إلغاء الحماية</span> و<span class="ui">استغاثة</span></td><td data-label="الأزرار التي يكون «التأكيد قبل التنفيذ» مفعّلاً فيها افتراضياً"><span class="ui">تفعيل الحماية</span> و<span class="ui">استغاثة</span></td></tr>
+      <tr><td data-label="القالب"><span class="ui">مروحة</span></td><td data-label="العنوان الافتراضي"><span class="ui">مروحة</span></td><td data-label="الأزرار الافتراضية"><span class="ui">تشغيل</span> و<span class="ui">إيقاف</span></td><td data-label="الأزرار التي يكون «التأكيد قبل التنفيذ» مفعّلاً فيها افتراضياً">لا يوجد</td></tr>
+      <tr><td data-label="القالب"><span class="ui">مقبس ذكي</span></td><td data-label="العنوان الافتراضي"><span class="ui">مقبس</span></td><td data-label="الأزرار الافتراضية"><span class="ui">تشغيل</span> و<span class="ui">إيقاف</span></td><td data-label="الأزرار التي يكون «التأكيد قبل التنفيذ» مفعّلاً فيها افتراضياً">لا يوجد</td></tr>
+      <tr><td data-label="القالب"><span class="ui">مكيّف الهواء</span></td><td data-label="العنوان الافتراضي"><span class="ui">مكيّف الهواء</span></td><td data-label="الأزرار الافتراضية"><span class="ui">تشغيل</span> و<span class="ui">إيقاف</span></td><td data-label="الأزرار التي يكون «التأكيد قبل التنفيذ» مفعّلاً فيها افتراضياً">لا يوجد</td></tr>
+      <tr><td data-label="القالب"><span class="ui">مخصّص</span></td><td data-label="العنوان الافتراضي">فارغ</td><td data-label="الأزرار الافتراضية">زر واحد بالتسمية <span class="ui">زر</span></td><td data-label="الأزرار التي يكون «التأكيد قبل التنفيذ» مفعّلاً فيها افتراضياً">لا يوجد</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>يظهر العنوان الافتراضي للقالب وتسميات أزراره الافتراضية بلغة التطبيق، وتتبعها عند تغيير لغة التطبيق لاحقاً، على الجدار وفي المحرر وعلى Apple Watch. أما العنوان أو التسمية التي كُتبت أو عُدّلت فتبقى تماماً كما كُتبت. ويُتعرَّف على الكلمات الافتراضية في اللوحات التي أُنشئت سابقاً بأي لغة من لغات التطبيق، وتتبع هي أيضاً اللغة الحالية.</li>
+    <li>يستبدل تغيير القالب كل الأزرار الموجودة بأزرار القالب الجديد، وتُمسح معها عناوين URL والترويسات والمحتوى المُدخلة سابقاً. لا يُستبدل العنوان إلا إذا كان لا يزال فارغاً أو لا يزال عنواناً افتراضياً؛ أما العنوان الذي كتبه المستخدم فيبقى دون تغيير. اختر القالب أولاً، ثم عدّل التفاصيل.</li>
+    <li>القالب الابتدائي للوحة تحكم مضافة حديثاً هو <span class="ui">بوابة / مصراع</span>.</li>
+  </ul>
+  <figure class="phone"><img src="/guide/img/lvm-control-templates.jpg" alt="قائمة «قالب» مفتوحة وتسرد بوابة / مصراع، وباب المرآب، وإضاءة، وقفل الباب، وستارة، ومشهد / أتمتة، وإنذار / صفّارة، ومروحة، ومقبس ذكي، ومكيّف الهواء، ومخصّص" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-control-templates.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>قائمة «قالب»</figcaption></figure>
+
+  <h3 id="webhook-fields">إعدادات اللوحة</h3>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>العنصر</th><th>الوصف</th></tr></thead>
+    <tbody>
+      <tr><td data-label="العنصر"><span class="ui">المحتوى المعروض</span></td><td data-label="الوصف">محتوى المربّع: <span class="ui">فارغ</span> أو <span class="ui">صورة</span> أو <span class="ui">لوحة تحكم</span> أو <span class="ui">الساعة</span> أو <span class="ui">تسمية</span>. واختيار <span class="ui">لوحة تحكم</span> يحوّل المربّع إلى لوحة تحكم.</td></tr>
+      <tr><td data-label="العنصر"><span class="ui">قالب</span></td><td data-label="الوصف">راجع <a class="xref" href="/ar/guide/webhook.html#webhook-templates">«القوالب»</a>.</td></tr>
+      <tr><td data-label="العنصر"><span class="ui">العنوان</span></td><td data-label="الوصف">يظهر فوق الأزرار ليبيّن ما تتحكم فيه اللوحة، ويُستخدم عنواناً للمجموعة على Apple Watch. إذا كان فارغاً، لا يظهر أي عنوان.</td></tr>
+      <tr><td data-label="العنصر"><span class="ui">اللون</span></td><td data-label="الوصف">لون إطار اللوحة وأزرارها، ويُستخدم أيضاً للأيقونات على Apple Watch.</td></tr>
+      <tr><td data-label="العنصر"><span class="ui">إظهار الوقت</span></td><td data-label="الوصف">يعرض الوقت الحالي في المساحة الواقعة تحت الأزرار. عند تشغيله، يمكن اختيار <span class="ui">الثواني</span> و<span class="ui">التاريخ</span> و<span class="ui">يوم الأسبوع</span> و<span class="ui">نظام 24 ساعة</span>. وتتبع أسماء الأيام والأشهر لغة التطبيق.</td></tr>
+      <tr><td data-label="العنصر"><span class="ui">الأزرار</span></td><td data-label="الوصف">قائمة الأزرار. اضغط على صف لتعديل ذلك الزر، واسحب صفاً نحو اليمين لحذفه، واضغط على <span class="ui">إضافة زر</span> لإضافة زر فارغ في النهاية. لا يمكن إعادة ترتيب القائمة؛ ولتغيير التسلسل، احذف زراً وأضفه من جديد. يعرض كل صف الأيقونة والتسمية واسم مضيف عنوان URL؛ وما دام لم يُدخل عنوان URL صالح، يظهر بدلاً من ذلك <span class="ui">لم تُحدَّد نقطة نهاية</span> باللون البرتقالي. عندما تكون التسمية فارغة، يعرض الصف <span class="ui">زر</span>.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="webhook-button">إعداد زر</h3>
+  <p>المتطلب المسبق: محرر المربّع مفتوح كما هو موضح في <a class="xref" href="/ar/guide/webhook.html#webhook-add">«إضافة لوحة تحكم إلى الجدار»</a>، وقد اختير <span class="ui">لوحة تحكم</span>.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>في القسم <span class="ui">الأزرار</span>، اضغط على الزر المراد إعداده. ولإنشاء زر جديد، اضغط على <span class="ui">إضافة زر</span> أولاً، ثم اضغط على الصف الجديد.</p>
+      <p class="check"><b class="check-label">التحقق:</b> تعرض الشاشة محرر ذلك الزر. وعنوانها تسمية الزر، ولا توجد في الزاوية العلوية اليمنى سوى سهم رجوع.</p>
+    </li>
+    <li class="step">
+      <p>في صف الأيقونات الواقع تحت الصف <span class="ui">الأيقونة</span>، اضغط على الأيقونة المراد استخدامها، أو اكتب اسم أيقونة من <code>SF Symbols</code> في الحقل الموجود في الجهة اليسرى.</p>
+      <p class="check"><b class="check-label">التحقق:</b> يعرض الصف <span class="ui">الأيقونة</span> الأيقونة المختارة واسمها، مثل <code>arrow.up.to.line</code>.</p>
+    </li>
+    <li class="step">
+      <p>أدخل النص المراد عرضه تحت الأيقونة في الحقل <span class="ui">تسمية</span>.</p>
+      <p class="check"><b class="check-label">التحقق:</b> يعرض الحقل النص. ويتغير عنوان الصفحة إلى النص نفسه.</p>
+    </li>
+    <li class="step">
+      <p>للزر الذي يجب تأكيده قبل تشغيله، فعّل <span class="ui">التأكيد قبل التنفيذ</span>.</p>
+      <p class="check"><b class="check-label">التحقق:</b> المفتاح قيد التشغيل. يظهر مربع تأكيد الآن عند الضغط على الزر، على الجدار وعلى الساعة؛ راجع <a class="xref" href="/ar/guide/webhook.html#webhook-use">«الضغط على زر وقراءة النتيجة»</a>.</p>
+    </li>
+    <li class="step">
+      <p>في القسم <span class="ui">الطلب</span>، اختر <code>GET</code> أو <code>POST</code> أو <code>PUT</code> أو <code>DELETE</code> من القائمة <span class="ui">الطريقة</span>.</p>
+      <p class="check"><b class="check-label">التحقق:</b> تعرض القائمة الطريقة المختارة. مع <code>GET</code> لا يظهر القسم <span class="ui">المحتوى</span> في الجزء السفلي من الصفحة؛ وتعرضه الطرق الثلاث الأخرى.</p>
+    </li>
+    <li class="step">
+      <p>أدخل عنوان URL الكامل في الحقل الموجود تحت <span class="ui">الطريقة</span>، على أن يبدأ بـ <code>http://</code> أو <code>https://</code>.</p>
+      <p class="check"><b class="check-label">التحقق:</b> يعرض الحقل عنوان URL.</p>
+    </li>
+    <li class="step">
+      <p>على iPhone، اختياري: في قسم Apple Watch، اضغط على <span class="ui">طريقة الإرسال</span> واختر <span class="ui">تلقائي</span> أو <span class="ui">من Apple Watch مباشرةً</span> أو <span class="ui">عبر iPhone</span>.</p>
+      <p class="check"><b class="check-label">التحقق:</b> تعرض القائمة الاختيار، وتشرح الملاحظة الواقعة تحتها ما يفعله هذا الاختيار. ولمعنى كل اختيار، راجع <a class="xref" href="/ar/guide/webhook.html#webhook-watch">«الأزرار على Apple Watch»</a>.</p>
+    </li>
+    <li class="step">
+      <p>عند الحاجة إلى ترويسة، اضغط على <span class="ui">إضافة ترويسة</span> وأدخل اسم الترويسة وقيمتها في الحقلين <span class="ui">الاسم</span> و<span class="ui">القيمة</span>.</p>
+      <p class="check"><b class="check-label">التحقق:</b> يُضاف إلى القسم <span class="ui">الترويسات</span> صف، ويعرض الحقلان النص المُدخل. كرّر الخطوة لإضافة ترويسات أخرى؛ واسحب صفاً نحو اليمين لحذف الترويسة.</p>
+    </li>
+    <li class="step">
+      <p>عند الحاجة إلى إرسال محتوى، أكّد نوع المحتوى في الحقل العلوي من القسم <span class="ui">المحتوى</span> (<code>application/json</code> افتراضياً)، ثم أدخل المحتوى في مربع النص الواقع تحته.</p>
+      <p class="check"><b class="check-label">التحقق:</b> يعرض مربع النص المحتوى. ويُرسل المحتوى تماماً كما كُتب.</p>
+    </li>
+    <li class="step">
+      <p>اضغط على سهم الرجوع في الزاوية العلوية اليمنى.</p>
+      <p class="check"><b class="check-label">التحقق:</b> تعود الشاشة إلى محرر المربّع، ويعرض صف الزر اسم مضيف عنوان URL تحت تسميته.</p>
+    </li>
+  </ol>
+  <div class="shots pair">
+    <figure class="phone"><img src="/guide/img/lvm-button-editor.jpg" alt="محرر الزر: الأيقونة والتسمية والتأكيد قبل التنفيذ، والطريقة وعنوان URL في قسم الطلب" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-button-editor.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>محرر الزر (الجزء العلوي)</figcaption></figure>
+    <figure class="phone"><img src="/guide/img/lvm-button-headers.jpg" alt="الجزء السفلي من محرر الزر: قسم الترويسات مع صف Authorization واحد، وقسم المحتوى مع نوع المحتوى ومحتوى JSON" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-button-headers.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>محرر الزر (الجزء السفلي)</figcaption></figure>
+  </div>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>الحقل</th><th>الوصف</th></tr></thead>
+    <tbody>
+      <tr><td data-label="الحقل"><span class="ui">الأيقونة</span></td><td data-label="الوصف">يمكن الضغط مباشرة على عشرين أيقونة شائعة تحت الصف. يمكن أيضاً كتابة اسم أي أيقونة من <code>SF Symbols</code>.</td></tr>
+      <tr><td data-label="الحقل"><span class="ui">تسمية</span></td><td data-label="الوصف">يظهر تحت الأيقونة، ويُستخدم نصاً للزر الأحمر في مربع التأكيد. عندما تكون التسمية فارغة، يعرض الزر الأيقونة فقط، ويحمل الزر الأحمر في مربع التأكيد النص <span class="ui">تأكيد</span>.</td></tr>
+      <tr><td data-label="الحقل"><span class="ui">التأكيد قبل التنفيذ</span></td><td data-label="الوصف">عند تشغيله، يفتح الضغط على الزر أولاً مربع تأكيد. وينبغي تشغيله للأزرار التي تحرّك معدات مادية، مثل فتح باب أو إلغاء قفل أو الإنذارات.</td></tr>
+      <tr><td data-label="الحقل"><span class="ui">الطريقة</span></td><td data-label="الوصف"><code>GET</code> أو <code>POST</code> أو <code>PUT</code> أو <code>DELETE</code>؛ والافتراضي <code>POST</code>. لا يرسل <code>GET</code> أي محتوى.</td></tr>
+      <tr><td data-label="الحقل">URL</td><td data-label="الوصف">يجب أن يبدأ بـ <code>http://</code> أو <code>https://</code> وأن يتضمن اسم مضيف أو عنواناً. تُتجاهل المسافات في البداية والنهاية. وتُكتب معاملات الاستعلام في عنوان URL نفسه. عندما يكون عنوان URL فارغاً أو غير صحيح التكوين، يظهر فشل عند الضغط على الزر، ولا يظهر الزر على Apple Watch.</td></tr>
+      <tr><td data-label="الحقل"><span class="ui">طريقة الإرسال</span></td><td data-label="الوصف">يظهر على iPhone فقط، في قسم Apple Watch. يحدد ما إذا كان الضغط على الساعة يُرسَل من الساعة نفسها أو عبر iPhone؛ والافتراضي <span class="ui">تلقائي</span>. راجع <a class="xref" href="/ar/guide/webhook.html#webhook-watch">«الأزرار على Apple Watch»</a>.</td></tr>
+      <tr><td data-label="الحقل"><span class="ui">الترويسات</span></td><td data-label="الوصف">أي عدد من الأسماء والقيم. تُتخطى الصفوف ذات الاسم الفارغ. وترويسة <code>Content-Type</code> المُدخلة هنا لها الأسبقية على حقل نوع المحتوى في القسم <span class="ui">المحتوى</span>.</td></tr>
+      <tr><td data-label="الحقل"><span class="ui">المحتوى</span></td><td data-label="الوصف">يظهر مع <code>POST</code> و<code>PUT</code> و<code>DELETE</code> فقط. الحقل العلوي هو نوع المحتوى، <code>application/json</code> افتراضياً؛ ومربع النص تحته هو المحتوى. والمحتوى الفارغ لا يرسل أي محتوى. لا تُرفق قيمة حقل نوع المحتوى إلا عندما لا يكون المحتوى فارغاً ولم تُدخل ترويسة <code>Content-Type</code>.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="webhook-use">الضغط على زر وقراءة النتيجة</h3>
+  <p>يمكن الضغط على الأزرار على جدار المعاينة في علامة التبويب LiveView Mix وعلى الجدار بملء الشاشة. ليس للزر الذي أُعدّ حديثاً وظيفة اختبار منفصلة؛ بل يكفي الضغط عليه مرة واحدة اختباراً، ثم التحقق في الجهة المستقبِلة من وصول الطلب.</p>
+  <figure class="clip land"><video class="clip" aria-label="الضغط على أزرار لوحة تحكم على الجدار: مؤشر دوّار أثناء إرسال الطلب، ثم علامة صح خضراء عندما تكون الإجابة إيجابية ومثلث تحذير برتقالي عندما لا تكون كذلك." muted="" loop="" playsinline="" preload="none" data-src="/guide/vid/rec-webhook-button.mp4" data-poster="/guide/img/rec-webhook-button.jpg" poster="/guide/img/rec-webhook-button.jpg"></video><figcaption>الضغط على أزرار لوحة تحكم على الجدار: مؤشر دوّار أثناء إرسال الطلب، ثم علامة صح خضراء عندما تكون الإجابة إيجابية ومثلث تحذير برتقالي عندما لا تكون كذلك.</figcaption></figure>
+  <ol class="steps">
+    <li class="step">
+      <p>على جدار المعاينة أو الجدار بملء الشاشة، اضغط على زر من اللوحة.</p>
+      <p class="check"><b class="check-label">التحقق:</b> الزر الذي لا يملك <span class="ui">التأكيد قبل التنفيذ</span> تتحول أيقونته فوراً إلى مؤشر دوّار، وهذا يعني أن الطلب أُرسل. أما الزر الذي يملكه فيفتح مربع تأكيد بجانب اللوحة، عنوانه عنوان اللوحة (أو <span class="ui">هل تريد تنفيذ هذا الإجراء؟</span> عندما لا يكون للوحة عنوان).</p>
+    </li>
+    <li class="step">
+      <p>عندما يظهر مربع التأكيد، اضغط على الزر الأحمر فيه، وهو يحمل تسمية الزر المضغوط. وللإلغاء، اضغط في أي مكان خارج المربع.</p>
+      <p class="check"><b class="check-label">التحقق:</b> يُغلق المربع وتتحول الأيقونة إلى مؤشر دوّار. عند الإلغاء لا يُرسل أي طلب.</p>
+      <figure class="phone"><img src="/guide/img/lvm-webhook-confirm.jpg" alt="علامة التبويب LiveView Mix بعد الضغط على الزر Open في لوحة البوابة: يظهر مربع تأكيد بجانب اللوحة" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-webhook-confirm.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>مربع التأكيد</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>راقب أيقونة الزر.</p>
+      <p class="check"><b class="check-label">التحقق:</b> بحسب النتيجة، تتحول الأيقونة إلى علامة صح خضراء أو مثلث تحذير برتقالي، ثم تعود إلى الأيقونة الأصلية بعد نحو 1.6 ثانية.</p>
+      <figure class="land"><img src="/guide/img/lvm-webhook-states.jpg" alt="ثلاث حالات لزر واحد: المؤشر الدوّار أثناء الإرسال، وعلامة الصح الخضراء بعد النجاح، ومثلث التحذير البرتقالي بعد الفشل" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-webhook-states.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>الحالات الثلاث للزر</figcaption></figure>
+    </li>
+  </ol>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>ما يعرضه الزر</th><th>المعنى</th></tr></thead>
+    <tbody>
+      <tr><td data-label="ما يعرضه الزر">الأيقونة المضبوطة</td><td data-label="المعنى">الزر في وضع الخمول، أو عُرضت النتيجة.</td></tr>
+      <tr><td data-label="ما يعرضه الزر">مؤشر دوّار</td><td data-label="المعنى">أُرسل الطلب وتُنتظر الإجابة. إذا لم تصل إجابة خلال 10 ثوانٍ، يُعدّ الطلب فاشلاً.</td></tr>
+      <tr><td data-label="ما يعرضه الزر">علامة صح خضراء</td><td data-label="المعنى">ردّت الجهة المستقبِلة برمز حالة من 200 إلى 299. تُتابَع عمليات إعادة التوجيه تلقائياً، وتحسم الإجابة النهائية.</td></tr>
+      <tr><td data-label="ما يعرضه الزر">مثلث تحذير برتقالي</td><td data-label="المعنى">لم ينجح الطلب. قد يكون السبب عنوان URL فارغاً أو غير صحيح التكوين، أو عدم وجود اتصال، أو انتهاء المهلة، أو شهادة غير موثوقة، أو رمز حالة خارج النطاق 200 إلى 299، مثل 401 أو 404 أو 500. لا تعرض الشاشة السبب، ولا يُحتفظ بأي سجل.</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>تعني علامة الصح الخضراء فقط أن الجهة المستقبِلة ردّت بنجاح. لا تثبت أن المعدات تحركت. وللتحقق من النتيجة، راجع سجل الجهة المستقبِلة.</li>
+    <li>يرسل كل ضغط طلباً واحداً، ولا شيء يمنع تكرار الضغط. والضغط مرتين متتاليتين يرسل طلبين. وينبغي تشغيل <span class="ui">التأكيد قبل التنفيذ</span> للأزرار التي تحرّك معدات مادية.</li>
+    <li>عندما يظهر المثلث البرتقالي مراراً، تحقق بهذا الترتيب: هل عنوان URL صالح، وهل الهاتف والجهة المستقبِلة على الشبكة نفسها أو يستطيع كل منهما الوصول إلى الآخر، وهل يمكن تحليل عنوان الجهة المستقبِلة. عندما تكون الجهة المستقبِلة على الشبكة المحلية، يجب السماح لـ Cam Hub بالوصول إلى الشبكة المحلية؛ راجع <a class="xref" href="/ar/guide/add.html#add-scan">«العثور على الأجهزة بفحص الشبكة»</a>. بالنسبة إلى المشكلات الأخرى، راجع <a class="xref" href="/ar/guide/trouble.html">الفصل 15، «استكشاف الأخطاء وإصلاحها»</a>.</li>
+    <li>وللضغط على الأزرار على Apple Watch، راجع <a class="xref" href="/ar/guide/webhook.html#webhook-watch">«الأزرار على Apple Watch»</a>.</li>
+  </ul>
+
+  <h3 id="webhook-wall">كيف تبدو اللوحة على الجدار</h3>
+  <ul>
+    <li><b>تخطيط الأزرار</b>: يوضع زر واحد في عمود واحد، وزران في عمودين، و3 أزرار في 3 أعمدة، و4 أزرار بتخطيط ‎2 × 2، و5 أزرار أو أكثر في 3 أعمدة.</li>
+    <li><b>المربّعات الصغيرة</b>: تتقلص اللوحة تلقائياً. تُخفى الساعة أولاً، ثم التسميات الواقعة تحت الأيقونات؛ ويبقى العنوان والأيقونات.</li>
+    <li><b>الخطة</b>: تستخدم كل لوحة تحكم كاميرا واحدة من الحد، مما تتركه الكاميرات منه. واللوحة التي تتجاوز الحد تعرض قفلاً وعنوانها و<span class="ui">غير مشمول في خطتك</span>، وتكون أزرارها غير متاحة؛ وفي المعاينة يعرض المربّع قفلاً و<span class="ui">غير مشمول في خطتك</span>. وتُحتسب كل لوحة على كل جدار على حدة: الصفحة الأفقية دائماً، والصفحة العمودية ما دامت قيد التشغيل، والمساحة السفلية لـ iPhone Duo ما دامت المساحتان قيد التشغيل؛ وتُحتسب اللوحة المنسوخة منفصلةً عن أصلها. لا تستخدم مربّعات الساعة والتسمية والصورة والمربّعات الفارغة أي حد. والاشتراك في خطة NVR وحدها لا يرفع الحد المتاح للوحات. للاطلاع على قواعد الاحتساب، راجع <a class="xref" href="/ar/guide/lvm.html#lvm-limits">«أثر حدود الخطة في الجدار»</a> و<a class="xref" href="/ar/guide/plans.html#plans-count">«ما يستهلك الحد»</a>.</li>
+    <li><b>Apple TV</b>: تُنشأ اللوحة على iPhone أو iPad، وتظهر لوحات الصفحة الأفقية على جدار Apple TV؛ راجع <a class="xref" href="/ar/guide/appletv.html">الفصل 14، «Apple TV»</a>.</li>
+    <li><b>Apple Watch</b>: تظهر أزرار كل لوحة تشملها الخطة على Apple Watch المقترنة؛ راجع <a class="xref" href="/ar/guide/webhook.html#webhook-watch">«الأزرار على Apple Watch»</a>.</li>
+    <li><b>النسخ الاحتياطي والمشاركة</b>: تنتمي إعدادات اللوحة، بما فيها قيم الترويسات، إلى إعدادات التطبيق. وهي تدخل في كل نسخة احتياطية على iCloud، وتدخل أيضاً في رمز المشاركة عندما يكون <span class="ui">تضمين إعدادات التطبيق</span> قيد التشغيل أثناء التصدير؛ راجع <a class="xref" href="/ar/guide/share.html">الفصل 10، «المشاركة والنسخ الاحتياطي»</a>.</li>
+  </ul>
+  <div class="shots land-pair">
+    <figure class="land"><img src="/guide/img/lvm-wall.jpg" alt="الجدار بملء الشاشة: لوحة تحكم بعنوان Gate في الصف السفلي بثلاثة أزرار، وساعة إلى جانبها، وصور الكاميرات في المربّعات الأخرى" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-wall.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>لوحة تحكم وساعة على الجدار</figcaption></figure>
+    <figure class="land"><img src="/guide/img/lvm-panel-locked.jpg" alt="الجدار بملء الشاشة: لوحة تحكم تتجاوز الحد، تعرض قفلاً وعنوانها و«غير مشمول في خطتك»" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-panel-locked.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>لوحة تحكم مقفلة بسبب الحد</figcaption></figure>
+  </div>
+
+  <h3 id="webhook-watch">الأزرار على Apple Watch</h3>
+  <p>يعرض Cam Hub على Apple Watch أزرار لوحات التحكم المُعدّة على iPhone المقترن، وينفّذ الزر بضغطة واحدة. ولا يعرض شيئاً آخر: لا فيديو ولا كاميرات. وليس لتطبيق الساعة إعدادات أو تسجيل دخول أو عمليات شراء خاصة به؛ فـ iPhone هو الذي يحدد الأزرار التي تعرضها.</p>
+  <ul>
+    <li><b>أي الأزرار</b>: كل زر له عنوان URL صالح، من كل لوحة تحكم تشملها الخطة: الصفحة الأفقية، والصفحة العمودية ما دامت قيد التشغيل، والمساحة السفلية لـ iPhone Duo ما دامت المساحتان قيد التشغيل. والزر في الصفحة العمودية المطابق لزر في الصفحة الأفقية (عنوان اللوحة نفسه والتسمية نفسها والطلب نفسه) يُدرَج مرة واحدة.</li>
+    <li><b>القائمة</b>: عنوان الشاشة <span class="ui" data-ui="value">عناصر التحكم</span>. وتُجمَّع الأزرار تحت عناوين لوحاتها، بترتيب الجدار. ويعرض كل صف الأيقونة بلون اللوحة وتسمية الزر (أو عنوان URL عندما تكون التسمية فارغة).</li>
+    <li><b>المزامنة</b>: عند تغيير لوحة أو زر على iPhone، أو عند تغيّر الخطة، يرسل iPhone إلى الساعة قائمة جديدة. وتختفي من الساعة اللوحة التي لم تعد الخطة تشملها.</li>
+    <li><b>العمل باستقلال</b>: تُحفظ القائمة على الساعة. ويُفتح تطبيق الساعة ويعرضها حتى عندما لا يكون تطبيق iPhone قيد التشغيل أو يكون iPhone خارج النطاق؛ وتظل الأزرار التي يجوز للساعة إرسالها بنفسها تعمل حينئذٍ.</li>
+    <li><b>اللغة</b>: تعرض الساعة نصوصها والكلمات الافتراضية للوحات بلغة تطبيق iPhone، لا بلغة الساعة.</li>
+    <li><b>قبل وصول الأزرار الأولى</b>: تعرض الساعة <span class="ui" data-ui="value">لا توجد أزرار بعد</span> مع ملاحظة بأن أزرار لوحة التحكم المضافة إلى LiveView Mix على iPhone تظهر هناك.</li>
+  </ul>
+  <figure class="phone"><img src="/guide/img/watch-buttons.jpg" alt="Apple Watch تعرض قائمة «عناصر التحكم»: لوحة Garden Lights فيها الزر Lights on وعليه علامة صح خضراء بعد أن ردّت الجهة المستقبِلة، والزر Lights off" decoding="async" width="416" height="496" data-src="/guide/img/watch-buttons.jpg" style="aspect-ratio: 416 / 496;" loading="lazy"><figcaption>أزرار لوحة التحكم على Apple Watch</figcaption></figure>
+  <h4>كيف تُرسَل الضغطة</h4>
+  <p>لكل زر اختياره الخاص ضمن <span class="ui">طريقة الإرسال</span> في محرر الزر على iPhone (راجع <a class="xref" href="/ar/guide/webhook.html#webhook-button">«إعداد زر»</a>):</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>الاختيار</th><th>ما يحدث عند الضغط</th></tr></thead>
+    <tbody>
+      <tr><td data-label="الاختيار"><span class="ui">تلقائي</span> (الافتراضي)</td><td data-label="ما يحدث عند الضغط">يُرسَل العنوان العام مباشرة من الساعة. أما عنوان الشبكة المنزلية أو VPN، مثل <code>192.168.x.x</code> أو اسم ينتهي بـ <code>.local</code>، فيمر أولاً عبر iPhone الذي يستطيع الوصول إليه.</td></tr>
+      <tr><td data-label="الاختيار"><span class="ui">من Apple Watch مباشرةً</span></td><td data-label="ما يحدث عند الضغط">ترسل الساعة الطلب بنفسها دائماً، عبر اتصال Wi-Fi أو الاتصال الخلوي الخاص بها أو عبر اتصال iPhone. وهذه هي الطريقة الأسرع، لكن عنوان الشبكة المنزلية أو VPN قد يكون خارج متناول الساعة.</td></tr>
+      <tr><td data-label="الاختيار"><span class="ui">عبر iPhone</span></td><td data-label="ما يحدث عند الضغط">لخادم لا يمكن الوصول إليه إلا عبر VPN على iPhone، ولا سيما عندما يبدو عنوانه عاماً: فليس للساعة VPN خاص بها. ولا ترسل الساعة الطلب بنفسها إلا عندما يكون iPhone خارج النطاق.</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>عندما تمر الضغطة عبر iPhone، تتحقق الساعة أولاً من أن iPhone يستجيب، وتنتظر لذلك نحو 6 ثوانٍ على الأكثر؛ ويمكن تشغيل تطبيق iPhone في الخلفية لهذا الغرض. ثم يرسل iPhone الطلب بالطريقة نفسها التي يرسله بها جداره، بعد التحقق من أن الخطة لا تزال تشمل اللوحة.</li>
+    <li>عندما لا يستجيب iPhone لهذا التحقق، ترسل الساعة الطلب بنفسها. وعندما يتسلّم iPhone الطلب لكن يضيع ردّه، تُعرض الضغطة على أنها فاشلة ولا تُرسَل مرة أخرى، فلا يُبدَّل مفتاحٌ مرتين أبداً.</li>
+    <li>الطلب الذي أرسلته الساعة بنفسها وفشل لا يُكرَّر عبر iPhone. والطلب المرسل من الساعة إلى عنوان في الشبكة المنزلية لا ينجح إلا ما دامت الساعة على شبكة Wi-Fi نفسها.</li>
+  </ul>
+  <h4>الضغط على زر على الساعة</h4>
+  <p>المتطلب المسبق: Cam Hub مثبّت على Apple Watch المقترنة بـ iPhone، وعلى الجدار لوحة تحكم واحدة على الأقل لها عنوان URL صالح.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>افتح Cam Hub على Apple Watch.</p>
+      <p class="check"><b class="check-label">التحقق:</b> تعرض الساعة <span class="ui" data-ui="value">عناصر التحكم</span> والأزرار مجمَّعة حسب اللوحة.</p>
+    </li>
+    <li class="step">
+      <p>اضغط على زر.</p>
+      <p class="check"><b class="check-label">التحقق:</b> الزر الذي لا يملك <span class="ui">التأكيد قبل التنفيذ</span> يعرض فوراً مؤشراً دوّاراً في نهاية صفه. أما الزر الذي يملكه فيسأل <span class="ui">هل تريد تنفيذ هذا الإجراء؟</span>، مع عنوان اللوحة تحته، وزر أحمر يحمل تسمية الزر، و<span class="ui">إلغاء</span>.</p>
+    </li>
+    <li class="step">
+      <p>عندما يظهر السؤال، اضغط على الزر الأحمر. وللإلغاء، اضغط على <span class="ui">إلغاء</span>.</p>
+      <p class="check"><b class="check-label">التحقق:</b> يُغلق السؤال ويعرض الصف مؤشراً دوّاراً. عند الإلغاء لا يُرسَل أي شيء.</p>
+    </li>
+    <li class="step">
+      <p>راقب نهاية الصف.</p>
+      <p class="check"><b class="check-label">التحقق:</b> تعني علامة الصح الخضراء أن نقطة النهاية ردّت بنجاح؛ ويعني مثلث التحذير الأحمر أن الطلب لم ينجح. وتُصدر الساعة أيضاً نقرة على المعصم، ويعود الصف إلى حالته العادية بعد نحو 2.5 ثانية.</p>
+    </li>
+  </ol>
+  <p>يُتجاهَل الضغط على زر لا يزال يُرسل، فلا تؤدي ضغطة ثانية متعجّلة إلى إرسال الطلب مرتين. وكما على الجدار، لا تعني علامة الصح الخضراء إلا أن الجهة المستقبِلة ردّت؛ ولا تثبت أن المعدات تحركت.</p>
+
+  <h3 id="ha">استخدام Home Assistant</h3>
+  <p>يستخدم النهجان التاليان Home Assistant مثالاً. والعنوان <code>homeassistant.local</code> والمعرّف <code>gate-open-7f3c9a21</code> واسم الكيان <code>cover.gate</code> قيم نموذجية ويجب استبدالها بالقيم الحقيقية. ويحدد توثيق Home Assistant نفسه السلوك من جهة Home Assistant، وقد يتغير بين الإصدارات.</p>
+  <p>المتطلبات المسبقة: يعمل Home Assistant على الشبكة المنزلية ويستطيع الهاتف الوصول إلى عنوانه؛ وقد اختير <span class="ui">لوحة تحكم</span> في أحد مربّعات جدار LiveView Mix (راجع <a class="xref" href="/ar/guide/webhook.html#webhook-add">«إضافة لوحة تحكم إلى الجدار»</a>). يستخدم Home Assistant افتراضياً <code>http</code> والمنفذ <code>8123</code>. ويبدأ النص النموذجي في حقل عنوان URL في التطبيق بـ <code>https</code> ويجب تغييره بما يطابق الإعداد الحقيقي.</p>
+
+  <h4>النهج 1: مشغّل Webhook (دون حاجة إلى رمز مميز)</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>في Home Assistant، أنشئ أتمتة جديدة.</p>
+      <p class="check"><b class="check-label">التحقق:</b> تعرض الشاشة محرر الأتمتة.</p>
+    </li>
+    <li class="step">
+      <p>اختر Webhook مشغّلاً وأدخل معرّفاً يصعب تخمينه، مثل <code>gate-open-7f3c9a21</code>.</p>
+      <p class="check"><b class="check-label">التحقق:</b> يعرض المحرر المعرّف. يعمل المعرّف مثل كلمة المرور: يستطيع أي شخص يعرفه ويعرف العنوان تشغيل الأتمتة.</p>
+    </li>
+    <li class="step">
+      <p>اضبط الإجراء، مثل الكيان الذي يفتح البوابة، واحفظ الأتمتة.</p>
+      <p class="check"><b class="check-label">التحقق:</b> تظهر الأتمتة في قائمة الأتمتات في Home Assistant.</p>
+    </li>
+    <li class="step">
+      <p>في Cam Hub، افتح محرر الزر المراد استخدامه كما هو موضح في الخطوة 1 من <a class="xref" href="/ar/guide/webhook.html#webhook-button">«إعداد زر»</a>.</p>
+      <p class="check"><b class="check-label">التحقق:</b> تعرض الشاشة محرر ذلك الزر.</p>
+    </li>
+    <li class="step">
+      <p>اختر <code>POST</code> في القائمة <span class="ui">الطريقة</span> وأدخل <code>http://homeassistant.local:8123/api/webhook/gate-open-7f3c9a21</code> في حقل عنوان URL. ويمكن ترك الترويسات والمحتوى فارغين.</p>
+      <p class="check"><b class="check-label">التحقق:</b> يعرض الحقل عنوان URL، وبعد الرجوع يعرض صف الزر اسم المضيف <code>homeassistant.local</code>.</p>
+    </li>
+    <li class="step">
+      <p>ارجع إلى الجدار واضغط على الزر.</p>
+      <p class="check"><b class="check-label">التحقق:</b> تعرض الأيقونة مؤشراً دوّاراً أولاً، ثم علامة صح خضراء.</p>
+    </li>
+    <li class="step">
+      <p>في Home Assistant، افتح سجل تشغيل الأتمتة.</p>
+      <p class="check"><b class="check-label">التحقق:</b> يعرض السجل التشغيل الذي بدأه الضغط. يمكن أن يردّ Home Assistant بنجاح حتى على معرّف غير موجود، لذلك يحسم سجل التشغيل لا علامة الصح الخضراء.</p>
+    </li>
+  </ol>
+  <p>الطلب المكافئ هو:</p>
+  <pre><code>POST /api/webhook/gate-open-7f3c9a21 HTTP/1.1
+Host: homeassistant.local:8123</code></pre>
+  <p>يمكن أيضاً كتابة الأتمتة في ملف إعدادات. والمثال التالي للمقارنة فقط، ويعتمد بناء الجملة على إصدار Home Assistant:</p>
+  <pre><code>triggers:
+  - trigger: webhook
+    webhook_id: gate-open-7f3c9a21
+    allowed_methods:
+      - POST
+    local_only: true
+actions:
+  - action: cover.open_cover
+    target:
+      entity_id: cover.gate</code></pre>
+  <p>لا يقبل مشغّل Webhook افتراضياً سوى <code>POST</code> و<code>PUT</code>، وافتراضياً الطلبات القادمة من الشبكة المحلية فقط. ويحتاج استخدامه من شبكة خارجية إلى إجراءات منفصلة؛ راجع <a class="xref" href="/ar/guide/webhook.html#webhook-security">«ملاحظات أمنية»</a>. والزر الذي يُضغط على Apple Watch يصل إلى عنوان مثل <code>homeassistant.local</code> عبر iPhone عندما تكون <span class="ui">طريقة الإرسال</span> <span class="ui">تلقائي</span> أو <span class="ui">عبر iPhone</span>؛ راجع <a class="xref" href="/ar/guide/webhook.html#webhook-watch">«الأزرار على Apple Watch»</a>.</p>
+
+  <h4>النهج 2: استدعاء خدمة (يلزم رمز مميز)</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>في صفحة الملف الشخصي في Home Assistant، أنشئ رمز وصول طويل الأمد وانسخه فوراً.</p>
+      <p class="check"><b class="check-label">التحقق:</b> تعرض الشاشة الرمز. يُعرض الرمز عادةً كاملاً مرة واحدة فقط، عند إنشائه.</p>
+    </li>
+    <li class="step">
+      <p>في Cam Hub، افتح محرر الزر، واختر <code>POST</code> في القائمة <span class="ui">الطريقة</span>، وأدخل <code>http://homeassistant.local:8123/api/services/cover/open_cover</code> في حقل عنوان URL.</p>
+      <p class="check"><b class="check-label">التحقق:</b> يعرض الحقل عنوان URL.</p>
+    </li>
+    <li class="step">
+      <p>اضغط على <span class="ui">إضافة ترويسة</span>.</p>
+      <p class="check"><b class="check-label">التحقق:</b> يُضاف إلى القسم <span class="ui">الترويسات</span> صف فيه الحقلان <span class="ui">الاسم</span> و<span class="ui">القيمة</span>.</p>
+    </li>
+    <li class="step">
+      <p>أدخل <code>Authorization</code> في الحقل <span class="ui">الاسم</span>، و<code>Bearer</code> ثم مسافة ثم الرمز المنسوخ في الحقل <span class="ui">القيمة</span>.</p>
+      <p class="check"><b class="check-label">التحقق:</b> يعرض الحقلان النص المُدخل. وتُعرض قيمة الترويسة نصاً عادياً.</p>
+    </li>
+    <li class="step">
+      <p>في القسم <span class="ui">المحتوى</span>، تأكد من أن نوع المحتوى <code>application/json</code> وأدخل <code>{"entity_id":"cover.gate"}</code> في مربع النص.</p>
+      <p class="check"><b class="check-label">التحقق:</b> يعرض مربع النص المحتوى.</p>
+    </li>
+    <li class="step">
+      <p>ارجع إلى الجدار واضغط على الزر.</p>
+      <p class="check"><b class="check-label">التحقق:</b> تعرض الأيقونة مؤشراً دوّاراً أولاً، ثم علامة صح خضراء. يظهر في سجل Home Assistant أن الخدمة استُدعيت.</p>
+    </li>
+  </ol>
+  <p>الطلب المكافئ هو:</p>
+  <pre><code>POST /api/services/cover/open_cover HTTP/1.1
+Host: homeassistant.local:8123
+Authorization: Bearer &lt;long-lived access token&gt;
+Content-Type: application/json
+
+{"entity_id":"cover.gate"}</code></pre>
+  <div class="callout tip">
+    <strong class="t">فضّل مشغّل Webhook</strong>
+    <p>عندما يتسرب معرّف Webhook، يقتصر الأثر على الأتمتة الواحدة التي ينتمي إليها. أما رمز الوصول طويل الأمد فيستطيع تشغيل Home Assistant كله. ولأي إجراء يمكن للنهج 1 تنفيذه، استخدم النهج 1.</p>
+  </div>
+
+  <h3 id="webhook-security">ملاحظات أمنية</h3>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>الموضوع</th><th>الوصف والتوصية</th></tr></thead>
+    <tbody>
+      <tr><td data-label="الموضوع">HTTP وHTTPS</td><td data-label="الوصف والتوصية">لا يُشفَّر الطلب المرسل بـ <code>http://</code>. ويستطيع أي شخص على مسار الشبكة نفسه قراءة عنوان URL والرمز المميز في الترويسة والمحتوى. استخدم HTTP داخل شبكة منزلية موثوقة فقط ومع Webhook التي لا تحمل بيانات حساسة. وكلما حمل الطلب رمزاً مميزاً أو غادر الشبكة المنزلية، استخدم <code>https://</code>.</td></tr>
+      <tr><td data-label="الموضوع">شهادات HTTPS</td><td data-label="الوصف والتوصية">ليس في Cam Hub خيار للوثوق بشهادة موقّعة ذاتياً. وعنوان <code>https://</code> بشهادة موقّعة ذاتياً يفشل، ويعرض الزر المثلث البرتقالي. وداخل الشبكة المحلية يمكن استخدام <code>http://</code> بدلاً من ذلك، أو تثبيت شهادة يثق بها الهاتف على الجهة المستقبِلة.</td></tr>
+      <tr><td data-label="الموضوع">تخزين الرموز المميزة والمعرّفات</td><td data-label="الوصف والتوصية">تُعرض قيم الترويسات نصاً عادياً في المحرر وتُخزَّن نصاً عادياً في إعدادات التطبيق على هذا الجهاز.</td></tr>
+      <tr><td data-label="الموضوع">Apple Watch</td><td data-label="الوصف والتوصية">تحمل الأزرار التي تصل إلى الساعة طلبها كاملاً، بما في ذلك عنوان URL والترويسات والمحتوى. وهي تُنسخ إلى Apple Watch المقترنة وتُحفظ عليها، لذلك يُخزَّن الرمز المميز الموجود في ترويسة على الساعة أيضاً.</td></tr>
+      <tr><td data-label="الموضوع">النسخ الاحتياطية ورموز المشاركة</td><td data-label="الوصف والتوصية">تدخل إعدادات اللوحة في كل نسخة احتياطية على iCloud، وفي كل رمز مشاركة يُصدَّر مع تشغيل <span class="ui">تضمين إعدادات التطبيق</span>. تعامل مع هذا الرمز كما تتعامل مع كلمة المرور وأقفله برمز PIN أو بكلمة مرور؛ راجع <a class="xref" href="/ar/guide/share.html#share-lock">«قفل الرمز»</a>. عند انكشاف رمز مميز، ألغه على الجهة المستقبِلة وأنشئ رمزاً جديداً.</td></tr>
+      <tr><td data-label="الموضوع">الشبكات الخارجية</td><td data-label="الوصف والتوصية">لا يُنصح بفتح المنفذ <code>8123</code> في Home Assistant مباشرة على الإنترنت. أما طريقة الوصول إليه عند الابتعاد عن المنزل، كاستخدام VPN أو طريقة الوصول عن بُعد الرسمية في Home Assistant، فهي قرارك أنت؛ ثم غيّر عنوان URL إلى العنوان المطابق.</td></tr>
+      <tr><td data-label="الموضوع">الإجراءات المادية</td><td data-label="الوصف والتوصية">فعّل <span class="ui">التأكيد قبل التنفيذ</span> للأزرار التي تفتح الأبواب وتلغي القفل وتُطلق الإنذارات. ليس في Cam Hub أي قفل إضافي على أزرار اللوحات؛ ويستطيع أي شخص يمكنه تشغيل الجهاز المفتوح القفل، أو الساعة، الضغط عليها.</td></tr>
+      <tr><td data-label="الموضوع">تحليل الأسماء</td><td data-label="الوصف والتوصية">قد لا تُحلَّل الأسماء المنتهية بـ <code>.local</code> على بعض الشبكات. عند فشل الاتصالات، أدخل عنوان IP الثابت للجهة المستقبِلة بدلاً من ذلك.</td></tr>
+    </tbody>
+  </table></div>
+</section><nav class="guide-pager" aria-label="المحتويات"><a class="guide-prev" rel="prev" href="/ar/guide/lvm.html"><span class="pager-dir">الفصل السابق</span><span class="pager-title">8. LiveView Mix</span></a><a class="guide-next" rel="next" href="/ar/guide/share.html"><span class="pager-dir">الفصل التالي</span><span class="pager-title">10. المشاركة والنسخ الاحتياطي</span></a></nav></article>
+    </div>
+    <button class="guide-top" id="guide-top" type="button" aria-label="العودة إلى الأعلى"></button>
+  </main>
+  <footer class="footer"><span data-i18n="footer">Copyright © 2026 ALMX. All rights reserved.</span><nav><a href="/ar/guide.html" data-i18n="navGuide">الدليل</a><a href="/ar/devices.html" data-i18n="navDevices">الفروق بين أجهزة Apple</a><a href="/ar/privacy.html" data-i18n="navPrivacy">الخصوصية</a><a href="/ar/terms.html" data-i18n="navTerms">الشروط</a><a class="store-link" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeCTA">نزّله من App Store</a></nav><nav class="language-links" id="language-links" aria-label="اللغة" data-i18n-aria="languageLabel"><a href="/guide/webhook.html" hreflang="en" lang="en" data-language-link="en">English</a><a href="/zh-Hant/guide/webhook.html" hreflang="zh-Hant" lang="zh-Hant" data-language-link="zh-Hant">繁體中文</a><a href="/zh-Hans/guide/webhook.html" hreflang="zh-Hans" lang="zh-Hans" data-language-link="zh-Hans">简体中文</a><a href="/ja/guide/webhook.html" hreflang="ja" lang="ja" data-language-link="ja">日本語</a><a href="/ko/guide/webhook.html" hreflang="ko" lang="ko" data-language-link="ko">한국어</a><a href="/de/guide/webhook.html" hreflang="de" lang="de" data-language-link="de">Deutsch</a><a href="/es/guide/webhook.html" hreflang="es" lang="es" data-language-link="es">Español</a><a href="/es-MX/guide/webhook.html" hreflang="es-MX" lang="es-MX" data-language-link="es-MX">Español (México)</a><a href="/fr/guide/webhook.html" hreflang="fr" lang="fr" data-language-link="fr">Français</a><a href="/sl/guide/webhook.html" hreflang="sl" lang="sl" data-language-link="sl">Slovenščina</a><a href="/ar/guide/webhook.html" hreflang="ar" lang="ar" data-language-link="ar" aria-current="true">العربية</a></nav></footer>
+  <script src="/additional-locales.js?v=20261103-sl"></script>
+  <script src="/site.js?v=20261112-1"></script>
+
+
+</body></html>

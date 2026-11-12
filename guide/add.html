@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en" dir="ltr"><head>
+  <meta charset="utf-8"><script>(function () {
+  var codes = ["zh-Hant", "zh-Hans", "ja", "ko", "de", "es", "es-MX", "fr", "sl", "ar"];
+
+  function pickLanguage(preferences) {
+    var direct = { en: "en", ar: "ar", de: "de", es: "es", fr: "fr", ja: "ja", ko: "ko", sl: "sl" };
+    for (var i = 0; i < preferences.length; i += 1) {
+      var tag = String(preferences[i] || "").replace(/_/g, "-");
+      if (/^es-mx(?:-|$)/i.test(tag)) return "es-MX";
+      var base = tag.split("-")[0].toLowerCase();
+      if (direct[base]) return direct[base];
+      if (base !== "zh") continue;
+      try {
+        var locale = new Intl.Locale(tag).maximize();
+        return locale.script === "Hant" || ["TW", "HK", "MO"].indexOf(locale.region) >= 0 ? "zh-Hant" : "zh-Hans";
+      } catch (error) {
+        return /(?:^|-)Hant(?:-|$)|(?:^|-)(?:TW|HK|MO)(?:-|$)/i.test(tag) ? "zh-Hant" : "zh-Hans";
+      }
+    }
+    return "en";
+  }
+  window.__camHubEarlyPick = pickLanguage;
+
+  try {
+    if (window.__camHubPrerender || /[?&](?:lang|chapter)=/i.test(location.search)) return;
+    if (document.referrer && new URL(document.referrer).origin === location.origin) return;
+    var chosen = null;
+    try {
+      if (localStorage.getItem("camHubSiteLanguageManual") === "1") chosen = localStorage.getItem("camHubSiteLanguage");
+    } catch (error) {
+      chosen = null;
+    }
+    var target = chosen === "en" || codes.indexOf(chosen) >= 0 ? chosen
+      : pickLanguage(navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"]);
+    if (codes.indexOf(target) < 0) return;
+    var path = location.pathname === "/index.html" ? "/" : location.pathname;
+    location.replace("/" + target + path + location.search + location.hash);
+  } catch (error) {
+  }
+})();</script><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="apple-itunes-app" content="app-id=6792057195"><meta name="color-scheme" content="dark light">
+  <meta name="description" content="Adding a camera or recorder requires its address and its account. Cam Hub finds out by itself how to connect to the device; a connection method and ports can…">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="Cam Hub"><meta property="og:image" content="https://cam-hub.almx.cc/assets/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+  <title>Adding a device — Cam Hub Manual</title><link rel="icon" href="/assets/icon-48.png" sizes="48x48"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/icon-180.png"><link rel="stylesheet" href="/styles.css?v=20261112-1"><link rel="stylesheet" href="/guide.css?v=20261030-1">
+<meta property="og:description" content="Adding a camera or recorder requires its address and its account. Cam Hub finds out by itself how to connect to the device; a connection method and ports can…"><link rel="canonical" href="https://cam-hub.almx.cc/guide/add.html"><link rel="alternate" hreflang="x-default" href="https://cam-hub.almx.cc/guide/add.html"><link rel="alternate" hreflang="en" href="https://cam-hub.almx.cc/guide/add.html"><link rel="alternate" hreflang="zh-Hant" href="https://cam-hub.almx.cc/zh-Hant/guide/add.html"><link rel="alternate" hreflang="zh-Hans" href="https://cam-hub.almx.cc/zh-Hans/guide/add.html"><link rel="alternate" hreflang="ja" href="https://cam-hub.almx.cc/ja/guide/add.html"><link rel="alternate" hreflang="ko" href="https://cam-hub.almx.cc/ko/guide/add.html"><link rel="alternate" hreflang="de" href="https://cam-hub.almx.cc/de/guide/add.html"><link rel="alternate" hreflang="es" href="https://cam-hub.almx.cc/es/guide/add.html"><link rel="alternate" hreflang="es-MX" href="https://cam-hub.almx.cc/es-MX/guide/add.html"><link rel="alternate" hreflang="fr" href="https://cam-hub.almx.cc/fr/guide/add.html"><link rel="alternate" hreflang="sl" href="https://cam-hub.almx.cc/sl/guide/add.html"><link rel="alternate" hreflang="ar" href="https://cam-hub.almx.cc/ar/guide/add.html"><meta property="og:url" content="https://cam-hub.almx.cc/guide/add.html"><meta property="og:title" content="Adding a device — Cam Hub Manual"></head>
+<body data-page="guide">
+  <header class="topbar" aria-label="Site header">
+    <a class="brand" href="/"><img src="/assets/icon-96.png" alt="" width="42" height="42"><span><strong>Cam&nbsp;Hub</strong><small data-i18n="topline">Operation manual</small></span></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-controls" data-i18n-aria="menuLabel" aria-label="Open menu"><span></span><span></span><span></span><span class="sr-only" data-i18n="menuLabel">Open menu</span></button>
+    <div class="topbar-controls" id="site-controls"><nav class="navlinks" aria-label="Primary"><a href="/" data-nav="home" data-i18n="navHome">Home</a><a href="/product.html" data-nav="product" data-i18n="navProduct">Product</a><a href="/guide.html" data-nav="guide" data-i18n="navGuide" aria-current="page">Manual</a><a href="/support.html" data-nav="support" data-i18n="navSupport">Support</a><a href="/privacy.html" data-nav="privacy" data-i18n="navPrivacy">Privacy</a><a href="/terms.html" data-nav="terms" data-i18n="navTerms">Terms</a></nav><div class="pickers"><label><span class="sr-only" data-i18n="themeLabel">Appearance</span><select id="themeSelect" aria-label="Theme"><option value="auto" data-i18n="themeAuto" selected="">Auto</option><option value="light" data-i18n="themeLight">Light</option><option value="dark" data-i18n="themeDark">Dark</option></select></label><label><span class="sr-only" data-i18n="languageLabel">Language</span><select id="languageSelect" aria-label="Language"><option value="en" selected="">English</option><option value="zh-Hant">繁體中文</option><option value="zh-Hans">简体中文</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="de">Deutsch</option><option value="es">Español</option><option value="es-MX">Español (México)</option><option value="fr">Français</option><option value="sl">Slovenščina</option><option value="ar">العربية</option></select></label></div><a class="store-pill" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeShort">Get the app</a></div>
+  </header>
+  <main class="inner-page guide" style="--g-topbar: 76px; --g-offset: 88px;">
+    <section class="page-hero"><div class="eyebrow" data-i18n="eyebrow">OPERATION MANUAL</div><h1 data-i18n="title">Adding a device</h1><p class="summary" data-i18n="summary">Step-by-step instructions for adding devices, live view and recording playback, LiveView Mix walls, sharing, and backup.</p></section>
+    <p class="guide-notice" id="guide-notice" role="status" hidden=""></p>
+    <div id="guide-sentinel" aria-hidden="true"></div>
+    <div class="guide-layout has-toc" id="guide-layout" lang="en" dir="ltr">
+      <aside class="guide-side" id="guide-side">
+        <button class="guide-toc-toggle" id="guide-toc-toggle" type="button" aria-expanded="false" aria-controls="guide-toc" lang="en" dir="ltr"><span class="guide-toc-label" data-i18n="tocLabel">Contents</span><span class="guide-toc-current" id="guide-toc-current">3. Adding a device</span></button>
+        <nav class="guide-toc" id="guide-toc" aria-label="Contents"><ol><li><a href="/guide.html"><span class="toc-num">1</span><span>Quick start</span></a><ol><li><a href="/guide.html#start-prepare"><span>Before you begin</span></a></li><li><a href="/guide.html#start-path"><span>Shortest path to a live picture</span></a></li><li><a href="/guide.html#start-demo"><span>Trying the app without a device</span></a></li></ol></li><li><a href="/guide/tour.html"><span class="toc-num">2</span><span>The tabs and basic behaviour</span></a><ol><li><a href="/guide/tour.html#tour-tabs"><span>The tabs at a glance</span></a></li><li><a href="/guide/tour.html#tour-launch"><span>What opens when the app starts</span></a></li><li><a href="/guide/tour.html#tour-look"><span>Appearance and language</span></a></li><li><a href="/guide/tour.html#tour-rotate"><span>Turning the device</span></a></li><li><a href="/guide/tour.html#tour-duo"><span>iPhone Duo</span></a></li><li><a href="/guide/tour.html#tour-awake"><span>Screen, background and notifications</span></a></li></ol></li><li class="is-current"><a href="/guide/add.html" class="is-active" aria-current="location"><span class="toc-num">3</span><span>Adding a device</span></a><ol><li><a href="/guide/add.html#add-form"><span>The Add Device form</span></a></li><li><a href="/guide/add.html#add-auto"><span>Adding without choosing a brand</span></a></li><li><a href="/guide/add.html#add-methods"><span>Choosing the connection method</span></a></li><li><a href="/guide/add.html#add-https"><span>Adding a device over HTTPS</span></a></li><li><a href="/guide/add.html#add-streams"><span>Adding YouTube live streams and Twitch channels</span></a></li><li><a href="/guide/add.html#add-failed"><span>When adding fails: the checklist</span></a></li><li><a href="/guide/add.html#add-report"><span>Device report (experimental)</span></a></li><li><a href="/guide/add.html#add-scan"><span>Finding devices with the network scan</span></a></li></ol></li><li><a href="/guide/devices.html"><span class="toc-num">4</span><span>The Devices tab and channels</span></a><ol><li><a href="/guide/devices.html#devices-list"><span>The device list</span></a></li><li><a href="/guide/devices.html#devices-page"><span>The device page</span></a></li><li><a href="/guide/devices.html#devices-credentials"><span>Changing the user name and password of a device</span></a></li><li><a href="/guide/devices.html#devices-password-missing"><span>A device without a saved password</span></a></li><li><a href="/guide/devices.html#devices-https"><span>HTTPS for a saved device</span></a></li><li><a href="/guide/devices.html#devices-health"><span>Disk Health</span></a></li><li><a href="/guide/devices.html#devices-streams"><span>YouTube and Twitch streams</span></a></li><li><a href="/guide/devices.html#devices-states"><span>What a thumbnail shows</span></a></li><li><a href="/guide/devices.html#devices-menu"><span>Channel options (long press)</span></a></li><li><a href="/guide/devices.html#devices-plan"><span>Plan limits and enabling channels</span></a></li><li><a href="/guide/devices.html#devices-choose"><span>Choosing which cameras show</span></a></li><li><a href="/guide/devices.html#devices-fullwall"><span>The full-screen wall of a device</span></a></li><li><a href="/guide/devices.html#devices-quality"><span>SD and HD on device screens</span></a></li></ol></li><li><a href="/guide/live.html"><span class="toc-num">5</span><span>The Live tab and the Full Screen Wall</span></a><ol><li><a href="/guide/live.html#live-tab"><span>The Live tab</span></a></li><li><a href="/guide/live.html#live-quality"><span>SD and HD on a wall</span></a></li><li><a href="/guide/live.html#live-wall"><span>The Full Screen Wall</span></a></li><li><a href="/guide/live.html#live-hide"><span>Hiding cameras without signal</span></a></li></ol></li><li><a href="/guide/single.html"><span class="toc-num">6</span><span>Single-camera view</span></a><ol><li><a href="/guide/single.html#single-open"><span>Opening the view</span></a></li><li><a href="/guide/single.html#single-screen"><span>The parts of the screen</span></a></li><li><a href="/guide/single.html#single-zoom"><span>Zoom and pan</span></a></li><li><a href="/guide/single.html#single-controls"><span>Snapshot, sound and quality</span></a></li><li><a href="/guide/single.html#single-clip"><span>Recording a clip</span></a></li><li><a href="/guide/single.html#single-talk"><span>Two-way talk</span></a></li><li><a href="/guide/single.html#single-picture"><span>Black bars, rotation and landscape</span></a></li><li><a href="/guide/single.html#single-ptz"><span>PTZ control: moving the camera</span></a></li><li><a href="/guide/single.html#single-window"><span>A camera in a window of its own</span></a></li><li><a href="/guide/single.html#single-duo"><span>The view on a folded iPhone Duo</span></a></li><li><a href="/guide/single.html#single-streams"><span>YouTube and Twitch streams</span></a></li><li><a href="/guide/single.html#single-states"><span>Connection states and messages</span></a></li><li><a href="/guide/single.html#single-limits"><span>What is not available</span></a></li></ol></li><li><a href="/guide/playback.html"><span class="toc-num">7</span><span>Recording playback and speed</span></a><ol><li><a href="/guide/playback.html#playback-avail"><span>Where playback is available</span></a></li><li><a href="/guide/playback.html#playback-day"><span>Choosing a day</span></a></li><li><a href="/guide/playback.html#playback-calendar"><span>The recording calendar</span></a></li><li><a href="/guide/playback.html#playback-timeline"><span>Using the timeline</span></a></li><li><a href="/guide/playback.html#playback-list"><span>The list of recordings and the search for people</span></a></li><li><a href="/guide/playback.html#playback-playing"><span>While a recording plays</span></a></li><li><a href="/guide/playback.html#playback-speed"><span>Playback speed</span></a></li><li><a href="/guide/playback.html#playback-landscape"><span>Playback in landscape</span></a></li><li><a href="/guide/playback.html#playback-limits"><span>What is not available</span></a></li></ol></li><li><a href="/guide/lvm.html"><span class="toc-num">8</span><span>LiveView Mix</span></a><ol><li><a href="/guide/lvm.html#lvm-tab"><span>The LiveView Mix tab and its preview</span></a></li><li><a href="/guide/lvm.html#lvm-first"><span>Building a first wall of six cameras</span></a></li><li><a href="/guide/lvm.html#lvm-pick"><span>Choosing cameras and quality</span></a></li><li><a href="/guide/lvm.html#lvm-layout"><span>Adjusting the layout</span></a></li><li><a href="/guide/lvm.html#lvm-custom"><span>Drawing a custom layout</span></a></li><li><a href="/guide/lvm.html#lvm-special"><span>Special layouts: big and small tiles on one wall</span></a></li><li><a href="/guide/lvm.html#lvm-arrange"><span>Arranging the wall and its tiles</span></a></li><li><a href="/guide/lvm.html#lvm-move"><span>Moving a tile into an empty tile</span></a></li><li><a href="/guide/lvm.html#lvm-slots"><span>What a tile can show besides a camera</span></a></li><li><a href="/guide/lvm.html#lvm-watermark"><span>Watermark</span></a></li><li><a href="/guide/lvm.html#lvm-fit"><span>Black bars, edge-to-edge video and the angle of the device</span></a></li><li><a href="/guide/lvm.html#lvm-pages"><span>The portrait page</span></a></li><li><a href="/guide/lvm.html#lvm-canvases"><span>Two canvases on iPhone Duo</span></a></li><li><a href="/guide/lvm.html#lvm-wall"><span>The full-screen wall</span></a></li><li><a href="/guide/lvm.html#lvm-closeup"><span>Opening a single camera</span></a></li><li><a href="/guide/lvm.html#lvm-streams"><span>YouTube and Twitch streams on the wall</span></a></li><li><a href="/guide/lvm.html#lvm-states"><span>When a tile cannot show a camera</span></a></li><li><a href="/guide/lvm.html#lvm-limits"><span>How plan limits affect the wall</span></a></li><li><a href="/guide/lvm.html#lvm-settings"><span>LiveView Mix in Settings</span></a></li><li><a href="/guide/lvm.html#lvm-tv"><span>Differences on Apple TV</span></a></li></ol></li><li><a href="/guide/webhook.html"><span class="toc-num">9</span><span>Control panels and webhooks</span></a><ol><li><a href="/guide/webhook.html#webhook-what"><span>What a control panel does</span></a></li><li><a href="/guide/webhook.html#webhook-add"><span>Adding a control panel to the wall</span></a></li><li><a href="/guide/webhook.html#webhook-templates"><span>Templates</span></a></li><li><a href="/guide/webhook.html#webhook-fields"><span>The settings of a panel</span></a></li><li><a href="/guide/webhook.html#webhook-button"><span>Setting up a button</span></a></li><li><a href="/guide/webhook.html#webhook-use"><span>Pressing a button and reading the result</span></a></li><li><a href="/guide/webhook.html#webhook-wall"><span>How a panel looks on the wall</span></a></li><li><a href="/guide/webhook.html#webhook-watch"><span>Buttons on Apple Watch</span></a></li><li><a href="/guide/webhook.html#ha"><span>Using Home Assistant</span></a></li><li><a href="/guide/webhook.html#webhook-security"><span>Security notes</span></a></li></ol></li><li><a href="/guide/share.html"><span class="toc-num">10</span><span>Sharing and backup</span></a><ol><li><a href="/guide/share.html#share-choose"><span>Comparing the two methods</span></a></li><li><a href="/guide/share.html#share-export"><span>Exporting cameras (creating a code)</span></a></li><li><a href="/guide/share.html#share-lock"><span>Locking a code</span></a></li><li><a href="/guide/share.html#share-import"><span>Importing cameras</span></a></li><li><a href="/guide/share.html#share-contents"><span>What backups and codes contain</span></a></li><li><a href="/guide/share.html#share-icloud"><span>Backing up to iCloud</span></a></li><li><a href="/guide/share.html#share-versions"><span>Several named backups: renaming and deleting</span></a></li><li><a href="/guide/share.html#share-restore"><span>Restoring from iCloud</span></a></li><li><a href="/guide/share.html#share-delete"><span>Deleting all iCloud backups</span></a></li><li><a href="/guide/share.html#share-newphone"><span>Moving devices and walls to a new phone</span></a></li><li><a href="/guide/share.html#share-appletv"><span>Bringing the setup to Apple TV</span></a></li></ol></li><li><a href="/guide/plans.html"><span class="toc-num">11</span><span>Plans and limits</span></a><ol><li><a href="/guide/plans.html#plans-tiers"><span>The allowance of each plan</span></a></li><li><a href="/guide/plans.html#plans-stack"><span>How the two groups of plans combine</span></a></li><li><a href="/guide/plans.html#plans-count"><span>What uses allowance</span></a></li><li><a href="/guide/plans.html#plans-examples"><span>Examples of combinations</span></a></li><li><a href="/guide/plans.html#plans-choose"><span>Choosing which cameras show</span></a></li><li><a href="/guide/plans.html#plans-subscribe"><span>Subscribing, restoring purchases and redeeming a code</span></a></li><li><a href="/guide/plans.html#plans-lapse"><span>When a plan ends or is reduced</span></a></li></ol></li><li><a href="/guide/tools.html"><span class="toc-num">12</span><span>The Tools tab</span></a><ol><li><a href="/guide/tools.html#tools-overview"><span>What the Tools tab contains</span></a></li><li><a href="/guide/tools.html#tools-speedometer"><span>Speedometer and compass</span></a></li></ol></li><li><a href="/guide/settings.html"><span class="toc-num">13</span><span>Settings</span></a><ol><li><a href="/guide/settings.html#settings-overview"><span>The sections of the Settings tab</span></a></li><li><a href="/guide/settings.html#settings-subscription"><span>Subscription</span></a></li><li><a href="/guide/settings.html#settings-quality"><span>Default quality</span></a></li><li><a href="/guide/settings.html#settings-picture"><span>Picture: black bars and edge-to-edge</span></a></li><li><a href="/guide/settings.html#settings-hide"><span>Hide offline cameras</span></a></li><li><a href="/guide/settings.html#settings-lvm"><span>LiveView Mix, its pages and Open on launch</span></a></li><li><a href="/guide/settings.html#settings-backup"><span>Backup and sharing of cameras</span></a></li><li><a href="/guide/settings.html#settings-language"><span>Language</span></a></li><li><a href="/guide/settings.html#settings-reset"><span>Reset: defaults, delete all data, delete iCloud backup</span></a></li><li><a href="/guide/settings.html#settings-legal"><span>Terms of Use and Privacy Policy</span></a></li><li><a href="/guide/settings.html#settings-about"><span>About, the user manual, and what Settings does not contain</span></a></li></ol></li><li><a href="/guide/appletv.html"><span class="toc-num">14</span><span>Apple TV</span></a><ol><li><a href="/guide/appletv.html#appletv-prepare"><span>Set up on an iPhone or iPad first</span></a></li><li><a href="/guide/appletv.html#appletv-bring"><span>Bringing the setup to the Apple TV</span></a></li><li><a href="/guide/appletv.html#appletv-differs"><span>What differs on the Apple TV</span></a></li></ol></li><li><a href="/guide/trouble.html"><span class="toc-num">15</span><span>Troubleshooting</span></a><ol><li><a href="/guide/trouble.html#trouble-start"><span>Where to start</span></a></li><li><a href="/guide/trouble.html#trouble-states"><span>What the empty screens say</span></a></li><li><a href="/guide/trouble.html#trouble-add"><span>A device is added, but it is not reachable</span></a></li><li><a href="/guide/trouble.html#trouble-live"><span>Live view</span></a></li><li><a href="/guide/trouble.html#trouble-playback"><span>Recording playback</span></a></li><li><a href="/guide/trouble.html#trouble-lvm"><span>LiveView Mix</span></a></li><li><a href="/guide/trouble.html#trouble-streams"><span>YouTube and Twitch</span></a></li><li><a href="/guide/trouble.html#trouble-panels"><span>Control panels and webhooks</span></a></li><li><a href="/guide/trouble.html#trouble-health"><span>Disk Health</span></a></li><li><a href="/guide/trouble.html#trouble-share"><span>Sharing, import and iCloud backup</span></a></li><li><a href="/guide/trouble.html#trouble-plans"><span>Plans and purchases</span></a></li><li><a href="/guide/trouble.html#trouble-errors"><span>Other error sentences</span></a></li><li><a href="/guide/trouble.html#trouble-permissions"><span>Permission requests and system dialogs</span></a></li><li><a href="/guide/trouble.html#trouble-contact"><span>Reaching the developer</span></a></li><li><a href="/guide/trouble.html#trouble-faq"><span>Questions and answers</span></a></li></ol></li><li><a href="/guide/brands.html"><span class="toc-num">16</span><span>Supported brands and connection methods</span></a><ol><li><a href="/guide/brands.html#brands-methods"><span>Connection methods</span></a></li><li><a href="/guide/brands.html#brands-matrix"><span>What works with which method</span></a></li><li><a href="/guide/brands.html#brands-profiles"><span>The brands in the list</span></a></li><li><a href="/guide/brands.html#brands-requirements"><span>Requirements and limits</span></a></li><li><a href="/guide/brands.html#brands-recorders"><span>Cameras and recorders</span></a></li><li><a href="/guide/brands.html#brands-prepare"><span>What to prepare on the device</span></a></li><li><a href="/guide/brands.html#brands-activate"><span>Activating a new device</span></a></li><li><a href="/guide/brands.html#brands-compat"><span>The compatibility reference in the app</span></a></li></ol></li><li><a href="/guide/about.html" class="no-num"><span>About this manual</span></a><ol><li><a href="/guide/about.html#about-scope"><span>Scope</span></a></li><li><a href="/guide/about.html#about-conventions"><span>Conventions</span></a></li><li><a href="/guide/about.html#about-help"><span>Where to get help</span></a></li></ol></li></ol></nav>
+      </aside>
+      <article class="guide-article" id="guide-content"><section class="chapter" id="add">
+  <h2><span class="num">3</span>Adding a device</h2>
+  <p class="lead">Adding a camera or recorder requires its address and its account. Cam Hub finds out by itself how to connect to the device; a connection method and ports can be chosen under Advanced instead. YouTube live streams and Twitch channels are added from screens of their own.</p>
+
+  <h3 id="add-form">The Add Device form</h3>
+  <p>Path: <span class="path"><span class="ui">Devices</span> › <span class="ui" data-ui="icon">＋</span> › <span class="ui">Add Device</span></span></p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Field</th><th>Description</th><th>Default</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Field"><span class="ui">Name (optional)</span></td><td data-label="Description">The name under which the device is shown in Cam Hub. When left empty, the model reported by the device is used. A camera connected over plain RTSP whose brand is not known is named after its address, and a device added through a brand from the list is named after that brand.</td><td data-label="Default">Empty</td></tr>
+      <tr><td data-label="Field"><span class="ui">IP address or hostname</span></td><td data-label="Description">Required. The network address of the device. A YouTube or Twitch link entered here leads to the screen for that service instead; see <a class="xref" href="/guide/add.html#add-streams">“Adding YouTube live streams and Twitch channels”</a>.</td><td data-label="Default">Empty</td></tr>
+      <tr><td data-label="Field"><span class="ui">Username</span></td><td data-label="Description">The sign-in account of the device.</td><td data-label="Default"><code>admin</code></td></tr>
+      <tr><td data-label="Field"><span class="ui">Password</span></td><td data-label="Description">The sign-in password of the device. The password is stored in the keychain of the iPhone or iPad.</td><td data-label="Default">Empty</td></tr>
+      <tr><td data-label="Field"><span class="path"><span class="ui">Advanced</span> › <span class="ui">Connect using</span></span></td><td data-label="Description"><span class="ui">Auto-detect</span>, <span class="ui">ONVIF</span>, RTSP, the own protocol of one device family, or a brand from the list. For the choice, see <a class="xref" href="/guide/add.html#add-methods">“Choosing the connection method”</a>.</td><td data-label="Default"><span class="ui">Auto-detect</span></td></tr>
+      <tr><td data-label="Field"><span class="path"><span class="ui">Advanced</span> › <span class="ui">HTTP Port</span></span></td><td data-label="Description">The port of the control interface of the device. With <span class="ui">Auto-detect</span>, Cam Hub finds the open ports by itself and tries a port entered here first. With <span class="ui">ONVIF</span>, the field must hold the ONVIF service port of the device, for example <code>2020</code> or <code>8899</code> on some devices.</td><td data-label="Default"><code>80</code></td></tr>
+      <tr><td data-label="Field"><span class="path"><span class="ui">Advanced</span> › <span class="ui">RTSP Port</span></span></td><td data-label="Description">The port of the video stream. <span class="ui">Auto-detect</span> tries a port entered here first. Selecting a brand whose RTSP port is not <code>554</code> fills in that brand's port, as long as the field still holds the previous default.</td><td data-label="Default"><code>554</code></td></tr>
+      <tr><td data-label="Field"><span class="path"><span class="ui">Advanced</span> › <span class="ui">Use HTTPS</span></span></td><td data-label="Description">Offered with <span class="ui">Auto-detect</span> and <span class="ui">ONVIF</span>. Turn it on only for a device whose web page uses HTTPS: Cam Hub then looks for HTTPS at the address without signing in, adds the device over HTTPS and trusts the certificate that the device presents at that moment. See <a class="xref" href="/guide/add.html#add-https">“Adding a device over HTTPS”</a>.</td><td data-label="Default">Off</td></tr>
+      <tr><td data-label="Field"><span class="path"><span class="ui">Advanced</span> › <span class="ui">HTTPS Port</span></span></td><td data-label="Description">Shown while <span class="ui">Use HTTPS</span> is on. Left at <code>443</code>, Cam Hub also looks on <code>5001</code> and <code>8443</code>; any other port is used alone.</td><td data-label="Default"><code>443</code></td></tr>
+      <tr><td data-label="Field"><span class="path"><span class="ui">Advanced</span> › <span class="ui">Device Port</span></span></td><td data-label="Description">Shown instead of the two ports above when the own protocol of a device family is selected: the port on which the device answers that protocol.</td><td data-label="Default"><code>34567</code></td></tr>
+    </tbody>
+  </table></div>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap the <span class="ui">Devices</span> tab at the bottom of the screen.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen shows the device list.</p>
+    </li>
+    <li class="step">
+      <p>Tap the <span class="ui" data-ui="icon">＋</span> button in the top-right corner. When the list is empty, the <span class="ui">Add Device</span> button in the middle of the screen opens the form directly.</p>
+      <p class="check"><b class="check-label">Check:</b> A menu opens that contains <span class="ui">Add Device</span>, and, where they are offered, <span class="ui">YouTube Live Stream</span> and <span class="ui">Twitch Channels</span>.</p>
+    </li>
+    <li class="step">
+      <p>Select <span class="ui">Add Device</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen shows the add-device form with the sections <span class="ui">Device</span> and <span class="ui">Credentials</span>, and the folded <span class="ui">Advanced</span> section.</p>
+      <figure class="phone"><img src="/guide/img/add-device.jpg" alt="The Add Device form: Name (optional) and IP address or hostname, the Credentials section, the folded Advanced row with its note about Auto-detect, Compatibility reference and Add Demo Cameras" decoding="async" width="900" height="1947" data-src="/guide/img/add-device.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>The Add Device form</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Optional: enter a name for the device in the <span class="ui">Name (optional)</span> field.</p>
+      <p class="check"><b class="check-label">Check:</b> The field shows the name, which is later shown in the device list.</p>
+    </li>
+    <li class="step">
+      <p>Enter the address of the device in the <span class="ui">IP address or hostname</span> field, for example <code>192.168.1.64</code>.</p>
+      <p class="check"><b class="check-label">Check:</b> The <span class="ui">Add</span> button in the top-right corner is available.</p>
+    </li>
+    <li class="step">
+      <p>Enter the account of the device in the <span class="ui">Username</span> and <span class="ui">Password</span> fields.</p>
+      <p class="check"><b class="check-label">Check:</b> Both fields are filled in. The password is masked with dots.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Add</span> in the top-right corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The form shows <span class="ui">Connecting to device…</span> with the current step below it, for example <span class="ui">Looking for open ports…</span> or <span class="ui">Trying ONVIF on port 8899…</span>. When the connection succeeds, the form closes and the new device appears in the device list.</p>
+    </li>
+  </ol>
+  <p>While the connection is made, a progress indicator replaces the <span class="ui">Add</span> button and the form cannot be closed with a downward swipe. <span class="ui">Cancel</span> stops the attempt, and nothing is saved. After connecting, Cam Hub identifies whether the device is a recorder or a single camera, reads the channel list and stores the device.</p>
+  <p>When the new device is a network storage device (NAS) whose disks Cam Hub can read over SNMP, the <span class="ui">SNMP Settings</span> sheet follows. This step is optional: <span class="ui">Not Now</span> closes the sheet, and SNMP can be set up later on the Disk Health page; see <a class="xref" href="/guide/devices.html#devices-health">“Disk Health”</a>. The device is stored either way.</p>
+  <p>The free plan enables only the channels within its allowance; the remaining channels are shown as <span class="ui">Disabled</span>. When the number of recorders allowed by the plan has been reached, the plans page opens. When the demo devices hold the recorder place of the free plan, the page says so; deleting the demo devices frees the place. YouTube live streams and Twitch channels never count toward a plan. For the allowances, see <a class="xref" href="/guide/plans.html">Chapter 11, “Plans and limits”</a>.</p>
+  <div class="callout note">
+    <strong class="t">The address of a stored device cannot be edited</strong>
+    <p>A stored device can be renamed, and its username and password can be changed with <span class="ui">Edit Credentials</span>; see <a class="xref" href="/guide/devices.html#devices-credentials">“Changing the user name and password of a device”</a>. Its address cannot be changed. When the IP address changes, the new address is treated as a different device, and a recorder also counts against the recorder allowance. In that case, delete the old device first (see <a class="xref" href="/guide/devices.html">Chapter 4, “The Devices tab and channels”</a>) and add the new address. Adding a device again with the same address, port and username updates the stored device in place instead of creating a second one.</p>
+  </div>
+
+  <h3 id="add-auto">Adding without choosing a brand</h3>
+  <p>With the default <span class="ui">Auto-detect</span>, the address and the account are all that Cam Hub needs. The add runs in two stages:</p>
+  <ol>
+    <li><b>Port check.</b> Cam Hub checks which of the usual ports of cameras and recorders are open at the address: ports of web and control interfaces, ONVIF, RTSP, and the own protocol of a device family. The check sends no username and no password, so it cannot count toward locking the account. When nothing answers, the check is repeated once with longer waits.</li>
+    <li><b>Connection attempts.</b> Cam Hub then tries each way of connecting on the ports that answered, in this order: the manufacturer protocols that are built in, the own protocol of a device family, ONVIF, and plain RTSP. For RTSP, it tries the stream paths of a brand that the device revealed, then the paths that most cameras use, then the paths of every brand in the list. The first way that connects is kept, together with the port on which it connected.</li>
+  </ol>
+  <ul>
+    <li>Ports entered under <span class="ui">Advanced</span> are tried first. A port that differs from the default (<code>80</code> or <code>554</code>) and is open is used alone, because at an address that forwards several devices another port may belong to another device.</li>
+    <li>To protect the account, the attempt ends at once with <span class="ui">Wrong username or password.</span> when a manufacturer protocol refuses the sign-in. ONVIF and RTSP may use an account of their own, so they end the attempt after the second refused sign-in. After a refusal, stream paths are tried one at a time.</li>
+    <li>A camera that is reached only over RTSP is always added as a single camera. To add a recorder that offers only RTSP, select its brand and enter the number of cameras; see <a class="xref" href="/guide/add.html#add-methods">“Choosing the connection method”</a>.</li>
+    <li>The own protocol of a device family is tried automatically only at addresses in the local network and on its default port. For such a device outside the local network or on another port, select its connection method under <span class="ui">Advanced</span>; see <a class="xref" href="/guide/brands.html#brands-methods">“Connection methods”</a>.</li>
+    <li>Trying many stream paths takes time. For a camera that leaves wrong paths unanswered, the add can take more than a minute before it succeeds or fails.</li>
+    <li>When adding fails, the open ports that were found are listed below the error message, for example <span class="ui">Open ports found: 80, 554</span>, or the form shows <span class="ui">No open ports were found at this address.</span> The first means that the device answered but would not connect; the second, that nothing answered at all.</li>
+  </ul>
+  <p>For the brands that Auto-detect recognizes and the exact order of the attempts, see <a class="xref" href="/guide/brands.html#brands-methods">“Connection methods”</a>.</p>
+
+  <h3 id="add-methods">Choosing the connection method</h3>
+  <p><span class="ui">Auto-detect</span> suits most devices. When it cannot find the device, or when a particular protocol is wanted, select the connection method under <span class="ui">Advanced</span>.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>In the add-device form, tap <span class="ui">Advanced</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The section opens and shows <span class="ui">Connect using</span>, <span class="ui">HTTP Port</span>, <span class="ui">RTSP Port</span> and the switch <span class="ui">Use HTTPS</span>.</p>
+      <figure class="phone"><img src="/guide/img/add-advanced.jpg" alt="The Add Device form with Advanced unfolded: Connect using set to Auto-detect, HTTP Port 80, RTSP Port 554, Use HTTPS turned off, and the note about Auto-detect" decoding="async" width="900" height="1947" data-src="/guide/img/add-advanced.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>Advanced unfolded</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Connect using</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The <span class="ui">Connect using</span> list opens with a search field. At the top are <span class="ui">Auto-detect</span>, <span class="ui">ONVIF</span>, the own protocol of one device family and RTSP; below them, <span class="ui">Brands</span> lists the supported brands in alphabetical order.</p>
+      <figure class="phone"><img src="/guide/img/add-connect-using.jpg" alt="The Connect using list: a search field, Auto-detect with a check mark, the protocols and device families, then the Brands section in alphabetical order" decoding="async" width="900" height="1947" data-src="/guide/img/add-connect-using.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>The Connect using list</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Optional: type part of a brand name in the search field.</p>
+      <p class="check"><b class="check-label">Check:</b> The list shows only the matching choices. A brand is also found by other names under which its cameras are sold.</p>
+    </li>
+    <li class="step">
+      <p>Tap the connection method.</p>
+      <p class="check"><b class="check-label">Check:</b> The form shows the method in the <span class="ui">Connect using</span> row, with an explanation below the section. A brand from the list, and RTSP, add a section with <span class="ui">Cameras</span> and a path field; the own protocol of a device family replaces the two ports with <span class="ui">Device Port</span>. <span class="ui">Use HTTPS</span> is offered only with <span class="ui">Auto-detect</span> and <span class="ui">ONVIF</span>.</p>
+    </li>
+    <li class="step">
+      <p>When the device does not use the default ports, change the port fields.</p>
+      <p class="check"><b class="check-label">Check:</b> The fields show the ports that the device uses.</p>
+    </li>
+  </ol>
+  <p>The choices:</p>
+  <ul>
+    <li><b><span class="ui">Auto-detect</span> (default)</b>: Cam Hub finds the ports and the protocol by itself, as described in <a class="xref" href="/guide/add.html#add-auto">“Adding without choosing a brand”</a>.</li>
+    <li><b><span class="ui">ONVIF</span></b>: skips the detection and uses only the open ONVIF protocol, on the port in <span class="ui">HTTP Port</span>. Use it for a camera that Auto-detect does not find, or to use ONVIF on a device that also supports its own protocol. ONVIF must be turned on at the device; when the device has a separate ONVIF user list, a user must be created there. Whether recording playback and PTZ control are available depends on what the device offers.</li>
+    <li><b>RTSP</b>: connects over plain RTSP to a camera of any brand and tries the stream paths that most cameras use. When none of them works, enter the path shown in the manual or on the web page of the camera.</li>
+    <li><b>The own protocol of a device family</b>: connects over that protocol on <span class="ui">Device Port</span>, <code>34567</code> unless the port was changed or forwarded. Use it for a recorder that Auto-detect does not find, or for one that is reached from outside the local network. For an address outside the local network, the form shows a warning in orange: the protocol does not encrypt the video, and many devices protect the password only weakly. How you reach a device from outside, for example through a VPN, is your own choice. The device family is named in <a class="xref" href="/guide/brands.html#brands-methods">“Connection methods”</a>.</li>
+    <li><b>A brand from the list</b>: connects directly over RTSP, using the stream paths documented for that brand. Use it when ONVIF is turned off at the device, or to add a recorder that offers only RTSP. The added section has two fields:
+      <ul>
+        <li><span class="ui">Cameras</span>: a number from 1 to 64. With <code>1</code>, the device is added as a single camera; with <code>2</code> or more, it is added as a recorder and counts against the recorder allowance. A network scan that learned the number of channels fills it in.</li>
+        <li>The path field: when left blank, Cam Hub tries the documented paths of that brand in turn and keeps the one that the device answers. The field shows the first path that is tried. Fill it in only to specify a particular path.</li>
+      </ul>
+    </li>
+  </ul>
+  <p>The brands whose devices have a manufacturer protocol built into Cam Hub are not in the list; Auto-detect finds them, as the note below the list states. Some brands need a dedicated camera or ONVIF account, created in the manufacturer's app or web interface, before RTSP works; the administrator account alone may be refused. For some brands, the paths vary by model or firmware, so the first attempt may not match. The form shows these notes below the path field. For the list of brands and the notes on each, see <a class="xref" href="/guide/brands.html#brands-profiles">“The brands in the list”</a>.</p>
+  <div class="callout warn">
+    <strong class="t">RTSP and a brand from the list provide live view only</strong>
+    <p>These connection methods have no recording playback, no PTZ control and no snapshot. SD uses the second stream of the brand where the device serves it; otherwise SD shows the same stream as HD.</p>
+  </div>
+  <div class="callout note">
+    <strong class="t">Device control uses HTTP unless HTTPS is turned on</strong>
+    <p>Device control (identifying the device, reading the channel list, searching recordings) uses <code>http://address:port</code>, or HTTPS when it is turned on for the device; the device family with its own protocol uses that protocol instead. A device that accepts HTTPS only is added with <span class="ui">Use HTTPS</span>; see <a class="xref" href="/guide/add.html#add-https">“Adding a device over HTTPS”</a>.</p>
+  </div>
+  <div class="callout note">
+    <strong class="t">Failure messages differ for RTSP and a brand from the list</strong>
+    <p>When the device cannot be reached or times out, only <span class="ui">Something went wrong. Please try again.</span> is shown. With these connection methods, <span class="ui">Not a supported device.</span> means that none of the candidate paths returned a stream. Common causes are a wrong RTSP port or a video stream that is turned off at the device.</p>
+  </div>
+  <p>When it is unclear whether a device can be used, tap <span class="ui">Compatibility reference</span> in the form to see the supported and unsupported devices. The entry is not shown, and neither is <span class="ui">Add Demo Cameras</span>, when the form was opened from a scan result that named the brand of the device and the address has not been changed.</p>
+
+  <h3 id="add-https">Adding a device over HTTPS</h3>
+  <p>A device whose web page uses HTTPS can be added over HTTPS, also when its plain HTTP is switched off. HTTPS is off unless it is turned on, and it is offered only with <span class="ui">Auto-detect</span> and <span class="ui">ONVIF</span>: the own protocol of a device family, RTSP and the brands from the list have no web interface for it to protect. A device that has already been added is switched to HTTPS on its device page instead; see <a class="xref" href="/guide/devices.html#devices-https">“HTTPS for a saved device”</a>.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>In the add-device form, enter the address, the username and the password, then tap <span class="ui">Advanced</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The section shows the switch <span class="ui">Use HTTPS</span>, turned off.</p>
+    </li>
+    <li class="step">
+      <p>Turn on <span class="ui">Use HTTPS</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The field <span class="ui">HTTPS Port</span> appears with <code>443</code>, and a note below the section explains the option.</p>
+      <figure class="phone"><img src="/guide/img/add-https.jpg" alt="The Add Device form with Advanced unfolded and Use HTTPS turned on: the HTTPS Port field with 443 and the note about HTTPS below the section" decoding="async" width="900" height="1947" data-src="/guide/img/add-https.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>Use HTTPS turned on</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>When the device uses another HTTPS port, enter it in <span class="ui">HTTPS Port</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The field shows the port. Left at <code>443</code>, Cam Hub also looks on <code>5001</code> and <code>8443</code>; any other port is used alone.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Add</span> in the top-right corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The form shows <span class="ui">Connecting to device…</span>. When the connection succeeds, the form closes and the new device appears in the device list. Its device page shows the row <span class="ui">HTTPS</span> with the port in the information card.</p>
+    </li>
+  </ol>
+  <ul>
+    <li>The note reads <span class="ui">Only for a device whose web page uses HTTPS; leave it off if you are not sure. Cam Hub looks for HTTPS on this port (left at 443, also on 5001 and 8443) and trusts the certificate the device presents now. You can check it later under HTTPS on the device's page.</span> It stays visible while the switch is on, also when <span class="ui">Advanced</span> is folded.</li>
+    <li>Looking for HTTPS sends no username and no password: Cam Hub only checks which ports present a certificate. When no port does, the form shows <span class="ui">This device did not answer over HTTPS just now.</span> When several ports do, they are tried in turn, so that a port forwarded to another device does not end the attempt.</li>
+    <li>The certificate is trusted as the device presents it while it is added. It can be compared with the certificate of the device's own web page afterwards; see <a class="xref" href="/guide/devices.html#devices-https">“HTTPS for a saved device”</a>.</li>
+    <li>HTTPS encrypts the control of the device. Video fetched over RTSP is not encrypted by it.</li>
+  </ul>
+
+  <h3 id="add-streams">Adding YouTube live streams and Twitch channels</h3>
+  <p>A YouTube live stream or a Twitch channel can be added to the device list and shown like a camera. It is played by the service's own player, needs no account and never counts toward a plan. It has no recordings, no PTZ control and no snapshot. Streams play on iPhone and iPad; Apple TV shows them by name only. YouTube and Twitch are not available in some countries and regions, and there these options do not appear.</p>
+  <p>The first time a screen for YouTube or for Twitch is opened, a notice appears: <span class="ui">Before YouTube streams play</span> or <span class="ui">Before Twitch channels play</span>. It explains that the service's own player plays the streams, that the service receives the IP address and information about the device and may use cookies and show ads, and that Cam Hub itself collects nothing. It links the service's terms of service and privacy policy and the <span class="ui">Cam Hub Privacy Policy</span>. Nothing of the service loads before <span class="ui">Agree and Continue</span> is tapped; <span class="ui">Cancel</span> closes the screen. The notice appears once for each service.</p>
+
+  <h4>Adding a YouTube live stream</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>In the <span class="ui">Devices</span> tab, tap the <span class="ui" data-ui="icon">＋</span> button in the top-right corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The menu shows <span class="ui">Add Device</span>, <span class="ui">YouTube Live Stream</span> and <span class="ui">Twitch Channels</span>.</p>
+      <figure class="phone"><img src="/guide/img/devices-add-menu.jpg" alt="The Devices tab with the plus menu open: Add Device, YouTube Live Stream and Twitch Channels" decoding="async" width="900" height="1947" data-src="/guide/img/devices-add-menu.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>The plus menu of the Devices tab</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Select <span class="ui">YouTube Live Stream</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> On first use, the notice <span class="ui">Before YouTube streams play</span> appears. Otherwise, the <span class="ui">YouTube Live Stream</span> screen opens.</p>
+      <figure class="phone"><img src="/guide/img/web-stream-terms.jpg" alt="The notice Before YouTube streams play, with links to the terms and privacy policies, Cancel at the top and Agree and Continue at the bottom" decoding="async" width="900" height="1947" data-src="/guide/img/web-stream-terms.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>The notice before a service is first used</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>On first use, read the notice and tap <span class="ui">Agree and Continue</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen shows the fields <span class="ui">YouTube link</span> and <span class="ui">Name (optional)</span>.</p>
+    </li>
+    <li class="step">
+      <p>Paste a link into <span class="ui">YouTube link</span>: the link of a live stream (in YouTube: Share, then Copy Link), or the link of a channel in the form <code>youtube.com/channel/…</code> to follow that channel.</p>
+      <p class="check"><b class="check-label">Check:</b> YouTube's player shows the stream below the fields, with <span class="ui">Checking that this is a live stream…</span> under it. For a live stream, the <span class="ui">LIVE</span> badge and the title of the stream appear.</p>
+      <figure class="phone"><img src="/guide/img/add-youtube.jpg" alt="The YouTube Live Stream screen before a link is pasted: the YouTube link field, the Name (optional) field and the note about which links work" decoding="async" width="900" height="1947" data-src="/guide/img/add-youtube.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>The YouTube Live Stream screen</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Optional: enter a name in <span class="ui">Name (optional)</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The field shows the name. When it is left empty, the stream is named after its title.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Add</span> in the top-right corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen closes and the stream appears in the device list.</p>
+    </li>
+  </ol>
+  <ul>
+    <li><span class="ui">Add</span> becomes available only when the player reports the stream as live. A recorded video, a broadcast that has ended, and a video whose owner does not allow playback in other apps are refused; the player shows the reason and <span class="ui">Try Again</span>.</li>
+    <li>For the link of a channel that is not live at the moment, the screen shows <span class="ui">You can follow this channel anyway: it plays here whenever it goes live.</span>, and <span class="ui">Add</span> is available. The tile of a followed channel checks again every minute and starts by itself when the channel goes live.</li>
+    <li>A link to a channel name that starts with <code>@</code> cannot be used; the screen shows <span class="ui">Use the link of the live stream itself: open it on YouTube, tap Share, then Copy Link.</span> A playlist cannot be added either.</li>
+    <li>Adding the same stream again only renames it.</li>
+  </ul>
+
+  <h4>Adding Twitch channels</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>In the <span class="ui">Devices</span> tab, tap the <span class="ui" data-ui="icon">＋</span> button and select <span class="ui">Twitch Channels</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> On first use, the notice <span class="ui">Before Twitch channels play</span> appears. Otherwise, the <span class="ui">Twitch Channels</span> screen opens.</p>
+    </li>
+    <li class="step">
+      <p>On first use, read the notice and tap <span class="ui">Agree and Continue</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen shows the field <span class="ui">Channel names or links</span>.</p>
+    </li>
+    <li class="step">
+      <p>Enter one or more channel names or links, separated by spaces, commas or new lines.</p>
+      <p class="check"><b class="check-label">Check:</b> The list below the field shows each channel that will be added. A channel that is already in the device list shows <span class="ui">Already followed</span>; an entry that is not a channel shows a line such as <span class="ui">Not a Twitch channel: twitch.tv/directory</span>.</p>
+      <figure class="phone"><img src="/guide/img/add-twitch.jpg" alt="The Twitch Channels screen before anything is typed: the field for channel names or links and the note about separating several names" decoding="async" width="900" height="1947" data-src="/guide/img/add-twitch.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>The Twitch Channels screen</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Add</span> in the top-right corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen closes. Each new channel appears in the device list as a camera named after the channel.</p>
+    </li>
+  </ol>
+  <ul>
+    <li><span class="ui">Add</span> is available when the list holds at least one channel that is not followed yet.</li>
+    <li>Nothing is checked online. A channel plays in its tile whenever its streamer is live and shows <span class="ui">Offline</span> otherwise; a misspelled channel name stays <span class="ui">Offline</span>.</li>
+  </ul>
+
+  <h4>A link entered in the Add Device form</h4>
+  <p>When a YouTube or Twitch link is entered in <span class="ui">IP address or hostname</span>, the <span class="ui">Add</span> button is unavailable and the form offers <span class="ui">Add as a YouTube Live Stream</span> or <span class="ui">Add as a Twitch Channel</span>. Tapping it opens the screen for that service with the link already entered; after the stream has been added, both screens close. Where the two services are not offered, the link is treated as an ordinary address.</p>
+
+  <h3 id="add-failed">When adding fails: the checklist</h3>
+  <p>When adding fails, the form shows the error message in red. With <span class="ui">Auto-detect</span>, the open ports that were found are listed below it. Below that, the form lists <span class="ui">Things to check first</span>. The order of the list depends on the kind of failure, with the most likely cause first. Work through the items from top to bottom, then tap <span class="ui">Add</span> again.</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Error message</th><th>Checks (from top to bottom)</th></tr></thead>
+    <tbody>
+      <tr>
+        <td data-label="Error message"><span class="ui ui-long">Device unreachable. Check the address and your network.</span></td>
+        <td data-label="Checks (from top to bottom)"><ol>
+          <li>Check the IP address. Look it up on the router or in the manufacturer's own app, or use the scan in the Tools tab.</li>
+          <li>Connect the phone to the same Wi-Fi network as the device. Guest networks, a separate VLAN, or client isolation on the router block the connection.</li>
+          <li>Allow Local Network access: <span class="path"><span class="ui">Settings</span> › <span class="ui" data-ui="system">Privacy &amp; Security</span> › <span class="ui" data-ui="system">Local Network</span> › <span class="ui" data-ui="system">Cam Hub</span></span></li>
+          <li>Turn off any VPN on the phone while adding a device on the home network.</li>
+          <li>Make sure the device is powered on and its network cable or Wi-Fi is connected.</li>
+          <li>Check the HTTP and RTSP ports. The usual ones are <code>80</code> and <code>554</code>; some devices use <code>8000</code>, <code>8080</code>, <code>8899</code> or <code>37777</code>.</li>
+          <li>In the device settings, turn on ONVIF and RTSP. When the device has a separate ONVIF user list, create a user there.</li>
+        </ol></td>
+      </tr>
+      <tr>
+        <td data-label="Error message"><span class="ui">Wrong username or password.</span></td>
+        <td data-label="Checks (from top to bottom)"><ol>
+          <li>Sign in once on the web page of the device itself to check the username and password. They are case-sensitive.</li>
+          <li>A brand-new device must be activated first, usually by setting an administrator password, before any app can sign in; see <a class="xref" href="/guide/brands.html#brands-activate">“Activating a new device”</a>.</li>
+          <li>Too many wrong attempts can lock the account for a while, often about 30 minutes. Wait, then try once with the correct password.</li>
+          <li>Set the clock of the device to the correct time, for example with network time. A clock that is off by minutes makes ONVIF sign-in fail.</li>
+          <li>In the device settings, turn on ONVIF and RTSP. When the device has a separate ONVIF user list, create a user there.</li>
+          <li>Try a different <span class="ui">Connect using</span> option under <span class="ui">Advanced</span>: ONVIF, or the brand of the camera from the list.</li>
+        </ol></td>
+      </tr>
+      <tr>
+        <td data-label="Error message"><span class="ui">Not a supported device.</span></td>
+        <td data-label="Checks (from top to bottom)"><ol>
+          <li>Try a different <span class="ui">Connect using</span> option under <span class="ui">Advanced</span>: ONVIF, or the brand of the camera from the list.</li>
+          <li>In the device settings, turn on ONVIF and RTSP. When the device has a separate ONVIF user list, create a user there.</li>
+          <li>Check the HTTP and RTSP ports.</li>
+          <li>Some devices work only through the cloud app of the manufacturer and offer no local connection. Cam Hub cannot connect to those devices.</li>
+        </ol></td>
+      </tr>
+      <tr>
+        <td data-label="Error message"><span class="ui ui-long">Too many requests just now. Try again in a minute.</span></td>
+        <td data-label="Checks (from top to bottom)"><ol>
+          <li>Wait a minute, then try once more.</li>
+          <li>When the request is still refused, the account may be locked temporarily after too many wrong attempts, often for about 30 minutes. Wait, then try once with the correct password.</li>
+        </ol></td>
+      </tr>
+      <tr>
+        <td data-label="Error message"><span class="ui ui-long">This device did not answer over HTTPS just now.</span></td>
+        <td data-label="Checks (from top to bottom)"><ol>
+          <li>Open the web page of the device in a browser with an address that begins with <code>https://</code>, to check that the device uses HTTPS and on which port.</li>
+          <li>Enter that port in <span class="ui">HTTPS Port</span>. Left at <code>443</code>, only <code>443</code>, <code>5001</code> and <code>8443</code> are checked.</li>
+          <li>Turn off <span class="ui">Use HTTPS</span> to add the device over plain HTTP.</li>
+        </ol></td>
+      </tr>
+      <tr>
+        <td data-label="Error message"><span class="ui ui-long">Something went wrong. Please try again.</span> and any other message not listed above</td>
+        <td data-label="Checks (from top to bottom)"><ol>
+          <li>Check the IP address.</li>
+          <li>Connect the phone to the same Wi-Fi network as the device.</li>
+          <li>Check the HTTP and RTSP ports.</li>
+          <li>Sign in once on the web page of the device itself to check the username and password.</li>
+          <li>Try a different <span class="ui">Connect using</span> option under <span class="ui">Advanced</span>: ONVIF, or the brand of the camera from the list.</li>
+          <li>Some devices work only through the cloud app of the manufacturer and offer no local connection. Cam Hub cannot connect to those devices.</li>
+        </ol></td>
+      </tr>
+    </tbody>
+  </table></div>
+  <figure class="phone"><img src="/guide/img/add-failure-tips.jpg" alt="The Things to check first list after a failed attempt, with seven checks that start with the IP address" decoding="async" width="900" height="1956" data-src="/guide/img/add-failure-tips.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The checklist below the error message</figcaption></figure>
+  <p>When the failure persists after all items have been worked through, the experimental device report can be used; see <a class="xref" href="/guide/add.html#add-report">“Device report (experimental)”</a>.</p>
+
+  <h3 id="add-report">Device report (experimental)</h3>
+  <div class="callout warn">
+    <strong class="t">Experimental feature, no guarantee of support</strong>
+    <p>The device report is an experimental feature. It may change or be removed at any time. Sending a report does not mean that the developer will add support for the device, and there is no guarantee of a reply, a fix or a timeline. Some devices cannot be supported by design, for example because of closed or proprietary protocols, cloud-only operation, licensing or encryption restrictions, or hardware limits. The feature is not a customer-support or urgent-help channel.</p>
+    <p>Collecting the details signs in to the device with the account and password that were entered. Failed sign-ins are counted, and may be logged, by the device. When the password may be wrong, correct it first as described in <a class="xref" href="/guide/add.html#add-failed">“When adding fails: the checklist”</a> instead of trying repeatedly.</p>
+  </div>
+  <p>The <span class="ui">Send details to the developer</span> button, marked <span class="ui">Experimental</span>, appears below the checklist only after adding has failed; it is not shown when adding succeeds. The feature runs only when the button is tapped. It checks the device with read-only requests and assembles a text report for review. Cam Hub never uploads the report by itself; the report is sent only if the person chooses to email it from their own mail account.</p>
+  <p>Prerequisite: the checklist in <a class="xref" href="/guide/add.html#add-failed">“When adding fails: the checklist”</a> has been worked through, and the address, username and password in the form are the ones that the device uses.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>In the form of the failed attempt, scroll to the checklist and tap <span class="ui">Send details to the developer</span> below it.</p>
+      <p class="check"><b class="check-label">Check:</b> On first use, the screen shows the <span class="ui">Device Report</span> page with the full notice <span class="ui">Before you collect details</span>.</p>
+      <figure class="phone"><img src="/guide/img/device-report-entry.jpg" alt="The Send details to the developer button below the checklist after a failed attempt, with the Experimental badge beside it" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-entry.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Entry point: shown only after a failed attempt</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Read the notice and tap <span class="ui">I understand — collect details</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen shows <span class="ui">Collecting details…</span> and the progress of each check.</p>
+      <div class="shots pair">
+        <figure class="phone"><img src="/guide/img/device-report-notice.jpg" alt="The full notice before first use, listing the limits of the experimental feature, with the confirmation button at the bottom" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-notice.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The notice before first use</figcaption></figure>
+        <figure class="phone"><img src="/guide/img/add-report-collecting.jpg" alt="The Device Report page while the details are collected: the Stop button at the top left, the Experimental badge with its notice and the About this feature row, the line Collecting details…, and checks with green check marks and orange cross marks" decoding="async" width="900" height="1956" data-src="/guide/img/add-report-collecting.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The report page while the details are collected</figcaption></figure>
+      </div>
+    </li>
+    <li class="step">
+      <p>Wait until the collection is complete.</p>
+      <p class="check"><b class="check-label">Check:</b> <span class="ui">What we found</span> lists the likely causes and what to try first, in plain language. When nothing stands out, the screen shows <span class="ui">Nothing obvious stands out.</span></p>
+      <figure class="phone"><img src="/guide/img/device-report-found.jpg" alt="The findings list of the device report, with likely causes such as ports, network segment and VPN" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-found.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The findings list</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Under <span class="ui">What to include</span>, switch off the items that should not be sent.</p>
+      <p class="check"><b class="check-label">Check:</b> The text in the <span class="ui">The report</span> section updates immediately.</p>
+      <figure class="phone"><img src="/guide/img/device-report-text.jpg" alt="The switches for the report contents and the full text of the report, with the buttons for sending below" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-text.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Content switches and the full report</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Review the full text in the <span class="ui">The report</span> section.</p>
+      <p class="check"><b class="check-label">Check:</b> The report is plain text and is always in English. Data that was masked automatically is replaced by a mask marker.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Email to developer</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen opens the mail composer with the report in the message.</p>
+      <figure class="phone"><img src="/guide/img/add-report-mail-not-set-up.jpg" alt="The Device Report page with an alert over it: “Mail isn't set up on this device”, the information that the full report was copied to the clipboard, and the OK button" decoding="async" width="900" height="1956" data-src="/guide/img/add-report-mail-not-set-up.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The alert that appears instead when no mail account is set up</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Check the message and send it.</p>
+      <p class="check"><b class="check-label">Check:</b> The mail composer closes and the report page is shown again.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Done</span> in the top-right corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The report page closes and the add-device form is shown again.</p>
+    </li>
+  </ol>
+  <ul>
+    <li>After the notice has been confirmed once, the report page shows only a short reminder at the top, with <span class="ui">About this feature</span> to read the full notice again.</li>
+    <li>During the collection, <span class="ui">Stop</span> in the top-left corner ends it early. What has been found so far is kept, the screen shows <span class="ui">You stopped the collection, so this report is partial. Nothing has been sent.</span> and offers <span class="ui">Collect again</span>.</li>
+    <li><span class="ui">What to include</span> has five items: <span class="ui">Network</span>, <span class="ui">HTTP fingerprint</span>, <span class="ui">Protocol probes</span>, <span class="ui">RTSP and video</span> and <span class="ui">App trace</span>, each marked with a letter. The findings and the report header are always included.</li>
+    <li>Besides <span class="ui">Email to developer</span>, the report can be copied with <span class="ui">Copy</span> or passed on with <span class="ui">Share…</span>. A copy stays on this device only and expires after about 2 minutes.</li>
+    <li>When no mail account is set up, the screen shows <span class="ui">Mail isn't set up on this device</span>: the full report is copied to the clipboard, the mail app opens with the start of the report, and the full report must be pasted into the message.</li>
+    <li>The report leaves the device only when it is sent. <span class="ui">Nothing is sent unless you choose to send the email. Your password is never included.</span></li>
+  </ul>
+
+  <h4>Sign-in behavior</h4>
+  <p>During the collection, requests that need a sign-in are sent one at a time until the device has accepted or refused the credentials. After the device has refused them, the report sends no further sign-ins. When the failed attempt that led to the report was itself a refused sign-in (<span class="ui">Wrong username or password.</span>), the report does not try to sign in at all, so that the account is not locked by the device. When <span class="ui">Use HTTPS</span> was on, the report first looks for the certificate of the device without signing in, and repeats the attempt over HTTPS with that certificate; when the device presents none, the report does not sign in. The collection sends only read-only requests and does not change any setting on the device.</p>
+
+  <h4>What the report contains and does not contain</h4>
+  <ul>
+    <li><b>Contains</b>: the versions of the app and the system, the model identifier of the phone, the language setting, the selected connection method (with the HTTPS port when <span class="ui">Use HTTPS</span> was on), the device address (the last part of a private network address is masked with <code>x</code>; for a public address only its class is given), the ports, the error code of the failed attempt, the detected brand and model, open ports, the headers and structure of the answers of the device (masked), the encoding and parameters of the stream, the difference in clock and time zone, and the steps that were run with their results.</li>
+    <li><b>Does not contain</b>: the password, the username, the name given to the device, a public address or dynamic domain name, the hardware address of the network adapter, email addresses, tokens and other identifying data, pictures and video. Of a long serial number, only the last four characters are kept.</li>
+    <li>Masking is automatic, and each masked item leaves a marker. The report should still be reviewed before it is sent, and any item can be switched off.</li>
+  </ul>
+  <div class="callout tip">
+    <strong class="t">Questions in the email</strong>
+    <p>The body of the email contains several questions, among them the brand and model as printed on the label of the device, the firmware version, the kind of device, the difference between what was expected and what happened, whether the manufacturer's own app or a media player shows the device, and an RTSP address that opens in a media player (with the username, password and address removed first). Answering them helps the developer to assess the device.</p>
+  </div>
+
+  <h4>Saved reports</h4>
+  <p>Each report is saved on this device, and the five most recent are kept. An entry that shows the saved date, for the previous report, appears below the error message; tapping it opens the report again. A saved report shows its content as it was saved and cannot be switched item by item; to choose the content again, collect the details again.</p>
+  <p>To delete the saved reports:</p>
+  <ol class="steps">
+    <li class="step">
+      <p>At the bottom of the report page, tap <span class="ui">Delete saved reports</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen shows the dialog <span class="ui">Delete all saved reports?</span>, which explains that every device report saved on this device is removed and that a report that was already emailed is not affected.</p>
+      <figure class="phone"><img src="/guide/img/add-report-delete-confirm.jpg" alt="The Device Report page with the dialog Delete all saved reports? over it: the text that every report saved on this device is removed and that a report already emailed is not affected, and the button Delete saved reports" decoding="async" width="900" height="1956" data-src="/guide/img/add-report-delete-confirm.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The confirmation before the saved reports are deleted</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Delete saved reports</span> in the dialog.</p>
+      <p class="check"><b class="check-label">Check:</b> All saved reports are deleted. The report on the screen is only shown there and is not saved again.</p>
+    </li>
+  </ol>
+
+  <h3 id="add-scan">Finding devices with the network scan</h3>
+  <p>Location: the <span class="ui">Tools</span> tab at the bottom of the screen.</p>
+  <p>When the IP address of a device is not known, the Tools tab can scan a network range. The scan probes the six ports <code>80</code>, <code>554</code>, <code>2020</code>, <code>8000</code>, <code>34567</code> and <code>37777</code> and lists the addresses that answer. Then it asks the devices it found who they are, over the discovery methods that many cameras and recorders answer without a sign-in. A device that answers this question but was not found by the port probe is added to the list.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap the <span class="ui">Tools</span> tab at the bottom of the screen.</p>
+      <p class="check"><b class="check-label">Check:</b> In the <span class="ui">Subnet</span> section, the <span class="ui">This device</span> row shows the current network address and mask, for example <code>192.168.1.10/24</code>. The address field and <span class="ui">Range</span> are filled in with the current network.</p>
+      <figure class="phone"><img src="/guide/img/tools-scan.jpg" alt="The Tools tab: the Subnet section with the address of this device, the network, the range and the Scan button, with Found Devices and Speedometer below" decoding="async" width="900" height="1745" data-src="/guide/img/tools-scan.jpg" style="aspect-ratio: 900 / 1745;" loading="lazy"><figcaption>The Tools tab (sample network)</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Optional: to scan a different network, enter the network in the address field, for example <code>192.168.1.0</code>, and select the range in the <span class="ui">Range</span> menu.</p>
+      <p class="check"><b class="check-label">Check:</b> Below the field, a line shows the network and the number of hosts that will be scanned, for example <span class="ui" data-ui="value">Will scan 192.168.1.0/24 · 254 hosts</span>.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Scan</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen shows the progress <span class="ui" data-ui="value">Scanned 120 of 254</span>, and the button changes to <span class="ui">Stop</span>.</p>
+    </li>
+    <li class="step">
+      <p>Wait until the scan ends; to end it early, tap <span class="ui">Stop</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> <span class="ui">Found Devices</span> lists the addresses that answered, with the open ports of each address as badges in the row. While the devices are asked who they are, <span class="ui">Identifying devices…</span> is shown; then each row that a device answered for shows its name or model, its brand and model, the number of channels of a recorder, and <span class="ui">Not activated</span> for a device that still has to be activated. When nothing was found, the screen shows <span class="ui">No devices found yet.</span></p>
+    </li>
+    <li class="step">
+      <p>Tap a row in the results.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen opens the add-device form with the address already entered in the <span class="ui">IP address or hostname</span> field, and with whatever the device reported about itself; continue with the steps in <a class="xref" href="/guide/add.html#add-form">“The Add Device form”</a>.</p>
+    </li>
+  </ol>
+  <ul>
+    <li>Besides the address, the form takes over what the device reported: its name or model as the name, the port of its management service as <span class="ui">HTTP Port</span>, and the number of channels as <span class="ui">Cameras</span> for a brand from the list. For a device of the family with its own protocol whose port is not the default, that connection method and its <span class="ui">Device Port</span> are selected and <span class="ui">Advanced</span> is opened.</li>
+    <li>When the scan reported that the device is not activated, the form starts with a notice that it must be activated first; see <a class="xref" href="/guide/brands.html#brands-activate">“Activating a new device”</a>.</li>
+    <li><span class="ui">Range</span> runs from <code>/26</code> (smallest) to <code>/16</code> (largest). When a range holds more than 1,024 addresses, the scan samples them evenly instead of probing each one.</li>
+    <li>When the address field or the range differs from the current network, <span class="ui">Use my subnet</span> appears; tapping it restores the current network.</li>
+    <li>When the address field has an invalid format, the screen shows <span class="ui">Enter a subnet like 192.168.1 or 192.168.1.0.</span></li>
+    <li>After the device has been added, the screen returns to the Tools tab, not to the device list.</li>
+  </ul>
+  <div class="callout note">
+    <strong class="t">Limits of the scan results</strong>
+    <p>The scan finds only devices that answer on camera ports or to the discovery request. A device that does not identify itself can be a camera or a recorder; the type is confirmed when the device is added. Its open ports and any server name give a hint about the manufacturer.</p>
+    <p>When a scan has finished completely without any result, the screen shows <span class="ui">If your cameras are on this network, check that Cam Hub is allowed to find devices on your local network in the system privacy settings.</span> When the Local Network permission is denied, the scan shows no error; its result is empty as well. Check that the permission is turned on: <span class="path"><span class="ui">Settings</span> › <span class="ui" data-ui="system">Privacy &amp; Security</span> › <span class="ui" data-ui="system">Local Network</span> › <span class="ui" data-ui="system">Cam Hub</span></span>.</p>
+  </div>
+</section><nav class="guide-pager" aria-label="Contents"><a class="guide-prev" rel="prev" href="/guide/tour.html"><span class="pager-dir">Previous chapter</span><span class="pager-title">2. The tabs and basic behaviour</span></a><a class="guide-next" rel="next" href="/guide/devices.html"><span class="pager-dir">Next chapter</span><span class="pager-title">4. The Devices tab and channels</span></a></nav></article>
+    </div>
+    <button class="guide-top" id="guide-top" type="button" aria-label="Back to top"></button>
+  </main>
+  <footer class="footer"><span data-i18n="footer">Copyright © 2026 ALMX. All rights reserved.</span><nav><a href="/guide.html" data-i18n="navGuide">Manual</a><a href="/devices.html" data-i18n="navDevices">Device differences</a><a href="/privacy.html" data-i18n="navPrivacy">Privacy</a><a href="/terms.html" data-i18n="navTerms">Terms</a><a class="store-link" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeCTA">Download on the App Store</a></nav><nav class="language-links" id="language-links" aria-label="Language" data-i18n-aria="languageLabel"><a href="/guide/add.html" hreflang="en" lang="en" data-language-link="en" aria-current="true">English</a><a href="/zh-Hant/guide/add.html" hreflang="zh-Hant" lang="zh-Hant" data-language-link="zh-Hant">繁體中文</a><a href="/zh-Hans/guide/add.html" hreflang="zh-Hans" lang="zh-Hans" data-language-link="zh-Hans">简体中文</a><a href="/ja/guide/add.html" hreflang="ja" lang="ja" data-language-link="ja">日本語</a><a href="/ko/guide/add.html" hreflang="ko" lang="ko" data-language-link="ko">한국어</a><a href="/de/guide/add.html" hreflang="de" lang="de" data-language-link="de">Deutsch</a><a href="/es/guide/add.html" hreflang="es" lang="es" data-language-link="es">Español</a><a href="/es-MX/guide/add.html" hreflang="es-MX" lang="es-MX" data-language-link="es-MX">Español (México)</a><a href="/fr/guide/add.html" hreflang="fr" lang="fr" data-language-link="fr">Français</a><a href="/sl/guide/add.html" hreflang="sl" lang="sl" data-language-link="sl">Slovenščina</a><a href="/ar/guide/add.html" hreflang="ar" lang="ar" data-language-link="ar">العربية</a></nav></footer>
+  <script src="/additional-locales.js?v=20261103-sl"></script>
+  <script src="/site.js?v=20261112-1"></script>
+
+
+</body></html>

@@ -1,61 +1,306 @@
 <!doctype html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="apple-itunes-app" content="app-id=6792057195"><meta name="color-scheme" content="dark light">
+<html lang="en" dir="ltr"><head>
+  <meta charset="utf-8"><script>(function () {
+  var codes = ["zh-Hant", "zh-Hans", "ja", "ko", "de", "es", "es-MX", "fr", "sl", "ar"];
+
+  function pickLanguage(preferences) {
+    var direct = { en: "en", ar: "ar", de: "de", es: "es", fr: "fr", ja: "ja", ko: "ko", sl: "sl" };
+    for (var i = 0; i < preferences.length; i += 1) {
+      var tag = String(preferences[i] || "").replace(/_/g, "-");
+      if (/^es-mx(?:-|$)/i.test(tag)) return "es-MX";
+      var base = tag.split("-")[0].toLowerCase();
+      if (direct[base]) return direct[base];
+      if (base !== "zh") continue;
+      try {
+        var locale = new Intl.Locale(tag).maximize();
+        return locale.script === "Hant" || ["TW", "HK", "MO"].indexOf(locale.region) >= 0 ? "zh-Hant" : "zh-Hans";
+      } catch (error) {
+        return /(?:^|-)Hant(?:-|$)|(?:^|-)(?:TW|HK|MO)(?:-|$)/i.test(tag) ? "zh-Hant" : "zh-Hans";
+      }
+    }
+    return "en";
+  }
+  window.__camHubEarlyPick = pickLanguage;
+
+  try {
+    if (window.__camHubPrerender || /[?&](?:lang|chapter)=/i.test(location.search)) return;
+    if (document.referrer && new URL(document.referrer).origin === location.origin) return;
+    var chosen = null;
+    try {
+      if (localStorage.getItem("camHubSiteLanguageManual") === "1") chosen = localStorage.getItem("camHubSiteLanguage");
+    } catch (error) {
+      chosen = null;
+    }
+    var target = chosen === "en" || codes.indexOf(chosen) >= 0 ? chosen
+      : pickLanguage(navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"]);
+    if (codes.indexOf(target) < 0) return;
+    var path = location.pathname === "/index.html" ? "/" : location.pathname;
+    location.replace("/" + target + path + location.search + location.hash);
+  } catch (error) {
+  }
+})();</script><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="apple-itunes-app" content="app-id=6792057195"><meta name="color-scheme" content="dark light">
   <meta name="description" content="Explore Cam Hub camera connections, LiveView Mix, recording playback, Apple TV monitoring, encrypted setup transfer, and HTTP webhook controls.">
-  <title>Cam Hub — Product Guide</title><link rel="icon" href="assets/app-icon.png"><link rel="stylesheet" href="styles.css?v=20261102-2">
-  <link rel="alternate" hreflang="x-default" href="https://cam-hub.almx.cc/product.html">
-  <link rel="alternate" hreflang="en" href="https://cam-hub.almx.cc/product.html">
-  <link rel="alternate" hreflang="zh-Hant" href="https://cam-hub.almx.cc/product.html?lang=zh-Hant">
-  <link rel="alternate" hreflang="zh-Hans" href="https://cam-hub.almx.cc/product.html?lang=zh-Hans">
-  <link rel="alternate" hreflang="ja" href="https://cam-hub.almx.cc/product.html?lang=ja">
-  <link rel="alternate" hreflang="ko" href="https://cam-hub.almx.cc/product.html?lang=ko">
-  <link rel="alternate" hreflang="de" href="https://cam-hub.almx.cc/product.html?lang=de">
-  <link rel="alternate" hreflang="es" href="https://cam-hub.almx.cc/product.html?lang=es">
-  <link rel="alternate" hreflang="es-MX" href="https://cam-hub.almx.cc/product.html?lang=es-MX">
-  <link rel="alternate" hreflang="fr" href="https://cam-hub.almx.cc/product.html?lang=fr">
-  <link rel="alternate" hreflang="sl" href="https://cam-hub.almx.cc/product.html?lang=sl">
-  <link rel="alternate" hreflang="ar" href="https://cam-hub.almx.cc/product.html?lang=ar">
-</head>
+  <meta property="og:type" content="website"><meta property="og:site_name" content="Cam Hub"><meta property="og:image" content="https://cam-hub.almx.cc/assets/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+  <title>Cam Hub — Features</title><link rel="icon" href="/assets/icon-48.png" sizes="48x48"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/icon-180.png"><link rel="stylesheet" href="/styles.css?v=20261112-1">
+<meta property="og:description" content="Explore Cam Hub camera connections, LiveView Mix, recording playback, Apple TV monitoring, encrypted setup transfer, and HTTP webhook controls."><link rel="canonical" href="https://cam-hub.almx.cc/product.html"><link rel="alternate" hreflang="x-default" href="https://cam-hub.almx.cc/product.html"><link rel="alternate" hreflang="en" href="https://cam-hub.almx.cc/product.html"><link rel="alternate" hreflang="zh-Hant" href="https://cam-hub.almx.cc/zh-Hant/product.html"><link rel="alternate" hreflang="zh-Hans" href="https://cam-hub.almx.cc/zh-Hans/product.html"><link rel="alternate" hreflang="ja" href="https://cam-hub.almx.cc/ja/product.html"><link rel="alternate" hreflang="ko" href="https://cam-hub.almx.cc/ko/product.html"><link rel="alternate" hreflang="de" href="https://cam-hub.almx.cc/de/product.html"><link rel="alternate" hreflang="es" href="https://cam-hub.almx.cc/es/product.html"><link rel="alternate" hreflang="es-MX" href="https://cam-hub.almx.cc/es-MX/product.html"><link rel="alternate" hreflang="fr" href="https://cam-hub.almx.cc/fr/product.html"><link rel="alternate" hreflang="sl" href="https://cam-hub.almx.cc/sl/product.html"><link rel="alternate" hreflang="ar" href="https://cam-hub.almx.cc/ar/product.html"><meta property="og:url" content="https://cam-hub.almx.cc/product.html"><meta property="og:title" content="Cam Hub — Features"></head>
 <body data-page="product">
   <header class="topbar" aria-label="Site header">
-    <a class="brand" href="./"><img src="assets/app-icon.png" alt="" width="42" height="42"><span><strong>Cam Hub</strong><small data-i18n="topline">功能介紹</small></span></a>
-    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-controls" data-i18n-aria="menuLabel"><span></span><span></span><span></span><span class="sr-only" data-i18n="menuLabel">開啟選單</span></button>
-    <div class="topbar-controls" id="site-controls"><nav class="navlinks" aria-label="Primary"><a href="./" data-nav="home" data-i18n="navHome">首頁</a><a href="product.html" data-nav="product" data-i18n="navProduct">功能介紹</a><a href="guide.html" data-nav="guide" data-i18n="navGuide">操作手冊</a><a href="support.html" data-nav="support" data-i18n="navSupport">支援</a><a href="privacy.html" data-nav="privacy" data-i18n="navPrivacy">隱私權</a><a href="terms.html" data-nav="terms" data-i18n="navTerms">使用條款</a></nav><div class="pickers"><label><span class="sr-only" data-i18n="themeLabel">外觀</span><select id="themeSelect" aria-label="Theme"><option value="auto" data-i18n="themeAuto">自動</option><option value="light" data-i18n="themeLight">淺色</option><option value="dark" data-i18n="themeDark">深色</option></select></label><label><span class="sr-only" data-i18n="languageLabel">語言</span><select id="languageSelect" aria-label="Language"><option value="zh-Hant">繁體中文</option><option value="en">English</option></select></label></div><a class="store-pill" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-product&amp;mt=8" data-i18n="storeShort">下載 App</a></div>
+    <a class="brand" href="/"><img src="/assets/icon-96.png" alt="" width="42" height="42"><span><strong>Cam&nbsp;Hub</strong><small data-i18n="topline">Features</small></span></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-controls" data-i18n-aria="menuLabel" aria-label="Open menu"><span></span><span></span><span></span><span class="sr-only" data-i18n="menuLabel">Open menu</span></button>
+    <div class="topbar-controls" id="site-controls"><nav class="navlinks" aria-label="Primary"><a href="/" data-nav="home" data-i18n="navHome">Home</a><a href="/product.html" data-nav="product" data-i18n="navProduct" aria-current="page">Product</a><a href="/guide.html" data-nav="guide" data-i18n="navGuide">Manual</a><a href="/support.html" data-nav="support" data-i18n="navSupport">Support</a><a href="/privacy.html" data-nav="privacy" data-i18n="navPrivacy">Privacy</a><a href="/terms.html" data-nav="terms" data-i18n="navTerms">Terms</a></nav><div class="pickers"><label><span class="sr-only" data-i18n="themeLabel">Appearance</span><select id="themeSelect" aria-label="Theme"><option value="auto" data-i18n="themeAuto" selected="">Auto</option><option value="light" data-i18n="themeLight">Light</option><option value="dark" data-i18n="themeDark">Dark</option></select></label><label><span class="sr-only" data-i18n="languageLabel">Language</span><select id="languageSelect" aria-label="Language"><option value="en" selected="">English</option><option value="zh-Hant">繁體中文</option><option value="zh-Hans">简体中文</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="de">Deutsch</option><option value="es">Español</option><option value="es-MX">Español (México)</option><option value="fr">Français</option><option value="sl">Slovenščina</option><option value="ar">العربية</option></select></label></div><a class="store-pill" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-product&amp;mt=8" data-i18n="storeShort">Get the app</a></div>
   </header>
   <main class="inner-page">
-    <section class="page-hero"><div class="eyebrow" data-i18n="eyebrow">CAM HUB PRODUCT</div><h1 data-i18n="title">從加入設備，到建立自己的 LiveView Mix 牆。</h1><p class="summary" data-i18n="summary">Cam Hub 將設備連接、通道整理、即時監看與錄影回放集中在清楚一致的流程中。</p><p class="manual-link"><a href="guide.html" data-i18n="manualLink">閱讀操作手冊</a></p></section>
-    <div id="content">
-      <section class="guide-grid">
-        <article class="guide-card"><span>01</span><h2>Add your equipment</h2><p>Enter the address and credentials for equipment you own or are authorized to access. Cam Hub can identify selected compatible devices or connect through ONVIF.</p></article>
-        <article class="guide-card"><span>02</span><h2>Choose the channels</h2><p>Review the cameras exposed by a camera or recorder and enable the channels you want to view.</p></article>
-        <article class="guide-card"><span>03</span><h2>Build LiveView Mix</h2><p>Combine channels from different cameras and recorders into one monitoring dashboard.</p></article>
-        <article class="guide-card"><span>04</span><h2>View live and recorded video</h2><p>Open a channel for live viewing. Recording search and playback are available when supported by the equipment.</p></article>
-        <article class="wiki-chapter plans-chapter" id="wiki-plans">
-          <header class="wiki-chapter-head"><span class="wiki-chapter-number">05</span><div><h2>Plans and limits</h2><p>Cam Hub includes a free allowance. Camera plans and NVR plans each raise a different limit.</p></div></header>
-          <div class="plans-table-wrap">
-            <table class="plans-table" role="table">
-              <caption class="sr-only">Plans and what each one unlocks</caption>
-              <thead role="rowgroup"><tr role="row"><th scope="col" role="columnheader">Plan</th><th scope="col" role="columnheader">Billing</th><th scope="col" role="columnheader">What it unlocks</th></tr></thead>
-              <tbody role="rowgroup">
-                <tr role="row"><th scope="row" role="rowheader">Free</th><td role="cell" class="plans-billing">None</td><td role="cell">At most 2 enabled channels in the whole app (standalone cameras and recorder channels count together) and at most 1 recorder.</td></tr>
-                <tr role="row"><th scope="row" role="rowheader">Camera plans</th><td role="cell" class="plans-billing">Yearly</td><td role="cell">Raise the number of standalone cameras you can enable to 8 (<span class='keep-phrase'>Cam Home</span>), 16 (<span class='keep-phrase'>Cam Plus</span>) or unlimited (<span class='keep-phrase'>Cam Max</span>).</td></tr>
-                <tr role="row"><th scope="row" role="rowheader">NVR plans</th><td role="cell" class="plans-billing">Monthly</td><td role="cell">Raise the number of recorders to 2 (<span class='keep-phrase'>NVR Starter</span>), 4 (<span class='keep-phrase'>NVR Pro</span>) or unlimited (<span class='keep-phrase'>NVR Max</span>), and every channel of those recorders can be used.</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="wiki-topics plans-notes">
-            <section class="wiki-topic"><span>05.01</span><h3>Two independent kinds</h3><p>Camera plans and NVR plans are independent and can be combined. A camera plan does not raise the recorder allowance, and an NVR plan does not raise the standalone-camera limit. Prices are shown in the app.</p></section>
-            <section class="wiki-topic"><span>05.02</span><h3>Example</h3><p>With <span class='keep-phrase'>Cam Plus</span> and <span class='keep-phrase'>NVR Pro</span>: 4 recorders with all their channels and up to 16 standalone cameras.</p></section>
-          </div>
-          <p class="manual-link plans-more"><a href="guide.html#plans">See the full rules and more examples in the manual</a></p>
-        </article>
-      </section>
-    </div>
+    <section class="page-hero"><div class="eyebrow" data-i18n="eyebrow">CAM HUB FEATURES</div><h1 data-i18n="title"><span class="page-title-line">Explore Cam&nbsp;Hub.</span><span class="page-title-line">Feature by feature.</span></h1><p class="summary" data-i18n="summary">Use the same entry points and controls you see in the app. Jump directly to device setup, LiveView Mix, playback, transfer, or app behaviour.</p><p class="manual-link"><a href="/guide.html" data-i18n="manualLink">Read the operation manual</a></p></section>
+    <div id="content"><nav class="wiki-nav" aria-label="Jump to a chapter">
+      <strong>Jump to a chapter</strong>
+      <div><a href="#wiki-devices"><span>01</span>Devices and channels</a><a href="#wiki-mix"><span>02</span>LiveView Mix monitoring wall</a><a href="#wiki-viewing"><span>03</span>Live viewing and recording playback</a><a href="#wiki-backup"><span>04</span>Encrypted backup and camera sharing</a><a href="#wiki-preferences"><span>05</span>Display, streaming, and data controls</a><a href="#wiki-tv-control"><span>06</span>Apple TV and webhook controls</a><a href="#wiki-plans"><span>07</span>Plans and limits</a></div>
+    </nav>
+    <section class="wiki-content"><article class="wiki-chapter" id="wiki-devices">
+        <header class="wiki-chapter-head">
+          <span class="wiki-chapter-number">01</span>
+          <div><h2>Devices and channels</h2><p>Connect the equipment first, then decide which channels belong on your monitoring screens.</p></div>
+        </header>
+        <div class="wiki-media-grid wiki-media-2">
+          <figure class="wiki-media">
+            <div class="wiki-screen"><img src="/assets/app-add-device.jpg" alt="" loading="lazy" decoding="async"></div>
+            <figcaption>ADD DEVICE</figcaption>
+          </figure>
+          <figure class="wiki-media">
+            <div class="wiki-screen"><img src="/assets/app-channels.jpg" alt="" loading="lazy" decoding="async"></div>
+            <figcaption>CHANNEL MANAGEMENT</figcaption>
+          </figure></div>
+        
+        <div class="wiki-topics">
+          <section class="wiki-topic">
+            <span>01.01</span>
+            <h3>Prepare connection details</h3>
+            <ol><li>Open Devices, tap Add Device, and enter the Add Device screen.</li><li>Name is optional. IP address or hostname and Username are required. HTTP Port defaults to 80 and RTSP Port to 554; use the values shown in the equipment administration interface when they differ.</li><li>Enter Password and tap Add. The app displays Connecting to device and distinguishes connection, credential, and unsupported-equipment errors when the attempt fails.</li><li>Connect only to equipment and accounts that you own, manage, or are explicitly authorized to use.</li></ol>
+          </section>
+          <section class="wiki-topic">
+            <span>01.02</span>
+            <h3>Auto-detect or use ONVIF</h3>
+            <ol><li>Normally leave Connect using on Auto-detect first so Cam&nbsp;Hub can try a compatible native connection and request the fullest available feature set.</li><li>If the equipment is not identified, or you want to use the open protocol directly, set Connect using to ONVIF and add it again.</li><li>You may need to enable ONVIF, create an ONVIF account with viewing permission, and enable RTSP in the equipment settings. Compatibility reference contains connection notes.</li></ol>
+          </section>
+          <section class="wiki-topic">
+            <span>01.03</span>
+            <h3>Organize camera channels</h3>
+            <ol><li>After the equipment is added, tap it in Devices to open its page. Cameras lists the channels reported by that equipment.</li><li>Enable the channels you want to view and disable unused channels. Recorder channels can also use Pause Video to stop streaming instead of merely hiding the tile.</li><li>Offline channels stay in the Devices list in a dimmed state. When Hide offline cameras is enabled, they do not appear on live monitoring walls.</li></ol>
+          </section>
+          <section class="wiki-topic">
+            <span>01.04</span>
+            <h3>Review and update equipment</h3>
+            <ol><li>Expand the equipment card to review its model, address, port, serial number, firmware, and channel count.</li><li>Use the control in the upper-right to rename the equipment, or pull to refresh to request updated channel state.</li><li>The black-bars control cycles Default, Enlarge to fill, and Stretch to fill for the current view only. The Full Screen Wall control opens that equipment's channel wall.</li></ol>
+          </section></div>
+      </article><article class="wiki-chapter" id="wiki-mix">
+        <header class="wiki-chapter-head">
+          <span class="wiki-chapter-number">02</span>
+          <div><h2>LiveView Mix monitoring wall</h2><p>Place channels from different cameras and recorders on one screen, then tune the density for the display you use.</p></div>
+        </header>
+        <div class="wiki-media-grid wiki-media-2">
+          <figure class="wiki-media">
+            <div class="wiki-screen"><img src="/assets/app-liveview.jpg" alt="" loading="lazy" decoding="async"></div>
+            <figcaption>LIVEVIEW MIX</figcaption>
+          </figure>
+          <figure class="wiki-media">
+            <div class="wiki-screen"><img src="/assets/app-layouts.jpg" alt="" loading="lazy" decoding="async"></div>
+            <figcaption>17 FULL-SCREEN LAYOUTS</figcaption>
+          </figure></div>
+        
+        <div class="wiki-topics">
+          <section class="wiki-topic">
+            <span>02.01</span>
+            <h3>Choose cameras for LiveView Mix</h3>
+            <ol><li>Go to Settings → LiveView Mix.</li><li>Select channels under each equipment section. Each channel can use SD or HD independently, and All SD or All HD applies one quality to the complete selection.</li><li>Open the LiveView Mix tab. It shows a scrollable preview; tap Full screen to apply the selected monitoring-wall layout.</li></ol>
+          </section>
+          <section class="wiki-topic">
+            <span>02.02</span>
+            <h3>17 full-screen layouts</h3>
+            <ol><li>Uniform grids: 2×2, 2×3, 3×3, 3×4, 4×4, 5×4, 6×4, 5×5, 7×4, 6×5, 6×6, and 7×7.</li><li>Focus layouts: 1+3, 1+5, 1+7, 1+21, and 1+27. The first camera occupies the largest primary tile.</li><li>Layouts with more than 16 tiles display a screen marker because their density is better suited to a large display.</li></ol>
+          </section>
+          <section class="wiki-topic">
+            <span>02.03</span>
+            <h3>Arrange the wall and empty slots</h3>
+            <ol><li>Tap Arrange the wall in LiveView Mix settings.</li><li>Drag one tile onto another to swap them, or tap Edit to reorder the list and swipe to delete. The list order fills the layout page by page.</li><li>Tap Add empty slot to preserve an intentional gap. Select the empty tile to configure what it displays.</li></ol>
+          </section>
+          <section class="wiki-topic">
+            <span>02.04</span>
+            <h3>Three video fill modes</h3>
+            <ol><li>Default preserves the complete image and adds black bars when the aspect ratios differ.</li><li>Enlarge to fill preserves the aspect ratio and enlarges the picture to fill the tile, trimming the edges that extend beyond it.</li><li>Stretch to fill fills the tile without cropping but may widen or compress the image. Set the mode as the global default under Settings → Black bars, or temporarily override it for individual equipment or channels.</li></ol>
+          </section>
+          <section class="wiki-topic">
+            <span>02.05</span>
+            <h3>Custom watermarks</h3>
+            <ol><li>Open Watermark, enable Show watermark, and choose Device name, Camera name, or IP address.</li><li>Adjust position, opacity, colour, text size, and the System, Rounded, Monospaced, or Serif font.</li><li>Legibility offers Shadow, Outline, Backdrop, or None. Use the light and dark previews to confirm that the watermark remains readable on day and night footage.</li></ol>
+          </section>
+          <section class="wiki-topic">
+            <span>02.06</span>
+            <h3>Pictures, clocks, labels, and controls</h3>
+            <ol><li>Use Add empty slot in Arrange, then select that tile to open its slot page (titled Slot 1, Slot 2, and so on), where Shows chooses Empty, Image, Control, Clock, or Label.</li><li>Image can use a photo or a new picture. Clock can show the date, seconds, and 12- or 24-hour time. Label supports custom text, an SF Symbol, and colour.</li><li>Control creates HTTP Webhook buttons from the Gate / Shutter, Garage Door, Light, Door Lock, Curtain / Blind, Scene / Automation, Alarm / Siren, Fan, Smart Plug, Air Conditioner, and Custom templates. Sensitive actions such as opening or unlocking can require confirmation.</li><li>Supported image and slot settings can move with an encrypted backup. You remain responsible for creating and securing every webhook endpoint.</li></ol>
+          </section></div>
+      </article><article class="wiki-chapter" id="wiki-viewing">
+        <header class="wiki-chapter-head">
+          <span class="wiki-chapter-number">03</span>
+          <div><h2>Live viewing and recording playback</h2><p>Single-camera viewing can prioritize clarity and interaction; multi-camera walls can prioritize device load and bandwidth.</p></div>
+        </header>
+        <div class="wiki-media-grid wiki-media-1">
+          <figure class="wiki-media">
+            <div class="wiki-screen"><img src="/assets/app-playback.jpg" alt="" loading="lazy" decoding="async"></div>
+            <figcaption>LIVE &amp; PLAYBACK</figcaption>
+          </figure></div>
+        <aside class="wiki-warning"><strong>!</strong><p>Availability notice: live streaming, snapshots, <span class="keep-phrase">main/sub-stream selection</span>, recording search, <span class="keep-phrase">Continuous/Events classification</span>, timeline seeking, and playback all depend on the capabilities actually reported by the camera or recorder and the permissions granted to the signed-in equipment account.</p></aside>
+        <div class="wiki-topics">
+          <section class="wiki-topic">
+            <span>03.01</span>
+            <h3>Single and multi-camera quality</h3>
+            <ol><li>Go to Settings → Default quality and set separate HD or SD defaults for Single camera and Multiple cameras. These defaults apply to device screens only: the device page and Live walls, a device's full-screen wall, and a single camera opened from a device.</li><li>When the equipment reports main- and sub-stream switching, the single-channel control bar displays SD and HD choices.</li><li>LiveView Mix does not use these defaults: its multi-camera wall plays each channel at the quality assigned to it in the channel list, one by one or with All SD or All HD. Lower quality often reduces network and device load when many tiles play at once.</li><li>Opening a single camera from LiveView Mix, full screen or close-up, always starts in HD. The on-screen SD/HD button switches for that viewing only and changes no setting.</li></ol>
+          </section>
+          <section class="wiki-topic">
+            <span>03.02</span>
+            <h3>Zoom and landscape viewing</h3>
+            <ol><li>Pinch to zoom in the single-channel view, then drag the enlarged picture to inspect another area.</li><li>Double-tap to jump to 2.5× zoom, and double-tap again to return to the complete picture.</li><li>Rotate the device to landscape to hide the navigation, controls, and tab bar so the video can use as much of the display as possible.</li></ol>
+          </section>
+          <section class="wiki-topic">
+            <span>03.03</span>
+            <h3>Snapshots and sharing</h3>
+            <ol><li>Tap Snapshot in the single-channel control bar to ask the equipment for its current image.</li><li>After the image arrives, Cam&nbsp;Hub opens a preview. Tap Share to use the system share sheet.</li><li>Tap the red record button beside Snapshot to record what the view shows, live or from a recording, for up to 10 minutes. When you stop, Cam&nbsp;Hub shows the clip so you can share it or save it to Photos.</li><li>A snapshot or clip may contain people, voices, addresses, timestamps, or other sensitive information. Check it, the recipient, and local requirements before sending it.</li></ol>
+          </section>
+          <section class="wiki-topic">
+            <span>03.04</span>
+            <h3>Date, timeline, and recording types</h3>
+            <ol><li>Choose a date below the channel view. Cam&nbsp;Hub asks the equipment for recordings from that day.</li><li>Recordings can switch between Continuous and Events. Drag or zoom the timeline until the centre cursor reaches the desired time, or select a segment from the list.</li><li>Playback displays PLAYBACK and the equipment time. Tap Back to Live to return to the live stream. Some equipment downloads a clip before opening it in the system player.</li></ol>
+          </section></div>
+      </article><article class="wiki-chapter" id="wiki-backup">
+        <header class="wiki-chapter-head">
+          <span class="wiki-chapter-number">04</span>
+          <div><h2>Encrypted backup and camera sharing</h2><p>iCloud backup and restore no longer use a PIN. When sharing cameras, you can choose whether to lock the sharing code with a six-digit PIN.</p></div>
+        </header>
+        <div class="wiki-media-grid wiki-media-1">
+          <figure class="wiki-media">
+            <div class="wiki-screen"><img src="/assets/app-backup.jpg" alt="" loading="lazy" decoding="async"></div>
+            <figcaption>ENCRYPTED ICLOUD BACKUP</figcaption>
+          </figure></div>
+        
+        <div class="wiki-topics">
+          <section class="wiki-topic">
+            <span>04.01</span>
+            <h3>Local password protection</h3>
+            <ol><li>After equipment is added, its password is stored in Apple Keychain. The equipment name, address, ports, channels, and app settings remain in device data.</li><li>Cam&nbsp;Hub uses this information only for connections, recording searches, snapshots, backups, and transfers that you request.</li><li>Delete All Data removes local equipment data and saved passwords. Removing the app can also make configuration that was never backed up unrecoverable.</li></ol>
+          </section>
+          <section class="wiki-topic">
+            <span>04.02</span>
+            <h3>Encrypted iCloud backup without a PIN</h3>
+            <ol><li>Go to Settings → Back Up to iCloud, choose My Backup (for iPhone and iPad) or Apple TV at the top of the page, and tap Back Up Now without setting a PIN.</li><li>The backup includes supported equipment, credentials, channels, LiveView Mix, and app settings. Cam&nbsp;Hub encrypts it before saving it to your private iCloud.</li><li>Confirm that Current Backup shows the new time and equipment count.</li></ol>
+          </section>
+          <section class="wiki-topic">
+            <span>04.03</span>
+            <h3>Restore from iCloud</h3>
+            <ol><li>Open Settings → Restore from iCloud and select the backup to continue. iPhone, iPad, and Apple TV do not require PIN verification.</li><li>Use the same app version when possible and confirm that the Apple Account containing the backup is signed in. Backups from an older version may need to be recreated before they appear.</li><li>Restore is subject to the current plan limits. Afterwards, verify every equipment address, channel, and LiveView Mix against the current network.</li></ol>
+          </section>
+          <section class="wiki-topic">
+            <span>04.04</span>
+            <h3>Share cameras with an optional PIN</h3>
+            <ol><li>In Settings, open Export Cameras (in the Share Cameras section), select the cameras, and create an encrypted sharing code. Choose whether to turn on Lock with a PIN.</li><li>If Lock with a PIN is on, enter six digits. The recipient must pass PIN verification when importing or restoring the shared cameras. Without a PIN, the complete code imports directly.</li><li>The import includes equipment and credentials and is subject to destination plan limits. Send the complete code and PIN only to a trusted recipient; never post them in a public chat, ticket, or website.</li></ol>
+          </section></div>
+      </article><article class="wiki-chapter" id="wiki-preferences">
+        <header class="wiki-chapter-head">
+          <span class="wiki-chapter-number">05</span>
+          <div><h2>Display, streaming, and data controls</h2><p>Tune app behaviour for your network and device, and handle preferences, local data, and iCloud backup separately when resetting.</p></div>
+        </header>
+        <div class="wiki-media-grid wiki-media-1">
+          <figure class="wiki-media">
+            <div class="wiki-screen"><img src="/assets/app-settings.jpg" alt="" loading="lazy" decoding="async"></div>
+            <figcaption>APP SETTINGS</figcaption>
+          </figure></div>
+        
+        <div class="wiki-topics">
+          <section class="wiki-topic">
+            <span>05.01</span>
+            <h3>Hide offline cameras</h3>
+            <ol><li>Enable Settings → Hide offline cameras to remove cameras with no signal from Live and live monitoring walls.</li><li>They remain in the Devices channel list in a dimmed state, so they are not mistaken for deleted cameras and can reappear when their signal returns.</li></ol>
+          </section>
+          <section class="wiki-topic">
+            <span>05.02</span>
+            <h3>Keep cameras connected between pages</h3>
+            <ol><li>Go to Settings → LiveView Mix and find Keep cameras connected between pages under Paging; it matters most for equipment that takes longer to reconnect.</li><li>When enabled, channels remain connected after scrolling away and resume faster when revisited. This continuously uses network, power, and system resources, so leave it off when immediate resume is not needed.</li></ol>
+          </section>
+          <section class="wiki-topic">
+            <span>05.03</span>
+            <h3>Choose what opens on launch</h3>
+            <ol><li>Go to Settings → Open on launch, in the LiveView Mix section.</li><li>Last viewed returns to the previous selection, LiveView Mix opens the cross-equipment wall, LiveView Mix Full Screen opens that wall full screen, and an individual equipment entry opens that device.</li><li>If the selected equipment has been deleted or LiveView Mix has not been configured, the app returns to an available screen instead of preserving an invalid destination.</li></ol>
+          </section>
+          <section class="wiki-topic">
+            <span>05.04</span>
+            <h3>Plans and visible cameras</h3>
+            <ol><li>Settings → Plans shows the current camera and recorder plan and its usage limits.</li><li>When not every channel is unlocked, Choose which cameras show assigns the available slots. The list is unnecessary after the app is fully unlocked.</li><li>Purchases and Restore Purchases follow the status provided by Apple. A plan does not change the protocols, permissions, or playback features supplied by the camera itself.</li></ol>
+          </section>
+          <section class="wiki-topic">
+            <span>05.05</span>
+            <h3>Reset and delete separately</h3>
+            <ol><li>Restore Default Settings resets language, quality, LiveView Mix, and other preferences while keeping added equipment.</li><li>Delete All Data removes local equipment, cameras, and Keychain passwords. It does not affect iCloud backups or subscriptions.</li><li>Delete iCloud Backup removes the encrypted cloud backup without changing equipment and settings on the current device. When iCloud is unavailable, it may only clear locally displayed backup state.</li><li>Before an irreversible deletion, confirm that iCloud has synchronized and that the backup version can be restored on the destination device.</li></ol>
+          </section></div>
+      </article><article class="wiki-chapter" id="wiki-tv-control">
+        <header class="wiki-chapter-head">
+          <span class="wiki-chapter-number">06</span>
+          <div><h2>Apple TV and webhook controls</h2><p>Move the monitoring wall to the television and add HTTP control buttons that connect to endpoints you manage.</p></div>
+        </header>
+        <div class="wiki-media-grid wiki-media-1">
+          <figure class="wiki-media">
+            <div class="wiki-screen"><img src="/assets/app-apple-tv.jpg" alt="" loading="lazy" decoding="async"></div>
+            <figcaption>APPLE TV LIVEVIEW MIX</figcaption>
+          </figure></div>
+        <aside class="wiki-warning"><strong>!</strong><p>Security notice: webhook buttons call the network endpoints you specify. Cam&nbsp;Hub does not validate the security of endpoints, access controls, locks, alarms, or other physical equipment. Restrict endpoint permissions, protect credentials, and require confirmation for hard-to-reverse actions.</p></aside>
+        <div class="wiki-topics">
+          <section class="wiki-topic">
+            <span>06.01</span>
+            <h3>Monitor on Apple TV</h3>
+            <ol><li>The tvOS app includes LiveView Mix, per-equipment camera walls, full-screen single-camera viewing, and a recording timeline, all designed for focus-based Siri Remote navigation.</li><li>Dense layouts are well suited to a large display. Cameras and webhook buttons can be selected directly on the monitoring wall without leaving the current view first.</li><li>Live streaming, playback, main/sub-stream selection, and channel features still depend on the capabilities reported by the equipment, account permissions, codec, and network conditions.</li></ol>
+          </section>
+          <section class="wiki-topic">
+            <span>06.02</span>
+            <h3>Transfer setup from iPhone or iPad</h3>
+            <ol><li>On iPhone or iPad, open Settings → Back Up to iCloud, choose Apple TV as the destination, and create a dedicated encrypted backup without setting a PIN.</li><li>Sign in to the same Apple Account on Apple TV, open Restore from iCloud, select the backup, and restore it directly.</li><li>Apple TV restores only the dedicated Apple TV backup. Afterwards, verify equipment addresses, channels, and LiveView Mix against the television's current network.</li></ol>
+          </section>
+          <section class="wiki-topic">
+            <span>06.03</span>
+            <h3>Build a webhook control panel</h3>
+            <ol><li>In LiveView Mix settings, open Arrange the wall, add an empty slot, and set Shows to Control for that slot.</li><li>Choose the Gate / Shutter, Garage Door, Light, Door Lock, Curtain / Blind, Scene / Automation, Alarm / Siren, Fan, Smart Plug, Air Conditioner, or Custom template. Every button can have its own icon, label, and Confirm before firing setting; the panel has its own title and colour.</li><li>Each button can send GET, POST, PUT, or DELETE to an HTTP or HTTPS endpoint you specify, with optional headers, Content-Type, and JSON body.</li></ol>
+          </section>
+          <section class="wiki-topic">
+            <span>06.04</span>
+            <h3>Run controls from the monitoring wall</h3>
+            <ol><li>Tap a button on iPhone or iPad. On Apple TV, move focus with the remote and press to run it. The panel reports sending, success, or failure in place.</li><li>Use confirmation for opening, unlocking, alarm, and other hard-to-reverse actions, and expose only narrowly scoped endpoints for the required purpose.</li><li>Supported control-panel settings move with encrypted backups. You remain responsible for webhook endpoints, credentials, network access, and the safety of connected physical equipment.</li></ol>
+          </section></div>
+      </article><article class="wiki-chapter plans-chapter" id="wiki-plans">
+        <header class="wiki-chapter-head">
+          <span class="wiki-chapter-number">07</span>
+          <div><h2>Plans and limits</h2><p>Cam&nbsp;Hub includes a free allowance. Camera plans and NVR plans each raise a different limit.</p></div>
+        </header>
+        <div class="plans-table-wrap">
+          <table class="plans-table" role="table">
+            <caption class="sr-only">Plans and what each one unlocks</caption>
+            <thead role="rowgroup"><tr role="row"><th scope="col" role="columnheader">Plan</th><th scope="col" role="columnheader">Billing</th><th scope="col" role="columnheader">What it unlocks</th></tr></thead>
+            <tbody role="rowgroup"><tr role="row"><th scope="row" role="rowheader">Free</th><td role="cell" class="plans-billing">None</td><td role="cell">At most 2 enabled channels in the whole app (standalone cameras and recorder channels count together) and at most 1 recorder.</td></tr><tr role="row"><th scope="row" role="rowheader">Camera plans</th><td role="cell" class="plans-billing">Yearly</td><td role="cell">Raise the number of standalone cameras you can enable to 8 (<span class="keep-phrase">Cam Home</span>), 16 (<span class="keep-phrase">Cam Plus</span>) or unlimited (<span class="keep-phrase">Cam Max</span>).</td></tr><tr role="row"><th scope="row" role="rowheader">NVR plans</th><td role="cell" class="plans-billing">Monthly</td><td role="cell">Raise the number of recorders to 2 (<span class="keep-phrase">NVR Starter</span>), 4 (<span class="keep-phrase">NVR Pro</span>) or unlimited (<span class="keep-phrase">NVR Max</span>), and every channel of those recorders can be used.</td></tr></tbody>
+          </table>
+        </div>
+        <div class="wiki-topics plans-notes">
+          <section class="wiki-topic">
+            <span>07.01</span>
+            <h3>Two independent kinds</h3>
+            <p>Camera plans and NVR plans are independent and can be combined. A camera plan does not raise the recorder allowance, and an NVR plan does not raise the standalone-camera limit. Prices are shown in the app.</p>
+          </section>
+          <section class="wiki-topic">
+            <span>07.02</span>
+            <h3>Example</h3>
+            <p>With <span class="keep-phrase">Cam Plus</span> and <span class="keep-phrase">NVR Pro</span>: 4 recorders with all their channels and up to 16 standalone cameras.</p>
+          </section></div>
+        <p class="manual-link plans-more"><a href="/guide/plans.html">See the full rules and more examples in the manual</a></p>
+      </article></section>
+    <aside class="guide-note">Cam&nbsp;Hub does not bypass equipment access controls. Features vary by model, firmware, protocol implementation, account permissions, codec, and network conditions.</aside></div>
   </main>
-  <footer class="footer"><span data-i18n="footer">Copyright © 2026 ALMX. All rights reserved.</span><nav><a href="guide.html" data-i18n="navGuide">操作手冊</a><a href="devices.html" data-i18n="navDevices">機型差異</a><a href="privacy.html" data-i18n="navPrivacy">隱私權</a><a href="terms.html" data-i18n="navTerms">使用條款</a><a class="store-link" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-product&amp;mt=8" data-i18n="storeCTA">在 App Store 下載</a></nav></footer>
-  <script src="additional-locales.js?v=20261103-sl"></script>
-  <script src="product-locales-complete.js?v=20261103-sl"></script>
-  <script src="site.js?v=20261104-ch"></script>
-</body>
-</html>
+  <footer class="footer"><span data-i18n="footer">Copyright © 2026 ALMX. All rights reserved.</span><nav><a href="/guide.html" data-i18n="navGuide">Manual</a><a href="/devices.html" data-i18n="navDevices">Device differences</a><a href="/privacy.html" data-i18n="navPrivacy">Privacy</a><a href="/terms.html" data-i18n="navTerms">Terms</a><a class="store-link" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-product&amp;mt=8" data-i18n="storeCTA">Download on the App Store</a></nav><nav class="language-links" id="language-links" aria-label="Language" data-i18n-aria="languageLabel"><a href="/product.html" hreflang="en" lang="en" data-language-link="en" aria-current="true">English</a><a href="/zh-Hant/product.html" hreflang="zh-Hant" lang="zh-Hant" data-language-link="zh-Hant">繁體中文</a><a href="/zh-Hans/product.html" hreflang="zh-Hans" lang="zh-Hans" data-language-link="zh-Hans">简体中文</a><a href="/ja/product.html" hreflang="ja" lang="ja" data-language-link="ja">日本語</a><a href="/ko/product.html" hreflang="ko" lang="ko" data-language-link="ko">한국어</a><a href="/de/product.html" hreflang="de" lang="de" data-language-link="de">Deutsch</a><a href="/es/product.html" hreflang="es" lang="es" data-language-link="es">Español</a><a href="/es-MX/product.html" hreflang="es-MX" lang="es-MX" data-language-link="es-MX">Español (México)</a><a href="/fr/product.html" hreflang="fr" lang="fr" data-language-link="fr">Français</a><a href="/sl/product.html" hreflang="sl" lang="sl" data-language-link="sl">Slovenščina</a><a href="/ar/product.html" hreflang="ar" lang="ar" data-language-link="ar">العربية</a></nav></footer>
+  <script src="/additional-locales.js?v=20261103-sl"></script>
+  <script src="/product-locales-complete.js?v=20261103-sl"></script>
+  <script src="/site.js?v=20261112-1"></script>
+
+
+</body></html>

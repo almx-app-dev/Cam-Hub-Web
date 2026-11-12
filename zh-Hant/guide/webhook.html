@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="zh-Hant" dir="ltr"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="apple-itunes-app" content="app-id=6792057195"><meta name="color-scheme" content="dark light">
+  <meta name="description" content="控制面板是 LiveView Mix 牆上的一個格子，格內有一排按鈕。每顆按鈕按下後，會向指定的網址送出一個 HTTP 請求，可用於 Home Assistant 的 Webhook…">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="Cam Hub"><meta property="og:image" content="https://cam-hub.almx.cc/assets/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+  <title>控制面板與 Webhook — Cam Hub 操作手冊</title><link rel="icon" href="/assets/icon-48.png" sizes="48x48"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/icon-180.png"><link rel="stylesheet" href="/styles.css?v=20261112-1"><link rel="stylesheet" href="/guide.css?v=20261030-1">
+<meta property="og:description" content="控制面板是 LiveView Mix 牆上的一個格子，格內有一排按鈕。每顆按鈕按下後，會向指定的網址送出一個 HTTP 請求，可用於 Home Assistant 的 Webhook…"><link rel="canonical" href="https://cam-hub.almx.cc/zh-Hant/guide/webhook.html"><link rel="alternate" hreflang="x-default" href="https://cam-hub.almx.cc/guide/webhook.html"><link rel="alternate" hreflang="en" href="https://cam-hub.almx.cc/guide/webhook.html"><link rel="alternate" hreflang="zh-Hant" href="https://cam-hub.almx.cc/zh-Hant/guide/webhook.html"><link rel="alternate" hreflang="zh-Hans" href="https://cam-hub.almx.cc/zh-Hans/guide/webhook.html"><link rel="alternate" hreflang="ja" href="https://cam-hub.almx.cc/ja/guide/webhook.html"><link rel="alternate" hreflang="ko" href="https://cam-hub.almx.cc/ko/guide/webhook.html"><link rel="alternate" hreflang="de" href="https://cam-hub.almx.cc/de/guide/webhook.html"><link rel="alternate" hreflang="es" href="https://cam-hub.almx.cc/es/guide/webhook.html"><link rel="alternate" hreflang="es-MX" href="https://cam-hub.almx.cc/es-MX/guide/webhook.html"><link rel="alternate" hreflang="fr" href="https://cam-hub.almx.cc/fr/guide/webhook.html"><link rel="alternate" hreflang="sl" href="https://cam-hub.almx.cc/sl/guide/webhook.html"><link rel="alternate" hreflang="ar" href="https://cam-hub.almx.cc/ar/guide/webhook.html"><meta property="og:url" content="https://cam-hub.almx.cc/zh-Hant/guide/webhook.html"><meta property="og:title" content="控制面板與 Webhook — Cam Hub 操作手冊"></head>
+<body data-page="guide">
+  <header class="topbar" aria-label="Site header">
+    <a class="brand" href="/zh-Hant/"><img src="/assets/icon-96.png" alt="" width="42" height="42"><span><strong>Cam<wbr data-phrase-break="">&nbsp;<wbr data-phrase-break="">Hub</strong><small data-i18n="topline">操作<wbr data-phrase-break="">手冊</small></span></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-controls" data-i18n-aria="menuLabel" aria-label="開啟選單"><span></span><span></span><span></span><span class="sr-only" data-i18n="menuLabel">開啟選單</span></button>
+    <div class="topbar-controls" id="site-controls"><nav class="navlinks" aria-label="Primary"><a href="/zh-Hant/" data-nav="home" data-i18n="navHome">首頁</a><a href="/zh-Hant/product.html" data-nav="product" data-i18n="navProduct">功能<wbr data-phrase-break="">介紹</a><a href="/zh-Hant/guide.html" data-nav="guide" data-i18n="navGuide" aria-current="page">操作<wbr data-phrase-break="">手冊</a><a href="/zh-Hant/support.html" data-nav="support" data-i18n="navSupport">支援</a><a href="/zh-Hant/privacy.html" data-nav="privacy" data-i18n="navPrivacy">隱私權</a><a href="/zh-Hant/terms.html" data-nav="terms" data-i18n="navTerms">使用<wbr data-phrase-break="">條款</a></nav><div class="pickers"><label><span class="sr-only" data-i18n="themeLabel">外觀</span><select id="themeSelect" aria-label="Theme"><option value="auto" data-i18n="themeAuto" selected="">自動</option><option value="light" data-i18n="themeLight">淺色</option><option value="dark" data-i18n="themeDark">深色</option></select></label><label><span class="sr-only" data-i18n="languageLabel">語言</span><select id="languageSelect" aria-label="Language"><option value="en">English</option><option value="zh-Hant" selected="">繁體中文</option><option value="zh-Hans">简体中文</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="de">Deutsch</option><option value="es">Español</option><option value="es-MX">Español (México)</option><option value="fr">Français</option><option value="sl">Slovenščina</option><option value="ar">العربية</option></select></label></div><a class="store-pill" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeShort">下載<wbr data-phrase-break=""> <wbr data-phrase-break="">App</a></div>
+  </header>
+  <main class="inner-page guide" style="--g-topbar: 76px; --g-offset: 88px;">
+    <section class="page-hero"><div class="eyebrow" data-i18n="eyebrow">OPERATION MANUAL</div><h1 data-i18n="title">控制面板與 Webhook</h1><p class="summary" data-i18n="summary">從<wbr data-phrase-break="">加入<wbr data-phrase-break="">設備、<wbr data-phrase-break="">即時<wbr data-phrase-break="">畫面<wbr data-phrase-break="">與<wbr data-phrase-break="">錄影<wbr data-phrase-break="">回<wbr data-phrase-break="">放，<wbr data-phrase-break="">到<wbr data-phrase-break=""> <wbr data-phrase-break="">LiveView<wbr data-phrase-break=""> <wbr data-phrase-break="">Mix<wbr data-phrase-break=""> <wbr data-phrase-break="">多<wbr data-phrase-break="">機<wbr data-phrase-break="">牆、<wbr data-phrase-break="">分享<wbr data-phrase-break="">與<wbr data-phrase-break="">備份，<wbr data-phrase-break="">依序<wbr data-phrase-break="">說明<wbr data-phrase-break=""> <wbr data-phrase-break="">Cam<wbr data-phrase-break="">&nbsp;<wbr data-phrase-break="">Hub<wbr data-phrase-break=""> <wbr data-phrase-break="">的<wbr data-phrase-break="">操作<wbr data-phrase-break="">方式。</p></section>
+    <p class="guide-notice" id="guide-notice" role="status" hidden=""></p>
+    <div id="guide-sentinel" aria-hidden="true"></div>
+    <div class="guide-layout has-toc" id="guide-layout" lang="zh-Hant" dir="ltr">
+      <aside class="guide-side" id="guide-side">
+        <button class="guide-toc-toggle" id="guide-toc-toggle" type="button" aria-expanded="false" aria-controls="guide-toc" lang="zh-Hant" dir="ltr"><span class="guide-toc-label" data-i18n="tocLabel">目錄</span><span class="guide-toc-current" id="guide-toc-current">9. 控制面板與 Webhook</span></button>
+        <nav class="guide-toc" id="guide-toc" aria-label="目錄"><ol><li><a href="/zh-Hant/guide.html"><span class="toc-num">1</span><span>快速開始</span></a><ol><li><a href="/zh-Hant/guide.html#start-prepare"><span>事前準備</span></a></li><li><a href="/zh-Hant/guide.html#start-path"><span>最短流程</span></a></li><li><a href="/zh-Hant/guide.html#start-demo"><span>先用範例攝影機試用</span></a></li></ol></li><li><a href="/zh-Hant/guide/tour.html"><span class="toc-num">2</span><span>認識五個分頁</span></a><ol><li><a href="/zh-Hant/guide/tour.html#tour-tabs"><span>五個分頁一覽</span></a></li><li><a href="/zh-Hant/guide/tour.html#tour-launch"><span>啟動時開啟哪個畫面</span></a></li><li><a href="/zh-Hant/guide/tour.html#tour-look"><span>外觀與語言</span></a></li><li><a href="/zh-Hant/guide/tour.html#tour-rotate"><span>旋轉裝置</span></a></li><li><a href="/zh-Hant/guide/tour.html#tour-duo"><span>iPhone Duo</span></a></li><li><a href="/zh-Hant/guide/tour.html#tour-awake"><span>螢幕、背景與通知</span></a></li></ol></li><li><a href="/zh-Hant/guide/add.html"><span class="toc-num">3</span><span>加入設備</span></a><ol><li><a href="/zh-Hant/guide/add.html#add-form"><span>新增設備表單</span></a></li><li><a href="/zh-Hant/guide/add.html#add-auto"><span>不選品牌直接加入</span></a></li><li><a href="/zh-Hant/guide/add.html#add-methods"><span>連線方式的選擇</span></a></li><li><a href="/zh-Hant/guide/add.html#add-https"><span>透過 HTTPS 加入設備</span></a></li><li><a href="/zh-Hant/guide/add.html#add-streams"><span>加入 YouTube 直播與 Twitch 頻道</span></a></li><li><a href="/zh-Hant/guide/add.html#add-failed"><span>加入失敗時的檢查清單</span></a></li><li><a href="/zh-Hant/guide/add.html#add-report"><span>設備報告（實驗性功能）</span></a></li><li><a href="/zh-Hant/guide/add.html#add-scan"><span>以網段掃描尋找設備</span></a></li></ol></li><li><a href="/zh-Hant/guide/devices.html"><span class="toc-num">4</span><span>設備頁與通道</span></a><ol><li><a href="/zh-Hant/guide/devices.html#devices-list"><span>設備清單</span></a></li><li><a href="/zh-Hant/guide/devices.html#devices-page"><span>設備頁</span></a></li><li><a href="/zh-Hant/guide/devices.html#devices-credentials"><span>變更設備的使用者名稱與密碼</span></a></li><li><a href="/zh-Hant/guide/devices.html#devices-password-missing"><span>沒有儲存密碼的設備</span></a></li><li><a href="/zh-Hant/guide/devices.html#devices-https"><span>已儲存設備的 HTTPS</span></a></li><li><a href="/zh-Hant/guide/devices.html#devices-health"><span>硬碟健康</span></a></li><li><a href="/zh-Hant/guide/devices.html#devices-streams"><span>YouTube 直播與 Twitch 頻道</span></a></li><li><a href="/zh-Hant/guide/devices.html#devices-states"><span>縮圖的狀態</span></a></li><li><a href="/zh-Hant/guide/devices.html#devices-menu"><span>通道選項（長按）</span></a></li><li><a href="/zh-Hant/guide/devices.html#devices-plan"><span>方案限額與啟用通道</span></a></li><li><a href="/zh-Hant/guide/devices.html#devices-choose"><span>選擇顯示哪些攝影機</span></a></li><li><a href="/zh-Hant/guide/devices.html#devices-fullwall"><span>設備的全螢幕牆</span></a></li><li><a href="/zh-Hant/guide/devices.html#devices-quality"><span>設備畫面上的 SD 與 HD</span></a></li></ol></li><li><a href="/zh-Hant/guide/live.html"><span class="toc-num">5</span><span>即時分頁與全螢幕牆</span></a><ol><li><a href="/zh-Hant/guide/live.html#live-tab"><span>即時分頁</span></a></li><li><a href="/zh-Hant/guide/live.html#live-quality"><span>牆面上的 SD 與 HD</span></a></li><li><a href="/zh-Hant/guide/live.html#live-wall"><span>全螢幕牆</span></a></li><li><a href="/zh-Hant/guide/live.html#live-hide"><span>隱藏無訊號攝影機</span></a></li></ol></li><li><a href="/zh-Hant/guide/single.html"><span class="toc-num">6</span><span>單機畫面</span></a><ol><li><a href="/zh-Hant/guide/single.html#single-open"><span>開啟單機畫面</span></a></li><li><a href="/zh-Hant/guide/single.html#single-screen"><span>畫面的組成</span></a></li><li><a href="/zh-Hant/guide/single.html#single-zoom"><span>放大與平移</span></a></li><li><a href="/zh-Hant/guide/single.html#single-controls"><span>快照、聲音與畫質</span></a></li><li><a href="/zh-Hant/guide/single.html#single-clip"><span>錄製片段</span></a></li><li><a href="/zh-Hant/guide/single.html#single-talk"><span>雙向對講</span></a></li><li><a href="/zh-Hant/guide/single.html#single-picture"><span>黑邊、旋轉與橫向</span></a></li><li><a href="/zh-Hant/guide/single.html#single-ptz"><span>PTZ 控制：移動鏡頭</span></a></li><li><a href="/zh-Hant/guide/single.html#single-window"><span>在獨立視窗中顯示攝影機</span></a></li><li><a href="/zh-Hant/guide/single.html#single-duo"><span>摺疊 iPhone Duo 時的單機畫面</span></a></li><li><a href="/zh-Hant/guide/single.html#single-streams"><span>YouTube 與 Twitch 直播</span></a></li><li><a href="/zh-Hant/guide/single.html#single-states"><span>連線狀態與訊息</span></a></li><li><a href="/zh-Hant/guide/single.html#single-limits"><span>不提供的功能</span></a></li></ol></li><li><a href="/zh-Hant/guide/playback.html"><span class="toc-num">7</span><span>錄影回放與加速</span></a><ol><li><a href="/zh-Hant/guide/playback.html#playback-avail"><span>哪些設備提供錄影回放</span></a></li><li><a href="/zh-Hant/guide/playback.html#playback-day"><span>選擇日期</span></a></li><li><a href="/zh-Hant/guide/playback.html#playback-calendar"><span>錄影日曆</span></a></li><li><a href="/zh-Hant/guide/playback.html#playback-timeline"><span>使用時間軸</span></a></li><li><a href="/zh-Hant/guide/playback.html#playback-list"><span>錄影清單與人員搜尋</span></a></li><li><a href="/zh-Hant/guide/playback.html#playback-playing"><span>播放錄影期間</span></a></li><li><a href="/zh-Hant/guide/playback.html#playback-speed"><span>播放速度</span></a></li><li><a href="/zh-Hant/guide/playback.html#playback-landscape"><span>橫向的錄影回放</span></a></li><li><a href="/zh-Hant/guide/playback.html#playback-limits"><span>不提供的功能</span></a></li></ol></li><li><a href="/zh-Hant/guide/lvm.html"><span class="toc-num">8</span><span>LiveView Mix 多機牆</span></a><ol><li><a href="/zh-Hant/guide/lvm.html#lvm-tab"><span>LiveView Mix 分頁與預覽</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-first"><span>建立第一面六支攝影機的牆</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-pick"><span>選擇攝影機與畫質</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-layout"><span>調整版面</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-custom"><span>自己畫版面</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-special"><span>特殊版面：大小混排的牆</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-arrange"><span>排列牆面與格子</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-move"><span>把格子移到空格</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-slots"><span>攝影機以外，格子可以放什麼</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-watermark"><span>浮水印</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-fit"><span>黑邊、滿版畫面與裝置角度</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-pages"><span>直向頁面</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-canvases"><span>iPhone Duo 的兩張畫布</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-wall"><span>全螢幕牆面</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-closeup"><span>開啟單一攝影機</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-streams"><span>牆上的 YouTube 與 Twitch 直播</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-states"><span>格子無法顯示攝影機時</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-limits"><span>方案限制對牆面的影響</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-settings"><span>設定中的 LiveView Mix</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-tv"><span>Apple TV 上的差異</span></a></li></ol></li><li class="is-current"><a href="/zh-Hant/guide/webhook.html" class="is-active" aria-current="location"><span class="toc-num">9</span><span>控制面板與 Webhook</span></a><ol><li><a href="/zh-Hant/guide/webhook.html#webhook-what"><span>控制面板的用途與運作方式</span></a></li><li><a href="/zh-Hant/guide/webhook.html#webhook-add"><span>在牆上加入控制面板</span></a></li><li><a href="/zh-Hant/guide/webhook.html#webhook-templates"><span>範本</span></a></li><li><a href="/zh-Hant/guide/webhook.html#webhook-fields"><span>面板設定的項目</span></a></li><li><a href="/zh-Hant/guide/webhook.html#webhook-button"><span>設定按鈕</span></a></li><li><a href="/zh-Hant/guide/webhook.html#webhook-use"><span>按下按鈕與確認結果</span></a></li><li><a href="/zh-Hant/guide/webhook.html#webhook-wall"><span>面板在牆上的樣子</span></a></li><li><a href="/zh-Hant/guide/webhook.html#webhook-watch"><span>Apple Watch 上的按鈕</span></a></li><li><a href="/zh-Hant/guide/webhook.html#ha"><span>搭配 Home Assistant</span></a></li><li><a href="/zh-Hant/guide/webhook.html#webhook-security"><span>安全注意事項</span></a></li></ol></li><li><a href="/zh-Hant/guide/share.html"><span class="toc-num">10</span><span>分享與備份</span></a><ol><li><a href="/zh-Hant/guide/share.html#share-choose"><span>兩種方式的比較</span></a></li><li><a href="/zh-Hant/guide/share.html#share-export"><span>匯出攝影機（產生代碼）</span></a></li><li><a href="/zh-Hant/guide/share.html#share-lock"><span>鎖定代碼</span></a></li><li><a href="/zh-Hant/guide/share.html#share-import"><span>匯入攝影機</span></a></li><li><a href="/zh-Hant/guide/share.html#share-contents"><span>備份與代碼的內容</span></a></li><li><a href="/zh-Hant/guide/share.html#share-icloud"><span>備份到 iCloud</span></a></li><li><a href="/zh-Hant/guide/share.html#share-versions"><span>多份具名備份：重新命名與刪除</span></a></li><li><a href="/zh-Hant/guide/share.html#share-restore"><span>從 iCloud 還原</span></a></li><li><a href="/zh-Hant/guide/share.html#share-delete"><span>刪除所有 iCloud 備份</span></a></li><li><a href="/zh-Hant/guide/share.html#share-newphone"><span>把設備與牆搬到新手機</span></a></li><li><a href="/zh-Hant/guide/share.html#share-appletv"><span>帶到 Apple TV</span></a></li></ol></li><li><a href="/zh-Hant/guide/plans.html"><span class="toc-num">11</span><span>方案與限制</span></a><ol><li><a href="/zh-Hant/guide/plans.html#plans-tiers"><span>各方案的額度</span></a></li><li><a href="/zh-Hant/guide/plans.html#plans-stack"><span>兩組方案如何組合</span></a></li><li><a href="/zh-Hant/guide/plans.html#plans-count"><span>哪些項目占用額度</span></a></li><li><a href="/zh-Hant/guide/plans.html#plans-examples"><span>組合範例</span></a></li><li><a href="/zh-Hant/guide/plans.html#plans-choose"><span>選擇顯示哪些攝影機</span></a></li><li><a href="/zh-Hant/guide/plans.html#plans-subscribe"><span>訂閱、還原購買與兌換代碼</span></a></li><li><a href="/zh-Hant/guide/plans.html#plans-lapse"><span>方案到期或降級時</span></a></li></ol></li><li><a href="/zh-Hant/guide/tools.html"><span class="toc-num">12</span><span>工具分頁</span></a><ol><li><a href="/zh-Hant/guide/tools.html#tools-overview"><span>工具分頁的內容</span></a></li><li><a href="/zh-Hant/guide/tools.html#tools-speedometer"><span>時速表與羅盤</span></a></li></ol></li><li><a href="/zh-Hant/guide/settings.html"><span class="toc-num">13</span><span>設定</span></a><ol><li><a href="/zh-Hant/guide/settings.html#settings-overview"><span>設定分頁的區塊</span></a></li><li><a href="/zh-Hant/guide/settings.html#settings-subscription"><span>訂閱</span></a></li><li><a href="/zh-Hant/guide/settings.html#settings-quality"><span>預設畫質</span></a></li><li><a href="/zh-Hant/guide/settings.html#settings-picture"><span>畫面：黑邊與滿版</span></a></li><li><a href="/zh-Hant/guide/settings.html#settings-hide"><span>隱藏無訊號攝影機</span></a></li><li><a href="/zh-Hant/guide/settings.html#settings-lvm"><span>LiveView Mix、其頁面與啟動時開啟</span></a></li><li><a href="/zh-Hant/guide/settings.html#settings-backup"><span>攝影機的備份與分享</span></a></li><li><a href="/zh-Hant/guide/settings.html#settings-language"><span>語言</span></a></li><li><a href="/zh-Hant/guide/settings.html#settings-reset"><span>重設：還原預設設定、刪除所有資料、刪除 iCloud 備份</span></a></li><li><a href="/zh-Hant/guide/settings.html#settings-legal"><span>使用條款與隱私權政策</span></a></li><li><a href="/zh-Hant/guide/settings.html#settings-about"><span>關於、操作手冊，以及設定中沒有的項目</span></a></li></ol></li><li><a href="/zh-Hant/guide/appletv.html"><span class="toc-num">14</span><span>Apple TV</span></a><ol><li><a href="/zh-Hant/guide/appletv.html#appletv-prepare"><span>先在 iPhone 或 iPad 設定</span></a></li><li><a href="/zh-Hant/guide/appletv.html#appletv-bring"><span>把設定帶到 Apple TV</span></a></li><li><a href="/zh-Hant/guide/appletv.html#appletv-differs"><span>Apple TV 上有哪些不同</span></a></li></ol></li><li><a href="/zh-Hant/guide/trouble.html"><span class="toc-num">15</span><span>疑難排解</span></a><ol><li><a href="/zh-Hant/guide/trouble.html#trouble-start"><span>從哪裡開始</span></a></li><li><a href="/zh-Hant/guide/trouble.html#trouble-states"><span>空白畫面的說明</span></a></li><li><a href="/zh-Hant/guide/trouble.html#trouble-add"><span>設備已加入，但無法連線</span></a></li><li><a href="/zh-Hant/guide/trouble.html#trouble-live"><span>即時影像</span></a></li><li><a href="/zh-Hant/guide/trouble.html#trouble-playback"><span>錄影回放</span></a></li><li><a href="/zh-Hant/guide/trouble.html#trouble-lvm"><span>LiveView Mix</span></a></li><li><a href="/zh-Hant/guide/trouble.html#trouble-streams"><span>YouTube 與 Twitch</span></a></li><li><a href="/zh-Hant/guide/trouble.html#trouble-panels"><span>控制面板與 Webhook</span></a></li><li><a href="/zh-Hant/guide/trouble.html#trouble-health"><span>硬碟健康</span></a></li><li><a href="/zh-Hant/guide/trouble.html#trouble-share"><span>分享、匯入與 iCloud 備份</span></a></li><li><a href="/zh-Hant/guide/trouble.html#trouble-plans"><span>方案與購買</span></a></li><li><a href="/zh-Hant/guide/trouble.html#trouble-errors"><span>其他錯誤訊息</span></a></li><li><a href="/zh-Hant/guide/trouble.html#trouble-permissions"><span>權限要求與系統對話框</span></a></li><li><a href="/zh-Hant/guide/trouble.html#trouble-contact"><span>聯絡開發者</span></a></li><li><a href="/zh-Hant/guide/trouble.html#trouble-faq"><span>常見問題</span></a></li></ol></li><li><a href="/zh-Hant/guide/brands.html"><span class="toc-num">16</span><span>支援的品牌與連線方式</span></a><ol><li><a href="/zh-Hant/guide/brands.html#brands-methods"><span>連線方式</span></a></li><li><a href="/zh-Hant/guide/brands.html#brands-matrix"><span>各方式可使用的功能</span></a></li><li><a href="/zh-Hant/guide/brands.html#brands-profiles"><span>清單中的品牌</span></a></li><li><a href="/zh-Hant/guide/brands.html#brands-requirements"><span>需求與限制</span></a></li><li><a href="/zh-Hant/guide/brands.html#brands-recorders"><span>攝影機與錄影主機的判別</span></a></li><li><a href="/zh-Hant/guide/brands.html#brands-prepare"><span>在設備上要準備什麼</span></a></li><li><a href="/zh-Hant/guide/brands.html#brands-activate"><span>開通新設備</span></a></li><li><a href="/zh-Hant/guide/brands.html#brands-compat"><span>App 內的相容性參考</span></a></li></ol></li><li><a href="/zh-Hant/guide/about.html" class="no-num"><span>關於這份手冊</span></a><ol><li><a href="/zh-Hant/guide/about.html#about-scope"><span>適用範圍</span></a></li><li><a href="/zh-Hant/guide/about.html#about-conventions"><span>慣例</span></a></li><li><a href="/zh-Hant/guide/about.html#about-help"><span>取得協助</span></a></li></ol></li></ol></nav>
+      </aside>
+      <article class="guide-article" id="guide-content"><section class="chapter" id="webhook">
+  <h2><span class="num">9</span>控制面板與 Webhook</h2>
+  <p class="lead">控制面板是 LiveView Mix 牆上的一個格子，格內有一排按鈕。每顆按鈕按下後，會向指定的網址送出一個 HTTP 請求，可用於 Home Assistant 的 Webhook 或服務呼叫、繼電器板、Node-RED，以及手機連得到的任何 HTTP 服務。同樣的按鈕也可以在 Apple Watch 上按。</p>
+
+  <h3 id="webhook-what">控制面板的用途與運作方式</h3>
+  <p>控制面板由標題、若干按鈕與選用的時鐘組成。每顆按鈕保存一個完整的 HTTP 請求：方法、網址、標頭與內容。按下按鈕時，請求直接從這台 iPhone、iPad 或 Apple TV 送到指定的網址，不經過 Cam Hub 的伺服器。在 Apple Watch 上按下的按鈕，由手錶自己送出，或經由配對的 iPhone 送出，見<a class="xref" href="/zh-Hant/guide/webhook.html#webhook-watch">「Apple Watch 上的按鈕」</a>。</p>
+  <ul>
+    <li>Cam Hub 只負責送出請求。網址與內容完全由使用者設定，Cam Hub 不檢查對方是什麼服務，也不是任何智慧家庭產品的專用控制程式。</li>
+    <li>請求只在牆上或手錶上按下按鈕時才會送出。在排列畫面中點選面板只會開啟編輯畫面，不會送出請求。</li>
+    <li>控制面板在 iPhone 與 iPad 上建立與編輯。Apple TV 顯示並執行橫向頁面上的面板，見<a class="xref" href="/zh-Hant/guide/webhook.html#webhook-wall">「面板在牆上的樣子」</a>。Apple Watch 顯示面板的按鈕，見<a class="xref" href="/zh-Hant/guide/webhook.html#webhook-watch">「Apple Watch 上的按鈕」</a>。</li>
+  </ul>
+  <div class="callout warn">
+    <strong class="t">控制面板占用一個攝影機額度</strong>
+    <p>每個控制面板占用方案中的一個攝影機額度，使用的是攝影機用剩的額度，因此面板不會讓攝影機失去畫面。額度不足時，面板會被鎖住，牆上與手錶上的按鈕都無法使用。細節見<a class="xref" href="/zh-Hant/guide/lvm.html#lvm-limits">「方案限制對牆面的影響」</a>與<a class="xref" href="/zh-Hant/guide/plans.html#plans-count">「哪些項目占用額度」</a>。</p>
+  </div>
+
+  <h3 id="webhook-add">在牆上加入控制面板</h3>
+  <p>前置條件：已設定 LiveView Mix，牆上至少有一支攝影機，設定方式見<a class="xref" href="/zh-Hant/guide/lvm.html#lvm-first">「建立第一面六支攝影機的牆」</a>。尚未設定時，在已加入設備的情況下，也可從<span class="path"><span class="ui">設定</span> › <span class="ui">LiveView Mix</span></span>進入<span class="ui">排列牆面</span>。控制面板可以放在橫向頁面、直向頁面，或 iPhone Duo 的任一張畫布上，操作步驟相同。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>點選底部的 <span class="ui">LiveView Mix</span> 分頁。</p>
+      <p class="check"><b class="check-label">確認：</b>畫面顯示預覽牆，右上角有三個按鈕。</p>
+    </li>
+    <li class="step">
+      <p>點選右上角三個按鈕中最右側的<span class="ui">調整版面</span>按鈕。</p>
+      <p class="check"><b class="check-label">確認：</b>畫面開啟<span class="ui">調整版面</span>頁面。</p>
+    </li>
+    <li class="step">
+      <p>點選<span class="ui">排列牆面</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>畫面開啟<span class="ui">排列</span>頁面：上方是牆面的畫布，下方的<span class="ui">順序</span>清單依編號列出每個有內容的格子。</p>
+      <figure class="phone"><img src="/guide/img/lvm-arrange-full.jpg" alt="排列頁面：上方是牆面畫布，其中第 9 格為控制面板，第 10 格為時鐘，下方是有內容的格子清單" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-arrange-full.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>排列頁面</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>點選畫布上一個以虛線與 + 標示的尚未使用的格子。尚未使用的格子位於其他牆面頁時，先以畫布下方的箭頭或左右滑動翻頁。</p>
+      <p class="check"><b class="check-label">確認：</b>出現以格子編號為標題的選單，例如<span class="ui" data-ui="value">第 9 格</span>。</p>
+    </li>
+    <li class="step">
+      <p>點選<span class="ui">圖片、控制面板、時鐘或標籤…</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>畫面從下方開啟格子的編輯頁面，標題為<span class="ui" data-ui="value">第 9 格</span>。第一列為<span class="ui">顯示內容</span>，目前的值為<span class="ui">空白</span>。</p>
+    </li>
+    <li class="step">
+      <p>點選<span class="ui">顯示內容</span>，在選單中選擇<span class="ui">控制</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>頁面出現<span class="ui">範本</span>、<span class="ui">面板</span>與<span class="ui">按鈕</span>三個區塊。範本為<span class="ui">大門／鐵捲門</span>，面板標題為<span class="ui">大門</span>（依 App 的語言顯示），按鈕區有三顆按鈕，每顆按鈕下方以橘色顯示<span class="ui">尚未設定端點</span>。</p>
+    </li>
+    <li class="step">
+      <p>點選<span class="ui">範本</span>，選擇最接近的類型。</p>
+      <p class="check"><b class="check-label">確認：</b>按鈕區換成該範本的預設按鈕。範本的內容見<a class="xref" href="/zh-Hant/guide/webhook.html#webhook-templates">「範本」</a>。</p>
+    </li>
+    <li class="step">
+      <p>在<span class="ui">面板</span>區塊的<span class="ui">標題</span>欄輸入面板的名稱。</p>
+      <p class="check"><b class="check-label">確認：</b>欄位顯示輸入的名稱，該名稱日後顯示在面板按鈕的上方。</p>
+    </li>
+    <li class="step">
+      <p>選用：點選<span class="ui">顏色</span>，選擇面板邊框與按鈕的色彩。</p>
+      <p class="check"><b class="check-label">確認：</b>顏色圖示顯示所選的色彩。預設為青色。</p>
+    </li>
+    <li class="step">
+      <p>選用：開啟<span class="ui">顯示時間</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>出現<span class="ui">秒</span>、<span class="ui">日期</span>、<span class="ui">星期</span>與<span class="ui">24 小時制</span>四個開關。時鐘顯示在按鈕下方的空白處。</p>
+    </li>
+    <li class="step">
+      <p>依<a class="xref" href="/zh-Hant/guide/webhook.html#webhook-button">「設定按鈕」</a>設定每一顆按鈕的網址與內容。</p>
+      <p class="check"><b class="check-label">確認：</b>按鈕區的每一列在標籤下方顯示網址的主機名稱，不再顯示<span class="ui">尚未設定端點</span>。</p>
+    </li>
+    <li class="step">
+      <p>點選格子編輯頁面右上角的<span class="ui">完成</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>畫面回到<span class="ui">排列</span>頁面，畫布上的格子顯示面板在牆上的實際樣子。</p>
+    </li>
+    <li class="step">
+      <p>點選<span class="ui">排列</span>頁面右上角的<span class="ui">完成</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>畫面回到<span class="ui">調整版面</span>頁面。</p>
+    </li>
+    <li class="step">
+      <p>點選<span class="ui">調整版面</span>頁面右上角的<span class="ui">完成</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>畫面回到 LiveView Mix 分頁，預覽牆顯示新的控制面板。</p>
+    </li>
+  </ol>
+  <div class="shots pair">
+    <figure class="phone"><img src="/guide/img/lvm-slot-kinds.jpg" alt="格子編輯頁面的顯示內容選單：空白、圖片、控制、時鐘、標籤" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-slot-kinds.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>顯示內容選單</figcaption></figure>
+    <figure class="phone"><img src="/guide/img/lvm-control-panel.jpg" alt="控制面板的設定：範本、面板與按鈕清單，每顆按鈕下方顯示尚未設定端點" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-control-panel.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>控制面板的設定</figcaption></figure>
+  </div>
+  <ul>
+    <li>版面的每一格都已填滿時，畫布上沒有尚未使用的格子。先在<span class="ui">排列</span>頁面頂端的版面列選擇格子較多的版面，或清空一格，見<a class="xref" href="/zh-Hant/guide/lvm.html#lvm-arrange">「排列牆面與格子」</a>。</li>
+    <li>另一個頁面上已有的面板可以直接複製，不必重新建立，見<a class="xref" href="/zh-Hant/guide/lvm.html#lvm-pages">「直向頁面」</a>。其他牆面頁上的面板可以移到空格，見<a class="xref" href="/zh-Hant/guide/lvm.html#lvm-move">「把格子移到空格」</a>。</li>
+    <li>在格子編輯頁面點選左上角的<span class="ui">取消</span>，會把整面牆還原為開啟該頁面之前的狀態，包括按鈕的所有修改。</li>
+    <li>把<span class="ui">顯示內容</span>改為其他項目，會清除面板的標題與所有按鈕。要移除面板，把<span class="ui">顯示內容</span>改為<span class="ui">空白</span>，或在<span class="ui">排列</span>頁面的<span class="ui">順序</span>清單中向左滑動該列，再點選<span class="ui" data-ui="system">刪除</span>。兩種方式都會讓格子變為空格，其他格子都不移動。</li>
+    <li>圖片、時鐘與標籤格子的設定見<a class="xref" href="/zh-Hant/guide/lvm.html#lvm-slots">「攝影機以外，格子可以放什麼」</a>。</li>
+    <li>從<span class="path"><span class="ui">設定</span> › <span class="ui">LiveView Mix</span></span>進入<span class="ui">排列牆面</span>時，其後的操作相同。</li>
+  </ul>
+
+  <h3 id="webhook-templates">範本</h3>
+  <p><span class="ui">範本</span>選單提供十一種範本。範本只決定預設標題、按鈕的數量、圖示與<span class="ui">執行前先確認</span>的初始設定。範本不含任何網址，每顆按鈕都須自行填入網址。</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>範本</th><th>預設標題</th><th>預設按鈕</th><th>預設開啟「執行前先確認」的按鈕</th></tr></thead>
+    <tbody>
+      <tr><td data-label="範本"><span class="ui">大門／鐵捲門</span></td><td data-label="預設標題"><span class="ui">大門</span></td><td data-label="預設按鈕"><span class="ui">開啟</span>、<span class="ui">停止</span>、<span class="ui">關閉</span></td><td data-label="預設開啟「執行前先確認」的按鈕"><span class="ui">開啟</span></td></tr>
+      <tr><td data-label="範本"><span class="ui">車庫門</span></td><td data-label="預設標題"><span class="ui">車庫</span></td><td data-label="預設按鈕"><span class="ui">開啟</span>、<span class="ui">停止</span>、<span class="ui">關閉</span></td><td data-label="預設開啟「執行前先確認」的按鈕"><span class="ui">開啟</span></td></tr>
+      <tr><td data-label="範本"><span class="ui">燈光</span></td><td data-label="預設標題"><span class="ui">燈光</span></td><td data-label="預設按鈕"><span class="ui">開啟</span>、<span class="ui">關閉</span></td><td data-label="預設開啟「執行前先確認」的按鈕">無</td></tr>
+      <tr><td data-label="範本"><span class="ui">門鎖</span></td><td data-label="預設標題"><span class="ui">門</span></td><td data-label="預設按鈕"><span class="ui">解鎖</span>、<span class="ui">上鎖</span></td><td data-label="預設開啟「執行前先確認」的按鈕"><span class="ui">解鎖</span></td></tr>
+      <tr><td data-label="範本"><span class="ui">窗簾／捲簾</span></td><td data-label="預設標題"><span class="ui">窗簾</span></td><td data-label="預設按鈕"><span class="ui">開啟</span>、<span class="ui">停止</span>、<span class="ui">關閉</span></td><td data-label="預設開啟「執行前先確認」的按鈕">無</td></tr>
+      <tr><td data-label="範本"><span class="ui">情境／自動化</span></td><td data-label="預設標題"><span class="ui">情境</span></td><td data-label="預設按鈕"><span class="ui">執行</span></td><td data-label="預設開啟「執行前先確認」的按鈕">無</td></tr>
+      <tr><td data-label="範本"><span class="ui">警報器</span></td><td data-label="預設標題"><span class="ui">警報</span></td><td data-label="預設按鈕"><span class="ui">設防</span>、<span class="ui">解除設防</span>、<span class="ui">緊急</span></td><td data-label="預設開啟「執行前先確認」的按鈕"><span class="ui">設防</span>、<span class="ui">緊急</span></td></tr>
+      <tr><td data-label="範本"><span class="ui">電風扇</span></td><td data-label="預設標題"><span class="ui">電風扇</span></td><td data-label="預設按鈕"><span class="ui">開啟</span>、<span class="ui">關閉</span></td><td data-label="預設開啟「執行前先確認」的按鈕">無</td></tr>
+      <tr><td data-label="範本"><span class="ui">智慧插座</span></td><td data-label="預設標題"><span class="ui">插座</span></td><td data-label="預設按鈕"><span class="ui">開啟</span>、<span class="ui">關閉</span></td><td data-label="預設開啟「執行前先確認」的按鈕">無</td></tr>
+      <tr><td data-label="範本"><span class="ui">冷氣</span></td><td data-label="預設標題"><span class="ui">冷氣</span></td><td data-label="預設按鈕"><span class="ui">開啟</span>、<span class="ui">關閉</span></td><td data-label="預設開啟「執行前先確認」的按鈕">無</td></tr>
+      <tr><td data-label="範本"><span class="ui">自訂</span></td><td data-label="預設標題">空白</td><td data-label="預設按鈕">一顆標籤為<span class="ui">按鈕</span>的按鈕</td><td data-label="預設開啟「執行前先確認」的按鈕">無</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>範本帶入的預設標題與按鈕標籤依 App 的語言顯示；日後變更 App 的語言時，牆上、編輯頁面與 Apple Watch 上的這些文字也隨之改變。自行輸入或修改過的標題與標籤，則維持輸入時的內容。先前建立的面板中的預設文字，無論以哪一種 App 語言建立，都能被辨識，並同樣依目前的語言顯示。</li>
+    <li>更換範本會以新範本的按鈕取代現有的全部按鈕，已填入的網址、標頭與內容隨之清除。標題只在仍是空白或仍是預設標題時才會更換；已自行輸入的標題保持不變。請先選擇範本，再修改細節。</li>
+    <li>新加入控制面板時的初始範本為<span class="ui">大門／鐵捲門</span>。</li>
+  </ul>
+  <figure class="phone"><img src="/guide/img/lvm-control-templates.jpg" alt="範本選單展開，列出大門／鐵捲門、車庫門、燈光、門鎖、窗簾／捲簾、情境／自動化、警報器、電風扇、智慧插座、冷氣與自訂" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-control-templates.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>範本選單</figcaption></figure>
+
+  <h3 id="webhook-fields">面板設定的項目</h3>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>項目</th><th>說明</th></tr></thead>
+    <tbody>
+      <tr><td data-label="項目"><span class="ui">顯示內容</span></td><td data-label="說明">格子顯示的內容：<span class="ui">空白</span>、<span class="ui">圖片</span>、<span class="ui">控制</span>、<span class="ui">時鐘</span>或<span class="ui">標籤</span>。選擇<span class="ui">控制</span>即成為控制面板。</td></tr>
+      <tr><td data-label="項目"><span class="ui">範本</span></td><td data-label="說明">見<a class="xref" href="/zh-Hant/guide/webhook.html#webhook-templates">「範本」</a>。</td></tr>
+      <tr><td data-label="項目"><span class="ui">標題</span></td><td data-label="說明">顯示在按鈕上方，用於說明面板控制的對象，也是 Apple Watch 上的分組標題。留白時不顯示標題。</td></tr>
+      <tr><td data-label="項目"><span class="ui">顏色</span></td><td data-label="說明">面板邊框與按鈕的色彩，也用於 Apple Watch 上的圖示。</td></tr>
+      <tr><td data-label="項目"><span class="ui">顯示時間</span></td><td data-label="說明">在按鈕下方的空白處顯示目前的時間。開啟後可再選擇<span class="ui">秒</span>、<span class="ui">日期</span>、<span class="ui">星期</span>與<span class="ui">24 小時制</span>。星期與月份的名稱隨 App 的語言顯示。</td></tr>
+      <tr><td data-label="項目"><span class="ui">按鈕</span></td><td data-label="說明">按鈕清單。點選一列進入該按鈕的編輯頁面；向左滑動一列可刪除該按鈕；<span class="ui">新增按鈕</span>在清單最後加入一顆空白按鈕。清單沒有排序功能，要更換順序時，刪除按鈕後重新加入。每一列顯示圖示、標籤與網址的主機名稱；尚未填入有效網址時，改以橘色顯示<span class="ui">尚未設定端點</span>。標籤為空白時，該列以<span class="ui">按鈕</span>代替。</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="webhook-button">設定按鈕</h3>
+  <p>前置條件：已依<a class="xref" href="/zh-Hant/guide/webhook.html#webhook-add">「在牆上加入控制面板」</a>開啟格子的編輯頁面，並選擇<span class="ui">控制</span>。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>在<span class="ui">按鈕</span>區塊點選要設定的按鈕。需要新的按鈕時，先點選<span class="ui">新增按鈕</span>，再點選新增的一列。</p>
+      <p class="check"><b class="check-label">確認：</b>畫面進入該按鈕的編輯頁面，標題為按鈕的標籤，左上角只有返回箭頭。</p>
+    </li>
+    <li class="step">
+      <p>在<span class="ui">圖示</span>列下方的圖示列點選要使用的圖示，或在右側欄位輸入 <code>SF Symbols</code> 的圖示名稱。</p>
+      <p class="check"><b class="check-label">確認：</b>圖示列顯示所選的圖示與其名稱，例如 <code>arrow.up.to.line</code>。</p>
+    </li>
+    <li class="step">
+      <p>在<span class="ui">標籤</span>欄輸入顯示在圖示下方的文字。</p>
+      <p class="check"><b class="check-label">確認：</b>欄位顯示輸入的文字。頁面標題也改為該文字。</p>
+    </li>
+    <li class="step">
+      <p>需要先確認再執行的按鈕，開啟<span class="ui">執行前先確認</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>開關為開啟。在牆上與手錶上按下按鈕時都會先出現確認框，見<a class="xref" href="/zh-Hant/guide/webhook.html#webhook-use">「按下按鈕與確認結果」</a>。</p>
+    </li>
+    <li class="step">
+      <p>在<span class="ui">請求</span>區塊的<span class="ui">方法</span>選單選擇 <code>GET</code>、<code>POST</code>、<code>PUT</code> 或 <code>DELETE</code>。</p>
+      <p class="check"><b class="check-label">確認：</b>選單顯示所選的方法。選擇 <code>GET</code> 時，頁面下方沒有<span class="ui">內容</span>區塊；其他三種方法會顯示該區塊。</p>
+    </li>
+    <li class="step">
+      <p>在<span class="ui">方法</span>下方的欄位輸入完整的網址，以 <code>http://</code> 或 <code>https://</code> 開頭。</p>
+      <p class="check"><b class="check-label">確認：</b>欄位顯示輸入的網址。</p>
+    </li>
+    <li class="step">
+      <p>在 iPhone 上，選用：在 Apple Watch 區塊點選<span class="ui">傳送方式</span>，選擇<span class="ui">自動</span>、<span class="ui">由手錶直接送出</span>或<span class="ui">經由 iPhone</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>選單顯示所選的方式，下方的說明解釋該方式的作用。各方式的意義見<a class="xref" href="/zh-Hant/guide/webhook.html#webhook-watch">「Apple Watch 上的按鈕」</a>。</p>
+    </li>
+    <li class="step">
+      <p>需要標頭時，點選<span class="ui">新增標頭</span>，在<span class="ui">名稱</span>欄與<span class="ui">值</span>欄輸入標頭的名稱與值。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">標頭</span>區塊多出一列，兩個欄位顯示輸入的文字。需要多個標頭時重複此步驟；向左滑動一列可刪除該標頭。</p>
+    </li>
+    <li class="step">
+      <p>需要送出內容時，在<span class="ui">內容</span>區塊的上方欄位確認內容類型（預設為 <code>application/json</code>），再在下方的文字框輸入內容。</p>
+      <p class="check"><b class="check-label">確認：</b>文字框顯示輸入的內容。內容原樣送出，不會被改寫。</p>
+    </li>
+    <li class="step">
+      <p>點選左上角的返回箭頭。</p>
+      <p class="check"><b class="check-label">確認：</b>畫面回到格子的編輯頁面，該按鈕列在標籤下方顯示網址的主機名稱。</p>
+    </li>
+  </ol>
+  <div class="shots pair">
+    <figure class="phone"><img src="/guide/img/lvm-button-editor.jpg" alt="按鈕編輯頁面：圖示、標籤、執行前先確認，以及請求區塊的方法與網址" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-button-editor.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>按鈕編輯頁面（上半）</figcaption></figure>
+    <figure class="phone"><img src="/guide/img/lvm-button-headers.jpg" alt="按鈕編輯頁面下半：標頭區塊有一列授權標頭，內容區塊有內容類型與 JSON 內容" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-button-headers.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>按鈕編輯頁面（下半）</figcaption></figure>
+  </div>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>欄位</th><th>說明</th></tr></thead>
+    <tbody>
+      <tr><td data-label="欄位"><span class="ui">圖示</span></td><td data-label="說明">下方有 20 個常用圖示可直接點選。也可輸入 <code>SF Symbols</code> 的圖示名稱。</td></tr>
+      <tr><td data-label="欄位"><span class="ui">標籤</span></td><td data-label="說明">顯示在圖示下方，也是確認框中紅色按鈕的文字。標籤為空白時，按鈕只顯示圖示，確認框的紅色按鈕顯示<span class="ui">確認</span>。</td></tr>
+      <tr><td data-label="欄位"><span class="ui">執行前先確認</span></td><td data-label="說明">開啟後，按下按鈕會先出現確認框。會讓實體設備動作的按鈕，例如開門、解鎖與警報，建議開啟。</td></tr>
+      <tr><td data-label="欄位"><span class="ui">方法</span></td><td data-label="說明"><code>GET</code>、<code>POST</code>、<code>PUT</code> 或 <code>DELETE</code>，預設為 <code>POST</code>。<code>GET</code> 不送出內容。</td></tr>
+      <tr><td data-label="欄位">網址</td><td data-label="說明">必須以 <code>http://</code> 或 <code>https://</code> 開頭，並包含主機名稱或位址。前後的空白會被忽略。查詢參數直接寫在網址中。網址空白或格式不符時，按下按鈕會顯示失敗，該按鈕也不會出現在 Apple Watch 上。</td></tr>
+      <tr><td data-label="欄位"><span class="ui">傳送方式</span></td><td data-label="說明">只在 iPhone 上的 Apple Watch 區塊顯示。決定在手錶上按下時，由手錶自己送出還是經由 iPhone 送出；預設為<span class="ui">自動</span>。見<a class="xref" href="/zh-Hant/guide/webhook.html#webhook-watch">「Apple Watch 上的按鈕」</a>。</td></tr>
+      <tr><td data-label="欄位"><span class="ui">標頭</span></td><td data-label="說明">數量不限的名稱與值。名稱為空白的列會被略過。在此輸入的 <code>Content-Type</code> 標頭，優先於<span class="ui">內容</span>區塊的內容類型欄位。</td></tr>
+      <tr><td data-label="欄位"><span class="ui">內容</span></td><td data-label="說明">僅在 <code>POST</code>、<code>PUT</code> 與 <code>DELETE</code> 顯示。上方欄位是內容類型，預設為 <code>application/json</code>；下方文字框是內容。內容為空白時不送出任何內容；沒有自訂 <code>Content-Type</code> 標頭且內容不為空白時，才會附上內容類型欄位的值。</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="webhook-use">按下按鈕與確認結果</h3>
+  <p>按鈕在 LiveView Mix 分頁的預覽牆與全螢幕牆上都可按。新設定的按鈕沒有獨立的測試功能，以實際按下一次作為測試，並在接收端確認請求已到達。</p>
+  <figure class="clip land"><video class="clip" aria-label="在牆上按控制面板的按鈕：送出請求時顯示轉圈圖示，回應成功顯示綠色勾號，未成功則顯示橘色警告三角形。" muted="" loop="" playsinline="" preload="none" data-src="/guide/vid/rec-webhook-button.mp4" data-poster="/guide/img/rec-webhook-button.jpg" poster="/guide/img/rec-webhook-button.jpg"></video><figcaption>在牆上按控制面板的按鈕：送出請求時顯示轉圈圖示，回應成功顯示綠色勾號，未成功則顯示橘色警告三角形。</figcaption></figure>
+  <ol class="steps">
+    <li class="step">
+      <p>在預覽牆或全螢幕牆上點選面板中的按鈕。</p>
+      <p class="check"><b class="check-label">確認：</b>未開啟<span class="ui">執行前先確認</span>的按鈕，圖示立即變成轉圈，表示請求已送出。已開啟的按鈕，面板旁出現確認框，標題為面板的標題（面板沒有標題時為<span class="ui">要執行這個動作嗎？</span>）。</p>
+    </li>
+    <li class="step">
+      <p>出現確認框時，點選框中的紅色按鈕，文字為該按鈕的標籤。要取消，點選確認框以外的位置。</p>
+      <p class="check"><b class="check-label">確認：</b>確認框關閉，圖示變成轉圈。取消時不會送出請求。</p>
+      <figure class="phone"><img src="/guide/img/lvm-webhook-confirm.jpg" alt="LiveView Mix 分頁：按下大門面板的開啟按鈕後，面板旁出現確認框" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-webhook-confirm.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>確認框</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>觀察按鈕的圖示。</p>
+      <p class="check"><b class="check-label">確認：</b>圖示依結果變成綠色勾號或橘色警告三角形，約 1.6 秒後恢復為原來的圖示。</p>
+      <figure class="land"><img src="/guide/img/lvm-webhook-states.jpg" alt="同一顆按鈕的三種狀態：送出中的轉圈、成功的綠色勾號、失敗的橘色警告三角形" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-webhook-states.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>按鈕的三種狀態</figcaption></figure>
+    </li>
+  </ol>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>按鈕顯示</th><th>意義</th></tr></thead>
+    <tbody>
+      <tr><td data-label="按鈕顯示">設定的圖示</td><td data-label="意義">待命，或結果顯示完畢。</td></tr>
+      <tr><td data-label="按鈕顯示">轉圈</td><td data-label="意義">請求已送出，等待回應。10 秒內沒有回應即視為失敗。</td></tr>
+      <tr><td data-label="按鈕顯示">綠色勾號</td><td data-label="意義">接收端回應的狀態碼介於 200 與 299 之間。重新導向會被自動跟隨，以最後的回應為準。</td></tr>
+      <tr><td data-label="按鈕顯示">橘色警告三角形</td><td data-label="意義">請求未成功。原因可能是網址空白或格式不符、無法連線、逾時、憑證不受信任，或回應的狀態碼不在 200 至 299 之間，例如 401、404 或 500。畫面不顯示失敗的原因，也沒有紀錄。</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>綠色勾號只表示接收端回應成功，不代表設備真的動作。需要確認結果時，在接收端查看紀錄。</li>
+    <li>每按一次就送出一次請求，沒有防止連按的機制。連按兩下會送出兩個請求。會讓實體設備動作的按鈕請開啟<span class="ui">執行前先確認</span>。</li>
+    <li>連續顯示橘色三角形時，依序檢查：網址是否有效、手機與接收端是否在同一個網路或可互通、接收端的位址是否可解析。接收端位於本地網路時，須允許 Cam Hub 存取本地網路，見<a class="xref" href="/zh-Hant/guide/add.html#add-scan">「以網段掃描尋找設備」</a>。其他問題見<a class="xref" href="/zh-Hant/guide/trouble.html">第 15 章「疑難排解」</a>。</li>
+    <li>在 Apple Watch 上按按鈕的方式，見<a class="xref" href="/zh-Hant/guide/webhook.html#webhook-watch">「Apple Watch 上的按鈕」</a>。</li>
+  </ul>
+
+  <h3 id="webhook-wall">面板在牆上的樣子</h3>
+  <ul>
+    <li><b>按鈕排列</b>：1 顆按鈕排成 1 欄，2 顆排成 2 欄，3 顆排成 3 欄，4 顆排成 2 × 2，5 顆以上排成 3 欄。</li>
+    <li><b>格子較小時</b>：面板會自動縮小。時鐘最先隱藏，其次是圖示下方的標籤，標題與圖示會保留。</li>
+    <li><b>方案</b>：每個控制面板占用一個攝影機額度，使用的是攝影機用剩的額度。超出額度的面板顯示鎖頭、標題與<span class="ui">方案未包含</span>，按鈕無法使用；在預覽中，該格子顯示鎖頭與<span class="ui">方案未包含</span>。每一面牆上的每個面板各自計算：橫向頁面一律計入，直向頁面在開啟期間計入，iPhone Duo 的下方畫布在兩張畫布開啟期間計入；複製出來的面板與原本的面板分開計算。時鐘、標籤、圖片與空白的格子不占用額度。只訂閱 NVR 方案不會增加面板可用的額度。計算方式見<a class="xref" href="/zh-Hant/guide/lvm.html#lvm-limits">「方案限制對牆面的影響」</a>與<a class="xref" href="/zh-Hant/guide/plans.html#plans-count">「哪些項目占用額度」</a>。</li>
+    <li><b>Apple TV</b>：控制面板在 iPhone 或 iPad 建立，橫向頁面上的面板顯示在 Apple TV 的牆面上，見<a class="xref" href="/zh-Hant/guide/appletv.html">第 14 章「Apple TV」</a>。</li>
+    <li><b>Apple Watch</b>：方案涵蓋的每個面板，其按鈕都會出現在配對的 Apple Watch 上，見<a class="xref" href="/zh-Hant/guide/webhook.html#webhook-watch">「Apple Watch 上的按鈕」</a>。</li>
+    <li><b>備份與分享</b>：面板的設定，包括標頭中的值，屬於 App 設定，會進入每一份 iCloud 備份；匯出攝影機時開啟<span class="ui">包含 App 設定</span>，也會進入分享代碼，見<a class="xref" href="/zh-Hant/guide/share.html">第 10 章「分享與備份」</a>。</li>
+  </ul>
+  <div class="shots land-pair">
+    <figure class="land"><img src="/guide/img/lvm-wall.jpg" alt="全螢幕牆：下排有一個控制面板，面板有開啟、停止與關閉三顆按鈕，其右側是時鐘，其餘格子為攝影機畫面" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-wall.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>牆上的控制面板與時鐘</figcaption></figure>
+    <figure class="land"><img src="/guide/img/lvm-panel-locked.jpg" alt="全螢幕牆：超出額度的控制面板顯示鎖頭、標題與方案未包含" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-panel-locked.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>超出額度而被鎖住的控制面板</figcaption></figure>
+  </div>
+
+  <h3 id="webhook-watch">Apple Watch 上的按鈕</h3>
+  <p>Apple Watch 上的 Cam Hub 顯示配對的 iPhone 上所設定之控制面板的按鈕，點一下即可送出。手錶上不顯示其他內容，沒有影像，也沒有攝影機。手錶 App 沒有自己的設定、登入或購買項目；顯示哪些按鈕由 iPhone 決定。</p>
+  <ul>
+    <li><b>哪些按鈕</b>：方案涵蓋的每個控制面板上、網址有效的每顆按鈕，包括橫向頁面、開啟期間的直向頁面，以及 iPhone Duo 在兩張畫布開啟期間的下方畫布。直向頁面上與橫向頁面完全相同的按鈕（面板標題、標籤與請求都相同）只列出一次。</li>
+    <li><b>清單</b>：畫面標題為<span class="ui">控制</span>。按鈕依牆上的順序，分組列在所屬面板的標題下。每一列顯示面板顏色的圖示與按鈕的標籤（標籤為空白時顯示網址）。</li>
+    <li><b>同步</b>：在 iPhone 上修改面板或按鈕，或方案改變時，iPhone 會傳送新的清單給手錶。方案不再涵蓋的面板，會從手錶上消失。</li>
+    <li><b>獨立運作</b>：清單保存在手錶上。即使 iPhone 上的 App 沒有執行，或 iPhone 不在附近，手錶 App 仍可開啟並顯示清單；允許由手錶自己送出的按鈕照常可用。</li>
+    <li><b>語言</b>：手錶上的文字與面板的預設文字，依 iPhone 上 App 的語言顯示，而不是手錶的語言。</li>
+    <li><b>尚未收到按鈕時</b>：手錶顯示<span class="ui" data-ui="value">還沒有按鈕</span>，並說明在 iPhone 上的 LiveView Mix 新增控制面板後，面板上的按鈕就會顯示在這裡。</li>
+  </ul>
+  <figure class="phone"><img src="/guide/img/watch-buttons.jpg" alt="Apple Watch 的控制清單：花園燈面板的開燈按鈕在端點回應後顯示綠色勾號，下方是關燈按鈕" decoding="async" width="416" height="496" data-src="/guide/img/watch-buttons.jpg" style="aspect-ratio: 416 / 496;" loading="lazy"><figcaption>Apple Watch 上的控制面板按鈕</figcaption></figure>
+  <h4>按下按鈕後如何送出</h4>
+  <p>每顆按鈕在 iPhone 的按鈕編輯頁面中，各自有<span class="ui">傳送方式</span>的選擇（見<a class="xref" href="/zh-Hant/guide/webhook.html#webhook-button">「設定按鈕」</a>）：</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>選項</th><th>按下時的處理</th></tr></thead>
+    <tbody>
+      <tr><td data-label="選項"><span class="ui">自動</span>（預設）</td><td data-label="按下時的處理">公開的位址直接由手錶送出。家用網路或 VPN 的位址，例如 <code>192.168.x.x</code> 或以 <code>.local</code> 結尾的名稱，先經由連得到這些位址的 iPhone 送出。</td></tr>
+      <tr><td data-label="選項"><span class="ui">由手錶直接送出</span></td><td data-label="按下時的處理">一律由手錶自己送出請求，透過手錶本身的 Wi-Fi 或行動網路，或 iPhone 的連線。速度最快，但手錶可能連不到家用網路或 VPN 的位址。</td></tr>
+      <tr><td data-label="選項"><span class="ui">經由 iPhone</span></td><td data-label="按下時的處理">適用於只能透過 iPhone 上的 VPN 連到的伺服器，特別是其位址看起來像公開位址時：手錶本身沒有 VPN。只有在 iPhone 不在附近時，才由手錶自己送出。</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>經由 iPhone 送出時，手錶先確認 iPhone 有回應，最多等待約 6 秒；為此，iPhone 上的 App 可在背景啟動。iPhone 確認方案仍涵蓋該面板後，以與牆上相同的方式送出請求。</li>
+    <li>iPhone 對這項確認沒有回應時，由手錶自己送出請求。iPhone 已接下請求但回覆遺失時，這次按下顯示為失敗，且不會再送一次，因此開關不會被切換兩次。</li>
+    <li>由手錶自己送出而失敗的請求，不會再經由 iPhone 重送。手錶直接連往家用網路位址的請求，只在手錶連上同一個 Wi-Fi 網路時有效。</li>
+  </ul>
+  <h4>在手錶上按下按鈕</h4>
+  <p>前置條件：與 iPhone 配對的 Apple Watch 已安裝 Cam Hub，且牆上至少有一個含有效網址的控制面板。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>在 Apple Watch 上開啟 Cam Hub。</p>
+      <p class="check"><b class="check-label">確認：</b>手錶顯示<span class="ui">控制</span>與依面板分組的按鈕。</p>
+    </li>
+    <li class="step">
+      <p>點選一顆按鈕。</p>
+      <p class="check"><b class="check-label">確認：</b>未開啟<span class="ui">執行前先確認</span>的按鈕，該列尾端立即顯示轉圈。已開啟的按鈕會詢問<span class="ui">要執行這個動作嗎？</span>，下方為面板標題，另有一顆文字為按鈕標籤的紅色按鈕與<span class="ui">取消</span>。</p>
+    </li>
+    <li class="step">
+      <p>出現詢問時，點選紅色按鈕。要取消，點選<span class="ui">取消</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>詢問關閉，該列顯示轉圈。取消時不會送出任何請求。</p>
+    </li>
+    <li class="step">
+      <p>觀察該列的尾端。</p>
+      <p class="check"><b class="check-label">確認：</b>綠色勾號表示端點回應成功；紅色警告三角形表示請求未成功。手錶同時輕觸手腕提示，約 2.5 秒後該列恢復原狀。</p>
+    </li>
+  </ol>
+  <p>按鈕仍在送出時再點一下會被忽略，因此急著連點也不會送出兩次。與牆上相同，綠色勾號只表示接收端已回應，不代表設備真的動作。</p>
+
+  <h3 id="ha">搭配 Home Assistant</h3>
+  <p>以下以 Home Assistant 為例說明兩種做法。範例中的位址 <code>homeassistant.local</code> 與識別碼 <code>gate-open-7f3c9a21</code>、實體名稱 <code>cover.gate</code> 都是示範用的假值，須換成自己的設定。Home Assistant 一側的行為依其官方文件為準，可能隨版本調整。</p>
+  <p>前置條件：Home Assistant 已在家中網路運作，手機能連到它的位址；LiveView Mix 牆上已有一個選擇<span class="ui">控制</span>的格子（見<a class="xref" href="/zh-Hant/guide/webhook.html#webhook-add">「在牆上加入控制面板」</a>）。Home Assistant 預設使用 <code>http</code> 與連接埠 <code>8123</code>。App 輸入欄的範例文字以 <code>https</code> 開頭，須依實際設定修改。</p>
+
+  <h4>做法一：Webhook 觸發（不需權杖）</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>在 Home Assistant 建立新的自動化。</p>
+      <p class="check"><b class="check-label">確認：</b>畫面顯示自動化的編輯頁面。</p>
+    </li>
+    <li class="step">
+      <p>觸發條件選擇 Webhook，輸入不易猜到的識別碼，例如 <code>gate-open-7f3c9a21</code>。</p>
+      <p class="check"><b class="check-label">確認：</b>編輯頁面顯示輸入的識別碼。識別碼等同於密碼，洩漏後任何知道位址的人都能觸發該自動化。</p>
+    </li>
+    <li class="step">
+      <p>設定動作，例如開啟閘門的實體，並儲存自動化。</p>
+      <p class="check"><b class="check-label">確認：</b>自動化出現在 Home Assistant 的自動化清單中。</p>
+    </li>
+    <li class="step">
+      <p>在 Cam Hub 開啟要使用的按鈕的編輯頁面，操作見<a class="xref" href="/zh-Hant/guide/webhook.html#webhook-button">「設定按鈕」</a>的步驟 1。</p>
+      <p class="check"><b class="check-label">確認：</b>畫面顯示該按鈕的編輯頁面。</p>
+    </li>
+    <li class="step">
+      <p>在<span class="ui">方法</span>選擇 <code>POST</code>，在網址欄輸入 <code>http://homeassistant.local:8123/api/webhook/gate-open-7f3c9a21</code>。標頭與內容不需填寫。</p>
+      <p class="check"><b class="check-label">確認：</b>欄位顯示輸入的網址，返回後該按鈕列顯示主機名稱 <code>homeassistant.local</code>。</p>
+    </li>
+    <li class="step">
+      <p>返回牆面，按下該按鈕。</p>
+      <p class="check"><b class="check-label">確認：</b>圖示先轉圈，再顯示綠色勾號。</p>
+    </li>
+    <li class="step">
+      <p>在 Home Assistant 查看該自動化的執行紀錄。</p>
+      <p class="check"><b class="check-label">確認：</b>紀錄顯示剛才的一次執行。Home Assistant 對不存在的識別碼也可能回應成功，因此以執行紀錄為準，不以綠色勾號為準。</p>
+    </li>
+  </ol>
+  <p>等同的請求如下：</p>
+  <pre><code>POST /api/webhook/gate-open-7f3c9a21 HTTP/1.1
+Host: homeassistant.local:8123</code></pre>
+  <p>自動化也可以用設定檔撰寫。下列範例僅供對照，寫法依 Home Assistant 的版本而異：</p>
+  <pre><code>triggers:
+  - trigger: webhook
+    webhook_id: gate-open-7f3c9a21
+    allowed_methods:
+      - POST
+    local_only: true
+actions:
+  - action: cover.open_cover
+    target:
+      entity_id: cover.gate</code></pre>
+  <p>Webhook 觸發預設只接受 <code>POST</code> 與 <code>PUT</code>，且預設只接受來自本地網路的請求。要從外部網路使用，須另行處理，見<a class="xref" href="/zh-Hant/guide/webhook.html#webhook-security">「安全注意事項」</a>。<span class="ui">傳送方式</span>為<span class="ui">自動</span>或<span class="ui">經由 iPhone</span>時，在 Apple Watch 上按下的按鈕會經由 iPhone 連到 <code>homeassistant.local</code> 這類位址，見<a class="xref" href="/zh-Hant/guide/webhook.html#webhook-watch">「Apple Watch 上的按鈕」</a>。</p>
+
+  <h4>做法二：服務呼叫（需要權杖）</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>在 Home Assistant 的個人資料頁建立一組長期存取權杖，並立即複製。</p>
+      <p class="check"><b class="check-label">確認：</b>畫面顯示權杖。權杖通常只在建立時完整顯示一次。</p>
+    </li>
+    <li class="step">
+      <p>在 Cam Hub 開啟按鈕的編輯頁面，在<span class="ui">方法</span>選擇 <code>POST</code>，在網址欄輸入 <code>http://homeassistant.local:8123/api/services/cover/open_cover</code>。</p>
+      <p class="check"><b class="check-label">確認：</b>欄位顯示輸入的網址。</p>
+    </li>
+    <li class="step">
+      <p>點選<span class="ui">新增標頭</span>。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">標頭</span>區塊多出一列，有<span class="ui">名稱</span>與<span class="ui">值</span>兩個欄位。</p>
+    </li>
+    <li class="step">
+      <p>在<span class="ui">名稱</span>欄輸入 <code>Authorization</code>，在<span class="ui">值</span>欄輸入 <code>Bearer</code>、一個空格與複製的權杖。</p>
+      <p class="check"><b class="check-label">確認：</b>兩個欄位顯示輸入的文字。標頭的值以明文顯示。</p>
+    </li>
+    <li class="step">
+      <p>在<span class="ui">內容</span>區塊確認內容類型為 <code>application/json</code>，在文字框輸入 <code>{"entity_id":"cover.gate"}</code>。</p>
+      <p class="check"><b class="check-label">確認：</b>文字框顯示輸入的內容。</p>
+    </li>
+    <li class="step">
+      <p>返回牆面，按下該按鈕。</p>
+      <p class="check"><b class="check-label">確認：</b>圖示先轉圈，再顯示綠色勾號。Home Assistant 的紀錄顯示該服務已被呼叫。</p>
+    </li>
+  </ol>
+  <p>等同的請求如下：</p>
+  <pre><code>POST /api/services/cover/open_cover HTTP/1.1
+Host: homeassistant.local:8123
+Authorization: Bearer &lt;長期存取權杖&gt;
+Content-Type: application/json
+
+{"entity_id":"cover.gate"}</code></pre>
+  <div class="callout tip">
+    <strong class="t">優先使用 Webhook 觸發</strong>
+    <p>Webhook 識別碼洩漏時，影響範圍只限於對應的那一個自動化。長期存取權杖則可以操作整個 Home Assistant。能用做法一完成的動作，優先使用做法一。</p>
+  </div>
+
+  <h3 id="webhook-security">安全注意事項</h3>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>項目</th><th>說明與建議</th></tr></thead>
+    <tbody>
+      <tr><td data-label="項目">HTTP 與 HTTPS</td><td data-label="說明與建議">以 <code>http://</code> 送出的請求不加密。同一條網路路徑上的任何人都能讀到網址、標頭中的權杖與內容。只在可信任的家用網路內，並用於不含敏感資料的 Webhook 時使用 HTTP；請求含權杖，或會離開家用網路時，一律使用 <code>https://</code>。</td></tr>
+      <tr><td data-label="項目">HTTPS 憑證</td><td data-label="說明與建議">Cam Hub 沒有「信任自簽憑證」的選項。使用自簽憑證的 <code>https://</code> 位址會連線失敗，按鈕顯示橘色三角形。區域網路內可改用 <code>http://</code>，或為接收端安裝手機信任的憑證。</td></tr>
+      <tr><td data-label="項目">權杖與識別碼的保存</td><td data-label="說明與建議">標頭的值在編輯畫面以明文顯示，並以明文保存在這台裝置的 App 設定中。</td></tr>
+      <tr><td data-label="項目">Apple Watch</td><td data-label="說明與建議">送到手錶的按鈕帶有完整的請求，包括網址、標頭與內容。這些按鈕會複製到配對的 Apple Watch 並保存在其中，因此標頭中的權杖也會儲存在手錶上。</td></tr>
+      <tr><td data-label="項目">備份與分享代碼</td><td data-label="說明與建議">面板的設定會進入每一份 iCloud 備份，以及開啟<span class="ui">包含 App 設定</span>的分享代碼。把這類代碼視同密碼，並加上 PIN 或密碼鎖定，見<a class="xref" href="/zh-Hant/guide/share.html#share-lock">「鎖定代碼」</a>。權杖外洩時，在接收端撤銷並重新建立。</td></tr>
+      <tr><td data-label="項目">外部網路</td><td data-label="說明與建議">不建議把 Home Assistant 的連接埠 <code>8123</code> 直接開放到網際網路。外出時要用什麼方式連線（例如 VPN 或 Home Assistant 官方的遠端存取方式），由您自行決定；再把網址改為對應的位址。</td></tr>
+      <tr><td data-label="項目">實體動作</td><td data-label="說明與建議">開門、解鎖與警報等按鈕務必開啟<span class="ui">執行前先確認</span>。Cam Hub 沒有針對面板按鈕的另外一道鎖；能操作已解鎖裝置或手錶的人，都能按下按鈕。</td></tr>
+      <tr><td data-label="項目">名稱解析</td><td data-label="說明與建議"><code>.local</code> 名稱可能因網路環境而無法解析。出現連線失敗時，改填接收端的固定 IP 位址。</td></tr>
+    </tbody>
+  </table></div>
+</section><nav class="guide-pager" aria-label="目錄"><a class="guide-prev" rel="prev" href="/zh-Hant/guide/lvm.html"><span class="pager-dir">上一章</span><span class="pager-title">8. LiveView Mix 多機牆</span></a><a class="guide-next" rel="next" href="/zh-Hant/guide/share.html"><span class="pager-dir">下一章</span><span class="pager-title">10. 分享與備份</span></a></nav></article>
+    </div>
+    <button class="guide-top" id="guide-top" type="button" aria-label="回到頂端"></button>
+  </main>
+  <footer class="footer"><span data-i18n="footer">Copyright<wbr data-phrase-break=""> <wbr data-phrase-break="">©<wbr data-phrase-break=""> <wbr data-phrase-break="">2026<wbr data-phrase-break=""> <wbr data-phrase-break="">ALMX<wbr data-phrase-break="">.<wbr data-phrase-break=""> <wbr data-phrase-break="">All<wbr data-phrase-break=""> <wbr data-phrase-break="">rights<wbr data-phrase-break=""> <wbr data-phrase-break="">reserved<wbr data-phrase-break="">.</span><nav><a href="/zh-Hant/guide.html" data-i18n="navGuide">操作<wbr data-phrase-break="">手冊</a><a href="/zh-Hant/devices.html" data-i18n="navDevices">機型<wbr data-phrase-break="">差異</a><a href="/zh-Hant/privacy.html" data-i18n="navPrivacy">隱私權</a><a href="/zh-Hant/terms.html" data-i18n="navTerms">使用<wbr data-phrase-break="">條款</a><a class="store-link" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeCTA">在<wbr data-phrase-break=""> <wbr data-phrase-break="">App<wbr data-phrase-break=""> <wbr data-phrase-break="">Store<wbr data-phrase-break=""> <wbr data-phrase-break="">下載</a></nav><nav class="language-links" id="language-links" aria-label="語言" data-i18n-aria="languageLabel"><a href="/guide/webhook.html" hreflang="en" lang="en" data-language-link="en">English</a><a href="/zh-Hant/guide/webhook.html" hreflang="zh-Hant" lang="zh-Hant" data-language-link="zh-Hant" aria-current="true">繁體中文</a><a href="/zh-Hans/guide/webhook.html" hreflang="zh-Hans" lang="zh-Hans" data-language-link="zh-Hans">简体中文</a><a href="/ja/guide/webhook.html" hreflang="ja" lang="ja" data-language-link="ja">日本語</a><a href="/ko/guide/webhook.html" hreflang="ko" lang="ko" data-language-link="ko">한국어</a><a href="/de/guide/webhook.html" hreflang="de" lang="de" data-language-link="de">Deutsch</a><a href="/es/guide/webhook.html" hreflang="es" lang="es" data-language-link="es">Español</a><a href="/es-MX/guide/webhook.html" hreflang="es-MX" lang="es-MX" data-language-link="es-MX">Español (México)</a><a href="/fr/guide/webhook.html" hreflang="fr" lang="fr" data-language-link="fr">Français</a><a href="/sl/guide/webhook.html" hreflang="sl" lang="sl" data-language-link="sl">Slovenščina</a><a href="/ar/guide/webhook.html" hreflang="ar" lang="ar" data-language-link="ar">العربية</a></nav></footer>
+  <script src="/additional-locales.js?v=20261103-sl"></script>
+  <script src="/site.js?v=20261112-1"></script>
+
+
+</body></html>

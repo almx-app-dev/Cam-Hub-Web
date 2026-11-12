@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="sl" dir="ltr"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="apple-itunes-app" content="app-id=6792057195"><meta name="color-scheme" content="dark light">
+  <meta name="description" content="Nadzorna plošča je polje na steni LiveView Mix, ki vsebuje vrsto gumbov. Vsak gumb ob pritisku pošlje zahtevo HTTP na poljuben naslov, kar je primerno za…">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="Cam Hub"><meta property="og:image" content="https://cam-hub.almx.cc/assets/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+  <title>Nadzorne plošče in webhooki — Cam Hub Priročnik</title><link rel="icon" href="/assets/icon-48.png" sizes="48x48"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/icon-180.png"><link rel="stylesheet" href="/styles.css?v=20261112-1"><link rel="stylesheet" href="/guide.css?v=20261030-1">
+<meta property="og:description" content="Nadzorna plošča je polje na steni LiveView Mix, ki vsebuje vrsto gumbov. Vsak gumb ob pritisku pošlje zahtevo HTTP na poljuben naslov, kar je primerno za…"><link rel="canonical" href="https://cam-hub.almx.cc/sl/guide/webhook.html"><link rel="alternate" hreflang="x-default" href="https://cam-hub.almx.cc/guide/webhook.html"><link rel="alternate" hreflang="en" href="https://cam-hub.almx.cc/guide/webhook.html"><link rel="alternate" hreflang="zh-Hant" href="https://cam-hub.almx.cc/zh-Hant/guide/webhook.html"><link rel="alternate" hreflang="zh-Hans" href="https://cam-hub.almx.cc/zh-Hans/guide/webhook.html"><link rel="alternate" hreflang="ja" href="https://cam-hub.almx.cc/ja/guide/webhook.html"><link rel="alternate" hreflang="ko" href="https://cam-hub.almx.cc/ko/guide/webhook.html"><link rel="alternate" hreflang="de" href="https://cam-hub.almx.cc/de/guide/webhook.html"><link rel="alternate" hreflang="es" href="https://cam-hub.almx.cc/es/guide/webhook.html"><link rel="alternate" hreflang="es-MX" href="https://cam-hub.almx.cc/es-MX/guide/webhook.html"><link rel="alternate" hreflang="fr" href="https://cam-hub.almx.cc/fr/guide/webhook.html"><link rel="alternate" hreflang="sl" href="https://cam-hub.almx.cc/sl/guide/webhook.html"><link rel="alternate" hreflang="ar" href="https://cam-hub.almx.cc/ar/guide/webhook.html"><meta property="og:url" content="https://cam-hub.almx.cc/sl/guide/webhook.html"><meta property="og:title" content="Nadzorne plošče in webhooki — Cam Hub Priročnik"></head>
+<body data-page="guide">
+  <header class="topbar" aria-label="Site header">
+    <a class="brand" href="/sl/"><img src="/assets/icon-96.png" alt="" width="42" height="42"><span><strong>Cam&nbsp;Hub</strong><small data-i18n="topline">Uporabniški priročnik</small></span></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-controls" data-i18n-aria="menuLabel" aria-label="Odpri meni"><span></span><span></span><span></span><span class="sr-only" data-i18n="menuLabel">Odpri meni</span></button>
+    <div class="topbar-controls" id="site-controls"><nav class="navlinks" aria-label="Primary"><a href="/sl/" data-nav="home" data-i18n="navHome">Domov</a><a href="/sl/product.html" data-nav="product" data-i18n="navProduct">Funkcije</a><a href="/sl/guide.html" data-nav="guide" data-i18n="navGuide" aria-current="page">Priročnik</a><a href="/sl/support.html" data-nav="support" data-i18n="navSupport">Podpora</a><a href="/sl/privacy.html" data-nav="privacy" data-i18n="navPrivacy">Zasebnost</a><a href="/sl/terms.html" data-nav="terms" data-i18n="navTerms">Pogoji</a></nav><div class="pickers"><label><span class="sr-only" data-i18n="themeLabel">Videz</span><select id="themeSelect" aria-label="Theme"><option value="auto" data-i18n="themeAuto" selected="">Samodejno</option><option value="light" data-i18n="themeLight">Svetlo</option><option value="dark" data-i18n="themeDark">Temno</option></select></label><label><span class="sr-only" data-i18n="languageLabel">Jezik</span><select id="languageSelect" aria-label="Language"><option value="en">English</option><option value="zh-Hant">繁體中文</option><option value="zh-Hans">简体中文</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="de">Deutsch</option><option value="es">Español</option><option value="es-MX">Español (México)</option><option value="fr">Français</option><option value="sl" selected="">Slovenščina</option><option value="ar">العربية</option></select></label></div><a class="store-pill" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeShort">Prenesite aplikacijo</a></div>
+  </header>
+  <main class="inner-page guide" style="--g-topbar: 76px; --g-offset: 88px;">
+    <section class="page-hero"><div class="eyebrow" data-i18n="eyebrow">OPERATION MANUAL</div><h1 data-i18n="title">Nadzorne plošče in webhooki</h1><p class="summary" data-i18n="summary">Navodila po korakih za dodajanje naprav, prikaz v živo in predvajanje posnetkov, stene LiveView Mix, deljenje in varnostno kopiranje.</p></section>
+    <p class="guide-notice" id="guide-notice" role="status" hidden=""></p>
+    <div id="guide-sentinel" aria-hidden="true"></div>
+    <div class="guide-layout has-toc" id="guide-layout" lang="sl" dir="ltr">
+      <aside class="guide-side" id="guide-side">
+        <button class="guide-toc-toggle" id="guide-toc-toggle" type="button" aria-expanded="false" aria-controls="guide-toc" lang="sl" dir="ltr"><span class="guide-toc-label" data-i18n="tocLabel">Vsebina</span><span class="guide-toc-current" id="guide-toc-current">9. Nadzorne plošče in webhooki</span></button>
+        <nav class="guide-toc" id="guide-toc" aria-label="Vsebina"><ol><li><a href="/sl/guide.html"><span class="toc-num">1</span><span>Hitri začetek</span></a><ol><li><a href="/sl/guide.html#start-prepare"><span>Pred začetkom</span></a></li><li><a href="/sl/guide.html#start-path"><span>Najkrajša pot do slike v živo</span></a></li><li><a href="/sl/guide.html#start-demo"><span>Preizkus aplikacije brez naprave</span></a></li></ol></li><li><a href="/sl/guide/tour.html"><span class="toc-num">2</span><span>Zavihki in osnovno delovanje</span></a><ol><li><a href="/sl/guide/tour.html#tour-tabs"><span>Pregled zavihkov</span></a></li><li><a href="/sl/guide/tour.html#tour-launch"><span>Kaj se odpre ob zagonu aplikacije</span></a></li><li><a href="/sl/guide/tour.html#tour-look"><span>Videz in jezik</span></a></li><li><a href="/sl/guide/tour.html#tour-rotate"><span>Obračanje naprave</span></a></li><li><a href="/sl/guide/tour.html#tour-duo"><span>iPhone Duo</span></a></li><li><a href="/sl/guide/tour.html#tour-awake"><span>Zaslon, ozadje in obvestila</span></a></li></ol></li><li><a href="/sl/guide/add.html"><span class="toc-num">3</span><span>Dodajanje naprave</span></a><ol><li><a href="/sl/guide/add.html#add-form"><span>Obrazec za dodajanje naprave</span></a></li><li><a href="/sl/guide/add.html#add-auto"><span>Dodajanje brez izbire znamke</span></a></li><li><a href="/sl/guide/add.html#add-methods"><span>Izbira načina povezave</span></a></li><li><a href="/sl/guide/add.html#add-https"><span>Dodajanje naprave prek HTTPS</span></a></li><li><a href="/sl/guide/add.html#add-streams"><span>Dodajanje prenosov v živo YouTube in kanalov Twitch</span></a></li><li><a href="/sl/guide/add.html#add-failed"><span>Ko dodajanje ne uspe: kontrolni seznam</span></a></li><li><a href="/sl/guide/add.html#add-report"><span>Poročilo o napravi (preizkusno)</span></a></li><li><a href="/sl/guide/add.html#add-scan"><span>Iskanje naprav v omrežju</span></a></li></ol></li><li><a href="/sl/guide/devices.html"><span class="toc-num">4</span><span>Zavihek Naprave in kanali</span></a><ol><li><a href="/sl/guide/devices.html#devices-list"><span>Seznam naprav</span></a></li><li><a href="/sl/guide/devices.html#devices-page"><span>Stran naprave</span></a></li><li><a href="/sl/guide/devices.html#devices-credentials"><span>Spreminjanje uporabniškega imena in gesla naprave</span></a></li><li><a href="/sl/guide/devices.html#devices-password-missing"><span>Naprava brez shranjenega gesla</span></a></li><li><a href="/sl/guide/devices.html#devices-https"><span>HTTPS za shranjeno napravo</span></a></li><li><a href="/sl/guide/devices.html#devices-health"><span>Stanje diskov</span></a></li><li><a href="/sl/guide/devices.html#devices-streams"><span>Prenosi YouTube in Twitch</span></a></li><li><a href="/sl/guide/devices.html#devices-states"><span>Kaj prikazuje sličica</span></a></li><li><a href="/sl/guide/devices.html#devices-menu"><span>Možnosti kanala (dotik in pridržanje)</span></a></li><li><a href="/sl/guide/devices.html#devices-plan"><span>Omejitve paketa in omogočanje kanalov</span></a></li><li><a href="/sl/guide/devices.html#devices-choose"><span>Izbira prikazanih kamer</span></a></li><li><a href="/sl/guide/devices.html#devices-fullwall"><span>Celozaslonska stena naprave</span></a></li><li><a href="/sl/guide/devices.html#devices-quality"><span>SD in HD na zaslonih naprav</span></a></li></ol></li><li><a href="/sl/guide/live.html"><span class="toc-num">5</span><span>Zavihek V živo in celozaslonska stena</span></a><ol><li><a href="/sl/guide/live.html#live-tab"><span>Zavihek V živo</span></a></li><li><a href="/sl/guide/live.html#live-quality"><span>SD in HD na steni</span></a></li><li><a href="/sl/guide/live.html#live-wall"><span>Celozaslonska stena</span></a></li><li><a href="/sl/guide/live.html#live-hide"><span>Skrivanje kamer brez signala</span></a></li></ol></li><li><a href="/sl/guide/single.html"><span class="toc-num">6</span><span>Pogled posamezne kamere</span></a><ol><li><a href="/sl/guide/single.html#single-open"><span>Odpiranje pogleda</span></a></li><li><a href="/sl/guide/single.html#single-screen"><span>Deli zaslona</span></a></li><li><a href="/sl/guide/single.html#single-zoom"><span>Povečava in premikanje slike</span></a></li><li><a href="/sl/guide/single.html#single-controls"><span>Zajem slike, zvok in kakovost</span></a></li><li><a href="/sl/guide/single.html#single-clip"><span>Snemanje izrezka</span></a></li><li><a href="/sl/guide/single.html#single-talk"><span>Dvosmerno govorjenje</span></a></li><li><a href="/sl/guide/single.html#single-picture"><span>Črni pasovi, vrtenje in ležeči položaj</span></a></li><li><a href="/sl/guide/single.html#single-ptz"><span>Upravljanje PTZ: premikanje kamere</span></a></li><li><a href="/sl/guide/single.html#single-window"><span>Kamera v lastnem oknu</span></a></li><li><a href="/sl/guide/single.html#single-duo"><span>Pogled pri prepognjenem iPhonu Duo</span></a></li><li><a href="/sl/guide/single.html#single-streams"><span>Prenosi YouTube in Twitch</span></a></li><li><a href="/sl/guide/single.html#single-states"><span>Stanja povezave in sporočila</span></a></li><li><a href="/sl/guide/single.html#single-limits"><span>Česa ni na voljo</span></a></li></ol></li><li><a href="/sl/guide/playback.html"><span class="toc-num">7</span><span>Predvajanje posnetkov in hitrost</span></a><ol><li><a href="/sl/guide/playback.html#playback-avail"><span>Kje je predvajanje na voljo</span></a></li><li><a href="/sl/guide/playback.html#playback-day"><span>Izbira dneva</span></a></li><li><a href="/sl/guide/playback.html#playback-calendar"><span>Koledar posnetkov</span></a></li><li><a href="/sl/guide/playback.html#playback-timeline"><span>Uporaba časovnice</span></a></li><li><a href="/sl/guide/playback.html#playback-list"><span>Seznam posnetkov in iskanje oseb</span></a></li><li><a href="/sl/guide/playback.html#playback-playing"><span>Med predvajanjem posnetka</span></a></li><li><a href="/sl/guide/playback.html#playback-speed"><span>Hitrost predvajanja</span></a></li><li><a href="/sl/guide/playback.html#playback-landscape"><span>Predvajanje v ležečem položaju</span></a></li><li><a href="/sl/guide/playback.html#playback-limits"><span>Česa ni na voljo</span></a></li></ol></li><li><a href="/sl/guide/lvm.html"><span class="toc-num">8</span><span>LiveView Mix</span></a><ol><li><a href="/sl/guide/lvm.html#lvm-tab"><span>Zavihek LiveView Mix in njegov predogled</span></a></li><li><a href="/sl/guide/lvm.html#lvm-first"><span>Sestavljanje prve stene s šestimi kamerami</span></a></li><li><a href="/sl/guide/lvm.html#lvm-pick"><span>Izbira kamer in kakovosti</span></a></li><li><a href="/sl/guide/lvm.html#lvm-layout"><span>Prilagajanje postavitve</span></a></li><li><a href="/sl/guide/lvm.html#lvm-custom"><span>Risanje postavitve po meri</span></a></li><li><a href="/sl/guide/lvm.html#lvm-special"><span>Posebne postavitve: velika in majhna polja na eni steni</span></a></li><li><a href="/sl/guide/lvm.html#lvm-arrange"><span>Razporejanje stene in njenih polj</span></a></li><li><a href="/sl/guide/lvm.html#lvm-move"><span>Premik polja v prazno polje</span></a></li><li><a href="/sl/guide/lvm.html#lvm-slots"><span>Kaj lahko polje prikazuje poleg kamere</span></a></li><li><a href="/sl/guide/lvm.html#lvm-watermark"><span>Vodni žig</span></a></li><li><a href="/sl/guide/lvm.html#lvm-fit"><span>Črni pasovi, video od roba do roba in položaj naprave</span></a></li><li><a href="/sl/guide/lvm.html#lvm-pages"><span>Pokončna stran</span></a></li><li><a href="/sl/guide/lvm.html#lvm-canvases"><span>Dve platni v napravi iPhone Duo</span></a></li><li><a href="/sl/guide/lvm.html#lvm-wall"><span>Celozaslonska stena</span></a></li><li><a href="/sl/guide/lvm.html#lvm-closeup"><span>Odpiranje posamezne kamere</span></a></li><li><a href="/sl/guide/lvm.html#lvm-streams"><span>Prenosi YouTube in Twitch na steni</span></a></li><li><a href="/sl/guide/lvm.html#lvm-states"><span>Ko polje ne more prikazati kamere</span></a></li><li><a href="/sl/guide/lvm.html#lvm-limits"><span>Kako omejitve paketa vplivajo na steno</span></a></li><li><a href="/sl/guide/lvm.html#lvm-settings"><span>LiveView Mix v nastavitvah</span></a></li><li><a href="/sl/guide/lvm.html#lvm-tv"><span>Razlike na Apple TV</span></a></li></ol></li><li class="is-current"><a href="/sl/guide/webhook.html" class="is-active" aria-current="location"><span class="toc-num">9</span><span>Nadzorne plošče in webhooki</span></a><ol><li><a href="/sl/guide/webhook.html#webhook-what"><span>Kaj omogoča nadzorna plošča</span></a></li><li><a href="/sl/guide/webhook.html#webhook-add"><span>Dodajanje nadzorne plošče na steno</span></a></li><li><a href="/sl/guide/webhook.html#webhook-templates"><span>Predloge</span></a></li><li><a href="/sl/guide/webhook.html#webhook-fields"><span>Nastavitve plošče</span></a></li><li><a href="/sl/guide/webhook.html#webhook-button"><span>Nastavitev gumba</span></a></li><li><a href="/sl/guide/webhook.html#webhook-use"><span>Pritisk gumba in branje rezultata</span></a></li><li><a href="/sl/guide/webhook.html#webhook-wall"><span>Videz plošče na steni</span></a></li><li><a href="/sl/guide/webhook.html#webhook-watch"><span>Gumbi na uri Apple Watch</span></a></li><li><a href="/sl/guide/webhook.html#ha"><span>Uporaba sistema Home Assistant</span></a></li><li><a href="/sl/guide/webhook.html#webhook-security"><span>Varnostna opozorila</span></a></li></ol></li><li><a href="/sl/guide/share.html"><span class="toc-num">10</span><span>Deljenje in varnostno kopiranje</span></a><ol><li><a href="/sl/guide/share.html#share-choose"><span>Primerjava obeh načinov</span></a></li><li><a href="/sl/guide/share.html#share-export"><span>Izvoz kamer (ustvarjanje kode)</span></a></li><li><a href="/sl/guide/share.html#share-lock"><span>Zaklepanje kode</span></a></li><li><a href="/sl/guide/share.html#share-import"><span>Uvoz kamer</span></a></li><li><a href="/sl/guide/share.html#share-contents"><span>Kaj vsebujejo varnostne kopije in kode</span></a></li><li><a href="/sl/guide/share.html#share-icloud"><span>Varnostno kopiranje v iCloud</span></a></li><li><a href="/sl/guide/share.html#share-versions"><span>Več poimenovanih varnostnih kopij: preimenovanje in brisanje</span></a></li><li><a href="/sl/guide/share.html#share-restore"><span>Obnovitev iz iClouda</span></a></li><li><a href="/sl/guide/share.html#share-delete"><span>Brisanje vseh varnostnih kopij iCloud</span></a></li><li><a href="/sl/guide/share.html#share-newphone"><span>Prenos naprav in sten v nov telefon</span></a></li><li><a href="/sl/guide/share.html#share-appletv"><span>Prenos nastavitve v Apple TV</span></a></li></ol></li><li><a href="/sl/guide/plans.html"><span class="toc-num">11</span><span>Paketi in omejitve</span></a><ol><li><a href="/sl/guide/plans.html#plans-tiers"><span>Dovoljeno število v posameznem paketu</span></a></li><li><a href="/sl/guide/plans.html#plans-stack"><span>Kako se skupini paketov dopolnjujeta</span></a></li><li><a href="/sl/guide/plans.html#plans-count"><span>Kaj šteje v dovoljeno število</span></a></li><li><a href="/sl/guide/plans.html#plans-examples"><span>Primeri kombinacij</span></a></li><li><a href="/sl/guide/plans.html#plans-choose"><span>Izbira prikazanih kamer</span></a></li><li><a href="/sl/guide/plans.html#plans-subscribe"><span>Naročnina, obnovitev nakupov in unovčenje kode</span></a></li><li><a href="/sl/guide/plans.html#plans-lapse"><span>Ko se paket izteče ali zmanjša</span></a></li></ol></li><li><a href="/sl/guide/tools.html"><span class="toc-num">12</span><span>Zavihek Orodja</span></a><ol><li><a href="/sl/guide/tools.html#tools-overview"><span>Kaj vsebuje zavihek Orodja</span></a></li><li><a href="/sl/guide/tools.html#tools-speedometer"><span>Merilnik hitrosti in kompas</span></a></li></ol></li><li><a href="/sl/guide/settings.html"><span class="toc-num">13</span><span>Nastavitve</span></a><ol><li><a href="/sl/guide/settings.html#settings-overview"><span>Razdelki zavihka Nastavitve</span></a></li><li><a href="/sl/guide/settings.html#settings-subscription"><span>Naročnina</span></a></li><li><a href="/sl/guide/settings.html#settings-quality"><span>Privzeta kakovost</span></a></li><li><a href="/sl/guide/settings.html#settings-picture"><span>Slika: črni pasovi in prikaz od roba do roba</span></a></li><li><a href="/sl/guide/settings.html#settings-hide"><span>Skrij kamere brez povezave</span></a></li><li><a href="/sl/guide/settings.html#settings-lvm"><span>LiveView Mix, njegove strani in Odpri ob zagonu</span></a></li><li><a href="/sl/guide/settings.html#settings-backup"><span>Varnostno kopiranje in deljenje kamer</span></a></li><li><a href="/sl/guide/settings.html#settings-language"><span>Jezik</span></a></li><li><a href="/sl/guide/settings.html#settings-reset"><span>Ponastavitev: privzete nastavitve, brisanje vseh podatkov, brisanje varnostne kopije iCloud</span></a></li><li><a href="/sl/guide/settings.html#settings-legal"><span>Pogoji uporabe in pravilnik o zasebnosti</span></a></li><li><a href="/sl/guide/settings.html#settings-about"><span>O aplikaciji, priročnik in česa Nastavitve ne vsebujejo</span></a></li></ol></li><li><a href="/sl/guide/appletv.html"><span class="toc-num">14</span><span>Apple TV</span></a><ol><li><a href="/sl/guide/appletv.html#appletv-prepare"><span>Najprej nastavitev v iPhonu ali iPadu</span></a></li><li><a href="/sl/guide/appletv.html#appletv-bring"><span>Prenos nastavitev na Apple TV</span></a></li><li><a href="/sl/guide/appletv.html#appletv-differs"><span>Razlike na Apple TV</span></a></li></ol></li><li><a href="/sl/guide/trouble.html"><span class="toc-num">15</span><span>Odpravljanje težav</span></a><ol><li><a href="/sl/guide/trouble.html#trouble-start"><span>Kje začeti</span></a></li><li><a href="/sl/guide/trouble.html#trouble-states"><span>Kaj sporočajo prazni zasloni</span></a></li><li><a href="/sl/guide/trouble.html#trouble-add"><span>Naprava je dodana, vendar ni dosegljiva</span></a></li><li><a href="/sl/guide/trouble.html#trouble-live"><span>Prikaz v živo</span></a></li><li><a href="/sl/guide/trouble.html#trouble-playback"><span>Predvajanje posnetkov</span></a></li><li><a href="/sl/guide/trouble.html#trouble-lvm"><span>LiveView Mix</span></a></li><li><a href="/sl/guide/trouble.html#trouble-streams"><span>YouTube in Twitch</span></a></li><li><a href="/sl/guide/trouble.html#trouble-panels"><span>Nadzorne plošče in webhooki</span></a></li><li><a href="/sl/guide/trouble.html#trouble-health"><span>Stanje diskov</span></a></li><li><a href="/sl/guide/trouble.html#trouble-share"><span>Deljenje, uvoz in varnostno kopiranje v iCloud</span></a></li><li><a href="/sl/guide/trouble.html#trouble-plans"><span>Paketi in nakupi</span></a></li><li><a href="/sl/guide/trouble.html#trouble-errors"><span>Druga sporočila o napakah</span></a></li><li><a href="/sl/guide/trouble.html#trouble-permissions"><span>Zahteve za dovoljenja in sistemska pogovorna okna</span></a></li><li><a href="/sl/guide/trouble.html#trouble-contact"><span>Stik z razvijalcem</span></a></li><li><a href="/sl/guide/trouble.html#trouble-faq"><span>Vprašanja in odgovori</span></a></li></ol></li><li><a href="/sl/guide/brands.html"><span class="toc-num">16</span><span>Podprte znamke in načini povezave</span></a><ol><li><a href="/sl/guide/brands.html#brands-methods"><span>Načini povezave</span></a></li><li><a href="/sl/guide/brands.html#brands-matrix"><span>Kaj deluje s katerim načinom</span></a></li><li><a href="/sl/guide/brands.html#brands-profiles"><span>Znamke na seznamu</span></a></li><li><a href="/sl/guide/brands.html#brands-requirements"><span>Zahteve in omejitve</span></a></li><li><a href="/sl/guide/brands.html#brands-recorders"><span>Kamere in snemalniki</span></a></li><li><a href="/sl/guide/brands.html#brands-prepare"><span>Kaj pripraviti v napravi</span></a></li><li><a href="/sl/guide/brands.html#brands-activate"><span>Aktiviranje nove naprave</span></a></li><li><a href="/sl/guide/brands.html#brands-compat"><span>Pregled združljivosti v aplikaciji</span></a></li></ol></li><li><a href="/sl/guide/about.html" class="no-num"><span>O tem priročniku</span></a><ol><li><a href="/sl/guide/about.html#about-scope"><span>Obseg</span></a></li><li><a href="/sl/guide/about.html#about-conventions"><span>Dogovori o zapisu</span></a></li><li><a href="/sl/guide/about.html#about-help"><span>Kje najti pomoč</span></a></li></ol></li></ol></nav>
+      </aside>
+      <article class="guide-article" id="guide-content"><section class="chapter" id="webhook">
+  <h2><span class="num">9</span>Nadzorne plošče in webhooki</h2>
+  <p class="lead">Nadzorna plošča je polje na steni LiveView Mix, ki vsebuje vrsto gumbov. Vsak gumb ob pritisku pošlje zahtevo HTTP na poljuben naslov, kar je primerno za webhook ali klic storitve v sistemu Home Assistant, relejni modul, orodje Node-RED ali katero koli drugo storitev HTTP, ki jo telefon lahko doseže. Iste gumbe je mogoče pritisniti tudi na uri Apple Watch.</p>
+
+  <h3 id="webhook-what">Kaj omogoča nadzorna plošča</h3>
+  <p>Nadzorno ploščo sestavljajo naslov, več gumbov in izbirna ura. Vsak gumb hrani eno celotno zahtevo HTTP: metodo, URL, glave in telo. Ob pritisku gumba gre zahteva neposredno iz tega iPhona, iPada ali Apple TV na naslov, ne da bi šla prek strežnika aplikacije Cam Hub. Zahtevo gumba, pritisnjenega na uri Apple Watch, pošlje ura sama ali seznanjeni iPhone; glejte <a class="xref" href="/sl/guide/webhook.html#webhook-watch">„Gumbi na uri Apple Watch“</a>.</p>
+  <ul>
+    <li>Aplikacija Cam Hub zahtevo le pošlje. URL in vsebino v celoti izbere uporabnik. Aplikacija Cam Hub ne preverja, katera storitev se odzove, in ni namenska aplikacija za upravljanje nobenega izdelka za pametni dom.</li>
+    <li>Zahteva se pošlje le ob pritisku gumba na steni ali na uri. Tap plošče na strani za razporejanje odpre njen urejevalnik in ne pošlje ničesar.</li>
+    <li>Nadzorne plošče se ustvarjajo in urejajo v iPhonu in iPadu. Apple TV prikazuje plošče ležeče strani in omogoča pritiskanje njihovih gumbov; glejte <a class="xref" href="/sl/guide/webhook.html#webhook-wall">„Videz plošče na steni“</a>. Apple Watch prikazuje njihove gumbe; glejte <a class="xref" href="/sl/guide/webhook.html#webhook-watch">„Gumbi na uri Apple Watch“</a>.</li>
+  </ul>
+  <div class="callout warn">
+    <strong class="t">Nadzorna plošča zasede eno mesto v dovoljenem številu kamer</strong>
+    <p>Vsaka nadzorna plošča zasede eno mesto v dovoljenem številu kamer v paketu, in sicer izmed mest, ki jih kamere pustijo prosta, zato plošča kameri nikoli ne odvzame slike. Če dovoljeno število ne zadošča, je plošča zaklenjena in njeni gumbi niso na voljo, ne na steni ne na uri. Za podrobnosti glejte <a class="xref" href="/sl/guide/lvm.html#lvm-limits">„Kako omejitve paketa vplivajo na steno“</a> in <a class="xref" href="/sl/guide/plans.html#plans-count">„Kaj šteje v dovoljeno število“</a>.</p>
+  </div>
+
+  <h3 id="webhook-add">Dodajanje nadzorne plošče na steno</h3>
+  <p>Predpogoj: LiveView Mix je nastavljen in na steni je vsaj ena kamera; za nastavitev glejte <a class="xref" href="/sl/guide/lvm.html#lvm-first">„Sestavljanje prve stene s šestimi kamerami“</a>. Dokler LiveView Mix ni nastavljen, je možnost <span class="ui">Razporedi steno</span> dosegljiva tudi prek <span class="path"><span class="ui">Nastavitve</span> › <span class="ui">LiveView Mix</span></span>, takoj ko je dodana naprava. Nadzorno ploščo je mogoče postaviti na ležečo stran, na pokončno stran ali na katero koli od obeh platen naprave iPhone Duo; koraki so enaki.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Tapnite zavihek <span class="ui">LiveView Mix</span> na dnu zaslona.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Zaslon prikazuje predogled stene s tremi gumbi v zgornjem desnem kotu.</p>
+    </li>
+    <li class="step">
+      <p>Tapnite gumb <span class="ui">Prilagodi postavitev</span>, skrajno desnega od treh gumbov v zgornjem desnem kotu.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Odpre se stran <span class="ui">Prilagodi postavitev</span>.</p>
+    </li>
+    <li class="step">
+      <p>Tapnite <span class="ui">Razporedi steno</span>.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Odpre se stran <span class="ui">Razporedi</span>: na vrhu je platno stene, pod njim pa seznam <span class="ui">Vrstni red</span>, ki navaja vsa zapolnjena polja pod njihovimi številkami.</p>
+      <figure class="phone"><img src="/guide/img/lvm-arrange-full.jpg" alt="Stran Razporedi: na vrhu platno stene z nadzorno ploščo v polju 9 in uro v polju 10, spodaj seznam zapolnjenih polj" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-arrange-full.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Stran Razporedi</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Na platnu tapnite neuporabljeno polje, prikazano s črtkano obrobo in znakom +. Če so neuporabljena polja na drugi strani stene, najprej uporabite puščici pod platnom ali podrsajte vstran.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Prikaže se meni, katerega naslov je številka polja, na primer <span class="ui" data-ui="value">Polje 9</span>.</p>
+    </li>
+    <li class="step">
+      <p>Tapnite <span class="ui">Slika, nadzorna plošča, ura ali oznaka…</span>.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Od spodnjega roba zaslona se odpre urejevalnik polja z naslovom <span class="ui" data-ui="value">Polje 9</span>. Prva vrstica je <span class="ui">Vsebina</span>, njena trenutna vrednost pa <span class="ui">Prazno</span>.</p>
+    </li>
+    <li class="step">
+      <p>Tapnite <span class="ui">Vsebina</span> in v meniju izberite <span class="ui">Nadzorna plošča</span>.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Stran prikazuje tri razdelke: <span class="ui">Predloga</span>, <span class="ui">Plošča</span> in <span class="ui">Gumbi</span>. Predloga je <span class="ui">Dvoriščna vrata / roleta</span>, naslov plošče je <span class="ui">Dvoriščna vrata</span> (v jeziku aplikacije), razdelek z gumbi pa vsebuje tri gumbe, pod vsakim je z oranžno barvo izpisano <span class="ui">Končna točka ni nastavljena</span>.</p>
+    </li>
+    <li class="step">
+      <p>Tapnite <span class="ui">Predloga</span> in izberite najustreznejšo vrsto.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Gumbe v razdelku z gumbi nadomestijo privzeti gumbi te predloge. Za vsebino predlog glejte <a class="xref" href="/sl/guide/webhook.html#webhook-templates">„Predloge“</a>.</p>
+    </li>
+    <li class="step">
+      <p>V razdelku <span class="ui">Plošča</span> vnesite ime plošče v vnosno polje <span class="ui">Naslov</span>.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Vnosno polje prikazuje ime, ki je pozneje prikazano nad gumbi plošče.</p>
+    </li>
+    <li class="step">
+      <p>Izbirno: tapnite <span class="ui">Barva</span> in izberite barvo obrobe in gumbov.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Ikona barve prikazuje izbrano barvo. Privzeta barva je cianova.</p>
+    </li>
+    <li class="step">
+      <p>Izbirno: vklopite <span class="ui">Pokaži uro</span>.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Prikažejo se štiri stikala: <span class="ui">Sekunde</span>, <span class="ui">Datum</span>, <span class="ui">Dan v tednu</span> in <span class="ui">24-urni čas</span>. Ura je prikazana v prostoru pod gumbi.</p>
+    </li>
+    <li class="step">
+      <p>Nastavite URL in vsebino vsakega gumba, kot opisuje <a class="xref" href="/sl/guide/webhook.html#webhook-button">„Nastavitev gumba“</a>.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Vsaka vrstica razdelka z gumbi pod oznako gumba prikazuje ime gostitelja iz URL-ja namesto <span class="ui">Končna točka ni nastavljena</span>.</p>
+    </li>
+    <li class="step">
+      <p>Tapnite <span class="ui">Končano</span> v zgornjem desnem kotu urejevalnika polja.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Znova se prikaže stran <span class="ui">Razporedi</span>, polje na platnu pa prikazuje ploščo tako, kot je videti na steni.</p>
+    </li>
+    <li class="step">
+      <p>Tapnite <span class="ui">Končano</span> v zgornjem desnem kotu strani <span class="ui">Razporedi</span>.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Znova se prikaže stran <span class="ui">Prilagodi postavitev</span>.</p>
+    </li>
+    <li class="step">
+      <p>Tapnite <span class="ui">Končano</span> v zgornjem desnem kotu strani <span class="ui">Prilagodi postavitev</span>.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Znova se prikaže zavihek LiveView Mix, predogled stene pa prikazuje novo nadzorno ploščo.</p>
+    </li>
+  </ol>
+  <div class="shots pair">
+    <figure class="phone"><img src="/guide/img/lvm-slot-kinds.jpg" alt="Meni Vsebina v urejevalniku polja: Prazno, Slika, Nadzorna plošča, Ura in Oznaka" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-slot-kinds.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Meni Vsebina</figcaption></figure>
+    <figure class="phone"><img src="/guide/img/lvm-control-panel.jpg" alt="Nastavitve nadzorne plošče: predloga, plošča in seznam gumbov, pod vsakim je napis Končna točka ni nastavljena" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-control-panel.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Nastavitve nadzorne plošče</figcaption></figure>
+  </div>
+  <ul>
+    <li>Ko so zapolnjena vsa polja postavitve, platno ne prikazuje nobenega neuporabljenega polja. Najprej v vrstici postavitev na vrhu strani <span class="ui">Razporedi</span> izberite postavitev z več polji ali izpraznite eno od polj; glejte <a class="xref" href="/sl/guide/lvm.html#lvm-arrange">„Razporejanje stene in njenih polj“</a>.</li>
+    <li>Ploščo, ki že obstaja na drugi strani, je mogoče kopirati, namesto da bi jo sestavljali znova; glejte <a class="xref" href="/sl/guide/lvm.html#lvm-pages">„Pokončna stran“</a>. Ploščo z druge strani stene je mogoče premakniti v prazno polje; glejte <a class="xref" href="/sl/guide/lvm.html#lvm-move">„Premik polja v prazno polje“</a>.</li>
+    <li>Tap <span class="ui">Prekliči</span> v zgornjem levem kotu urejevalnika polja povrne celotno steno v stanje ob odprtju urejevalnika, vključno z vsemi spremembami gumbov.</li>
+    <li>Če vrstico <span class="ui">Vsebina</span> nastavite na drug element, se izbrišejo naslov in vsi gumbi plošče. Ploščo odstranite tako, da vrstico <span class="ui">Vsebina</span> nastavite na <span class="ui">Prazno</span> ali da na strani <span class="ui">Razporedi</span> v seznamu <span class="ui">Vrstni red</span> podrsate njeno vrstico v levo in tapnete <span class="ui" data-ui="system">Izbriši</span>. V obeh primerih polje postane prazno, nobeno drugo polje pa se ne premakne.</li>
+    <li>Za polja s sliko, uro in oznako glejte <a class="xref" href="/sl/guide/lvm.html#lvm-slots">„Kaj lahko polje prikazuje poleg kamere“</a>.</li>
+    <li>Če do možnosti <span class="ui">Razporedi steno</span> pridete prek <span class="path"><span class="ui">Nastavitve</span> › <span class="ui">LiveView Mix</span></span>, je nadaljnji postopek enak.</li>
+  </ul>
+
+  <h3 id="webhook-templates">Predloge</h3>
+  <p>Meni <span class="ui">Predloga</span> ponuja enajst predlog. Predloga določa le privzeti naslov, število gumbov, njihove ikone in začetno nastavitev <span class="ui">Potrditev pred sprožitvijo</span>. Nobena predloga ne vsebuje URL-ja; vsak gumb potrebuje svoj URL.</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Predloga</th><th>Privzeti naslov</th><th>Privzeti gumbi</th><th>Gumbi, pri katerih je „Potrditev pred sprožitvijo“ privzeto vklopljena</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Predloga"><span class="ui">Dvoriščna vrata / roleta</span></td><td data-label="Privzeti naslov"><span class="ui">Dvoriščna vrata</span></td><td data-label="Privzeti gumbi"><span class="ui">Odpri</span>, <span class="ui">Ustavi</span>, <span class="ui">Zapri</span></td><td data-label="Gumbi, pri katerih je „Potrditev pred sprožitvijo“ privzeto vklopljena"><span class="ui">Odpri</span></td></tr>
+      <tr><td data-label="Predloga"><span class="ui">Garažna vrata</span></td><td data-label="Privzeti naslov"><span class="ui">Garaža</span></td><td data-label="Privzeti gumbi"><span class="ui">Odpri</span>, <span class="ui">Ustavi</span>, <span class="ui">Zapri</span></td><td data-label="Gumbi, pri katerih je „Potrditev pred sprožitvijo“ privzeto vklopljena"><span class="ui">Odpri</span></td></tr>
+      <tr><td data-label="Predloga"><span class="ui">Luč</span></td><td data-label="Privzeti naslov"><span class="ui">Luč</span></td><td data-label="Privzeti gumbi"><span class="ui">Vklopi</span>, <span class="ui">Izklopi</span></td><td data-label="Gumbi, pri katerih je „Potrditev pred sprožitvijo“ privzeto vklopljena">Nobeden</td></tr>
+      <tr><td data-label="Predloga"><span class="ui">Vratna ključavnica</span></td><td data-label="Privzeti naslov"><span class="ui">Vrata</span></td><td data-label="Privzeti gumbi"><span class="ui">Odkleni</span>, <span class="ui">Zakleni</span></td><td data-label="Gumbi, pri katerih je „Potrditev pred sprožitvijo“ privzeto vklopljena"><span class="ui">Odkleni</span></td></tr>
+      <tr><td data-label="Predloga"><span class="ui">Zavesa / žaluzija</span></td><td data-label="Privzeti naslov"><span class="ui">Zavesa</span></td><td data-label="Privzeti gumbi"><span class="ui">Odpri</span>, <span class="ui">Ustavi</span>, <span class="ui">Zapri</span></td><td data-label="Gumbi, pri katerih je „Potrditev pred sprožitvijo“ privzeto vklopljena">Nobeden</td></tr>
+      <tr><td data-label="Predloga"><span class="ui">Scena / avtomatizacija</span></td><td data-label="Privzeti naslov"><span class="ui">Scena</span></td><td data-label="Privzeti gumbi"><span class="ui">Zaženi</span></td><td data-label="Gumbi, pri katerih je „Potrditev pred sprožitvijo“ privzeto vklopljena">Nobeden</td></tr>
+      <tr><td data-label="Predloga"><span class="ui">Alarm / sirena</span></td><td data-label="Privzeti naslov"><span class="ui">Alarm</span></td><td data-label="Privzeti gumbi"><span class="ui">Vklopi varovanje</span>, <span class="ui">Izklopi varovanje</span>, <span class="ui">Panični alarm</span></td><td data-label="Gumbi, pri katerih je „Potrditev pred sprožitvijo“ privzeto vklopljena"><span class="ui">Vklopi varovanje</span>, <span class="ui">Panični alarm</span></td></tr>
+      <tr><td data-label="Predloga"><span class="ui">Ventilator</span></td><td data-label="Privzeti naslov"><span class="ui">Ventilator</span></td><td data-label="Privzeti gumbi"><span class="ui">Vklopi</span>, <span class="ui">Izklopi</span></td><td data-label="Gumbi, pri katerih je „Potrditev pred sprožitvijo“ privzeto vklopljena">Nobeden</td></tr>
+      <tr><td data-label="Predloga"><span class="ui">Pametna vtičnica</span></td><td data-label="Privzeti naslov"><span class="ui">Vtičnica</span></td><td data-label="Privzeti gumbi"><span class="ui">Vklopi</span>, <span class="ui">Izklopi</span></td><td data-label="Gumbi, pri katerih je „Potrditev pred sprožitvijo“ privzeto vklopljena">Nobeden</td></tr>
+      <tr><td data-label="Predloga"><span class="ui">Klimatska naprava</span></td><td data-label="Privzeti naslov"><span class="ui">Klimatska naprava</span></td><td data-label="Privzeti gumbi"><span class="ui">Vklopi</span>, <span class="ui">Izklopi</span></td><td data-label="Gumbi, pri katerih je „Potrditev pred sprožitvijo“ privzeto vklopljena">Nobeden</td></tr>
+      <tr><td data-label="Predloga"><span class="ui">Po meri</span></td><td data-label="Privzeti naslov">Prazen</td><td data-label="Privzeti gumbi">En gumb z oznako <span class="ui">Gumb</span></td><td data-label="Gumbi, pri katerih je „Potrditev pred sprožitvijo“ privzeto vklopljena">Nobeden</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>Privzeti naslov in oznake gumbov predloge so prikazani v jeziku aplikacije in mu sledijo tudi, če se jezik aplikacije pozneje spremeni, in sicer na steni, v urejevalniku in na uri Apple Watch. Vtipkano ali urejeno besedilo naslova ali oznake ostane natanko tako, kot je bilo vtipkano. Privzete besede prej ustvarjenih plošč so prepoznane v vseh jezikih aplikacije in prav tako sledijo trenutnemu jeziku.</li>
+    <li>Sprememba predloge zamenja vse obstoječe gumbe z gumbi nove predloge, s tem pa se izbrišejo tudi že vneseni URL-ji, glave in vsebina. Naslov se zamenja le, če je še prazen ali je še vedno privzeti naslov; naslov, ki ga je vtipkal uporabnik, ostane nespremenjen. Najprej izberite predlogo, nato prilagodite podrobnosti.</li>
+    <li>Začetna predloga novo dodane nadzorne plošče je <span class="ui">Dvoriščna vrata / roleta</span>.</li>
+  </ul>
+  <figure class="phone"><img src="/guide/img/lvm-control-templates.jpg" alt="Odprt meni Predloga s predlogami Dvoriščna vrata / roleta, Garažna vrata, Luč, Vratna ključavnica, Zavesa / žaluzija, Scena / avtomatizacija, Alarm / sirena, Ventilator, Pametna vtičnica, Klimatska naprava in Po meri" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-control-templates.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Meni Predloga</figcaption></figure>
+
+  <h3 id="webhook-fields">Nastavitve plošče</h3>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Element</th><th>Opis</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Element"><span class="ui">Vsebina</span></td><td data-label="Opis">Vsebina polja: <span class="ui">Prazno</span>, <span class="ui">Slika</span>, <span class="ui">Nadzorna plošča</span>, <span class="ui">Ura</span> ali <span class="ui">Oznaka</span>. Izbira <span class="ui">Nadzorna plošča</span> spremeni polje v nadzorno ploščo.</td></tr>
+      <tr><td data-label="Element"><span class="ui">Predloga</span></td><td data-label="Opis">Glejte <a class="xref" href="/sl/guide/webhook.html#webhook-templates">„Predloge“</a>.</td></tr>
+      <tr><td data-label="Element"><span class="ui">Naslov</span></td><td data-label="Opis">Prikazan je nad gumbi in pove, kaj plošča upravlja, na uri Apple Watch pa služi kot naslov skupine. Če je prazen, naslov ni prikazan.</td></tr>
+      <tr><td data-label="Element"><span class="ui">Barva</span></td><td data-label="Opis">Barva obrobe in gumbov plošče, ki se uporablja tudi za ikone na uri Apple Watch.</td></tr>
+      <tr><td data-label="Element"><span class="ui">Pokaži uro</span></td><td data-label="Opis">Prikaže trenutni čas v prostoru pod gumbi. Ko je vklopljeno, je mogoče izbrati <span class="ui">Sekunde</span>, <span class="ui">Datum</span>, <span class="ui">Dan v tednu</span> in <span class="ui">24-urni čas</span>. Imena dni in mesecev sledijo jeziku aplikacije.</td></tr>
+      <tr><td data-label="Element"><span class="ui">Gumbi</span></td><td data-label="Opis">Seznam gumbov. Tapnite vrstico, da uredite gumb, podrsajte vrstico v levo, da ga izbrišete, in tapnite <span class="ui">Dodaj gumb</span>, da na koncu dodate prazen gumb. Vrstnega reda na seznamu ni mogoče spreminjati; za drugačno zaporedje gumb izbrišite in ga znova dodajte. Vsaka vrstica prikazuje ikono, oznako in ime gostitelja iz URL-ja; dokler ni vnesen veljaven URL, je namesto tega z oranžno barvo prikazano <span class="ui">Končna točka ni nastavljena</span>. Če je oznaka prazna, vrstica prikazuje <span class="ui">Gumb</span>.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="webhook-button">Nastavitev gumba</h3>
+  <p>Predpogoj: urejevalnik polja je odprt, kot opisuje <a class="xref" href="/sl/guide/webhook.html#webhook-add">„Dodajanje nadzorne plošče na steno“</a>, in izbrana je <span class="ui">Nadzorna plošča</span>.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>V razdelku <span class="ui">Gumbi</span> tapnite gumb, ki ga želite nastaviti. Za nov gumb najprej tapnite <span class="ui">Dodaj gumb</span>, nato tapnite novo vrstico.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Zaslon prikazuje urejevalnik tega gumba. Njegov naslov je oznaka gumba, v zgornjem levem kotu pa je le puščica nazaj.</p>
+    </li>
+    <li class="step">
+      <p>V vrsti ikon pod vrstico <span class="ui">Ikona</span> tapnite želeno ikono ali v vnosno polje na desni vtipkajte ime ikone <code>SF Symbols</code>.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Vrstica <span class="ui">Ikona</span> prikazuje izbrano ikono in njeno ime, na primer <code>arrow.up.to.line</code>.</p>
+    </li>
+    <li class="step">
+      <p>V vnosno polje <span class="ui">Oznaka</span> vnesite besedilo, ki naj bo prikazano pod ikono.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Vnosno polje prikazuje besedilo. Naslov strani se spremeni v isto besedilo.</p>
+    </li>
+    <li class="step">
+      <p>Pri gumbu, ki ga je treba pred izvedbo potrditi, vklopite <span class="ui">Potrditev pred sprožitvijo</span>.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Stikalo je vklopljeno. Ob pritisku gumba se zdaj prikaže potrditveno okno, na steni in na uri; glejte <a class="xref" href="/sl/guide/webhook.html#webhook-use">„Pritisk gumba in branje rezultata“</a>.</p>
+    </li>
+    <li class="step">
+      <p>V razdelku <span class="ui">Zahteva</span> v meniju <span class="ui">Metoda</span> izberite <code>GET</code>, <code>POST</code>, <code>PUT</code> ali <code>DELETE</code>.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Meni prikazuje izbrano metodo. Pri <code>GET</code> razdelka <span class="ui">Telo</span> v spodnjem delu strani ni; pri ostalih treh metodah je prikazan.</p>
+    </li>
+    <li class="step">
+      <p>V vnosno polje pod <span class="ui">Metoda</span> vnesite celoten URL, ki se začne s <code>http://</code> ali <code>https://</code>.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Vnosno polje prikazuje URL.</p>
+    </li>
+    <li class="step">
+      <p>Izbirno (v iPhonu): v razdelku Apple Watch tapnite <span class="ui">Način pošiljanja</span> in izberite <span class="ui">Samodejno</span>, <span class="ui">Neposredno z ure</span> ali <span class="ui">Prek iPhona</span>.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Meni prikazuje izbiro, opomba pod njim pa pojasnjuje njen učinek. Za pomen posamezne izbire glejte <a class="xref" href="/sl/guide/webhook.html#webhook-watch">„Gumbi na uri Apple Watch“</a>.</p>
+    </li>
+    <li class="step">
+      <p>Če je potrebna glava, tapnite <span class="ui">Dodaj glavo</span> ter v vnosni polji <span class="ui">Ime</span> in <span class="ui">Vrednost</span> vnesite ime in vrednost glave.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Razdelek <span class="ui">Glave</span> dobi novo vrstico, obe vnosni polji pa prikazujeta vneseno besedilo. Za dodatne glave korak ponovite; glavo izbrišete tako, da njeno vrstico podrsate v levo.</p>
+    </li>
+    <li class="step">
+      <p>Če je treba poslati vsebino, v zgornjem vnosnem polju razdelka <span class="ui">Telo</span> preverite vrsto vsebine (privzeto <code>application/json</code>), nato v besedilno polje pod njim vnesite vsebino.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Besedilno polje prikazuje vsebino. Vsebina se pošlje natanko tako, kot je vtipkana.</p>
+    </li>
+    <li class="step">
+      <p>Tapnite puščico nazaj v zgornjem levem kotu.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Znova se prikaže urejevalnik polja, vrstica gumba pa pod oznako prikazuje ime gostitelja iz URL-ja.</p>
+    </li>
+  </ol>
+  <div class="shots pair">
+    <figure class="phone"><img src="/guide/img/lvm-button-editor.jpg" alt="Urejevalnik gumba: ikona, oznaka, Potrditev pred sprožitvijo ter metoda in URL v razdelku Zahteva" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-button-editor.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Urejevalnik gumba (zgornji del)</figcaption></figure>
+    <figure class="phone"><img src="/guide/img/lvm-button-headers.jpg" alt="Spodnji del urejevalnika gumba: razdelek Glave z vrstico Authorization in razdelek Telo z vrsto vsebine in vsebino JSON" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-button-headers.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Urejevalnik gumba (spodnji del)</figcaption></figure>
+  </div>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Element</th><th>Opis</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Element"><span class="ui">Ikona</span></td><td data-label="Opis">Dvajset pogostih ikon pod vrstico je mogoče tapniti neposredno. Vtipkati je mogoče tudi ime katere koli ikone <code>SF Symbols</code>.</td></tr>
+      <tr><td data-label="Element"><span class="ui">Oznaka</span></td><td data-label="Opis">Prikazana je pod ikono in se uporablja kot besedilo rdečega gumba v potrditvenem oknu. Če je oznaka prazna, gumb prikazuje le ikono, na rdečem gumbu potrditvenega okna pa piše <span class="ui">Potrdi</span>.</td></tr>
+      <tr><td data-label="Element"><span class="ui">Potrditev pred sprožitvijo</span></td><td data-label="Opis">Ko je vklopljeno, pritisk gumba najprej odpre potrditveno okno. Pri gumbih, ki premikajo fizično opremo, na primer odpirajo vrata, odklepajo ali sprožajo alarm, naj bo ta možnost vklopljena.</td></tr>
+      <tr><td data-label="Element"><span class="ui">Metoda</span></td><td data-label="Opis"><code>GET</code>, <code>POST</code>, <code>PUT</code> ali <code>DELETE</code>; privzeta je <code>POST</code>. <code>GET</code> ne pošlje telesa.</td></tr>
+      <tr><td data-label="Element">URL</td><td data-label="Opis">Začeti se mora s <code>http://</code> ali <code>https://</code> in vsebovati ime gostitelja ali naslov. Presledki na začetku in koncu se prezrejo. Parametri poizvedbe se zapišejo v sam URL. Če je URL prazen ali napačno oblikovan, pritisk gumba prikaže neuspeh, gumb pa ni prikazan na uri Apple Watch.</td></tr>
+      <tr><td data-label="Element"><span class="ui">Način pošiljanja</span></td><td data-label="Opis">Prikazano le v iPhonu, v razdelku Apple Watch. Določa, ali pritisk na uri pošlje ura sama ali iPhone; privzeto je <span class="ui">Samodejno</span>. Glejte <a class="xref" href="/sl/guide/webhook.html#webhook-watch">„Gumbi na uri Apple Watch“</a>.</td></tr>
+      <tr><td data-label="Element"><span class="ui">Glave</span></td><td data-label="Opis">Poljubno število imen in vrednosti. Vrstice s praznim imenom se izpustijo. Glava <code>Content-Type</code>, vnesena tukaj, ima prednost pred vnosnim poljem za vrsto vsebine v razdelku <span class="ui">Telo</span>.</td></tr>
+      <tr><td data-label="Element"><span class="ui">Telo</span></td><td data-label="Opis">Prikazano le pri <code>POST</code>, <code>PUT</code> in <code>DELETE</code>. Zgornje vnosno polje je vrsta vsebine, privzeto <code>application/json</code>; besedilno polje pod njim je vsebina. Če je vsebina prazna, se telo ne pošlje. Vrednost vnosnega polja za vrsto vsebine se doda le, če vsebina ni prazna in ni vnesena glava <code>Content-Type</code>.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="webhook-use">Pritisk gumba in branje rezultata</h3>
+  <p>Gumbe je mogoče pritisniti v predogledu stene na zavihku LiveView Mix in na celozaslonski steni. Na novo nastavljen gumb nima ločene funkcije za preskus; za preskus gumb enkrat pritisnite, nato na prejemni strani preverite, ali je zahteva prispela.</p>
+  <figure class="clip land"><video class="clip" aria-label="Pritiskanje gumbov nadzorne plošče na steni: med pošiljanjem zahteve se prikaže kazalnik nalaganja, nato zelena kljukica, če je odgovor pozitiven, in oranžen opozorilni trikotnik, če ni." muted="" loop="" playsinline="" preload="none" data-src="/guide/vid/rec-webhook-button.mp4" data-poster="/guide/img/rec-webhook-button.jpg" poster="/guide/img/rec-webhook-button.jpg"></video><figcaption>Pritiskanje gumbov nadzorne plošče na steni: med pošiljanjem zahteve se prikaže kazalnik nalaganja, nato zelena kljukica, če je odgovor pozitiven, in oranžen opozorilni trikotnik, če ni.</figcaption></figure>
+  <ol class="steps">
+    <li class="step">
+      <p>V predogledu stene ali na celozaslonski steni tapnite gumb plošče.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Gumb brez možnosti <span class="ui">Potrditev pred sprožitvijo</span> takoj zamenja ikono s kazalnikom nalaganja, kar pomeni, da je zahteva poslana. Gumb, pri katerem je ta možnost vklopljena, ob plošči odpre potrditveno okno z naslovom plošče (ali <span class="ui">Želite izvesti to dejanje?</span>, če plošča nima naslova).</p>
+    </li>
+    <li class="step">
+      <p>Ko se prikaže potrditveno okno, tapnite rdeči gumb v njem, na katerem je oznaka pritisnjenega gumba. Za preklic tapnite kjer koli zunaj okna.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Okno se zapre, ikona pa se spremeni v kazalnik nalaganja. Ob preklicu se zahteva ne pošlje.</p>
+      <figure class="phone"><img src="/guide/img/lvm-webhook-confirm.jpg" alt="Zavihek LiveView Mix po pritisku gumba Odpri na plošči za dvoriščna vrata: ob plošči se prikaže potrditveno okno" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-webhook-confirm.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Potrditveno okno</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Opazujte ikono gumba.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Glede na rezultat se ikona spremeni v zeleno kljukico ali oranžen opozorilni trikotnik, po približno 1,6 sekunde pa se znova prikaže prvotna ikona.</p>
+      <figure class="land"><img src="/guide/img/lvm-webhook-states.jpg" alt="Tri stanja enega gumba: kazalnik nalaganja med pošiljanjem, zelena kljukica po uspehu in oranžen opozorilni trikotnik po neuspehu" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-webhook-states.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>Tri stanja gumba</figcaption></figure>
+    </li>
+  </ol>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Gumb prikazuje</th><th>Pomen</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Gumb prikazuje">Nastavljena ikona</td><td data-label="Pomen">Gumb miruje ali pa je bil rezultat že prikazan.</td></tr>
+      <tr><td data-label="Gumb prikazuje">Kazalnik nalaganja</td><td data-label="Pomen">Zahteva je poslana, aplikacija čaka na odgovor. Če odgovor ne prispe v 10 sekundah, zahteva velja za neuspešno.</td></tr>
+      <tr><td data-label="Gumb prikazuje">Zelena kljukica</td><td data-label="Pomen">Prejemna stran je odgovorila s kodo stanja od 200 do 299. Preusmeritvam aplikacija sledi samodejno, odloči pa končni odgovor.</td></tr>
+      <tr><td data-label="Gumb prikazuje">Oranžen opozorilni trikotnik</td><td data-label="Pomen">Zahteva ni uspela. Vzrok je lahko prazen ali napačno oblikovan URL, manjkajoča povezava, potek časovne omejitve, potrdilo, ki ni zaupanja vredno, ali koda stanja zunaj obsega od 200 do 299, na primer 401, 404 ali 500. Zaslon vzroka ne prikaže, dnevnik pa se ne vodi.</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>Zelena kljukica pomeni le, da je prejemna stran uspešno odgovorila. Ne dokazuje, da se je oprema premaknila. Izid preverite v dnevniku prejemne strani.</li>
+    <li>Vsak pritisk pošlje eno zahtevo, ponovnih pritiskov pa nič ne preprečuje. Dva zaporedna pritiska pošljeta dve zahtevi. Pri gumbih, ki premikajo fizično opremo, naj bo <span class="ui">Potrditev pred sprožitvijo</span> vklopljena.</li>
+    <li>Če se oranžni trikotnik prikazuje večkrat, preverite po tem vrstnem redu: ali je URL veljaven, ali sta telefon in prejemna stran v istem omrežju oziroma lahko drug drugega dosežeta in ali je mogoče razrešiti naslov prejemne strani. Če je prejemna stran v lokalnem omrežju, mora imeti aplikacija Cam Hub dovoljen dostop do lokalnega omrežja; glejte <a class="xref" href="/sl/guide/add.html#add-scan">„Iskanje naprav v omrežju“</a>. Pri drugih težavah glejte <a class="xref" href="/sl/guide/trouble.html">poglavje 15, „Odpravljanje težav“</a>.</li>
+    <li>Za pritiskanje gumbov na uri Apple Watch glejte <a class="xref" href="/sl/guide/webhook.html#webhook-watch">„Gumbi na uri Apple Watch“</a>.</li>
+  </ul>
+
+  <h3 id="webhook-wall">Videz plošče na steni</h3>
+  <ul>
+    <li><b>Razporeditev gumbov</b>: 1 gumb je v 1 stolpcu, 2 gumba v 2 stolpcih, 3 gumbi v 3 stolpcih, 4 gumbi v mreži 2 × 2, 5 ali več gumbov pa v 3 stolpcih.</li>
+    <li><b>Majhna polja</b>: plošča se samodejno pomanjša. Najprej se skrije ura, nato oznake pod ikonami; naslov in ikone ostanejo.</li>
+    <li><b>Paket</b>: vsaka nadzorna plošča zasede eno mesto v dovoljenem številu kamer, in sicer izmed mest, ki jih kamere pustijo prosta. Plošča nad dovoljenim številom prikazuje ključavnico, svoj naslov in <span class="ui">Ni v vašem paketu</span>, njeni gumbi pa niso na voljo; v predogledu polje prikazuje ključavnico in <span class="ui">Ni v vašem paketu</span>. Vsaka plošča na vsaki steni se šteje posebej: na ležeči strani vedno, na pokončni strani, dokler je vklopljena, na spodnjem platnu naprave iPhone Duo pa, dokler sta vklopljeni dve platni; kopirana plošča se šteje ločeno od izvirnika. Polja z uro, oznako ali sliko in prazna polja ne štejejo v dovoljeno število. Sama naročnina na paket za snemalnike NVR ne poveča dovoljenega števila, ki je na voljo ploščam. Za pravila štetja glejte <a class="xref" href="/sl/guide/lvm.html#lvm-limits">„Kako omejitve paketa vplivajo na steno“</a> in <a class="xref" href="/sl/guide/plans.html#plans-count">„Kaj šteje v dovoljeno število“</a>.</li>
+    <li><b>Apple TV</b>: plošča se ustvari v iPhonu ali iPadu, plošče ležeče strani pa so prikazane na steni v aplikaciji za Apple TV; glejte <a class="xref" href="/sl/guide/appletv.html">poglavje 14, „Apple TV“</a>.</li>
+    <li><b>Apple Watch</b>: gumbi vseh plošč, ki jih pokriva paket, so prikazani na seznanjeni uri Apple Watch; glejte <a class="xref" href="/sl/guide/webhook.html#webhook-watch">„Gumbi na uri Apple Watch“</a>.</li>
+    <li><b>Varnostno kopiranje in deljenje</b>: nastavitve plošče, vključno z vrednostmi glav, spadajo med nastavitve aplikacije. Vključene so v vsako varnostno kopijo iCloud, v kodo za deljenje pa tudi, če je ob izvozu vklopljeno stikalo <span class="ui">Vključi nastavitve aplikacije</span>; glejte <a class="xref" href="/sl/guide/share.html">poglavje 10, „Deljenje in varnostno kopiranje“</a>.</li>
+  </ul>
+  <div class="shots land-pair">
+    <figure class="land"><img src="/guide/img/lvm-wall.jpg" alt="Celozaslonska stena: nadzorna plošča z naslovom Dvoriščna vrata in tremi gumbi v spodnji vrsti, desno od nje ura, v drugih poljih slike kamer" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-wall.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>Nadzorna plošča in ura na steni</figcaption></figure>
+    <figure class="land"><img src="/guide/img/lvm-panel-locked.jpg" alt="Celozaslonska stena: nadzorna plošča nad dovoljenim številom prikazuje ključavnico, svoj naslov in napis Ni v vašem paketu" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-panel-locked.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>Zaklenjena nadzorna plošča nad dovoljenim številom</figcaption></figure>
+  </div>
+
+  <h3 id="webhook-watch">Gumbi na uri Apple Watch</h3>
+  <p>Aplikacija Cam Hub na uri Apple Watch prikazuje gumbe nadzornih plošč, ki so nastavljene v seznanjenem iPhonu, in gumb sproži z enim tapom. Drugega ne prikazuje, niti videa niti kamer. Aplikacija na uri nima lastnih nastavitev, prijave ali nakupov; katere gumbe prikazuje, določa iPhone.</p>
+  <ul>
+    <li><b>Kateri gumbi</b>: vsak gumb z veljavnim URL-jem iz vsake nadzorne plošče, ki jo pokriva paket: na ležeči strani, na pokončni strani, dokler je vklopljena, in na spodnjem platnu naprave iPhone Duo, dokler sta vklopljeni dve platni. Gumb pokončne strani, ki je enak gumbu ležeče strani (enak naslov plošče, oznaka in zahteva), je naveden le enkrat.</li>
+    <li><b>Seznam</b>: naslov zaslona je <span class="ui" data-ui="value">Upravljanje</span>. Gumbi so združeni pod naslovi svojih plošč, v vrstnem redu stene. Vsaka vrstica prikazuje ikono v barvi plošče in oznako gumba (če je oznaka prazna, URL).</li>
+    <li><b>Usklajevanje</b>: ko se v iPhonu spremeni plošča ali gumb ali ko se spremeni paket, iPhone uri pošlje nov seznam. Plošča, ki je paket ne pokriva več, z ure izgine.</li>
+    <li><b>Samostojno delovanje</b>: seznam je shranjen na uri. Aplikacija na uri se odpre in ga prikaže, tudi če aplikacija v iPhonu ne teče ali je iPhone zunaj dosega; gumbi, ki jih sme ura poslati sama, takrat še vedno delujejo.</li>
+    <li><b>Jezik</b>: ura prikazuje svoja besedila in privzete besede plošč v jeziku aplikacije v iPhonu, ne v jeziku ure.</li>
+    <li><b>Preden prispejo prvi gumbi</b>: ura prikazuje <span class="ui" data-ui="value">Še ni gumbov</span> z opombo, da se tam prikažejo gumbi nadzorne plošče, ki jo v iPhonu dodate na steno LiveView Mix.</li>
+  </ul>
+  <figure class="phone"><img src="/guide/img/watch-buttons.jpg" alt="Apple Watch s seznamom Upravljanje: plošča Garden Lights z gumbom Lights on, ki je po odgovoru označen z zeleno kljukico, in gumbom Lights off" decoding="async" width="416" height="496" data-src="/guide/img/watch-buttons.jpg" style="aspect-ratio: 416 / 496;" loading="lazy"><figcaption>Gumbi nadzorne plošče na uri Apple Watch</figcaption></figure>
+  <h4>Način pošiljanja pritiska</h4>
+  <p>Vsak gumb ima v urejevalniku gumba v iPhonu svojo izbiro v vrstici <span class="ui">Način pošiljanja</span> (glejte <a class="xref" href="/sl/guide/webhook.html#webhook-button">„Nastavitev gumba“</a>):</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Izbira</th><th>Kaj se zgodi ob pritisku</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Izbira"><span class="ui">Samodejno</span> (privzeto)</td><td data-label="Kaj se zgodi ob pritisku">Zahtevo na javni naslov pošlje ura neposredno. Zahteva na naslov v domačem omrežju ali omrežju VPN, na primer <code>192.168.x.x</code> ali ime, ki se konča z <code>.local</code>, gre najprej prek iPhona, ki ta naslov lahko doseže.</td></tr>
+      <tr><td data-label="Izbira"><span class="ui">Neposredno z ure</span></td><td data-label="Kaj se zgodi ob pritisku">Ura vedno pošlje zahtevo sama, prek lastne povezave Wi-Fi ali mobilne povezave ali prek povezave iPhona. To je najhitrejši način, vendar naslov v domačem omrežju ali omrežju VPN za uro morda ni dosegljiv.</td></tr>
+      <tr><td data-label="Izbira"><span class="ui">Prek iPhona</span></td><td data-label="Kaj se zgodi ob pritisku">Za strežnik, ki je dosegljiv le prek povezave VPN v iPhonu, zlasti če je njegov naslov videti javen: ura nima lastne povezave VPN. Ura pošlje zahtevo sama le, če je iPhone zunaj dosega.</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>Ko gre pritisk prek iPhona, ura najprej preveri, ali se iPhone odziva, in čaka do približno 6 sekund; aplikacija v iPhonu se lahko za to zažene v ozadju. iPhone nato pošlje zahtevo enako kot njegova stena, potem ko preveri, ali paket še pokriva ploščo.</li>
+    <li>Če se iPhone na to preverjanje ne odzove, ura pošlje zahtevo sama. Če je iPhone zahtevo prevzel, vendar se je njegov odgovor izgubil, je pritisk prikazan kot neuspešen in se ne pošlje znova, zato se stikalo nikoli ne preklopi dvakrat.</li>
+    <li>Zahteva, ki jo je ura poslala sama in ni uspela, se prek iPhona ne ponovi. Zahteva z ure na naslov v domačem omrežju deluje le, dokler je ura v istem omrežju Wi-Fi.</li>
+  </ul>
+  <h4>Pritisk gumba na uri</h4>
+  <p>Predpogoj: aplikacija Cam Hub je nameščena na uri Apple Watch, ki je seznanjena z iPhonom, na steni pa je vsaj ena nadzorna plošča z veljavnim URL-jem.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Na uri Apple Watch odprite aplikacijo Cam Hub.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Ura prikazuje <span class="ui" data-ui="value">Upravljanje</span> in gumbe, združene po ploščah.</p>
+    </li>
+    <li class="step">
+      <p>Tapnite gumb.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Gumb brez možnosti <span class="ui">Potrditev pred sprožitvijo</span> takoj prikaže kazalnik nalaganja na koncu svoje vrstice. Gumb, pri katerem je ta možnost vklopljena, vpraša <span class="ui">Želite izvesti to dejanje?</span>, pod vprašanjem pa sta naslov plošče, rdeč gumb z oznako gumba in <span class="ui">Prekliči</span>.</p>
+    </li>
+    <li class="step">
+      <p>Ko se prikaže vprašanje, tapnite rdeči gumb. Za preklic tapnite <span class="ui">Prekliči</span>.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Vprašanje se zapre, vrstica pa prikazuje kazalnik nalaganja. Ob preklicu se ne pošlje nič.</p>
+    </li>
+    <li class="step">
+      <p>Opazujte konec vrstice.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Zelena kljukica pomeni, da je končna točka uspešno odgovorila; rdeč opozorilni trikotnik pomeni, da zahteva ni uspela. Ura poleg tega rahlo tapne zapestje, vrstica pa se po približno 2,5 sekunde vrne v običajno stanje.</p>
+    </li>
+  </ol>
+  <p>Tap gumba, ki še pošilja, se prezre, zato nestrpen drugi tap zahteve ne pošlje dvakrat. Tako kot na steni zelena kljukica pomeni le, da je prejemna stran odgovorila; ne dokazuje, da se je oprema premaknila.</p>
+
+  <h3 id="ha">Uporaba sistema Home Assistant</h3>
+  <p>Naslednja dva načina uporabljata Home Assistant kot primer. Naslov <code>homeassistant.local</code>, identifikator <code>gate-open-7f3c9a21</code> in ime entitete <code>cover.gate</code> so vzorčne vrednosti, ki jih je treba zamenjati z dejanskimi. Delovanje na strani sistema Home Assistant določa njegova dokumentacija in se lahko med različicami spremeni.</p>
+  <p>Predpogoji: Home Assistant teče v domačem omrežju in telefon lahko doseže njegov naslov; v enem polju stene LiveView Mix je izbrana <span class="ui">Nadzorna plošča</span> (glejte <a class="xref" href="/sl/guide/webhook.html#webhook-add">„Dodajanje nadzorne plošče na steno“</a>). Home Assistant privzeto uporablja <code>http</code> in vrata <code>8123</code>. Vzorčno besedilo v vnosnem polju za URL v aplikaciji se začne s <code>https</code> in ga je treba prilagoditi dejanski nastavitvi.</p>
+
+  <h4>Način 1: sprožilec webhook (žeton ni potreben)</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>V sistemu Home Assistant ustvarite novo avtomatizacijo.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Zaslon prikazuje urejevalnik avtomatizacije.</p>
+    </li>
+    <li class="step">
+      <p>Kot sprožilec izberite Webhook in vnesite identifikator, ki ga je težko uganiti, na primer <code>gate-open-7f3c9a21</code>.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Urejevalnik prikazuje identifikator. Identifikator deluje kot geslo: kdor pozna identifikator in naslov, lahko zažene avtomatizacijo.</p>
+    </li>
+    <li class="step">
+      <p>Nastavite dejanje, na primer entiteto, ki odpre dvoriščna vrata, in shranite avtomatizacijo.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Avtomatizacija se prikaže na seznamu avtomatizacij v sistemu Home Assistant.</p>
+    </li>
+    <li class="step">
+      <p>V aplikaciji Cam Hub odprite urejevalnik želenega gumba, kot opisuje 1. korak v razdelku <a class="xref" href="/sl/guide/webhook.html#webhook-button">„Nastavitev gumba“</a>.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Zaslon prikazuje urejevalnik tega gumba.</p>
+    </li>
+    <li class="step">
+      <p>Kot <span class="ui">Metoda</span> izberite <code>POST</code> in v vnosno polje za URL vnesite <code>http://homeassistant.local:8123/api/webhook/gate-open-7f3c9a21</code>. Glave in telo lahko ostanejo prazni.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Vnosno polje prikazuje URL, po vrnitvi pa vrstica gumba prikazuje ime gostitelja <code>homeassistant.local</code>.</p>
+    </li>
+    <li class="step">
+      <p>Vrnite se na steno in tapnite gumb.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Ikona najprej prikaže kazalnik nalaganja, nato zeleno kljukico.</p>
+    </li>
+    <li class="step">
+      <p>V sistemu Home Assistant odprite dnevnik izvajanj avtomatizacije.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Dnevnik prikazuje izvajanje, ki ga je sprožil pritisk. Home Assistant lahko uspešno odgovori tudi za identifikator, ki ne obstaja, zato odloča dnevnik izvajanj, ne zelena kljukica.</p>
+    </li>
+  </ol>
+  <p>Enakovredna zahteva je:</p>
+  <pre><code>POST /api/webhook/gate-open-7f3c9a21 HTTP/1.1
+Host: homeassistant.local:8123</code></pre>
+  <p>Avtomatizacijo je mogoče zapisati tudi kot konfiguracijsko datoteko. Naslednji primer je namenjen le primerjavi, sintaksa pa je odvisna od različice sistema Home Assistant:</p>
+  <pre><code>triggers:
+  - trigger: webhook
+    webhook_id: gate-open-7f3c9a21
+    allowed_methods:
+      - POST
+    local_only: true
+actions:
+  - action: cover.open_cover
+    target:
+      entity_id: cover.gate</code></pre>
+  <p>Sprožilec webhook privzeto sprejme le <code>POST</code> in <code>PUT</code> ter privzeto le zahteve iz lokalnega omrežja. Za uporabo iz zunanjega omrežja so potrebni posebni ukrepi; glejte <a class="xref" href="/sl/guide/webhook.html#webhook-security">„Varnostna opozorila“</a>. Gumb, pritisnjen na uri Apple Watch, doseže naslov, kot je <code>homeassistant.local</code>, prek iPhona, če je <span class="ui">Način pošiljanja</span> nastavljen na <span class="ui">Samodejno</span> ali <span class="ui">Prek iPhona</span>; glejte <a class="xref" href="/sl/guide/webhook.html#webhook-watch">„Gumbi na uri Apple Watch“</a>.</p>
+
+  <h4>Način 2: klic storitve (potreben je žeton)</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>Na strani profila v sistemu Home Assistant ustvarite dolgotrajni dostopni žeton in ga takoj kopirajte.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Zaslon prikazuje žeton. Žeton je v celoti običajno prikazan le enkrat, ob ustvarjanju.</p>
+    </li>
+    <li class="step">
+      <p>V aplikaciji Cam Hub odprite urejevalnik gumba, kot <span class="ui">Metoda</span> izberite <code>POST</code> in v vnosno polje za URL vnesite <code>http://homeassistant.local:8123/api/services/cover/open_cover</code>.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Vnosno polje prikazuje URL.</p>
+    </li>
+    <li class="step">
+      <p>Tapnite <span class="ui">Dodaj glavo</span>.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Razdelek <span class="ui">Glave</span> dobi vrstico z vnosnima poljema <span class="ui">Ime</span> in <span class="ui">Vrednost</span>.</p>
+    </li>
+    <li class="step">
+      <p>V vnosno polje <span class="ui">Ime</span> vnesite <code>Authorization</code>, v vnosno polje <span class="ui">Vrednost</span> pa <code>Bearer</code>, presledek in kopirani žeton.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Obe vnosni polji prikazujeta vneseno besedilo. Vrednost glave je prikazana kot navadno besedilo.</p>
+    </li>
+    <li class="step">
+      <p>V razdelku <span class="ui">Telo</span> preverite, ali je vrsta vsebine <code>application/json</code>, in v besedilno polje vnesite <code>{"entity_id":"cover.gate"}</code>.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Besedilno polje prikazuje vsebino.</p>
+    </li>
+    <li class="step">
+      <p>Vrnite se na steno in tapnite gumb.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Ikona najprej prikaže kazalnik nalaganja, nato zeleno kljukico. Dnevnik sistema Home Assistant prikazuje, da je bila storitev poklicana.</p>
+    </li>
+  </ol>
+  <p>Enakovredna zahteva je:</p>
+  <pre><code>POST /api/services/cover/open_cover HTTP/1.1
+Host: homeassistant.local:8123
+Authorization: Bearer &lt;long-lived access token&gt;
+Content-Type: application/json
+
+{"entity_id":"cover.gate"}</code></pre>
+  <div class="callout tip">
+    <strong class="t">Prednost ima sprožilec webhook</strong>
+    <p>Če identifikator webhooka uide v javnost, je učinek omejen na tisto avtomatizacijo, ki ji pripada. Z dolgotrajnim dostopnim žetonom je mogoče upravljati celoten Home Assistant. Za vsako dejanje, ki ga omogoča način 1, uporabite način 1.</p>
+  </div>
+
+  <h3 id="webhook-security">Varnostna opozorila</h3>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Tema</th><th>Opis in priporočilo</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Tema">HTTP in HTTPS</td><td data-label="Opis in priporočilo">Zahteva, poslana z <code>http://</code>, ni šifrirana. Kdor je na isti omrežni poti, lahko prebere URL, žeton v glavi in telo. HTTP uporabljajte le v zaupanja vrednem domačem omrežju in za webhooke, ki ne prenašajo občutljivih podatkov. Kadar zahteva vsebuje žeton ali zapusti domače omrežje, uporabite <code>https://</code>.</td></tr>
+      <tr><td data-label="Tema">Potrdila HTTPS</td><td data-label="Opis in priporočilo">Aplikacija Cam Hub nima možnosti, da bi zaupala samopodpisanemu potrdilu. Naslov <code>https://</code> s samopodpisanim potrdilom ne deluje, gumb pa prikaže oranžni trikotnik. V lokalnem omrežju je mogoče namesto tega uporabiti <code>http://</code> ali na prejemno stran namestiti potrdilo, ki mu telefon zaupa.</td></tr>
+      <tr><td data-label="Tema">Shranjevanje žetonov in identifikatorjev</td><td data-label="Opis in priporočilo">Vrednosti glav so v urejevalniku prikazane kot navadno besedilo in so kot navadno besedilo shranjene v nastavitvah aplikacije v tej napravi.</td></tr>
+      <tr><td data-label="Tema">Apple Watch</td><td data-label="Opis in priporočilo">Gumbi, ki pridejo na uro, vsebujejo celotno zahtevo, vključno z URL-jem, glavami in telesom. Kopirajo se na seznanjeno uro Apple Watch in se tam hranijo, zato je žeton v glavi shranjen tudi na uri.</td></tr>
+      <tr><td data-label="Tema">Varnostne kopije in kode za deljenje</td><td data-label="Opis in priporočilo">Nastavitve plošče so vključene v vsako varnostno kopijo iCloud in v vsako kodo za deljenje, izvoženo z vklopljenim stikalom <span class="ui ui-long">Vključi nastavitve aplikacije</span>. S tako kodo ravnajte kot z geslom in jo zaklenite s kodo PIN ali geslom; glejte <a class="xref" href="/sl/guide/share.html#share-lock">„Zaklepanje kode“</a>. Če je bil žeton razkrit, ga na prejemni strani prekličite in ustvarite novega.</td></tr>
+      <tr><td data-label="Tema">Zunanja omrežja</td><td data-label="Opis in priporočilo">Vrat <code>8123</code> sistema Home Assistant ni priporočljivo neposredno izpostaviti internetu. Kako boste do njega dostopali od zunaj, na primer prek VPN-ja ali uradnega načina oddaljenega dostopa sistema Home Assistant, je vaša odločitev; URL nato spremenite v ustrezen naslov.</td></tr>
+      <tr><td data-label="Tema">Fizična dejanja</td><td data-label="Opis in priporočilo">Za gumbe, ki odpirajo vrata, odklepajo in sprožajo alarm, vklopite <span class="ui">Potrditev pred sprožitvijo</span>. Aplikacija Cam Hub nima dodatne zaščite za gumbe plošč; pritisne jih lahko vsak, ki lahko upravlja odklenjeno napravo ali uro.</td></tr>
+      <tr><td data-label="Tema">Razreševanje imen</td><td data-label="Opis in priporočilo">Imena, ki se končajo z <code>.local</code>, se v nekaterih omrežjih morda ne razrešijo. Če povezave ne uspejo, namesto tega vnesite stalni naslov IP prejemne strani.</td></tr>
+    </tbody>
+  </table></div>
+</section><nav class="guide-pager" aria-label="Vsebina"><a class="guide-prev" rel="prev" href="/sl/guide/lvm.html"><span class="pager-dir">Prejšnje poglavje</span><span class="pager-title">8. LiveView Mix</span></a><a class="guide-next" rel="next" href="/sl/guide/share.html"><span class="pager-dir">Naslednje poglavje</span><span class="pager-title">10. Deljenje in varnostno kopiranje</span></a></nav></article>
+    </div>
+    <button class="guide-top" id="guide-top" type="button" aria-label="Na vrh"></button>
+  </main>
+  <footer class="footer"><span data-i18n="footer">Copyright © 2026 ALMX. All rights reserved.</span><nav><a href="/sl/guide.html" data-i18n="navGuide">Priročnik</a><a href="/sl/devices.html" data-i18n="navDevices">Razlike med napravami</a><a href="/sl/privacy.html" data-i18n="navPrivacy">Zasebnost</a><a href="/sl/terms.html" data-i18n="navTerms">Pogoji</a><a class="store-link" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeCTA">Prenesite v trgovini App Store</a></nav><nav class="language-links" id="language-links" aria-label="Jezik" data-i18n-aria="languageLabel"><a href="/guide/webhook.html" hreflang="en" lang="en" data-language-link="en">English</a><a href="/zh-Hant/guide/webhook.html" hreflang="zh-Hant" lang="zh-Hant" data-language-link="zh-Hant">繁體中文</a><a href="/zh-Hans/guide/webhook.html" hreflang="zh-Hans" lang="zh-Hans" data-language-link="zh-Hans">简体中文</a><a href="/ja/guide/webhook.html" hreflang="ja" lang="ja" data-language-link="ja">日本語</a><a href="/ko/guide/webhook.html" hreflang="ko" lang="ko" data-language-link="ko">한국어</a><a href="/de/guide/webhook.html" hreflang="de" lang="de" data-language-link="de">Deutsch</a><a href="/es/guide/webhook.html" hreflang="es" lang="es" data-language-link="es">Español</a><a href="/es-MX/guide/webhook.html" hreflang="es-MX" lang="es-MX" data-language-link="es-MX">Español (México)</a><a href="/fr/guide/webhook.html" hreflang="fr" lang="fr" data-language-link="fr">Français</a><a href="/sl/guide/webhook.html" hreflang="sl" lang="sl" data-language-link="sl" aria-current="true">Slovenščina</a><a href="/ar/guide/webhook.html" hreflang="ar" lang="ar" data-language-link="ar">العربية</a></nav></footer>
+  <script src="/additional-locales.js?v=20261103-sl"></script>
+  <script src="/site.js?v=20261112-1"></script>
+
+
+</body></html>

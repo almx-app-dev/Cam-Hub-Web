@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en" dir="ltr"><head>
+  <meta charset="utf-8"><script>(function () {
+  var codes = ["zh-Hant", "zh-Hans", "ja", "ko", "de", "es", "es-MX", "fr", "sl", "ar"];
+
+  function pickLanguage(preferences) {
+    var direct = { en: "en", ar: "ar", de: "de", es: "es", fr: "fr", ja: "ja", ko: "ko", sl: "sl" };
+    for (var i = 0; i < preferences.length; i += 1) {
+      var tag = String(preferences[i] || "").replace(/_/g, "-");
+      if (/^es-mx(?:-|$)/i.test(tag)) return "es-MX";
+      var base = tag.split("-")[0].toLowerCase();
+      if (direct[base]) return direct[base];
+      if (base !== "zh") continue;
+      try {
+        var locale = new Intl.Locale(tag).maximize();
+        return locale.script === "Hant" || ["TW", "HK", "MO"].indexOf(locale.region) >= 0 ? "zh-Hant" : "zh-Hans";
+      } catch (error) {
+        return /(?:^|-)Hant(?:-|$)|(?:^|-)(?:TW|HK|MO)(?:-|$)/i.test(tag) ? "zh-Hant" : "zh-Hans";
+      }
+    }
+    return "en";
+  }
+  window.__camHubEarlyPick = pickLanguage;
+
+  try {
+    if (window.__camHubPrerender || /[?&](?:lang|chapter)=/i.test(location.search)) return;
+    if (document.referrer && new URL(document.referrer).origin === location.origin) return;
+    var chosen = null;
+    try {
+      if (localStorage.getItem("camHubSiteLanguageManual") === "1") chosen = localStorage.getItem("camHubSiteLanguage");
+    } catch (error) {
+      chosen = null;
+    }
+    var target = chosen === "en" || codes.indexOf(chosen) >= 0 ? chosen
+      : pickLanguage(navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"]);
+    if (codes.indexOf(target) < 0) return;
+    var path = location.pathname === "/index.html" ? "/" : location.pathname;
+    location.replace("/" + target + path + location.search + location.hash);
+  } catch (error) {
+  }
+})();</script><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="apple-itunes-app" content="app-id=6792057195"><meta name="color-scheme" content="dark light">
+  <meta name="description" content="For devices that support playback, the single-camera view switches from the live picture to recorded footage.">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="Cam Hub"><meta property="og:image" content="https://cam-hub.almx.cc/assets/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+  <title>Recording playback and speed — Cam Hub Manual</title><link rel="icon" href="/assets/icon-48.png" sizes="48x48"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/icon-180.png"><link rel="stylesheet" href="/styles.css?v=20261112-1"><link rel="stylesheet" href="/guide.css?v=20261030-1">
+<meta property="og:description" content="For devices that support playback, the single-camera view switches from the live picture to recorded footage."><link rel="canonical" href="https://cam-hub.almx.cc/guide/playback.html"><link rel="alternate" hreflang="x-default" href="https://cam-hub.almx.cc/guide/playback.html"><link rel="alternate" hreflang="en" href="https://cam-hub.almx.cc/guide/playback.html"><link rel="alternate" hreflang="zh-Hant" href="https://cam-hub.almx.cc/zh-Hant/guide/playback.html"><link rel="alternate" hreflang="zh-Hans" href="https://cam-hub.almx.cc/zh-Hans/guide/playback.html"><link rel="alternate" hreflang="ja" href="https://cam-hub.almx.cc/ja/guide/playback.html"><link rel="alternate" hreflang="ko" href="https://cam-hub.almx.cc/ko/guide/playback.html"><link rel="alternate" hreflang="de" href="https://cam-hub.almx.cc/de/guide/playback.html"><link rel="alternate" hreflang="es" href="https://cam-hub.almx.cc/es/guide/playback.html"><link rel="alternate" hreflang="es-MX" href="https://cam-hub.almx.cc/es-MX/guide/playback.html"><link rel="alternate" hreflang="fr" href="https://cam-hub.almx.cc/fr/guide/playback.html"><link rel="alternate" hreflang="sl" href="https://cam-hub.almx.cc/sl/guide/playback.html"><link rel="alternate" hreflang="ar" href="https://cam-hub.almx.cc/ar/guide/playback.html"><meta property="og:url" content="https://cam-hub.almx.cc/guide/playback.html"><meta property="og:title" content="Recording playback and speed — Cam Hub Manual"></head>
+<body data-page="guide">
+  <header class="topbar" aria-label="Site header">
+    <a class="brand" href="/"><img src="/assets/icon-96.png" alt="" width="42" height="42"><span><strong>Cam&nbsp;Hub</strong><small data-i18n="topline">Operation manual</small></span></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-controls" data-i18n-aria="menuLabel" aria-label="Open menu"><span></span><span></span><span></span><span class="sr-only" data-i18n="menuLabel">Open menu</span></button>
+    <div class="topbar-controls" id="site-controls"><nav class="navlinks" aria-label="Primary"><a href="/" data-nav="home" data-i18n="navHome">Home</a><a href="/product.html" data-nav="product" data-i18n="navProduct">Product</a><a href="/guide.html" data-nav="guide" data-i18n="navGuide" aria-current="page">Manual</a><a href="/support.html" data-nav="support" data-i18n="navSupport">Support</a><a href="/privacy.html" data-nav="privacy" data-i18n="navPrivacy">Privacy</a><a href="/terms.html" data-nav="terms" data-i18n="navTerms">Terms</a></nav><div class="pickers"><label><span class="sr-only" data-i18n="themeLabel">Appearance</span><select id="themeSelect" aria-label="Theme"><option value="auto" data-i18n="themeAuto" selected="">Auto</option><option value="light" data-i18n="themeLight">Light</option><option value="dark" data-i18n="themeDark">Dark</option></select></label><label><span class="sr-only" data-i18n="languageLabel">Language</span><select id="languageSelect" aria-label="Language"><option value="en" selected="">English</option><option value="zh-Hant">繁體中文</option><option value="zh-Hans">简体中文</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="de">Deutsch</option><option value="es">Español</option><option value="es-MX">Español (México)</option><option value="fr">Français</option><option value="sl">Slovenščina</option><option value="ar">العربية</option></select></label></div><a class="store-pill" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeShort">Get the app</a></div>
+  </header>
+  <main class="inner-page guide" style="--g-topbar: 76px; --g-offset: 88px;">
+    <section class="page-hero"><div class="eyebrow" data-i18n="eyebrow">OPERATION MANUAL</div><h1 data-i18n="title">Recording playback and speed</h1><p class="summary" data-i18n="summary">Step-by-step instructions for adding devices, live view and recording playback, LiveView Mix walls, sharing, and backup.</p></section>
+    <p class="guide-notice" id="guide-notice" role="status" hidden=""></p>
+    <div id="guide-sentinel" aria-hidden="true"></div>
+    <div class="guide-layout has-toc" id="guide-layout" lang="en" dir="ltr">
+      <aside class="guide-side" id="guide-side">
+        <button class="guide-toc-toggle" id="guide-toc-toggle" type="button" aria-expanded="false" aria-controls="guide-toc" lang="en" dir="ltr"><span class="guide-toc-label" data-i18n="tocLabel">Contents</span><span class="guide-toc-current" id="guide-toc-current">7. Recording playback and speed</span></button>
+        <nav class="guide-toc" id="guide-toc" aria-label="Contents"><ol><li><a href="/guide.html"><span class="toc-num">1</span><span>Quick start</span></a><ol><li><a href="/guide.html#start-prepare"><span>Before you begin</span></a></li><li><a href="/guide.html#start-path"><span>Shortest path to a live picture</span></a></li><li><a href="/guide.html#start-demo"><span>Trying the app without a device</span></a></li></ol></li><li><a href="/guide/tour.html"><span class="toc-num">2</span><span>The tabs and basic behaviour</span></a><ol><li><a href="/guide/tour.html#tour-tabs"><span>The tabs at a glance</span></a></li><li><a href="/guide/tour.html#tour-launch"><span>What opens when the app starts</span></a></li><li><a href="/guide/tour.html#tour-look"><span>Appearance and language</span></a></li><li><a href="/guide/tour.html#tour-rotate"><span>Turning the device</span></a></li><li><a href="/guide/tour.html#tour-duo"><span>iPhone Duo</span></a></li><li><a href="/guide/tour.html#tour-awake"><span>Screen, background and notifications</span></a></li></ol></li><li><a href="/guide/add.html"><span class="toc-num">3</span><span>Adding a device</span></a><ol><li><a href="/guide/add.html#add-form"><span>The Add Device form</span></a></li><li><a href="/guide/add.html#add-auto"><span>Adding without choosing a brand</span></a></li><li><a href="/guide/add.html#add-methods"><span>Choosing the connection method</span></a></li><li><a href="/guide/add.html#add-https"><span>Adding a device over HTTPS</span></a></li><li><a href="/guide/add.html#add-streams"><span>Adding YouTube live streams and Twitch channels</span></a></li><li><a href="/guide/add.html#add-failed"><span>When adding fails: the checklist</span></a></li><li><a href="/guide/add.html#add-report"><span>Device report (experimental)</span></a></li><li><a href="/guide/add.html#add-scan"><span>Finding devices with the network scan</span></a></li></ol></li><li><a href="/guide/devices.html"><span class="toc-num">4</span><span>The Devices tab and channels</span></a><ol><li><a href="/guide/devices.html#devices-list"><span>The device list</span></a></li><li><a href="/guide/devices.html#devices-page"><span>The device page</span></a></li><li><a href="/guide/devices.html#devices-credentials"><span>Changing the user name and password of a device</span></a></li><li><a href="/guide/devices.html#devices-password-missing"><span>A device without a saved password</span></a></li><li><a href="/guide/devices.html#devices-https"><span>HTTPS for a saved device</span></a></li><li><a href="/guide/devices.html#devices-health"><span>Disk Health</span></a></li><li><a href="/guide/devices.html#devices-streams"><span>YouTube and Twitch streams</span></a></li><li><a href="/guide/devices.html#devices-states"><span>What a thumbnail shows</span></a></li><li><a href="/guide/devices.html#devices-menu"><span>Channel options (long press)</span></a></li><li><a href="/guide/devices.html#devices-plan"><span>Plan limits and enabling channels</span></a></li><li><a href="/guide/devices.html#devices-choose"><span>Choosing which cameras show</span></a></li><li><a href="/guide/devices.html#devices-fullwall"><span>The full-screen wall of a device</span></a></li><li><a href="/guide/devices.html#devices-quality"><span>SD and HD on device screens</span></a></li></ol></li><li><a href="/guide/live.html"><span class="toc-num">5</span><span>The Live tab and the Full Screen Wall</span></a><ol><li><a href="/guide/live.html#live-tab"><span>The Live tab</span></a></li><li><a href="/guide/live.html#live-quality"><span>SD and HD on a wall</span></a></li><li><a href="/guide/live.html#live-wall"><span>The Full Screen Wall</span></a></li><li><a href="/guide/live.html#live-hide"><span>Hiding cameras without signal</span></a></li></ol></li><li><a href="/guide/single.html"><span class="toc-num">6</span><span>Single-camera view</span></a><ol><li><a href="/guide/single.html#single-open"><span>Opening the view</span></a></li><li><a href="/guide/single.html#single-screen"><span>The parts of the screen</span></a></li><li><a href="/guide/single.html#single-zoom"><span>Zoom and pan</span></a></li><li><a href="/guide/single.html#single-controls"><span>Snapshot, sound and quality</span></a></li><li><a href="/guide/single.html#single-clip"><span>Recording a clip</span></a></li><li><a href="/guide/single.html#single-talk"><span>Two-way talk</span></a></li><li><a href="/guide/single.html#single-picture"><span>Black bars, rotation and landscape</span></a></li><li><a href="/guide/single.html#single-ptz"><span>PTZ control: moving the camera</span></a></li><li><a href="/guide/single.html#single-window"><span>A camera in a window of its own</span></a></li><li><a href="/guide/single.html#single-duo"><span>The view on a folded iPhone Duo</span></a></li><li><a href="/guide/single.html#single-streams"><span>YouTube and Twitch streams</span></a></li><li><a href="/guide/single.html#single-states"><span>Connection states and messages</span></a></li><li><a href="/guide/single.html#single-limits"><span>What is not available</span></a></li></ol></li><li class="is-current"><a href="/guide/playback.html" class="is-active" aria-current="location"><span class="toc-num">7</span><span>Recording playback and speed</span></a><ol><li><a href="/guide/playback.html#playback-avail"><span>Where playback is available</span></a></li><li><a href="/guide/playback.html#playback-day"><span>Choosing a day</span></a></li><li><a href="/guide/playback.html#playback-calendar"><span>The recording calendar</span></a></li><li><a href="/guide/playback.html#playback-timeline"><span>Using the timeline</span></a></li><li><a href="/guide/playback.html#playback-list"><span>The list of recordings and the search for people</span></a></li><li><a href="/guide/playback.html#playback-playing"><span>While a recording plays</span></a></li><li><a href="/guide/playback.html#playback-speed"><span>Playback speed</span></a></li><li><a href="/guide/playback.html#playback-landscape"><span>Playback in landscape</span></a></li><li><a href="/guide/playback.html#playback-limits"><span>What is not available</span></a></li></ol></li><li><a href="/guide/lvm.html"><span class="toc-num">8</span><span>LiveView Mix</span></a><ol><li><a href="/guide/lvm.html#lvm-tab"><span>The LiveView Mix tab and its preview</span></a></li><li><a href="/guide/lvm.html#lvm-first"><span>Building a first wall of six cameras</span></a></li><li><a href="/guide/lvm.html#lvm-pick"><span>Choosing cameras and quality</span></a></li><li><a href="/guide/lvm.html#lvm-layout"><span>Adjusting the layout</span></a></li><li><a href="/guide/lvm.html#lvm-custom"><span>Drawing a custom layout</span></a></li><li><a href="/guide/lvm.html#lvm-special"><span>Special layouts: big and small tiles on one wall</span></a></li><li><a href="/guide/lvm.html#lvm-arrange"><span>Arranging the wall and its tiles</span></a></li><li><a href="/guide/lvm.html#lvm-move"><span>Moving a tile into an empty tile</span></a></li><li><a href="/guide/lvm.html#lvm-slots"><span>What a tile can show besides a camera</span></a></li><li><a href="/guide/lvm.html#lvm-watermark"><span>Watermark</span></a></li><li><a href="/guide/lvm.html#lvm-fit"><span>Black bars, edge-to-edge video and the angle of the device</span></a></li><li><a href="/guide/lvm.html#lvm-pages"><span>The portrait page</span></a></li><li><a href="/guide/lvm.html#lvm-canvases"><span>Two canvases on iPhone Duo</span></a></li><li><a href="/guide/lvm.html#lvm-wall"><span>The full-screen wall</span></a></li><li><a href="/guide/lvm.html#lvm-closeup"><span>Opening a single camera</span></a></li><li><a href="/guide/lvm.html#lvm-streams"><span>YouTube and Twitch streams on the wall</span></a></li><li><a href="/guide/lvm.html#lvm-states"><span>When a tile cannot show a camera</span></a></li><li><a href="/guide/lvm.html#lvm-limits"><span>How plan limits affect the wall</span></a></li><li><a href="/guide/lvm.html#lvm-settings"><span>LiveView Mix in Settings</span></a></li><li><a href="/guide/lvm.html#lvm-tv"><span>Differences on Apple TV</span></a></li></ol></li><li><a href="/guide/webhook.html"><span class="toc-num">9</span><span>Control panels and webhooks</span></a><ol><li><a href="/guide/webhook.html#webhook-what"><span>What a control panel does</span></a></li><li><a href="/guide/webhook.html#webhook-add"><span>Adding a control panel to the wall</span></a></li><li><a href="/guide/webhook.html#webhook-templates"><span>Templates</span></a></li><li><a href="/guide/webhook.html#webhook-fields"><span>The settings of a panel</span></a></li><li><a href="/guide/webhook.html#webhook-button"><span>Setting up a button</span></a></li><li><a href="/guide/webhook.html#webhook-use"><span>Pressing a button and reading the result</span></a></li><li><a href="/guide/webhook.html#webhook-wall"><span>How a panel looks on the wall</span></a></li><li><a href="/guide/webhook.html#webhook-watch"><span>Buttons on Apple Watch</span></a></li><li><a href="/guide/webhook.html#ha"><span>Using Home Assistant</span></a></li><li><a href="/guide/webhook.html#webhook-security"><span>Security notes</span></a></li></ol></li><li><a href="/guide/share.html"><span class="toc-num">10</span><span>Sharing and backup</span></a><ol><li><a href="/guide/share.html#share-choose"><span>Comparing the two methods</span></a></li><li><a href="/guide/share.html#share-export"><span>Exporting cameras (creating a code)</span></a></li><li><a href="/guide/share.html#share-lock"><span>Locking a code</span></a></li><li><a href="/guide/share.html#share-import"><span>Importing cameras</span></a></li><li><a href="/guide/share.html#share-contents"><span>What backups and codes contain</span></a></li><li><a href="/guide/share.html#share-icloud"><span>Backing up to iCloud</span></a></li><li><a href="/guide/share.html#share-versions"><span>Several named backups: renaming and deleting</span></a></li><li><a href="/guide/share.html#share-restore"><span>Restoring from iCloud</span></a></li><li><a href="/guide/share.html#share-delete"><span>Deleting all iCloud backups</span></a></li><li><a href="/guide/share.html#share-newphone"><span>Moving devices and walls to a new phone</span></a></li><li><a href="/guide/share.html#share-appletv"><span>Bringing the setup to Apple TV</span></a></li></ol></li><li><a href="/guide/plans.html"><span class="toc-num">11</span><span>Plans and limits</span></a><ol><li><a href="/guide/plans.html#plans-tiers"><span>The allowance of each plan</span></a></li><li><a href="/guide/plans.html#plans-stack"><span>How the two groups of plans combine</span></a></li><li><a href="/guide/plans.html#plans-count"><span>What uses allowance</span></a></li><li><a href="/guide/plans.html#plans-examples"><span>Examples of combinations</span></a></li><li><a href="/guide/plans.html#plans-choose"><span>Choosing which cameras show</span></a></li><li><a href="/guide/plans.html#plans-subscribe"><span>Subscribing, restoring purchases and redeeming a code</span></a></li><li><a href="/guide/plans.html#plans-lapse"><span>When a plan ends or is reduced</span></a></li></ol></li><li><a href="/guide/tools.html"><span class="toc-num">12</span><span>The Tools tab</span></a><ol><li><a href="/guide/tools.html#tools-overview"><span>What the Tools tab contains</span></a></li><li><a href="/guide/tools.html#tools-speedometer"><span>Speedometer and compass</span></a></li></ol></li><li><a href="/guide/settings.html"><span class="toc-num">13</span><span>Settings</span></a><ol><li><a href="/guide/settings.html#settings-overview"><span>The sections of the Settings tab</span></a></li><li><a href="/guide/settings.html#settings-subscription"><span>Subscription</span></a></li><li><a href="/guide/settings.html#settings-quality"><span>Default quality</span></a></li><li><a href="/guide/settings.html#settings-picture"><span>Picture: black bars and edge-to-edge</span></a></li><li><a href="/guide/settings.html#settings-hide"><span>Hide offline cameras</span></a></li><li><a href="/guide/settings.html#settings-lvm"><span>LiveView Mix, its pages and Open on launch</span></a></li><li><a href="/guide/settings.html#settings-backup"><span>Backup and sharing of cameras</span></a></li><li><a href="/guide/settings.html#settings-language"><span>Language</span></a></li><li><a href="/guide/settings.html#settings-reset"><span>Reset: defaults, delete all data, delete iCloud backup</span></a></li><li><a href="/guide/settings.html#settings-legal"><span>Terms of Use and Privacy Policy</span></a></li><li><a href="/guide/settings.html#settings-about"><span>About, the user manual, and what Settings does not contain</span></a></li></ol></li><li><a href="/guide/appletv.html"><span class="toc-num">14</span><span>Apple TV</span></a><ol><li><a href="/guide/appletv.html#appletv-prepare"><span>Set up on an iPhone or iPad first</span></a></li><li><a href="/guide/appletv.html#appletv-bring"><span>Bringing the setup to the Apple TV</span></a></li><li><a href="/guide/appletv.html#appletv-differs"><span>What differs on the Apple TV</span></a></li></ol></li><li><a href="/guide/trouble.html"><span class="toc-num">15</span><span>Troubleshooting</span></a><ol><li><a href="/guide/trouble.html#trouble-start"><span>Where to start</span></a></li><li><a href="/guide/trouble.html#trouble-states"><span>What the empty screens say</span></a></li><li><a href="/guide/trouble.html#trouble-add"><span>A device is added, but it is not reachable</span></a></li><li><a href="/guide/trouble.html#trouble-live"><span>Live view</span></a></li><li><a href="/guide/trouble.html#trouble-playback"><span>Recording playback</span></a></li><li><a href="/guide/trouble.html#trouble-lvm"><span>LiveView Mix</span></a></li><li><a href="/guide/trouble.html#trouble-streams"><span>YouTube and Twitch</span></a></li><li><a href="/guide/trouble.html#trouble-panels"><span>Control panels and webhooks</span></a></li><li><a href="/guide/trouble.html#trouble-health"><span>Disk Health</span></a></li><li><a href="/guide/trouble.html#trouble-share"><span>Sharing, import and iCloud backup</span></a></li><li><a href="/guide/trouble.html#trouble-plans"><span>Plans and purchases</span></a></li><li><a href="/guide/trouble.html#trouble-errors"><span>Other error sentences</span></a></li><li><a href="/guide/trouble.html#trouble-permissions"><span>Permission requests and system dialogs</span></a></li><li><a href="/guide/trouble.html#trouble-contact"><span>Reaching the developer</span></a></li><li><a href="/guide/trouble.html#trouble-faq"><span>Questions and answers</span></a></li></ol></li><li><a href="/guide/brands.html"><span class="toc-num">16</span><span>Supported brands and connection methods</span></a><ol><li><a href="/guide/brands.html#brands-methods"><span>Connection methods</span></a></li><li><a href="/guide/brands.html#brands-matrix"><span>What works with which method</span></a></li><li><a href="/guide/brands.html#brands-profiles"><span>The brands in the list</span></a></li><li><a href="/guide/brands.html#brands-requirements"><span>Requirements and limits</span></a></li><li><a href="/guide/brands.html#brands-recorders"><span>Cameras and recorders</span></a></li><li><a href="/guide/brands.html#brands-prepare"><span>What to prepare on the device</span></a></li><li><a href="/guide/brands.html#brands-activate"><span>Activating a new device</span></a></li><li><a href="/guide/brands.html#brands-compat"><span>The compatibility reference in the app</span></a></li></ol></li><li><a href="/guide/about.html" class="no-num"><span>About this manual</span></a><ol><li><a href="/guide/about.html#about-scope"><span>Scope</span></a></li><li><a href="/guide/about.html#about-conventions"><span>Conventions</span></a></li><li><a href="/guide/about.html#about-help"><span>Where to get help</span></a></li></ol></li></ol></nav>
+      </aside>
+      <article class="guide-article" id="guide-content"><section class="chapter" id="playback">
+  <h2><span class="num">7</span>Recording playback and speed</h2>
+  <p class="lead">For devices that support playback, the single-camera view switches from the live picture to recorded footage. A day is chosen, on supported devices from a calendar that marks the days with recordings, a 24-hour timeline is moved to the wanted time, and a recording or a detected person is played from the list. A recording can be played faster at 2×, 4× or 8×. Days and times follow the clock of the device.</p>
+
+  <h3 id="playback-avail">Where playback is available</h3>
+  <p>The recording panel appears below the picture of the single-camera view (see <a class="xref" href="/guide/single.html">Chapter 6, “Single-camera view”</a>) only for devices that support playback. For all other devices, the view shows the live picture and the controls bar only. Playback is reached from three places: the single-camera view itself, the <span class="ui">Recordings</span> button in the close-up of a camera on a full-screen wall (see <a class="xref" href="/guide/devices.html#devices-fullwall">“The full-screen wall of a device”</a>), and the same button on a LiveView Mix wall.</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Offer</th><th>Shown when</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Offer">Recording panel with day, timeline and list</td><td data-label="Shown when">The device supports playback and the account may read recordings on it.</td></tr>
+      <tr><td data-label="Offer">Button for the recording calendar</td><td data-label="Shown when">The device also keeps a daily index of its recordings; see <a class="xref" href="/guide/playback.html#playback-calendar">“The recording calendar”</a>.</td></tr>
+      <tr><td data-label="Offer">Switch <span class="ui">Continuous</span> and <span class="ui">Events</span></td><td data-label="Shown when">The device also keeps an index of detected people. Without the index, only the list of continuous recordings is shown, with no switch.</td></tr>
+      <tr><td data-label="Offer">Speed button</td><td data-label="Shown when">During playback, when the device can play the recording faster. If it cannot, a notice appears; see <a class="xref" href="/guide/playback.html#playback-speed">“Playback speed”</a>.</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li><b>Recorder channel</b>: the recordings of the channel come from the storage of the recorder. The single-camera view of a channel shows the recordings of that channel only.</li>
+    <li><b>Standalone camera</b>: the recordings come from the storage of the camera itself, for cameras that offer a search for recordings. A camera without recordings shows an empty day. A camera that reports that it keeps no recordings of its own, for example because a recorder records it, shows <span class="ui">This camera doesn't keep recordings of its own. If a recorder records it, play the footage back from the recorder.</span> in place of the list.</li>
+    <li>The screen and the controls are the same for both. A recorder and a camera differ only in where the recordings are kept and in whether the device supports playback.</li>
+    <li>Playback is offered by devices that are connected through their own protocol or through ONVIF, when the connection supports it. Which brands and connection methods offer playback is listed in <a class="xref" href="/guide/brands.html">Chapter 16, “Supported brands and connection methods”</a>.</li>
+    <li>A device that was added through ONVIF supports playback only when it offers the ONVIF services for searching and replaying recordings. Otherwise, the day shows an empty list.</li>
+    <li>A device that was added through a brand from the list provides live view only, without playback; see <a class="xref" href="/guide/add.html#add-methods">“Choosing the connection method”</a>. The sample cameras and YouTube and Twitch streams contain no recordings.</li>
+  </ul>
+
+  <h3 id="playback-day">Choosing a day</h3>
+  <p>Prerequisite: the single-camera view of a camera that supports playback is open; see <a class="xref" href="/guide/single.html#single-open">“Opening the view”</a>. Below the controls bar, the heading <span class="ui">Recordings</span> shows the current day on its right, with the timeline below it and the list of recordings below the timeline.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap the day on the right of the heading <span class="ui">Recordings</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> A calendar opens.</p>
+      <figure class="phone"><img src="/guide/img/playback-day-picker.jpg" alt="The calendar for choosing the day, open over the recording panel of the single-camera view" decoding="async" width="900" height="1956" data-src="/guide/img/playback-day-picker.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The calendar for choosing the day</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap the wanted day.</p>
+      <p class="check"><b class="check-label">Check:</b> The calendar closes, and the heading shows the new day. <span class="ui">Loading recordings…</span> appears briefly, then the timeline and the list show the recordings of that day. The picture does not change.</p>
+    </li>
+  </ol>
+  <ul>
+    <li>The cursor of the timeline starts at the current time of the device for today, and at 12:00 for any other day.</li>
+    <li>Choosing a day does not start playback by itself. Playback starts from the timeline or from the list.</li>
+    <li>The timeline shows the chosen day and the day before it, so that footage across midnight can be reached.</li>
+    <li>Any day can be chosen, including days without recordings. Such a day shows an empty list. To see which days have recordings, use the recording calendar where the device offers it.</li>
+  </ul>
+  <h4>The clock of the device</h4>
+  <p>Days and times in playback are those of the device, not of the iPhone. For devices that report their time zone, "today" and "now" are the date and time of the device, also when the iPhone is in another time zone: seen from a place where it is still yesterday, the day picker opens on the day of the device and the cursor on its current time. The right day is also found when the iPhone uses another calendar than the Gregorian one. For devices that do not report a time zone, the time zone of the iPhone is used.</p>
+
+  <h3 id="playback-calendar">The recording calendar</h3>
+  <p>On devices that keep a daily index of their recordings, a calendar button sits between the heading <span class="ui">Recordings</span> and the day. Its calendar marks the days that have recordings, so that a day does not have to be tried one after another. Without such an index, the button is not shown and the day is chosen as described in <a class="xref" href="/guide/playback.html#playback-day">“Choosing a day”</a>.</p>
+  <figure class="phone"><img src="/guide/img/playback-calendar.jpg" alt="The Recording calendar sheet over the single-camera view: the month with arrows, days with recordings marked with a dot, the chosen day in a filled circle and the line Days with a dot have recordings." decoding="async" width="900" height="1947" data-src="/guide/img/playback-calendar.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>The recording calendar</figcaption></figure>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap the calendar button (<span class="ui">Recording calendar</span>) next to the day.</p>
+      <p class="check"><b class="check-label">Check:</b> The sheet <span class="ui">Recording calendar</span> opens on the month of the chosen day. A spinner next to the name of the month shows while the device is asked. Then the days with recordings appear in bold with a dot below them, and the line <span class="ui">Days with a dot have recordings.</span> appears below the month. The chosen day is in a filled circle. Days after today on the clock of the device are dimmed and cannot be chosen.</p>
+    </li>
+    <li class="step">
+      <p>Tap one of the arrows beside the name of the month (<span class="ui">Previous month</span> or <span class="ui">Next month</span>).</p>
+      <p class="check"><b class="check-label">Check:</b> The calendar shows the other month and marks its days with recordings. The arrow to the next month is unavailable in the current month of the device.</p>
+    </li>
+    <li class="step">
+      <p>Tap a day.</p>
+      <p class="check"><b class="check-label">Check:</b> The sheet closes, and the day is chosen as with the day picker: <span class="ui">Loading recordings…</span> appears, then the timeline and the list show the recordings of that day.</p>
+    </li>
+  </ol>
+  <ul>
+    <li>Tap <span class="ui">Done</span> to close the sheet without choosing a day.</li>
+    <li>Each month is asked once while the sheet is open.</li>
+    <li>The week starts on the day set by the region of the iPhone. Month and weekday names follow the language of the app.</li>
+  </ul>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Below the month</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Below the month"><span class="ui ui-long">Days with a dot have recordings.</span></td><td data-label="Meaning">The device answered; the dots show its days with recordings.</td></tr>
+      <tr><td data-label="Below the month"><span class="ui ui-long">This recorder cannot tell which days have recordings.</span></td><td data-label="Meaning">The device did not describe this month. The days have no dots and can still be chosen.</td></tr>
+      <tr><td data-label="Below the month"><span class="ui">Could not load this month.</span> with <span class="ui">Try Again</span></td><td data-label="Meaning">The question failed on the way, for example because of the connection. Tap <span class="ui">Try Again</span>.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="playback-timeline">Using the timeline</h3>
+  <p>The timeline shows the recordings of the chosen day along a ruler. The orange cursor stays in the middle, and the ruler moves under it. All times are the clock of the device, not the time zone of the iPhone; see <a class="xref" href="/guide/playback.html#playback-day">“Choosing a day”</a>.</p>
+  <figure class="phone clip"><video class="clip" aria-label="The timeline: a short drag returns to the live picture, a longer drag starts playback at the chosen time, and the magnifier buttons zoom the timeline." muted="" loop="" playsinline="" preload="none" data-src="/guide/vid/rec-timeline-scrub.mp4" data-poster="/guide/img/rec-timeline-scrub.jpg" poster="/guide/img/rec-timeline-scrub.jpg"></video><figcaption>The timeline: a short drag returns to the live picture, a longer drag starts playback at the chosen time, and the magnifier buttons zoom the timeline.</figcaption></figure>
+  <figure class="phone"><img src="/guide/img/playback-1x.jpg" alt="The single-camera view during playback: the red badge PLAYBACK with the time, the speed button 1×, Back to Live in the controls bar, and the timeline with the orange cursor and the list of recordings" decoding="async" width="900" height="1956" data-src="/guide/img/playback-1x.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The timeline during playback</figcaption></figure>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Element</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Element">Orange line with a bubble above it</td><td data-label="Meaning">The cursor, fixed in the middle. The bubble shows the time at the cursor, and the date as well while the cursor is on the day before the chosen day.</td></tr>
+      <tr><td data-label="Element">Blue bars</td><td data-label="Meaning">Continuous recordings.</td></tr>
+      <tr><td data-label="Element">Red bars</td><td data-label="Meaning">Recordings that the device made because of an event.</td></tr>
+      <tr><td data-label="Element">Thin red marks</td><td data-label="Meaning">Detected people, for devices that keep a detection index.</td></tr>
+      <tr><td data-label="Element">Dark gaps</td><td data-label="Meaning">No recording exists at that time.</td></tr>
+      <tr><td data-label="Element">Dimmed part at the left, with a dashed line and a date</td><td data-label="Meaning">The day before the chosen day. A dashed line with a date marks every midnight.</td></tr>
+      <tr><td data-label="Element">Hour labels below the bar</td><td data-label="Meaning">The scale. The divisions become finer when the timeline is enlarged.</td></tr>
+      <tr><td data-label="Element">Two magnifier buttons at the right</td><td data-label="Meaning"><span class="ui">Zoom in</span> (plus) and <span class="ui">Zoom out</span> (minus) change the span that the timeline shows.</td></tr>
+    </tbody>
+  </table></div>
+  <ol class="steps">
+    <li class="step">
+      <p>Touch the timeline and drag sideways.</p>
+      <p class="check"><b class="check-label">Check:</b> The ruler moves under the cursor, and the time in the bubble changes. The picture stays live while the finger moves.</p>
+    </li>
+    <li class="step">
+      <p>Lift the finger when the cursor is at the wanted time.</p>
+      <p class="check"><b class="check-label">Check:</b> The picture switches to the recording from that time. The badge turns red and shows <span class="ui">PLAYBACK 15:00:03</span> with the time of the playback, and <span class="ui">Back to Live</span> replaces the SD/HD switch.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Zoom in</span> (the plus magnifier), or spread two fingers apart on the timeline.</p>
+      <p class="check"><b class="check-label">Check:</b> The timeline shows a shorter span, down to 10 minutes. The button is dimmed at that limit.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Zoom out</span> (the minus magnifier), or bring two fingers together on the timeline.</p>
+      <p class="check"><b class="check-label">Check:</b> The timeline shows a longer span, up to 48 hours (both days). The button is dimmed at that limit. The timeline opens with a span of 24 hours.</p>
+    </li>
+  </ol>
+  <ul>
+    <li>A drag shorter than about 6 points on the screen is ignored, so that touching the timeline does not leave the live picture by accident.</li>
+    <li>When the finger is lifted in a gap, the next recording after the gap plays. The badge and the cursor jump to the start of that recording. When no recording follows, the message <span class="ui">No recording at the selected time.</span> appears with <span class="ui">Retry</span>.</li>
+    <li>While a recording plays, the cursor follows the playback by itself. While the timeline is being touched, the cursor stays where the finger puts it.</li>
+    <li>With VoiceOver, the timeline is one element: swiping up or down moves the cursor, and a double tap plays from there.</li>
+  </ul>
+
+  <h3 id="playback-list">The list of recordings and the search for people</h3>
+  <p>Below the timeline, a list shows the recordings of the chosen day. When the device keeps a detection index, a switch above the list selects <span class="ui">Continuous</span> or <span class="ui">Events</span>.</p>
+  <ul>
+    <li><b><span class="ui">Continuous</span></b>: one row per continuous recording, newest first. Each row shows a blue dot, the start time and the length of the recording in hours, minutes and seconds. A row of the day before starts with the date. The row of the recording that is playing is highlighted and shows a speaker symbol.</li>
+    <li><b><span class="ui">Events</span></b>: one row <span class="ui">Person detected</span> per detection, newest first, with the start time. Detections that follow each other within 2 seconds are merged into one row.</li>
+  </ul>
+  <h4>Playing a recording from the list</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap a row under <span class="ui">Continuous</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The picture switches to that recording, from its start. The row is highlighted, and the cursor jumps to the start time.</p>
+    </li>
+  </ol>
+  <h4>Finding a person</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap <span class="ui">Events</span> above the list.</p>
+      <p class="check"><b class="check-label">Check:</b> The list shows the rows <span class="ui">Person detected</span>. The timeline shows the detections as thin red marks.</p>
+      <figure class="phone"><img src="/guide/img/playback-events.jpg" alt="The recording panel with Events selected: the timeline with thin red marks and a list of rows Person detected with their times" decoding="async" width="900" height="1956" data-src="/guide/img/playback-events.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The list of detected people</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap a row.</p>
+      <p class="check"><b class="check-label">Check:</b> Playback starts about 5 seconds before the detection, or at the start of the recording when the recording began later. The badge shows the playback time.</p>
+    </li>
+  </ol>
+  <p>Only people are searched. Recordings that were triggered by other events appear as red bars on the timeline and are played by moving the timeline to them. Cam Hub reads at most about 2,000 recordings and 2,000 detections per channel and day; anything beyond that is not listed.</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Message</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Message"><span class="ui">Loading recordings…</span></td><td data-label="Meaning">The device is being searched for the day.</td></tr>
+      <tr><td data-label="Message"><span class="ui ui-long">No continuous recordings on this day.</span></td><td data-label="Meaning">The day has no continuous recording.</td></tr>
+      <tr><td data-label="Message"><span class="ui ui-long">This camera doesn't keep recordings of its own. If a recorder records it, play the footage back from the recorder.</span></td><td data-label="Meaning">The camera reports that it has no recordings of its own. Open the channel of the recorder that records this camera.</td></tr>
+      <tr><td data-label="Message"><span class="ui ui-long">No people detected on this day.</span></td><td data-label="Meaning">The day has no detection.</td></tr>
+      <tr><td data-label="Message"><span class="ui ui-long">This device could not search its person-event index.</span></td><td data-label="Meaning">Shown under <span class="ui">Events</span> when the device does not answer the search for people. The continuous list is not affected.</td></tr>
+      <tr><td data-label="Message">Message with a warning symbol above the timeline: <span class="ui ui-long">This account cannot read recordings on this device.</span>, <span class="ui">Could not reach the device.</span>, <span class="ui ui-long">The device did not recognize this camera's recordings.</span> or <span class="ui">This camera is offline.</span></td><td data-label="Meaning">The search for the day failed for the reason that the message names. The day can be changed, and another day tried, while the message is shown. For the account, check its rights on the device; for the connection, see <a class="xref" href="/guide/trouble.html">Chapter 15, “Troubleshooting”</a>.</td></tr>
+      <tr><td data-label="Message"><span class="ui ui-long">Too many requests just now. Try again in a minute.</span></td><td data-label="Meaning">The device or its service refused the search because of too many requests, or the device was still busy with an earlier search. Wait a minute and choose the day again.</td></tr>
+      <tr><td data-label="Message">Other messages in the same place, for example <span class="ui ui-long">The device sent an unexpected reply.</span>, <span class="ui">The connection timed out.</span> or <span class="ui ui-long">Something went wrong. Please try again.</span></td><td data-label="Meaning">The search failed for another reason. Choose the day again. When the message persists, see <a class="xref" href="/guide/trouble.html">Chapter 15, “Troubleshooting”</a>.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="playback-playing">While a recording plays</h3>
+  <ul>
+    <li><b>Badge</b>: the red badge at the top left of the picture shows the playback time on the clock of the device, and the time moves with the picture. It matches the time that the camera prints into its picture, when the camera does so. When the playback time is on the day before the chosen day, the date precedes the time.</li>
+    <li><b>Continuing</b>: when a recording file ends, playback continues into the next recording by itself, so that an evening can be watched without a stop at every file. Cam Hub looks for newer recordings first, because the device may still be writing.</li>
+    <li><b>Sound</b>: the speaker button works at normal speed only; see <a class="xref" href="/guide/single.html#single-controls">“Snapshot, sound and quality”</a>.</li>
+    <li><b>Snapshot</b>: takes the current live picture of the device, not a frame of the recording.</li>
+    <li><b>Clip</b>: the record button records the recording as it plays, to send it or save it in the photo library; see <a class="xref" href="/guide/single.html#single-clip">“Recording a clip”</a>.</li>
+    <li><b>Zoom and pan</b>: work as in live mode; see <a class="xref" href="/guide/single.html#single-zoom">“Zoom and pan”</a>. The camera control for PTZ and the talk button are hidden during playback.</li>
+    <li><b>Refused recording</b>: when the recorder does not play a recording, for example because it was overwritten, the picture shows <span class="ui">The recorder would not play this recording. It may have been overwritten — choose another time.</span> Choose another time on the timeline.</li>
+    <li><b>Recordings that arrive as a file</b>: some devices deliver a recording as a file. The picture area then shows <span class="ui">Downloading recording… 45%</span> with a progress bar, and the recording plays in the video player of the system, which has its own controls. The timeline cursor does not follow in that case. The downloaded files are kept in a cache of up to <code>500 MB</code> on the iPhone, so that the same recording does not have to be downloaded again; <span class="ui">Delete All Data</span> removes the cache. In place of the record button, the share button (<span class="ui">Share Recording</span>) offers the whole file; see <a class="xref" href="/guide/single.html#single-clip">“Recording a clip”</a>.</li>
+    <li><b>Background</b>: when the app leaves the foreground or the iPhone is locked, playback stops. When the app returns, playback resumes at the point it had reached.</li>
+  </ul>
+  <h4>Returning to the live picture</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap <span class="ui">Back to Live</span> in the controls bar.</p>
+      <p class="check"><b class="check-label">Check:</b> The live picture returns with the quality that was used before. The badge shows <span class="ui">LIVE</span>, the day changes to today on the clock of the device, the cursor moves to the current time of the device, and the speed returns to 1×.</p>
+    </li>
+  </ol>
+  <h4>At the end of the last recording</h4>
+  <p>When the playback passes the end of the last recording, the last picture stays on the screen, and a card with <span class="ui">End of recording</span> and <span class="ui">Back to Live</span> appears. This is not an error.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap <span class="ui">Back to Live</span> on the card.</p>
+      <p class="check"><b class="check-label">Check:</b> The live picture returns as described above.</p>
+      <figure class="phone"><img src="/guide/img/playback-end.jpg" alt="The picture area at the end of the last recording: the last frame with the End of recording card and the Back to Live button" decoding="async" width="900" height="1956" data-src="/guide/img/playback-end.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The end of the last recording</figcaption></figure>
+    </li>
+  </ol>
+
+  <h3 id="playback-speed">Playback speed</h3>
+  <p>The speed button is a round button at the lower right of the picture. It shows the current speed, 1× at normal speed. Each tap selects the next of four speeds, in the order 1×, 2×, 4×, 8× and back to 1×. The button is shown only during playback and only when the recording can be played faster; it appears a moment after the recording starts. Live pictures always run at normal speed.</p>
+  <figure class="phone clip"><video class="clip" aria-label="The speed button cycles through 1×, 2×, 4× and 8× and returns to 1×." muted="" loop="" playsinline="" preload="none" data-src="/guide/vid/rec-speed-chip.mp4" data-poster="/guide/img/rec-speed-chip.jpg" poster="/guide/img/rec-speed-chip.jpg"></video><figcaption>The speed button cycles through 1×, 2×, 4× and 8× and returns to 1×.</figcaption></figure>
+  <ol class="steps">
+    <li class="step">
+      <p>Start a recording, as described in <a class="xref" href="/guide/playback.html#playback-timeline">“Using the timeline”</a> or <a class="xref" href="/guide/playback.html#playback-list">“The list of recordings and the search for people”</a>.</p>
+      <p class="check"><b class="check-label">Check:</b> The speed button at the lower right of the picture shows 1×.</p>
+    </li>
+    <li class="step">
+      <p>Tap the speed button.</p>
+      <p class="check"><b class="check-label">Check:</b> The button shows 2× and is tinted. The picture reopens at the current position, and the time advances twice as fast. About one second of the picture is lost when the stream reopens.</p>
+      <figure class="phone"><img src="/guide/img/playback-2x.jpg" alt="Playback at double speed: the tinted speed button with 2× at the lower right of the picture and the badge PLAYBACK with the time" decoding="async" width="900" height="1956" data-src="/guide/img/playback-2x.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Playback at 2×</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap the speed button again.</p>
+      <p class="check"><b class="check-label">Check:</b> The button shows 4×, and the time advances four times as fast.</p>
+      <figure class="phone"><img src="/guide/img/playback-4x.jpg" alt="Playback at four times the speed: the speed button with 4× at the lower right of the picture" decoding="async" width="900" height="1956" data-src="/guide/img/playback-4x.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Playback at 4×</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap the speed button again.</p>
+      <p class="check"><b class="check-label">Check:</b> The button shows 8×, and the time advances eight times as fast.</p>
+    </li>
+    <li class="step">
+      <p>Tap the speed button again.</p>
+      <p class="check"><b class="check-label">Check:</b> The button shows 1×, and the recording plays at normal speed.</p>
+    </li>
+  </ol>
+  <ul>
+    <li>The speed stays selected when another recording or another time is chosen during the same playback. <span class="ui">Back to Live</span> returns it to 1×.</li>
+    <li>Sound plays at 1× only. Above 1×, the picture runs without sound.</li>
+    <li>A higher speed makes the device send the picture faster, which uses more bandwidth.</li>
+    <li>The button is not shown for devices that stream recordings in a way that does not allow a change of speed.</li>
+    <li>In landscape orientation, the speed button is part of the strip over the picture; see <a class="xref" href="/guide/playback.html#playback-landscape">“Playback in landscape”</a>. The notice for a device that cannot play faster is not shown there; the button only returns to 1×.</li>
+  </ul>
+  <div class="callout note">
+    <strong class="t">A device that cannot play faster</strong>
+    <p>Not every device accepts a faster speed. When the device cannot play the recording faster, the notice <span class="ui">This recorder can't play faster than normal speed.</span> appears above the button for about 4 seconds, and the button returns to 1×. The notice can take a few seconds to appear, because Cam Hub tries several ways of requesting the faster speed before it gives up. The same happens when the device accepts the request but the picture does not run faster. The recording continues at normal speed.</p>
+  </div>
+  <figure class="phone"><img src="/guide/img/playback-speed-notice.jpg" alt="The notice above the speed button, which has returned to 1×, over the picture of the single-camera view" decoding="async" width="900" height="1956" data-src="/guide/img/playback-speed-notice.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The notice for a device that cannot play faster</figcaption></figure>
+
+  <h3 id="playback-landscape">Playback in landscape</h3>
+  <p>Prerequisite: the rotation lock of the iPhone is off. On an iPad, the layout does not change with the orientation; the steps below apply to the iPhone. On a half-folded iPhone Duo, the timeline stays on the lower half; see <a class="xref" href="/guide/single.html#single-duo">“The view on a folded iPhone Duo”</a>.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Start a recording and turn the iPhone sideways.</p>
+      <p class="check"><b class="check-label">Check:</b> The picture fills the screen. A strip over the lower edge of the picture holds the badge <span class="ui">PLAYBACK 15:00:03</span>, the speed button, <span class="ui">Back to Live</span> and the timeline.</p>
+      <figure class="land"><img src="/guide/img/playback-landscape.jpg" alt="Playback in landscape: the picture over the whole screen with a strip at the lower edge that holds the playback badge, the speed button, Back to Live and the timeline" decoding="async" width="1600" height="736" data-src="/guide/img/playback-landscape.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>Playback in landscape</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Drag the timeline in the strip and lift the finger at the wanted time.</p>
+      <p class="check"><b class="check-label">Check:</b> The picture plays the recording from that time, as in upright orientation.</p>
+    </li>
+    <li class="step">
+      <p>Leave the strip untouched for about 5 seconds.</p>
+      <p class="check"><b class="check-label">Check:</b> The strip and the buttons at the top of the picture fade out. A tap on the picture shows them again.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Back to Live</span> in the strip, or turn the iPhone upright again.</p>
+      <p class="check"><b class="check-label">Check:</b> The live picture returns, or the upright layout with the recording panel is shown again.</p>
+    </li>
+  </ol>
+  <p>The strip appears only during playback, because a live picture has nothing to scrub. The day, the recording calendar, the list of recordings, <span class="ui">Snapshot</span> and the SD/HD switch are available in upright orientation only. The record button is at the top right of the picture; see <a class="xref" href="/guide/single.html#single-clip">“Recording a clip”</a>.</p>
+
+  <h3 id="playback-limits">What is not available</h3>
+  <ul>
+    <li>Playback for devices that were added through a brand from the list, for the sample cameras and for YouTube and Twitch streams; see <a class="xref" href="/guide/playback.html#playback-avail">“Where playback is available”</a>.</li>
+    <li>A recording calendar for devices that keep no daily index of their recordings.</li>
+    <li>A search for events other than people.</li>
+    <li>A timeline that spans more than the chosen day and the day before it.</li>
+    <li>Deleting recordings. To keep or send a part of a recording, record it as a clip of up to 10 minutes; see <a class="xref" href="/guide/single.html#single-clip">“Recording a clip”</a>. A snapshot always shows the current live picture.</li>
+    <li>A choice between SD and HD during playback, slow motion, reverse playback, and speeds other than 1×, 2×, 4× and 8×.</li>
+    <li>Sound at speeds above 1×.</li>
+    <li>A pause button, frame-by-frame stepping, jumps of a few seconds, a box for entering a time, buttons for the next or previous recording, and a free-text search.</li>
+    <li>Playback on Apple TV is described in <a class="xref" href="/guide/appletv.html">Chapter 14, “Apple TV”</a>.</li>
+  </ul>
+</section><nav class="guide-pager" aria-label="Contents"><a class="guide-prev" rel="prev" href="/guide/single.html"><span class="pager-dir">Previous chapter</span><span class="pager-title">6. Single-camera view</span></a><a class="guide-next" rel="next" href="/guide/lvm.html"><span class="pager-dir">Next chapter</span><span class="pager-title">8. LiveView Mix</span></a></nav></article>
+    </div>
+    <button class="guide-top" id="guide-top" type="button" aria-label="Back to top"></button>
+  </main>
+  <footer class="footer"><span data-i18n="footer">Copyright © 2026 ALMX. All rights reserved.</span><nav><a href="/guide.html" data-i18n="navGuide">Manual</a><a href="/devices.html" data-i18n="navDevices">Device differences</a><a href="/privacy.html" data-i18n="navPrivacy">Privacy</a><a href="/terms.html" data-i18n="navTerms">Terms</a><a class="store-link" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeCTA">Download on the App Store</a></nav><nav class="language-links" id="language-links" aria-label="Language" data-i18n-aria="languageLabel"><a href="/guide/playback.html" hreflang="en" lang="en" data-language-link="en" aria-current="true">English</a><a href="/zh-Hant/guide/playback.html" hreflang="zh-Hant" lang="zh-Hant" data-language-link="zh-Hant">繁體中文</a><a href="/zh-Hans/guide/playback.html" hreflang="zh-Hans" lang="zh-Hans" data-language-link="zh-Hans">简体中文</a><a href="/ja/guide/playback.html" hreflang="ja" lang="ja" data-language-link="ja">日本語</a><a href="/ko/guide/playback.html" hreflang="ko" lang="ko" data-language-link="ko">한국어</a><a href="/de/guide/playback.html" hreflang="de" lang="de" data-language-link="de">Deutsch</a><a href="/es/guide/playback.html" hreflang="es" lang="es" data-language-link="es">Español</a><a href="/es-MX/guide/playback.html" hreflang="es-MX" lang="es-MX" data-language-link="es-MX">Español (México)</a><a href="/fr/guide/playback.html" hreflang="fr" lang="fr" data-language-link="fr">Français</a><a href="/sl/guide/playback.html" hreflang="sl" lang="sl" data-language-link="sl">Slovenščina</a><a href="/ar/guide/playback.html" hreflang="ar" lang="ar" data-language-link="ar">العربية</a></nav></footer>
+  <script src="/additional-locales.js?v=20261103-sl"></script>
+  <script src="/site.js?v=20261112-1"></script>
+
+
+</body></html>

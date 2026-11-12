@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="zh-Hant" dir="ltr"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="apple-itunes-app" content="app-id=6792057195"><meta name="color-scheme" content="dark light">
+  <meta name="description" content="本章依症狀整理 Cam Hub 的空白畫面、訊息、權限要求與通知各代表什麼、可能的原因與處理方式。加入設備時的連線失敗，已在「加入失敗時的檢查清單」說明，此處不重複。">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="Cam Hub"><meta property="og:image" content="https://cam-hub.almx.cc/assets/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+  <title>疑難排解 — Cam Hub 操作手冊</title><link rel="icon" href="/assets/icon-48.png" sizes="48x48"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/icon-180.png"><link rel="stylesheet" href="/styles.css?v=20261112-1"><link rel="stylesheet" href="/guide.css?v=20261030-1">
+<meta property="og:description" content="本章依症狀整理 Cam Hub 的空白畫面、訊息、權限要求與通知各代表什麼、可能的原因與處理方式。加入設備時的連線失敗，已在「加入失敗時的檢查清單」說明，此處不重複。"><link rel="canonical" href="https://cam-hub.almx.cc/zh-Hant/guide/trouble.html"><link rel="alternate" hreflang="x-default" href="https://cam-hub.almx.cc/guide/trouble.html"><link rel="alternate" hreflang="en" href="https://cam-hub.almx.cc/guide/trouble.html"><link rel="alternate" hreflang="zh-Hant" href="https://cam-hub.almx.cc/zh-Hant/guide/trouble.html"><link rel="alternate" hreflang="zh-Hans" href="https://cam-hub.almx.cc/zh-Hans/guide/trouble.html"><link rel="alternate" hreflang="ja" href="https://cam-hub.almx.cc/ja/guide/trouble.html"><link rel="alternate" hreflang="ko" href="https://cam-hub.almx.cc/ko/guide/trouble.html"><link rel="alternate" hreflang="de" href="https://cam-hub.almx.cc/de/guide/trouble.html"><link rel="alternate" hreflang="es" href="https://cam-hub.almx.cc/es/guide/trouble.html"><link rel="alternate" hreflang="es-MX" href="https://cam-hub.almx.cc/es-MX/guide/trouble.html"><link rel="alternate" hreflang="fr" href="https://cam-hub.almx.cc/fr/guide/trouble.html"><link rel="alternate" hreflang="sl" href="https://cam-hub.almx.cc/sl/guide/trouble.html"><link rel="alternate" hreflang="ar" href="https://cam-hub.almx.cc/ar/guide/trouble.html"><meta property="og:url" content="https://cam-hub.almx.cc/zh-Hant/guide/trouble.html"><meta property="og:title" content="疑難排解 — Cam Hub 操作手冊"></head>
+<body data-page="guide">
+  <header class="topbar" aria-label="Site header">
+    <a class="brand" href="/zh-Hant/"><img src="/assets/icon-96.png" alt="" width="42" height="42"><span><strong>Cam<wbr data-phrase-break="">&nbsp;<wbr data-phrase-break="">Hub</strong><small data-i18n="topline">操作<wbr data-phrase-break="">手冊</small></span></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-controls" data-i18n-aria="menuLabel" aria-label="開啟選單"><span></span><span></span><span></span><span class="sr-only" data-i18n="menuLabel">開啟選單</span></button>
+    <div class="topbar-controls" id="site-controls"><nav class="navlinks" aria-label="Primary"><a href="/zh-Hant/" data-nav="home" data-i18n="navHome">首頁</a><a href="/zh-Hant/product.html" data-nav="product" data-i18n="navProduct">功能<wbr data-phrase-break="">介紹</a><a href="/zh-Hant/guide.html" data-nav="guide" data-i18n="navGuide" aria-current="page">操作<wbr data-phrase-break="">手冊</a><a href="/zh-Hant/support.html" data-nav="support" data-i18n="navSupport">支援</a><a href="/zh-Hant/privacy.html" data-nav="privacy" data-i18n="navPrivacy">隱私權</a><a href="/zh-Hant/terms.html" data-nav="terms" data-i18n="navTerms">使用<wbr data-phrase-break="">條款</a></nav><div class="pickers"><label><span class="sr-only" data-i18n="themeLabel">外觀</span><select id="themeSelect" aria-label="Theme"><option value="auto" data-i18n="themeAuto" selected="">自動</option><option value="light" data-i18n="themeLight">淺色</option><option value="dark" data-i18n="themeDark">深色</option></select></label><label><span class="sr-only" data-i18n="languageLabel">語言</span><select id="languageSelect" aria-label="Language"><option value="en">English</option><option value="zh-Hant" selected="">繁體中文</option><option value="zh-Hans">简体中文</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="de">Deutsch</option><option value="es">Español</option><option value="es-MX">Español (México)</option><option value="fr">Français</option><option value="sl">Slovenščina</option><option value="ar">العربية</option></select></label></div><a class="store-pill" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeShort">下載<wbr data-phrase-break=""> <wbr data-phrase-break="">App</a></div>
+  </header>
+  <main class="inner-page guide" style="--g-topbar: 76px; --g-offset: 88px;">
+    <section class="page-hero"><div class="eyebrow" data-i18n="eyebrow">OPERATION MANUAL</div><h1 data-i18n="title">疑難排解</h1><p class="summary" data-i18n="summary">從<wbr data-phrase-break="">加入<wbr data-phrase-break="">設備、<wbr data-phrase-break="">即時<wbr data-phrase-break="">畫面<wbr data-phrase-break="">與<wbr data-phrase-break="">錄影<wbr data-phrase-break="">回<wbr data-phrase-break="">放，<wbr data-phrase-break="">到<wbr data-phrase-break=""> <wbr data-phrase-break="">LiveView<wbr data-phrase-break=""> <wbr data-phrase-break="">Mix<wbr data-phrase-break=""> <wbr data-phrase-break="">多<wbr data-phrase-break="">機<wbr data-phrase-break="">牆、<wbr data-phrase-break="">分享<wbr data-phrase-break="">與<wbr data-phrase-break="">備份，<wbr data-phrase-break="">依序<wbr data-phrase-break="">說明<wbr data-phrase-break=""> <wbr data-phrase-break="">Cam<wbr data-phrase-break="">&nbsp;<wbr data-phrase-break="">Hub<wbr data-phrase-break=""> <wbr data-phrase-break="">的<wbr data-phrase-break="">操作<wbr data-phrase-break="">方式。</p></section>
+    <p class="guide-notice" id="guide-notice" role="status" hidden=""></p>
+    <div id="guide-sentinel" aria-hidden="true"></div>
+    <div class="guide-layout has-toc" id="guide-layout" lang="zh-Hant" dir="ltr">
+      <aside class="guide-side" id="guide-side">
+        <button class="guide-toc-toggle" id="guide-toc-toggle" type="button" aria-expanded="false" aria-controls="guide-toc" lang="zh-Hant" dir="ltr"><span class="guide-toc-label" data-i18n="tocLabel">目錄</span><span class="guide-toc-current" id="guide-toc-current">15. 疑難排解</span></button>
+        <nav class="guide-toc" id="guide-toc" aria-label="目錄"><ol><li><a href="/zh-Hant/guide.html"><span class="toc-num">1</span><span>快速開始</span></a><ol><li><a href="/zh-Hant/guide.html#start-prepare"><span>事前準備</span></a></li><li><a href="/zh-Hant/guide.html#start-path"><span>最短流程</span></a></li><li><a href="/zh-Hant/guide.html#start-demo"><span>先用範例攝影機試用</span></a></li></ol></li><li><a href="/zh-Hant/guide/tour.html"><span class="toc-num">2</span><span>認識五個分頁</span></a><ol><li><a href="/zh-Hant/guide/tour.html#tour-tabs"><span>五個分頁一覽</span></a></li><li><a href="/zh-Hant/guide/tour.html#tour-launch"><span>啟動時開啟哪個畫面</span></a></li><li><a href="/zh-Hant/guide/tour.html#tour-look"><span>外觀與語言</span></a></li><li><a href="/zh-Hant/guide/tour.html#tour-rotate"><span>旋轉裝置</span></a></li><li><a href="/zh-Hant/guide/tour.html#tour-duo"><span>iPhone Duo</span></a></li><li><a href="/zh-Hant/guide/tour.html#tour-awake"><span>螢幕、背景與通知</span></a></li></ol></li><li><a href="/zh-Hant/guide/add.html"><span class="toc-num">3</span><span>加入設備</span></a><ol><li><a href="/zh-Hant/guide/add.html#add-form"><span>新增設備表單</span></a></li><li><a href="/zh-Hant/guide/add.html#add-auto"><span>不選品牌直接加入</span></a></li><li><a href="/zh-Hant/guide/add.html#add-methods"><span>連線方式的選擇</span></a></li><li><a href="/zh-Hant/guide/add.html#add-https"><span>透過 HTTPS 加入設備</span></a></li><li><a href="/zh-Hant/guide/add.html#add-streams"><span>加入 YouTube 直播與 Twitch 頻道</span></a></li><li><a href="/zh-Hant/guide/add.html#add-failed"><span>加入失敗時的檢查清單</span></a></li><li><a href="/zh-Hant/guide/add.html#add-report"><span>設備報告（實驗性功能）</span></a></li><li><a href="/zh-Hant/guide/add.html#add-scan"><span>以網段掃描尋找設備</span></a></li></ol></li><li><a href="/zh-Hant/guide/devices.html"><span class="toc-num">4</span><span>設備頁與通道</span></a><ol><li><a href="/zh-Hant/guide/devices.html#devices-list"><span>設備清單</span></a></li><li><a href="/zh-Hant/guide/devices.html#devices-page"><span>設備頁</span></a></li><li><a href="/zh-Hant/guide/devices.html#devices-credentials"><span>變更設備的使用者名稱與密碼</span></a></li><li><a href="/zh-Hant/guide/devices.html#devices-password-missing"><span>沒有儲存密碼的設備</span></a></li><li><a href="/zh-Hant/guide/devices.html#devices-https"><span>已儲存設備的 HTTPS</span></a></li><li><a href="/zh-Hant/guide/devices.html#devices-health"><span>硬碟健康</span></a></li><li><a href="/zh-Hant/guide/devices.html#devices-streams"><span>YouTube 直播與 Twitch 頻道</span></a></li><li><a href="/zh-Hant/guide/devices.html#devices-states"><span>縮圖的狀態</span></a></li><li><a href="/zh-Hant/guide/devices.html#devices-menu"><span>通道選項（長按）</span></a></li><li><a href="/zh-Hant/guide/devices.html#devices-plan"><span>方案限額與啟用通道</span></a></li><li><a href="/zh-Hant/guide/devices.html#devices-choose"><span>選擇顯示哪些攝影機</span></a></li><li><a href="/zh-Hant/guide/devices.html#devices-fullwall"><span>設備的全螢幕牆</span></a></li><li><a href="/zh-Hant/guide/devices.html#devices-quality"><span>設備畫面上的 SD 與 HD</span></a></li></ol></li><li><a href="/zh-Hant/guide/live.html"><span class="toc-num">5</span><span>即時分頁與全螢幕牆</span></a><ol><li><a href="/zh-Hant/guide/live.html#live-tab"><span>即時分頁</span></a></li><li><a href="/zh-Hant/guide/live.html#live-quality"><span>牆面上的 SD 與 HD</span></a></li><li><a href="/zh-Hant/guide/live.html#live-wall"><span>全螢幕牆</span></a></li><li><a href="/zh-Hant/guide/live.html#live-hide"><span>隱藏無訊號攝影機</span></a></li></ol></li><li><a href="/zh-Hant/guide/single.html"><span class="toc-num">6</span><span>單機畫面</span></a><ol><li><a href="/zh-Hant/guide/single.html#single-open"><span>開啟單機畫面</span></a></li><li><a href="/zh-Hant/guide/single.html#single-screen"><span>畫面的組成</span></a></li><li><a href="/zh-Hant/guide/single.html#single-zoom"><span>放大與平移</span></a></li><li><a href="/zh-Hant/guide/single.html#single-controls"><span>快照、聲音與畫質</span></a></li><li><a href="/zh-Hant/guide/single.html#single-clip"><span>錄製片段</span></a></li><li><a href="/zh-Hant/guide/single.html#single-talk"><span>雙向對講</span></a></li><li><a href="/zh-Hant/guide/single.html#single-picture"><span>黑邊、旋轉與橫向</span></a></li><li><a href="/zh-Hant/guide/single.html#single-ptz"><span>PTZ 控制：移動鏡頭</span></a></li><li><a href="/zh-Hant/guide/single.html#single-window"><span>在獨立視窗中顯示攝影機</span></a></li><li><a href="/zh-Hant/guide/single.html#single-duo"><span>摺疊 iPhone Duo 時的單機畫面</span></a></li><li><a href="/zh-Hant/guide/single.html#single-streams"><span>YouTube 與 Twitch 直播</span></a></li><li><a href="/zh-Hant/guide/single.html#single-states"><span>連線狀態與訊息</span></a></li><li><a href="/zh-Hant/guide/single.html#single-limits"><span>不提供的功能</span></a></li></ol></li><li><a href="/zh-Hant/guide/playback.html"><span class="toc-num">7</span><span>錄影回放與加速</span></a><ol><li><a href="/zh-Hant/guide/playback.html#playback-avail"><span>哪些設備提供錄影回放</span></a></li><li><a href="/zh-Hant/guide/playback.html#playback-day"><span>選擇日期</span></a></li><li><a href="/zh-Hant/guide/playback.html#playback-calendar"><span>錄影日曆</span></a></li><li><a href="/zh-Hant/guide/playback.html#playback-timeline"><span>使用時間軸</span></a></li><li><a href="/zh-Hant/guide/playback.html#playback-list"><span>錄影清單與人員搜尋</span></a></li><li><a href="/zh-Hant/guide/playback.html#playback-playing"><span>播放錄影期間</span></a></li><li><a href="/zh-Hant/guide/playback.html#playback-speed"><span>播放速度</span></a></li><li><a href="/zh-Hant/guide/playback.html#playback-landscape"><span>橫向的錄影回放</span></a></li><li><a href="/zh-Hant/guide/playback.html#playback-limits"><span>不提供的功能</span></a></li></ol></li><li><a href="/zh-Hant/guide/lvm.html"><span class="toc-num">8</span><span>LiveView Mix 多機牆</span></a><ol><li><a href="/zh-Hant/guide/lvm.html#lvm-tab"><span>LiveView Mix 分頁與預覽</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-first"><span>建立第一面六支攝影機的牆</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-pick"><span>選擇攝影機與畫質</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-layout"><span>調整版面</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-custom"><span>自己畫版面</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-special"><span>特殊版面：大小混排的牆</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-arrange"><span>排列牆面與格子</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-move"><span>把格子移到空格</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-slots"><span>攝影機以外，格子可以放什麼</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-watermark"><span>浮水印</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-fit"><span>黑邊、滿版畫面與裝置角度</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-pages"><span>直向頁面</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-canvases"><span>iPhone Duo 的兩張畫布</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-wall"><span>全螢幕牆面</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-closeup"><span>開啟單一攝影機</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-streams"><span>牆上的 YouTube 與 Twitch 直播</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-states"><span>格子無法顯示攝影機時</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-limits"><span>方案限制對牆面的影響</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-settings"><span>設定中的 LiveView Mix</span></a></li><li><a href="/zh-Hant/guide/lvm.html#lvm-tv"><span>Apple TV 上的差異</span></a></li></ol></li><li><a href="/zh-Hant/guide/webhook.html"><span class="toc-num">9</span><span>控制面板與 Webhook</span></a><ol><li><a href="/zh-Hant/guide/webhook.html#webhook-what"><span>控制面板的用途與運作方式</span></a></li><li><a href="/zh-Hant/guide/webhook.html#webhook-add"><span>在牆上加入控制面板</span></a></li><li><a href="/zh-Hant/guide/webhook.html#webhook-templates"><span>範本</span></a></li><li><a href="/zh-Hant/guide/webhook.html#webhook-fields"><span>面板設定的項目</span></a></li><li><a href="/zh-Hant/guide/webhook.html#webhook-button"><span>設定按鈕</span></a></li><li><a href="/zh-Hant/guide/webhook.html#webhook-use"><span>按下按鈕與確認結果</span></a></li><li><a href="/zh-Hant/guide/webhook.html#webhook-wall"><span>面板在牆上的樣子</span></a></li><li><a href="/zh-Hant/guide/webhook.html#webhook-watch"><span>Apple Watch 上的按鈕</span></a></li><li><a href="/zh-Hant/guide/webhook.html#ha"><span>搭配 Home Assistant</span></a></li><li><a href="/zh-Hant/guide/webhook.html#webhook-security"><span>安全注意事項</span></a></li></ol></li><li><a href="/zh-Hant/guide/share.html"><span class="toc-num">10</span><span>分享與備份</span></a><ol><li><a href="/zh-Hant/guide/share.html#share-choose"><span>兩種方式的比較</span></a></li><li><a href="/zh-Hant/guide/share.html#share-export"><span>匯出攝影機（產生代碼）</span></a></li><li><a href="/zh-Hant/guide/share.html#share-lock"><span>鎖定代碼</span></a></li><li><a href="/zh-Hant/guide/share.html#share-import"><span>匯入攝影機</span></a></li><li><a href="/zh-Hant/guide/share.html#share-contents"><span>備份與代碼的內容</span></a></li><li><a href="/zh-Hant/guide/share.html#share-icloud"><span>備份到 iCloud</span></a></li><li><a href="/zh-Hant/guide/share.html#share-versions"><span>多份具名備份：重新命名與刪除</span></a></li><li><a href="/zh-Hant/guide/share.html#share-restore"><span>從 iCloud 還原</span></a></li><li><a href="/zh-Hant/guide/share.html#share-delete"><span>刪除所有 iCloud 備份</span></a></li><li><a href="/zh-Hant/guide/share.html#share-newphone"><span>把設備與牆搬到新手機</span></a></li><li><a href="/zh-Hant/guide/share.html#share-appletv"><span>帶到 Apple TV</span></a></li></ol></li><li><a href="/zh-Hant/guide/plans.html"><span class="toc-num">11</span><span>方案與限制</span></a><ol><li><a href="/zh-Hant/guide/plans.html#plans-tiers"><span>各方案的額度</span></a></li><li><a href="/zh-Hant/guide/plans.html#plans-stack"><span>兩組方案如何組合</span></a></li><li><a href="/zh-Hant/guide/plans.html#plans-count"><span>哪些項目占用額度</span></a></li><li><a href="/zh-Hant/guide/plans.html#plans-examples"><span>組合範例</span></a></li><li><a href="/zh-Hant/guide/plans.html#plans-choose"><span>選擇顯示哪些攝影機</span></a></li><li><a href="/zh-Hant/guide/plans.html#plans-subscribe"><span>訂閱、還原購買與兌換代碼</span></a></li><li><a href="/zh-Hant/guide/plans.html#plans-lapse"><span>方案到期或降級時</span></a></li></ol></li><li><a href="/zh-Hant/guide/tools.html"><span class="toc-num">12</span><span>工具分頁</span></a><ol><li><a href="/zh-Hant/guide/tools.html#tools-overview"><span>工具分頁的內容</span></a></li><li><a href="/zh-Hant/guide/tools.html#tools-speedometer"><span>時速表與羅盤</span></a></li></ol></li><li><a href="/zh-Hant/guide/settings.html"><span class="toc-num">13</span><span>設定</span></a><ol><li><a href="/zh-Hant/guide/settings.html#settings-overview"><span>設定分頁的區塊</span></a></li><li><a href="/zh-Hant/guide/settings.html#settings-subscription"><span>訂閱</span></a></li><li><a href="/zh-Hant/guide/settings.html#settings-quality"><span>預設畫質</span></a></li><li><a href="/zh-Hant/guide/settings.html#settings-picture"><span>畫面：黑邊與滿版</span></a></li><li><a href="/zh-Hant/guide/settings.html#settings-hide"><span>隱藏無訊號攝影機</span></a></li><li><a href="/zh-Hant/guide/settings.html#settings-lvm"><span>LiveView Mix、其頁面與啟動時開啟</span></a></li><li><a href="/zh-Hant/guide/settings.html#settings-backup"><span>攝影機的備份與分享</span></a></li><li><a href="/zh-Hant/guide/settings.html#settings-language"><span>語言</span></a></li><li><a href="/zh-Hant/guide/settings.html#settings-reset"><span>重設：還原預設設定、刪除所有資料、刪除 iCloud 備份</span></a></li><li><a href="/zh-Hant/guide/settings.html#settings-legal"><span>使用條款與隱私權政策</span></a></li><li><a href="/zh-Hant/guide/settings.html#settings-about"><span>關於、操作手冊，以及設定中沒有的項目</span></a></li></ol></li><li><a href="/zh-Hant/guide/appletv.html"><span class="toc-num">14</span><span>Apple TV</span></a><ol><li><a href="/zh-Hant/guide/appletv.html#appletv-prepare"><span>先在 iPhone 或 iPad 設定</span></a></li><li><a href="/zh-Hant/guide/appletv.html#appletv-bring"><span>把設定帶到 Apple TV</span></a></li><li><a href="/zh-Hant/guide/appletv.html#appletv-differs"><span>Apple TV 上有哪些不同</span></a></li></ol></li><li class="is-current"><a href="/zh-Hant/guide/trouble.html" class="is-active" aria-current="location"><span class="toc-num">15</span><span>疑難排解</span></a><ol><li><a href="/zh-Hant/guide/trouble.html#trouble-start"><span>從哪裡開始</span></a></li><li><a href="/zh-Hant/guide/trouble.html#trouble-states"><span>空白畫面的說明</span></a></li><li><a href="/zh-Hant/guide/trouble.html#trouble-add"><span>設備已加入，但無法連線</span></a></li><li><a href="/zh-Hant/guide/trouble.html#trouble-live"><span>即時影像</span></a></li><li><a href="/zh-Hant/guide/trouble.html#trouble-playback"><span>錄影回放</span></a></li><li><a href="/zh-Hant/guide/trouble.html#trouble-lvm"><span>LiveView Mix</span></a></li><li><a href="/zh-Hant/guide/trouble.html#trouble-streams"><span>YouTube 與 Twitch</span></a></li><li><a href="/zh-Hant/guide/trouble.html#trouble-panels"><span>控制面板與 Webhook</span></a></li><li><a href="/zh-Hant/guide/trouble.html#trouble-health"><span>硬碟健康</span></a></li><li><a href="/zh-Hant/guide/trouble.html#trouble-share"><span>分享、匯入與 iCloud 備份</span></a></li><li><a href="/zh-Hant/guide/trouble.html#trouble-plans"><span>方案與購買</span></a></li><li><a href="/zh-Hant/guide/trouble.html#trouble-errors"><span>其他錯誤訊息</span></a></li><li><a href="/zh-Hant/guide/trouble.html#trouble-permissions"><span>權限要求與系統對話框</span></a></li><li><a href="/zh-Hant/guide/trouble.html#trouble-contact"><span>聯絡開發者</span></a></li><li><a href="/zh-Hant/guide/trouble.html#trouble-faq"><span>常見問題</span></a></li></ol></li><li><a href="/zh-Hant/guide/brands.html"><span class="toc-num">16</span><span>支援的品牌與連線方式</span></a><ol><li><a href="/zh-Hant/guide/brands.html#brands-methods"><span>連線方式</span></a></li><li><a href="/zh-Hant/guide/brands.html#brands-matrix"><span>各方式可使用的功能</span></a></li><li><a href="/zh-Hant/guide/brands.html#brands-profiles"><span>清單中的品牌</span></a></li><li><a href="/zh-Hant/guide/brands.html#brands-requirements"><span>需求與限制</span></a></li><li><a href="/zh-Hant/guide/brands.html#brands-recorders"><span>攝影機與錄影主機的判別</span></a></li><li><a href="/zh-Hant/guide/brands.html#brands-prepare"><span>在設備上要準備什麼</span></a></li><li><a href="/zh-Hant/guide/brands.html#brands-activate"><span>開通新設備</span></a></li><li><a href="/zh-Hant/guide/brands.html#brands-compat"><span>App 內的相容性參考</span></a></li></ol></li><li><a href="/zh-Hant/guide/about.html" class="no-num"><span>關於這份手冊</span></a><ol><li><a href="/zh-Hant/guide/about.html#about-scope"><span>適用範圍</span></a></li><li><a href="/zh-Hant/guide/about.html#about-conventions"><span>慣例</span></a></li><li><a href="/zh-Hant/guide/about.html#about-help"><span>取得協助</span></a></li></ol></li></ol></nav>
+      </aside>
+      <article class="guide-article" id="guide-content"><section class="chapter" id="trouble">
+  <h2><span class="num">15</span>疑難排解</h2>
+  <p class="lead">本章依症狀整理 Cam Hub 的空白畫面、訊息、權限要求與通知各代表什麼、可能的原因與處理方式。加入設備時的連線失敗，已在<a class="xref" href="/zh-Hant/guide/add.html#add-failed">「加入失敗時的檢查清單」</a>說明，此處不重複。</p>
+
+  <h3 id="trouble-start">從哪裡開始</h3>
+  <p>多數連線症狀出自四種原因之一。閱讀以下各節之前，請依序檢查。</p>
+  <ol>
+    <li>iPhone 或 iPad 與設備連上同一個 Wi‑Fi。訪客網路、獨立的 VLAN、路由器的連線裝置隔離功能，以及手機上的 VPN，都會擋住連線。</li>
+    <li>Cam Hub 已獲准使用本地網路，見<a class="xref" href="/zh-Hant/guide/trouble.html#trouble-permissions">「權限要求與系統對話框」</a>。</li>
+    <li>設備已通電，且仍使用輸入 Cam Hub 的位址。路由器重新啟動後，可能給設備另一個位址；固定位址可避免這種情況。</li>
+    <li>帳號與密碼在設備上仍然有效。輸入錯誤多次後，設備可能暫時鎖定該帳號。</li>
+  </ol>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>症狀</th><th>參考章節</th></tr></thead>
+    <tbody>
+      <tr><td data-label="症狀">無法加入設備，或連線指示符號為紅色</td><td data-label="參考章節"><a class="xref" href="/zh-Hant/guide/add.html#add-failed">「加入失敗時的檢查清單」</a>、<a class="xref" href="/zh-Hant/guide/trouble.html#trouble-add">「設備已加入，但無法連線」</a></td></tr>
+      <tr><td data-label="症狀">畫面是空的，只有標題與一句說明</td><td data-label="參考章節"><a class="xref" href="/zh-Hant/guide/trouble.html#trouble-states">「空白畫面的說明」</a></td></tr>
+      <tr><td data-label="症狀">攝影機沒有畫面、畫面全黑、出現錯誤訊息或沒有聲音，或無法透過攝影機對講</td><td data-label="參考章節"><a class="xref" href="/zh-Hant/guide/trouble.html#trouble-live">「即時影像」</a></td></tr>
+      <tr><td data-label="症狀">錄影清單是空的、時間不一致，或無法加速播放</td><td data-label="參考章節"><a class="xref" href="/zh-Hant/guide/trouble.html#trouble-playback">「錄影回放」</a></td></tr>
+      <tr><td data-label="症狀">LiveView Mix 牆的格子顯示狀態文字，或牆面變了樣</td><td data-label="參考章節"><a class="xref" href="/zh-Hant/guide/trouble.html#trouble-lvm">「LiveView Mix」</a></td></tr>
+      <tr><td data-label="症狀">YouTube 或 Twitch 的格子只顯示名稱與一句說明，沒有播放</td><td data-label="參考章節"><a class="xref" href="/zh-Hant/guide/trouble.html#trouble-streams">「YouTube 與 Twitch」</a></td></tr>
+      <tr><td data-label="症狀">控制面板的按鈕出現橘色三角形</td><td data-label="參考章節"><a class="xref" href="/zh-Hant/guide/trouble.html#trouble-panels">「控制面板與 Webhook」</a></td></tr>
+      <tr><td data-label="症狀">硬碟健康頁面顯示訊息，沒有顯示硬碟</td><td data-label="參考章節"><a class="xref" href="/zh-Hant/guide/trouble.html#trouble-health">「硬碟健康」</a></td></tr>
+      <tr><td data-label="症狀">代碼或備份無法匯入或還原</td><td data-label="參考章節"><a class="xref" href="/zh-Hant/guide/trouble.html#trouble-share">「分享、匯入與 iCloud 備份」</a></td></tr>
+      <tr><td data-label="症狀">突然出現鎖頭、方案頁或方案相關訊息</td><td data-label="參考章節"><a class="xref" href="/zh-Hant/guide/trouble.html#trouble-plans">「方案與購買」</a></td></tr>
+      <tr><td data-label="症狀">訊息句子不在上列各項</td><td data-label="參考章節"><a class="xref" href="/zh-Hant/guide/trouble.html#trouble-errors">「其他錯誤訊息」</a></td></tr>
+      <tr><td data-label="症狀">系統要求權限，或權限已被拒絕</td><td data-label="參考章節"><a class="xref" href="/zh-Hant/guide/trouble.html#trouble-permissions">「權限要求與系統對話框」</a></td></tr>
+      <tr><td data-label="症狀">以上皆不適用</td><td data-label="參考章節"><a class="xref" href="/zh-Hant/guide/trouble.html#trouble-contact">「聯絡開發者」</a>、<a class="xref" href="/zh-Hant/guide/trouble.html#trouble-faq">「常見問題」</a></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="trouble-states">空白畫面的說明</h3>
+  <p>空白畫面不是錯誤。它表示尚未設定任何內容，或依目前的設定沒有東西可以顯示。</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>位置</th><th>畫面顯示</th><th>意義與處理</th></tr></thead>
+    <tbody>
+      <tr><td data-label="位置"><span class="ui">設備</span>分頁</td><td data-label="畫面顯示"><span class="ui">沒有設備</span>與<span class="ui ui-long">新增第一台攝影機或錄影主機，開始使用。</span></td><td data-label="意義與處理">尚未加入任何設備。點選<span class="ui">新增設備</span>，見<a class="xref" href="/zh-Hant/guide/add.html#add-form">「新增設備表單」</a>。</td></tr>
+      <tr><td data-label="位置"><span class="ui">即時</span>分頁</td><td data-label="畫面顯示"><span class="ui">沒有設備</span>與<span class="ui">請先在「設備」分頁新增設備。</span></td><td data-label="意義與處理">尚無設備。請先在<span class="ui">設備</span>分頁新增。</td></tr>
+      <tr><td data-label="位置"><span class="ui">即時</span>分頁</td><td data-label="畫面顯示"><span class="ui">沒有已啟用的攝影機</span>與<span class="ui">請在設備頁面啟用攝影機。</span></td><td data-label="意義與處理">所選設備沒有已啟用的通道，或<span class="ui">隱藏無訊號攝影機</span>隱藏了全部通道。依<a class="xref" href="/zh-Hant/guide/devices.html#devices-menu">「通道選項（長按）」</a>啟用通道、關閉<span class="ui">隱藏無訊號攝影機</span>，或以左上角的選單改選其他設備，見<a class="xref" href="/zh-Hant/guide/live.html#live-tab">「即時分頁」</a>。</td></tr>
+      <tr><td data-label="位置">設備頁</td><td data-label="畫面顯示"><span class="ui">找不到攝影機。</span></td><td data-label="意義與處理">設備沒有回報任何通道。在頁面向下拉動，重新讀取通道清單，並檢查連線與設備，見<a class="xref" href="/zh-Hant/guide/devices.html#devices-page">「設備頁」</a>。</td></tr>
+      <tr><td data-label="位置"><span class="ui">LiveView Mix</span>分頁</td><td data-label="畫面顯示"><span class="ui">LiveView Mix</span>、<span class="ui ui-long">挑選不同設備的攝影機，它們就會一起出現在這面牆上。</span>與按鈕<span class="ui">設定 LiveView Mix</span></td><td data-label="意義與處理">尚未設定牆面。點選<span class="ui">設定 LiveView Mix</span>，見<a class="xref" href="/zh-Hant/guide/lvm.html#lvm-tab">「LiveView Mix 分頁與預覽」</a>。</td></tr>
+      <tr><td data-label="位置">LiveView Mix 牆</td><td data-label="畫面顯示"><span class="ui">LiveView Mix 是空的</span></td><td data-label="意義與處理">牆上沒有任何格子。到<span class="path"><span class="ui">設定</span> › <span class="ui">LiveView Mix</span></span>新增攝影機。</td></tr>
+      <tr><td data-label="位置">LiveView Mix 牆</td><td data-label="畫面顯示"><span class="ui">這些攝影機不在這台裝置上</span></td><td data-label="意義與處理">牆上每個格子指向的攝影機，這台裝置都沒有，例如在沒有這些設備的裝置上還原之後。請重新加入設備，或重新選擇攝影機，見<a class="xref" href="/zh-Hant/guide/lvm.html#lvm-pick">「選擇攝影機與畫質」</a>。</td></tr>
+      <tr><td data-label="位置"><span class="ui">選擇攝影機</span>與<span class="ui">選擇顯示哪些攝影機</span></td><td data-label="畫面顯示"><span class="ui">沒有設備</span></td><td data-label="意義與處理">尚無設備。請先新增設備。</td></tr>
+      <tr><td data-label="位置"><span class="ui">工具</span>分頁的掃描</td><td data-label="畫面顯示"><span class="ui">掃描中…</span>與<span class="ui">尚未找到設備。</span></td><td data-label="意義與處理">掃描進行中，或沒有找到任何設備。結果為空時，見<a class="xref" href="/zh-Hant/guide/add.html#add-scan">「以網段掃描尋找設備」</a>與<a class="xref" href="/zh-Hant/guide/trouble.html#trouble-permissions">「權限要求與系統對話框」</a>。</td></tr>
+      <tr><td data-label="位置">錄影面板</td><td data-label="畫面顯示"><span class="ui">正在載入錄影…</span>、<span class="ui">這一天沒有連續錄影。</span>、<span class="ui">這一天未偵測到人員。</span>、<span class="ui">選取的時間點沒有錄影。</span>與<span class="ui">錄影已播完</span></td><td data-label="意義與處理">見<a class="xref" href="/zh-Hant/guide/trouble.html#trouble-playback">「錄影回放」</a>。</td></tr>
+      <tr><td data-label="位置">iCloud 備份與還原頁面</td><td data-label="畫面顯示"><span class="ui">iCloud 中還沒有備份。</span>與<span class="ui ui-long">iCloud 中找不到備份。請先用登入相同 Apple 帳號的 iPhone 進行備份。</span></td><td data-label="意義與處理">見<a class="xref" href="/zh-Hant/guide/trouble.html#trouble-share">「分享、匯入與 iCloud 備份」</a>。</td></tr>
+      <tr><td data-label="位置"><span class="ui">硬碟健康</span></td><td data-label="畫面顯示"><span class="ui">此設備沒有硬碟。</span></td><td data-label="意義與處理">設備沒有回報任何硬碟。請在設備上確認已裝上硬碟且已被辨識，見<a class="xref" href="/zh-Hant/guide/trouble.html#trouble-health">「硬碟健康」</a>。</td></tr>
+      <tr><td data-label="位置">縮圖與格子</td><td data-label="畫面顯示"><span class="ui">已暫停</span>、<span class="ui">已停用</span>、<span class="ui">無訊號</span>、<span class="ui">方案未包含</span>、<span class="ui">攝影機已移除</span>、<span class="ui">連線中…</span>與<span class="ui">重新連線中…</span></td><td data-label="意義與處理">設備頁見<a class="xref" href="/zh-Hant/guide/devices.html#devices-states">「縮圖的狀態」</a>，牆面見<a class="xref" href="/zh-Hant/guide/lvm.html#lvm-states">「格子無法顯示攝影機時」</a>。</td></tr>
+    </tbody>
+  </table></div>
+  <figure class="phone"><img src="/guide/img/lvm-empty.jpg" alt="設定前的 LiveView Mix 分頁：標題 LiveView Mix、挑選不同設備攝影機的說明，以及設定 LiveView Mix 按鈕" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-empty.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>設定前的 LiveView Mix 分頁</figcaption></figure>
+
+  <h3 id="trouble-add">設備已加入，但無法連線</h3>
+  <p>加入失敗後的檢查清單與設備報告，見<a class="xref" href="/zh-Hant/guide/add.html#add-failed">「加入失敗時的檢查清單」</a>與<a class="xref" href="/zh-Hant/guide/add.html#add-report">「設備報告（實驗性功能）」</a>。以下症狀出現在設備已加入之後。</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>畫面顯示</th><th>可能的原因</th><th>處理方式</th></tr></thead>
+    <tbody>
+      <tr><td data-label="畫面顯示">設備清單中出現紅色、帶斜線的 Wi‑Fi 符號</td><td data-label="可能的原因">設備在約 4 秒內沒有在 HTTP 連接埠接受連線。設備可能未開機、位於其他網路，或被防火牆擋住。在<span class="ui">連線方式</span>選擇品牌加入的設備，或影像使用其他連接埠的設備，影像可以播放，指示符號仍可能為紅色。</td><td data-label="處理方式">檢查電源與網路。影像可以播放時，可以忽略此符號。見<a class="xref" href="/zh-Hant/guide/devices.html#devices-list">「設備清單」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">昨天還能用的設備，今天連不上</td><td data-label="可能的原因">設備的位址改變了。設備沿用加入時的位址。</td><td data-label="處理方式">在路由器查出新位址，刪除舊設備，再以新位址重新加入，見<a class="xref" href="/zh-Hant/guide/add.html#add-form">「新增設備表單」</a>。在設備或路由器設定固定位址，可避免再次發生。</td></tr>
+      <tr><td data-label="畫面顯示">已儲存的密碼失效，設備頁顯示<span class="ui">使用者名稱或密碼錯誤。</span>與按鈕<span class="ui">編輯帳號密碼</span></td><td data-label="可能的原因">設備上的密碼或使用者名稱已變更。</td><td data-label="處理方式">點選<span class="ui">編輯帳號密碼</span>，輸入新的帳號。新的帳號會先在設備上確認後才儲存；攝影機、攝影機名稱與牆面都維持不變。見<a class="xref" href="/zh-Hant/guide/devices.html#devices-credentials">「變更設備的使用者名稱與密碼」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">所有縮圖都顯示<span class="ui ui-long">沒有儲存密碼，請到「設備」重新輸入。</span>，例如在新的 iPhone、iPad 或 Mac 上</td><td data-label="可能的原因">設備清單搬過來了，密碼卻沒有，例如新機沒有沿用舊機的鑰匙圈。</td><td data-label="處理方式">還原 Cam Hub 的 iCloud 備份（備份包含所有密碼），或在每台設備的設備頁點選<span class="ui">重新輸入密碼</span>逐台輸入。見<a class="xref" href="/zh-Hant/guide/devices.html#devices-password-missing">「沒有儲存密碼的設備」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">縮圖顯示<span class="ui ui-long">這台設備的安全憑證已變更。請到設備編輯選單中的「HTTPS」檢查。</span></td><td data-label="可能的原因">該設備已開啟 HTTPS，而設備出示的憑證與信任的憑證不同，例如設備重置後，或在設備上產生了新憑證。</td><td data-label="處理方式">從設備頁的鉛筆選單開啟<span class="ui">HTTPS</span>，先將新的指紋與設備網頁的憑證比對，再點選<span class="ui">儲存</span>。見<a class="xref" href="/zh-Hant/guide/devices.html#devices-https">「已儲存設備的 HTTPS」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">加入錄影主機時開啟方案頁</td><td data-label="可能的原因">方案的錄影主機額度已用完。範例設備與真實設備一樣計入額度。</td><td data-label="處理方式">見<a class="xref" href="/zh-Hant/guide/trouble.html#trouble-plans">「方案與購買」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">設備完全無法加入，而且只能在原廠的 App 使用</td><td data-label="可能的原因">設備不提供區域網路上的連線，或只接受 HTTPS，但加入時沒有開啟<span class="ui">使用 HTTPS</span>。</td><td data-label="處理方式">只接受 HTTPS 的設備，加入時開啟<span class="ui">使用 HTTPS</span>，見<a class="xref" href="/zh-Hant/guide/add.html#add-https">「透過 HTTPS 加入設備」</a>。其他情況見<a class="xref" href="/zh-Hant/guide/brands.html#brands-requirements">「需求與限制」</a>。</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="trouble-live">即時影像</h3>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>畫面顯示</th><th>可能的原因</th><th>處理方式</th></tr></thead>
+    <tbody>
+      <tr><td data-label="畫面顯示">灰色縮圖，有劃掉的攝影機圖示與<span class="ui">無訊號</span></td><td data-label="可能的原因">設備回報此通道沒有影像訊號。通道後方的攝影機已關機、與錄影主機斷線，或網路連結中斷。</td><td data-label="處理方式">檢查攝影機的電源，以及網路線或網路連線。恢復後，開啟設備頁，或在設備頁向下拉動，重新讀取通道清單。攝影機完全沒有出現在<span class="ui">即時</span>分頁時，檢查<span class="ui">隱藏無訊號攝影機</span>是否已開啟，見<a class="xref" href="/zh-Hant/guide/live.html#live-hide">「隱藏無訊號攝影機」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">帶警告符號的訊息，以及按鈕<span class="ui">重試</span></td><td data-label="可能的原因">串流無法開啟。訊息指出原因，用字與加入設備時相同。</td><td data-label="處理方式">在<a class="xref" href="/zh-Hant/guide/add.html#add-failed">「加入失敗時的檢查清單」</a>或<a class="xref" href="/zh-Hant/guide/trouble.html#trouble-errors">「其他錯誤訊息」</a>找到該句，排除原因後，點選<span class="ui">重試</span>。</td></tr>
+      <tr><td data-label="畫面顯示">原本可用的設備出現<span class="ui">使用者名稱或密碼錯誤。</span></td><td data-label="可能的原因">設備上的密碼已變更，或帳號已被鎖定或移除。遭拒絕一次後，同一台設備的其他縮圖會立即顯示失敗，不再各自登入，以免設備替每個縮圖都記一次登入失敗。約一分鐘後，或 App 回到前景時，才會再詢問設備一次。</td><td data-label="處理方式">在設備上修正帳號，或等待鎖定結束，通常約 30 分鐘。要儲存新密碼時，點選設備頁的<span class="ui">編輯帳號密碼</span>，見<a class="xref" href="/zh-Hant/guide/devices.html#devices-credentials">「變更設備的使用者名稱與密碼」</a>。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui">連線中…</span>停留很久，或<span class="ui">重新連線中…</span>一再出現</td><td data-label="可能的原因">網路訊號弱，或設備沒有回應。Cam Hub 以逐漸拉長的間隔重試，最長約 15 秒；連續失敗十次後，最長約一分鐘。串流約 15 秒沒有任何畫面時，視為中斷並重新連線；攝影機仍有回應、但畫面已凍結時也一樣。設備同時可服務的觀看者數量也可能有限。</td><td data-label="處理方式">檢查 Wi‑Fi 訊號。關閉同一支攝影機的其他觀看者。攝影機很多的牆面，改用 SD 而非 HD，見<a class="xref" href="/zh-Hant/guide/devices.html#devices-quality">「設備畫面上的 SD 與 HD」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">畫面全黑，沒有任何訊息</td><td data-label="可能的原因">攝影機傳送了手機無法解碼的影像格式。Cam Hub 只播放 <code>H.264</code> 與 <code>H.265</code>。iPhone 沒有 <code>H.265</code> 的硬體支援，或畫面尺寸超出解碼器的上限時，不會顯示畫面。</td><td data-label="處理方式">在攝影機的串流設定中，選擇 <code>H.264</code> 與較低的解析度。畫面要等很久才出現時，將關鍵影格間隔設為一到兩秒會有幫助。見<a class="xref" href="/zh-Hant/guide/single.html#single-states">「連線狀態與訊息」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">畫面模糊或出現方塊</td><td data-label="可能的原因">牆面或畫面使用 SD，或設備只提供一路串流。部分設備的 SD 與 HD 是同一路串流。</td><td data-label="處理方式">在單機畫面切換為 HD。預設值在<span class="ui">設定</span>分頁調整，見<a class="xref" href="/zh-Hant/guide/devices.html#devices-quality">「設備畫面上的 SD 與 HD」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">沒有喇叭按鈕，或沒有聲音</td><td data-label="可能的原因">點選喇叭按鈕之前，聲音一律關閉。只有串流帶有支援格式（<code>G.711</code> 或 <code>AAC-LC</code>）的聲音時，才會出現該按鈕。聲音只在單機畫面與牆面的近看畫面播放，牆面的格子不播放，App 在背景時也不播放。高於 1× 的回放會靜音。有人透過攝影機對講時，攝影機本身的聲音會暫停。</td><td data-label="處理方式">點選喇叭按鈕。按鈕沒有出現時，表示串流沒有可用的聲音；請在攝影機設定中改用支援的音訊格式。YouTube 與 Twitch 見<a class="xref" href="/zh-Hant/guide/trouble.html#trouble-streams">「YouTube 與 Twitch」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">單機畫面沒有對講按鈕</td><td data-label="可能的原因">對講只在即時影像中提供，攝影機須有 Cam Hub 可以使用的對講通道，且該通道不能超出方案額度。錄影主機的通道沒有對講。</td><td data-label="處理方式">見<a class="xref" href="/zh-Hant/guide/single.html#single-talk">「雙向對講」</a>。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui ui-long">Cam Hub 的麥克風取用權限已關閉。請在「設定」中開啟，才能透過攝影機說話。</span></td><td data-label="可能的原因">麥克風權限遭拒絕。</td><td data-label="處理方式">在系統設定中開啟權限，見<a class="xref" href="/zh-Hant/guide/trouble.html#trouble-permissions">「權限要求與系統對話框」</a>。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui ui-long">此攝影機的對講音訊編碼為 G.726。請在攝影機的音訊設定中改為 G.711，才能從 Cam Hub 對講。</span>（格式名稱依攝影機而異）</td><td data-label="可能的原因">攝影機的對講通道使用 Cam Hub 不傳送的聲音格式。</td><td data-label="處理方式">在攝影機的音訊設定中，將對講通道改為 <code>G.711</code>。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui ui-long">無法啟動麥克風，可能有其他 App 正在使用。</span></td><td data-label="可能的原因">其他 App 或通話正在使用麥克風。</td><td data-label="處理方式">結束通話或關閉其他 App，再按住對講按鈕一次。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui">無法開始與攝影機對講。</span>或<span class="ui">攝影機已停止接收聲音。</span></td><td data-label="可能的原因">攝影機沒有開啟對講通道，或在說話途中關閉了通道。</td><td data-label="處理方式">再試一次。確認帳號有使用攝影機音訊的權限，且沒有其他 App 正透過該攝影機對講。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui">已暫停</span>、<span class="ui">已停用</span>或<span class="ui">方案未包含</span></td><td data-label="可能的原因">通道已暫停、尚未啟用，或超出方案的額度。</td><td data-label="處理方式">見<a class="xref" href="/zh-Hant/guide/devices.html#devices-states">「縮圖的狀態」</a>與<a class="xref" href="/zh-Hant/guide/trouble.html#trouble-plans">「方案與購買」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">離開 App 或鎖定手機後，畫面停止</td><td data-label="可能的原因">這是正常行為。App 在背景時，所有串流都會停止，對講也會結束；回到前景後自動重新連線。</td><td data-label="處理方式">不需要處理。回放中的錄影會從停下的位置繼續。</td></tr>
+    </tbody>
+  </table></div>
+  <div class="shots pair">
+    <figure class="phone"><img src="/guide/img/device-tile-states.jpg" alt="六個通道的錄影主機設備頁：一個即時縮圖，以及已停用、方案未包含、已暫停與無訊號的縮圖" decoding="async" width="900" height="1956" data-src="/guide/img/device-tile-states.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>各種狀態的縮圖</figcaption></figure>
+    <figure class="phone"><img src="/guide/img/single-failed.jpg" alt="單機畫面：深色畫面區域上方有失敗訊息與重試按鈕" decoding="async" width="900" height="1956" data-src="/guide/img/single-failed.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>失敗訊息與重試按鈕</figcaption></figure>
+  </div>
+
+  <h3 id="trouble-playback">錄影回放</h3>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>畫面顯示</th><th>可能的原因</th><th>處理方式</th></tr></thead>
+    <tbody>
+      <tr><td data-label="畫面顯示">畫面下方沒有錄影面板</td><td data-label="可能的原因">攝影機無法透過目前的連線方式搜尋錄影，或該通道超出方案額度。在<span class="ui">連線方式</span>選擇品牌加入的設備、範例攝影機、YouTube 直播與 Twitch 頻道都沒有錄影回放。</td><td data-label="處理方式">見<a class="xref" href="/zh-Hant/guide/playback.html#playback-avail">「哪些設備提供錄影回放」</a>與<a class="xref" href="/zh-Hant/guide/brands.html#brands-matrix">「各方式可使用的功能」</a>。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui">正在載入錄影…</span>一直不消失</td><td data-label="可能的原因">設備回應很慢，或連線不穩。</td><td data-label="處理方式">稍候，再重新選擇日期。檢查網路。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui">這一天沒有連續錄影。</span></td><td data-label="可能的原因">設備在該日沒有錄影。可能是錄影功能已關閉、沒有儲存裝置或已寫滿、該日早於儲存保留的期間，或該日在未來。</td><td data-label="處理方式">選擇其他日期；設備支援時，月曆會標出有錄影的日期，見<a class="xref" href="/zh-Hant/guide/playback.html#playback-calendar">「錄影日曆」</a>。在設備上確認已排定錄影，且有硬碟或記憶卡。</td></tr>
+      <tr><td data-label="畫面顯示">月曆顯示<span class="ui ui-long">此錄影主機無法告知哪些日期有錄影。</span>或<span class="ui">無法載入這個月份。</span></td><td data-label="可能的原因">設備不提供有錄影日期的清單，或沒有回應這個月份的查詢。</td><td data-label="處理方式">不依標記直接選擇日期。月份無法載入時，點選<span class="ui">再試一次</span>。見<a class="xref" href="/zh-Hant/guide/playback.html#playback-calendar">「錄影日曆」</a>。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui">這一天未偵測到人員。</span>或<span class="ui">此設備無法搜尋人員事件索引。</span></td><td data-label="可能的原因">沒有偵測紀錄，或設備不提供人員搜尋。</td><td data-label="處理方式">改用連續錄影清單，見<a class="xref" href="/zh-Hant/guide/playback.html#playback-timeline">「使用時間軸」</a>。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui ui-long">這個帳號無法讀取這台設備上的錄影。</span></td><td data-label="可能的原因">該帳號沒有回放錄影的權限。</td><td data-label="處理方式">改用有回放權限的帳號，或在設備上授予權限。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui">無法連線到這台設備。</span>或<span class="ui">連線逾時。</span></td><td data-label="可能的原因">設備沒有回應當日錄影的搜尋。</td><td data-label="處理方式">檢查網路，再重新選擇日期。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui ui-long">這台設備無法辨識這支攝影機的錄影。</span></td><td data-label="可能的原因">設備找不到這支攝影機的錄影，例如攝影機沒有儲存空間，或以非預期的方式回報錄影。</td><td data-label="處理方式">在設備上確認攝影機有錄影。換一個通道或換一天可能可行。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui ui-long">錄影主機沒有播放這段錄影，可能已被覆寫——請選擇其他時間。</span></td><td data-label="可能的原因">清單中列出了這段錄影，但設備拒絕播放，通常是因為已被較新的錄影取代。</td><td data-label="處理方式">選擇較晚的時間，或其他日期。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui">這支攝影機離線。</span></td><td data-label="可能的原因">該通道沒有訊號。</td><td data-label="處理方式">見<a class="xref" href="/zh-Hant/guide/trouble.html#trouble-live">「即時影像」</a>。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui ui-long">短時間內要求太多次，請稍候一分鐘再試。</span></td><td data-label="可能的原因">設備或其服務因要求過多而拒絕。</td><td data-label="處理方式">等待一分鐘，再重新選擇日期。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui">選取的時間點沒有錄影。</span></td><td data-label="可能的原因">放開時間軸的時間點沒有錄影，而且之後也沒有其他錄影。</td><td data-label="處理方式">將時間軸移到藍色或紅色的長條，或點選清單中的一列，見<a class="xref" href="/zh-Hant/guide/playback.html#playback-timeline">「使用時間軸」</a>。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui">錄影已播完</span></td><td data-label="可能的原因">正在播放的錄影之後沒有其他錄影。</td><td data-label="處理方式">點選<span class="ui">回到即時</span>，或選擇其他時間。</td></tr>
+      <tr><td data-label="畫面顯示">時間與手機的時鐘不同</td><td data-label="可能的原因">所有時間都是設備自己的時鐘，原樣顯示，不會轉換成手機的時區。</td><td data-label="處理方式">在設備上設定日期、時間與時區，例如使用網路校時，見<a class="xref" href="/zh-Hant/guide/playback.html#playback-playing">「播放錄影期間」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">沒有加速按鈕，或出現<span class="ui">此錄影主機不支援加速播放。</span></td><td data-label="可能的原因">設備無法加速播放錄影，或不接受該要求。提示約顯示 4 秒，錄影以正常速度繼續播放。</td><td data-label="處理方式">無法處理。此類設備只能以 1× 播放，見<a class="xref" href="/zh-Hant/guide/playback.html#playback-speed">「播放速度」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">無法儲存或匯出整段錄影</td><td data-label="可能的原因">這是設計如此。錄影保留在設備上。</td><td data-label="處理方式">把重要的部分錄成最長 10 分鐘的片段再分享，見<a class="xref" href="/zh-Hant/guide/single.html#single-clip">「錄製片段」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">單機畫面沒有錄製按鈕</td><td data-label="可能的原因">攝影機傳送的影像格式無法存成影片，或正在使用 Apple TV，Apple TV 沒有錄製按鈕。</td><td data-label="處理方式">改用<span class="ui">快照</span>拍攝靜態影像，見<a class="xref" href="/zh-Hant/guide/single.html#single-clip">「錄製片段」</a>。</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="trouble-lvm">LiveView Mix</h3>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>畫面顯示</th><th>可能的原因</th><th>處理方式</th></tr></thead>
+    <tbody>
+      <tr><td data-label="畫面顯示">分頁的預覽與全螢幕的版面不同</td><td data-label="可能的原因">預覽是單純分頁的格狀畫面，並註明<span class="ui ui-long">僅為預覽——全螢幕才會顯示您的版面。</span></td><td data-label="處理方式">點選<span class="ui">全螢幕</span>查看版面，見<a class="xref" href="/zh-Hant/guide/lvm.html#lvm-tab">「LiveView Mix 分頁與預覽」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">格子顯示<span class="ui">無訊號</span>、<span class="ui">已停用</span>、<span class="ui">方案未包含</span>、<span class="ui">已暫停</span>或<span class="ui">攝影機已移除</span></td><td data-label="可能的原因">該攝影機無法顯示。格子保留原位，其餘格子不會移動。</td><td data-label="處理方式">見<a class="xref" href="/zh-Hant/guide/lvm.html#lvm-states">「格子無法顯示攝影機時」</a>。顯示<span class="ui">攝影機已移除</span>時，在<span class="ui">選擇攝影機</span>頁面使用<span class="ui">清空這些格子</span>。</td></tr>
+      <tr><td data-label="畫面顯示">串流中的攝影機比選取的少</td><td data-label="可能的原因">選取的攝影機要在通道已啟用，且在方案額度內，才會串流。</td><td data-label="處理方式">見<a class="xref" href="/zh-Hant/guide/lvm.html#lvm-limits">「方案限制對牆面的影響」</a>與<a class="xref" href="/zh-Hant/guide/plans.html#plans-choose">「選擇顯示哪些攝影機」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">滑到其他頁後，格子短暫變黑</td><td data-label="可能的原因">不在畫面上的頁面，其攝影機會中斷連線，以節省頻寬與電力。</td><td data-label="處理方式">開啟<span class="ui">翻頁時保持攝影機連線</span>；代價是較多的頻寬與電力消耗。見<a class="xref" href="/zh-Hant/guide/lvm.html#lvm-settings">「設定中的 LiveView Mix」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">裝置直立時，牆面的排法不同</td><td data-label="可能的原因">版面是依寬螢幕儲存的。螢幕高度大於寬度時，全螢幕牆會將版面轉向；自行繪製的版面則讓每個格子留在原本的位置。</td><td data-label="處理方式">不是故障，見<a class="xref" href="/zh-Hant/guide/lvm.html#lvm-fit">「黑邊、滿版畫面與裝置角度」</a>。若要在裝置直立時顯示另一面牆，請開啟<span class="ui">直向頁面</span>，見<a class="xref" href="/zh-Hant/guide/lvm.html#lvm-pages">「直向頁面」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">牆上的格子變成空格</td><td data-label="可能的原因">刪除設備時，屬於該設備的格子會在原位清空。還原或匯入時，設備沒有帶過來的格子也會清空。其餘格子保留原位。</td><td data-label="處理方式">重新加入缺少的設備，再重新選擇攝影機，見<a class="xref" href="/zh-Hant/guide/lvm.html#lvm-pick">「選擇攝影機與畫質」</a>。其他格子中的圖片、時鐘、標籤與控制面板會保留。</td></tr>
+      <tr><td data-label="畫面顯示">無法把格子拖到另一頁的空格</td><td data-label="可能的原因">拖曳只能在牆面的同一頁之內移動格子。</td><td data-label="處理方式">點選該空格，選擇<span class="ui">把其他格移到這裡…</span>，見<a class="xref" href="/zh-Hant/guide/lvm.html#lvm-move">「把格子移到空格」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">整面牆都不見了</td><td data-label="可能的原因"><span class="ui">還原預設設定</span>也會清除 LiveView Mix 的牆面，包括控制面板與圖片，對話框中有說明。</td><td data-label="處理方式">以先前建立的 iCloud 備份還原牆面，見<a class="xref" href="/zh-Hant/guide/share.html#share-restore">「從 iCloud 還原」</a>。沒有這樣的備份時，須重新建立牆面。設備不受影響。見<a class="xref" href="/zh-Hant/guide/settings.html#settings-reset">「重設：還原預設設定、刪除所有資料、刪除 iCloud 備份」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">控制面板顯示鎖頭與<span class="ui">方案未包含</span></td><td data-label="可能的原因">每個控制面板占用一個攝影機額度，而額度已用完。複製到直向頁面的控制面板，在該頁面開啟期間會再占用一個額度。</td><td data-label="處理方式">見<a class="xref" href="/zh-Hant/guide/webhook.html#webhook-wall">「面板在牆上的樣子」</a>與<a class="xref" href="/zh-Hant/guide/plans.html#plans-count">「哪些項目占用額度」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">找不到<span class="ui">兩張畫布</span>開關，或沒有出現下方畫布</td><td data-label="可能的原因">此開關只在 iPhone Duo 上出現。兩張畫布只在手機半折、摺痕橫越螢幕時顯示。完全攤平或合起時，上方畫布單獨填滿螢幕，滑過其最後一頁即可看到下方畫布。</td><td data-label="處理方式">將手機半折，見<a class="xref" href="/zh-Hant/guide/lvm.html#lvm-canvases">「iPhone Duo 的兩張畫布」</a>。</td></tr>
+    </tbody>
+  </table></div>
+  <p>牆面的各項設定說明見<a class="xref" href="/zh-Hant/guide/lvm.html#lvm-settings">「設定中的 LiveView Mix」</a>。格子的狀態文字說明見<a class="xref" href="/zh-Hant/guide/lvm.html#lvm-states">「格子無法顯示攝影機時」</a>。</p>
+
+  <h3 id="trouble-streams">YouTube 與 Twitch</h3>
+  <p>YouTube 直播與 Twitch 頻道在 Cam Hub 中以這些服務自己的播放器播放。直播無法播放時，格子以名稱與一句說明取代播放器。</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>畫面顯示</th><th>可能的原因</th><th>處理方式</th></tr></thead>
+    <tbody>
+      <tr><td data-label="畫面顯示"><span class="ui">設備</span>分頁的 <span class="ui" data-ui="icon">＋</span> 選單中沒有<span class="ui">YouTube 直播</span>或<span class="ui">Twitch 頻道</span>，或直播顯示<span class="ui">此地區或語言不提供這項功能。</span></td><td data-label="可能的原因">YouTube 與 Twitch 在部分國家或地區不提供服務。</td><td data-label="處理方式">不需要的直播可以像一般設備一樣刪除。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui ui-long">同意 YouTube 的條款後即可播放此直播。</span>或<span class="ui ui-long">同意 Twitch 的條款後即可播放此頻道。</span></td><td data-label="可能的原因">這台裝置尚未同意該服務的條款，例如直播是經由代碼或備份帶來的，或在說明畫面點選了<span class="ui">取消</span>。</td><td data-label="處理方式">在單機畫面或全螢幕開啟該直播，點選<span class="ui">查看條款…</span>，閱讀說明後點選<span class="ui">同意並繼續</span>。見<a class="xref" href="/zh-Hant/guide/add.html#add-streams">「加入 YouTube 直播與 Twitch 頻道」</a>。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui ui-long">這不是直播，或直播已經結束。只能顯示直播。</span></td><td data-label="可能的原因">連結指向已錄好的影片，或直播已經結束。只有進行中的直播可以播放。</td><td data-label="處理方式">加入目前正在直播的連結，或加入頻道的連結以追蹤該頻道，見<a class="xref" href="/zh-Hant/guide/add.html#add-streams">「加入 YouTube 直播與 Twitch 頻道」</a>。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui ui-long">這個頻道目前沒有直播，或不允許在其他 App 中播放它的直播。</span></td><td data-label="可能的原因">追蹤的頻道目前沒有直播，或頻道擁有者不允許在其他 App 中播放。</td><td data-label="處理方式">稍候。格子在畫面上時，每分鐘會再查詢一次，直播開始後自動播放。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui ui-long">這部影片的擁有者不允許在其他 App 中播放。</span>或<span class="ui ui-long">這部影片無法觀看，可能已設為私人或已移除。</span></td><td data-label="可能的原因">該直播無法在服務以外播放，或已不存在。</td><td data-label="處理方式">改在服務本身觀看，或在 Cam Hub 中刪除該直播。</td></tr>
+      <tr><td data-label="畫面顯示">Twitch 頻道名稱下方顯示<span class="ui">離線</span></td><td data-label="可能的原因">實況主目前沒有直播，或沒有這個名稱的頻道。</td><td data-label="處理方式">稍候；格子在畫面上時，每兩分鐘會再查詢一次。並檢查名稱的拼寫。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui ui-long">YouTube 播放器無法載入。請檢查網路連線後再試一次。</span>或<span class="ui ui-long">Twitch 播放器無法載入。請檢查網路連線後再試一次。</span></td><td data-label="可能的原因">手機沒有網際網路連線，或服務的播放器沒有啟動。</td><td data-label="處理方式">檢查連線，再點選<span class="ui">再試一次</span>。</td></tr>
+      <tr><td data-label="畫面顯示">YouTube 或 Twitch 的格子沒有聲音</td><td data-label="可能的原因">這是設計如此。格子一律不播放聲音。</td><td data-label="處理方式">點選格子以全螢幕開啟直播，再點選播放器旁的喇叭按鈕。在單機畫面中，直播也依照同一個喇叭設定。</td></tr>
+      <tr><td data-label="畫面顯示">直播開始前先播放服務的廣告或提示</td><td data-label="可能的原因">服務的播放器會顯示自己的廣告與提示。</td><td data-label="處理方式">Cam Hub 無法移除。</td></tr>
+      <tr><td data-label="畫面顯示">Apple TV 上顯示<span class="ui ui-long">YouTube 直播只能在 iPhone 和 iPad 上播放。</span>或<span class="ui ui-long">Twitch 直播只能在 iPhone 和 iPad 上播放。</span></td><td data-label="可能的原因">Apple TV 沒有這些服務的播放器。經由備份或代碼帶來的直播只顯示名稱，在 Apple TV 上輸入的連結會被拒絕。</td><td data-label="處理方式">改用 iPhone 或 iPad 觀看，見<a class="xref" href="/zh-Hant/guide/appletv.html#appletv-differs">「Apple TV 上有哪些不同」</a>。</td></tr>
+    </tbody>
+  </table></div>
+  <p>YouTube 直播與 Twitch 頻道一律不計入方案，也不會被鎖定。</p>
+
+  <h3 id="trouble-panels">控制面板與 Webhook</h3>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>畫面顯示</th><th>可能的原因</th><th>處理方式</th></tr></thead>
+    <tbody>
+      <tr><td data-label="畫面顯示">按下按鈕後出現橘色警告三角形</td><td data-label="可能的原因">請求失敗。原因可能是位址空白或格式錯誤、沒有連線、10 秒後逾時、系統不信任的 HTTPS 憑證，或回應的狀態碼不在 200 到 299 之間，例如 401、404 或 500。畫面不會顯示是哪一種。</td><td data-label="處理方式">依序檢查：位址（須以 <code>http://</code> 或 <code>https://</code> 開頭，並指出主機）、手機與接收端之間的連線，以及接收端的紀錄。見<a class="xref" href="/zh-Hant/guide/webhook.html#webhook-use">「按下按鈕與確認結果」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">出現綠色勾號，但設備沒有動作</td><td data-label="可能的原因">勾號只表示接收端回應了 200 到 299 的狀態碼。</td><td data-label="處理方式">檢查接收端的紀錄，以及後方的設備。</td></tr>
+      <tr><td data-label="畫面顯示">按鈕編輯畫面中，按鈕下方顯示<span class="ui">尚未設定端點</span></td><td data-label="可能的原因">該按鈕的位址空白或無效。</td><td data-label="處理方式">在按鈕的編輯畫面輸入位址，見<a class="xref" href="/zh-Hant/guide/webhook.html#webhook-button">「設定按鈕」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">在排列畫面點選面板，沒有送出任何請求</td><td data-label="可能的原因">這是設計如此。請求只會從牆面或分頁中的預覽送出。</td><td data-label="處理方式">在牆面按下按鈕，見<a class="xref" href="/zh-Hant/guide/webhook.html#webhook-use">「按下按鈕與確認結果」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">送出請求之前出現確認對話框</td><td data-label="可能的原因">該按鈕開啟了<span class="ui">執行前先確認</span>。</td><td data-label="處理方式">確認後才會送出，或在按鈕的編輯畫面關閉該選項。</td></tr>
+      <tr><td data-label="畫面顯示">按鈕在家裡可用，到其他地方失敗</td><td data-label="可能的原因">位址指向家中的網路。沒有 VPN 或其他路徑時，請求無法從外部送進去。</td><td data-label="處理方式">見<a class="xref" href="/zh-Hant/guide/webhook.html#webhook-security">「安全注意事項」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">以 <code>.local</code> 結尾的位址失敗</td><td data-label="可能的原因">部分網路無法解析這類名稱。</td><td data-label="處理方式">改輸入接收端的固定 IP 位址。</td></tr>
+      <tr><td data-label="畫面顯示">Apple Watch 上沒有出現按鈕，或按鈕失敗</td><td data-label="可能的原因">手錶只顯示配對的 iPhone 上 LiveView Mix 牆中控制面板的按鈕，而且只顯示方案允許的按鈕。</td><td data-label="處理方式">見<a class="xref" href="/zh-Hant/guide/webhook.html#webhook-watch">「Apple Watch 上的按鈕」</a>。</td></tr>
+    </tbody>
+  </table></div>
+  <figure class="land"><img src="/guide/img/lvm-webhook-states.jpg" alt="同一顆按鈕的三種狀態：傳送中的轉圈圖示、成功後的綠色勾號，以及失敗後的橘色警告三角形" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-webhook-states.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>按鈕的三種狀態</figcaption></figure>
+
+  <h3 id="trouble-health">硬碟健康</h3>
+  <p><span class="ui">硬碟健康</span>頁面讀取有回報此資訊之設備的硬碟狀態，見<a class="xref" href="/zh-Hant/guide/devices.html#devices-health">「硬碟健康」</a>。網路儲存設備透過 SNMP 回報，須先設定一次。Apple TV 沒有硬碟健康頁面。</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>畫面顯示</th><th>可能的原因</th><th>處理方式</th></tr></thead>
+    <tbody>
+      <tr><td data-label="畫面顯示">設備頁沒有<span class="ui">硬碟健康</span>這一列</td><td data-label="可能的原因">設備是以無法讀取硬碟的連線方式加入的，例如 ONVIF 或在<span class="ui">連線方式</span>選擇的品牌，或設備不回報硬碟狀態。</td><td data-label="處理方式">見<a class="xref" href="/zh-Hant/guide/devices.html#devices-health">「硬碟健康」</a>。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui ui-long">這台 NAS 透過 SNMP 提供硬碟健康資訊。設定一次，就能查看 S.M.A.R.T. 資料、溫度與磁碟區狀態。</span>與按鈕<span class="ui">設定 SNMP</span></td><td data-label="可能的原因">尚未替這台設備輸入 SNMP 社群名稱。舊版 Cam Hub 建立的代碼或備份不含此項目。</td><td data-label="處理方式">點選<span class="ui">設定 SNMP</span>，輸入設備上設定的<span class="ui">社群名稱</span>與<span class="ui">連接埠</span>，再點選<span class="ui">儲存</span>。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui ui-long" data-ui="value">NAS 未在 UDP 連接埠 161 回應 SNMP。請確認 DSM 已啟用 SNMP（控制面板 &gt; 終端機和 SNMP），且社群名稱相符。</span></td><td data-label="可能的原因">設備上的 SNMP 已關閉、社群名稱不符，或無法連到該連接埠。設備對錯誤的社群名稱完全不回應，因此三種原因看起來都一樣。只支援 SNMPv1 與 v2c；透過轉送的連接埠或遠端存取服務，通常也連不到這個連接埠。</td><td data-label="處理方式">在設備上以 v1 或 v2c 開啟 SNMP，在<span class="ui">SNMP 設定</span>檢查社群名稱，並在與設備相同的網路中使用此頁面。之後點選<span class="ui">再試一次</span>。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui ui-long">請輸入社群名稱與 1 到 65535 之間的連接埠。</span></td><td data-label="可能的原因"><span class="ui">SNMP 設定</span>中有欄位是空的，或連接埠超出範圍。</td><td data-label="處理方式">輸入社群名稱與連接埠，通常為 <code>161</code>。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui">此設備無法查看硬碟健康狀態。</span></td><td data-label="可能的原因">設備或目前使用的帳號不提供硬碟狀態。部分設備只提供給管理者帳號。</td><td data-label="處理方式">在設備上檢查帳號的權限；要更換帳號，見<a class="xref" href="/zh-Hant/guide/devices.html#devices-credentials">「變更設備的使用者名稱與密碼」</a>。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui ui-long">目前顯示的是上一次的讀數。往下拉即可重試。</span></td><td data-label="可能的原因">重新讀取失敗，頁面保留上一次的讀數，並在上方顯示原因。</td><td data-label="處理方式">排除原因後，在頁面向下拉動。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui ui-long">此設備未提供這顆硬碟的 S.M.A.R.T. 資料，因此只顯示它自身的狀態。</span></td><td data-label="可能的原因">設備提供硬碟的狀態，但不提供其 S.M.A.R.T. 表格。</td><td data-label="處理方式">無法處理。硬碟的狀態仍會顯示。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui">需要留意</span>或<span class="ui">即將故障</span></td><td data-label="可能的原因">硬碟本身出現老化或故障的跡象。頁面在判定結果下方列出原因。</td><td data-label="處理方式">閱讀原因；備份重要的錄影，並規劃更換硬碟。見<a class="xref" href="/zh-Hant/guide/devices.html#devices-health">「硬碟健康」</a>。</td></tr>
+    </tbody>
+  </table></div>
+  <figure class="phone"><img src="/guide/img/trouble-health-snmp.jpg" alt="示範儲存設備的硬碟健康頁：說明設備沒有在連接埠 161 回應 SNMP，下方為再試一次與 SNMP 設定按鈕" decoding="async" width="900" height="1947" data-src="/guide/img/trouble-health-snmp.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>沒有回應 SNMP 的儲存設備</figcaption></figure>
+
+  <h3 id="trouble-share">分享、匯入與 iCloud 備份</h3>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>畫面顯示</th><th>可能的原因</th><th>處理方式</th></tr></thead>
+    <tbody>
+      <tr><td data-label="畫面顯示"><span class="ui">PIN 錯誤</span></td><td data-label="可能的原因">輸入的六位數字與匯出代碼時設定的 PIN 不符。</td><td data-label="處理方式">向分享者詢問數字，再點選<span class="ui">匯入攝影機</span>。嘗試次數沒有限制。忘記的 PIN 無法找回，須請分享者重新匯出。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui">密碼錯誤</span></td><td data-label="可能的原因">密碼不符。大小寫、空格與符號都會區分。</td><td data-label="處理方式">向分享者確認密碼，再試一次。忘記的密碼無法找回，須請分享者重新匯出。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui">無法讀取該代碼</span></td><td data-label="可能的原因">文字不完整，或在傳送途中被改動，例如被訊息 App 截斷。</td><td data-label="處理方式">從匯出畫面重新複製完整的代碼，再完整貼上。代碼前後多出的文字不影響匯入。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui">更新 Cam Hub</span></td><td data-label="可能的原因">代碼是以不同版本的 App 製作的。</td><td data-label="處理方式">在兩台裝置上都更新 App，再試一次。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui">無法儲存攝影機，請再試一次。</span></td><td data-label="可能的原因">代碼中的設備無法儲存。</td><td data-label="處理方式">再試一次。訊息持續出現時，重新啟動 App 再試一次，見<a class="xref" href="/zh-Hant/guide/trouble.html#trouble-contact">「聯絡開發者」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">匯入或還原之後，通道顯示<span class="ui">方案未包含</span>或<span class="ui">已停用</span></td><td data-label="可能的原因">匯入與還原都不檢查錄影主機的數量。在免費方案下，超出額度的通道維持啟用，並顯示<span class="ui">方案未包含</span>，直到方案涵蓋為止；在 <span class="ui" data-ui="system">App Store</span> 尚未回報方案的新裝置上也是如此。在付費方案下，超出該方案額度的通道會寫入為停用。</td><td data-label="處理方式">等待方案出現，或點選<span class="ui">還原購買項目</span>。額度足夠之後，依<a class="xref" href="/zh-Hant/guide/plans.html#plans-choose">「選擇顯示哪些攝影機」</a>重新開啟這些通道。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui ui-long">部分密碼無法儲存到這台裝置。請打開這些設備，使用「編輯帳號密碼」重新輸入。</span></td><td data-label="可能的原因">還原已帶回設備，但其中部分設備的密碼無法儲存在這台裝置上。</td><td data-label="處理方式">逐一開啟這些設備，以<span class="ui">編輯帳號密碼</span>輸入密碼，見<a class="xref" href="/zh-Hant/guide/devices.html#devices-credentials">「變更設備的使用者名稱與密碼」</a>。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui ui-long">無法儲存備份。請確認您已登入 iCloud。</span>或<span class="ui ui-long">備份失敗。請確認已登入 iCloud 後再試一次。</span></td><td data-label="可能的原因">裝置未登入 iCloud，或無法連上 iCloud。</td><td data-label="處理方式">在系統設定中登入 iCloud，檢查連線後再備份一次。見<a class="xref" href="/zh-Hant/guide/share.html#share-icloud">「備份到 iCloud」</a>。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui ui-long">Cam Hub 在 iCloud 的備份空間已滿。請刪除較舊的備份或移除一些格子圖片後再試。</span></td><td data-label="可能的原因">Cam Hub 的所有備份，包括具名的備份與 Apple TV 那一份，共用 iCloud 中約 <code>1 MB</code> 的空間。牆面格子中的圖片占用其中大部分。</td><td data-label="處理方式">在<span class="ui">iCloud 中的備份</span>清單刪除較舊的備份（見<a class="xref" href="/zh-Hant/guide/share.html#share-versions">「多份具名備份：重新命名與刪除」</a>），或移除牆面格子中的部分圖片，再備份一次。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui ui-long">僅儲存在這台裝置上。登入 iCloud 後才會在雲端保留一份備份。</span></td><td data-label="可能的原因">裝置未登入 iCloud。備份只保留在這台裝置上，不會傳到其他裝置。</td><td data-label="處理方式">在系統設定中登入 iCloud，再備份一次。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui">iCloud 中還沒有備份。</span>或<span class="ui ui-long">iCloud 中找不到備份。請先用登入相同 Apple 帳號的 iPhone 進行備份。</span></td><td data-label="可能的原因">這個 Apple 帳號沒有備份、備份尚未同步完成，或備份建立在另一個目的地（<span class="ui">我的備份</span>或<span class="ui">Apple TV</span>）。</td><td data-label="處理方式">先在來源裝置以相同的 Apple 帳號備份，並選擇相符的目的地。等待 iCloud 同步，再重新開啟還原頁面。見<a class="xref" href="/zh-Hant/guide/share.html#share-restore">「從 iCloud 還原」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">備份清單中少了某一份備份</td><td data-label="可能的原因">該備份已在登入相同 Apple 帳號的另一台裝置上刪除，或<span class="ui">設定</span>分頁的<span class="ui">刪除 iCloud 備份</span>移除了所有備份，包括 Apple TV 那一份。</td><td data-label="處理方式">在存有這些設備的裝置上重新備份。見<a class="xref" href="/zh-Hant/guide/share.html#share-versions">「多份具名備份：重新命名與刪除」</a>。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui ui-long">無法讀取這個備份，請重新備份以取代它。</span></td><td data-label="可能的原因">備份已損壞，或由舊版 App 建立。</td><td data-label="處理方式">在原來的裝置上重新備份。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui">還原失敗。請再試一次。</span>或<span class="ui">沒有可還原的備份。</span></td><td data-label="可能的原因">沒有可讀取的備份，或還原過程中斷。</td><td data-label="處理方式">確認 iCloud 已登入並完成同步，再試一次。</td></tr>
+      <tr><td data-label="畫面顯示">Apple TV 顯示<span class="ui">iCloud 上尚未有備份</span></td><td data-label="可能的原因">備份建立在<span class="ui">我的備份</span>、Apple 帳號不同，或兩台裝置的 App 版本不同。舊版本建立的備份不會出現。</td><td data-label="處理方式">在相同的 App 版本與相同的 Apple 帳號下，以<span class="ui">Apple TV</span>為目的地重新備份，見<a class="xref" href="/zh-Hant/guide/appletv.html">第 14 章「Apple TV」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">還原之後，沒有方案</td><td data-label="可能的原因">購買項目不屬於備份的內容，它們跟著 Apple 帳號走。</td><td data-label="處理方式">點選<span class="ui">還原購買項目</span>，見<a class="xref" href="/zh-Hant/guide/plans.html#plans-subscribe">「訂閱、還原購買與兌換代碼」</a>。</td></tr>
+    </tbody>
+  </table></div>
+  <p>分享代碼對持有它的任何人都有效，可使用任意次數，也不會過期。請以 PIN 或密碼鎖定代碼，並以與代碼不同的管道傳送 PIN 或密碼，見<a class="xref" href="/zh-Hant/guide/share.html#share-lock">「鎖定代碼」</a>。</p>
+
+  <h3 id="trouble-plans">方案與購買</h3>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>畫面顯示</th><th>可能的原因</th><th>處理方式</th></tr></thead>
+    <tbody>
+      <tr><td data-label="畫面顯示">方案頁開啟，顯示<span class="ui ui-long">免費版含 1 台錄影主機。訂閱 NVR 方案可新增更多。</span>或<span class="ui ui-long">免費版含 1 台錄影主機，目前被示範設備占用。刪除示範設備即可加入您自己的錄影主機，或訂閱 NVR 方案新增更多。</span>，而且錄影主機沒有加入</td><td data-label="可能的原因">免費方案涵蓋一台錄影主機。範例設備也算錄影主機，同樣占用額度。</td><td data-label="處理方式">刪除範例設備，或訂閱 NVR 方案，見<a class="xref" href="/zh-Hant/guide/plans.html#plans-count">「哪些項目占用額度」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">開關自動回到關閉，方案頁顯示<span class="ui ui-long">您已達免費方案可啟用 2 支攝影機的上限。</span></td><td data-label="可能的原因">額度已用完。超出額度時，開啟通道會被拒絕。</td><td data-label="處理方式">先關閉另一個通道，或訂閱攝影機方案，見<a class="xref" href="/zh-Hant/guide/plans.html#plans-choose">「選擇顯示哪些攝影機」</a>。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui ui-long">免費方案中，顯示的攝影機必須都在同一台錄影主機上。</span></td><td data-label="可能的原因">免費額度只涵蓋同一台錄影主機的通道。</td><td data-label="處理方式">只顯示同一台錄影主機的通道，或訂閱 NVR 方案。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui">訂閱 NVR 方案，解鎖所有通道。</span></td><td data-label="可能的原因">該通道屬於方案未涵蓋的錄影主機。</td><td data-label="處理方式">訂閱 NVR 方案，或關閉不需要的通道。</td></tr>
+      <tr><td data-label="畫面顯示">縮圖顯示<span class="ui">方案未包含</span>與鎖頭</td><td data-label="可能的原因">通道已啟用，但額度涵蓋的通道比已啟用的少。</td><td data-label="處理方式">點選縮圖查看原因，依<a class="xref" href="/zh-Hant/guide/plans.html#plans-choose">「選擇顯示哪些攝影機」</a>空出額度，或訂閱方案。通道的保留順序見<a class="xref" href="/zh-Hant/guide/plans.html#plans-count">「哪些項目占用額度」</a>。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui">已鎖定——升級以啟用</span>與按鈕<span class="ui">方案</span></td><td data-label="可能的原因">畫面開啟期間，該通道不再屬於方案，例如訂閱已到期。</td><td data-label="處理方式">點選<span class="ui">方案</span>，見<a class="xref" href="/zh-Hant/guide/plans.html#plans-lapse">「方案到期或降級時」</a>。</td></tr>
+      <tr><td data-label="畫面顯示">重新安裝後或在新裝置上，沒有顯示方案</td><td data-label="可能的原因">方案綁定 Apple 帳號，而不是 App，須重新取回。</td><td data-label="處理方式">在系統設定中以相同的 Apple 帳號登入，再點選<span class="ui">還原購買項目</span>。出現<span class="ui">已還原購買項目。</span>表示成功；出現<span class="ui">沒有可還原的購買項目。</span>表示該 Apple 帳號沒有購買紀錄。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui ui-long">無法載入方案。請檢查網路連線後再試一次。</span></td><td data-label="可能的原因"><span class="ui" data-ui="system">App Store</span> 沒有回應。</td><td data-label="處理方式">檢查網際網路連線，再重新開啟方案頁。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui">購買失敗。請再試一次。</span></td><td data-label="可能的原因">購買沒有完成，例如 Apple 帳號的付款方式遭到拒絕。</td><td data-label="處理方式">在系統設定中檢查 Apple 帳號的付款設定，再試一次。</td></tr>
+      <tr><td data-label="畫面顯示">需要取消或變更訂閱</td><td data-label="可能的原因">訂閱由蘋果公司管理。</td><td data-label="處理方式">點選<span class="ui">管理訂閱項目</span>。扣款、續訂與退款由蘋果公司處理，不是 Cam Hub 的開發者。</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="trouble-errors">其他錯誤訊息</h3>
+  <p>以下句子會出現在畫面上方的失敗訊息、錄影面板的時間軸上方、新增設備表單、<span class="ui">編輯帳號密碼</span>畫面，以及<span class="ui">HTTPS</span>畫面。前四句的檢查項目在<a class="xref" href="/zh-Hant/guide/add.html#add-failed">「加入失敗時的檢查清單」</a>說明。</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>句子</th><th>意義</th><th>處理方式</th></tr></thead>
+    <tbody>
+      <tr><td data-label="句子"><span class="ui ui-long">無法連線到設備。請檢查位址與您的網路。</span></td><td data-label="意義">設備沒有回應。加入設備失敗時，下方一行列出找到的開放連接埠，或顯示<span class="ui ui-long">這個位址沒有找到任何開放的連接埠。</span></td><td data-label="處理方式">見<a class="xref" href="/zh-Hant/guide/add.html#add-failed">「加入失敗時的檢查清單」</a>與<a class="xref" href="/zh-Hant/guide/trouble.html#trouble-start">「從哪裡開始」</a>。</td></tr>
+      <tr><td data-label="句子"><span class="ui">使用者名稱或密碼錯誤。</span></td><td data-label="意義">設備拒絕登入。</td><td data-label="處理方式">見<a class="xref" href="/zh-Hant/guide/add.html#add-failed">「加入失敗時的檢查清單」</a>。</td></tr>
+      <tr><td data-label="句子"><span class="ui">不支援的設備。</span></td><td data-label="意義">設備有回應，但嘗試過的連線方式都無法連上。在<span class="ui">連線方式</span>選擇品牌時，這一句也表示設備在該品牌的所有串流路徑上都沒有回應。</td><td data-label="處理方式">在<span class="path"><span class="ui">進階</span> › <span class="ui">連線方式</span></span>改用其他連線方式，或以 RTSP 輸入攝影機的串流路徑，見<a class="xref" href="/zh-Hant/guide/brands.html#brands-methods">「連線方式」</a>。</td></tr>
+      <tr><td data-label="句子"><span class="ui">這支攝影機離線。</span></td><td data-label="意義">該通道沒有訊號。</td><td data-label="處理方式">見<a class="xref" href="/zh-Hant/guide/trouble.html#trouble-live">「即時影像」</a>。</td></tr>
+      <tr><td data-label="句子"><span class="ui">無法連線至影像串流。</span></td><td data-label="意義">連到影像連接埠遭拒絕或逾時。連接埠拒絕連線時，會立即顯示此訊息。</td><td data-label="處理方式">檢查 RTSP 是否已開啟，以及 RTSP 連接埠是否正確（通常是 <code>554</code>）。</td></tr>
+      <tr><td data-label="句子"><span class="ui ui-long" data-ui="value">設備拒絕了影像串流（HTTP 404）。</span></td><td data-label="意義">設備以登入遭拒以外的狀態回應影像要求。數字是設備回報的狀態碼。</td><td data-label="處理方式">檢查帳號的即時影像權限、串流設定，以及設備的觀看者數量。</td></tr>
+      <tr><td data-label="句子"><span class="ui" data-ui="value">錄影主機回應 HTTP 500。</span></td><td data-label="意義">錄影主機以錯誤狀態回應要求。</td><td data-label="處理方式">稍後再試，必要時重新啟動錄影主機，並檢查其韌體。</td></tr>
+      <tr><td data-label="句子"><span class="ui ui-long">此錄影主機的影像經過加密，Cam Hub 無法透過它專用的協定讀取。請重新新增，並在「連線方式」選擇 ONVIF。</span></td><td data-label="意義">錄影主機是透過它專用的協定加入的，而它以該方式傳送的影像經過加密。</td><td data-label="處理方式">刪除該設備，再於<span class="path"><span class="ui">進階</span> › <span class="ui">連線方式</span></span>選擇<span class="ui">ONVIF</span>重新加入。</td></tr>
+      <tr><td data-label="句子"><span class="ui ui-long">沒有儲存密碼，請到「設備」重新輸入。</span></td><td data-label="意義">這部 iPhone 或 iPad 上沒有儲存該設備的密碼，Cam Hub 沒有向設備送出任何請求。</td><td data-label="處理方式">在設備頁點選<span class="ui">重新輸入密碼</span>輸入密碼，或還原 iCloud 備份，見<a class="xref" href="/zh-Hant/guide/devices.html#devices-password-missing">「沒有儲存密碼的設備」</a>。</td></tr>
+      <tr><td data-label="句子"><span class="ui ui-long">這台設備的安全憑證已變更。請到設備編輯選單中的「HTTPS」檢查。</span></td><td data-label="意義">已開啟 HTTPS，而設備出示的憑證與信任的憑證不同。</td><td data-label="處理方式">在<span class="ui">HTTPS</span>畫面檢查新的憑證，見<a class="xref" href="/zh-Hant/guide/devices.html#devices-https">「已儲存設備的 HTTPS」</a>。</td></tr>
+      <tr><td data-label="句子"><span class="ui ui-long">這台設備剛才沒有透過 HTTPS 回應。</span></td><td data-label="意義">Cam Hub 尋找 HTTPS 時，沒有任何連接埠出示憑證。</td><td data-label="處理方式">檢查 HTTPS 連接埠，或不開啟<span class="ui">使用 HTTPS</span>加入設備，見<a class="xref" href="/zh-Hant/guide/add.html#add-https">「透過 HTTPS 加入設備」</a>。</td></tr>
+      <tr><td data-label="句子"><span class="ui ui-long">這台設備沒有透過一般 HTTP 回應，因此 HTTPS 維持開啟。</span></td><td data-label="意義">要關閉 HTTPS，但設備不透過一般 HTTP 回應，例如設備上的 HTTP 已關閉。</td><td data-label="處理方式">先在設備上開啟 HTTP，或保持 HTTPS 開啟，見<a class="xref" href="/zh-Hant/guide/devices.html#devices-https">「已儲存設備的 HTTPS」</a>。</td></tr>
+      <tr><td data-label="句子"><span class="ui">無法載入這台設備已儲存的密碼。</span></td><td data-label="意義">無法讀取儲存在這台 iPhone 或 iPad 上的密碼。</td><td data-label="處理方式">以<span class="ui">編輯帳號密碼</span>重新輸入密碼，見<a class="xref" href="/zh-Hant/guide/devices.html#devices-credentials">「變更設備的使用者名稱與密碼」</a>。</td></tr>
+      <tr><td data-label="句子"><span class="ui ui-long">此位址上的另一台設備已使用該使用者名稱。</span></td><td data-label="意義">在<span class="ui">編輯帳號密碼</span>中，該使用者名稱與另一台位址與 HTTP 連接埠相同的已儲存設備重複。</td><td data-label="處理方式">改用其他使用者名稱，或刪除重複的設備。</td></tr>
+      <tr><td data-label="句子"><span class="ui ui-long">無法安全地儲存密碼。請再試一次。</span></td><td data-label="意義">新密碼無法儲存在這台裝置上，原本的密碼已保留。</td><td data-label="處理方式">再試一次。</td></tr>
+      <tr><td data-label="句子"><span class="ui">設備回覆了非預期的內容。</span></td><td data-label="意義">設備的回覆格式是 Cam Hub 無法讀取的。</td><td data-label="處理方式">再試一次。持續出現時，記下型號與韌體版本，聯絡開發者，見<a class="xref" href="/zh-Hant/guide/trouble.html#trouble-contact">「聯絡開發者」</a>。</td></tr>
+      <tr><td data-label="句子"><span class="ui ui-long">Surveillance Station 拒絕了這項要求。</span></td><td data-label="意義">網路儲存設備拒絕了該帳號的要求。</td><td data-label="處理方式">確認該帳號可使用網路儲存設備上的錄影軟體。Cam Hub 沒有輸入驗證碼的欄位，因此要求兩步驟驗證的帳號無法使用。</td></tr>
+      <tr><td data-label="句子"><span class="ui">連線逾時。</span></td><td data-label="意義">設備回應的時間太長。</td><td data-label="處理方式">檢查網路，再試一次。</td></tr>
+      <tr><td data-label="句子"><span class="ui">沒有網際網路連線。</span>或<span class="ui">無法連線至伺服器。</span></td><td data-label="意義">手機沒有網際網路連線，或連不上伺服器。</td><td data-label="處理方式">檢查手機的行動網路或 Wi‑Fi 連線，再試一次。</td></tr>
+      <tr><td data-label="句子"><span class="ui">發生錯誤。請再試一次。</span></td><td data-label="意義">非預期的錯誤。</td><td data-label="處理方式">再試一次，並依<a class="xref" href="/zh-Hant/guide/add.html#add-failed">「加入失敗時的檢查清單」</a>逐項處理。</td></tr>
+    </tbody>
+  </table></div>
+  <p>部分訊息直接來自影像串流，無論 App 使用哪種語言，都以英文顯示，例如 <code>Connection closed</code> 或 <code>HTTP 404</code>。它們的意義與上列句子相同。</p>
+
+  <h3 id="trouble-permissions">權限要求與系統對話框</h3>
+  <p>Cam Hub 僅要求必要的權限。App 不會要求使用通知、聯絡人或藍牙，不會發送通知，也不會讀取照片圖庫；只在儲存快照或片段時，要求加入照片圖庫。麥克風只在透過攝影機對講時要求。</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>要求</th><th>出現時機</th><th>注意事項</th></tr></thead>
+    <tbody>
+      <tr><td data-label="要求">本地網路</td><td data-label="出現時機">App 第一次連線到本地網路上的位址時：加入設備、清單的連線指示符號檢查設備、執行掃描，或開始串流。要求的說明文字為「Cam Hub 會連接區域網路上的攝影機與錄影主機，並掃描您選擇的子網路以尋找設備。」</td><td data-label="注意事項">請允許；沒有這項權限，家中網路上的任何設備都連不上。權限遭拒絕時，加入設備會失敗並顯示<span class="ui ui-long">無法連線到設備。請檢查位址與您的網路。</span>，畫面無法載入，掃描也找不到任何設備。下列步驟可重新開啟權限。</td></tr>
+      <tr><td data-label="要求">麥克風</td><td data-label="出現時機">第一次按住攝影機的對講按鈕時。要求的說明文字為「只有在您按住「對講」透過攝影機的喇叭說話時，Cam Hub 才會使用麥克風。」</td><td data-label="注意事項">權限遭拒絕時，按住對講按鈕會顯示<span class="ui ui-long">Cam Hub 的麥克風取用權限已關閉。請在「設定」中開啟，才能透過攝影機說話。</span>麥克風權限可在系統設定中變更。見<a class="xref" href="/zh-Hant/guide/single.html#single-talk">「雙向對講」</a>。</td></tr>
+      <tr><td data-label="要求">相機</td><td data-label="出現時機">只有在 LiveView Mix 空格的圖片選擇<span class="ui">拍照</span>時。要求的說明文字為「只有在您為 LiveView Mix 格子選擇「拍照」時，Cam Hub 才會使用相機。」</td><td data-label="注意事項">權限遭拒絕時，改用<span class="ui">選擇照片</span>。相機權限可在系統設定中變更。</td></tr>
+      <tr><td data-label="要求">照片</td><td data-label="出現時機">第一次在分享選單中為快照或片段選擇<span class="ui" data-ui="system">儲存影像</span>或<span class="ui" data-ui="system">儲存影片</span>時。說明文字為「只有在您選擇儲存時，Cam Hub 才會將快照或片段加入您的照片圖庫。」</td><td data-label="注意事項">Cam Hub 只能加入照片，看不到照片圖庫的內容，也不會自行加入任何東西。<span class="ui">選擇照片</span>使用系統的照片選取器，不需要這項權限。拒絕加入時，不會儲存任何東西：請改用其他動作傳送影像或片段，或在系統設定中允許 Cam Hub 加入照片。</td></tr>
+      <tr><td data-label="要求">位置（使用 App 期間）</td><td data-label="出現時機">第一次開啟<span class="ui">工具</span>分頁的時速表時，見<a class="xref" href="/zh-Hant/guide/tools.html#tools-speedometer">「時速表與羅盤」</a>。</td><td data-label="注意事項">只用於時速與羅盤方向，不會儲存或分享。不會在背景取得位置。權限遭拒絕時，時速表顯示橘色文字與按鈕<span class="ui">開啟設定</span>。</td></tr>
+      <tr><td data-label="要求">iCloud</td><td data-label="出現時機">不會要求。備份與還原需要裝置已以 Apple 帳號登入 iCloud。</td><td data-label="注意事項">備份失敗時，見<a class="xref" href="/zh-Hant/guide/trouble.html#trouble-share">「分享、匯入與 iCloud 備份」</a>。</td></tr>
+      <tr><td data-label="要求">購買、<span class="ui">管理訂閱項目</span>與<span class="ui">兌換代碼</span></td><td data-label="出現時機"><span class="ui" data-ui="system">App Store</span> 的系統畫面，從<span class="ui">設定</span>分頁或方案頁開啟。</td><td data-label="注意事項">以 Apple 帳號確認。見<a class="xref" href="/zh-Hant/guide/plans.html#plans-subscribe">「訂閱、還原購買與兌換代碼」</a>。</td></tr>
+      <tr><td data-label="要求">分享連結</td><td data-label="出現時機">形如 <code>https://cam-hub.almx.cc/i#…</code> 的連結會開啟 Cam Hub 的匯入頁面，並帶入代碼。</td><td data-label="注意事項">代碼位於位址中 <code>#</code> 後面的部分，這一部分不會傳到伺服器。見<a class="xref" href="/zh-Hant/guide/share.html#share-import">「匯入攝影機」</a>。</td></tr>
+      <tr><td data-label="要求">郵件</td><td data-label="出現時機">設備報告中的<span class="ui">以電子郵件寄給開發者</span>會開啟系統的郵件撰寫頁面，收件者已填入開發者。</td><td data-label="注意事項">在撰寫頁面按下傳送之前，不會寄出任何內容。沒有郵件帳號時，畫面顯示<span class="ui">此裝置尚未設定郵件</span>；報告已複製，只留在這台裝置上，複製的內容約 2 分鐘後失效。見<a class="xref" href="/zh-Hant/guide/add.html#add-report">「設備報告（實驗性功能）」</a>。</td></tr>
+      <tr><td data-label="要求">評分要求</td><td data-label="出現時機">備份成功後，系統可能詢問評分。</td><td data-label="注意事項">可以直接關閉。</td></tr>
+    </tbody>
+  </table></div>
+  <p>權限遭拒絕後，重新開啟本地網路權限：</p>
+  <ol class="steps">
+    <li class="step">
+      <p>開啟系統的<span class="ui" data-ui="system">設定</span> App，點選<span class="ui" data-ui="system">隱私權與安全性</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>畫面顯示隱私權類別的清單。</p>
+    </li>
+    <li class="step">
+      <p>點選<span class="ui" data-ui="system">本地網路</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>畫面顯示曾要求本地網路存取的 App 清單，每個 App 都有開關。</p>
+    </li>
+    <li class="step">
+      <p>開啟<span class="ui" data-ui="system">Cam Hub</span>的開關。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui" data-ui="system">Cam Hub</span>旁的開關為開啟。</p>
+    </li>
+    <li class="step">
+      <p>回到 Cam Hub，重複剛才失敗的操作。</p>
+      <p class="check"><b class="check-label">確認：</b>設備連線成功，或掃描列出設備。</p>
+    </li>
+  </ol>
+
+  <h3 id="trouble-contact">聯絡開發者</h3>
+  <p>App 的設定中沒有支援項目；<span class="ui">設定</span>分頁最後的<span class="ui">操作手冊</span>一列會開啟本手冊。可以用三種方式聯絡開發者：</p>
+  <ul>
+    <li><b>支援頁面</b>：Cam Hub 網站上的 <a href="/zh-Hant/support.html">support.html</a>。頁面提供相容性說明、回報連線問題之前的檢查項目，以及聯絡信箱。</li>
+    <li><b>電子郵件</b>：<code>app-dev@almx.cc</code>。設備報告的郵件撰寫頁面，收件者預先填入的就是這個位址。</li>
+    <li><b>設備報告</b>：加入設備失敗後，實驗性的報告會蒐集技術資訊，並提供以電子郵件寄出的選項，見<a class="xref" href="/zh-Hant/guide/add.html#add-report">「設備報告（實驗性功能）」</a>。</li>
+  </ul>
+  <p>訊息中若寫明下列內容，最有助於開發者判斷：</p>
+  <ul>
+    <li>App 的版本，顯示在<span class="path"><span class="ui">設定</span> › <span class="ui">關於</span> › <span class="ui">版本</span></span>；</li>
+    <li>iPhone 或 iPad 的機型與系統版本；</li>
+    <li>攝影機或錄影主機的廠牌與型號，以及韌體版本；</li>
+    <li>使用的連線方式；</li>
+    <li>畫面顯示的完整訊息，以及先前已嘗試的做法。</li>
+  </ul>
+  <div class="callout warn">
+    <strong class="t">下列內容請勿寄出</strong>
+    <p>攝影機的密碼、分享代碼的 PIN 或密碼、完整的分享代碼、SNMP 社群名稱，以及從網際網路連線到設備所用的公開位址。開發者不需要這些資料。</p>
+  </div>
+  <p>設計上無法支援的設備，例如只能透過原廠雲端 App 使用的設備，無法以訊息解決，見<a class="xref" href="/zh-Hant/guide/brands.html#brands-requirements">「需求與限制」</a>。扣款與退款的問題請洽蘋果公司。</p>
+
+  <h3 id="trouble-faq">常見問題</h3>
+  <details class="faq">
+    <summary>為什麼 App 一律從 LiveView Mix 分頁開啟？</summary>
+    <p>App 一律從第一個分頁開啟。在<span class="path"><span class="ui">設定</span> › <span class="ui">啟動時開啟</span></span>可改為開啟所選設備的即時分頁，或 LiveView Mix 的全螢幕牆。選項<span class="ui">上次檢視</span>不會還原上一次的分頁。見<a class="xref" href="/zh-Hant/guide/lvm.html#lvm-settings">「設定中的 LiveView Mix」</a>。</p>
+  </details>
+  <details class="faq">
+    <summary>為什麼 App 一律是深色？</summary>
+    <p>Cam Hub 只有一種外觀，設定中沒有相關項目。</p>
+  </details>
+  <details class="faq">
+    <summary>為什麼沒有移動偵測或警報的通知？</summary>
+    <p>Cam Hub 是觀看用的 App，不發送推播通知，也不發送本機通知，因此也不要求通知權限。</p>
+  </details>
+  <details class="faq">
+    <summary>可以在家以外的地方觀看攝影機嗎？</summary>
+    <p>Cam Hub 直接連線到設備，沒有自己的雲端服務。位於家中網路以外的設備，只能透過可從網際網路連到的位址，或經由 VPN 連回家中網路來連線。要用什麼方式從外部連線，由您自行決定。</p>
+  </details>
+  <details class="faq">
+    <summary>可以儲存或匯出錄影嗎？</summary>
+    <p>錄影的一部分可以。播放錄影，點選紅色錄製按鈕，等那個時刻過了再停止：最長 10 分鐘的片段可以傳送給別人，或存進照片圖庫。整段錄影保留在設備上，Cam Hub 也無法刪除。快照是設備在點選當下提供的靜態影像；回放期間，快照顯示的是目前的即時影像。見<a class="xref" href="/zh-Hant/guide/single.html#single-clip">「錄製片段」</a>。</p>
+  </details>
+  <details class="faq">
+    <summary>為什麼沒有聲音？</summary>
+    <p>點選喇叭按鈕之前，聲音一律關閉，而且只有串流帶有支援格式的聲音時，才會出現該按鈕。牆面的格子一律不播放聲音，YouTube 與 Twitch 的格子也一樣。見<a class="xref" href="/zh-Hant/guide/trouble.html#trouble-live">「即時影像」</a>。</p>
+  </details>
+  <details class="faq">
+    <summary>Cam Hub 可以透過攝影機對講嗎？</summary>
+    <p>可以，前提是攝影機有 Cam Hub 可以使用的對講通道：在單機畫面按住對講按鈕說話即可。見<a class="xref" href="/zh-Hant/guide/single.html#single-talk">「雙向對講」</a>。</p>
+  </details>
+  <details class="faq">
+    <summary>為什麼 SD 看起來和 HD 一樣？</summary>
+    <p>部分設備的每個通道只提供一路串流，SD 與 HD 顯示的就是同一個畫面。在<span class="ui">連線方式</span>選擇品牌加入的設備通常是這樣。見<a class="xref" href="/zh-Hant/guide/brands.html#brands-matrix">「各方式可使用的功能」</a>。</p>
+  </details>
+  <details class="faq">
+    <summary>為什麼錄影的時間與手機的時鐘不同？</summary>
+    <p>這些時間是設備自己的時鐘，不會轉換。請在設備上修正日期、時間與時區，見<a class="xref" href="/zh-Hant/guide/playback.html#playback-playing">「播放錄影期間」</a>。</p>
+  </details>
+  <details class="faq">
+    <summary>攝影機在原廠的 App 可以使用，在 Cam Hub 卻不行。該怎麼辦？</summary>
+    <p>在<span class="path"><span class="ui">進階</span> › <span class="ui">連線方式</span></span>改用其他連線方式（<span class="ui">ONVIF</span>、RTSP 或清單中的品牌），在設備上開啟 ONVIF 與 RTSP，設備有獨立的使用者清單時另建 ONVIF 使用者，並檢查影像格式。必須依賴原廠雲端的設備無法加入。見<a class="xref" href="/zh-Hant/guide/brands.html#brands-requirements">「需求與限制」</a>。</p>
+  </details>
+  <details class="faq">
+    <summary>只接受 HTTPS 的設備可以加入嗎？</summary>
+    <p>可以。在新增設備表單中開啟<span class="path"><span class="ui">進階</span> › <span class="ui">使用 HTTPS</span></span>，Cam Hub 會透過 HTTPS 加入設備，並信任設備出示的憑證。適用於以<span class="ui">自動偵測</span>或<span class="ui">ONVIF</span>連線的設備。已加入的設備在設備頁切換。見<a class="xref" href="/zh-Hant/guide/add.html#add-https">「透過 HTTPS 加入設備」</a>與<a class="xref" href="/zh-Hant/guide/devices.html#devices-https">「已儲存設備的 HTTPS」</a>。</p>
+  </details>
+  <details class="faq">
+    <summary>換用新的 iPhone、iPad 或 Mac 後，為什麼 Cam Hub 要求重新輸入密碼？</summary>
+    <p>密碼沒有隨設備清單一起搬過來。還原 Cam Hub 的 iCloud 備份（備份包含所有密碼），或在每台設備的設備頁點選<span class="ui">重新輸入密碼</span>重新輸入。見<a class="xref" href="/zh-Hant/guide/devices.html#devices-password-missing">「沒有儲存密碼的設備」</a>。</p>
+  </details>
+  <details class="faq">
+    <summary>已儲存設備的位址或密碼，要如何變更？</summary>
+    <p>使用者名稱與密碼在設備頁以<span class="ui">編輯帳號密碼</span>變更，見<a class="xref" href="/zh-Hant/guide/devices.html#devices-credentials">「變更設備的使用者名稱與密碼」</a>。位址無法變更：新的位址會建立新的設備，因此須先刪除舊的。見<a class="xref" href="/zh-Hant/guide/add.html#add-form">「新增設備表單」</a>。</p>
+  </details>
+  <details class="faq">
+    <summary>沒有訂閱方案時，可以觀看多少支攝影機？</summary>
+    <p>整個 App 合計 2 個已啟用的通道，以及一台錄影主機。YouTube 直播與 Twitch 頻道不計入。見<a class="xref" href="/zh-Hant/guide/plans.html#plans-tiers">「各方案的額度」</a>。</p>
+  </details>
+  <details class="faq">
+    <summary>方案可以用在所有使用同一個 Apple 帳號的裝置嗎？</summary>
+    <p>可以，在以相同 Apple 帳號登入的每一台 iPhone、iPad 與 Apple TV 上都有效。在新裝置上，點選<span class="ui">還原購買項目</span>。見<a class="xref" href="/zh-Hant/guide/plans.html#plans-subscribe">「訂閱、還原購買與兌換代碼」</a>。</p>
+  </details>
+  <details class="faq">
+    <summary>所有資料都被刪除了，攝影機可以找回來嗎？</summary>
+    <p>只能用先前建立的 iCloud 備份，以<span class="ui">從 iCloud 還原</span>找回，見<a class="xref" href="/zh-Hant/guide/share.html#share-restore">「從 iCloud 還原」</a>。沒有這樣的備份時，攝影機的密碼無法找回，因為密碼只儲存在輸入它的那台裝置上。<span class="ui">刪除所有資料</span>不影響方案。</p>
+  </details>
+  <details class="faq">
+    <summary>設備報告會傳送密碼嗎？</summary>
+    <p>不會。密碼絕不包含在報告中，而且除非使用者選擇以電子郵件寄出，否則不會傳送任何內容。見<a class="xref" href="/zh-Hant/guide/add.html#add-report">「設備報告（實驗性功能）」</a>。</p>
+  </details>
+  <details class="faq">
+    <summary>為什麼螢幕不會自動關閉？</summary>
+    <p>畫面上有即時影像或錄影時，App 會讓螢幕保持開啟。離開影像畫面或離開 App 後，這個行為就結束。</p>
+  </details>
+  <details class="faq">
+    <summary>為什麼切換到其他 App 時，畫面會停止？</summary>
+    <p>App 離開前景時，所有串流都會停止，而且 App 在背景時不會播放聲音。回到 App 後，串流會重新連線。</p>
+  </details>
+</section><nav class="guide-pager" aria-label="目錄"><a class="guide-prev" rel="prev" href="/zh-Hant/guide/appletv.html"><span class="pager-dir">上一章</span><span class="pager-title">14. Apple TV</span></a><a class="guide-next" rel="next" href="/zh-Hant/guide/brands.html"><span class="pager-dir">下一章</span><span class="pager-title">16. 支援的品牌與連線方式</span></a></nav></article>
+    </div>
+    <button class="guide-top" id="guide-top" type="button" aria-label="回到頂端"></button>
+  </main>
+  <footer class="footer"><span data-i18n="footer">Copyright<wbr data-phrase-break=""> <wbr data-phrase-break="">©<wbr data-phrase-break=""> <wbr data-phrase-break="">2026<wbr data-phrase-break=""> <wbr data-phrase-break="">ALMX<wbr data-phrase-break="">.<wbr data-phrase-break=""> <wbr data-phrase-break="">All<wbr data-phrase-break=""> <wbr data-phrase-break="">rights<wbr data-phrase-break=""> <wbr data-phrase-break="">reserved<wbr data-phrase-break="">.</span><nav><a href="/zh-Hant/guide.html" data-i18n="navGuide">操作<wbr data-phrase-break="">手冊</a><a href="/zh-Hant/devices.html" data-i18n="navDevices">機型<wbr data-phrase-break="">差異</a><a href="/zh-Hant/privacy.html" data-i18n="navPrivacy">隱私權</a><a href="/zh-Hant/terms.html" data-i18n="navTerms">使用<wbr data-phrase-break="">條款</a><a class="store-link" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeCTA">在<wbr data-phrase-break=""> <wbr data-phrase-break="">App<wbr data-phrase-break=""> <wbr data-phrase-break="">Store<wbr data-phrase-break=""> <wbr data-phrase-break="">下載</a></nav><nav class="language-links" id="language-links" aria-label="語言" data-i18n-aria="languageLabel"><a href="/guide/trouble.html" hreflang="en" lang="en" data-language-link="en">English</a><a href="/zh-Hant/guide/trouble.html" hreflang="zh-Hant" lang="zh-Hant" data-language-link="zh-Hant" aria-current="true">繁體中文</a><a href="/zh-Hans/guide/trouble.html" hreflang="zh-Hans" lang="zh-Hans" data-language-link="zh-Hans">简体中文</a><a href="/ja/guide/trouble.html" hreflang="ja" lang="ja" data-language-link="ja">日本語</a><a href="/ko/guide/trouble.html" hreflang="ko" lang="ko" data-language-link="ko">한국어</a><a href="/de/guide/trouble.html" hreflang="de" lang="de" data-language-link="de">Deutsch</a><a href="/es/guide/trouble.html" hreflang="es" lang="es" data-language-link="es">Español</a><a href="/es-MX/guide/trouble.html" hreflang="es-MX" lang="es-MX" data-language-link="es-MX">Español (México)</a><a href="/fr/guide/trouble.html" hreflang="fr" lang="fr" data-language-link="fr">Français</a><a href="/sl/guide/trouble.html" hreflang="sl" lang="sl" data-language-link="sl">Slovenščina</a><a href="/ar/guide/trouble.html" hreflang="ar" lang="ar" data-language-link="ar">العربية</a></nav></footer>
+  <script src="/additional-locales.js?v=20261103-sl"></script>
+  <script src="/site.js?v=20261112-1"></script>
+
+
+</body></html>

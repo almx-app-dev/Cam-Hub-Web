@@ -1,0 +1,932 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="apple-itunes-app" content="app-id=6792057195"><meta name="color-scheme" content="dark light">
+  <meta name="description" content="LiveView Mix 把来自不同设备的摄像头放在同一面墙上。墙上还可以放置图片、时钟、标签和控制面板，它们都可以放在任意图块中。">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="Cam Hub"><meta property="og:image" content="https://cam-hub.almx.cc/assets/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+  <title>LiveView Mix — Cam Hub 操作手册</title><link rel="icon" href="/assets/icon-48.png" sizes="48x48"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/icon-180.png"><link rel="stylesheet" href="/styles.css?v=20261112-1"><link rel="stylesheet" href="/guide.css?v=20261030-1">
+<meta property="og:description" content="LiveView Mix 把来自不同设备的摄像头放在同一面墙上。墙上还可以放置图片、时钟、标签和控制面板，它们都可以放在任意图块中。"><link rel="canonical" href="https://cam-hub.almx.cc/zh-Hans/guide/lvm.html"><link rel="alternate" hreflang="x-default" href="https://cam-hub.almx.cc/guide/lvm.html"><link rel="alternate" hreflang="en" href="https://cam-hub.almx.cc/guide/lvm.html"><link rel="alternate" hreflang="zh-Hant" href="https://cam-hub.almx.cc/zh-Hant/guide/lvm.html"><link rel="alternate" hreflang="zh-Hans" href="https://cam-hub.almx.cc/zh-Hans/guide/lvm.html"><link rel="alternate" hreflang="ja" href="https://cam-hub.almx.cc/ja/guide/lvm.html"><link rel="alternate" hreflang="ko" href="https://cam-hub.almx.cc/ko/guide/lvm.html"><link rel="alternate" hreflang="de" href="https://cam-hub.almx.cc/de/guide/lvm.html"><link rel="alternate" hreflang="es" href="https://cam-hub.almx.cc/es/guide/lvm.html"><link rel="alternate" hreflang="es-MX" href="https://cam-hub.almx.cc/es-MX/guide/lvm.html"><link rel="alternate" hreflang="fr" href="https://cam-hub.almx.cc/fr/guide/lvm.html"><link rel="alternate" hreflang="sl" href="https://cam-hub.almx.cc/sl/guide/lvm.html"><link rel="alternate" hreflang="ar" href="https://cam-hub.almx.cc/ar/guide/lvm.html"><meta property="og:url" content="https://cam-hub.almx.cc/zh-Hans/guide/lvm.html"><meta property="og:title" content="LiveView Mix — Cam Hub 操作手册"></head>
+<body data-page="guide">
+  <header class="topbar" aria-label="Site header">
+    <a class="brand" href="/zh-Hans/"><img src="/assets/icon-96.png" alt="" width="42" height="42"><span><strong>Cam<wbr data-phrase-break="">&nbsp;<wbr data-phrase-break="">Hub</strong><small data-i18n="topline">操作<wbr data-phrase-break="">手册</small></span></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-controls" data-i18n-aria="menuLabel" aria-label="打开菜单"><span></span><span></span><span></span><span class="sr-only" data-i18n="menuLabel">打开菜单</span></button>
+    <div class="topbar-controls" id="site-controls"><nav class="navlinks" aria-label="Primary"><a href="/zh-Hans/" data-nav="home" data-i18n="navHome">首页</a><a href="/zh-Hans/product.html" data-nav="product" data-i18n="navProduct">功能<wbr data-phrase-break="">介绍</a><a href="/zh-Hans/guide.html" data-nav="guide" data-i18n="navGuide" aria-current="page">操作<wbr data-phrase-break="">手册</a><a href="/zh-Hans/support.html" data-nav="support" data-i18n="navSupport">支持</a><a href="/zh-Hans/privacy.html" data-nav="privacy" data-i18n="navPrivacy">隐私<wbr data-phrase-break="">政策</a><a href="/zh-Hans/terms.html" data-nav="terms" data-i18n="navTerms">使用<wbr data-phrase-break="">条款</a></nav><div class="pickers"><label><span class="sr-only" data-i18n="themeLabel">外观</span><select id="themeSelect" aria-label="Theme"><option value="auto" data-i18n="themeAuto" selected="">自动</option><option value="light" data-i18n="themeLight">浅色</option><option value="dark" data-i18n="themeDark">深色</option></select></label><label><span class="sr-only" data-i18n="languageLabel">语言</span><select id="languageSelect" aria-label="Language"><option value="en">English</option><option value="zh-Hant">繁體中文</option><option value="zh-Hans" selected="">简体中文</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="de">Deutsch</option><option value="es">Español</option><option value="es-MX">Español (México)</option><option value="fr">Français</option><option value="sl">Slovenščina</option><option value="ar">العربية</option></select></label></div><a class="store-pill" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeShort">下载<wbr data-phrase-break=""> <wbr data-phrase-break="">App</a></div>
+  </header>
+  <main class="inner-page guide" style="--g-topbar: 76px; --g-offset: 88px;">
+    <section class="page-hero"><div class="eyebrow" data-i18n="eyebrow">OPERATION MANUAL</div><h1 data-i18n="title">LiveView Mix</h1><p class="summary" data-i18n="summary">从<wbr data-phrase-break="">添加<wbr data-phrase-break="">设备、<wbr data-phrase-break="">实<wbr data-phrase-break="">时<wbr data-phrase-break="">画面<wbr data-phrase-break="">与<wbr data-phrase-break="">录像<wbr data-phrase-break="">回<wbr data-phrase-break="">放，<wbr data-phrase-break="">到<wbr data-phrase-break=""> <wbr data-phrase-break="">LiveView<wbr data-phrase-break=""> <wbr data-phrase-break="">Mix<wbr data-phrase-break=""> <wbr data-phrase-break="">多<wbr data-phrase-break="">机<wbr data-phrase-break="">墙、<wbr data-phrase-break="">共享<wbr data-phrase-break="">与<wbr data-phrase-break="">备份，<wbr data-phrase-break="">依次<wbr data-phrase-break="">说明<wbr data-phrase-break=""> <wbr data-phrase-break="">Cam<wbr data-phrase-break="">&nbsp;<wbr data-phrase-break="">Hub<wbr data-phrase-break=""> <wbr data-phrase-break="">的<wbr data-phrase-break="">操作<wbr data-phrase-break="">方法。</p></section>
+    <p class="guide-notice" id="guide-notice" role="status" hidden=""></p>
+    <div id="guide-sentinel" aria-hidden="true"></div>
+    <div class="guide-layout has-toc" id="guide-layout" lang="zh-Hans" dir="ltr">
+      <aside class="guide-side" id="guide-side">
+        <button class="guide-toc-toggle" id="guide-toc-toggle" type="button" aria-expanded="false" aria-controls="guide-toc" lang="zh-Hans" dir="ltr"><span class="guide-toc-label" data-i18n="tocLabel">目录</span><span class="guide-toc-current" id="guide-toc-current">8. LiveView Mix</span></button>
+        <nav class="guide-toc" id="guide-toc" aria-label="目录"><ol><li><a href="/zh-Hans/guide.html"><span class="toc-num">1</span><span>快速入门</span></a><ol><li><a href="/zh-Hans/guide.html#start-prepare"><span>准备工作</span></a></li><li><a href="/zh-Hans/guide.html#start-path"><span>看到实时画面的最短路径</span></a></li><li><a href="/zh-Hans/guide.html#start-demo"><span>没有设备时试用</span></a></li></ol></li><li><a href="/zh-Hans/guide/tour.html"><span class="toc-num">2</span><span>标签页与基本行为</span></a><ol><li><a href="/zh-Hans/guide/tour.html#tour-tabs"><span>五个标签页一览</span></a></li><li><a href="/zh-Hans/guide/tour.html#tour-launch"><span>启动时打开的画面</span></a></li><li><a href="/zh-Hans/guide/tour.html#tour-look"><span>外观与语言</span></a></li><li><a href="/zh-Hans/guide/tour.html#tour-rotate"><span>旋转设备</span></a></li><li><a href="/zh-Hans/guide/tour.html#tour-duo"><span>iPhone Duo</span></a></li><li><a href="/zh-Hans/guide/tour.html#tour-awake"><span>屏幕、后台与通知</span></a></li></ol></li><li><a href="/zh-Hans/guide/add.html"><span class="toc-num">3</span><span>添加设备</span></a><ol><li><a href="/zh-Hans/guide/add.html#add-form"><span>添加设备表单</span></a></li><li><a href="/zh-Hans/guide/add.html#add-auto"><span>不选择品牌直接添加</span></a></li><li><a href="/zh-Hans/guide/add.html#add-methods"><span>选择连接方式</span></a></li><li><a href="/zh-Hans/guide/add.html#add-https"><span>通过 HTTPS 添加设备</span></a></li><li><a href="/zh-Hans/guide/add.html#add-failed"><span>添加失败时：检查清单</span></a></li><li><a href="/zh-Hans/guide/add.html#add-report"><span>设备报告（实验性）</span></a></li><li><a href="/zh-Hans/guide/add.html#add-scan"><span>用网络扫描查找设备</span></a></li></ol></li><li><a href="/zh-Hans/guide/devices.html"><span class="toc-num">4</span><span>设备标签页与通道</span></a><ol><li><a href="/zh-Hans/guide/devices.html#devices-list"><span>设备列表</span></a></li><li><a href="/zh-Hans/guide/devices.html#devices-page"><span>设备页</span></a></li><li><a href="/zh-Hans/guide/devices.html#devices-credentials"><span>更改设备的用户名和密码</span></a></li><li><a href="/zh-Hans/guide/devices.html#devices-password-missing"><span>没有保存密码的设备</span></a></li><li><a href="/zh-Hans/guide/devices.html#devices-https"><span>已保存设备的 HTTPS</span></a></li><li><a href="/zh-Hans/guide/devices.html#devices-health"><span>磁盘健康</span></a></li><li><a href="/zh-Hans/guide/devices.html#devices-states"><span>缩略图显示的内容</span></a></li><li><a href="/zh-Hans/guide/devices.html#devices-menu"><span>通道选项（长按）</span></a></li><li><a href="/zh-Hans/guide/devices.html#devices-plan"><span>套餐上限与启用通道</span></a></li><li><a href="/zh-Hans/guide/devices.html#devices-choose"><span>选择要显示的摄像头</span></a></li><li><a href="/zh-Hans/guide/devices.html#devices-fullwall"><span>设备的全屏墙</span></a></li><li><a href="/zh-Hans/guide/devices.html#devices-quality"><span>设备画面上的 SD 和 HD</span></a></li></ol></li><li><a href="/zh-Hans/guide/live.html"><span class="toc-num">5</span><span>实时标签页与全屏墙</span></a><ol><li><a href="/zh-Hans/guide/live.html#live-tab"><span>实时标签页</span></a></li><li><a href="/zh-Hans/guide/live.html#live-quality"><span>墙上的 SD 和 HD</span></a></li><li><a href="/zh-Hans/guide/live.html#live-wall"><span>全屏墙</span></a></li><li><a href="/zh-Hans/guide/live.html#live-hide"><span>隐藏无信号的摄像头</span></a></li></ol></li><li><a href="/zh-Hans/guide/single.html"><span class="toc-num">6</span><span>单摄像头视图</span></a><ol><li><a href="/zh-Hans/guide/single.html#single-open"><span>打开视图</span></a></li><li><a href="/zh-Hans/guide/single.html#single-screen"><span>屏幕的组成部分</span></a></li><li><a href="/zh-Hans/guide/single.html#single-zoom"><span>缩放与平移</span></a></li><li><a href="/zh-Hans/guide/single.html#single-controls"><span>快照、声音与画质</span></a></li><li><a href="/zh-Hans/guide/single.html#single-clip"><span>录制片段</span></a></li><li><a href="/zh-Hans/guide/single.html#single-talk"><span>双向对讲</span></a></li><li><a href="/zh-Hans/guide/single.html#single-picture"><span>黑边、旋转与横屏</span></a></li><li><a href="/zh-Hans/guide/single.html#single-ptz"><span>PTZ 控制：移动摄像头</span></a></li><li><a href="/zh-Hans/guide/single.html#single-window"><span>在独立窗口中打开摄像头</span></a></li><li><a href="/zh-Hans/guide/single.html#single-duo"><span>iPhone Duo 折叠时的视图</span></a></li><li><a href="/zh-Hans/guide/single.html#single-states"><span>连接状态与提示</span></a></li><li><a href="/zh-Hans/guide/single.html#single-limits"><span>不提供的功能</span></a></li></ol></li><li><a href="/zh-Hans/guide/playback.html"><span class="toc-num">7</span><span>录像回放与倍速</span></a><ol><li><a href="/zh-Hans/guide/playback.html#playback-avail"><span>哪些设备可以回放</span></a></li><li><a href="/zh-Hans/guide/playback.html#playback-day"><span>选择日期</span></a></li><li><a href="/zh-Hans/guide/playback.html#playback-calendar"><span>录像日历</span></a></li><li><a href="/zh-Hans/guide/playback.html#playback-timeline"><span>使用时间轴</span></a></li><li><a href="/zh-Hans/guide/playback.html#playback-list"><span>录像列表与人员搜索</span></a></li><li><a href="/zh-Hans/guide/playback.html#playback-playing"><span>录像播放期间</span></a></li><li><a href="/zh-Hans/guide/playback.html#playback-speed"><span>回放速度</span></a></li><li><a href="/zh-Hans/guide/playback.html#playback-landscape"><span>横屏回放</span></a></li><li><a href="/zh-Hans/guide/playback.html#playback-limits"><span>不提供的功能</span></a></li></ol></li><li class="is-current"><a href="/zh-Hans/guide/lvm.html" class="is-active" aria-current="location"><span class="toc-num">8</span><span>LiveView Mix</span></a><ol><li><a href="/zh-Hans/guide/lvm.html#lvm-tab"><span>LiveView Mix 标签页与预览</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-first"><span>搭建包含六个摄像头的第一面墙</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-pick"><span>选择摄像头与画质</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-layout"><span>调整布局</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-custom"><span>绘制自定义布局</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-special"><span>特殊布局：同一面墙上的大小图块</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-arrange"><span>排列墙面与图块</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-move"><span>把图块移到空图块中</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-slots"><span>图块除了摄像头还能显示什么</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-watermark"><span>水印</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-fit"><span>黑边、画面铺满屏幕与设备角度</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-pages"><span>竖向页面</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-canvases"><span>iPhone Duo 上的两张画布</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-wall"><span>全屏墙</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-closeup"><span>打开单个摄像头</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-states"><span>图块无法显示摄像头时</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-limits"><span>套餐上限如何影响墙</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-settings"><span>“设置”中的 LiveView Mix</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-tv"><span>Apple TV 上的差异</span></a></li></ol></li><li><a href="/zh-Hans/guide/webhook.html"><span class="toc-num">9</span><span>控制面板与 Webhook</span></a><ol><li><a href="/zh-Hans/guide/webhook.html#webhook-what"><span>控制面板的作用</span></a></li><li><a href="/zh-Hans/guide/webhook.html#webhook-add"><span>把控制面板添加到墙上</span></a></li><li><a href="/zh-Hans/guide/webhook.html#webhook-templates"><span>模板</span></a></li><li><a href="/zh-Hans/guide/webhook.html#webhook-fields"><span>面板的设置</span></a></li><li><a href="/zh-Hans/guide/webhook.html#webhook-button"><span>设置按钮</span></a></li><li><a href="/zh-Hans/guide/webhook.html#webhook-use"><span>按下按钮并查看结果</span></a></li><li><a href="/zh-Hans/guide/webhook.html#webhook-wall"><span>面板在墙上的外观</span></a></li><li><a href="/zh-Hans/guide/webhook.html#webhook-watch"><span>Apple Watch 上的按钮</span></a></li><li><a href="/zh-Hans/guide/webhook.html#ha"><span>使用 Home Assistant</span></a></li><li><a href="/zh-Hans/guide/webhook.html#webhook-security"><span>安全说明</span></a></li></ol></li><li><a href="/zh-Hans/guide/share.html"><span class="toc-num">10</span><span>共享与备份</span></a><ol><li><a href="/zh-Hans/guide/share.html#share-choose"><span>两种方式的比较</span></a></li><li><a href="/zh-Hans/guide/share.html#share-export"><span>导出摄像头（生成代码）</span></a></li><li><a href="/zh-Hans/guide/share.html#share-lock"><span>锁定代码</span></a></li><li><a href="/zh-Hans/guide/share.html#share-import"><span>导入摄像头</span></a></li><li><a href="/zh-Hans/guide/share.html#share-contents"><span>备份和代码包含的内容</span></a></li><li><a href="/zh-Hans/guide/share.html#share-icloud"><span>备份到 iCloud</span></a></li><li><a href="/zh-Hans/guide/share.html#share-versions"><span>多份命名备份：重命名与删除</span></a></li><li><a href="/zh-Hans/guide/share.html#share-restore"><span>从 iCloud 恢复</span></a></li><li><a href="/zh-Hans/guide/share.html#share-delete"><span>删除所有 iCloud 备份</span></a></li><li><a href="/zh-Hans/guide/share.html#share-newphone"><span>把设备和墙转移到新手机</span></a></li><li><a href="/zh-Hans/guide/share.html#share-appletv"><span>把设置带到 Apple TV</span></a></li></ol></li><li><a href="/zh-Hans/guide/plans.html"><span class="toc-num">11</span><span>套餐与额度</span></a><ol><li><a href="/zh-Hans/guide/plans.html#plans-tiers"><span>各套餐的额度</span></a></li><li><a href="/zh-Hans/guide/plans.html#plans-stack"><span>两组套餐如何组合</span></a></li><li><a href="/zh-Hans/guide/plans.html#plans-count"><span>哪些内容占用额度</span></a></li><li><a href="/zh-Hans/guide/plans.html#plans-examples"><span>组合示例</span></a></li><li><a href="/zh-Hans/guide/plans.html#plans-choose"><span>选择要显示的摄像头</span></a></li><li><a href="/zh-Hans/guide/plans.html#plans-subscribe"><span>订阅、恢复购买与兑换代码</span></a></li><li><a href="/zh-Hans/guide/plans.html#plans-lapse"><span>套餐到期或降级时</span></a></li></ol></li><li><a href="/zh-Hans/guide/tools.html"><span class="toc-num">12</span><span>工具标签页</span></a><ol><li><a href="/zh-Hans/guide/tools.html#tools-overview"><span>工具标签页包含什么</span></a></li><li><a href="/zh-Hans/guide/tools.html#tools-speedometer"><span>速度计与指南针</span></a></li></ol></li><li><a href="/zh-Hans/guide/settings.html"><span class="toc-num">13</span><span>设置</span></a><ol><li><a href="/zh-Hans/guide/settings.html#settings-overview"><span>设置标签页的各个部分</span></a></li><li><a href="/zh-Hans/guide/settings.html#settings-subscription"><span>订阅</span></a></li><li><a href="/zh-Hans/guide/settings.html#settings-quality"><span>默认画质</span></a></li><li><a href="/zh-Hans/guide/settings.html#settings-picture"><span>画面：黑边与画面铺满屏幕</span></a></li><li><a href="/zh-Hans/guide/settings.html#settings-hide"><span>隐藏离线摄像头</span></a></li><li><a href="/zh-Hans/guide/settings.html#settings-lvm"><span>LiveView Mix、其页面与启动时打开</span></a></li><li><a href="/zh-Hans/guide/settings.html#settings-backup"><span>摄像头的备份与共享</span></a></li><li><a href="/zh-Hans/guide/settings.html#settings-language"><span>语言</span></a></li><li><a href="/zh-Hans/guide/settings.html#settings-reset"><span>重置：默认设置、删除所有数据、删除 iCloud 备份</span></a></li><li><a href="/zh-Hans/guide/settings.html#settings-legal"><span>使用条款与隐私政策</span></a></li><li><a href="/zh-Hans/guide/settings.html#settings-about"><span>关于、操作手册，以及设置中没有的内容</span></a></li></ol></li><li><a href="/zh-Hans/guide/appletv.html"><span class="toc-num">14</span><span>Apple TV</span></a><ol><li><a href="/zh-Hans/guide/appletv.html#appletv-prepare"><span>先在 iPhone 或 iPad 上设置</span></a></li><li><a href="/zh-Hans/guide/appletv.html#appletv-bring"><span>把设置带到 Apple TV</span></a></li><li><a href="/zh-Hans/guide/appletv.html#appletv-differs"><span>Apple TV 上的差异</span></a></li></ol></li><li><a href="/zh-Hans/guide/trouble.html"><span class="toc-num">15</span><span>故障排除</span></a><ol><li><a href="/zh-Hans/guide/trouble.html#trouble-start"><span>从哪里入手</span></a></li><li><a href="/zh-Hans/guide/trouble.html#trouble-states"><span>空白界面的含义</span></a></li><li><a href="/zh-Hans/guide/trouble.html#trouble-add"><span>设备已添加，但无法连接</span></a></li><li><a href="/zh-Hans/guide/trouble.html#trouble-live"><span>实时观看</span></a></li><li><a href="/zh-Hans/guide/trouble.html#trouble-playback"><span>录像回放</span></a></li><li><a href="/zh-Hans/guide/trouble.html#trouble-lvm"><span>LiveView Mix</span></a></li><li><a href="/zh-Hans/guide/trouble.html#trouble-panels"><span>控制面板与 Webhook</span></a></li><li><a href="/zh-Hans/guide/trouble.html#trouble-health"><span>磁盘健康</span></a></li><li><a href="/zh-Hans/guide/trouble.html#trouble-share"><span>共享、导入与 iCloud 备份</span></a></li><li><a href="/zh-Hans/guide/trouble.html#trouble-plans"><span>套餐与购买</span></a></li><li><a href="/zh-Hans/guide/trouble.html#trouble-errors"><span>其他错误提示</span></a></li><li><a href="/zh-Hans/guide/trouble.html#trouble-permissions"><span>权限请求与系统对话框</span></a></li><li><a href="/zh-Hans/guide/trouble.html#trouble-contact"><span>联系开发者</span></a></li><li><a href="/zh-Hans/guide/trouble.html#trouble-faq"><span>常见问题</span></a></li></ol></li><li><a href="/zh-Hans/guide/brands.html"><span class="toc-num">16</span><span>支持的品牌与连接方式</span></a><ol><li><a href="/zh-Hans/guide/brands.html#brands-methods"><span>连接方式</span></a></li><li><a href="/zh-Hans/guide/brands.html#brands-matrix"><span>各方式支持哪些功能</span></a></li><li><a href="/zh-Hans/guide/brands.html#brands-profiles"><span>列表中的品牌</span></a></li><li><a href="/zh-Hans/guide/brands.html#brands-requirements"><span>要求与限制</span></a></li><li><a href="/zh-Hans/guide/brands.html#brands-recorders"><span>摄像头与录像机</span></a></li><li><a href="/zh-Hans/guide/brands.html#brands-prepare"><span>在设备上需要做哪些准备</span></a></li><li><a href="/zh-Hans/guide/brands.html#brands-activate"><span>激活新设备</span></a></li><li><a href="/zh-Hans/guide/brands.html#brands-compat"><span>App 中的兼容性参考</span></a></li></ol></li><li><a href="/zh-Hans/guide/about.html" class="no-num"><span>关于本手册</span></a><ol><li><a href="/zh-Hans/guide/about.html#about-scope"><span>适用范围</span></a></li><li><a href="/zh-Hans/guide/about.html#about-conventions"><span>约定</span></a></li><li><a href="/zh-Hans/guide/about.html#about-help"><span>获取帮助</span></a></li></ol></li></ol></nav>
+      </aside>
+      <article class="guide-article" id="guide-content"><section class="chapter" id="lvm">
+  <h2><span class="num">8</span>LiveView Mix</h2>
+  <p class="lead">LiveView Mix 把来自不同设备的摄像头放在同一面墙上。墙上还可以放置图片、时钟、标签和控制面板，它们都可以放在任意图块中。本章按操作顺序展开：标签页及其预览、选择摄像头、布局、排列、可选的竖向页面、iPhone Duo 的两张画布、全屏墙，以及套餐上限对墙的影响。</p>
+
+  <figure class="mixmap" aria-label="多台录像机与单独的摄像头合成同一面墙">
+    <div class="mm-sources">
+      <div class="mm-src"><b>NVR 1</b><span>后院</span>
+        <div class="mm-thumbs"><img src="/guide/img/src/nvr1-gate.jpg" alt="NVR 1 的大门" decoding="async" width="480" height="270" data-src="/guide/img/src/nvr1-gate.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"><img src="/guide/img/src/nvr1-lawn.jpg" alt="NVR 1 的草坪" decoding="async" width="480" height="270" data-src="/guide/img/src/nvr1-lawn.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"><img src="/guide/img/src/nvr1-patio.jpg" alt="NVR 1 的露台" decoding="async" width="480" height="270" data-src="/guide/img/src/nvr1-patio.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"></div></div>
+      <div class="mm-src"><b>NVR 2</b><span>店铺</span>
+        <div class="mm-thumbs"><img src="/guide/img/src/nvr2-counter.jpg" alt="NVR 2 的柜台" decoding="async" width="480" height="270" data-src="/guide/img/src/nvr2-counter.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"><img src="/guide/img/src/nvr2-shelves.jpg" alt="NVR 2 的货架" decoding="async" width="480" height="270" data-src="/guide/img/src/nvr2-shelves.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"><img src="/guide/img/src/nvr2-window.jpg" alt="NVR 2 的窗边" decoding="async" width="480" height="270" data-src="/guide/img/src/nvr2-window.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"></div></div>
+      <div class="mm-src"><b>NVR 3</b><span>夜间街道</span>
+        <div class="mm-thumbs"><img src="/guide/img/src/nvr3-street.jpg" alt="NVR 3 的街道" decoding="async" width="480" height="270" data-src="/guide/img/src/nvr3-street.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"><img src="/guide/img/src/nvr3-parking.jpg" alt="NVR 3 的停车场" decoding="async" width="480" height="270" data-src="/guide/img/src/nvr3-parking.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"><img src="/guide/img/src/nvr3-rooftop.jpg" alt="NVR 3 的屋顶" decoding="async" width="480" height="270" data-src="/guide/img/src/nvr3-rooftop.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"></div></div>
+      <div class="mm-src"><b>单独的摄像头 1、2</b><span>未接入录像机</span>
+        <div class="mm-thumbs"><img src="/guide/img/src/solo1-entrance.jpg" alt="单独的摄像头 1 的入口" decoding="async" width="480" height="270" data-src="/guide/img/src/solo1-entrance.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"><img src="/guide/img/src/solo2-tank.jpg" alt="单独的摄像头 2 的鱼缸" decoding="async" width="480" height="270" data-src="/guide/img/src/solo2-tank.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"></div></div>
+    </div>
+    <div class="mm-arrow" aria-hidden="true"><i>⟶</i><small>同一面墙</small></div>
+    <div class="mm-wall"><img src="/guide/img/lvm-wall-fullscreen.jpg" alt="三台录像机和两个单独的摄像头放在同一面横向的 LiveView Mix 墙上，另有一个控制面板和一个时钟" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-wall-fullscreen.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"></div>
+    <figcaption>三台录像机和两个单独的摄像头的画面，放在同一面墙上。这面墙使用手工绘制的布局，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-special">“特殊布局：同一面墙上的大小图块”</a>。</figcaption>
+  </figure>
+
+  <div class="callout note">
+    <strong class="t">本章使用的术语</strong>
+    <p><b>图块</b>：墙上一个带编号的位置。图块可以放摄像头、图片、时钟、标签或控制面板，也可以留空。任何图块都可以填充，无需先填充它前面的图块。</p>
+    <p><b>布局</b>：图块在屏幕上的排列方式，例如 <span class="ui" data-ui="value">2 × 3</span> 或 <span class="ui" data-ui="value">1 + 5</span>。</p>
+    <p><b>墙页</b>：布局一次显示的图块。墙上的图块多于布局的容量时，全屏墙会分成多个墙页，通过滑动切换。</p>
+    <p><b>横向页面和竖向页面</b>：两面各自独立的墙，一面用于横持设备，另一面（可选）用于竖持设备，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-pages">“竖向页面”</a>。</p>
+  </div>
+
+  <h3 id="lvm-tab">LiveView Mix 标签页与预览</h3>
+  <p>位置：屏幕底部最左侧的 <span class="ui">LiveView Mix</span> 标签页。设置之前，屏幕显示一段说明和<span class="ui">设置 LiveView Mix</span> 按钮，操作步骤参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-first">“搭建包含六个摄像头的第一面墙”</a>。墙上至少有一个带内容的图块（摄像头、图片、控制面板、时钟或标签）后，标签页显示预览，预览下方有提示<span class="ui">仅为预览——全屏才会显示您的布局。</span>和<span class="ui">排列：自动</span>按钮。</p>
+  <p>右上角的三个按钮从左到右依次为：</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>按钮</th><th>用途</th><th>详细说明</th></tr></thead>
+    <tbody>
+      <tr><td data-label="按钮"><span class="ui">全屏</span>（金色墙面图标）</td><td data-label="用途">按所选布局打开墙。</td><td data-label="详细说明"><a class="xref" href="/zh-Hans/guide/lvm.html#lvm-wall">“全屏墙”</a></td></tr>
+      <tr><td data-label="按钮"><span class="ui">选择摄像头</span>（摄像头图标）</td><td data-label="用途">选择墙上的摄像头及其画质。</td><td data-label="详细说明"><a class="xref" href="/zh-Hans/guide/lvm.html#lvm-pick">“选择摄像头与画质”</a></td></tr>
+      <tr><td data-label="按钮"><span class="ui">调整布局</span>（网格图标）</td><td data-label="用途">选择布局、黑边处理、水印和翻页方式，并打开排列页面。</td><td data-label="详细说明"><a class="xref" href="/zh-Hans/guide/lvm.html#lvm-layout">“调整布局”</a></td></tr>
+    </tbody>
+  </table></div>
+  <figure class="land"><img src="/guide/img/lvm-tab-preview.jpg" alt="横持的 LiveView Mix 标签页：右上角是金色的“全屏”图标和另外两个按钮，下方是八个摄像头的预览，以及预览提示和“排列：自动”" decoding="async" width="1600" height="739" data-src="/guide/img/lvm-tab-preview.jpg" style="aspect-ratio: 1600 / 739;" loading="lazy"><figcaption>横持时的预览</figcaption></figure>
+  <figure class="phone"><img src="/guide/img/lvm-preview-portrait.jpg" alt="竖持的 LiveView Mix 标签页：预览把摄像头画面排成两列，下方是预览提示" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-preview-portrait.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>竖持时的预览</figcaption></figure>
+  <p>预览的行为如下：</p>
+  <ul>
+    <li>预览按编号顺序把已填充的图块排成均匀的网格。空图块不显示，因此只有第 2 和第 7 个图块中有摄像头的墙，会并排显示两个画面。预览不采用所选布局的形状；布局只对全屏墙生效。</li>
+    <li>预览使用每个摄像头的 SD 或 HD 设置、墙的黑边设置和水印。</li>
+    <li>选择<span class="ui">自动</span>（默认）时，iPhone 竖持时预览有两列，行数取决于屏幕高度。横持时，预览增加列数（通常为四列），使两行占满屏幕。在 iPad 上，预览通常保持两列。墙上只有一个已填充的图块时，该图块占满整个预览区域。也可以改为选择固定的列数和行数，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-preview-grid">“预览的排列”</a>。</li>
+    <li>图块多于一屏所能显示的数量时，左右滑动可切换页面；预览下方会出现页面圆点。</li>
+    <li>水印关闭时，每个摄像头的左下角显示其通道编号和名称。水印开启时，由水印取代这一标签。</li>
+    <li>点击摄像头画面会打开全屏查看器，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-closeup">“打开单个摄像头”</a>。点击控制面板的按钮会发送其请求；按钮设为先要求确认时，会出现确认对话框，参见<a class="xref" href="/zh-Hans/guide/webhook.html">第 9 章“控制面板与 Webhook”</a>。</li>
+    <li>无法显示的摄像头保留其图块并显示状态文字，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-states">“图块无法显示摄像头时”</a>。</li>
+    <li>全屏墙打开期间，预览的视频流暂停；再次显示该标签页时恢复。在 iPhone 上，<span class="ui">选择摄像头</span>或<span class="ui">调整布局</span>页面覆盖预览期间，预览也会暂停。</li>
+    <li>打开竖向页面后，标签页在高大于宽时显示竖向页面，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-pages">“竖向页面”</a>。在打开了两张画布的 iPhone Duo 上，标签页改为显示两张画布，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-canvases">“iPhone Duo 上的两张画布”</a>。</li>
+    <li>没有任何图块有内容可显示时（例如每个图块都指向已移除的摄像头），屏幕显示 <span class="ui">LiveView Mix 为空</span>，并指向“设置”。</li>
+  </ul>
+  <div class="callout tip">
+    <strong class="t">横持设备</strong>
+    <p>布局是按宽屏绘制的。横持时，图块保持摄像头画面的宽屏形状；竖持时，布局沿其对角线翻转（参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-fit">“黑边、画面铺满屏幕与设备角度”</a>），除非打开了专属的竖向页面（参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-pages">“竖向页面”</a>）。预览和全屏墙会随设备的角度自动重新排布。</p>
+  </div>
+
+  <h4 id="lvm-preview-grid">预览的排列</h4>
+  <p>预览提示末尾的<span class="ui">排列：自动</span>按钮，用于设置预览每页显示多少列、多少行图块。该选择属于 App 设置，而不是墙的一部分：它不改变全屏墙，并会随 App 设置一起存入备份或共享代码（参见<a class="xref" href="/zh-Hans/guide/share.html#share-contents">“备份和代码包含的内容”</a>）。无论设备如何握持，所选的列数和行数都保持不变。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>在 LiveView Mix 标签页中，点击预览下方的<span class="ui">排列：自动</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>预览上方打开一个小窗口，其中有<span class="ui">自动</span>开关，默认为打开。</p>
+      <figure class="land"><img src="/guide/img/lvm-preview-grid.jpg" alt="横持时 LiveView Mix 预览上方的排列窗口：“自动”已关闭，“列数”为 2、“行数”为 4，各带减号和加号按钮，下方显示 2 × 4" decoding="async" width="1600" height="739" data-src="/guide/img/lvm-preview-grid.jpg" style="aspect-ratio: 1600 / 739;" loading="lazy"><figcaption>预览的排列</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>关闭<span class="ui">自动</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>窗口显示<span class="ui">列数</span>和<span class="ui">行数</span>，各带 − 和 +，均设为 2，预览变为 2 × 2 的网格。</p>
+    </li>
+    <li class="step">
+      <p>点击<span class="ui">列数</span>和<span class="ui">行数</span>旁的 − 或 +，直到显示所需的网格。每项的范围为 1 至 4。</p>
+      <p class="check"><b class="check-label">确认：</b>预览随每次点击变化，每个图块占满其所分得的屏幕区域。</p>
+    </li>
+    <li class="step">
+      <p>点击窗口外的任意位置。</p>
+      <p class="check"><b class="check-label">确认：</b>窗口关闭，按钮显示所选的网格，例如<span class="ui">排列：2 × 4</span>。</p>
+    </li>
+  </ol>
+  <p>要恢复自动网格，重新打开<span class="ui">自动</span>。固定网格的最后一页未填满时，其余单元格保持空白。</p>
+
+  <h3 id="lvm-first">搭建包含六个摄像头的第一面墙</h3>
+  <p>目的：把六个摄像头放在同一面墙上，并以 <span class="ui" data-ui="value">1 + 5</span> 布局全屏查看。所需时间：约 5 分钟。</p>
+  <p>前提条件：</p>
+  <ul>
+    <li>设备已添加，且提供至少六个可选的通道；添加方法参见<a class="xref" href="/zh-Hans/guide/add.html">第 3 章“添加设备”</a>。</li>
+    <li>六个通道都已启用，且在套餐额度之内。免费版在整个 App 中只允许 2 个已启用的通道；超出的通道在墙上显示为<span class="ui">已停用</span>或<span class="ui">不在您的套餐内</span>。额度和启用通道的方法参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-limits">“套餐上限如何影响墙”</a>和<a class="xref" href="/zh-Hans/guide/plans.html">第 11 章“套餐与额度”</a>。</li>
+    <li>设备是 iPhone 或 iPad。Apple TV 参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-tv">“Apple TV 上的差异”</a>。</li>
+  </ul>
+  <ol class="steps">
+    <li class="step">
+      <p>点击屏幕底部的 <span class="ui">LiveView Mix</span> 标签页。</p>
+      <p class="check"><b class="check-label">确认：</b>尚未设置 LiveView Mix 时，屏幕显示一段说明和<span class="ui">设置 LiveView Mix</span> 按钮。</p>
+      <figure class="phone"><img src="/guide/img/lvm-empty.jpg" alt="设置之前的 LiveView Mix 标签页，屏幕中央有一段说明和设置按钮" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-empty.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>设置之前的 LiveView Mix 标签页</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>点击<span class="ui">设置 LiveView Mix</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>打开<span class="ui">选择摄像头</span>页面，按设备分组列出所有通道。页面顶部是<span class="ui">横向页面</span>和<span class="ui">竖向页面</span>切换器，已选中<span class="ui">横向页面</span>，其下是<span class="ui" data-ui="value">已选 0 个摄像头</span>。</p>
+    </li>
+    <li class="step">
+      <p>点击六个通道中第一个通道前面的圆圈。</p>
+      <p class="check"><b class="check-label">确认：</b>圆圈被勾选，该行右侧出现 <span class="ui">SD</span> 和 <span class="ui">HD</span> 选择器，当前为 <span class="ui">SD</span>。</p>
+    </li>
+    <li class="step">
+      <p>再按希望它们在墙上出现的顺序，勾选另外五个通道。</p>
+      <p class="check"><b class="check-label">确认：</b>页面顶部显示<span class="ui" data-ui="value">已选 6 个摄像头</span>。</p>
+      <figure class="phone"><img src="/guide/img/lvm-pick-selected.jpg" alt="已选 6 个摄像头的“选择摄像头”页面：每个勾选的通道右侧有 SD 和 HD 选择器，顶部有“全部 SD”和“全部 HD”按钮" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-pick-selected.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>已选 6 个摄像头</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>可选：在需要更清晰画面的每个摄像头旁点击 <span class="ui">HD</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>该摄像头的选择器显示 <span class="ui">HD</span>。其他摄像头不变。</p>
+    </li>
+    <li class="step">
+      <p>点击右上角的<span class="ui">完成</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>页面关闭，标签页显示六个摄像头的预览。</p>
+    </li>
+    <li class="step">
+      <p>点击右上角的<span class="ui">调整布局</span>（网格图标）。</p>
+      <p class="check"><b class="check-label">确认：</b>打开<span class="ui">调整布局</span>页面。页面顶部显示<span class="ui" data-ui="value">此布局可放 4 路 · 目前放了 6 路</span>。默认布局每页只能放 4 个图块，因此六个摄像头会占用两个墙页。</p>
+    </li>
+    <li class="step">
+      <p>在<span class="ui">全屏布局</span>部分点击 <span class="ui" data-ui="value">1 + 5</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>该布局高亮显示，页面顶部显示<span class="ui" data-ui="value">此布局可放 6 路 · 目前放了 6 路</span>。</p>
+      <figure class="phone"><img src="/guide/img/lvm-first-layout.jpg" alt="选中 1 + 5 布局的“调整布局”页面，顶部一行写着“此布局可放 6 路 · 目前放了 6 路”" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-first-layout.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>选中的 1 + 5 布局</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>向下滚动到<span class="ui">水印</span>部分，打开<span class="ui">显示水印</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>该部分显示位置、内容和样式的选项。<span class="ui">设备名称</span>和<span class="ui">摄像头名称</span>已开启。</p>
+    </li>
+    <li class="step">
+      <p>点击右上角的<span class="ui">完成</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>页面关闭。预览中的每个摄像头都标有设备名称和摄像头名称。</p>
+    </li>
+    <li class="step">
+      <p>将设备横过来。</p>
+      <p class="check"><b class="check-label">确认：</b>预览按新的角度自动重新排布，无需任何设置。</p>
+    </li>
+    <li class="step">
+      <p>点击右上角的<span class="ui">全屏</span>（金色墙面图标）。</p>
+      <p class="check"><b class="check-label">确认：</b>墙占满屏幕：第一个摄像头在左上角的大图块中（占宽度和高度的三分之二），另外五个在其右侧和下方。左上角有一个 <span class="ui" data-ui="icon">✕</span> 按钮。</p>
+      <figure class="land"><img src="/guide/img/lvm-first-wall.jpg" alt="横持的全屏墙：六个摄像头采用 1 + 5 布局，大图块在左上角，每个图块的右下角带有设备名称和摄像头名称" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-first-wall.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>1 + 5 布局的全屏墙</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>点击任意一个摄像头的画面。</p>
+      <p class="check"><b class="check-label">确认：</b>屏幕切换为该摄像头的单摄像头视图，以 HD 播放，左上角有返回按钮。</p>
+    </li>
+    <li class="step">
+      <p>点击左上角的返回按钮 <span class="ui" data-ui="icon">‹</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>屏幕重新显示全屏墙。</p>
+    </li>
+    <li class="step">
+      <p>点击左上角的 <span class="ui" data-ui="icon">✕</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>墙关闭，重新显示 LiveView Mix 标签页中的预览。</p>
+    </li>
+  </ol>
+  <p>预期结果：LiveView Mix 标签页显示六个摄像头的预览，全屏墙以 <span class="ui" data-ui="value">1 + 5</span> 布局显示它们，第一个摄像头在大图块中。要把其他摄像头放进大图块，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-arrange">“排列墙面与图块”</a>。部分图块显示状态文字而不是画面时，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-states">“图块无法显示摄像头时”</a>和<a class="xref" href="/zh-Hans/guide/trouble.html">第 15 章“故障排除”</a>。</p>
+
+  <h3 id="lvm-pick">选择摄像头与画质</h3>
+  <p>路径：<span class="path"><span class="ui">LiveView Mix</span> › <span class="ui">选择摄像头</span></span>。也可以从<span class="path"><span class="ui">设置</span> › <span class="ui">LiveView Mix</span></span> 打开该页面，摄像头的选择和布局选项在同一页上，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-settings">““设置”中的 LiveView Mix”</a>。从标签页打开该页面时，顶部的切换器决定编辑横向页面还是竖向页面，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-pages">“竖向页面”</a>。</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>项目</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td data-label="项目">页面顶部的计数</td><td data-label="说明"><span class="ui" data-ui="value">已选 6 个摄像头</span>随勾选的通道更新。它只统计摄像头，不统计空图块、图片、时钟、标签或控制面板。</td></tr>
+      <tr><td data-label="项目">通道行</td><td data-label="说明">每台设备一个分组，每个通道一行：圆圈、缩略图、通道编号和名称。只有套餐涵盖的通道，缩略图才显示实时画面；其他通道显示<span class="ui">已停用</span>或<span class="ui">不在您的套餐内</span>。</td></tr>
+      <tr><td data-label="项目">勾选顺序</td><td data-label="说明">新勾选的摄像头进入最后一个已填充图块之后的图块。要把摄像头放进特定的图块，请使用<span class="ui">排列墙面</span>中的<span class="ui">在这里放摄像头</span>，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-arrange">“排列墙面与图块”</a>。</td></tr>
+      <tr><td data-label="项目">重复</td><td data-label="说明">一个通道在墙上只能放置一次。</td></tr>
+      <tr><td data-label="项目"><span class="ui">SD</span> | <span class="ui">HD</span></td><td data-label="说明">通道被勾选后，其行右侧出现画质选择器。新添加的摄像头设为 <span class="ui">SD</span>。</td></tr>
+      <tr><td data-label="项目"><span class="ui">全部 SD</span>、<span class="ui">全部 HD</span></td><td data-label="说明">页面顶部的两个按钮，一次性设置所有已选摄像头的画质。</td></tr>
+      <tr><td data-label="项目"><span class="ui">没有设备</span></td><td data-label="说明">尚未添加任何设备时显示，并提示先添加设备。</td></tr>
+    </tbody>
+  </table></div>
+  <div class="shots pair">
+    <figure class="phone"><img src="/guide/img/lvm-pick-empty.jpg" alt="未勾选任何通道的“选择摄像头”页面：按 NVR 分组的通道和缩略图" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-pick-empty.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>未勾选</figcaption></figure>
+    <figure class="phone"><img src="/guide/img/lvm-pick-selected.jpg" alt="“选择摄像头”页面：每个勾选的通道右侧出现 SD 和 HD 选择器" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-pick-selected.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>勾选后的 SD 和 HD</figcaption></figure>
+  </div>
+  <h4>LiveView Mix 的画质规则</h4>
+  <ul>
+    <li>LiveView Mix 有自己的画质，按图块分别设置。它不受<span class="path"><span class="ui">设置</span> › <span class="ui">默认画质</span></span>下<span class="ui">单个摄像头</span>和<span class="ui">多个摄像头</span>的影响；这两项设置只适用于单摄像头视图和普通的设备墙。</li>
+    <li>墙上的每个图块按自己的设置以 SD 或 HD 播放。图块较小时，HD 和 SD 看起来几乎一样。大多数图块使用 <span class="ui">SD</span>，只让需要看清的摄像头使用 <span class="ui">HD</span>，可以降低带宽和设备的负载。</li>
+    <li>从墙或预览中打开的单个摄像头，无论其图块如何设置，一律以 HD 开始。在预览的全屏查看器中，可为当前观看切换画质；该切换不会保存。参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-closeup">“打开单个摄像头”</a>。</li>
+    <li>“选择摄像头”页面和排列画布上的缩略图始终使用 SD。</li>
+  </ul>
+  <p>选择摄像头：</p>
+  <ol class="steps">
+    <li class="step">
+      <p>在 LiveView Mix 标签页中点击<span class="ui">选择摄像头</span>（摄像头图标）。</p>
+      <p class="check"><b class="check-label">确认：</b>打开<span class="ui">选择摄像头</span>页面。已选的摄像头处于勾选状态。</p>
+    </li>
+    <li class="step">
+      <p>点击通道前面的圆圈，把它加入墙。</p>
+      <p class="check"><b class="check-label">确认：</b>圆圈被勾选，该行出现 <span class="ui">SD</span> 和 <span class="ui">HD</span>，顶部的计数加 1。</p>
+    </li>
+    <li class="step">
+      <p>要更改该摄像头的画质，点击 <span class="ui">HD</span> 或 <span class="ui">SD</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>选择器显示所选画质。只影响这个摄像头。</p>
+    </li>
+    <li class="step">
+      <p>可选：要一次性更改所有已选摄像头的画质，点击<span class="ui">全部 SD</span> 或<span class="ui">全部 HD</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>所有已选摄像头的选择器显示相同的画质。</p>
+    </li>
+    <li class="step">
+      <p>要把摄像头从墙上移除，再次点击已勾选通道的圆圈。</p>
+      <p class="check"><b class="check-label">确认：</b>圆圈恢复为空，顶部的计数减 1。该摄像头的图块变空；其他图块都不移动。</p>
+    </li>
+    <li class="step">
+      <p>点击右上角的<span class="ui">完成</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>页面关闭，预览按新的选择更新。</p>
+    </li>
+  </ol>
+  <div class="callout note">
+    <strong class="t">移除摄像头会使其图块变空</strong>
+    <p>取消勾选某个摄像头后，其图块就地留空。其他每个图块，包括图片、时钟、标签和控制面板，都保持其编号和在墙上的位置。之后可在<span class="ui">排列墙面</span>中重新填充这个空图块，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-arrange">“排列墙面与图块”</a>。</p>
+  </div>
+  <p>从 LiveView Mix 标签页右上角的按钮打开该页面时，左上角的<span class="ui">取消</span>会把墙恢复到打开该页面之前的状态。<span class="ui">完成</span>则保留所做的选择。</p>
+
+  <h4>指向已移除摄像头的图块</h4>
+  <p>墙上某个图块指向 Cam Hub 已不再拥有的摄像头时（例如在未添加该摄像头的设备上恢复之后），<span class="ui">选择摄像头</span>页面顶部会显示<span class="ui" data-ui="value">有 2 个格子指向已移除的摄像头。</span>和<span class="ui">清空这些格子</span>按钮。这些图块不会出现在勾选列表中。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>点击<span class="ui">清空这些格子</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>提示和按钮消失。这些图块就地变空，其他摄像头的位置保持不变。</p>
+      <figure class="phone"><img src="/guide/img/lvm-pick-removed.jpg" alt="“选择摄像头”页面顶部的提示（有格子指向已移除的摄像头）及其下方的“清空这些格子”按钮" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-pick-removed.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>指向已移除摄像头的图块</figcaption></figure>
+    </li>
+  </ol>
+
+  <h3 id="lvm-layout">调整布局</h3>
+  <p>路径：<span class="path"><span class="ui">LiveView Mix</span> › <span class="ui">调整布局</span></span>。页面顶部显示<span class="ui" data-ui="value">此布局可放 6 路 · 目前放了 6 路</span>：第一个数字是所选布局每个墙页的图块数，第二个数字是墙上有内容的图块数。已放置的图块包括摄像头，也包括已配置的图片、控制面板、时钟和标签，但不包括空图块。</p>
+  <p><span class="ui">全屏布局</span>部分依次列出现成的布局，<span class="ui">自定义</span>排在最后。每个布局以其形状的小示意图显示，名称在下方。在竖向页面上，示意图画成竖长的，因为这面墙是按竖向屏幕排布的。</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>布局</th><th>每页图块数</th><th>形状</th></tr></thead>
+    <tbody>
+      <tr><td data-label="布局"><span class="ui" data-ui="value">2 × 2</span></td><td data-label="每页图块数">4</td><td data-label="形状">2 列、2 行，图块大小相同</td></tr>
+      <tr><td data-label="布局"><span class="ui" data-ui="value">2 × 3</span></td><td data-label="每页图块数">6</td><td data-label="形状">2 列、3 行，图块大小相同</td></tr>
+      <tr><td data-label="布局"><span class="ui" data-ui="value">3 × 3</span></td><td data-label="每页图块数">9</td><td data-label="形状">3 列、3 行，图块大小相同</td></tr>
+      <tr><td data-label="布局"><span class="ui" data-ui="value">3 × 4</span></td><td data-label="每页图块数">12</td><td data-label="形状">3 列、4 行，图块大小相同</td></tr>
+      <tr><td data-label="布局"><span class="ui" data-ui="value">4 × 4</span></td><td data-label="每页图块数">16</td><td data-label="形状">4 列、4 行，图块大小相同</td></tr>
+      <tr><td data-label="布局"><span class="ui" data-ui="value">1 + 3</span></td><td data-label="每页图块数">4</td><td data-label="形状">左侧一个大图块（占宽度的三分之二），右侧一列三个小图块</td></tr>
+      <tr><td data-label="布局"><span class="ui" data-ui="value">1 + 5</span></td><td data-label="每页图块数">6</td><td data-label="形状">左上角一个大图块（占宽度和高度的三分之二），其右侧和下方有五个小图块</td></tr>
+      <tr><td data-label="布局"><span class="ui" data-ui="value">1 + 7</span></td><td data-label="每页图块数">8</td><td data-label="形状">左上角一个大图块（占宽度和高度的四分之三），其右侧和下方有七个小图块</td></tr>
+      <tr><td data-label="布局"><span class="ui">自定义</span></td><td data-label="每页图块数">最多 64</td><td data-label="形状">手工绘制的布局，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-custom">“绘制自定义布局”</a></td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>第 1 个图块是布局的第一个图块；在带一个大图块的布局中，第 1 个图块就是大图块。其他编号按布局的顺序排列。</li>
+    <li>一个墙页容纳不下所有图块时，其余图块进入下一个墙页。例如，在 <span class="ui" data-ui="value">2 × 2</span> 布局中，6 个图块占用 2 个墙页：第一页 4 个图块，第二页 2 个，其余位置为黑色。</li>
+    <li>图块多于 16 个的布局，其示意图右上角带有电视图标（<span class="ui">适合大屏幕</span>）。这类布局在手机上难以看清，更适合在 iPad 或 Apple TV 上查看。</li>
+    <li>在 iPhone 和 iPad 上，提供的现成布局是图块数不超过 16 个的那些。图块多于 16 个的现成布局（<span class="ui" data-ui="value">5 × 4</span> 至 <span class="ui" data-ui="value">7 × 7</span>、<span class="ui" data-ui="value">1 + 21</span> 和 <span class="ui" data-ui="value">1 + 27</span>）只在 Apple TV 上提供，参见<a class="xref" href="/zh-Hans/guide/appletv.html">第 14 章“Apple TV”</a>。已经设为其中某个布局的墙（例如恢复之后）仍能正确显示，其示意图也会出现在列表中。要在手机或 iPad 上放置更多图块，请使用自定义布局。</li>
+    <li><span class="ui">自定义</span>示意图显示已绘制的布局。尚未绘制时，它显示起始形状；点击它即选中该形状。</li>
+  </ul>
+  <figure class="phone"><img src="/guide/img/lvm-layout.jpg" alt="“调整布局”页面：顶部是图块数，“全屏布局”部分有 2 × 2 至 4 × 4、1 + 3、1 + 5、1 + 7 和“自定义”，其下是“绘制自定义布局”“这面墙的黑边”和“排列墙面”" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-layout.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>“调整布局”页面</figcaption></figure>
+  <p>选择布局：</p>
+  <ol class="steps">
+    <li class="step">
+      <p>在 LiveView Mix 标签页中点击<span class="ui">调整布局</span>（网格图标）。</p>
+      <p class="check"><b class="check-label">确认：</b>打开<span class="ui">调整布局</span>页面。当前使用的布局高亮显示。</p>
+    </li>
+    <li class="step">
+      <p>在<span class="ui">全屏布局</span>部分点击要使用的布局。</p>
+      <p class="check"><b class="check-label">确认：</b>所选布局高亮显示，顶部每页的图块数随之更新。</p>
+    </li>
+    <li class="step">
+      <p>点击右上角的<span class="ui">完成</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>页面关闭。预览仍保持均匀的网格，所选布局作用于全屏墙。</p>
+    </li>
+  </ol>
+  <p>同一页面还包含排列、黑边、水印和翻页选项，分别参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-arrange">“排列墙面与图块”</a>、<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-fit">“黑边、画面铺满屏幕与设备角度”</a>、<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-watermark">“水印”</a>和<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-settings">““设置”中的 LiveView Mix”</a>。</p>
+  <div class="callout note">
+    <strong class="t">“取消”和“完成”的作用范围</strong>
+    <p>从 LiveView Mix 标签页打开的<span class="ui">选择摄像头</span>和<span class="ui">调整布局</span>页面各有<span class="ui">取消</span>和<span class="ui">完成</span>。<span class="ui">取消</span>会把每一面墙恢复到打开该页面之前的状态，包括任何排列、自定义布局、在另一个页面上所做的修改以及竖向页面开关。<span class="ui">自定义布局</span>、<span class="ui">排列</span>和<span class="ui">第 N 格</span>也各有自己的<span class="ui">取消</span>和<span class="ui">完成</span>：<span class="ui">完成</span>只返回上一级，<span class="ui">取消</span>只恢复进入该级之后所做的更改。要保留所有更改，请一路点击<span class="ui">完成</span>，直到最外层页面。</p>
+  </div>
+
+  <h3 id="lvm-custom">绘制自定义布局</h3>
+  <p>路径：<span class="path"><span class="ui">LiveView Mix</span> › <span class="ui">调整布局</span> › <span class="ui">绘制自定义布局</span></span>。现成布局都不合适时，可以自由选择网格的行数和列数，并把相邻的单元格合并成更大的图块。在竖向页面上，网格画成竖长的。</p>
+  <figure class="phone clip"><video class="clip" aria-label="绘制自定义布局：点击大图块可将其拆分，在单元格上拖动可将其合并，步进器可更改行数和列数，然后使用该布局。" muted="" loop="" playsinline="" preload="none" data-src="/guide/vid/rec-custom-layout.mp4" data-poster="/guide/img/rec-custom-layout.jpg" poster="/guide/img/rec-custom-layout.jpg"></video><figcaption>绘制自定义布局：点击大图块可将其拆分，在单元格上拖动可将其合并，步进器可更改行数和列数，然后使用该布局。</figcaption></figure>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>项目</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td data-label="项目">起始形状</td><td data-label="说明">3 × 3 的网格，其左上角 2 × 2 的区域已合并为一个大图块：共 6 个图块。</td></tr>
+      <tr><td data-label="项目"><span class="ui">行数</span>、<span class="ui">列数</span></td><td data-label="说明">用 − 和 + 设置，范围为 2 至 8。最大为 8 × 8，即 64 个图块。</td></tr>
+      <tr><td data-label="项目"><span class="ui">图块数</span></td><td data-label="说明">合并后的图块总数。多于 16 个图块时，下方会出现提示：<span class="ui ui-long">图块这么多时，建议在 iPad 或 Apple TV 上查看。</span></td></tr>
+      <tr><td data-label="项目">合并</td><td data-label="说明">用手指在网格的多个单元格上拖动；被覆盖的矩形变成一个大图块。大图块只能是矩形，不能是拐角形或其他不规则形状。</td></tr>
+      <tr><td data-label="项目">拆分</td><td data-label="说明">点击已合并的图块，将其拆回单个单元格。点击单个单元格没有反应。</td></tr>
+      <tr><td data-label="项目"><span class="ui">拆分所有图块</span></td><td data-label="说明">一次性拆分所有大图块。没有大图块时该按钮不可用。</td></tr>
+      <tr><td data-label="项目">编号</td><td data-label="说明">每个图块上的编号按阅读顺序（从左到右、从上到下），也就是排列画布上使用的图块编号。大图块取其左上角单元格的位置。</td></tr>
+      <tr><td data-label="项目"><span class="ui">使用此布局</span></td><td data-label="说明">把绘制的布局设为墙的布局。该布局已在使用时，按钮被<span class="ui">您的墙面正在使用此布局。</span>取代。</td></tr>
+    </tbody>
+  </table></div>
+  <ol class="steps">
+    <li class="step">
+      <p>在 LiveView Mix 标签页中点击<span class="ui">调整布局</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>打开<span class="ui">调整布局</span>页面。</p>
+    </li>
+    <li class="step">
+      <p>在<span class="ui">全屏布局</span>部分点击<span class="ui">绘制自定义布局</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>打开<span class="ui">自定义布局</span>页面：顶部是网格，其下是<span class="ui">行数</span>、<span class="ui">列数</span>和<span class="ui">图块数</span>。</p>
+      <figure class="phone"><img src="/guide/img/lvm-custom.jpg" alt="“自定义布局”页面：3 × 3 的网格，其左上角 2 × 2 的区域已合并，共 6 个图块，下方是行数、列数、图块数和“使用此布局”按钮" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-custom.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>起始形状，6 个图块</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>用<span class="ui">行数</span>和<span class="ui">列数</span>右侧的 − 和 + 设置网格大小。</p>
+      <p class="check"><b class="check-label">确认：</b>网格按新的行数和列数重绘，<span class="ui">图块数</span>随之更新。减少行数或列数时，不再适合的大图块会被移除。</p>
+    </li>
+    <li class="step">
+      <p>用一根手指在网格上拖动，从要合并的第一个单元格拖到最后一个。</p>
+      <p class="check"><b class="check-label">确认：</b>拖动期间，被覆盖的区域高亮显示。手指抬起后，该区域内的单元格合并为一个大图块，<span class="ui">图块数</span>减少，编号重新分配。</p>
+      <figure class="phone"><img src="/guide/img/lvm-custom-drag.jpg" alt="手指拖动时的“自定义布局”页面：被覆盖的单元格高亮显示" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-custom-drag.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>在要合并的单元格上拖动</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>要拆分大图块，点击它一次。</p>
+      <p class="check"><b class="check-label">确认：</b>大图块拆分为单个单元格，<span class="ui">图块数</span>增加。</p>
+    </li>
+    <li class="step">
+      <p>点击<span class="ui">使用此布局</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>按钮被<span class="ui">您的墙面正在使用此布局。</span>取代。</p>
+    </li>
+    <li class="step">
+      <p>点击右上角的<span class="ui">完成</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>屏幕回到<span class="ui">调整布局</span>页面。<span class="ui">自定义</span>示意图被选中，显示最后绘制的形状。</p>
+    </li>
+  </ol>
+  <ul>
+    <li>拖动触及已有的大图块时，这些图块会先被拆分，然后只合并拖动的矩形。区域不会被自动扩大。</li>
+    <li>拖动超出网格边缘时，区域停在边缘的单元格。</li>
+    <li>对网格和大图块所做的每项更改都会立即保存。点击左上角的<span class="ui">取消</span>，会恢复打开该页面之后所做的全部更改。</li>
+    <li>绘制布局但不点击<span class="ui">使用此布局</span>，不会改变当前的墙；也可以在这里整理尚未使用的形状。</li>
+    <li>即使暂时选择了现成布局，已绘制的布局也会保留。之后点击<span class="ui">自定义</span>示意图即可回到该形状。</li>
+    <li>自定义布局也可以在<span class="ui">排列</span>页面顶部的布局行中选择，但其形状只能在这里编辑。</li>
+    <li>设备竖持时，绘制的布局会像现成布局一样翻转，但每个摄像头都留在它所放置的图块中，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-fit">“黑边、画面铺满屏幕与设备角度”</a>。</li>
+  </ul>
+
+  <h3 id="lvm-special">特殊布局：同一面墙上的大小图块</h3>
+  <p>自定义布局可以把相邻的单元格合并成大图块。这样可以做出类似监控中心视频墙的布局：重要的摄像头放大，其他摄像头缩成小图块，时钟、标签或控制面板共用同一面墙。</p>
+  <p>示例：4 行 4 列的网格，左上角和左下角各合并一个 2 × 2 的大图块，共 10 个图块。2 个大图块和右侧的 6 个小图块放 8 个摄像头；其余 2 个小图块放一个控制面板和一个时钟。</p>
+  <p>前提条件：已按<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-pick">“选择摄像头与画质”</a>为墙选好 8 个摄像头，并已阅读<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-custom">“绘制自定义布局”</a>中的拖动操作。所需时间：约 3 分钟。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>在 LiveView Mix 标签页中点击<span class="ui">调整布局</span>，然后点击<span class="ui">绘制自定义布局</span>。</p>
+      <p class="check"><b class="check-label">确认：</b><span class="ui">自定义布局</span>页面显示起始形状：左上角带一个 2 × 2 大图块的 3 × 3 网格。</p>
+    </li>
+    <li class="step">
+      <p>把<span class="ui">行数</span>设为 <code>4</code>，把<span class="ui">列数</span>设为 <code>4</code>。</p>
+      <p class="check"><b class="check-label">确认：</b>网格变为 4 × 4，左上角的大图块保留，<span class="ui">图块数</span>显示 <code>13</code>。</p>
+    </li>
+    <li class="step">
+      <p>用一根手指在网格上拖动，覆盖左下角 2 × 2 个单元格（第 3、4 行，第 1、2 列）。</p>
+      <p class="check"><b class="check-label">确认：</b>这四个单元格合并为第二个大图块，<span class="ui">图块数</span>显示 <code>10</code>。大图块的编号为 1 和 6。</p>
+      <figure class="phone"><img src="/guide/img/lvm-custom-merged.jpg" alt="“自定义布局”页面：4 行 4 列，左上角和左下角各有一个 2 × 2 的大图块，右侧有八个小图块，共 10 个图块" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-custom-merged.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>左侧两个大图块，右侧八个小图块</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>点击<span class="ui">使用此布局</span>，然后点击<span class="ui">完成</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>屏幕回到<span class="ui">调整布局</span>页面，<span class="ui">自定义</span>示意图被选中。</p>
+    </li>
+    <li class="step">
+      <p>点击<span class="ui">排列墙面</span>，把要放大的摄像头拖到编号为 1 和 6 的大图块上。</p>
+      <p class="check"><b class="check-label">确认：</b>被拖动的摄像头与目标图块的内容互换位置。排列的方法参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-arrange">“排列墙面与图块”</a>。</p>
+    </li>
+    <li class="step">
+      <p>在<span class="ui">排列</span>页面中，为两个未使用的图块 9 和 10 放置一个控制面板和一个时钟：点击每个图块，选择<span class="ui">图片、控制面板、时钟或标签…</span>，把其中一个的<span class="ui">显示</span>设为<span class="ui">控制</span>，另一个设为<span class="ui">时钟</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>画布在这两个图块中显示控制面板和时钟。设置方法参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-slots">“图块除了摄像头还能显示什么”</a>。</p>
+    </li>
+    <li class="step">
+      <p>连续点击<span class="ui">完成</span>，回到 LiveView Mix 标签页，把设备横过来，然后点击<span class="ui">全屏</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>墙显示两个大图块和八个小图块，大小混合，如下图所示。</p>
+      <figure class="land"><img src="/guide/img/lvm-wall-fullscreen.jpg" alt="大小图块混合的全屏墙：左侧两个大图块，另有六个小摄像头图块、一个控制面板和一个时钟" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-wall-fullscreen.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>特殊布局的全屏墙</figcaption></figure>
+    </li>
+  </ol>
+  <p>预期结果：墙遵循所绘制的布局，大图块中放着重要的摄像头。控制面板参见<a class="xref" href="/zh-Hans/guide/webhook.html">第 9 章“控制面板与 Webhook”</a>。图块、大图块的位置和每个图块的内容都保存在本设备上；更换设备时，可通过备份和恢复一并带走，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-settings">““设置”中的 LiveView Mix”</a>。</p>
+
+  <h3 id="lvm-arrange">排列墙面与图块</h3>
+  <p>路径：<span class="path"><span class="ui">LiveView Mix</span> › <span class="ui">调整布局</span> › <span class="ui">排列墙面</span></span>。该页面决定每个图块里放什么。页面标题是<span class="ui">排列</span>。页面自上而下依次是布局行、画布、<span class="ui">提示</span>和<span class="ui">顺序</span>列表。选好摄像头或已有设备后，即可使用<span class="ui">排列墙面</span>。</p>
+  <figure class="phone clip"><video class="clip" aria-label="排列墙面：把一个图块拖到另一个图块上会互换二者，把图块拖到空单元格会将其移到那里。" muted="" loop="" playsinline="" preload="none" data-src="/guide/vid/rec-arrange-swap.mp4" data-poster="/guide/img/rec-arrange-swap.jpg" poster="/guide/img/rec-arrange-swap.jpg"></video><figcaption>排列墙面：把一个图块拖到另一个图块上会互换二者，把图块拖到空单元格会将其移到那里。</figcaption></figure>
+  <figure class="phone"><img src="/guide/img/lvm-arrange-full.jpg" alt="“排列”页面：顶部是布局行，中间的画布上有十个图块（第 9 个是控制面板，第 10 个是时钟），下方是“顺序”列表" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-arrange-full.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>“排列”页面</figcaption></figure>
+  <ul>
+    <li><b>布局行</b>：与<span class="ui">调整布局</span>上相同的布局示意图，可直接在这里更换布局。<span class="ui">自定义</span>示意图在绘制过某个布局后，或该布局正在使用时出现，在这里只能选择它。</li>
+    <li><b>画布</b>：横向页面的画布按 16:9 横屏绘制，竖向页面的画布按 9:16 竖屏绘制，显示当前墙页。每个已填充图块的左上角标有其编号。摄像头图块显示实时画面（SD）；离线或不在套餐内的摄像头显示带划掉摄像头图标的黑色图块。水印关闭时，通道名称在左下角；水印开启时，则预览水印。画布上的控制面板与墙上的外观相同；点击它会打开其编辑界面，而不会发送请求。设备竖持时，实际的横向墙是翻转的，但每个图块保留其编号。</li>
+    <li><b>未使用的图块</b>：以虚线轮廓和 + 显示。它们是没有内容的图块，位于已填充的图块之间，或在最后一个已填充图块之后。点击它可选择要放入的内容，参见下表。</li>
+    <li><b>切换页面</b>：图块多于布局的容量时，画布下方出现箭头和<span class="ui" data-ui="value">第 1 页，共 2 页</span>。左右滑动也可切换页面。</li>
+    <li><b><span class="ui">提示</span></b>：可以折叠起来的说明。折叠状态会被记住。</li>
+    <li><b><span class="ui">顺序</span>列表</b>：只列出已填充的图块，每个图块列在其编号下。摄像头行在设备名称上方显示通道名称。其他行显示内容的类型（<span class="ui">控制</span>、<span class="ui">时钟</span>、<span class="ui">标签</span>、<span class="ui">格子图片</span>，只有颜色的图块则为<span class="ui">空位</span>）；控制面板行还显示面板标题，标签行显示标签的文字，以便区分同类的图块。</li>
+    <li>工具栏：左上角是<span class="ui">取消</span>，右上角是<span class="ui" data-ui="system">编辑</span>和<span class="ui">完成</span>。</li>
+  </ul>
+  <figure class="phone"><img src="/guide/img/lvm-arrange-pages.jpg" alt="包含两页的墙的“排列”页面：画布下方有箭头和“第 1 页，共 2 页”" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-arrange-pages.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>在包含两页的墙上切换页面</figcaption></figure>
+  <p>点击未使用的图块会打开一个以图块编号为标题的菜单，例如<span class="ui" data-ui="value">第 7 格</span>：</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>选项</th><th>作用</th></tr></thead>
+    <tbody>
+      <tr><td data-label="选项"><span class="ui">在这里放摄像头</span></td><td data-label="作用">列出尚未放在这面墙上的摄像头，按设备分组。点击的摄像头会放入这个图块。所有摄像头都已放置时，列表显示<span class="ui">所有摄像头都已在墙面上。</span></td></tr>
+      <tr><td data-label="选项"><span class="ui">把其他图块移到这里…</span></td><td data-label="作用">把任意墙页上的一个已填充图块移到这个图块中，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-move">“把图块移到空图块中”</a>。墙上至少有一个已填充的图块时提供。</td></tr>
+      <tr><td data-label="选项"><span class="ui">图片、控制面板、时钟或标签…</span></td><td data-label="作用">打开<span class="ui">第 N 格</span>页面，在其中为该图块设置图片、控制面板、时钟、标签或颜色，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-slots">“图块除了摄像头还能显示什么”</a>。</td></tr>
+      <tr><td data-label="选项"><span class="ui">从横向页面复制…</span>或<span class="ui">从竖向页面复制…</span></td><td data-label="作用">从另一个页面复制控制面板、时钟、标签、图片或带颜色的图块，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-pages">“竖向页面”</a>。在竖向页面上提供；竖向页面打开期间，横向页面上也提供。</td></tr>
+    </tbody>
+  </table></div>
+  <p>把摄像头放进选定的图块：</p>
+  <ol class="steps">
+    <li class="step">
+      <p>在 LiveView Mix 标签页中点击<span class="ui">调整布局</span>，然后点击<span class="ui">排列墙面</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>打开<span class="ui">排列</span>页面。</p>
+    </li>
+    <li class="step">
+      <p>点击画布上一个未使用的图块，例如第 7 个图块。</p>
+      <p class="check"><b class="check-label">确认：</b>出现标题为<span class="ui" data-ui="value">第 7 格</span>的菜单。</p>
+    </li>
+    <li class="step">
+      <p>点击<span class="ui">在这里放摄像头</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>打开尚未放在墙上的摄像头列表，标题为<span class="ui" data-ui="value">第 7 格</span>。</p>
+    </li>
+    <li class="step">
+      <p>点击一个摄像头。</p>
+      <p class="check"><b class="check-label">确认：</b>列表关闭。该摄像头出现在画布的第 7 个图块中，并出现在<span class="ui">顺序</span>列表的编号 7 下。第 1 至 6 个图块中没有内容的，仍保持空白。</p>
+    </li>
+  </ol>
+  <p>互换两个图块的位置：</p>
+  <ol class="steps">
+    <li class="step">
+      <p>用一根手指把画布上的一个已填充图块拖到另一个图块上。无需先按住。</p>
+      <p class="check"><b class="check-label">确认：</b>被拖动的图块浮起并跟随手指，目标图块显示高亮边框。</p>
+      <figure class="phone"><img src="/guide/img/lvm-arrange-drag.jpg" alt="拖动图块时的“排列”页面：被拖动的图块浮起，目标图块以高亮边框标出" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-arrange-drag.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>拖到目标图块上</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>抬起手指。</p>
+      <p class="check"><b class="check-label">确认：</b>两个图块互换了位置，<span class="ui">顺序</span>列表随之更新。</p>
+    </li>
+  </ol>
+  <ul>
+    <li>把图块放到未使用的图块上时，它会移到那里，原来的图块变空。其他图块都不移动。</li>
+    <li>手指在抬起之前离开画布，墙保持不变。</li>
+    <li>拖动只能到达屏幕上当前墙页的图块。要把另一个墙页上的图块移到空图块中，请使用<span class="ui">把其他图块移到这里…</span>；要互换不同墙页上的两个已填充图块，请使用<span class="ui">顺序</span>列表。</li>
+    <li>点击摄像头图块没有反应；摄像头在<span class="ui">选择摄像头</span>中或用<span class="ui">顺序</span>列表移除。点击放有图片、控制面板、时钟或标签的图块，会打开其编辑界面，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-slots">“图块除了摄像头还能显示什么”</a>。</li>
+  </ul>
+  <p>用列表更换位置和清空图块：</p>
+  <ol class="steps">
+    <li class="step">
+      <p>点击右上角的<span class="ui" data-ui="system">编辑</span>。</p>
+      <p class="check"><b class="check-label">确认：</b><span class="ui">顺序</span>列表的每一行都显示重新排序手柄和移除按钮。</p>
+    </li>
+    <li class="step">
+      <p>把某一行右侧的重新排序手柄拖到列表中的新位置。</p>
+      <p class="check"><b class="check-label">确认：</b>内容在同一批已填充的图块之间更换位置；空图块仍保持空白。编号和画布随之更新，跨墙页也是如此。</p>
+    </li>
+    <li class="step">
+      <p>要清空一个图块，向左滑动该行并点击<span class="ui" data-ui="system">删除</span>；在编辑模式下，也可以使用该行的移除按钮。</p>
+      <p class="check"><b class="check-label">确认：</b>该行消失，图块变空；其他图块都不移动。清空摄像头图块时，该摄像头在<span class="ui">选择摄像头</span>中也会被取消勾选。</p>
+    </li>
+    <li class="step">
+      <p>点击右上角的<span class="ui">完成</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>屏幕回到<span class="ui">调整布局</span>页面，排列结果被保留。</p>
+    </li>
+  </ol>
+  <ul>
+    <li>只要最后一个墙页还有空间，画布上总会显示几个未使用的图块。布局的每个图块都已填充时，请先在布局行中选择图块更多的布局，或者清空一个图块，然后再添加新内容。</li>
+    <li>点击左上角的<span class="ui">取消</span>，会把墙恢复到进入<span class="ui">排列</span>页面时的状态。</li>
+  </ul>
+
+  <h3 id="lvm-move">把图块移到空图块中</h3>
+  <p><span class="ui">把其他图块移到这里…</span>可以把任意一个已填充的图块（无论在这个墙页还是其他墙页上）移到所点击的空图块中。原来的图块变空，其他内容都不移动。拖动无法到达其他墙页，因此要用第二个墙页上的控制面板填充第一个墙页上的空图块，就要用这种方法。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>在<span class="ui">排列</span>页面中，点击要接收内容的未使用图块，例如第 9 个图块。</p>
+      <p class="check"><b class="check-label">确认：</b>出现标题为<span class="ui" data-ui="value">第 9 格</span>的菜单。</p>
+    </li>
+    <li class="step">
+      <p>点击<span class="ui">把其他图块移到这里…</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>打开标题为<span class="ui" data-ui="value">第 9 格</span>的列表，列出墙上所有墙页中的每个已填充图块，每个图块列在其编号下，描述方式与<span class="ui">顺序</span>列表相同。列表下方的说明为<span class="ui">选中的图块会移到这里，原来的图块会空出来，其他内容都不会移动。</span></p>
+      <figure class="phone"><img src="/guide/img/lvm-move-picker.jpg" alt="为第 12 格从“把其他图块移到这里…”打开的列表：每个已填充的图块列在其编号下并带有所属设备，下方说明选中的图块会移过来，原来的图块会空出来" decoding="async" width="900" height="1947" data-src="/guide/img/lvm-move-picker.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>把其他图块移到空图块中</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>点击要移动的图块，例如第 12 个图块中的控制面板。</p>
+      <p class="check"><b class="check-label">确认：</b>列表关闭。控制面板位于第 9 个图块中，第 12 个图块变空。其他所有图块都保持原位。</p>
+    </li>
+  </ol>
+  <p>要不移动任何内容就离开列表，请点击其左上角的<span class="ui">取消</span>。</p>
+
+  <h3 id="lvm-slots">图块除了摄像头还能显示什么</h3>
+  <p>图块不一定要放摄像头。点击未使用的图块并选择<span class="ui">图片、控制面板、时钟或标签…</span>，或者点击已放有其中某种内容的图块，即可打开<span class="ui">第 N 格</span>页面，并通过<span class="ui">显示</span>菜单选择内容：</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>内容</th><th>选项与说明</th></tr></thead>
+    <tbody>
+      <tr><td data-label="内容"><span class="ui">空白</span></td><td data-label="选项与说明">一块纯色的空间。<span class="ui">颜色</span>用于选择颜色，默认为黑色。选择<span class="ui">空白</span>会移除该图块原有的图片、控制面板、时钟或标签。设为黑色以外颜色的图块会作为带颜色的图块留在墙上，并在画布上显示<span class="ui">点击填入</span>；没有任何内容的黑色图块算作未使用。</td></tr>
+      <tr><td data-label="内容"><span class="ui">图片</span></td><td data-label="选项与说明"><span class="ui">选择照片</span>从照片图库中选取图片，<span class="ui">拍照</span>用相机拍摄一张（设备没有相机时不显示）。选好图片后，<span class="ui">填满</span>设置它如何填满图块：<span class="ui">默认</span>（显示完整图片，可能带黑边）、<span class="ui">放大填满</span>（填满图块，边缘被裁掉）或<span class="ui">拉伸填满</span>（填满图块，图片会变形）。<span class="ui">建议尺寸</span>显示该图块在 <code>3840 × 2160</code> 屏幕（竖向页面为 <code>2160 × 3840</code>）上所占的像素尺寸。已设置图片时，按钮变为<span class="ui">选择其他照片</span>，并出现<span class="ui">移除图片</span>。图片保存时会缩小到长边最多 <code>512</code> 像素，因此大图块中的图片可能显得发虚。</td></tr>
+      <tr><td data-label="内容"><span class="ui">控制</span></td><td data-label="选项与说明">一排按钮；每个按钮在被点击时发送一个 HTTP 请求。控制面板及其按钮的设置方法参见<a class="xref" href="/zh-Hans/guide/webhook.html">第 9 章“控制面板与 Webhook”</a>。</td></tr>
+      <tr><td data-label="内容"><span class="ui">时钟</span></td><td data-label="选项与说明">显示当前时间。选项：<span class="ui">24 小时制</span>（默认开启；关闭时按 App 语言的习惯显示）、<span class="ui">显示秒数</span>、<span class="ui">显示日期</span>（默认开启）和<span class="ui">显示星期</span>。星期和月份的名称跟随 App 的语言，排列顺序也遵循该语言的习惯。</td></tr>
+      <tr><td data-label="内容"><span class="ui">标签</span></td><td data-label="选项与说明">多行文字。<span class="ui">文字</span>是内容，<span class="ui">图标</span>填写显示在文字上方的系统符号名称（<span class="ui">SF Symbol（可选）</span>；留空表示没有符号），<span class="ui">文字颜色</span>和<span class="ui">背景</span>设置颜色。默认为黑底白字。</td></tr>
+    </tbody>
+  </table></div>
+  <figure class="phone"><img src="/guide/img/lvm-slot-kinds.jpg" alt="第 7 个图块的页面：“显示”菜单列出空白、图片、控制、时钟和标签" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-slot-kinds.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>“显示”菜单</figcaption></figure>
+  <div class="callout warn">
+    <strong class="t">更改内容类型会清除原有内容</strong>
+    <p>在<span class="ui">显示</span>菜单中选择另一种类型时，原有内容会立即被清除。例如，把<span class="ui">控制</span>改为<span class="ui">时钟</span>，会清除控制面板的按钮设置。左上角的<span class="ui">取消</span>可以恢复它们。</p>
+  </div>
+  <p>在未使用的图块中放置图片：</p>
+  <ol class="steps">
+    <li class="step">
+      <p>在<span class="ui">排列</span>页面中，点击画布上一个未使用的图块。</p>
+      <p class="check"><b class="check-label">确认：</b>出现以图块编号为标题的菜单。</p>
+    </li>
+    <li class="step">
+      <p>点击<span class="ui">图片、控制面板、时钟或标签…</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>打开<span class="ui">第 N 格</span>页面，<span class="ui">显示</span>为<span class="ui">空白</span>。</p>
+    </li>
+    <li class="step">
+      <p>点击<span class="ui">显示</span>并选择<span class="ui">图片</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>页面显示<span class="ui">图片</span>部分和<span class="ui">选择照片</span>按钮。</p>
+    </li>
+    <li class="step">
+      <p>点击<span class="ui">选择照片</span>，然后在系统的照片选择界面中点击一张照片。</p>
+      <p class="check"><b class="check-label">确认：</b>页面显示图片预览，以及<span class="ui">填满</span>、<span class="ui">建议尺寸</span>、<span class="ui">选择其他照片</span>和<span class="ui">移除图片</span>。</p>
+      <figure class="phone"><img src="/guide/img/lvm-slot-image.jpg" alt="“显示”设为“图片”的图块页面：图片预览，其下是“填满”“建议尺寸”“选择其他照片”和“移除图片”" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-slot-image.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>图片图块的选项</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>在<span class="ui">填满</span>菜单中选择图片填满图块的方式。</p>
+      <p class="check"><b class="check-label">确认：</b>菜单显示所选方式。</p>
+    </li>
+    <li class="step">
+      <p>点击右上角的<span class="ui">完成</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>画布上的图块显示该图片。</p>
+    </li>
+  </ol>
+  <p>在未使用的图块中放置时钟：</p>
+  <ol class="steps">
+    <li class="step">
+      <p>点击画布上一个未使用的图块，点击<span class="ui">图片、控制面板、时钟或标签…</span>，并在<span class="ui">显示</span>菜单中选择<span class="ui">时钟</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>页面显示<span class="ui">时钟</span>部分，包含 <span class="ui">24 小时制</span>、<span class="ui">显示秒数</span>、<span class="ui">显示日期</span>和<span class="ui">显示星期</span>。</p>
+      <figure class="phone"><img src="/guide/img/lvm-clock-slot.jpg" alt="第 10 个图块的页面，“显示”设为“时钟”：24 小时制、显示秒数、显示日期和显示星期四个开关" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-clock-slot.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>时钟的选项</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>按需打开或关闭各个选项。</p>
+      <p class="check"><b class="check-label">确认：</b>画布上的时钟立即反映这些设置。</p>
+    </li>
+    <li class="step">
+      <p>点击右上角的<span class="ui">完成</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>页面关闭，画布显示时钟。</p>
+    </li>
+  </ol>
+  <p>在未使用的图块中放置标签：</p>
+  <ol class="steps">
+    <li class="step">
+      <p>点击画布上一个未使用的图块，点击<span class="ui">图片、控制面板、时钟或标签…</span>，并在<span class="ui">显示</span>菜单中选择<span class="ui">标签</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>页面显示<span class="ui">标签</span>部分，包含<span class="ui">文字</span>、<span class="ui">图标</span>、<span class="ui">文字颜色</span>和<span class="ui">背景</span>。</p>
+      <figure class="phone"><img src="/guide/img/lvm-slot-label.jpg" alt="“显示”设为“标签”的图块页面：文字、图标、文字颜色和背景" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-slot-label.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>标签的选项</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>在<span class="ui">文字</span>输入框中输入要显示的文字。</p>
+      <p class="check"><b class="check-label">确认：</b>画布上的图块显示该文字。</p>
+    </li>
+    <li class="step">
+      <p>可选：在<span class="ui">图标</span>输入框中输入系统符号的名称，并用<span class="ui">文字颜色</span>和<span class="ui">背景</span>调整颜色。</p>
+      <p class="check"><b class="check-label">确认：</b>图块显示该符号，颜色随之改变。</p>
+    </li>
+    <li class="step">
+      <p>点击右上角的<span class="ui">完成</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>页面关闭，画布显示标签。</p>
+    </li>
+  </ol>
+  <p>新图块的<span class="ui">第 N 格</span>页面在没有为图块设置任何内容的情况下关闭时，该图块仍是未使用的图块。图片、时钟和标签不占用套餐的摄像头额度；控制面板占用。参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-limits">“套餐上限如何影响墙”</a>。</p>
+
+  <h3 id="lvm-watermark">水印</h3>
+  <p>路径：<span class="path"><span class="ui">LiveView Mix</span> › <span class="ui">调整布局</span></span>，然后滚动到<span class="ui">水印</span>部分。水印把文字叠加在每个摄像头图块的画面上，标明画面来自哪台设备的哪个摄像头。全屏墙上的画面默认不带标签，因此多台设备的摄像头共用一面墙时，建议开启水印。每面墙（横向页面、竖向页面，以及 iPhone Duo 的每张画布）都有各自的水印设置。</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>选项</th><th>说明</th><th>默认值</th></tr></thead>
+    <tbody>
+      <tr><td data-label="选项"><span class="ui">显示水印</span></td><td data-label="说明">总开关。仅在开启时才出现下面的选项。</td><td data-label="默认值">关</td></tr>
+      <tr><td data-label="选项"><span class="ui">位置</span></td><td data-label="说明"><span class="ui">左上</span>、<span class="ui">顶部</span>、<span class="ui">右上</span>、<span class="ui">居中</span>、<span class="ui">左下</span>、<span class="ui">底部</span>或<span class="ui">右下</span>。</td><td data-label="默认值"><span class="ui">右下</span></td></tr>
+      <tr><td data-label="选项"><span class="ui">设备名称</span></td><td data-label="说明">显示设备的名称。</td><td data-label="默认值">开</td></tr>
+      <tr><td data-label="选项"><span class="ui">摄像头名称</span></td><td data-label="说明">显示通道的名称。</td><td data-label="默认值">开</td></tr>
+      <tr><td data-label="选项"><span class="ui">IP 地址</span></td><td data-label="说明">显示摄像头本身的地址；设备没有报告该地址时，显示设备的地址。</td><td data-label="默认值">关</td></tr>
+      <tr><td data-label="选项"><span class="ui">不透明度</span></td><td data-label="说明">0.2 至 1 的滑块。</td><td data-label="默认值">0.85</td></tr>
+      <tr><td data-label="选项"><span class="ui">颜色</span></td><td data-label="说明">文字的颜色。</td><td data-label="默认值">白色</td></tr>
+      <tr><td data-label="选项"><span class="ui">文字大小</span></td><td data-label="说明">8 至 28 的滑块。</td><td data-label="默认值">11</td></tr>
+      <tr><td data-label="选项"><span class="ui">字体</span></td><td data-label="说明"><span class="ui">系统</span>、<span class="ui">圆体</span>、<span class="ui">等宽</span>或<span class="ui">衬线</span>。</td><td data-label="默认值"><span class="ui">系统</span></td></tr>
+      <tr><td data-label="选项"><span class="ui">可读性</span></td><td data-label="说明">使文字在画面上保持可读：<span class="ui">阴影</span>、<span class="ui">描边</span>、<span class="ui">背景</span>（文字后面的半透明底板）或<span class="ui">无</span>。画面背景过亮或过杂时，使用<span class="ui">背景</span>。</td><td data-label="默认值"><span class="ui">阴影</span></td></tr>
+      <tr><td data-label="选项"><span class="ui">预览</span></td><td data-label="说明">在浅色和深色色块上预览水印。示例名称取自墙上的第一个摄像头。</td><td data-label="默认值">—</td></tr>
+    </tbody>
+  </table></div>
+  <ol class="steps">
+    <li class="step">
+      <p>在<span class="ui">调整布局</span>页面向下滚动到<span class="ui">水印</span>部分，打开<span class="ui">显示水印</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>该部分展开并显示各选项。</p>
+      <div class="shots pair">
+        <figure class="phone"><img src="/guide/img/lvm-watermark.jpg" alt="水印选项的上半部分：显示水印、位置、设备名称、摄像头名称、IP 地址和不透明度" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-watermark.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>开关、位置和内容</figcaption></figure>
+        <figure class="phone"><img src="/guide/img/lvm-watermark-b.jpg" alt="水印选项的下半部分：颜色、文字大小、字体、可读性，以及浅色和深色色块上的预览" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-watermark-b.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>颜色、大小、字体和预览</figcaption></figure>
+      </div>
+    </li>
+    <li class="step">
+      <p>选择<span class="ui">位置</span>，并打开要显示的名称：<span class="ui">设备名称</span>、<span class="ui">摄像头名称</span>或 <span class="ui">IP 地址</span>。</p>
+      <p class="check"><b class="check-label">确认：</b><span class="ui">预览</span>的两个色块显示所选的内容和位置。</p>
+    </li>
+    <li class="step">
+      <p>调整<span class="ui">不透明度</span>、<span class="ui">颜色</span>、<span class="ui">文字大小</span>、<span class="ui">字体</span>和<span class="ui">可读性</span>。</p>
+      <p class="check"><b class="check-label">确认：</b><span class="ui">预览</span>立即反映这些调整。</p>
+    </li>
+    <li class="step">
+      <p>点击右上角的<span class="ui">完成</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>页面关闭。预览、排列画布和全屏墙上的摄像头画面都显示水印。</p>
+    </li>
+  </ol>
+  <ul>
+    <li>水印只绘制在摄像头图块上，不绘制在控制面板、图片、时钟或标签上。</li>
+    <li>三个名称全部关闭时，不显示任何文字。</li>
+    <li>水印不拦截触摸；点击画面的行为与之前相同。</li>
+    <li>水印关闭时，预览和排列画布中的摄像头图块显示通道编号和名称；全屏墙则完全不显示标签。</li>
+  </ul>
+
+  <h3 id="lvm-fit">黑边、画面铺满屏幕与设备角度</h3>
+  <p>路径：<span class="path"><span class="ui">LiveView Mix</span> › <span class="ui">调整布局</span> › <span class="ui">这面墙的黑边</span></span>。摄像头画面的形状与其图块的形状不同时，会出现黑边。<span class="ui">这面墙的黑边</span>决定墙上所有摄像头画面如何处理黑边，有三个选项：</p>
+  <ul>
+    <li><span class="ui">默认</span>：显示完整画面，可能出现黑边。</li>
+    <li><span class="ui">放大填满</span>：画面按比例放大，直到填满图块。边缘被裁掉，没有黑边。</li>
+    <li><span class="ui">拉伸填满</span>：画面被拉伸以填满图块。不裁切，没有黑边，但画面会变形。</li>
+  </ul>
+  <ol class="steps">
+    <li class="step">
+      <p>在<span class="ui">调整布局</span>页面点击<span class="ui">这面墙的黑边</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>菜单列出<span class="ui">默认</span>、<span class="ui">放大填满</span>和<span class="ui">拉伸填满</span>。</p>
+    </li>
+    <li class="step">
+      <p>选择一个选项。</p>
+      <p class="check"><b class="check-label">确认：</b>菜单显示所选选项。预览和全屏墙上的摄像头画面随之变化。</p>
+      <div class="shots land-pair">
+        <figure class="land"><img src="/guide/img/lvm-fill-default.jpg" alt="横持的墙，“这面墙的黑边”设为“默认”：摄像头画面完整显示，图块周围有黑边" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-fill-default.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>默认</figcaption></figure>
+        <figure class="land"><img src="/guide/img/lvm-fill-enlarge.jpg" alt="横持的墙，“这面墙的黑边”设为“放大填满”：摄像头画面填满图块，边缘被裁掉" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-fill-enlarge.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>放大填满</figcaption></figure>
+      </div>
+    </li>
+  </ol>
+  <ul>
+    <li>此设置只属于 LiveView Mix，与<span class="path"><span class="ui">设置</span> › <span class="ui">画面</span> › <span class="ui">黑边</span></span>下的默认值相互独立。图片图块有自己的<span class="ui">填满</span>选项。</li>
+    <li>从全屏墙打开的单摄像头视图始终显示完整画面。预览的全屏查看器有自己的开关，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-closeup">“打开单个摄像头”</a>。</li>
+    <li><span class="path"><span class="ui">设置</span> › <span class="ui">画面</span> › <span class="ui">画面铺满屏幕</span></span>默认开启。它让全屏视频延伸到灵动岛和屏幕圆角之下，以获得最大的画面。关闭后，画面避开这些区域，代价是出现黑边。该设置同样适用于 LiveView Mix 的全屏墙。</li>
+  </ul>
+  <h4>设备的角度</h4>
+  <p>全屏墙不锁定方向。它随设备的角度自动重新排布，无需任何设置。起决定作用的是墙所占区域的形状，因此在分屏浏览中被缩窄的 iPad 窗口也算作竖向。</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>设备的角度</th><th>墙的外观</th></tr></thead>
+    <tbody>
+      <tr><td data-label="设备的角度">横持（宽大于高）</td><td data-label="墙的外观">布局按原样显示。</td></tr>
+      <tr><td data-label="设备的角度">竖持（高大于宽），现成布局</td><td data-label="墙的外观">布局沿其对角线翻转：4 列 2 行变为 2 列 4 行，左侧的大图块移到顶部。图块按阅读顺序（从左到右，再从上到下）重新编号，内容跟随编号。</td></tr>
+      <tr><td data-label="设备的角度">竖持，绘制的布局</td><td data-label="墙的外观">布局同样沿对角线翻转，但每个摄像头都留在它所放置的图块中，因此放在大图块中的摄像头仍在该大图块中。</td></tr>
+      <tr><td data-label="设备的角度">竖持，竖向页面已打开</td><td data-label="墙的外观">改为按原样显示竖向页面，不做任何翻转。参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-pages">“竖向页面”</a>。</td></tr>
+      <tr><td data-label="设备的角度">宽度等于高度的区域</td><td data-label="墙的外观">布局不翻转。</td></tr>
+    </tbody>
+  </table></div>
+  <figure class="phone"><img src="/guide/img/lvm-wall-portrait.jpg" alt="竖持的全屏墙：1 + 5 布局翻转后，大图块在顶部，其余五个图块在其下方和右侧" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-wall-portrait.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>竖持时，布局沿对角线翻转</figcaption></figure>
+  <p><span class="ui">排列</span>页面上横向页面的画布始终按横屏绘制；竖持时，实际的墙按上述方式翻转。</p>
+
+  <h3 id="lvm-pages">竖向页面</h3>
+  <p>LiveView Mix 是按横持的设备排布的。竖向页面是一面可选的第二面墙，在设备竖持时显示，有自己的摄像头、布局、控制面板、时钟、标签、图片和水印。它默认关闭；关闭时，竖持的设备显示翻转后的横向墙（参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-fit">“黑边、画面铺满屏幕与设备角度”</a>）。在 iPad 上，iPad 或其窗口高大于宽时显示竖向页面。</p>
+  <ul>
+    <li>竖向页面按竖向屏幕排布：其布局示意图、绘制网格和排列画布都是竖长的，墙永远不会翻转。</li>
+    <li>标签页、预览和全屏墙会随设备转动，在横向页面和竖向页面之间切换。显示从墙上打开的摄像头期间，墙保持原样，直到关闭该摄像头。</li>
+    <li>竖向页面已打开但尚无内容时，竖持的标签页显示<span class="ui">竖向页面</span>、说明<span class="ui">手机竖着拿时显示这面墙。请选择它的摄像头，并按竖长的屏幕安排布局。</span>和<span class="ui">设置 LiveView Mix</span> 按钮。</li>
+    <li>标签页的<span class="ui">选择摄像头</span>和<span class="ui">调整布局</span>按钮打开屏幕上正在显示的页面。在这两个页面的顶部，带有<span class="ui">横向页面</span>和<span class="ui">竖向页面</span>的切换器用于在两个页面之间切换。在竖向页面上，<span class="ui">手机竖着拿时显示此页面</span>开关（在 iPad 上为<span class="ui">屏幕竖向时显示此页面</span>）用于打开或关闭竖向页面。对竖向页面所做的第一次更改会将其打开，除非在这次编辑中已经用过该开关。</li>
+    <li>也可以通过<span class="path"><span class="ui">设置</span> › <span class="ui">竖向页面</span></span>打开或关闭竖向页面，并在那里进行设置，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-settings">““设置”中的 LiveView Mix”</a>。</li>
+    <li>显示 iPhone Duo 的两张画布期间，显示的是两张画布，而不是竖向页面，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-canvases">“iPhone Duo 上的两张画布”</a>。</li>
+    <li>竖向页面打开期间，其控制面板计入套餐，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-limits">“套餐上限如何影响墙”</a>。它们的按钮也会出现在 Apple Watch 上，参见<a class="xref" href="/zh-Hans/guide/webhook.html#webhook-watch">“Apple Watch 上的按钮”</a>。</li>
+  </ul>
+  <p>从 LiveView Mix 标签页设置竖向页面：</p>
+  <ol class="steps">
+    <li class="step">
+      <p>在 LiveView Mix 标签页中点击<span class="ui">选择摄像头</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>打开<span class="ui">选择摄像头</span>页面，顶部有<span class="ui">横向页面</span>和<span class="ui">竖向页面</span>切换器。</p>
+    </li>
+    <li class="step">
+      <p>在切换器中点击<span class="ui">竖向页面</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>页面显示竖向页面的摄像头；页面切换器下方是<span class="ui">手机竖着拿时显示此页面</span>开关，处于关闭状态。</p>
+      <figure class="phone"><img src="/guide/img/lvm-page-switch.jpg" alt="已选中“竖向页面”的“选择摄像头”页面：“手机竖着拿时显示此页面”开关已打开，已选 2 个摄像头" decoding="async" width="900" height="1947" data-src="/guide/img/lvm-page-switch.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>选择竖向页面的摄像头</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>勾选竖持时墙上要显示的摄像头。</p>
+      <p class="check"><b class="check-label">确认：</b>顶部的计数增加；勾选第一个摄像头时，<span class="ui">手机竖着拿时显示此页面</span>随之打开。</p>
+    </li>
+    <li class="step">
+      <p>点击右上角的<span class="ui">完成</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>页面关闭。</p>
+    </li>
+    <li class="step">
+      <p>竖着拿手机。</p>
+      <p class="check"><b class="check-label">确认：</b>标签页显示竖向页面的预览。横过来时，重新显示横向页面。</p>
+    </li>
+    <li class="step">
+      <p>竖着拿手机，点击<span class="ui">调整布局</span>。</p>
+      <p class="check"><b class="check-label">确认：</b><span class="ui">调整布局</span>页面在竖向页面上打开，布局示意图是竖长的。像横向页面一样选择布局并排列图块，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-layout">“调整布局”</a>和<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-arrange">“排列墙面与图块”</a>。</p>
+      <figure class="phone"><img src="/guide/img/lvm-portrait-wall.jpg" alt="竖持 iPhone 上竖向页面的全屏墙：2 × 3 布局，最上面一行有两个摄像头，左上角是关闭按钮" decoding="async" width="900" height="1947" data-src="/guide/img/lvm-portrait-wall.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>全屏显示的竖向页面</figcaption></figure>
+    </li>
+  </ol>
+  <h4>在页面之间复制控制面板、时钟、标签和图片</h4>
+  <p>在一个页面上设置好的控制面板、时钟、标签、图片或带颜色的图块，可以复制到另一个页面，而不必重新制作。摄像头不会被复制；摄像头用<span class="ui">在这里放摄像头</span>放置。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>在竖向页面的<span class="ui">排列</span>页面中，点击一个未使用的图块。</p>
+      <p class="check"><b class="check-label">确认：</b>以图块编号为标题的菜单中有<span class="ui">从横向页面复制…</span>一项。在横向页面上，该选项为<span class="ui">从竖向页面复制…</span>，在竖向页面打开期间提供。</p>
+    </li>
+    <li class="step">
+      <p>点击<span class="ui">从横向页面复制…</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>打开一个标题为<span class="ui">横向页面</span>的列表。每一行显示图块的类型、控制面板的标题或标签的文字，以及它在该页面上的图块编号。没有可复制的内容时，列表显示<span class="ui">没有可复制的内容</span>。</p>
+    </li>
+    <li class="step">
+      <p>点击要复制的图块。</p>
+      <p class="check"><b class="check-label">确认：</b>列表关闭，副本出现在所点击的图块中。</p>
+    </li>
+  </ol>
+  <p>副本独立于原图块，正如列表下方的说明所述：<span class="ui">副本独立设置：之后修改它，另一个页面保持不变。</span>复制的控制面板单独计入套餐。复制的图片会保存两份；另一个页面包含图片时，第二条说明会指出这一点：<span class="ui">复制的图片会保存两份，因此在 iCloud 备份的大小中也会计算两次。</span></p>
+
+  <h3 id="lvm-canvases">iPhone Duo 上的两张画布</h3>
+  <p>iPhone Duo 半折叠、折痕横贯屏幕时，LiveView Mix 可以在折痕处分成两张画布：折痕上方的上方画布和折痕下方的下方画布。每张画布都是一面独立的墙，有自己的摄像头、布局、墙页、控制面板和特写；典型的用法是在上方画布放摄像头，在下方画布放控制面板。该设置只在 iPhone Duo 上出现；iPhone Duo 的总体介绍参见<a class="xref" href="/zh-Hans/guide/tour.html#tour-duo">“iPhone Duo”</a>。</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>iPhone Duo 的状态</th><th>LiveView Mix 显示的内容</th></tr></thead>
+    <tbody>
+      <tr><td data-label="iPhone Duo 的状态">半折叠，折痕横贯屏幕</td><td data-label="LiveView Mix 显示的内容">折痕上方是上方画布，下方是下方画布，二者之间隔着一条位于折痕上的深色条带。</td></tr>
+      <tr><td data-label="iPhone Duo 的状态">完全展开、合上，或像书一样竖持</td><td data-label="LiveView Mix 显示的内容">只显示上方画布。滑过其最后一个墙页后显示下方画布；从下方画布的第一个墙页再往回滑，则回到上方画布。屏幕顶部的两个圆点表示当前显示的是哪张画布。竖向页面已打开且屏幕竖向时，竖向页面取代上方画布。</td></tr>
+    </tbody>
+  </table></div>
+  <p>打开两张画布并设置下方画布：</p>
+  <ol class="steps">
+    <li class="step">
+      <p>在 iPhone Duo 上点击<span class="ui">设置</span>标签页，打开<span class="ui">两张画布</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>开关处于打开状态。<span class="ui">LiveView Mix</span> 部分现在列出<span class="ui">上方画布</span>和<span class="ui">下方画布</span>。</p>
+    </li>
+    <li class="step">
+      <p>把 iPhone Duo 半折叠，然后点击 <span class="ui">LiveView Mix</span> 标签页。</p>
+      <p class="check"><b class="check-label">确认：</b>标签页在折痕上方显示上方画布，在折痕下方显示下方画布。空的画布显示其名称和<span class="ui">设置 LiveView Mix</span> 按钮。屏幕右上角只保留<span class="ui">全屏</span>按钮。</p>
+      <figure class="device tall"><img src="/guide/img/duo-lvm-canvases.png" alt="开启两张画布并半折叠的 iPhone Duo：折痕上方的上方画布有四个摄像头，下方画布也有四个，折痕处是一条深色条带" decoding="async" width="690" height="852" data-src="/guide/img/duo-lvm-canvases.png" style="aspect-ratio: 690 / 852;" loading="lazy"><figcaption>两张画布：墙在折痕处分为上下两块</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>点击下方画布右上角带滑块图标的圆形按钮。</p>
+      <p class="check"><b class="check-label">确认：</b>出现标题为<span class="ui">下方画布</span>的菜单，提供<span class="ui">选择摄像头</span>和<span class="ui">调整布局</span>。</p>
+    </li>
+    <li class="step">
+      <p>点击<span class="ui">调整布局</span>，然后像设置任何一面墙一样设置下方画布，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-layout">“调整布局”</a>和<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-arrange">“排列墙面与图块”</a>。</p>
+      <p class="check"><b class="check-label">确认：</b>点击<span class="ui">完成</span>后，下方画布在折痕下方显示其图块。</p>
+    </li>
+  </ol>
+  <ul>
+    <li><span class="ui">全屏</span>会把两张画布铺满屏幕打开，<span class="ui" data-ui="icon">✕</span> 按钮在上方画布的左上角。</li>
+    <li>显示两张画布期间，编辑页面没有<span class="ui">横向页面</span>和<span class="ui">竖向页面</span>切换器。</li>
+    <li>下方画布的控制面板只在两张画布打开期间计入套餐，并出现在 Apple Watch 上。</li>
+    <li>下方画布会随备份一起保存。在 iPhone 或 iPad 上恢复时，它会保留但不显示；再次在 iPhone Duo 上恢复时，它会重新出现。</li>
+  </ul>
+
+  <h3 id="lvm-wall">全屏墙</h3>
+  <p>路径：<span class="path"><span class="ui">LiveView Mix</span> › <span class="ui">全屏</span></span>。全屏墙按所选布局放置所有图块并占满屏幕。除非开启水印，否则墙上不带标签。</p>
+  <figure class="clip land"><video class="clip" aria-label="全屏墙：滑动可在页面之间切换，点击摄像头可打开其特写，点击“返回”回到墙。" muted="" loop="" playsinline="" preload="none" data-src="/guide/vid/rec-wall-paging.mp4" data-poster="/guide/img/rec-wall-paging.jpg" poster="/guide/img/rec-wall-paging.jpg"></video><figcaption>全屏墙：滑动可在页面之间切换，点击摄像头可打开其特写，点击“返回”回到墙。</figcaption></figure>
+  <ol class="steps">
+    <li class="step">
+      <p>在 LiveView Mix 标签页中，点击右上角的<span class="ui">全屏</span>（金色墙面图标）。</p>
+      <p class="check"><b class="check-label">确认：</b>屏幕切换为全屏墙。状态栏隐藏，左上角有一个 <span class="ui" data-ui="icon">✕</span> 按钮（<span class="ui">关闭</span>）。</p>
+      <figure class="land"><img src="/guide/img/lvm-wall-fullscreen.jpg" alt="横持的全屏墙：两个大图块、六个小摄像头图块、一个控制面板和一个时钟，左上角是关闭按钮" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-wall-fullscreen.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>全屏墙</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>墙有多个墙页时，向左滑动。</p>
+      <p class="check"><b class="check-label">确认：</b>显示下一个墙页，屏幕底部的页面圆点移到下一个圆点。</p>
+      <figure class="land"><img src="/guide/img/lvm-wall-paging.jpg" alt="横持的全屏墙：一面有两页的墙，屏幕底部有页面圆点" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-wall-paging.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>有两页的墙</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>向右滑动。</p>
+      <p class="check"><b class="check-label">确认：</b>再次显示上一个墙页。</p>
+    </li>
+    <li class="step">
+      <p>点击左上角的 <span class="ui" data-ui="icon">✕</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>墙关闭，重新显示 LiveView Mix 标签页。</p>
+    </li>
+  </ol>
+  <ul>
+    <li><b>翻页</b>：图块多于布局的容量时，墙分成多个墙页。墙页数等于图块数除以每页的图块数，向上取整。墙页未填满的位置以及空图块都显示黑色。有多个墙页时，屏幕底部出现页面圆点。</li>
+    <li><b>起始页</b>：墙在第一个有内容可显示的墙页打开。长墙开头是一串指向不存在的摄像头的图块时，它不会停在只有状态文字的墙页上。</li>
+    <li><b>视频流</b>：只有正在查看的墙页会播放；相邻墙页不连接，以节省带宽。<span class="ui">翻页时保持摄像头连接</span>会改变这一点，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-settings">““设置”中的 LiveView Mix”</a>。</li>
+    <li><b>画面上的按钮</b>：关闭按钮，以及从墙上打开的摄像头画面上的按钮，都是深色圆盘上带细白圈的白色大符号，因此无论画面是黑色还是明亮，都清晰可见并能准确点中。</li>
+    <li><b>点击摄像头</b>：打开该摄像头的单摄像头视图，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-closeup">“打开单个摄像头”</a>。</li>
+    <li><b>点击控制面板的按钮</b>：发送请求。按钮设为先要求确认时，会出现确认对话框，参见<a class="xref" href="/zh-Hans/guide/webhook.html">第 9 章“控制面板与 Webhook”</a>。</li>
+    <li><b>状态文字</b>：无法显示的图块保留其位置并显示状态文字；点击它没有反应。参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-states">“图块无法显示摄像头时”</a>。</li>
+    <li><b>无法通过拖动重新排列墙。</b>要调整图块，请回到<span class="ui">排列</span>，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-arrange">“排列墙面与图块”</a>。</li>
+    <li><b>转动设备</b>：竖向页面打开时，墙会随设备转动在横向页面和竖向页面之间切换，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-pages">“竖向页面”</a>。打开了两张画布的 iPhone Duo，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-canvases">“iPhone Duo 上的两张画布”</a>。</li>
+    <li><b>屏幕</b>：墙上有实时画面时，设备不会自动锁屏。</li>
+    <li><b>无内容可显示</b>：根本没有图块时，屏幕显示 <span class="ui">LiveView Mix 为空</span>。每个图块都指向不在本设备上的摄像头时（例如在添加任何设备之前就从备份恢复），屏幕显示<span class="ui">这些摄像头不在此设备上</span>。</li>
+  </ul>
+
+  <h3 id="lvm-closeup">打开单个摄像头</h3>
+  <p>点击墙或预览中的摄像头，会打开该摄像头的大画面。两个入口打开的画面不同。</p>
+  <h4>从全屏墙进入</h4>
+  <p>打开的是该摄像头的单摄像头视图，始终以 HD 播放。左上角是返回按钮 <span class="ui" data-ui="icon">‹</span>（<span class="ui">返回</span>）和摄像头名称。设备支持录像回放时，右上角有<span class="ui">录像</span>按钮（时钟图标）。摄像头支持 PTZ 时，右下角有 PTZ 控制盘。画面带有声音时，左下角有扬声器按钮（<span class="ui">静音</span>、<span class="ui">取消静音</span>）。此视图没有 SD 和 HD 开关，也没有黑边开关。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>在全屏墙上点击某个摄像头的画面。</p>
+      <p class="check"><b class="check-label">确认：</b>屏幕切换为该摄像头的单摄像头视图。</p>
+      <div class="shots land-pair">
+        <figure class="land"><img src="/guide/img/lvm-wall-zoom.jpg" alt="从墙上打开的单摄像头视图：左上角是返回按钮和名称，右下角是 PTZ 控制盘" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-wall-zoom.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>从墙上打开的单摄像头视图</figcaption></figure>
+        <figure class="land"><img src="/guide/img/lvm-immersive.jpg" alt="从预览打开的全屏查看器：左上角是关闭按钮，顶部是名称、HD 按钮和黑边按钮，下方是页面圆点" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-immersive.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>从预览打开的全屏查看器</figcaption></figure>
+      </div>
+    </li>
+    <li class="step">
+      <p>在画面上两指张开。</p>
+      <p class="check"><b class="check-label">确认：</b>画面放大，最多 5 倍。放大后，用一根手指拖动可移动画面。</p>
+    </li>
+    <li class="step">
+      <p>双击画面。</p>
+      <p class="check"><b class="check-label">确认：</b>画面放大到 2 倍；再次双击恢复原大小。</p>
+    </li>
+    <li class="step">
+      <p>设备支持录像回放时，点击右上角的<span class="ui">录像</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>屏幕打开该摄像头的画面和录像回放，右上角有<span class="ui">完成</span>。操作方法参见<a class="xref" href="/zh-Hans/guide/single.html">第 6 章“单摄像头视图”</a>和<a class="xref" href="/zh-Hans/guide/playback.html">第 7 章“录像回放与倍速”</a>。</p>
+    </li>
+    <li class="step">
+      <p>点击左上角的返回按钮 <span class="ui" data-ui="icon">‹</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>屏幕重新显示全屏墙。仍在转动的摄像头云台会停止。PTZ 控制参见<a class="xref" href="/zh-Hans/guide/single.html#single-ptz">“PTZ 控制：移动摄像头”</a>。</p>
+    </li>
+  </ol>
+  <h4>从预览进入</h4>
+  <p>打开的是全屏查看器：一次显示一个摄像头，左右滑动可切换到下一个摄像头。可以切换到的，是预览中能够播放的摄像头（在线、在套餐内且未暂停），顺序与墙上相同。屏幕底部有页面圆点。</p>
+  <ul>
+    <li><span class="ui" data-ui="icon">✕</span>（<span class="ui">关闭</span>）：关闭查看器并回到预览。</li>
+    <li>摄像头名称位于顶部中央。</li>
+    <li>右上角的 <span class="ui">HD</span> / <span class="ui">SD</span> 按钮用于切换画质；按钮上的文字为当前画质。查看器始终以 HD 打开，切换只作用于当前这次观看，不会保存。</li>
+    <li>右上角的黑边按钮在<span class="ui">默认</span>和<span class="ui">拉伸填满</span>之间切换，同样只作用于当前这次观看。墙的黑边设置不是<span class="ui">默认</span>时，查看器从<span class="ui">拉伸填满</span>开始。</li>
+    <li>左下角的扬声器按钮仅在画面带有声音时出现。</li>
+  </ul>
+  <p>点击预览中套餐未涵盖的摄像头（<span class="ui">不在您的套餐内</span>）会打开套餐页面，参见<a class="xref" href="/zh-Hans/guide/plans.html">第 11 章“套餐与额度”</a>。点击离线、已停用或已暂停的摄像头没有反应。声音只在单摄像头视图和这个全屏查看器中播放；开启方法参见<a class="xref" href="/zh-Hans/guide/single.html">第 6 章“单摄像头视图”</a>。</p>
+
+  <h3 id="lvm-states">图块无法显示摄像头时</h3>
+  <p>无法显示的摄像头保留它在墙上的位置，其图块显示带状态文字的深色底板。由于位置得以保留，其他图块都不会移动。</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>显示</th><th>含义</th><th>处理方法</th></tr></thead>
+    <tbody>
+      <tr><td data-label="显示"><span class="ui">无信号</span></td><td data-label="含义">设备报告该通道离线。</td><td data-label="处理方法">检查摄像头的电源和网络，参见<a class="xref" href="/zh-Hans/guide/trouble.html">第 15 章“故障排除”</a>。</td></tr>
+      <tr><td data-label="显示"><span class="ui">已停用</span></td><td data-label="含义">该通道尚未启用。</td><td data-label="处理方法">在设备页或<span class="path"><span class="ui">设置</span> › <span class="ui">选择要显示的摄像头</span></span>中启用该通道，参见<a class="xref" href="/zh-Hans/guide/devices.html">第 4 章“设备标签页与通道”</a>。</td></tr>
+      <tr><td data-label="显示"><span class="ui">不在您的套餐内</span></td><td data-label="含义">通道已启用，但超出当前套餐的额度。</td><td data-label="处理方法">参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-limits">“套餐上限如何影响墙”</a>和<a class="xref" href="/zh-Hans/guide/plans.html">第 11 章“套餐与额度”</a>。</td></tr>
+      <tr><td data-label="显示"><span class="ui">已暂停</span></td><td data-label="含义">该通道已用<span class="ui">暂停画面</span>暂停；图块显示灰色底板。</td><td data-label="处理方法">在设备页用<span class="ui">继续播放</span>恢复，参见<a class="xref" href="/zh-Hans/guide/devices.html">第 4 章“设备标签页与通道”</a>。</td></tr>
+      <tr><td data-label="显示"><span class="ui">摄像头已移除</span></td><td data-label="含义">该图块指向 Cam Hub 已不再拥有的摄像头。</td><td data-label="处理方法">在<span class="ui">选择摄像头</span>页面用<span class="ui">清空这些格子</span>处理，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-pick">“选择摄像头与画质”</a>。</td></tr>
+    </tbody>
+  </table></div>
+  <figure class="land"><img src="/guide/img/lvm-wall-states.jpg" alt="横持的全屏墙：数个图块分别显示“无信号”“不在您的套餐内”“已停用”和“摄像头已移除”" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-wall-states.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>无法显示摄像头的图块</figcaption></figure>
+  <figure class="phone"><img src="/guide/img/lvm-unavailable-plates.jpg" alt="LiveView Mix 标签页的预览中有六个图块：一个实时画面，两个“摄像头已移除”，以及“已停用”“无信号”和带锁的“不在您的套餐内”各一个；底部是提示“仅为预览——全屏才会显示您的布局。”" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-unavailable-plates.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>LiveView Mix 标签页预览中的相同底板</figcaption></figure>
+  <ul>
+    <li>图块正在连接时，显示转动的圆圈。连接失败时，图块用简短的文字说明原因；临时性的失败会自动重试。</li>
+    <li><span class="ui">翻页时保持摄像头连接</span>关闭时，图块在其墙页进入视野的瞬间先只显示摄像头名称，随后才出现画面。</li>
+    <li>设置中的<span class="ui">隐藏离线摄像头</span>只作用于实时标签页的墙，不会从 LiveView Mix 中移除图块。</li>
+    <li>在 App 中删除设备，会清空每面墙上属于该设备的图块。其他图块都不移动，控制面板也保持原位。</li>
+  </ul>
+
+  <h3 id="lvm-limits">套餐上限如何影响墙</h3>
+  <p>LiveView Mix 本身不限制墙上的摄像头数量。能同时显示画面的通道数量由套餐决定；额度的详细说明参见<a class="xref" href="/zh-Hans/guide/plans.html">第 11 章“套餐与额度”</a>。</p>
+  <ul>
+    <li><b>免费版</b>：整个 App 中最多 2 个已启用的通道（单独的摄像头和录像机的通道合计），最多 1 台录像机。超出额度的通道在墙上显示<span class="ui">已停用</span>；已启用但超出额度的通道显示<span class="ui">不在您的套餐内</span>。两种情况下，图块的位置都会保留。</li>
+    <li><b>摄像头套餐与录像机套餐</b>：它们分别提高可启用的单独摄像头数量和录像机数量。持有录像机套餐时，所订阅录像机的全部通道都可使用。</li>
+    <li><b>启用通道</b>：套餐升级后，原先已停用的通道不会自动启用；必须在设备页或<span class="path"><span class="ui">设置</span> › <span class="ui">选择要显示的摄像头</span></span>中打开。两个维度都不限量的套餐会自动启用所有通道，此时“设置”中不再显示<span class="ui">选择要显示的摄像头</span>。</li>
+    <li><b>控制面板占用摄像头额度，排在摄像头之后</b>：每个控制面板按一个单独的摄像头计入套餐的摄像头额度，而不计入录像机额度。控制面板只使用摄像头用剩的额度（免费版中为摄像头和录像机通道用剩的额度），因此控制面板永远不会让摄像头失去画面。额度用完时，控制面板仍留在原位，但其按钮被锁定，图块显示锁形图标、面板标题和<span class="ui">不在您的套餐内</span>。图片、时钟和标签不占用额度。</li>
+    <li><b>每面墙上的每个控制面板都计入</b>：横向页面的控制面板始终计入；竖向页面的控制面板在竖向页面打开时计入，下方画布的控制面板在 iPhone Duo 的两张画布打开时计入。复制到另一个页面的控制面板单独计入。额度按横向页面、下方画布、竖向页面的顺序覆盖控制面板，每面墙内按图块顺序。</li>
+    <li><b>被锁定的通道</b>：点击预览中套餐未涵盖的摄像头，会打开套餐页面。在“选择摄像头”页面和排列画布上，这些通道不显示实时画面。</li>
+    <li><b>自定义布局</b>：最大 8 × 8，即 64 个图块，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-custom">“绘制自定义布局”</a>。</li>
+  </ul>
+
+  <h3 id="lvm-settings">“设置”中的 LiveView Mix</h3>
+  <p>路径：<span class="path"><span class="ui">设置</span> › <span class="ui">LiveView Mix</span></span>。<span class="ui">LiveView Mix</span> 部分每面墙一行，每行末尾显示已选摄像头的数量（<span class="ui" data-ui="value">6 个摄像头</span>），设置之前则显示<span class="ui">未设置</span>：</p>
+  <ul>
+    <li><span class="ui">LiveView Mix</span>：这面墙。竖向页面打开时，该行名为<span class="ui">横向页面</span>；在打开了两张画布的 iPhone Duo 上，名为<span class="ui">上方画布</span>。</li>
+    <li><span class="ui">竖向页面</span>：竖向页面打开时显示。</li>
+    <li><span class="ui">下方画布</span>：在 iPhone Duo 上，两张画布打开时显示。</li>
+  </ul>
+  <p>点击某一行会打开一个页面，该墙的摄像头选择、全屏布局、水印和翻页都在同一页上。各选项的作用如上文各节所述。左上角的<span class="ui">取消</span>会恢复进入该页面之后所做的全部更改，右上角的<span class="ui">完成</span>则保留更改。</p>
+  <p>在 <span class="ui">LiveView Mix</span> 部分下方，<span class="ui">竖向页面</span>开关有自己的部分（参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-pages">“竖向页面”</a>）；在 iPhone Duo 上，<span class="ui">两张画布</span>开关也有自己的部分（参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-canvases">“iPhone Duo 上的两张画布”</a>）。两者默认都关闭。</p>
+  <figure class="phone"><img src="/guide/img/settings-2.jpg" alt="“设置”标签页：LiveView Mix 部分，该行末尾显示摄像头数量，其下是当前设为“上次查看”的“启动时打开”菜单，以及“竖向页面”开关" decoding="async" width="900" height="1947" data-src="/guide/img/settings-2.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>“设置”标签页的 LiveView Mix 部分</figcaption></figure>
+  <h4>启动时打开</h4>
+  <p><span class="ui">启动时打开</span>决定 App 启动时显示哪个画面：</p>
+  <ul>
+    <li><span class="ui">上次查看</span>（默认）。</li>
+    <li><span class="ui">LiveView Mix</span>：打开 LiveView Mix 标签页。</li>
+    <li><span class="ui">LiveView Mix 全屏</span>：打开 LiveView Mix 标签页，并在启动后一次性直接进入全屏墙。点击 <span class="ui" data-ui="icon">✕</span> 回到标签页中的预览。</li>
+    <li>各台设备：打开实时标签页并显示该设备。</li>
+  </ul>
+  <p><span class="ui">LiveView Mix</span> 和 <span class="ui">LiveView Mix 全屏</span>这两个选项只在墙设置完成后，或者竖向页面或两张画布打开时才出现。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>点击屏幕底部的<span class="ui">设置</span>标签页，并滚动到 <span class="ui">LiveView Mix</span> 部分。</p>
+      <p class="check"><b class="check-label">确认：</b>屏幕显示 LiveView Mix 一行和<span class="ui">启动时打开</span>菜单。</p>
+    </li>
+    <li class="step">
+      <p>点击<span class="ui">启动时打开</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>屏幕显示选项列表，当前选项处于勾选状态。</p>
+      <figure class="phone"><img src="/guide/img/lvm-open-on-launch.jpg" alt="“启动时打开”的选项：上次查看、LiveView Mix、LiveView Mix 全屏和各台设备" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-open-on-launch.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>“启动时打开”的选项</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>选择 <span class="ui">LiveView Mix 全屏</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>菜单显示 <span class="ui">LiveView Mix 全屏</span>。App 下次启动时，会直接进入全屏墙。</p>
+    </li>
+  </ol>
+  <h4>翻页时保持摄像头连接</h4>
+  <p><span class="ui">翻页</span>部分的<span class="ui">翻页时保持摄像头连接</span>默认关闭。开启后，未被查看的墙页保持连接，因此滑动时画面立即出现，而不是先显示黑色图块等待摄像头重新连接。代价是更多的带宽和电量消耗；对需要登录会话的录像机效果最明显。最多保持 12 路视频流。关闭该开关时，保持的连接立即关闭。该开关作用于整个 App 的视频流。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>在<span class="ui">调整布局</span>页面向下滚动到<span class="ui">翻页</span>部分。</p>
+      <p class="check"><b class="check-label">确认：</b>屏幕显示<span class="ui">翻页时保持摄像头连接</span>开关及其说明。</p>
+      <figure class="phone"><img src="/guide/img/lvm-layout-2.jpg" alt="“调整布局”页面的下半部分：“水印”部分，以及带有“翻页时保持摄像头连接”开关的“翻页”部分" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-layout-2.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>“翻页”部分</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>打开<span class="ui">翻页时保持摄像头连接</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>开关处于打开状态。</p>
+    </li>
+  </ol>
+  <h4>备份与恢复</h4>
+  <p>每面墙的设置（横向页面、竖向页面和下方画布，各自包括其摄像头和图块、布局、自定义布局、水印、控制面板和图片）、竖向页面和两张画布的开关，以及预览的排列，都属于 App 设置，会随 iCloud 备份一起保存（参见<a class="xref" href="/zh-Hans/guide/share.html#share-versions">“多份命名备份：重命名与删除”</a>）；导出摄像头时，开启<span class="ui">包含 App 设置</span>也会一并带上它们。恢复时，属于新设备上不存在的设备的图块不会保留。图片会增大备份，复制到另一个页面的图片计算两次。操作方法参见<a class="xref" href="/zh-Hans/guide/share.html">第 10 章“共享与备份”</a>。</p>
+
+  <h3 id="lvm-tv">Apple TV 上的差异</h3>
+  <p>Apple TV 显示在 iPhone 或 iPad 上搭建好的墙。排列墙、编辑其图块和绘制自定义布局都在 iPhone 或 iPad 上完成，参见<a class="xref" href="/zh-Hans/guide/appletv.html">第 14 章“Apple TV”</a>。Apple TV 只显示横向页面：竖向页面和 iPhone Duo 的下方画布都不显示，它们的控制面板在 Apple TV 上也不计入套餐。</p>
+</section><nav class="guide-pager" aria-label="目录"><a class="guide-prev" rel="prev" href="/zh-Hans/guide/playback.html"><span class="pager-dir">上一章</span><span class="pager-title">7. 录像回放与倍速</span></a><a class="guide-next" rel="next" href="/zh-Hans/guide/webhook.html"><span class="pager-dir">下一章</span><span class="pager-title">9. 控制面板与 Webhook</span></a></nav></article>
+    </div>
+    <button class="guide-top" id="guide-top" type="button" aria-label="回到顶部"></button>
+  </main>
+  <footer class="footer"><span data-i18n="footer">Copyright<wbr data-phrase-break=""> <wbr data-phrase-break="">©<wbr data-phrase-break=""> <wbr data-phrase-break="">2026<wbr data-phrase-break=""> <wbr data-phrase-break="">ALMX<wbr data-phrase-break="">.<wbr data-phrase-break=""> <wbr data-phrase-break="">All<wbr data-phrase-break=""> <wbr data-phrase-break="">rights<wbr data-phrase-break=""> <wbr data-phrase-break="">reserved<wbr data-phrase-break="">.</span><nav><a href="/zh-Hans/guide.html" data-i18n="navGuide">操作<wbr data-phrase-break="">手册</a><a href="/zh-Hans/devices.html" data-i18n="navDevices">机<wbr data-phrase-break="">型<wbr data-phrase-break="">差异</a><a href="/zh-Hans/privacy.html" data-i18n="navPrivacy">隐私<wbr data-phrase-break="">政策</a><a href="/zh-Hans/terms.html" data-i18n="navTerms">使用<wbr data-phrase-break="">条款</a><a class="store-link" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeCTA">在<wbr data-phrase-break=""> <wbr data-phrase-break="">App<wbr data-phrase-break=""> <wbr data-phrase-break="">Store<wbr data-phrase-break=""> <wbr data-phrase-break="">下载</a></nav><nav class="language-links" id="language-links" aria-label="语言" data-i18n-aria="languageLabel"><a href="/guide/lvm.html" hreflang="en" lang="en" data-language-link="en">English</a><a href="/zh-Hant/guide/lvm.html" hreflang="zh-Hant" lang="zh-Hant" data-language-link="zh-Hant">繁體中文</a><a href="/zh-Hans/guide/lvm.html" hreflang="zh-Hans" lang="zh-Hans" data-language-link="zh-Hans" aria-current="true">简体中文</a><a href="/ja/guide/lvm.html" hreflang="ja" lang="ja" data-language-link="ja">日本語</a><a href="/ko/guide/lvm.html" hreflang="ko" lang="ko" data-language-link="ko">한국어</a><a href="/de/guide/lvm.html" hreflang="de" lang="de" data-language-link="de">Deutsch</a><a href="/es/guide/lvm.html" hreflang="es" lang="es" data-language-link="es">Español</a><a href="/es-MX/guide/lvm.html" hreflang="es-MX" lang="es-MX" data-language-link="es-MX">Español (México)</a><a href="/fr/guide/lvm.html" hreflang="fr" lang="fr" data-language-link="fr">Français</a><a href="/sl/guide/lvm.html" hreflang="sl" lang="sl" data-language-link="sl">Slovenščina</a><a href="/ar/guide/lvm.html" hreflang="ar" lang="ar" data-language-link="ar">العربية</a></nav></footer>
+  <script src="/additional-locales.js?v=20261103-sl"></script>
+  <script src="/site.js?v=20261112-1"></script>
+
+
+</body></html>

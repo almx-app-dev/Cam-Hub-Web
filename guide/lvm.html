@@ -1,0 +1,986 @@
+<!doctype html>
+<html lang="en" dir="ltr"><head>
+  <meta charset="utf-8"><script>(function () {
+  var codes = ["zh-Hant", "zh-Hans", "ja", "ko", "de", "es", "es-MX", "fr", "sl", "ar"];
+
+  function pickLanguage(preferences) {
+    var direct = { en: "en", ar: "ar", de: "de", es: "es", fr: "fr", ja: "ja", ko: "ko", sl: "sl" };
+    for (var i = 0; i < preferences.length; i += 1) {
+      var tag = String(preferences[i] || "").replace(/_/g, "-");
+      if (/^es-mx(?:-|$)/i.test(tag)) return "es-MX";
+      var base = tag.split("-")[0].toLowerCase();
+      if (direct[base]) return direct[base];
+      if (base !== "zh") continue;
+      try {
+        var locale = new Intl.Locale(tag).maximize();
+        return locale.script === "Hant" || ["TW", "HK", "MO"].indexOf(locale.region) >= 0 ? "zh-Hant" : "zh-Hans";
+      } catch (error) {
+        return /(?:^|-)Hant(?:-|$)|(?:^|-)(?:TW|HK|MO)(?:-|$)/i.test(tag) ? "zh-Hant" : "zh-Hans";
+      }
+    }
+    return "en";
+  }
+  window.__camHubEarlyPick = pickLanguage;
+
+  try {
+    if (window.__camHubPrerender || /[?&](?:lang|chapter)=/i.test(location.search)) return;
+    if (document.referrer && new URL(document.referrer).origin === location.origin) return;
+    var chosen = null;
+    try {
+      if (localStorage.getItem("camHubSiteLanguageManual") === "1") chosen = localStorage.getItem("camHubSiteLanguage");
+    } catch (error) {
+      chosen = null;
+    }
+    var target = chosen === "en" || codes.indexOf(chosen) >= 0 ? chosen
+      : pickLanguage(navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"]);
+    if (codes.indexOf(target) < 0) return;
+    var path = location.pathname === "/index.html" ? "/" : location.pathname;
+    location.replace("/" + target + path + location.search + location.hash);
+  } catch (error) {
+  }
+})();</script><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="apple-itunes-app" content="app-id=6792057195"><meta name="color-scheme" content="dark light">
+  <meta name="description" content="LiveView Mix places cameras from different devices on one wall. The wall can also hold pictures, clocks, labels, control panels and YouTube or Twitch streams…">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="Cam Hub"><meta property="og:image" content="https://cam-hub.almx.cc/assets/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+  <title>LiveView Mix — Cam Hub Manual</title><link rel="icon" href="/assets/icon-48.png" sizes="48x48"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/icon-180.png"><link rel="stylesheet" href="/styles.css?v=20261112-1"><link rel="stylesheet" href="/guide.css?v=20261030-1">
+<meta property="og:description" content="LiveView Mix places cameras from different devices on one wall. The wall can also hold pictures, clocks, labels, control panels and YouTube or Twitch streams…"><link rel="canonical" href="https://cam-hub.almx.cc/guide/lvm.html"><link rel="alternate" hreflang="x-default" href="https://cam-hub.almx.cc/guide/lvm.html"><link rel="alternate" hreflang="en" href="https://cam-hub.almx.cc/guide/lvm.html"><link rel="alternate" hreflang="zh-Hant" href="https://cam-hub.almx.cc/zh-Hant/guide/lvm.html"><link rel="alternate" hreflang="zh-Hans" href="https://cam-hub.almx.cc/zh-Hans/guide/lvm.html"><link rel="alternate" hreflang="ja" href="https://cam-hub.almx.cc/ja/guide/lvm.html"><link rel="alternate" hreflang="ko" href="https://cam-hub.almx.cc/ko/guide/lvm.html"><link rel="alternate" hreflang="de" href="https://cam-hub.almx.cc/de/guide/lvm.html"><link rel="alternate" hreflang="es" href="https://cam-hub.almx.cc/es/guide/lvm.html"><link rel="alternate" hreflang="es-MX" href="https://cam-hub.almx.cc/es-MX/guide/lvm.html"><link rel="alternate" hreflang="fr" href="https://cam-hub.almx.cc/fr/guide/lvm.html"><link rel="alternate" hreflang="sl" href="https://cam-hub.almx.cc/sl/guide/lvm.html"><link rel="alternate" hreflang="ar" href="https://cam-hub.almx.cc/ar/guide/lvm.html"><meta property="og:url" content="https://cam-hub.almx.cc/guide/lvm.html"><meta property="og:title" content="LiveView Mix — Cam Hub Manual"></head>
+<body data-page="guide">
+  <header class="topbar" aria-label="Site header">
+    <a class="brand" href="/"><img src="/assets/icon-96.png" alt="" width="42" height="42"><span><strong>Cam&nbsp;Hub</strong><small data-i18n="topline">Operation manual</small></span></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-controls" data-i18n-aria="menuLabel" aria-label="Open menu"><span></span><span></span><span></span><span class="sr-only" data-i18n="menuLabel">Open menu</span></button>
+    <div class="topbar-controls" id="site-controls"><nav class="navlinks" aria-label="Primary"><a href="/" data-nav="home" data-i18n="navHome">Home</a><a href="/product.html" data-nav="product" data-i18n="navProduct">Product</a><a href="/guide.html" data-nav="guide" data-i18n="navGuide" aria-current="page">Manual</a><a href="/support.html" data-nav="support" data-i18n="navSupport">Support</a><a href="/privacy.html" data-nav="privacy" data-i18n="navPrivacy">Privacy</a><a href="/terms.html" data-nav="terms" data-i18n="navTerms">Terms</a></nav><div class="pickers"><label><span class="sr-only" data-i18n="themeLabel">Appearance</span><select id="themeSelect" aria-label="Theme"><option value="auto" data-i18n="themeAuto" selected="">Auto</option><option value="light" data-i18n="themeLight">Light</option><option value="dark" data-i18n="themeDark">Dark</option></select></label><label><span class="sr-only" data-i18n="languageLabel">Language</span><select id="languageSelect" aria-label="Language"><option value="en" selected="">English</option><option value="zh-Hant">繁體中文</option><option value="zh-Hans">简体中文</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="de">Deutsch</option><option value="es">Español</option><option value="es-MX">Español (México)</option><option value="fr">Français</option><option value="sl">Slovenščina</option><option value="ar">العربية</option></select></label></div><a class="store-pill" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeShort">Get the app</a></div>
+  </header>
+  <main class="inner-page guide" style="--g-topbar: 76px; --g-offset: 88px;">
+    <section class="page-hero"><div class="eyebrow" data-i18n="eyebrow">OPERATION MANUAL</div><h1 data-i18n="title">LiveView Mix</h1><p class="summary" data-i18n="summary">Step-by-step instructions for adding devices, live view and recording playback, LiveView Mix walls, sharing, and backup.</p></section>
+    <p class="guide-notice" id="guide-notice" role="status" hidden=""></p>
+    <div id="guide-sentinel" aria-hidden="true"></div>
+    <div class="guide-layout has-toc" id="guide-layout" lang="en" dir="ltr">
+      <aside class="guide-side" id="guide-side">
+        <button class="guide-toc-toggle" id="guide-toc-toggle" type="button" aria-expanded="false" aria-controls="guide-toc" lang="en" dir="ltr"><span class="guide-toc-label" data-i18n="tocLabel">Contents</span><span class="guide-toc-current" id="guide-toc-current">8. LiveView Mix</span></button>
+        <nav class="guide-toc" id="guide-toc" aria-label="Contents"><ol><li><a href="/guide.html"><span class="toc-num">1</span><span>Quick start</span></a><ol><li><a href="/guide.html#start-prepare"><span>Before you begin</span></a></li><li><a href="/guide.html#start-path"><span>Shortest path to a live picture</span></a></li><li><a href="/guide.html#start-demo"><span>Trying the app without a device</span></a></li></ol></li><li><a href="/guide/tour.html"><span class="toc-num">2</span><span>The tabs and basic behaviour</span></a><ol><li><a href="/guide/tour.html#tour-tabs"><span>The tabs at a glance</span></a></li><li><a href="/guide/tour.html#tour-launch"><span>What opens when the app starts</span></a></li><li><a href="/guide/tour.html#tour-look"><span>Appearance and language</span></a></li><li><a href="/guide/tour.html#tour-rotate"><span>Turning the device</span></a></li><li><a href="/guide/tour.html#tour-duo"><span>iPhone Duo</span></a></li><li><a href="/guide/tour.html#tour-awake"><span>Screen, background and notifications</span></a></li></ol></li><li><a href="/guide/add.html"><span class="toc-num">3</span><span>Adding a device</span></a><ol><li><a href="/guide/add.html#add-form"><span>The Add Device form</span></a></li><li><a href="/guide/add.html#add-auto"><span>Adding without choosing a brand</span></a></li><li><a href="/guide/add.html#add-methods"><span>Choosing the connection method</span></a></li><li><a href="/guide/add.html#add-https"><span>Adding a device over HTTPS</span></a></li><li><a href="/guide/add.html#add-streams"><span>Adding YouTube live streams and Twitch channels</span></a></li><li><a href="/guide/add.html#add-failed"><span>When adding fails: the checklist</span></a></li><li><a href="/guide/add.html#add-report"><span>Device report (experimental)</span></a></li><li><a href="/guide/add.html#add-scan"><span>Finding devices with the network scan</span></a></li></ol></li><li><a href="/guide/devices.html"><span class="toc-num">4</span><span>The Devices tab and channels</span></a><ol><li><a href="/guide/devices.html#devices-list"><span>The device list</span></a></li><li><a href="/guide/devices.html#devices-page"><span>The device page</span></a></li><li><a href="/guide/devices.html#devices-credentials"><span>Changing the user name and password of a device</span></a></li><li><a href="/guide/devices.html#devices-password-missing"><span>A device without a saved password</span></a></li><li><a href="/guide/devices.html#devices-https"><span>HTTPS for a saved device</span></a></li><li><a href="/guide/devices.html#devices-health"><span>Disk Health</span></a></li><li><a href="/guide/devices.html#devices-streams"><span>YouTube and Twitch streams</span></a></li><li><a href="/guide/devices.html#devices-states"><span>What a thumbnail shows</span></a></li><li><a href="/guide/devices.html#devices-menu"><span>Channel options (long press)</span></a></li><li><a href="/guide/devices.html#devices-plan"><span>Plan limits and enabling channels</span></a></li><li><a href="/guide/devices.html#devices-choose"><span>Choosing which cameras show</span></a></li><li><a href="/guide/devices.html#devices-fullwall"><span>The full-screen wall of a device</span></a></li><li><a href="/guide/devices.html#devices-quality"><span>SD and HD on device screens</span></a></li></ol></li><li><a href="/guide/live.html"><span class="toc-num">5</span><span>The Live tab and the Full Screen Wall</span></a><ol><li><a href="/guide/live.html#live-tab"><span>The Live tab</span></a></li><li><a href="/guide/live.html#live-quality"><span>SD and HD on a wall</span></a></li><li><a href="/guide/live.html#live-wall"><span>The Full Screen Wall</span></a></li><li><a href="/guide/live.html#live-hide"><span>Hiding cameras without signal</span></a></li></ol></li><li><a href="/guide/single.html"><span class="toc-num">6</span><span>Single-camera view</span></a><ol><li><a href="/guide/single.html#single-open"><span>Opening the view</span></a></li><li><a href="/guide/single.html#single-screen"><span>The parts of the screen</span></a></li><li><a href="/guide/single.html#single-zoom"><span>Zoom and pan</span></a></li><li><a href="/guide/single.html#single-controls"><span>Snapshot, sound and quality</span></a></li><li><a href="/guide/single.html#single-clip"><span>Recording a clip</span></a></li><li><a href="/guide/single.html#single-talk"><span>Two-way talk</span></a></li><li><a href="/guide/single.html#single-picture"><span>Black bars, rotation and landscape</span></a></li><li><a href="/guide/single.html#single-ptz"><span>PTZ control: moving the camera</span></a></li><li><a href="/guide/single.html#single-window"><span>A camera in a window of its own</span></a></li><li><a href="/guide/single.html#single-duo"><span>The view on a folded iPhone Duo</span></a></li><li><a href="/guide/single.html#single-streams"><span>YouTube and Twitch streams</span></a></li><li><a href="/guide/single.html#single-states"><span>Connection states and messages</span></a></li><li><a href="/guide/single.html#single-limits"><span>What is not available</span></a></li></ol></li><li><a href="/guide/playback.html"><span class="toc-num">7</span><span>Recording playback and speed</span></a><ol><li><a href="/guide/playback.html#playback-avail"><span>Where playback is available</span></a></li><li><a href="/guide/playback.html#playback-day"><span>Choosing a day</span></a></li><li><a href="/guide/playback.html#playback-calendar"><span>The recording calendar</span></a></li><li><a href="/guide/playback.html#playback-timeline"><span>Using the timeline</span></a></li><li><a href="/guide/playback.html#playback-list"><span>The list of recordings and the search for people</span></a></li><li><a href="/guide/playback.html#playback-playing"><span>While a recording plays</span></a></li><li><a href="/guide/playback.html#playback-speed"><span>Playback speed</span></a></li><li><a href="/guide/playback.html#playback-landscape"><span>Playback in landscape</span></a></li><li><a href="/guide/playback.html#playback-limits"><span>What is not available</span></a></li></ol></li><li class="is-current"><a href="/guide/lvm.html" class="is-active" aria-current="location"><span class="toc-num">8</span><span>LiveView Mix</span></a><ol><li><a href="/guide/lvm.html#lvm-tab"><span>The LiveView Mix tab and its preview</span></a></li><li><a href="/guide/lvm.html#lvm-first"><span>Building a first wall of six cameras</span></a></li><li><a href="/guide/lvm.html#lvm-pick"><span>Choosing cameras and quality</span></a></li><li><a href="/guide/lvm.html#lvm-layout"><span>Adjusting the layout</span></a></li><li><a href="/guide/lvm.html#lvm-custom"><span>Drawing a custom layout</span></a></li><li><a href="/guide/lvm.html#lvm-special"><span>Special layouts: big and small tiles on one wall</span></a></li><li><a href="/guide/lvm.html#lvm-arrange"><span>Arranging the wall and its tiles</span></a></li><li><a href="/guide/lvm.html#lvm-move"><span>Moving a tile into an empty tile</span></a></li><li><a href="/guide/lvm.html#lvm-slots"><span>What a tile can show besides a camera</span></a></li><li><a href="/guide/lvm.html#lvm-watermark"><span>Watermark</span></a></li><li><a href="/guide/lvm.html#lvm-fit"><span>Black bars, edge-to-edge video and the angle of the device</span></a></li><li><a href="/guide/lvm.html#lvm-pages"><span>The portrait page</span></a></li><li><a href="/guide/lvm.html#lvm-canvases"><span>Two canvases on iPhone Duo</span></a></li><li><a href="/guide/lvm.html#lvm-wall"><span>The full-screen wall</span></a></li><li><a href="/guide/lvm.html#lvm-closeup"><span>Opening a single camera</span></a></li><li><a href="/guide/lvm.html#lvm-streams"><span>YouTube and Twitch streams on the wall</span></a></li><li><a href="/guide/lvm.html#lvm-states"><span>When a tile cannot show a camera</span></a></li><li><a href="/guide/lvm.html#lvm-limits"><span>How plan limits affect the wall</span></a></li><li><a href="/guide/lvm.html#lvm-settings"><span>LiveView Mix in Settings</span></a></li><li><a href="/guide/lvm.html#lvm-tv"><span>Differences on Apple TV</span></a></li></ol></li><li><a href="/guide/webhook.html"><span class="toc-num">9</span><span>Control panels and webhooks</span></a><ol><li><a href="/guide/webhook.html#webhook-what"><span>What a control panel does</span></a></li><li><a href="/guide/webhook.html#webhook-add"><span>Adding a control panel to the wall</span></a></li><li><a href="/guide/webhook.html#webhook-templates"><span>Templates</span></a></li><li><a href="/guide/webhook.html#webhook-fields"><span>The settings of a panel</span></a></li><li><a href="/guide/webhook.html#webhook-button"><span>Setting up a button</span></a></li><li><a href="/guide/webhook.html#webhook-use"><span>Pressing a button and reading the result</span></a></li><li><a href="/guide/webhook.html#webhook-wall"><span>How a panel looks on the wall</span></a></li><li><a href="/guide/webhook.html#webhook-watch"><span>Buttons on Apple Watch</span></a></li><li><a href="/guide/webhook.html#ha"><span>Using Home Assistant</span></a></li><li><a href="/guide/webhook.html#webhook-security"><span>Security notes</span></a></li></ol></li><li><a href="/guide/share.html"><span class="toc-num">10</span><span>Sharing and backup</span></a><ol><li><a href="/guide/share.html#share-choose"><span>Comparing the two methods</span></a></li><li><a href="/guide/share.html#share-export"><span>Exporting cameras (creating a code)</span></a></li><li><a href="/guide/share.html#share-lock"><span>Locking a code</span></a></li><li><a href="/guide/share.html#share-import"><span>Importing cameras</span></a></li><li><a href="/guide/share.html#share-contents"><span>What backups and codes contain</span></a></li><li><a href="/guide/share.html#share-icloud"><span>Backing up to iCloud</span></a></li><li><a href="/guide/share.html#share-versions"><span>Several named backups: renaming and deleting</span></a></li><li><a href="/guide/share.html#share-restore"><span>Restoring from iCloud</span></a></li><li><a href="/guide/share.html#share-delete"><span>Deleting all iCloud backups</span></a></li><li><a href="/guide/share.html#share-newphone"><span>Moving devices and walls to a new phone</span></a></li><li><a href="/guide/share.html#share-appletv"><span>Bringing the setup to Apple TV</span></a></li></ol></li><li><a href="/guide/plans.html"><span class="toc-num">11</span><span>Plans and limits</span></a><ol><li><a href="/guide/plans.html#plans-tiers"><span>The allowance of each plan</span></a></li><li><a href="/guide/plans.html#plans-stack"><span>How the two groups of plans combine</span></a></li><li><a href="/guide/plans.html#plans-count"><span>What uses allowance</span></a></li><li><a href="/guide/plans.html#plans-examples"><span>Examples of combinations</span></a></li><li><a href="/guide/plans.html#plans-choose"><span>Choosing which cameras show</span></a></li><li><a href="/guide/plans.html#plans-subscribe"><span>Subscribing, restoring purchases and redeeming a code</span></a></li><li><a href="/guide/plans.html#plans-lapse"><span>When a plan ends or is reduced</span></a></li></ol></li><li><a href="/guide/tools.html"><span class="toc-num">12</span><span>The Tools tab</span></a><ol><li><a href="/guide/tools.html#tools-overview"><span>What the Tools tab contains</span></a></li><li><a href="/guide/tools.html#tools-speedometer"><span>Speedometer and compass</span></a></li></ol></li><li><a href="/guide/settings.html"><span class="toc-num">13</span><span>Settings</span></a><ol><li><a href="/guide/settings.html#settings-overview"><span>The sections of the Settings tab</span></a></li><li><a href="/guide/settings.html#settings-subscription"><span>Subscription</span></a></li><li><a href="/guide/settings.html#settings-quality"><span>Default quality</span></a></li><li><a href="/guide/settings.html#settings-picture"><span>Picture: black bars and edge-to-edge</span></a></li><li><a href="/guide/settings.html#settings-hide"><span>Hide offline cameras</span></a></li><li><a href="/guide/settings.html#settings-lvm"><span>LiveView Mix, its pages and Open on launch</span></a></li><li><a href="/guide/settings.html#settings-backup"><span>Backup and sharing of cameras</span></a></li><li><a href="/guide/settings.html#settings-language"><span>Language</span></a></li><li><a href="/guide/settings.html#settings-reset"><span>Reset: defaults, delete all data, delete iCloud backup</span></a></li><li><a href="/guide/settings.html#settings-legal"><span>Terms of Use and Privacy Policy</span></a></li><li><a href="/guide/settings.html#settings-about"><span>About, the user manual, and what Settings does not contain</span></a></li></ol></li><li><a href="/guide/appletv.html"><span class="toc-num">14</span><span>Apple TV</span></a><ol><li><a href="/guide/appletv.html#appletv-prepare"><span>Set up on an iPhone or iPad first</span></a></li><li><a href="/guide/appletv.html#appletv-bring"><span>Bringing the setup to the Apple TV</span></a></li><li><a href="/guide/appletv.html#appletv-differs"><span>What differs on the Apple TV</span></a></li></ol></li><li><a href="/guide/trouble.html"><span class="toc-num">15</span><span>Troubleshooting</span></a><ol><li><a href="/guide/trouble.html#trouble-start"><span>Where to start</span></a></li><li><a href="/guide/trouble.html#trouble-states"><span>What the empty screens say</span></a></li><li><a href="/guide/trouble.html#trouble-add"><span>A device is added, but it is not reachable</span></a></li><li><a href="/guide/trouble.html#trouble-live"><span>Live view</span></a></li><li><a href="/guide/trouble.html#trouble-playback"><span>Recording playback</span></a></li><li><a href="/guide/trouble.html#trouble-lvm"><span>LiveView Mix</span></a></li><li><a href="/guide/trouble.html#trouble-streams"><span>YouTube and Twitch</span></a></li><li><a href="/guide/trouble.html#trouble-panels"><span>Control panels and webhooks</span></a></li><li><a href="/guide/trouble.html#trouble-health"><span>Disk Health</span></a></li><li><a href="/guide/trouble.html#trouble-share"><span>Sharing, import and iCloud backup</span></a></li><li><a href="/guide/trouble.html#trouble-plans"><span>Plans and purchases</span></a></li><li><a href="/guide/trouble.html#trouble-errors"><span>Other error sentences</span></a></li><li><a href="/guide/trouble.html#trouble-permissions"><span>Permission requests and system dialogs</span></a></li><li><a href="/guide/trouble.html#trouble-contact"><span>Reaching the developer</span></a></li><li><a href="/guide/trouble.html#trouble-faq"><span>Questions and answers</span></a></li></ol></li><li><a href="/guide/brands.html"><span class="toc-num">16</span><span>Supported brands and connection methods</span></a><ol><li><a href="/guide/brands.html#brands-methods"><span>Connection methods</span></a></li><li><a href="/guide/brands.html#brands-matrix"><span>What works with which method</span></a></li><li><a href="/guide/brands.html#brands-profiles"><span>The brands in the list</span></a></li><li><a href="/guide/brands.html#brands-requirements"><span>Requirements and limits</span></a></li><li><a href="/guide/brands.html#brands-recorders"><span>Cameras and recorders</span></a></li><li><a href="/guide/brands.html#brands-prepare"><span>What to prepare on the device</span></a></li><li><a href="/guide/brands.html#brands-activate"><span>Activating a new device</span></a></li><li><a href="/guide/brands.html#brands-compat"><span>The compatibility reference in the app</span></a></li></ol></li><li><a href="/guide/about.html" class="no-num"><span>About this manual</span></a><ol><li><a href="/guide/about.html#about-scope"><span>Scope</span></a></li><li><a href="/guide/about.html#about-conventions"><span>Conventions</span></a></li><li><a href="/guide/about.html#about-help"><span>Where to get help</span></a></li></ol></li></ol></nav>
+      </aside>
+      <article class="guide-article" id="guide-content"><section class="chapter" id="lvm">
+  <h2><span class="num">8</span>LiveView Mix</h2>
+  <p class="lead">LiveView Mix places cameras from different devices on one wall. The wall can also hold pictures, clocks, labels, control panels and YouTube or Twitch streams, and each of them can sit in any tile. This chapter follows the order of the work: the tab and its preview, choosing cameras, layouts, arranging, the optional portrait page, the two canvases of iPhone Duo, the full-screen wall, and the effect of plan limits on the wall.</p>
+
+  <figure class="mixmap" aria-label="Several recorders and single cameras combined on one wall">
+    <div class="mm-sources">
+      <div class="mm-src"><b>NVR 1</b><span>Back yard</span>
+        <div class="mm-thumbs"><img src="/guide/img/src/nvr1-gate.jpg" alt="Gate on NVR 1" decoding="async" width="480" height="270" data-src="/guide/img/src/nvr1-gate.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"><img src="/guide/img/src/nvr1-lawn.jpg" alt="Lawn on NVR 1" decoding="async" width="480" height="270" data-src="/guide/img/src/nvr1-lawn.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"><img src="/guide/img/src/nvr1-patio.jpg" alt="Patio on NVR 1" decoding="async" width="480" height="270" data-src="/guide/img/src/nvr1-patio.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"></div></div>
+      <div class="mm-src"><b>NVR 2</b><span>Shop</span>
+        <div class="mm-thumbs"><img src="/guide/img/src/nvr2-counter.jpg" alt="Counter on NVR 2" decoding="async" width="480" height="270" data-src="/guide/img/src/nvr2-counter.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"><img src="/guide/img/src/nvr2-shelves.jpg" alt="Shelves on NVR 2" decoding="async" width="480" height="270" data-src="/guide/img/src/nvr2-shelves.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"><img src="/guide/img/src/nvr2-window.jpg" alt="Window on NVR 2" decoding="async" width="480" height="270" data-src="/guide/img/src/nvr2-window.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"></div></div>
+      <div class="mm-src"><b>NVR 3</b><span>Street at night</span>
+        <div class="mm-thumbs"><img src="/guide/img/src/nvr3-street.jpg" alt="Street on NVR 3" decoding="async" width="480" height="270" data-src="/guide/img/src/nvr3-street.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"><img src="/guide/img/src/nvr3-parking.jpg" alt="Parking lot on NVR 3" decoding="async" width="480" height="270" data-src="/guide/img/src/nvr3-parking.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"><img src="/guide/img/src/nvr3-rooftop.jpg" alt="Rooftop on NVR 3" decoding="async" width="480" height="270" data-src="/guide/img/src/nvr3-rooftop.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"></div></div>
+      <div class="mm-src"><b>Single cameras 1, 2</b><span>Not behind a recorder</span>
+        <div class="mm-thumbs"><img src="/guide/img/src/solo1-entrance.jpg" alt="Entrance on single camera 1" decoding="async" width="480" height="270" data-src="/guide/img/src/solo1-entrance.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"><img src="/guide/img/src/solo2-tank.jpg" alt="Fish tank on single camera 2" decoding="async" width="480" height="270" data-src="/guide/img/src/solo2-tank.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"></div></div>
+    </div>
+    <div class="mm-arrow" aria-hidden="true"><i>⟶</i><small>One wall</small></div>
+    <div class="mm-wall"><img src="/guide/img/lvm-wall-fullscreen.jpg" alt="Three recorders and two single cameras on one landscape LiveView Mix wall, with a control panel and a clock" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-wall-fullscreen.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"></div>
+    <figcaption>Pictures from three recorders and two single cameras on one wall. The wall uses a layout that was drawn by hand; see <a class="xref" href="/guide/lvm.html#lvm-special">“Special layouts: big and small tiles on one wall”</a>.</figcaption>
+  </figure>
+
+  <div class="callout note">
+    <strong class="t">Terms used in this chapter</strong>
+    <p><b>Tile</b>: one numbered position on the wall. A tile can hold a camera, a picture, a clock, a label or a control panel, or stay empty. Any tile can be filled; the tiles before it do not have to be filled first.</p>
+    <p><b>Layout</b>: the arrangement of the tiles on the screen, for example <span class="ui" data-ui="value">2 × 3</span> or <span class="ui" data-ui="value">1 + 5</span>.</p>
+    <p><b>Wall page</b>: the tiles that a layout shows at once. When the wall has more tiles than the layout holds, the full-screen wall is divided into wall pages, reached by swiping.</p>
+    <p><b>Landscape page and portrait page</b>: two separate walls, one for the device held sideways and an optional one for the device held upright; see <a class="xref" href="/guide/lvm.html#lvm-pages">“The portrait page”</a>.</p>
+  </div>
+
+  <h3 id="lvm-tab">The LiveView Mix tab and its preview</h3>
+  <p>Location: the <span class="ui">LiveView Mix</span> tab, the leftmost tab at the bottom of the screen. Before setup, the screen shows an explanation and the <span class="ui">Set Up LiveView Mix</span> button; for the procedure, see <a class="xref" href="/guide/lvm.html#lvm-first">“Building a first wall of six cameras”</a>. Once the wall holds at least one tile with content (a camera, a picture, a control panel, a clock or a label), the tab shows the preview, with the note <span class="ui">Preview only — full screen shows your layout.</span> and the <span class="ui">Arrangement: Automatic</span> button below it.</p>
+  <p>Three buttons in the top-right corner are, from left to right:</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Button</th><th>Purpose</th><th>Details</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Button"><span class="ui">Full screen</span> (gold wall icon)</td><td data-label="Purpose">Opens the wall in the selected layout.</td><td data-label="Details"><a class="xref" href="/guide/lvm.html#lvm-wall">“The full-screen wall”</a></td></tr>
+      <tr><td data-label="Button"><span class="ui">Choose Cameras</span> (camera icon)</td><td data-label="Purpose">Selects the cameras on the wall and their quality.</td><td data-label="Details"><a class="xref" href="/guide/lvm.html#lvm-pick">“Choosing cameras and quality”</a></td></tr>
+      <tr><td data-label="Button"><span class="ui">Adjust the Layout</span> (grid icon)</td><td data-label="Purpose">Selects the layout, the black-bar handling, the watermark and paging, and opens the arrangement.</td><td data-label="Details"><a class="xref" href="/guide/lvm.html#lvm-layout">“Adjusting the layout”</a></td></tr>
+    </tbody>
+  </table></div>
+  <figure class="land"><img src="/guide/img/lvm-tab-preview.jpg" alt="The LiveView Mix tab held sideways: the gold Full screen icon and two more buttons in the top-right corner, a preview of eight cameras below, and the preview note with Arrangement: Automatic" decoding="async" width="1600" height="739" data-src="/guide/img/lvm-tab-preview.jpg" style="aspect-ratio: 1600 / 739;" loading="lazy"><figcaption>The preview held sideways</figcaption></figure>
+  <figure class="phone"><img src="/guide/img/lvm-preview-portrait.jpg" alt="The LiveView Mix tab held upright: the preview shows the camera pictures in two columns, with the preview note below" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-preview-portrait.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The preview held upright</figcaption></figure>
+  <p>The preview behaves as follows:</p>
+  <ul>
+    <li>The preview shows the filled tiles in the order of their numbers, in an even grid. Empty tiles are left out, so a wall with cameras only in tiles 2 and 7 shows two pictures side by side. The preview does not take the shape of the selected layout; the layout takes effect on the full-screen wall only.</li>
+    <li>The preview uses the SD or HD setting of each camera, the black-bar setting of the wall and the watermark.</li>
+    <li>With <span class="ui">Automatic</span> (the default), an iPhone held upright shows two columns, and the number of rows depends on the height of the screen. Held sideways, the preview adds columns (typically four) so that two rows fill the screen. On an iPad, the preview normally keeps two columns. When the wall has only one filled tile, that tile fills the whole preview area. A fixed number of columns and rows can be chosen instead; see <a class="xref" href="/guide/lvm.html#lvm-preview-grid">“The arrangement of the preview”</a>.</li>
+    <li>When there are more tiles than fit, swipe left or right to change the page; page dots appear below the preview.</li>
+    <li>While the watermark is off, each camera shows its channel number and name in the bottom-left corner. When the watermark is on, the watermark replaces this label.</li>
+    <li>Tapping a camera picture opens the full-screen viewer; see <a class="xref" href="/guide/lvm.html#lvm-closeup">“Opening a single camera”</a>. Tapping a YouTube or Twitch tile opens that stream full screen; see <a class="xref" href="/guide/lvm.html#lvm-streams">“YouTube and Twitch streams on the wall”</a>. Tapping a button of a control panel sends its request; when the button is set to ask for confirmation first, a confirmation dialog appears; see <a class="xref" href="/guide/webhook.html">Chapter 9, “Control panels and webhooks”</a>.</li>
+    <li>A camera that cannot be shown keeps its tile and shows a status text; see <a class="xref" href="/guide/lvm.html#lvm-states">“When a tile cannot show a camera”</a>.</li>
+    <li>While the full-screen wall is open, the preview pauses its streams; they resume when the tab is shown again. On an iPhone, the preview also pauses while the <span class="ui">Choose Cameras</span> or <span class="ui">Adjust the Layout</span> page covers it.</li>
+    <li>When the portrait page is switched on, the tab shows the portrait page while it is taller than wide; see <a class="xref" href="/guide/lvm.html#lvm-pages">“The portrait page”</a>. On an iPhone Duo with two canvases, the tab shows both canvases instead; see <a class="xref" href="/guide/lvm.html#lvm-canvases">“Two canvases on iPhone Duo”</a>.</li>
+    <li>When no tile has anything to show (for example when every tile points at a camera that has been removed), the screen shows <span class="ui">LiveView Mix is empty</span> with a pointer to Settings.</li>
+  </ul>
+  <div class="callout tip">
+    <strong class="t">Hold the device sideways</strong>
+    <p>The layouts are drawn for a wide screen. Held sideways, the tiles keep the wide shape of camera pictures; held upright, the layout is flipped about its diagonal (see <a class="xref" href="/guide/lvm.html#lvm-fit">“Black bars, edge-to-edge video and the angle of the device”</a>), unless a portrait page of its own is switched on (see <a class="xref" href="/guide/lvm.html#lvm-pages">“The portrait page”</a>). The preview and the full-screen wall rearrange themselves with the angle of the device.</p>
+  </div>
+
+  <h4 id="lvm-preview-grid">The arrangement of the preview</h4>
+  <p>The <span class="ui">Arrangement: Automatic</span> button at the end of the preview note sets how many columns and rows of tiles the preview shows on each of its pages. The choice is one of the app settings, not part of the wall: it does not change the full-screen wall, and it travels with the app settings in a backup or a share code (see <a class="xref" href="/guide/share.html#share-contents">“What backups and codes contain”</a>). The chosen columns and rows stay the same whichever way the device is held.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>In the LiveView Mix tab, tap <span class="ui">Arrangement: Automatic</span> below the preview.</p>
+      <p class="check"><b class="check-label">Check:</b> A small window opens over the preview with the <span class="ui">Automatic</span> switch, which is on by default.</p>
+      <figure class="land"><img src="/guide/img/lvm-preview-grid.jpg" alt="The arrangement window over the LiveView Mix preview held sideways: Automatic off, Columns 2 and Rows 4 with minus and plus buttons, and 2 × 4 below" decoding="async" width="1600" height="739" data-src="/guide/img/lvm-preview-grid.jpg" style="aspect-ratio: 1600 / 739;" loading="lazy"><figcaption>The arrangement of the preview</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Switch off <span class="ui">Automatic</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The window shows <span class="ui">Columns</span> and <span class="ui">Rows</span>, each with − and +, set to 2 and 2, and the preview changes to a 2 × 2 grid.</p>
+    </li>
+    <li class="step">
+      <p>Tap − or + beside <span class="ui">Columns</span> and <span class="ui">Rows</span> until the wanted grid is shown. Each count runs from 1 to 4.</p>
+      <p class="check"><b class="check-label">Check:</b> The preview follows every tap, and every tile fills its share of the screen.</p>
+    </li>
+    <li class="step">
+      <p>Tap anywhere outside the window.</p>
+      <p class="check"><b class="check-label">Check:</b> The window closes, and the button shows the chosen grid, for example <span class="ui">Arrangement: 2 × 4</span>.</p>
+    </li>
+  </ol>
+  <p>To return to the automatic grid, switch <span class="ui">Automatic</span> on again. When the last page of a fixed grid is not full, its remaining cells stay empty.</p>
+
+  <h3 id="lvm-first">Building a first wall of six cameras</h3>
+  <p>Purpose: place six cameras on one wall and view it full screen in the <span class="ui" data-ui="value">1 + 5</span> layout. Time needed: about 5 minutes.</p>
+  <p>Prerequisites:</p>
+  <ul>
+    <li>The devices have been added and offer at least six channels to choose from; for adding, see <a class="xref" href="/guide/add.html">Chapter 3, “Adding a device”</a>.</li>
+    <li>All six channels are enabled and within the allowance of the plan. The Free plan allows only 2 enabled channels across the whole app; channels beyond that appear on the wall as <span class="ui">Disabled</span> or <span class="ui">Not in your plan</span>. For the allowances and for enabling channels, see <a class="xref" href="/guide/lvm.html#lvm-limits">“How plan limits affect the wall”</a> and <a class="xref" href="/guide/plans.html">Chapter 11, “Plans and limits”</a>.</li>
+    <li>The device is an iPhone or an iPad. For Apple TV, see <a class="xref" href="/guide/lvm.html#lvm-tv">“Differences on Apple TV”</a>.</li>
+  </ul>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap the <span class="ui">LiveView Mix</span> tab at the bottom of the screen.</p>
+      <p class="check"><b class="check-label">Check:</b> When LiveView Mix has not been set up, the screen shows an explanation and the <span class="ui">Set Up LiveView Mix</span> button.</p>
+      <figure class="phone"><img src="/guide/img/lvm-empty.jpg" alt="The LiveView Mix tab before setup, with an explanation and the setup button in the middle of the screen" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-empty.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The LiveView Mix tab before setup</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Set Up LiveView Mix</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The <span class="ui">Choose Cameras</span> page opens and lists all channels, grouped by device. The top of the page shows the <span class="ui">Landscape page</span> and <span class="ui">Portrait page</span> switch with <span class="ui">Landscape page</span> selected, and below it <span class="ui" data-ui="value">0 cameras selected</span>.</p>
+    </li>
+    <li class="step">
+      <p>Tap the circle in front of the first of the six channels.</p>
+      <p class="check"><b class="check-label">Check:</b> The circle is ticked, and an <span class="ui">SD</span> and <span class="ui">HD</span> selector appears on the right of the row, set to <span class="ui">SD</span>.</p>
+    </li>
+    <li class="step">
+      <p>Tick five more channels, in the order in which they should appear on the wall.</p>
+      <p class="check"><b class="check-label">Check:</b> The top of the page shows <span class="ui" data-ui="value">6 cameras selected</span>.</p>
+      <figure class="phone"><img src="/guide/img/lvm-pick-selected.jpg" alt="The Choose Cameras page with 6 cameras selected: each ticked channel has an SD and HD selector on its right, with the All SD and All HD buttons at the top" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-pick-selected.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>6 cameras selected</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Optional: tap <span class="ui">HD</span> beside each camera that should show a sharper picture.</p>
+      <p class="check"><b class="check-label">Check:</b> The selector of that camera shows <span class="ui">HD</span>. The other cameras are unchanged.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Done</span> in the top-right corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The page closes and the tab shows a preview of the six cameras.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Adjust the Layout</span> (the grid icon) in the top-right corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The <span class="ui">Adjust the Layout</span> page opens. The top of the page shows <span class="ui" data-ui="value">This layout holds 4 · 6 placed</span>. The default layout holds only 4 tiles per page, so six cameras would use two wall pages.</p>
+    </li>
+    <li class="step">
+      <p>In the <span class="ui">Full-screen layout</span> section, tap <span class="ui" data-ui="value">1 + 5</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The layout is highlighted, and the top of the page shows <span class="ui" data-ui="value">This layout holds 6 · 6 placed</span>.</p>
+      <figure class="phone"><img src="/guide/img/lvm-first-layout.jpg" alt="The Adjust the Layout page with the 1 + 5 layout selected and the line This layout holds 6, 6 placed at the top" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-first-layout.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The 1 + 5 layout selected</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Scroll down to the <span class="ui">Watermark</span> section and switch on <span class="ui">Show watermark</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The section shows the options for position, content and style. <span class="ui">Device name</span> and <span class="ui">Camera name</span> are on.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Done</span> in the top-right corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The page closes. Every camera in the preview is marked with its device name and camera name.</p>
+    </li>
+    <li class="step">
+      <p>Turn the device sideways.</p>
+      <p class="check"><b class="check-label">Check:</b> The preview rearranges itself for the new angle. No setting is needed.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Full screen</span> (the gold wall icon) in the top-right corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The wall fills the screen: the first camera is in the large tile in the top-left corner (two thirds of the width and height), and the other five are to its right and below it. A <span class="ui" data-ui="icon">✕</span> button is in the top-left corner.</p>
+      <figure class="land"><img src="/guide/img/lvm-first-wall.jpg" alt="The full-screen wall held sideways: six cameras in the 1 + 5 layout, with the large tile in the top-left corner and a device name and camera name in the bottom-right corner of each tile" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-first-wall.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>The full-screen wall in the 1 + 5 layout</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap the picture of any camera.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen changes to the single-camera view of that camera, playing in HD, with a back button in the top-left corner.</p>
+    </li>
+    <li class="step">
+      <p>Tap the back button <span class="ui" data-ui="icon">‹</span> in the top-left corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen shows the full-screen wall again.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui" data-ui="icon">✕</span> in the top-left corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The wall closes and the preview in the LiveView Mix tab is shown again.</p>
+    </li>
+  </ol>
+  <p>Expected outcome: the LiveView Mix tab shows a preview of six cameras, and the full-screen wall shows them in the <span class="ui" data-ui="value">1 + 5</span> layout, with the first camera in the large tile. To put a different camera in the large tile, see <a class="xref" href="/guide/lvm.html#lvm-arrange">“Arranging the wall and its tiles”</a>. When some tiles show a status text instead of a picture, see <a class="xref" href="/guide/lvm.html#lvm-states">“When a tile cannot show a camera”</a> and <a class="xref" href="/guide/trouble.html">Chapter 15, “Troubleshooting”</a>.</p>
+
+  <h3 id="lvm-pick">Choosing cameras and quality</h3>
+  <p>Path: <span class="path"><span class="ui">LiveView Mix</span> › <span class="ui">Choose Cameras</span></span>. The page can also be opened from <span class="path"><span class="ui">Settings</span> › <span class="ui">LiveView Mix</span></span>, where the camera selection and the layout options are on one page; see <a class="xref" href="/guide/lvm.html#lvm-settings">“LiveView Mix in Settings”</a>. When the page is opened from the tab, the switch at the top chooses whether the landscape page or the portrait page is being edited; see <a class="xref" href="/guide/lvm.html#lvm-pages">“The portrait page”</a>.</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Item</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Item">Count at the top of the page</td><td data-label="Description"><span class="ui" data-ui="value">6 cameras selected</span> updates as channels are ticked. It counts cameras only, not empty tiles, pictures, clocks, labels or control panels.</td></tr>
+      <tr><td data-label="Item">Channel rows</td><td data-label="Description">One section per device and one row per channel: a circle, a thumbnail, the channel number and the name. The thumbnail shows a live picture only for channels that the plan covers; the others show <span class="ui">Disabled</span> or <span class="ui">Not in your plan</span>. YouTube and Twitch streams are listed with their name only.</td></tr>
+      <tr><td data-label="Item">Order of ticking</td><td data-label="Description">A newly ticked camera goes into the tile after the last filled tile. To put a camera in a particular tile, use <span class="ui">Put a camera here</span> in <span class="ui">Arrange the wall</span>; see <a class="xref" href="/guide/lvm.html#lvm-arrange">“Arranging the wall and its tiles”</a>.</td></tr>
+      <tr><td data-label="Item">Duplicates</td><td data-label="Description">A channel can be placed on a wall only once.</td></tr>
+      <tr><td data-label="Item"><span class="ui">SD</span> | <span class="ui">HD</span></td><td data-label="Description">After a channel is ticked, a quality selector appears on the right of its row. A newly added camera is set to <span class="ui">SD</span>. YouTube and Twitch streams have no selector; their quality follows the size of their tile.</td></tr>
+      <tr><td data-label="Item"><span class="ui">All SD</span>, <span class="ui">All HD</span></td><td data-label="Description">Two buttons at the top of the page that set the quality of all selected cameras at once.</td></tr>
+      <tr><td data-label="Item"><span class="ui">No Devices</span></td><td data-label="Description">Shown when no device has been added yet, with a prompt to add one first.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="shots pair">
+    <figure class="phone"><img src="/guide/img/lvm-pick-empty.jpg" alt="The Choose Cameras page with nothing ticked: channels and thumbnails grouped by NVR" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-pick-empty.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Nothing ticked</figcaption></figure>
+    <figure class="phone"><img src="/guide/img/lvm-pick-selected.jpg" alt="The Choose Cameras page: an SD and HD selector appears on the right of each ticked channel" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-pick-selected.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>SD and HD after ticking</figcaption></figure>
+  </div>
+  <h4>The quality rule of LiveView Mix</h4>
+  <ul>
+    <li>LiveView Mix has its own quality, set for each tile. It is not affected by <span class="ui">Single camera</span> and <span class="ui">Multiple cameras</span> under <span class="path"><span class="ui">Settings</span> › <span class="ui">Default quality</span></span>; those settings apply to the single-camera view and to the ordinary device walls only.</li>
+    <li>Each tile on the wall plays in SD or HD according to its own setting. When tiles are small, HD and SD look almost the same. Using <span class="ui">SD</span> for most tiles and <span class="ui">HD</span> only for the cameras that need to be seen clearly reduces the load on bandwidth and on the device.</li>
+    <li>A single camera that is opened from the wall or from the preview always starts in HD, whatever the setting of its tile. In the full-screen viewer of the preview, the quality can be switched for the current viewing; the switch is not saved. See <a class="xref" href="/guide/lvm.html#lvm-closeup">“Opening a single camera”</a>.</li>
+    <li>The thumbnails on the Choose Cameras page and on the arrange canvas always use SD.</li>
+  </ul>
+  <p>To choose cameras:</p>
+  <ol class="steps">
+    <li class="step">
+      <p>In the LiveView Mix tab, tap <span class="ui">Choose Cameras</span> (the camera icon).</p>
+      <p class="check"><b class="check-label">Check:</b> The <span class="ui">Choose Cameras</span> page opens. Cameras that are already selected are ticked.</p>
+    </li>
+    <li class="step">
+      <p>Tap the circle in front of a channel to add it to the wall.</p>
+      <p class="check"><b class="check-label">Check:</b> The circle is ticked, <span class="ui">SD</span> and <span class="ui">HD</span> appear on the row, and the count at the top increases by 1.</p>
+    </li>
+    <li class="step">
+      <p>To change the quality of that camera, tap <span class="ui">HD</span> or <span class="ui">SD</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The selector shows the chosen quality. Only this camera is affected.</p>
+    </li>
+    <li class="step">
+      <p>Optional: to change the quality of all selected cameras at once, tap <span class="ui">All SD</span> or <span class="ui">All HD</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The selectors of all selected cameras show the same quality.</p>
+    </li>
+    <li class="step">
+      <p>To remove a camera from the wall, tap the circle of a ticked channel again.</p>
+      <p class="check"><b class="check-label">Check:</b> The circle is empty again, and the count at the top decreases by 1. The tile of that camera becomes empty; no other tile moves.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Done</span> in the top-right corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The page closes and the preview is updated to the new selection.</p>
+    </li>
+  </ol>
+  <div class="callout note">
+    <strong class="t">Removing a camera leaves its tile empty</strong>
+    <p>After a camera is unticked, its tile is left empty in place. Every other tile, including pictures, clocks, labels and control panels, keeps its number and its position on the wall. The empty tile can be filled again later in <span class="ui">Arrange the wall</span>; see <a class="xref" href="/guide/lvm.html#lvm-arrange">“Arranging the wall and its tiles”</a>.</p>
+  </div>
+  <p>When the page is opened with the button in the top-right corner of the LiveView Mix tab, <span class="ui">Cancel</span> in the top-left corner restores the wall to its state before the page was opened. <span class="ui">Done</span> keeps the selection.</p>
+
+  <h4>Tiles that point at removed cameras</h4>
+  <p>When a tile on the wall points at a camera that Cam Hub no longer has (for example after a restore on a device where that camera was not added), the top of the <span class="ui">Choose Cameras</span> page shows <span class="ui" data-ui="value">2 slots point at cameras that were removed.</span> and the <span class="ui">Empty Those Slots</span> button. These tiles do not appear in the list of ticks.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap <span class="ui">Empty Those Slots</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The note and the button disappear. These tiles become empty in place, and all other cameras keep their positions.</p>
+      <figure class="phone"><img src="/guide/img/lvm-pick-removed.jpg" alt="The note at the top of the Choose Cameras page that slots point at removed cameras, with the Empty Those Slots button below it" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-pick-removed.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Tiles that point at removed cameras</figcaption></figure>
+    </li>
+  </ol>
+
+  <h3 id="lvm-layout">Adjusting the layout</h3>
+  <p>Path: <span class="path"><span class="ui">LiveView Mix</span> › <span class="ui">Adjust the Layout</span></span>. The top of the page shows <span class="ui" data-ui="value">This layout holds 6 · 6 placed</span>: the first number is the number of tiles per wall page of the selected layout, the second is the number of tiles on the wall that hold content. Placed tiles include cameras and also configured pictures, control panels, clocks and labels, but not empty tiles.</p>
+  <p>The <span class="ui">Full-screen layout</span> section lists the ready-made layouts in order, with <span class="ui">Custom</span> last. Each layout is shown as a small diagram of its shape, with its name below. On the portrait page, the diagrams are drawn tall, because that wall is laid out for an upright screen.</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Layout</th><th>Tiles per page</th><th>Shape</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Layout"><span class="ui" data-ui="value">2 × 2</span></td><td data-label="Tiles per page">4</td><td data-label="Shape">2 columns, 2 rows, tiles of equal size</td></tr>
+      <tr><td data-label="Layout"><span class="ui" data-ui="value">2 × 3</span></td><td data-label="Tiles per page">6</td><td data-label="Shape">2 columns, 3 rows, tiles of equal size</td></tr>
+      <tr><td data-label="Layout"><span class="ui" data-ui="value">3 × 3</span></td><td data-label="Tiles per page">9</td><td data-label="Shape">3 columns, 3 rows, tiles of equal size</td></tr>
+      <tr><td data-label="Layout"><span class="ui" data-ui="value">3 × 4</span></td><td data-label="Tiles per page">12</td><td data-label="Shape">3 columns, 4 rows, tiles of equal size</td></tr>
+      <tr><td data-label="Layout"><span class="ui" data-ui="value">4 × 4</span></td><td data-label="Tiles per page">16</td><td data-label="Shape">4 columns, 4 rows, tiles of equal size</td></tr>
+      <tr><td data-label="Layout"><span class="ui" data-ui="value">1 + 3</span></td><td data-label="Tiles per page">4</td><td data-label="Shape">One large tile on the left (two thirds of the width) and three small tiles in a column on the right</td></tr>
+      <tr><td data-label="Layout"><span class="ui" data-ui="value">1 + 5</span></td><td data-label="Tiles per page">6</td><td data-label="Shape">One large tile in the top-left corner (two thirds of the width and height) and five small tiles to its right and below it</td></tr>
+      <tr><td data-label="Layout"><span class="ui" data-ui="value">1 + 7</span></td><td data-label="Tiles per page">8</td><td data-label="Shape">One large tile in the top-left corner (three quarters of the width and height) and seven small tiles to its right and below it</td></tr>
+      <tr><td data-label="Layout"><span class="ui">Custom</span></td><td data-label="Tiles per page">Up to 64</td><td data-label="Shape">A layout drawn by hand; see <a class="xref" href="/guide/lvm.html#lvm-custom">“Drawing a custom layout”</a></td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>Tile 1 is the first tile of the layout; in a layout with one large tile, tile 1 is the large one. The other numbers follow the order of the layout.</li>
+    <li>When a wall page cannot hold all tiles, the remaining tiles go to the next wall page. For example, 6 tiles in the <span class="ui" data-ui="value">2 × 2</span> layout use 2 wall pages: 4 tiles on the first and 2 on the second, with the remaining positions black.</li>
+    <li>A layout with more than 16 tiles carries a TV icon (<span class="ui">Best on a large screen</span>) in the top-right corner of its diagram. It is hard to read on a phone and is better viewed on an iPad or an Apple TV.</li>
+    <li>On an iPhone and an iPad, the ready-made layouts offered are those with up to 16 tiles. Ready-made layouts with more than 16 tiles (<span class="ui" data-ui="value">5 × 4</span> to <span class="ui" data-ui="value">7 × 7</span>, <span class="ui" data-ui="value">1 + 21</span> and <span class="ui" data-ui="value">1 + 27</span>) are offered only on Apple TV; see <a class="xref" href="/guide/appletv.html">Chapter 14, “Apple TV”</a>. A wall that is already set to one of them (for example after a restore) is still shown correctly, and its diagram appears in the list. To place more tiles on a phone or an iPad, use a custom layout.</li>
+    <li>The <span class="ui">Custom</span> diagram shows the layout that was drawn. Until one has been drawn, it shows the starting shape; tapping it selects that shape.</li>
+  </ul>
+  <figure class="phone"><img src="/guide/img/lvm-layout.jpg" alt="The Adjust the Layout page: the number of tiles at the top, the Full-screen layout section with 2 × 2 to 4 × 4, 1 + 3, 1 + 5, 1 + 7 and Custom, and below them Draw a custom layout, Black bars on this wall and Arrange the wall" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-layout.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The Adjust the Layout page</figcaption></figure>
+  <p>To select a layout:</p>
+  <ol class="steps">
+    <li class="step">
+      <p>In the LiveView Mix tab, tap <span class="ui">Adjust the Layout</span> (the grid icon).</p>
+      <p class="check"><b class="check-label">Check:</b> The <span class="ui">Adjust the Layout</span> page opens. The layout in use is highlighted.</p>
+    </li>
+    <li class="step">
+      <p>In the <span class="ui">Full-screen layout</span> section, tap the layout to use.</p>
+      <p class="check"><b class="check-label">Check:</b> The selected layout is highlighted, and the number of tiles per page at the top is updated.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Done</span> in the top-right corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The page closes. The preview keeps its even grid, and the selected layout takes effect on the full-screen wall.</p>
+    </li>
+  </ol>
+  <p>The same page also holds the arrangement, the black bars, the watermark and the paging option, described in <a class="xref" href="/guide/lvm.html#lvm-arrange">“Arranging the wall and its tiles”</a>, <a class="xref" href="/guide/lvm.html#lvm-fit">“Black bars, edge-to-edge video and the angle of the device”</a>, <a class="xref" href="/guide/lvm.html#lvm-watermark">“Watermark”</a> and <a class="xref" href="/guide/lvm.html#lvm-settings">“LiveView Mix in Settings”</a> respectively.</p>
+  <div class="callout note">
+    <strong class="t">The scope of Cancel and Done</strong>
+    <p>The <span class="ui">Choose Cameras</span> and <span class="ui">Adjust the Layout</span> pages that open from the LiveView Mix tab each have <span class="ui">Cancel</span> and <span class="ui">Done</span>. <span class="ui">Cancel</span> restores every wall to its state before the page was opened, including any arrangement, custom layout, work on the other page and the portrait page switch. <span class="ui">Custom Layout</span>, <span class="ui">Arrange</span> and <span class="ui">Slot N</span> each have their own <span class="ui">Cancel</span> and <span class="ui">Done</span>: <span class="ui">Done</span> only returns to the previous level, and <span class="ui">Cancel</span> restores only what was changed since that level was entered. To keep all changes, tap <span class="ui">Done</span> all the way back to the outermost page.</p>
+  </div>
+
+  <h3 id="lvm-custom">Drawing a custom layout</h3>
+  <p>Path: <span class="path"><span class="ui">LiveView Mix</span> › <span class="ui">Adjust the Layout</span> › <span class="ui">Draw a custom layout</span></span>. When none of the ready-made layouts fits, the number of rows and columns of the grid can be chosen freely, and neighboring cells can be merged into larger tiles. On the portrait page, the grid is drawn tall.</p>
+  <figure class="phone clip"><video class="clip" aria-label="Drawing a custom layout: a tap splits a large tile, dragging across cells merges them, the steppers change rows and columns, then the layout is used." muted="" loop="" playsinline="" preload="none" data-src="/guide/vid/rec-custom-layout.mp4" data-poster="/guide/img/rec-custom-layout.jpg" poster="/guide/img/rec-custom-layout.jpg"></video><figcaption>Drawing a custom layout: a tap splits a large tile, dragging across cells merges them, the steppers change rows and columns, then the layout is used.</figcaption></figure>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Item</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Item">Starting shape</td><td data-label="Description">A 3 × 3 grid whose top-left 2 × 2 block is already merged into one large tile: 6 tiles in all.</td></tr>
+      <tr><td data-label="Item"><span class="ui">Rows</span>, <span class="ui">Columns</span></td><td data-label="Description">Set with − and +, from 2 to 8. The maximum is 8 × 8, which is 64 tiles.</td></tr>
+      <tr><td data-label="Item"><span class="ui">Tiles</span></td><td data-label="Description">The total number of tiles after merging. With more than 16 tiles, a note appears below: <span class="ui ui-long">That many tiles is best viewed on iPad or Apple TV.</span></td></tr>
+      <tr><td data-label="Item">Merging</td><td data-label="Description">Drag a finger across several cells of the grid; the rectangle that is covered becomes one large tile. A large tile can only be a rectangle, not an L shape or any other irregular shape.</td></tr>
+      <tr><td data-label="Item">Splitting</td><td data-label="Description">Tap a merged tile to split it back into single cells. Tapping a single cell does nothing.</td></tr>
+      <tr><td data-label="Item"><span class="ui">Split all merged tiles</span></td><td data-label="Description">Splits all large tiles at once. The button is unavailable when there are none.</td></tr>
+      <tr><td data-label="Item">Numbers</td><td data-label="Description">The number on each tile follows reading order (left to right, top to bottom) and is the tile number used on the arrange canvas. A large tile takes the position of its top-left cell.</td></tr>
+      <tr><td data-label="Item"><span class="ui">Use this layout</span></td><td data-label="Description">Makes the drawn layout the layout of the wall. When it is already in use, the button is replaced by <span class="ui ui-long">Your wall is using this layout.</span></td></tr>
+    </tbody>
+  </table></div>
+  <ol class="steps">
+    <li class="step">
+      <p>In the LiveView Mix tab, tap <span class="ui">Adjust the Layout</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The <span class="ui">Adjust the Layout</span> page opens.</p>
+    </li>
+    <li class="step">
+      <p>In the <span class="ui">Full-screen layout</span> section, tap <span class="ui">Draw a custom layout</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The <span class="ui">Custom Layout</span> page opens: the grid is at the top, with <span class="ui">Rows</span>, <span class="ui">Columns</span> and <span class="ui">Tiles</span> below it.</p>
+      <figure class="phone"><img src="/guide/img/lvm-custom.jpg" alt="The Custom Layout page: a 3 × 3 grid whose top-left 2 × 2 block is merged, 6 tiles, with Rows, Columns, Tiles and the Use this layout button below" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-custom.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The starting shape, 6 tiles</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Set the size of the grid with − and + on the right of <span class="ui">Rows</span> and <span class="ui">Columns</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The grid is redrawn with the new number of rows and columns, and <span class="ui">Tiles</span> is updated. When rows or columns are reduced, any large tile that no longer fits is removed.</p>
+    </li>
+    <li class="step">
+      <p>Drag one finger across the grid, from the first cell to be merged to the last.</p>
+      <p class="check"><b class="check-label">Check:</b> During the drag, the covered area is highlighted. After the finger is lifted, the cells in that area are merged into one large tile, <span class="ui">Tiles</span> decreases and the numbers are reassigned.</p>
+      <figure class="phone"><img src="/guide/img/lvm-custom-drag.jpg" alt="The Custom Layout page while a finger is dragging: the cells that are covered are highlighted" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-custom-drag.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Dragging across the cells to be merged</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>To split a large tile, tap it once.</p>
+      <p class="check"><b class="check-label">Check:</b> The large tile is split into single cells, and <span class="ui">Tiles</span> increases.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Use this layout</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The button is replaced by <span class="ui">Your wall is using this layout.</span></p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Done</span> in the top-right corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen returns to the <span class="ui">Adjust the Layout</span> page. The <span class="ui">Custom</span> diagram is selected and shows the shape that was drawn last.</p>
+    </li>
+  </ol>
+  <ul>
+    <li>When a drag touches existing large tiles, those tiles are split first, and then only the dragged rectangle is merged. The area is never enlarged automatically.</li>
+    <li>When a drag goes beyond the edge of the grid, the area stops at the cells on the edge.</li>
+    <li>Every change to the grid and the large tiles is stored immediately. Tapping <span class="ui">Cancel</span> in the top-left corner restores everything that was changed since the page was opened.</li>
+    <li>Drawing a layout without tapping <span class="ui">Use this layout</span> does not change the current wall; a shape that is not in use can also be tidied up here.</li>
+    <li>The drawn layout is kept even when a ready-made layout is selected for a while. Tapping the <span class="ui">Custom</span> diagram later returns to that shape.</li>
+    <li>The custom layout can also be selected in the layout row at the top of the <span class="ui">Arrange</span> page, but its shape can only be edited here.</li>
+    <li>When the device is held upright, a drawn layout is flipped like the ready-made ones, but each camera stays in the tile it was placed in; see <a class="xref" href="/guide/lvm.html#lvm-fit">“Black bars, edge-to-edge video and the angle of the device”</a>.</li>
+  </ul>
+
+  <h3 id="lvm-special">Special layouts: big and small tiles on one wall</h3>
+  <p>A custom layout can merge neighboring cells into large tiles. This makes a layout like the video wall of a monitoring center: the important cameras are enlarged, the others are reduced to small tiles, and clocks, labels or control panels share the same wall.</p>
+  <p>Example: a grid of 4 rows and 4 columns, with a 2 × 2 large tile merged at the top left and at the bottom left, 10 tiles in all. The 2 large tiles and 6 of the small tiles on the right hold 8 cameras; the remaining 2 small tiles hold a control panel and a clock.</p>
+  <p>Prerequisites: 8 cameras have been selected for the wall as described in <a class="xref" href="/guide/lvm.html#lvm-pick">“Choosing cameras and quality”</a>, and the drag operation in <a class="xref" href="/guide/lvm.html#lvm-custom">“Drawing a custom layout”</a> has been read. Time needed: about 3 minutes.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>In the LiveView Mix tab, tap <span class="ui">Adjust the Layout</span>, then tap <span class="ui">Draw a custom layout</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The <span class="ui">Custom Layout</span> page shows the starting shape: a 3 × 3 grid with a 2 × 2 large tile at the top left.</p>
+    </li>
+    <li class="step">
+      <p>Set <span class="ui">Rows</span> to <code>4</code> and <span class="ui">Columns</span> to <code>4</code>.</p>
+      <p class="check"><b class="check-label">Check:</b> The grid becomes 4 × 4, the large tile at the top left is kept, and <span class="ui">Tiles</span> shows <code>13</code>.</p>
+    </li>
+    <li class="step">
+      <p>Drag one finger across the grid, over the 2 × 2 cells at the bottom left (the third and fourth rows, first and second columns).</p>
+      <p class="check"><b class="check-label">Check:</b> The four cells are merged into a second large tile, and <span class="ui">Tiles</span> shows <code>10</code>. The large tiles are numbered 1 and 6.</p>
+      <figure class="phone"><img src="/guide/img/lvm-custom-merged.jpg" alt="The Custom Layout page: 4 rows and 4 columns, a 2 × 2 large tile at the top left and at the bottom left, eight small tiles on the right, 10 tiles in all" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-custom-merged.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Two large tiles on the left, eight small tiles on the right</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Use this layout</span>, then tap <span class="ui">Done</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen returns to the <span class="ui">Adjust the Layout</span> page, and the <span class="ui">Custom</span> diagram is selected.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Arrange the wall</span> and drag the cameras to be enlarged onto the large tiles numbered 1 and 6.</p>
+      <p class="check"><b class="check-label">Check:</b> The dragged camera and the content of the target tile swap places. For the arrangement, see <a class="xref" href="/guide/lvm.html#lvm-arrange">“Arranging the wall and its tiles”</a>.</p>
+    </li>
+    <li class="step">
+      <p>On the <span class="ui">Arrange</span> page, give the two unused tiles 9 and 10 a control panel and a clock: tap each tile, choose <span class="ui">Picture, control panel, clock or label…</span>, and set <span class="ui">Shows</span> to <span class="ui">Control</span> for one and to <span class="ui">Clock</span> for the other.</p>
+      <p class="check"><b class="check-label">Check:</b> The canvas shows the control panel and the clock in the two tiles. For the setup, see <a class="xref" href="/guide/lvm.html#lvm-slots">“What a tile can show besides a camera”</a>.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Done</span> repeatedly to return to the LiveView Mix tab, turn the device sideways, and tap <span class="ui">Full screen</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The wall shows two large tiles and eight small tiles of mixed sizes, as in the picture below.</p>
+      <figure class="land"><img src="/guide/img/lvm-wall-fullscreen.jpg" alt="The full-screen wall with tiles of mixed sizes: two large tiles on the left, six small camera tiles, a control panel and a clock" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-wall-fullscreen.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>The full-screen wall of a special layout</figcaption></figure>
+    </li>
+  </ol>
+  <p>Expected outcome: the wall follows the layout that was drawn, and the large tiles hold the important cameras. For control panels, see <a class="xref" href="/guide/webhook.html">Chapter 9, “Control panels and webhooks”</a>. The tiles, the positions of the large tiles and the content of each tile are stored on this device; when changing devices, a backup and restore can carry them along; see <a class="xref" href="/guide/lvm.html#lvm-settings">“LiveView Mix in Settings”</a>.</p>
+
+  <h3 id="lvm-arrange">Arranging the wall and its tiles</h3>
+  <p>Path: <span class="path"><span class="ui">LiveView Mix</span> › <span class="ui">Adjust the Layout</span> › <span class="ui">Arrange the wall</span></span>. This page decides what goes into each tile. Its title is <span class="ui">Arrange</span>. From top to bottom, the page holds the layout row, the canvas, <span class="ui">Tips</span> and the <span class="ui">Order</span> list. <span class="ui">Arrange the wall</span> is available as soon as cameras have been selected or a device exists.</p>
+  <figure class="phone clip"><video class="clip" aria-label="Arranging the wall: dragging a tile onto another swaps the two, and dragging a tile to an empty cell moves it there." muted="" loop="" playsinline="" preload="none" data-src="/guide/vid/rec-arrange-swap.mp4" data-poster="/guide/img/rec-arrange-swap.jpg" poster="/guide/img/rec-arrange-swap.jpg"></video><figcaption>Arranging the wall: dragging a tile onto another swaps the two, and dragging a tile to an empty cell moves it there.</figcaption></figure>
+  <figure class="phone"><img src="/guide/img/lvm-arrange-full.jpg" alt="The Arrange page: the layout row at the top, the canvas with ten tiles in the middle (tile 9 is a control panel and tile 10 a clock), and the Order list below" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-arrange-full.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The Arrange page</figcaption></figure>
+  <ul>
+    <li><b>Layout row</b>: the same layout diagrams as on <span class="ui">Adjust the Layout</span>; the layout can be changed here directly. The <span class="ui">Custom</span> diagram appears once a layout has been drawn or while it is in use, and can only be selected here.</li>
+    <li><b>Canvas</b>: drawn in 16:9 landscape for the landscape page and in 9:16 portrait for the portrait page, showing the current wall page. The number of each filled tile is in its top-left corner. Camera tiles show a live picture (SD); a camera that is offline or outside the plan shows a black tile with a crossed-out camera icon, and a YouTube or Twitch stream shows its name. While the watermark is off, the channel name is in the bottom-left corner; when it is on, the watermark is previewed. Control panels on the canvas look as they do on the wall; tapping one opens its editor and does not send a request. On a device held upright, the real landscape wall is flipped, but each tile keeps its number.</li>
+    <li><b>Unused tiles</b>: shown with a dashed outline and a +. They are tiles with nothing in them, either between filled tiles or after the last one. Tapping one offers what to put in it; see the table below.</li>
+    <li><b>Changing pages</b>: when there are more tiles than the layout holds, arrows and <span class="ui" data-ui="value">Page 1 of 2</span> appear below the canvas. Swiping left or right also changes the page.</li>
+    <li><b><span class="ui">Tips</span></b>: a note that can be folded away. The folded state is remembered.</li>
+    <li><b><span class="ui">Order</span> list</b>: the filled tiles only, each under its own tile number. A camera row shows the channel name over the device name. Other rows show the kind of content (<span class="ui">Control</span>, <span class="ui">Clock</span>, <span class="ui">Label</span>, <span class="ui">Slot image</span> or <span class="ui">Empty slot</span> for a tile that only has a color); a control panel row also shows the panel title, and a label row the text of the label, so tiles of the same kind can be told apart.</li>
+    <li>Toolbar: <span class="ui">Cancel</span> in the top-left corner, <span class="ui" data-ui="system">Edit</span> and <span class="ui">Done</span> in the top-right corner.</li>
+  </ul>
+  <figure class="phone"><img src="/guide/img/lvm-arrange-pages.jpg" alt="The Arrange page for a wall of two pages: arrows and Page 1 of 2 below the canvas" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-arrange-pages.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Changing pages on a wall of two pages</figcaption></figure>
+  <p>Tapping an unused tile opens a menu titled with the tile number, for example <span class="ui" data-ui="value">Slot 7</span>:</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Choice</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Choice"><span class="ui">Put a camera here</span></td><td data-label="What it does">Lists the cameras that are not on this wall yet, grouped by device. The camera that is tapped goes into this tile. When every camera is placed, the list shows <span class="ui ui-long">Every camera is already on the wall.</span></td></tr>
+      <tr><td data-label="Choice"><span class="ui">Move another tile here…</span></td><td data-label="What it does">Moves a filled tile from any wall page into this tile; see <a class="xref" href="/guide/lvm.html#lvm-move">“Moving a tile into an empty tile”</a>. Offered when the wall has at least one filled tile.</td></tr>
+      <tr><td data-label="Choice"><span class="ui ui-long">Picture, control panel, clock or label…</span></td><td data-label="What it does">Opens the <span class="ui">Slot N</span> page, where the tile is given a picture, a control panel, a clock, a label or a color; see <a class="xref" href="/guide/lvm.html#lvm-slots">“What a tile can show besides a camera”</a>.</td></tr>
+      <tr><td data-label="Choice"><span class="ui ui-long">Copy from the landscape page…</span> or <span class="ui ui-long">Copy from the portrait page…</span></td><td data-label="What it does">Copies a control panel, clock, label, picture or colored tile from the other page; see <a class="xref" href="/guide/lvm.html#lvm-pages">“The portrait page”</a>. Offered on the portrait page, and on the landscape page while the portrait page is switched on.</td></tr>
+    </tbody>
+  </table></div>
+  <p>To put a camera in a chosen tile:</p>
+  <ol class="steps">
+    <li class="step">
+      <p>In the LiveView Mix tab, tap <span class="ui">Adjust the Layout</span>, then tap <span class="ui">Arrange the wall</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The <span class="ui">Arrange</span> page opens.</p>
+    </li>
+    <li class="step">
+      <p>Tap an unused tile on the canvas, for example tile 7.</p>
+      <p class="check"><b class="check-label">Check:</b> A menu titled <span class="ui" data-ui="value">Slot 7</span> appears.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Put a camera here</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The list of cameras that are not on the wall yet opens, titled <span class="ui" data-ui="value">Slot 7</span>.</p>
+    </li>
+    <li class="step">
+      <p>Tap a camera.</p>
+      <p class="check"><b class="check-label">Check:</b> The list closes. The camera appears in tile 7 on the canvas and in the <span class="ui">Order</span> list under number 7. Tiles 1 to 6 that hold nothing stay empty.</p>
+    </li>
+  </ol>
+  <p>To swap the places of two tiles:</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Drag a filled tile on the canvas with one finger onto another tile. Pressing and holding first is not needed.</p>
+      <p class="check"><b class="check-label">Check:</b> The dragged tile lifts and follows the finger, and the target tile shows a highlighted frame.</p>
+      <figure class="phone"><img src="/guide/img/lvm-arrange-drag.jpg" alt="The Arrange page while a tile is dragged: the dragged tile is lifted and the target tile is marked with a highlighted frame" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-arrange-drag.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Dragging onto the target tile</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Lift the finger.</p>
+      <p class="check"><b class="check-label">Check:</b> The two tiles have swapped places, and the <span class="ui">Order</span> list is updated.</p>
+    </li>
+  </ol>
+  <ul>
+    <li>When a tile is dropped onto an unused tile, it moves there, and its old tile is left empty. No other tile moves.</li>
+    <li>When the finger leaves the canvas before it is lifted, the wall is unchanged.</li>
+    <li>A drag reaches only the tiles of the wall page on screen. To bring a tile from another wall page into an empty tile, use <span class="ui">Move another tile here…</span>; to swap two filled tiles on different wall pages, use the <span class="ui">Order</span> list.</li>
+    <li>Tapping a camera tile does nothing; cameras are removed in <span class="ui">Choose Cameras</span> or with the <span class="ui">Order</span> list. Tapping a tile that holds a picture, a control panel, a clock or a label opens its editor; see <a class="xref" href="/guide/lvm.html#lvm-slots">“What a tile can show besides a camera”</a>.</li>
+  </ul>
+  <p>To change places and empty tiles with the list:</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap <span class="ui" data-ui="system">Edit</span> in the top-right corner.</p>
+      <p class="check"><b class="check-label">Check:</b> Every row of the <span class="ui">Order</span> list shows a reorder handle and a remove button.</p>
+    </li>
+    <li class="step">
+      <p>Drag the reorder handle on the right of a row to a new position in the list.</p>
+      <p class="check"><b class="check-label">Check:</b> The contents change places among the same filled tiles; the empty tiles stay empty. The numbers and the canvas are updated, across wall pages as well.</p>
+    </li>
+    <li class="step">
+      <p>To empty a tile, swipe its row to the left and tap <span class="ui" data-ui="system">Delete</span>; in editing mode, the remove button of the row can be used as well.</p>
+      <p class="check"><b class="check-label">Check:</b> The row disappears and the tile becomes empty; no other tile moves. When a camera tile is emptied, that camera is also unticked in <span class="ui">Choose Cameras</span>.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Done</span> in the top-right corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen returns to the <span class="ui">Adjust the Layout</span> page, and the arrangement is kept.</p>
+    </li>
+  </ol>
+  <ul>
+    <li>The canvas always shows a few unused tiles while the last wall page has room. When every tile of the layout is filled, select a layout with more tiles in the layout row, or empty a tile, before adding something new.</li>
+    <li>Tapping <span class="ui">Cancel</span> in the top-left corner restores the wall to its state when the <span class="ui">Arrange</span> page was entered.</li>
+  </ul>
+
+  <h3 id="lvm-move">Moving a tile into an empty tile</h3>
+  <p><span class="ui">Move another tile here…</span> moves any filled tile, from this wall page or another one, into an empty tile that was tapped. Its old tile is left empty, and nothing else moves. This is the way to fill an empty tile on the first wall page with a control panel that sits on the second wall page, which a drag cannot reach.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>On the <span class="ui">Arrange</span> page, tap the unused tile that should receive the content, for example tile 9.</p>
+      <p class="check"><b class="check-label">Check:</b> A menu titled <span class="ui" data-ui="value">Slot 9</span> appears.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Move another tile here…</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> A list titled <span class="ui" data-ui="value">Slot 9</span> opens with every filled tile of the wall, from all wall pages, each under its tile number and described as in the <span class="ui">Order</span> list. The note below the list reads <span class="ui">The one you pick moves into this tile, and its old tile is left empty. Nothing else moves.</span></p>
+      <figure class="phone"><img src="/guide/img/lvm-move-picker.jpg" alt="The list opened from Move another tile here… for slot 12: every filled tile under its number with its device, and the note that the picked tile moves and its old tile is left empty" decoding="async" width="900" height="1947" data-src="/guide/img/lvm-move-picker.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>Moving another tile into an empty tile</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap the tile to move, for example the control panel in tile 12.</p>
+      <p class="check"><b class="check-label">Check:</b> The list closes. The control panel is in tile 9, and tile 12 is empty. All other tiles keep their places.</p>
+    </li>
+  </ol>
+  <p>To leave the list without moving anything, tap <span class="ui">Cancel</span> in its top-left corner.</p>
+
+  <h3 id="lvm-slots">What a tile can show besides a camera</h3>
+  <p>A tile does not have to hold a camera. Tap an unused tile and choose <span class="ui">Picture, control panel, clock or label…</span>, or tap a tile that already holds one of these, to open the <span class="ui">Slot N</span> page, and choose the content with the <span class="ui">Shows</span> menu:</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Content</th><th>Options and description</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Content"><span class="ui">Empty</span></td><td data-label="Options and description">A plain colored space. <span class="ui">Color</span> selects the color; the default is black. Choosing <span class="ui">Empty</span> removes any picture, control panel, clock or label that the tile held. A tile given a color other than black stays on the wall as a colored tile and shows <span class="ui">Tap to fill</span> on the canvas; a black tile with nothing in it counts as unused.</td></tr>
+      <tr><td data-label="Content"><span class="ui">Image</span></td><td data-label="Options and description"><span class="ui">Choose Photo</span> picks a picture from the photo library, and <span class="ui">Take Photo</span> takes one with the camera (not shown when the device has no camera). After a picture is chosen, <span class="ui">Fill</span> sets how it fills the tile: <span class="ui">Default</span> (the whole picture, possibly with black bars), <span class="ui">Enlarge to fill</span> (fills the tile, the edges are cropped) or <span class="ui">Stretch to fill</span> (fills the tile, the picture is distorted). <span class="ui">Best size</span> shows the size in pixels that the tile covers on a <code>3840 × 2160</code> screen (<code>2160 × 3840</code> for the portrait page). When a picture is already set, the button changes to <span class="ui">Choose a Different Photo</span>, and <span class="ui">Remove Image</span> appears. A picture is stored reduced to at most <code>512</code> pixels on its long side, so a picture in a large tile can look soft.</td></tr>
+      <tr><td data-label="Content"><span class="ui">Control</span></td><td data-label="Options and description">A row of buttons; each button sends an HTTP request when it is tapped. For the setup of control panels and their buttons, see <a class="xref" href="/guide/webhook.html">Chapter 9, “Control panels and webhooks”</a>.</td></tr>
+      <tr><td data-label="Content"><span class="ui">Clock</span></td><td data-label="Options and description">Shows the current time. Options: <span class="ui">24-hour</span> (on by default; when off, the convention of the app language applies), <span class="ui">Show seconds</span>, <span class="ui">Show date</span> (on by default) and <span class="ui">Show day of the week</span>. The names of days and months follow the language of the app, and their order follows the convention of that language.</td></tr>
+      <tr><td data-label="Content"><span class="ui">Label</span></td><td data-label="Options and description">Text on several lines. <span class="ui">Text</span> holds the content, <span class="ui">Icon</span> names a system symbol that is shown above the text (<span class="ui">SF Symbol (optional)</span>; empty means no symbol), and <span class="ui">Text color</span> and <span class="ui">Background</span> set the colors. The defaults are white text on a black background.</td></tr>
+    </tbody>
+  </table></div>
+  <figure class="phone"><img src="/guide/img/lvm-slot-kinds.jpg" alt="The page for tile 7: the Shows menu lists Empty, Image, Control, Clock and Label" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-slot-kinds.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The Shows menu</figcaption></figure>
+  <div class="callout warn">
+    <strong class="t">Changing the kind of content removes the previous content</strong>
+    <p>When another kind is selected in the <span class="ui">Shows</span> menu, the previous content is removed at once. For example, changing <span class="ui">Control</span> to <span class="ui">Clock</span> removes the button settings of the control panel. <span class="ui">Cancel</span> in the top-left corner restores them.</p>
+  </div>
+  <p>To place a picture in an unused tile:</p>
+  <ol class="steps">
+    <li class="step">
+      <p>On the <span class="ui">Arrange</span> page, tap an unused tile on the canvas.</p>
+      <p class="check"><b class="check-label">Check:</b> A menu titled with the tile number appears.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Picture, control panel, clock or label…</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The <span class="ui">Slot N</span> page opens, with <span class="ui">Shows</span> set to <span class="ui">Empty</span>.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Shows</span> and select <span class="ui">Image</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The page shows the <span class="ui">Image</span> section with the <span class="ui">Choose Photo</span> button.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Choose Photo</span>, then tap a photo in the photo selection screen of the system.</p>
+      <p class="check"><b class="check-label">Check:</b> The page shows a preview of the picture, with <span class="ui">Fill</span>, <span class="ui">Best size</span>, <span class="ui">Choose a Different Photo</span> and <span class="ui">Remove Image</span>.</p>
+      <figure class="phone"><img src="/guide/img/lvm-slot-image.jpg" alt="The tile page with Shows set to Image: a preview of the picture, then Fill, Best size, Choose a Different Photo and Remove Image" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-slot-image.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The options of a picture tile</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>In the <span class="ui">Fill</span> menu, select how the picture fills the tile.</p>
+      <p class="check"><b class="check-label">Check:</b> The menu shows the chosen way.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Done</span> in the top-right corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The tile on the canvas shows the picture.</p>
+    </li>
+  </ol>
+  <p>To place a clock in an unused tile:</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap an unused tile on the canvas, tap <span class="ui">Picture, control panel, clock or label…</span>, and select <span class="ui">Clock</span> in the <span class="ui">Shows</span> menu.</p>
+      <p class="check"><b class="check-label">Check:</b> The page shows the <span class="ui">Clock</span> section with <span class="ui">24-hour</span>, <span class="ui">Show seconds</span>, <span class="ui">Show date</span> and <span class="ui">Show day of the week</span>.</p>
+      <figure class="phone"><img src="/guide/img/lvm-clock-slot.jpg" alt="The page for tile 10 with Shows set to Clock: four switches for 24-hour, Show seconds, Show date and Show day of the week" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-clock-slot.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The options of a clock</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Switch each option on or off as needed.</p>
+      <p class="check"><b class="check-label">Check:</b> The clock on the canvas reflects the settings at once.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Done</span> in the top-right corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The page closes, and the canvas shows the clock.</p>
+    </li>
+  </ol>
+  <p>To place a label in an unused tile:</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap an unused tile on the canvas, tap <span class="ui">Picture, control panel, clock or label…</span>, and select <span class="ui">Label</span> in the <span class="ui">Shows</span> menu.</p>
+      <p class="check"><b class="check-label">Check:</b> The page shows the <span class="ui">Label</span> section with <span class="ui">Text</span>, <span class="ui">Icon</span>, <span class="ui">Text color</span> and <span class="ui">Background</span>.</p>
+      <figure class="phone"><img src="/guide/img/lvm-slot-label.jpg" alt="The tile page with Shows set to Label: Text, Icon, Text color and Background" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-slot-label.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The options of a label</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Enter the text to be shown in the <span class="ui">Text</span> field.</p>
+      <p class="check"><b class="check-label">Check:</b> The tile on the canvas shows the text.</p>
+    </li>
+    <li class="step">
+      <p>Optional: enter the name of a system symbol in the <span class="ui">Icon</span> field, and adjust the colors with <span class="ui">Text color</span> and <span class="ui">Background</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The tile shows the symbol, and the colors change accordingly.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Done</span> in the top-right corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The page closes, and the canvas shows the label.</p>
+    </li>
+  </ol>
+  <p>When the <span class="ui">Slot N</span> page of a new tile is closed without giving the tile anything, the tile stays unused. Pictures, clocks and labels do not use the camera allowance of the plan; control panels do. See <a class="xref" href="/guide/lvm.html#lvm-limits">“How plan limits affect the wall”</a>.</p>
+
+  <h3 id="lvm-watermark">Watermark</h3>
+  <p>Path: <span class="path"><span class="ui">LiveView Mix</span> › <span class="ui">Adjust the Layout</span></span>, then scroll to the <span class="ui">Watermark</span> section. The watermark overlays text on the picture of each camera tile, showing which camera of which device the picture comes from. On the full-screen wall, pictures carry no label by default, so the watermark is recommended when cameras of several devices share one wall. Each wall (the landscape page, the portrait page and each canvas of an iPhone Duo) has its own watermark settings.</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Option</th><th>Description</th><th>Default</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Option"><span class="ui">Show watermark</span></td><td data-label="Description">The main switch. The options below appear only when it is on.</td><td data-label="Default">Off</td></tr>
+      <tr><td data-label="Option"><span class="ui">Position</span></td><td data-label="Description"><span class="ui">Top left</span>, <span class="ui">Top</span>, <span class="ui">Top right</span>, <span class="ui">Center</span>, <span class="ui">Bottom left</span>, <span class="ui">Bottom</span> or <span class="ui">Bottom right</span>.</td><td data-label="Default"><span class="ui">Bottom right</span></td></tr>
+      <tr><td data-label="Option"><span class="ui">Device name</span></td><td data-label="Description">Shows the name of the device.</td><td data-label="Default">On</td></tr>
+      <tr><td data-label="Option"><span class="ui">Camera name</span></td><td data-label="Description">Shows the name of the channel.</td><td data-label="Default">On</td></tr>
+      <tr><td data-label="Option"><span class="ui">IP address</span></td><td data-label="Description">Shows the address of the camera itself; when the device does not report one, the address of the device.</td><td data-label="Default">Off</td></tr>
+      <tr><td data-label="Option"><span class="ui">Opacity</span></td><td data-label="Description">A slider from 0.2 to 1.</td><td data-label="Default">0.85</td></tr>
+      <tr><td data-label="Option"><span class="ui">Color</span></td><td data-label="Description">The color of the text.</td><td data-label="Default">White</td></tr>
+      <tr><td data-label="Option"><span class="ui">Text size</span></td><td data-label="Description">A slider from 8 to 28.</td><td data-label="Default">11</td></tr>
+      <tr><td data-label="Option"><span class="ui">Font</span></td><td data-label="Description"><span class="ui">System</span>, <span class="ui">Rounded</span>, <span class="ui">Monospaced</span> or <span class="ui">Serif</span>.</td><td data-label="Default"><span class="ui">System</span></td></tr>
+      <tr><td data-label="Option"><span class="ui">Legibility</span></td><td data-label="Description">Keeps the text readable over the picture: <span class="ui">Shadow</span>, <span class="ui">Outline</span>, <span class="ui">Backdrop</span> (a semi-transparent plate behind the text) or <span class="ui">None</span>. When the background is too bright or too busy, use <span class="ui">Backdrop</span>.</td><td data-label="Default"><span class="ui">Shadow</span></td></tr>
+      <tr><td data-label="Option"><span class="ui">Preview</span></td><td data-label="Description">Previews the watermark on a light and a dark swatch. The sample names come from the first camera on the wall.</td><td data-label="Default">—</td></tr>
+    </tbody>
+  </table></div>
+  <ol class="steps">
+    <li class="step">
+      <p>On the <span class="ui">Adjust the Layout</span> page, scroll down to the <span class="ui">Watermark</span> section and switch on <span class="ui">Show watermark</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The section expands and shows the options.</p>
+      <div class="shots pair">
+        <figure class="phone"><img src="/guide/img/lvm-watermark.jpg" alt="The upper half of the watermark options: Show watermark, Position, Device name, Camera name, IP address and Opacity" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-watermark.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Switch, position and content</figcaption></figure>
+        <figure class="phone"><img src="/guide/img/lvm-watermark-b.jpg" alt="The lower half of the watermark options: Color, Text size, Font, Legibility and the preview on a light and a dark swatch" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-watermark-b.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Color, size, font and preview</figcaption></figure>
+      </div>
+    </li>
+    <li class="step">
+      <p>Select the <span class="ui">Position</span>, and switch on the names to be shown: <span class="ui">Device name</span>, <span class="ui">Camera name</span> or <span class="ui">IP address</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The two swatches of <span class="ui">Preview</span> show the selected content and position.</p>
+    </li>
+    <li class="step">
+      <p>Adjust <span class="ui">Opacity</span>, <span class="ui">Color</span>, <span class="ui">Text size</span>, <span class="ui">Font</span> and <span class="ui">Legibility</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> <span class="ui">Preview</span> reflects the adjustments at once.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Done</span> in the top-right corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The page closes. The camera pictures in the preview, on the arrange canvas and on the full-screen wall show the watermark.</p>
+    </li>
+  </ol>
+  <ul>
+    <li>The watermark is drawn on camera tiles only, not on control panels, pictures, clocks or labels.</li>
+    <li>When all three names are switched off, no text is shown.</li>
+    <li>The watermark does not intercept touches; tapping a picture behaves as before.</li>
+    <li>While the watermark is off, camera tiles in the preview and on the arrange canvas show the channel number and name; the full-screen wall shows no label at all.</li>
+  </ul>
+
+  <h3 id="lvm-fit">Black bars, edge-to-edge video and the angle of the device</h3>
+  <p>Path: <span class="path"><span class="ui">LiveView Mix</span> › <span class="ui">Adjust the Layout</span> › <span class="ui">Black bars on this wall</span></span>. When the shape of a camera picture differs from the shape of its tile, black bars appear. <span class="ui">Black bars on this wall</span> decides how all camera pictures on the wall handle them. There are three options:</p>
+  <ul>
+    <li><span class="ui">Default</span>: the whole picture is shown, and black bars may appear.</li>
+    <li><span class="ui">Enlarge to fill</span>: the picture is enlarged in proportion until it fills the tile. The edges are cropped, and there are no black bars.</li>
+    <li><span class="ui">Stretch to fill</span>: the picture is stretched to fill the tile. Nothing is cropped and there are no black bars, but the picture is distorted.</li>
+  </ul>
+  <p>YouTube and Twitch streams always show the whole picture, whatever this setting is; see <a class="xref" href="/guide/lvm.html#lvm-streams">“YouTube and Twitch streams on the wall”</a>.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>On the <span class="ui">Adjust the Layout</span> page, tap <span class="ui">Black bars on this wall</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> A menu lists <span class="ui">Default</span>, <span class="ui">Enlarge to fill</span> and <span class="ui">Stretch to fill</span>.</p>
+    </li>
+    <li class="step">
+      <p>Select an option.</p>
+      <p class="check"><b class="check-label">Check:</b> The menu shows the selected option. The camera pictures in the preview and on the full-screen wall follow it.</p>
+      <div class="shots land-pair">
+        <figure class="land"><img src="/guide/img/lvm-fill-default.jpg" alt="A wall held sideways with Black bars on this wall set to Default: the camera pictures are shown whole, with black bars around the tiles" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-fill-default.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>Default</figcaption></figure>
+        <figure class="land"><img src="/guide/img/lvm-fill-enlarge.jpg" alt="A wall held sideways with Black bars on this wall set to Enlarge to fill: the camera pictures fill the tiles and the edges are cropped" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-fill-enlarge.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>Enlarge to fill</figcaption></figure>
+      </div>
+    </li>
+  </ol>
+  <ul>
+    <li>This setting belongs to LiveView Mix only and is independent of the default under <span class="path"><span class="ui">Settings</span> › <span class="ui">Picture</span> › <span class="ui">Black bars</span></span>. Picture tiles have their own <span class="ui">Fill</span> option.</li>
+    <li>The single-camera view that opens from the full-screen wall always shows the whole picture. The full-screen viewer of the preview has its own switch; see <a class="xref" href="/guide/lvm.html#lvm-closeup">“Opening a single camera”</a>.</li>
+    <li><span class="path"><span class="ui">Settings</span> › <span class="ui">Picture</span> › <span class="ui">Edge-to-edge video</span></span> is on by default. It lets full-screen video extend under the Dynamic Island and the rounded corners of the screen for the largest picture. When it is off, the picture keeps clear of these areas, at the cost of black bars. The setting applies to the full-screen wall of LiveView Mix as well.</li>
+  </ul>
+  <h4>The angle of the device</h4>
+  <p>The full-screen wall is not locked to an orientation. It rearranges itself with the angle of the device; no setting is needed. What decides is the shape of the space the wall fills, so an iPad window narrowed in Split View counts as upright.</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Angle of the device</th><th>What the wall looks like</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Angle of the device">Held sideways (wider than tall)</td><td data-label="What the wall looks like">The layout is shown as it is.</td></tr>
+      <tr><td data-label="Angle of the device">Held upright (taller than wide), ready-made layout</td><td data-label="What the wall looks like">The layout is flipped about its diagonal: 4 columns by 2 rows becomes 2 columns by 4 rows, and a large tile on the left moves to the top. The tiles are numbered again in reading order (left to right, then top to bottom), and the content follows the numbers.</td></tr>
+      <tr><td data-label="Angle of the device">Held upright, drawn layout</td><td data-label="What the wall looks like">The layout is flipped about its diagonal as well, but each camera stays in the tile it was placed in, so a camera put in a large tile is still in that large tile.</td></tr>
+      <tr><td data-label="Angle of the device">Held upright, portrait page switched on</td><td data-label="What the wall looks like">The portrait page is shown instead, as it was laid out; nothing is flipped. See <a class="xref" href="/guide/lvm.html#lvm-pages">“The portrait page”</a>.</td></tr>
+      <tr><td data-label="Angle of the device">An area whose width equals its height</td><td data-label="What the wall looks like">The layout is not flipped.</td></tr>
+    </tbody>
+  </table></div>
+  <figure class="phone"><img src="/guide/img/lvm-wall-portrait.jpg" alt="The full-screen wall held upright: after the 1 + 5 layout is flipped, the large tile is at the top and the other five tiles are below it and to its right" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-wall-portrait.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Held upright, the layout is flipped about its diagonal</figcaption></figure>
+  <p>The canvas of the landscape page on the <span class="ui">Arrange</span> page is always drawn in landscape; held upright, the real wall is flipped as described above.</p>
+
+  <h3 id="lvm-pages">The portrait page</h3>
+  <p>LiveView Mix is laid out for a device held sideways. The portrait page is an optional second wall that is shown while the device is held upright, with its own cameras, layout, control panels, clocks, labels, pictures and watermark. It is off by default; while it is off, an upright device shows the landscape wall flipped (see <a class="xref" href="/guide/lvm.html#lvm-fit">“Black bars, edge-to-edge video and the angle of the device”</a>). On an iPad, the portrait page is shown while the iPad or its window is taller than wide.</p>
+  <ul>
+    <li>The portrait page is laid out for an upright screen: its layout diagrams, its drawing grid and its arrange canvas are tall, and the wall is never flipped.</li>
+    <li>The tab, the preview and the full-screen wall swap between the landscape page and the portrait page as the device turns. While a camera opened from the wall is shown, the wall stays as it is until the camera is closed.</li>
+    <li>When the portrait page is switched on but has nothing on it yet, the upright tab shows <span class="ui">Portrait page</span> with the note <span class="ui">This wall shows while the phone is upright. Pick its cameras, and lay it out for a tall screen.</span> and the <span class="ui">Set Up LiveView Mix</span> button.</li>
+    <li>The <span class="ui">Choose Cameras</span> and <span class="ui">Adjust the Layout</span> buttons of the tab open the page that is on screen. At the top of these pages, the switch with <span class="ui">Landscape page</span> and <span class="ui">Portrait page</span> moves between the two pages. On the portrait page, the switch <span class="ui">Show this page when the phone is upright</span> (on an iPad, <span class="ui">Show this page when the screen is upright</span>) turns the portrait page on or off. The first change made to the portrait page turns it on, unless the switch was already used in this editor.</li>
+    <li>The portrait page can also be switched on and off with <span class="path"><span class="ui">Settings</span> › <span class="ui">Portrait page</span></span>, and set up there; see <a class="xref" href="/guide/lvm.html#lvm-settings">“LiveView Mix in Settings”</a>.</li>
+    <li>While the two canvases of an iPhone Duo are shown, they are shown instead of the portrait page; see <a class="xref" href="/guide/lvm.html#lvm-canvases">“Two canvases on iPhone Duo”</a>.</li>
+    <li>The control panels of the portrait page count toward the plan while the portrait page is switched on; see <a class="xref" href="/guide/lvm.html#lvm-limits">“How plan limits affect the wall”</a>. Their buttons also appear on the Apple Watch; see <a class="xref" href="/guide/webhook.html#webhook-watch">“Buttons on Apple Watch”</a>.</li>
+  </ul>
+  <p>To set up the portrait page from the LiveView Mix tab:</p>
+  <ol class="steps">
+    <li class="step">
+      <p>In the LiveView Mix tab, tap <span class="ui">Choose Cameras</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The <span class="ui">Choose Cameras</span> page opens with the <span class="ui">Landscape page</span> and <span class="ui">Portrait page</span> switch at the top.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Portrait page</span> in the switch.</p>
+      <p class="check"><b class="check-label">Check:</b> The page shows the cameras of the portrait page, and below the page switch the switch <span class="ui">Show this page when the phone is upright</span>, which is off.</p>
+      <figure class="phone"><img src="/guide/img/lvm-page-switch.jpg" alt="The Choose Cameras page with Portrait page selected: the switch Show this page when the phone is upright turned on and 2 cameras selected" decoding="async" width="900" height="1947" data-src="/guide/img/lvm-page-switch.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>Choosing the cameras of the portrait page</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tick the cameras for the upright wall.</p>
+      <p class="check"><b class="check-label">Check:</b> The count at the top increases, and <span class="ui">Show this page when the phone is upright</span> switches on with the first tick.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Done</span> in the top-right corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The page closes.</p>
+    </li>
+    <li class="step">
+      <p>Hold the phone upright.</p>
+      <p class="check"><b class="check-label">Check:</b> The tab shows the preview of the portrait page. Held sideways, it shows the landscape page again.</p>
+    </li>
+    <li class="step">
+      <p>Hold the phone upright and tap <span class="ui">Adjust the Layout</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The <span class="ui">Adjust the Layout</span> page opens on the portrait page, with tall layout diagrams. Choose a layout and arrange the tiles as for the landscape page; see <a class="xref" href="/guide/lvm.html#lvm-layout">“Adjusting the layout”</a> and <a class="xref" href="/guide/lvm.html#lvm-arrange">“Arranging the wall and its tiles”</a>.</p>
+      <figure class="phone"><img src="/guide/img/lvm-portrait-wall.jpg" alt="The full-screen wall of the portrait page on an upright iPhone: a 2 × 3 layout with two cameras in the top row and the close button in the top-left corner" decoding="async" width="900" height="1947" data-src="/guide/img/lvm-portrait-wall.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>The portrait page in full screen</figcaption></figure>
+    </li>
+  </ol>
+  <h4>Copying control panels, clocks, labels and pictures between the pages</h4>
+  <p>A control panel, clock, label, picture or colored tile that has been set up on one page can be copied to the other instead of being built again. Cameras are not copied; they are placed with <span class="ui">Put a camera here</span>.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>On the <span class="ui">Arrange</span> page of the portrait page, tap an unused tile.</p>
+      <p class="check"><b class="check-label">Check:</b> The menu titled with the tile number shows <span class="ui">Copy from the landscape page…</span> among its choices. On the landscape page, the choice is <span class="ui">Copy from the portrait page…</span>, offered while the portrait page is switched on.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Copy from the landscape page…</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> A list opens under the heading <span class="ui">Landscape page</span>. Each row shows the kind of tile, a control panel's title or a label's text, and its tile number on that page. When there is nothing to copy, the list shows <span class="ui">Nothing to copy</span>.</p>
+    </li>
+    <li class="step">
+      <p>Tap the tile to copy.</p>
+      <p class="check"><b class="check-label">Check:</b> The list closes, and the copy appears in the tile that was tapped.</p>
+    </li>
+  </ol>
+  <p>The copy is independent of the original, as the note under the list says: <span class="ui">The copy is set up on its own: changing it later leaves the other page as it is.</span> A copied control panel counts toward the plan on its own. A copied picture is stored twice; when the other page holds a picture, a second note says so: <span class="ui">A copied picture is kept twice, so it counts twice towards the size of your iCloud backup.</span></p>
+
+  <h3 id="lvm-canvases">Two canvases on iPhone Duo</h3>
+  <p>On an iPhone Duo held half-folded, with the fold across the screen, LiveView Mix can be split at the fold into two canvases: the upper canvas above the fold and the lower canvas below it. Each canvas is a wall of its own, with its own cameras, layout, wall pages, control panels and close-up; a typical use is cameras on the upper canvas and control panels on the lower one. The setting appears only on an iPhone Duo; for the iPhone Duo in general, see <a class="xref" href="/guide/tour.html#tour-duo">“iPhone Duo”</a>.</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Position of the iPhone Duo</th><th>What LiveView Mix shows</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Position of the iPhone Duo">Half-folded, fold across the screen</td><td data-label="What LiveView Mix shows">The upper canvas above the fold and the lower canvas below it, separated by a dark strip that lies on the fold.</td></tr>
+      <tr><td data-label="Position of the iPhone Duo">Opened flat, closed, or held upright like a book</td><td data-label="What LiveView Mix shows">The upper canvas alone. Swiping past its last wall page shows the lower canvas; swiping back past the first wall page of the lower canvas returns to the upper one. Two dots at the top of the screen show which canvas is on screen. With the portrait page switched on and the screen upright, the portrait page takes the place of the upper canvas.</td></tr>
+    </tbody>
+  </table></div>
+  <p>To switch on the two canvases and set up the lower one:</p>
+  <ol class="steps">
+    <li class="step">
+      <p>On the iPhone Duo, tap the <span class="ui">Settings</span> tab and switch on <span class="ui">Two canvases</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The switch is on. The <span class="ui">LiveView Mix</span> section now lists <span class="ui">Upper canvas</span> and <span class="ui">Lower canvas</span>.</p>
+    </li>
+    <li class="step">
+      <p>Half-fold the iPhone Duo, and tap the <span class="ui">LiveView Mix</span> tab.</p>
+      <p class="check"><b class="check-label">Check:</b> The tab shows the upper canvas above the fold and the lower canvas below it. An empty canvas shows its name and the <span class="ui">Set Up LiveView Mix</span> button. The top-right corner of the screen keeps only the <span class="ui">Full screen</span> button.</p>
+      <figure class="device tall"><img src="/guide/img/duo-lvm-canvases.png" alt="iPhone Duo half folded with Two canvases on: four cameras on the upper canvas above the fold, four on the lower canvas below it, and a dark strip on the fold" decoding="async" width="690" height="852" data-src="/guide/img/duo-lvm-canvases.png" style="aspect-ratio: 690 / 852;" loading="lazy"><figcaption>Two canvases: the wall is cut at the fold</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap the round button with sliders in the top-right corner of the lower canvas.</p>
+      <p class="check"><b class="check-label">Check:</b> A menu titled <span class="ui">Lower canvas</span> offers <span class="ui">Choose Cameras</span> and <span class="ui">Adjust the Layout</span>.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Adjust the Layout</span>, then set up the lower canvas as any wall; see <a class="xref" href="/guide/lvm.html#lvm-layout">“Adjusting the layout”</a> and <a class="xref" href="/guide/lvm.html#lvm-arrange">“Arranging the wall and its tiles”</a>.</p>
+      <p class="check"><b class="check-label">Check:</b> After <span class="ui">Done</span>, the lower canvas shows its tiles below the fold.</p>
+    </li>
+  </ol>
+  <ul>
+    <li><span class="ui">Full screen</span> opens both canvases edge to edge, with the <span class="ui" data-ui="icon">✕</span> button in the top-left corner of the upper canvas.</li>
+    <li>While the two canvases are shown, the editors have no <span class="ui">Landscape page</span> and <span class="ui">Portrait page</span> switch.</li>
+    <li>The control panels of the lower canvas count toward the plan, and appear on the Apple Watch, only while the two canvases are switched on.</li>
+    <li>The lower canvas travels in a backup. Restored on an iPhone or an iPad, it is kept but not shown; restored on an iPhone Duo again, it returns.</li>
+  </ul>
+
+  <h3 id="lvm-wall">The full-screen wall</h3>
+  <p>Path: <span class="path"><span class="ui">LiveView Mix</span> › <span class="ui">Full screen</span></span>. The full-screen wall places all tiles in the selected layout and fills the screen. The wall carries no labels unless the watermark is switched on.</p>
+  <figure class="clip land"><video class="clip" aria-label="The full-screen wall: swiping moves between pages, a tap on a camera opens its close-up, and Back returns to the wall." muted="" loop="" playsinline="" preload="none" data-src="/guide/vid/rec-wall-paging.mp4" data-poster="/guide/img/rec-wall-paging.jpg" poster="/guide/img/rec-wall-paging.jpg"></video><figcaption>The full-screen wall: swiping moves between pages, a tap on a camera opens its close-up, and Back returns to the wall.</figcaption></figure>
+  <ol class="steps">
+    <li class="step">
+      <p>In the LiveView Mix tab, tap <span class="ui">Full screen</span> (the gold wall icon) in the top-right corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen changes to the full-screen wall. The status bar is hidden, and a <span class="ui" data-ui="icon">✕</span> button (<span class="ui">Close</span>) is in the top-left corner.</p>
+      <figure class="land"><img src="/guide/img/lvm-wall-fullscreen.jpg" alt="The full-screen wall held sideways: two large tiles, six small camera tiles, a control panel and a clock, with the close button in the top-left corner" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-wall-fullscreen.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>The full-screen wall</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>When the wall has several wall pages, swipe to the left.</p>
+      <p class="check"><b class="check-label">Check:</b> The next wall page is shown, and the page dots at the bottom of the screen move to the next dot.</p>
+      <figure class="land"><img src="/guide/img/lvm-wall-paging.jpg" alt="The full-screen wall held sideways: a wall of two pages, with page dots at the bottom of the screen" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-wall-paging.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>A wall of two pages</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Swipe to the right.</p>
+      <p class="check"><b class="check-label">Check:</b> The previous wall page is shown again.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui" data-ui="icon">✕</span> in the top-left corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The wall closes and the LiveView Mix tab is shown again.</p>
+    </li>
+  </ol>
+  <ul>
+    <li><b>Paging</b>: when there are more tiles than the layout holds, the wall is divided into wall pages. The number of wall pages is the number of tiles divided by the tiles per page, rounded up. Positions that a wall page does not fill, and empty tiles, are black. With several wall pages, page dots appear at the bottom of the screen.</li>
+    <li><b>Opening page</b>: the wall opens on the first wall page that has something to show. When a long wall begins with a run of tiles that point at cameras that do not exist, it does not stop on a page that consists only of status texts.</li>
+    <li><b>Streams</b>: only the wall page that is being looked at plays; neighboring pages are not connected, which saves bandwidth. <span class="ui">Keep cameras connected between pages</span> changes this; see <a class="xref" href="/guide/lvm.html#lvm-settings">“LiveView Mix in Settings”</a>.</li>
+    <li><b>Buttons over the picture</b>: the close button, and the buttons over a camera opened from the wall, are large white symbols on a dark disc with a thin white ring, so they stay visible and can be hit reliably over a black or a bright picture.</li>
+    <li><b>Tapping a camera</b>: opens the single-camera view of that camera; see <a class="xref" href="/guide/lvm.html#lvm-closeup">“Opening a single camera”</a>.</li>
+    <li><b>Tapping a YouTube or Twitch tile</b>: opens that stream full screen; see <a class="xref" href="/guide/lvm.html#lvm-streams">“YouTube and Twitch streams on the wall”</a>.</li>
+    <li><b>Tapping a button of a control panel</b>: sends the request. When the button is set to ask for confirmation first, a confirmation dialog appears; see <a class="xref" href="/guide/webhook.html">Chapter 9, “Control panels and webhooks”</a>.</li>
+    <li><b>Status texts</b>: a tile that cannot be shown keeps its position and shows a status text; tapping it does nothing. See <a class="xref" href="/guide/lvm.html#lvm-states">“When a tile cannot show a camera”</a>.</li>
+    <li><b>The wall cannot be rearranged by dragging.</b> To adjust the tiles, return to <span class="ui">Arrange</span>; see <a class="xref" href="/guide/lvm.html#lvm-arrange">“Arranging the wall and its tiles”</a>.</li>
+    <li><b>Turning the device</b>: with the portrait page switched on, the wall changes between the landscape page and the portrait page as the device turns; see <a class="xref" href="/guide/lvm.html#lvm-pages">“The portrait page”</a>. On an iPhone Duo with two canvases, see <a class="xref" href="/guide/lvm.html#lvm-canvases">“Two canvases on iPhone Duo”</a>.</li>
+    <li><b>Screen</b>: while live pictures are on the wall, the device does not lock the screen automatically.</li>
+    <li><b>Nothing to show</b>: when there are no tiles at all, the screen shows <span class="ui">LiveView Mix is empty</span>. When every tile points at a camera that is not on this device (for example after a restore from a backup before any device was added), the screen shows <span class="ui">These cameras aren't set up here</span>.</li>
+  </ul>
+
+  <h3 id="lvm-closeup">Opening a single camera</h3>
+  <p>Tapping a camera on the wall or in the preview opens a large picture of that camera. The two entry points open different screens. A YouTube or Twitch tile opens its own full-screen view instead; see <a class="xref" href="/guide/lvm.html#lvm-streams">“YouTube and Twitch streams on the wall”</a>.</p>
+  <h4>From the full-screen wall</h4>
+  <p>The screen is the single-camera view of that camera, always playing in HD. In the top-left corner are the back button <span class="ui" data-ui="icon">‹</span> (<span class="ui">Back</span>) and the camera name. When the device supports recording playback, the <span class="ui">Recordings</span> button (a clock icon) is in the top-right corner. When the camera supports PTZ, a PTZ pad is in the bottom-right corner. When the picture carries sound, a speaker button (<span class="ui">Mute</span>, <span class="ui">Unmute</span>) is in the bottom-left corner. This view has no SD and HD switch and no black-bar switch.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>On the full-screen wall, tap the picture of a camera.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen changes to the single-camera view of that camera.</p>
+      <div class="shots land-pair">
+        <figure class="land"><img src="/guide/img/lvm-wall-zoom.jpg" alt="The single-camera view opened from the wall: the back button and the name in the top-left corner and the PTZ pad in the bottom-right corner" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-wall-zoom.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>The single-camera view opened from the wall</figcaption></figure>
+        <figure class="land"><img src="/guide/img/lvm-immersive.jpg" alt="The full-screen viewer opened from the preview: the close button in the top-left corner, the name, the HD button and the black-bar button at the top, and page dots below" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-immersive.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>The full-screen viewer opened from the preview</figcaption></figure>
+      </div>
+    </li>
+    <li class="step">
+      <p>Spread two fingers apart on the picture.</p>
+      <p class="check"><b class="check-label">Check:</b> The picture is enlarged, up to 5 times. While it is enlarged, dragging with one finger moves the picture.</p>
+    </li>
+    <li class="step">
+      <p>Double-tap the picture.</p>
+      <p class="check"><b class="check-label">Check:</b> The picture is enlarged to 2 times; another double-tap returns it to its original size.</p>
+    </li>
+    <li class="step">
+      <p>When the device supports recording playback, tap <span class="ui">Recordings</span> in the top-right corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen opens the picture and the recording playback of that camera, with <span class="ui">Done</span> in the top-right corner. For the operation, see <a class="xref" href="/guide/single.html">Chapter 6, “Single-camera view”</a> and <a class="xref" href="/guide/playback.html">Chapter 7, “Recording playback and speed”</a>.</p>
+    </li>
+    <li class="step">
+      <p>Tap the back button <span class="ui" data-ui="icon">‹</span> in the top-left corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen shows the full-screen wall again. A camera head that is still turning stops. For PTZ control, see <a class="xref" href="/guide/single.html#single-ptz">“PTZ control: moving the camera”</a>.</p>
+    </li>
+  </ol>
+  <h4>From the preview</h4>
+  <p>The screen is the full-screen viewer: one camera at a time, and swiping left or right changes to the next camera. The cameras that can be reached are those in the preview that can play (online, within the plan and not paused), in the same order as on the wall. Page dots are at the bottom of the screen.</p>
+  <ul>
+    <li><span class="ui" data-ui="icon">✕</span> (<span class="ui">Close</span>): closes the viewer and returns to the preview.</li>
+    <li>The camera name is at the top center.</li>
+    <li>The <span class="ui">HD</span> / <span class="ui">SD</span> button in the top-right corner switches the quality; the text on the button is the current quality. The viewer always opens in HD, and a switch applies to the current viewing only and is not saved.</li>
+    <li>The black-bar button in the top-right corner switches between <span class="ui">Default</span> and <span class="ui">Stretch to fill</span>, again for the current viewing only. When the black-bar setting of the wall is anything other than <span class="ui">Default</span>, the viewer starts on <span class="ui">Stretch to fill</span>.</li>
+    <li>The speaker button in the bottom-left corner appears only when the picture carries sound.</li>
+  </ul>
+  <p>Tapping a camera in the preview that the plan does not cover (<span class="ui">Not in your plan</span>) opens the plans page; see <a class="xref" href="/guide/plans.html">Chapter 11, “Plans and limits”</a>. Tapping a camera that is offline, disabled or paused does nothing. Sound plays only in the single-camera view and in this full-screen viewer; for switching it on, see <a class="xref" href="/guide/single.html">Chapter 6, “Single-camera view”</a>.</p>
+
+  <h3 id="lvm-streams">YouTube and Twitch streams on the wall</h3>
+  <p>A YouTube live stream or a Twitch channel that has been added to Cam Hub (see <a class="xref" href="/guide/add.html#add-streams">“Adding YouTube live streams and Twitch channels”</a> and <a class="xref" href="/guide/single.html#single-streams">“YouTube and Twitch streams”</a>) can be placed in a tile like a camera, through <span class="ui">Choose Cameras</span> or <span class="ui">Put a camera here</span>.</p>
+  <ul>
+    <li>The tile plays the stream in the site's own player, without sound, so several tiles never compete for sound.</li>
+    <li>Tapping the tile, in the preview or on the full-screen wall, opens the stream as large as the screen allows; the picture carries on without loading the stream again. The site's own controls work there, and the <span class="ui" data-ui="icon">✕</span> button (<span class="ui">Close</span>) and a speaker button (<span class="ui">Mute</span>, <span class="ui">Unmute</span>) sit beside the picture, never over it. The speaker button follows the same sound switch as the cameras.</li>
+    <li>The stream has no SD and HD setting; its quality follows the size of the tile, and the full-screen view plays it at the size of the screen.</li>
+    <li>The stream is always shown whole, with black bars where its shape differs from the tile. <span class="ui">Black bars on this wall</span> applies to cameras only, because the site's own player may not be cropped.</li>
+    <li>Until the terms of the site have been agreed on this device, the tile shows the stream name and <span class="ui">Agree to YouTube's terms to play this stream.</span> or <span class="ui">Agree to Twitch's terms to play this channel.</span> Tapping the tile opens the full-screen view with <span class="ui">Review Terms…</span>; after <span class="ui">Agree and Continue</span>, the stream plays.</li>
+    <li>Where YouTube and Twitch are not available, a stream that arrives in a share code or a backup shows its name and <span class="ui">Not available in this region or language.</span></li>
+    <li>YouTube and Twitch streams never count toward the plan and are never locked.</li>
+    <li>On Apple TV, these tiles show the stream name only; see <a class="xref" href="/guide/lvm.html#lvm-tv">“Differences on Apple TV”</a>.</li>
+  </ul>
+
+  <h3 id="lvm-states">When a tile cannot show a camera</h3>
+  <p>A camera that cannot be shown keeps its position on the wall, and its tile shows a dark plate with a status text. Because the position is kept, no other tile moves.</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Display</th><th>Meaning</th><th>What to do</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Display"><span class="ui">No signal</span></td><td data-label="Meaning">The device reports the channel as offline.</td><td data-label="What to do">Check the power and the network of the camera; see <a class="xref" href="/guide/trouble.html">Chapter 15, “Troubleshooting”</a>.</td></tr>
+      <tr><td data-label="Display"><span class="ui">Disabled</span></td><td data-label="Meaning">The channel has not been enabled.</td><td data-label="What to do">Enable the channel on the device page or in <span class="path"><span class="ui">Settings</span> › <span class="ui ui-long">Choose which cameras to show</span></span>; see <a class="xref" href="/guide/devices.html">Chapter 4, “The Devices tab and channels”</a>.</td></tr>
+      <tr><td data-label="Display"><span class="ui">Not in your plan</span></td><td data-label="Meaning">The channel is enabled but exceeds the allowance of the current plan.</td><td data-label="What to do">See <a class="xref" href="/guide/lvm.html#lvm-limits">“How plan limits affect the wall”</a> and <a class="xref" href="/guide/plans.html">Chapter 11, “Plans and limits”</a>.</td></tr>
+      <tr><td data-label="Display"><span class="ui">Paused</span></td><td data-label="Meaning">The channel was paused with <span class="ui">Pause Video</span>; the tile shows a gray plate.</td><td data-label="What to do">Resume it with <span class="ui">Resume Video</span> on the device page; see <a class="xref" href="/guide/devices.html">Chapter 4, “The Devices tab and channels”</a>.</td></tr>
+      <tr><td data-label="Display"><span class="ui">Camera removed</span></td><td data-label="Meaning">The tile points at a camera that Cam Hub no longer has.</td><td data-label="What to do">Handle it with <span class="ui">Empty Those Slots</span> on the <span class="ui">Choose Cameras</span> page; see <a class="xref" href="/guide/lvm.html#lvm-pick">“Choosing cameras and quality”</a>.</td></tr>
+    </tbody>
+  </table></div>
+  <figure class="land"><img src="/guide/img/lvm-wall-states.jpg" alt="The full-screen wall held sideways: several tiles show No signal, Not in your plan, Disabled and Camera removed" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-wall-states.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>Tiles that cannot show a camera</figcaption></figure>
+  <figure class="phone"><img src="/guide/img/lvm-unavailable-plates.jpg" alt="The preview of the LiveView Mix tab with six tiles: one live picture, two tiles Camera removed, and one tile each for Disabled, No signal and Not in your plan with a lock; the note Preview only — full screen shows your layout. is at the bottom" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-unavailable-plates.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The same plates in the preview of the LiveView Mix tab</figcaption></figure>
+  <ul>
+    <li>While a tile is connecting, it shows a spinning circle. When the connection fails, the tile explains the reason in a short text; a temporary failure is retried automatically.</li>
+    <li>While <span class="ui">Keep cameras connected between pages</span> is off, a tile first shows only the camera name at the moment its wall page comes into view, and the picture follows.</li>
+    <li><span class="ui">Hide offline cameras</span> in Settings applies to the walls of the Live tab only. It does not remove tiles from LiveView Mix.</li>
+    <li>Deleting a device in the app empties the tiles that belong to it, on every wall. No other tile moves, and control panels keep their places too.</li>
+  </ul>
+
+  <h3 id="lvm-limits">How plan limits affect the wall</h3>
+  <p>LiveView Mix itself does not limit the number of cameras on the wall. The number of channels that can show a picture at the same time is decided by the plan; for the details of the allowances, see <a class="xref" href="/guide/plans.html">Chapter 11, “Plans and limits”</a>.</p>
+  <ul>
+    <li><b>Free plan</b>: at most 2 enabled channels across the whole app (single cameras and recorder channels together), and at most 1 recorder. A channel beyond the allowance shows <span class="ui">Disabled</span> on the wall; a channel that is enabled but exceeds the allowance shows <span class="ui">Not in your plan</span>. In both cases, the position of the tile is kept.</li>
+    <li><b>Camera plans and recorder plans</b>: these raise the number of single cameras that can be enabled and the number of recorders, respectively. With a recorder plan, all channels of the subscribed recorders can be used.</li>
+    <li><b>Enabling channels</b>: after a plan is upgraded, channels that were disabled are not enabled automatically; they must be switched on on the device page or in <span class="path"><span class="ui">Settings</span> › <span class="ui">Choose which cameras to show</span></span>. A plan with no limit on either axis enables all channels automatically, and <span class="ui">Choose which cameras to show</span> is then not shown in Settings.</li>
+    <li><b>Control panels use the camera allowance, after the cameras</b>: each control panel counts as one single camera against the camera allowance of the plan, and not against the recorder allowance. Panels only use what the cameras leave of that allowance (on the Free plan, what the cameras and recorder channels leave), so a control panel never takes a picture away from a camera. When the allowance is used up, the control panel stays in place, but its buttons are locked and the tile shows a lock, the panel title and <span class="ui">Not in your plan</span>. Pictures, clocks and labels do not use the allowance.</li>
+    <li><b>Each panel on each wall counts</b>: the control panels of the landscape page always count; those of the portrait page count while it is switched on, and those of the lower canvas while the two canvases of an iPhone Duo are switched on. A panel copied to the other page counts on its own. Panels are covered in the order landscape page, lower canvas, portrait page, each wall in tile order.</li>
+    <li><b>YouTube and Twitch streams</b>: never count toward the plan and are never locked.</li>
+    <li><b>Locked channels</b>: tapping a camera in the preview that the plan does not cover opens the plans page. On the Choose Cameras page and on the arrange canvas, these channels show no live picture.</li>
+    <li><b>Custom layouts</b>: at most 8 × 8, which is 64 tiles; see <a class="xref" href="/guide/lvm.html#lvm-custom">“Drawing a custom layout”</a>.</li>
+  </ul>
+
+  <h3 id="lvm-settings">LiveView Mix in Settings</h3>
+  <p>Path: <span class="path"><span class="ui">Settings</span> › <span class="ui">LiveView Mix</span></span>. The <span class="ui">LiveView Mix</span> section lists one row per wall, each with the number of selected cameras at its end (<span class="ui" data-ui="value">6 cameras</span>), or <span class="ui">Not set up</span> before setup:</p>
+  <ul>
+    <li><span class="ui">LiveView Mix</span>: the wall. While the portrait page is switched on, this row is called <span class="ui">Landscape page</span>; on an iPhone Duo with two canvases, <span class="ui">Upper canvas</span>.</li>
+    <li><span class="ui">Portrait page</span>: shown while the portrait page is switched on.</li>
+    <li><span class="ui">Lower canvas</span>: shown on an iPhone Duo while the two canvases are switched on.</li>
+  </ul>
+  <p>Tapping a row opens a page that holds the camera selection, the full-screen layout, the watermark and paging of that wall on one page. The options work as described in the sections above. <span class="ui">Cancel</span> in the top-left corner restores everything changed since the page was entered, and <span class="ui">Done</span> in the top-right corner keeps the changes.</p>
+  <p>Below the <span class="ui">LiveView Mix</span> section, the <span class="ui">Portrait page</span> switch has a section of its own (see <a class="xref" href="/guide/lvm.html#lvm-pages">“The portrait page”</a>), and on an iPhone Duo, so does the <span class="ui">Two canvases</span> switch (see <a class="xref" href="/guide/lvm.html#lvm-canvases">“Two canvases on iPhone Duo”</a>). Both are off by default.</p>
+  <figure class="phone"><img src="/guide/img/settings-2.jpg" alt="The Settings tab: the LiveView Mix section with the number of cameras at the end of the row, the Open on launch menu below it, currently set to Last viewed, and the Portrait page switch" decoding="async" width="900" height="1947" data-src="/guide/img/settings-2.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>The LiveView Mix section of the Settings tab</figcaption></figure>
+  <h4>Open on launch</h4>
+  <p><span class="ui">Open on launch</span> decides which screen the app shows when it starts:</p>
+  <ul>
+    <li><span class="ui">Last viewed</span> (the default).</li>
+    <li><span class="ui">LiveView Mix</span>: opens the LiveView Mix tab.</li>
+    <li><span class="ui">LiveView Mix Full Screen</span>: opens the LiveView Mix tab and goes straight into the full-screen wall after the start, once. Tapping <span class="ui" data-ui="icon">✕</span> returns to the preview in the tab.</li>
+    <li>Each device: opens the Live tab and shows that device.</li>
+  </ul>
+  <p>The options <span class="ui">LiveView Mix</span> and <span class="ui">LiveView Mix Full Screen</span> appear only after the wall has been set up, or while the portrait page or the two canvases are switched on.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap the <span class="ui">Settings</span> tab at the bottom of the screen and scroll to the <span class="ui">LiveView Mix</span> section.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen shows the LiveView Mix row and the <span class="ui">Open on launch</span> menu.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Open on launch</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen shows the list of options, with the current option ticked.</p>
+      <figure class="phone"><img src="/guide/img/lvm-open-on-launch.jpg" alt="The options of Open on launch: Last viewed, LiveView Mix, LiveView Mix Full Screen and each device" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-open-on-launch.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The options of Open on launch</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Select <span class="ui">LiveView Mix Full Screen</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The menu shows <span class="ui">LiveView Mix Full Screen</span>. The next time the app starts, it goes straight into the full-screen wall.</p>
+    </li>
+  </ol>
+  <h4>Keep cameras connected between pages</h4>
+  <p><span class="ui">Keep cameras connected between pages</span> in the <span class="ui">Paging</span> section is off by default. When it is on, wall pages that are not being looked at stay connected, so the picture appears at once when swiping instead of a black tile while the camera reconnects. The cost is more bandwidth and battery; the effect is largest for recorders that sign in with a session. At most 12 streams are kept. When the switch is turned off, the kept connections are closed at once. The switch applies to the streams of the whole app.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>On the <span class="ui">Adjust the Layout</span> page, scroll down to the <span class="ui">Paging</span> section.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen shows the <span class="ui">Keep cameras connected between pages</span> switch with its explanation.</p>
+      <figure class="phone"><img src="/guide/img/lvm-layout-2.jpg" alt="The lower half of the Adjust the Layout page: the Watermark section and the Paging section with the Keep cameras connected between pages switch" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-layout-2.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The Paging section</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Switch on <span class="ui">Keep cameras connected between pages</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The switch is on.</p>
+    </li>
+  </ol>
+  <h4>Backup and restore</h4>
+  <p>The settings of every wall (the landscape page, the portrait page and the lower canvas, each with its cameras and tiles, layout, custom layout, watermark, control panels and pictures), the portrait page and two canvases switches and the arrangement of the preview belong to the app settings and are stored with an iCloud backup (see <a class="xref" href="/guide/share.html#share-versions">“Several named backups: renaming and deleting”</a>); when cameras are exported, switching on <span class="ui">Include app settings</span> carries them along as well. On restore, tiles that belong to a device that does not exist on the new device are not kept. Pictures make a backup larger, and a picture copied to the other page counts twice. For the procedure, see <a class="xref" href="/guide/share.html">Chapter 10, “Sharing and backup”</a>.</p>
+
+  <h3 id="lvm-tv">Differences on Apple TV</h3>
+  <p>Apple TV shows a wall that was built on an iPhone or an iPad. Arranging the wall, editing its tiles and drawing a custom layout are done on the iPhone or iPad; see <a class="xref" href="/guide/appletv.html">Chapter 14, “Apple TV”</a>. Apple TV shows the landscape page only: the portrait page and the lower canvas of an iPhone Duo are not shown, and their control panels do not count toward the plan there. YouTube and Twitch tiles show the stream name with the note that these streams play only on iPhone and iPad.</p>
+</section><nav class="guide-pager" aria-label="Contents"><a class="guide-prev" rel="prev" href="/guide/playback.html"><span class="pager-dir">Previous chapter</span><span class="pager-title">7. Recording playback and speed</span></a><a class="guide-next" rel="next" href="/guide/webhook.html"><span class="pager-dir">Next chapter</span><span class="pager-title">9. Control panels and webhooks</span></a></nav></article>
+    </div>
+    <button class="guide-top" id="guide-top" type="button" aria-label="Back to top"></button>
+  </main>
+  <footer class="footer"><span data-i18n="footer">Copyright © 2026 ALMX. All rights reserved.</span><nav><a href="/guide.html" data-i18n="navGuide">Manual</a><a href="/devices.html" data-i18n="navDevices">Device differences</a><a href="/privacy.html" data-i18n="navPrivacy">Privacy</a><a href="/terms.html" data-i18n="navTerms">Terms</a><a class="store-link" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeCTA">Download on the App Store</a></nav><nav class="language-links" id="language-links" aria-label="Language" data-i18n-aria="languageLabel"><a href="/guide/lvm.html" hreflang="en" lang="en" data-language-link="en" aria-current="true">English</a><a href="/zh-Hant/guide/lvm.html" hreflang="zh-Hant" lang="zh-Hant" data-language-link="zh-Hant">繁體中文</a><a href="/zh-Hans/guide/lvm.html" hreflang="zh-Hans" lang="zh-Hans" data-language-link="zh-Hans">简体中文</a><a href="/ja/guide/lvm.html" hreflang="ja" lang="ja" data-language-link="ja">日本語</a><a href="/ko/guide/lvm.html" hreflang="ko" lang="ko" data-language-link="ko">한국어</a><a href="/de/guide/lvm.html" hreflang="de" lang="de" data-language-link="de">Deutsch</a><a href="/es/guide/lvm.html" hreflang="es" lang="es" data-language-link="es">Español</a><a href="/es-MX/guide/lvm.html" hreflang="es-MX" lang="es-MX" data-language-link="es-MX">Español (México)</a><a href="/fr/guide/lvm.html" hreflang="fr" lang="fr" data-language-link="fr">Français</a><a href="/sl/guide/lvm.html" hreflang="sl" lang="sl" data-language-link="sl">Slovenščina</a><a href="/ar/guide/lvm.html" hreflang="ar" lang="ar" data-language-link="ar">العربية</a></nav></footer>
+  <script src="/additional-locales.js?v=20261103-sl"></script>
+  <script src="/site.js?v=20261112-1"></script>
+
+
+</body></html>

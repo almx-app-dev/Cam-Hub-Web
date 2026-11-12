@@ -768,61 +768,132 @@ languageSelect.innerHTML = languageChoices
   .join("");
 
 // ---------------------------------------------------------------------------
-// One address per language (2026-11-04)
-// The plain address of a page is its English version and the default for everyone else; `?lang=<code>` names one of
-// the other languages. WHY: the page text is chosen in the browser, so a search engine used to see a single language per
-// page and the other ten could not be found. The <head> of every page lists the language addresses (hreflang links);
-// the code below makes the address and the page agree: it shows the language the address names, points the canonical
-// link at the address of that language (without referral or campaign parameters), keeps the language on the site's
-// own links, and gives the description tag the page's own summary in that language.
+// One file per language and per manual chapter (2026-11-12)
+// English keeps the plain addresses (/, /product.html, ... /guide.html for the manual's first chapter and
+// /guide/<chapter>.html for the others); every other language has the same files under /<code>/ (/ja/,
+// /ja/product.html, /ja/guide/lvm.html). WHY: Google indexes what an address serves. With `?lang=` and `?chapter=`
+// (2026-11-04) the 253 addresses served the same 7 files and only this script told them apart, so a crawler that read
+// the files saw near-duplicates in the wrong language, and Google stopped indexing the home page. The files are now
+// pre-rendered by docs/website/build_site.py in the app repository: it opens every address through this script in
+// headless Chrome and saves the result, so each file already holds its own text, title, description, canonical link and
+// language links. The code below reads the language and the chapter from the path, keeps the head tags and the site's
+// own links in line with them, and sends older addresses (`?lang=`, `?chapter=`, and a plain address opened by a reader
+// whose browser asks for another language) on to the new ones.
 // ---------------------------------------------------------------------------
 const siteOrigin = "https://cam-hub.almx.cc";
+// Set by build_site.py before this script runs: never redirect, and say when the page is finished (`__camHubRendered`).
+const prerendering = Boolean(window.__camHubPrerender);
+const prefixedLanguages = languageChoices.map(([code]) => code).filter((code) => code !== "en");
 const pagePaths = { home: "/", product: "/product.html", devices: "/devices.html", support: "/support.html", guide: "/guide.html", privacy: "/privacy.html", terms: "/terms.html" };
-// The site's own pages, as the links in the pages write them (relative, same folder).
-const sitePageLink = /^(?:\.\/)?(?:(?:index|product|devices|support|guide|privacy|terms)\.html)?$/;
+// The manual's chapters in order (build.py's chapter list); the first has the plain manual address. build_site.py
+// refuses to build when this list and the manual differ. WHY a copy here: an old `?chapter=` address must be sent to a
+// chapter file that exists (an unknown or wrongly cased id would otherwise end on a 404) before the manual has loaded.
+const guideChapterIds = ["start", "tour", "add", "devices", "live", "single", "playback", "lvm", "webhook", "share", "plans", "tools", "settings", "appletv", "trouble", "brands", "about"];
+const guideFirstChapter = guideChapterIds[0];
+// The site's own page files as links in the templates and translations write them: relative or root-absolute, without a
+// language folder ("./", "product.html", "/guide.html"). Links that already name a folder are left alone.
+const sitePageLink = /^(?:\.\/|\/)?(?:(?:index|product|devices|support|guide|privacy|terms)\.html)?$/;
 const staticDescription = document.querySelector('meta[name="description"]')?.content || "";
 
-// The language named by the address (`?lang=`, any letter case), or null when there is none or it is not offered.
-function addressLanguage() {
-  let requested = "";
-  try {
-    requested = (new URLSearchParams(location.search).get("lang") || "").toLowerCase();
-  } catch {
-    return null;
-  }
-  const choice = languageChoices.find(([code]) => code.toLowerCase() === requested);
+// A supported language code for `value` in any letter case, or null.
+function knownLanguage(value) {
+  const lower = String(value || "").toLowerCase();
+  const choice = languageChoices.find(([code]) => code.toLowerCase() === lower);
   return choice && translations[choice[0]] ? choice[0] : null;
 }
 
-// Set when the address names a language or the visitor picks one from the menu on this page. Only then do the site's
-// own links carry `?lang=`: a visitor whose browser chose the language keeps plain links.
-let explicitLanguage = addressLanguage();
+// The language folder an address path starts with ("ja" for /ja/product.html), or null for English (no folder).
+function pathLanguage(pathname = location.pathname) {
+  const first = (pathname.split("/")[1] || "").toLowerCase();
+  return prefixedLanguages.find((code) => code.toLowerCase() === first) || null;
+}
 
-// The manual's chapter named by the address (`?chapter=`), or "" (2026-11-04, see `guideChapterHref`).
-function addressChapter() {
+// The manual chapter an address path names (/guide/lvm.html, /ja/guide/lvm.html), or "" for the first chapter.
+// The pattern has no dot, so the manual's text files (guide/content.<lang>.html) never count as chapters.
+// The extension is optional: GitHub Pages also serves /guide/lvm for guide/lvm.html.
+function pathChapter(pathname = location.pathname) {
+  const match = pathname.match(/\/guide\/([A-Za-z0-9_-]+)(?:\.html)?$/);
+  return match ? match[1] : "";
+}
+
+// The manual chapter id for `value` in any letter case, or "" when the manual has no such chapter.
+function knownChapter(value) {
+  const lower = String(value || "").toLowerCase();
+  return guideChapterIds.find((id) => id.toLowerCase() === lower) || "";
+}
+
+// The path of a page in a language and, on the manual, a chapter ("" or the first chapter = the plain manual
+// address): pagePath("guide", "ja", "lvm") is "/ja/guide/lvm.html", pagePath("home", "en") is "/".
+function pagePath(pageKey, language, chapter = "") {
+  const folder = language && language !== "en" ? `/${language}` : "";
+  if (pageKey === "guide" && chapter && chapter !== guideFirstChapter) return `${folder}/guide/${encodeURIComponent(chapter)}.html`;
+  return `${folder}${pagePaths[pageKey] || "/"}`;
+}
+
+// The language this page shows: the folder of its address, English without one.
+const pageLanguage = pathLanguage() || "en";
+
+// The language a reader picked from the menu or the language links (kept across visits), or else the first language
+// their browser asks for that the site has. Storage may be blocked; the browser's languages are used then.
+function preferredLanguage() {
   try {
-    return new URLSearchParams(location.search).get("chapter") || "";
+    const stored = knownLanguage(localStorage.getItem("camHubSiteLanguage"));
+    if (stored && localStorage.getItem("camHubSiteLanguageManual") === "1") return stored;
   } catch {
-    return "";
+    // No storage: fall through to the browser's languages.
+  }
+  const languages = navigator.languages?.length ? navigator.languages : [navigator.language || "en"];
+  return supportedLanguageForPreferences(languages);
+}
+
+// Remembers a language the reader chose, so a plain (English) address does not send them elsewhere next time.
+function rememberLanguage(language) {
+  try {
+    localStorage.setItem("camHubSiteLanguage", language);
+    localStorage.setItem("camHubSiteLanguageManual", "1");
+  } catch {
+    // Not essential: the address already names the language.
   }
 }
 
-// The query part of a site address: the language first (when there is one), then `rest` ([name, value] pairs) in
-// order, so the same place always gets the same address. "" when there is nothing to say.
-function addressQuery(language, rest = []) {
-  const params = new URLSearchParams();
-  if (language) params.set("lang", language);
-  rest.forEach(([name, value]) => params.append(name, value));
+// Where this address should go instead, or "" to stay: an old `?lang=` / `?chapter=` address goes to the file of that
+// language and chapter, and a plain (English) address goes to the reader's own language (`preferredLanguage`) unless
+// that is English. Other query parameters (campaign tokens) and the #place are kept. WHY a redirect and not a switch
+// in place: every language now has its own file, so the address on screen, a shared link and the canonical link name
+// the language actually shown. Google's crawler asks for English and stays on the plain address (its x-default).
+//
+// 2026-11-12 (review): a plain address reached from another page of this site stays English - the reader got there by
+// choosing English (every link on a page in another language keeps its folder), which must work even when storage is
+// blocked and the choice cannot be remembered; an old `?lang=` address is an explicit choice and is remembered.
+// The same rule runs earlier, before the page is drawn, in the inline script build_site.py puts into English pages.
+function addressRedirect() {
+  if (prerendering) return "";
+  let params;
+  try {
+    params = new URLSearchParams(location.search);
+  } catch {
+    return "";
+  }
+  const named = knownLanguage(params.get("lang"));
+  if (named) rememberLanguage(named);
+  let fromThisSite = false;
+  try {
+    fromThisSite = Boolean(document.referrer) && new URL(document.referrer).origin === location.origin;
+  } catch {
+    // No usable referrer: treat as an outside visit.
+  }
+  const language = pathLanguage() || named || (fromThisSite ? "en" : preferredLanguage());
+  const chapter = page === "guide" ? knownChapter(pathChapter() || params.get("chapter")) : "";
+  params.delete("lang");
+  params.delete("chapter");
   const query = params.toString();
-  return query ? `?${query}` : "";
+  const target = `${pagePath(page, language, chapter)}${query ? `?${query}` : ""}${location.hash}`;
+  return target === `${location.pathname}${location.search}${location.hash}` ? "" : target;
 }
 
-// The public address of this page in a language: English has the plain address, every other language `?lang=<code>`.
-// On the manual it also names the chapter on screen (`guideAddressChapter`, 2026-11-04).
+// The full address of this page in `language`; on the manual, of the chapter on screen.
 function languageAddress(language) {
-  const path = pagePaths[page] || location.pathname;
-  const chapter = page === "guide" ? guideAddressChapter() : "";
-  return `${siteOrigin}${path}${addressQuery(language && language !== "en" ? language : "", chapter ? [["chapter", chapter]] : [])}`;
+  return `${siteOrigin}${pagePath(page, language, page === "guide" ? guideAddressChapter() : "")}`;
 }
 
 // Text of a translation that may contain markup, for the description tag. A <template> keeps the markup inert.
@@ -832,65 +903,138 @@ function plainText(html) {
   return template.content.textContent.replace(/\s+/g, " ").trim();
 }
 
-// Points the canonical link at the address of what is on screen. On the manual the language addresses (hreflang) name
-// the chapter on screen too (2026-11-04), so the languages of each chapter point at each other.
-function updateAddressTags() {
-  let canonical = document.querySelector('link[rel="canonical"]');
-  if (!canonical) {
-    canonical = document.createElement("link");
-    canonical.rel = "canonical";
-    document.head.append(canonical);
+// The <head> element matching `selector`, created by `make` and appended when the page has none.
+function headElement(selector, make) {
+  let element = document.head.querySelector(selector);
+  if (!element) {
+    element = make();
+    document.head.append(element);
   }
-  // Without a language in the address the plain (English) address is canonical, whatever the browser chose to show.
-  canonical.href = languageAddress(explicitLanguage);
-  if (page !== "guide") return;
-  const chapter = guideAddressChapter();
-  document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((link) => {
-    if (!link.dataset.base) link.dataset.base = link.getAttribute("href");
-    const base = new URL(link.dataset.base);
-    const language = base.searchParams.get("lang") || "";
-    link.href = `${base.origin}${base.pathname}${addressQuery(language, chapter ? [["chapter", chapter]] : [])}`;
-  });
+  return element;
 }
 
-// Brings the canonical link, the description tag and the site's own links in line with the language on screen.
+// Sets a <meta> tag's content (name= or property=), creating the tag when needed.
+function setMetaTag(attribute, key, content) {
+  headElement(`meta[${attribute}="${key}"]`, () => {
+    const meta = document.createElement("meta");
+    meta.setAttribute(attribute, key);
+    return meta;
+  }).setAttribute("content", content);
+}
+
+// `text` cut to about one search-result snippet (160 Latin letters; a CJK character counts as two): at the last sentence
+// end that fits, else the last space, else a hard cut, with "…" when anything was cut. Review 2026-11-12: chapter
+// summaries ran up to 700 characters.
+function snippet(text, limit = 160) {
+  const chars = [...String(text || "").trim()];
+  let width = 0;
+  let end = chars.length;
+  for (let i = 0; i < chars.length; i += 1) {
+    width += /[\u2e80-\uffef]/.test(chars[i]) ? 2 : 1;
+    if (width > limit) {
+      end = i;
+      break;
+    }
+  }
+  if (end === chars.length) return chars.join("");
+  const head = chars.slice(0, end).join("");
+  const sentence = Math.max(...["。", "．", "！", "？", ". ", "! ", "? ", "؟ "].map((mark) => head.lastIndexOf(mark)));
+  if (sentence > head.length * 0.5) return head.slice(0, sentence + 1).trim();
+  const space = head.lastIndexOf(" ");
+  return `${(space > head.length * 0.6 ? head.slice(0, space) : head).replace(/[\s,，、;；:：—-]+$/, "")}…`;
+}
+
+// The page description (search result snippet and social card): `text`, or the hand-written one of the file.
+function setDescription(text) {
+  const content = text || staticDescription;
+  setMetaTag("name", "description", content);
+  setMetaTag("property", "og:description", content);
+}
+
+// Links to this page in every language, at the foot of every page (2026-11-12). WHY: Google follows only <a href>
+// links, and the language menu is a <select>, so the other languages of a page were reachable only through the
+// hreflang tags in <head>. These are plain links a crawler can follow and a reader can use without the menu.
+function renderLanguageLinks() {
+  const nav = document.getElementById("language-links");
+  if (!nav) return;
+  const chapter = page === "guide" ? guideAddressChapter() : "";
+  nav.replaceChildren(...languageChoices.map(([code, label]) => {
+    const link = document.createElement("a");
+    link.setAttribute("href", pagePath(page, code, chapter));
+    link.hreflang = code;
+    link.lang = code;
+    link.dataset.languageLink = code;
+    if (code === pageLanguage) link.setAttribute("aria-current", "true");
+    link.textContent = label;
+    return link;
+  }));
+}
+
+// Keeps the head in line with what is on screen (2026-11-12): the canonical link (this file's own address), one
+// hreflang link per language plus x-default (the English address), the social card's title and address, and the
+// language links at the foot - also after the manual opens another chapter in place. The pre-rendered files carry the
+// same values, so the head never changes between the file Google fetches and the page Google renders.
+function updateAddressTags() {
+  const canonical = headElement('link[rel="canonical"]', () => Object.assign(document.createElement("link"), { rel: "canonical" }));
+  canonical.setAttribute("href", languageAddress(pageLanguage));
+  document.head.querySelectorAll('link[rel="alternate"][hreflang]').forEach((link) => link.remove());
+  let previous = canonical;
+  [["x-default", "en"], ...languageChoices.map(([code]) => [code, code])].forEach(([hreflang, code]) => {
+    const link = document.createElement("link");
+    link.rel = "alternate";
+    link.setAttribute("hreflang", hreflang);
+    link.setAttribute("href", languageAddress(code));
+    previous.after(link);
+    previous = link;
+  });
+  setMetaTag("property", "og:url", canonical.getAttribute("href"));
+  setMetaTag("property", "og:title", document.title);
+  renderLanguageLinks();
+}
+
+// Brings the head and the site's own links in line with the language on screen. Links to the site's pages without a
+// language folder (as templates and translations write them) get this page's folder; query and #place are kept.
 function updateLanguageAddress(language, pageData) {
+  // English keeps the hand-written description of the file; other languages use the page summary in their language.
+  const summary = language !== "en" && typeof pageData.summary === "string" ? snippet(plainText(pageData.summary)) : "";
+  setDescription(summary);
   updateAddressTags();
 
-  // English keeps the hand-written description in the HTML; other languages use the page summary in their language.
-  const description = document.querySelector('meta[name="description"]');
-  if (description) {
-    const summary = language !== "en" && typeof pageData.summary === "string" ? plainText(pageData.summary) : "";
-    description.content = summary || staticDescription;
-  }
+  localizeSiteLinks(document, language);
+}
 
-  document.querySelectorAll("a[href]").forEach((link) => {
+// Gives links to the site's pages without a language folder (as templates, translations and the manual's text write
+// them: "support.html", "./", "guide.html#plans") the address of that page in `language`; query and #place are kept.
+// 2026-11-12 (review): also run on each manual chapter as it is inserted - its relative "support.html" pointed into
+// /guide/ once chapters became files of their own.
+function localizeSiteLinks(root, language) {
+  root.querySelectorAll("a[href]").forEach((link) => {
+    if (link.dataset.languageLink) return;
     const href = link.getAttribute("href");
     const hashAt = href.indexOf("#");
     const hash = hashAt >= 0 ? href.slice(hashAt) : "";
     const beforeHash = hashAt >= 0 ? href.slice(0, hashAt) : href;
     const queryAt = beforeHash.indexOf("?");
     const path = queryAt >= 0 ? beforeHash.slice(0, queryAt) : beforeHash;
-    // Hash-only links (chapters of the manual) and anything that is not one of the site's own pages stay as they are.
+    // Hash-only links and anything that is not one of the site's own pages stay as they are.
     if ((!path && queryAt < 0) || !sitePageLink.test(path)) return;
-    // The language goes first, as in the canonical address (`addressQuery`).
-    const rest = [...new URLSearchParams(queryAt >= 0 ? beforeHash.slice(queryAt + 1) : "")].filter(([name]) => name !== "lang");
-    link.setAttribute("href", `${path}${addressQuery(explicitLanguage || "", rest)}${hash}`);
+    const file = path.replace(/^\.?\//, "") || "index.html";
+    const key = file === "index.html" ? "home" : file.replace(/\.html$/, "");
+    const params = new URLSearchParams(queryAt >= 0 ? beforeHash.slice(queryAt + 1) : "");
+    params.delete("lang");
+    const query = params.toString();
+    link.setAttribute("href", `${pagePath(key, language)}${query ? `?${query}` : ""}${hash}`);
   });
 }
 
-function preferredLanguage() {
-  if (explicitLanguage) return explicitLanguage;
-  const stored = localStorage.getItem("camHubSiteLanguage");
-  const isManual = localStorage.getItem("camHubSiteLanguageManual") === "1";
-  if (isManual && stored && translations[stored]) return stored;
-
-  const languages = navigator.languages?.length ? navigator.languages : [navigator.language || "en"];
-  return supportedLanguageForPreferences(languages);
-}
-
+// 2026-11-12: storage may be blocked (private windows, some embedded views); the theme then follows the system.
 function preferredTheme() {
-  const stored = localStorage.getItem("camHubSiteTheme");
+  let stored = null;
+  try {
+    stored = localStorage.getItem("camHubSiteTheme");
+  } catch {
+    // Not essential.
+  }
   return ["auto", "light", "dark"].includes(stored) ? stored : "auto";
 }
 
@@ -898,7 +1042,11 @@ function applyTheme(theme) {
   if (theme === "auto") document.documentElement.removeAttribute("data-theme");
   else document.documentElement.dataset.theme = theme;
   themeSelect.value = theme;
-  localStorage.setItem("camHubSiteTheme", theme);
+  try {
+    localStorage.setItem("camHubSiteTheme", theme);
+  } catch {
+    // Not essential.
+  }
 }
 
 function renderMeta(items) {
@@ -958,27 +1106,27 @@ function renderPlansChapter(plans, number) {
 
 function renderProduct(data) {
   const productVisuals = [
-    ["assets/app-add-device.jpg", "DEVICE SETUP", "devices"],
-    ["assets/app-channels.jpg", "CHANNEL SELECTION", "channels"],
-    ["assets/app-liveview.jpg", "LIVEVIEW MIX", "mix"],
-    ["assets/app-playback.jpg", "PLAYBACK", "playback"],
-    ["assets/app-backup.jpg", "ENCRYPTED BACKUP", "backup"],
-    ["assets/app-layouts.jpg", "LIVEVIEW LAYOUTS", "compatibility"]
+    ["/assets/app-add-device.jpg", "DEVICE SETUP", "devices"],
+    ["/assets/app-channels.jpg", "CHANNEL SELECTION", "channels"],
+    ["/assets/app-liveview.jpg", "LIVEVIEW MIX", "mix"],
+    ["/assets/app-playback.jpg", "PLAYBACK", "playback"],
+    ["/assets/app-backup.jpg", "ENCRYPTED BACKUP", "backup"],
+    ["/assets/app-layouts.jpg", "LIVEVIEW LAYOUTS", "compatibility"]
   ];
 
   const wikiVisuals = {
     devices: [
-      ["assets/app-add-device.jpg", "ADD DEVICE"],
-      ["assets/app-channels.jpg", "CHANNEL MANAGEMENT"]
+      ["/assets/app-add-device.jpg", "ADD DEVICE"],
+      ["/assets/app-channels.jpg", "CHANNEL MANAGEMENT"]
     ],
     mix: [
-      ["assets/app-liveview.jpg", "LIVEVIEW MIX"],
-      ["assets/app-layouts.jpg", "17 FULL-SCREEN LAYOUTS"]
+      ["/assets/app-liveview.jpg", "LIVEVIEW MIX"],
+      ["/assets/app-layouts.jpg", "17 FULL-SCREEN LAYOUTS"]
     ],
-    viewing: [["assets/app-playback.jpg", "LIVE & PLAYBACK"]],
-    backup: [["assets/app-backup.jpg", "ENCRYPTED ICLOUD BACKUP"]],
-    preferences: [["assets/app-settings.jpg", "APP SETTINGS"]],
-    "tv-control": [["assets/app-apple-tv.jpg", "APPLE TV LIVEVIEW MIX"]]
+    viewing: [["/assets/app-playback.jpg", "LIVE & PLAYBACK"]],
+    backup: [["/assets/app-backup.jpg", "ENCRYPTED ICLOUD BACKUP"]],
+    preferences: [["/assets/app-settings.jpg", "APP SETTINGS"]],
+    "tv-control": [["/assets/app-apple-tv.jpg", "APPLE TV LIVEVIEW MIX"]]
   };
 
   if (data.wiki) {
@@ -1119,7 +1267,21 @@ const guideLanguages = ["zh-Hant", "zh-Hans", "en", "ja", "ko", "de", "es", "es-
 // languages the page asks for the local file first and falls back to the English one when it is missing or fails.
 const guideLocalMedia = new Set(["ja"]);
 // Files a language folder does not have (known gaps): the English file is used without asking for the local one first.
-const guideLocalGaps = { ja: new Set(["backup-icloud.jpg"]) };
+// 2026-11-12: the full list (it had one name, so every reader's browser asked for 35 missing Japanese pictures first);
+// build_site.py compares it with the folder on every build and prints the list to use when they differ.
+const guideLocalGaps = {
+  ja: new Set([
+    "add-advanced.jpg", "add-connect-using.jpg", "add-https.jpg", "add-twitch.jpg", "add-youtube.jpg",
+    "backup-swipe.jpg", "device-credentials-banner.jpg", "device-edit-menu.jpg",
+    "device-https.jpg", "device-password-missing.jpg", "devices-add-menu.jpg", "disk-health-recorder.jpg",
+    "disk-health-row.jpg", "duo-lvm-canvases.png", "duo-open-flat.png", "duo-single-book.png",
+    "duo-single-table.png", "edit-credentials.jpg", "lvm-move-picker.jpg", "lvm-page-switch.jpg",
+    "lvm-portrait-wall.jpg", "lvm-preview-grid.jpg", "playback-calendar.jpg", "settings-lvm-pages.jpg",
+    "settings-user-manual.jpg", "single-clip-landscape.jpg", "single-clip-recording.jpg", "single-clip-sheet.jpg",
+    "single-ptz-aim.jpg", "single-talk.jpg", "snmp-settings.jpg", "tools-demo-devices.jpg",
+    "trouble-health-snmp.jpg", "watch-buttons.jpg", "web-stream-terms.jpg"
+  ])
+};
 const guideEls = page === "guide" ? {
   main: document.querySelector("main.guide"),
   article: document.getElementById("guide-content"),
@@ -1158,26 +1320,26 @@ function guideHashId() {
   }
 }
 
-// One address per chapter (2026-11-04): a place in the manual is `guide.html?chapter=<chapter>#<place>` - the chapter
-// in the query (none for the first one), the place inside it after #. WHY: a search engine ignores everything after #,
-// so while the chapters had only #addresses it saw the first chapter of each language and nothing else. Older #-only
-// links still work: the # names the place, and the chapter that holds it opens.
+// One address per chapter: a place in the manual is the chapter's own file plus the place inside it after #
+// (/guide/devices.html#devices-add, /ja/guide/devices.html#devices-add; the first chapter is /guide.html). WHY: a search
+// engine ignores everything after #, so each chapter needs an address of its own (2026-11-04: `?chapter=`; 2026-11-12:
+// a real file, so the address serves that chapter's text before any script runs). Older #-only links still work: the
+// # names the place, and the chapter that holds it opens.
 function guideChapterHref(chapterId, targetId = chapterId) {
-  const first = guide.data?.chapters[0]?.id;
-  const rest = chapterId && chapterId !== first ? [["chapter", chapterId]] : [];
+  const first = guide.data?.chapters[0]?.id || guideFirstChapter;
   const hash = targetId && targetId !== chapterId ? `#${encodeURIComponent(targetId)}` : "";
-  return `guide.html${addressQuery(explicitLanguage || "", rest)}${hash}`;
+  return `${pagePath("guide", pageLanguage, chapterId === first ? "" : chapterId)}${hash}`;
 }
 
-// The chapter the canonical address names: the one on screen, or before the manual has loaded the one the address
-// asks for; "" for the first chapter.
+// The chapter the canonical address names: the one on screen, or before the manual has loaded the one the path names;
+// "" for the first chapter.
 function guideAddressChapter() {
-  if (!guide.chapter || !guide.data) return addressChapter();
+  if (!guide.chapter || !guide.data) return pathChapter();
   return guide.chapter === guide.data.chapters[0] ? "" : guide.chapter.id;
 }
 
-// The place in the manual a link leads to - its #id, else its ?chapter=, else the first chapter - or "" when the link
-// leaves this page (another page, another language) or names nothing the manual has.
+// The place in the manual a link leads to - its #id, else the chapter its path names, else the first chapter - or ""
+// when the link leaves this manual (another page, another language) or names nothing the manual has.
 function guideLinkTarget(link) {
   let url;
   let id = "";
@@ -1187,9 +1349,9 @@ function guideLinkTarget(link) {
   } catch {
     return "";
   }
-  const here = new URLSearchParams(location.search).get("lang") || "";
-  if (url.origin !== location.origin || url.pathname !== location.pathname || (url.searchParams.get("lang") || "") !== here) return "";
-  if (!id) id = url.searchParams.get("chapter") || guide.data.chapters[0].id;
+  const chapter = pathChapter(url.pathname);
+  if (url.origin !== location.origin || url.pathname !== pagePath("guide", pageLanguage, chapter)) return "";
+  if (!id) id = chapter || guide.data.chapters[0].id;
   return guide.data.byId.has(id) ? id : "";
 }
 
@@ -1211,7 +1373,13 @@ function guideLocalPath(path, language) {
   if (!guideLocalMedia.has(language)) return path;
   const gaps = guideLocalGaps[language];
   if (gaps && gaps.has(path.slice(path.lastIndexOf("/") + 1))) return path;
-  return path.replace(/^(guide\/(?:img|vid)\/)([^/]+)$/, `$1${language}/$2`);
+  return path.replace(/^(\/?guide\/(?:img|vid)\/)([^/]+)$/, `$1${language}/$2`);
+}
+
+// A path the manual's text writes relative to the site root ("guide/img/x.jpg") as a root-absolute one (2026-11-12):
+// the page reading it may be /ja/guide/lvm.html, where a relative path would point into the wrong folder.
+function guideSitePath(path) {
+  return path && /^(?:guide|assets)\//.test(path) ? `/${path}` : path;
 }
 
 function guidePrepare(section, language) {
@@ -1219,7 +1387,7 @@ function guidePrepare(section, language) {
     const w = img.getAttribute("width");
     const h = img.getAttribute("height");
     if (w && h) img.style.aspectRatio = `${w} / ${h}`;
-    const english = img.getAttribute("src");
+    const english = guideSitePath(img.getAttribute("src"));
     const local = guideLocalPath(english, language);
     img.dataset.src = local;
     if (local !== english) img.dataset.fallback = english;
@@ -1227,13 +1395,13 @@ function guidePrepare(section, language) {
     img.setAttribute("src", GUIDE_BLANK);
   });
   section.querySelectorAll("video[src]").forEach((clip) => {
-    const english = clip.getAttribute("src");
+    const english = guideSitePath(clip.getAttribute("src"));
     const local = guideLocalPath(english, language);
     clip.dataset.src = local;
     if (local !== english) clip.dataset.fallback = english;
     clip.removeAttribute("src");
     if (clip.hasAttribute("poster")) {
-      const englishPoster = clip.getAttribute("poster");
+      const englishPoster = guideSitePath(clip.getAttribute("poster"));
       const localPoster = guideLocalPath(englishPoster, language);
       clip.dataset.poster = localPoster;
       if (localPoster !== englishPoster) clip.dataset.fallbackPoster = englishPoster;
@@ -1260,7 +1428,8 @@ function guideParse(markup, language) {
   template.content.querySelectorAll("section.chapter[id]").forEach((section) => {
     const heading = section.querySelector(":scope > h2");
     if (!heading) return;
-    const chapter = { id: section.id, num: guideText(heading.querySelector(".num")), title: guideHeadingText(heading), subs: [], targets: [], html: "" };
+    // 2026-11-12: `lead` (the chapter's one-sentence summary) becomes the description of the chapter's file.
+    const chapter = { id: section.id, num: guideText(heading.querySelector(".num")), title: guideHeadingText(heading), lead: guideText(section.querySelector(":scope > p.lead")), subs: [], targets: [], html: "" };
     section.querySelectorAll(".sop[id], h3").forEach((element) => {
       if (element.matches("h3")) {
         if (element.closest(".sop")) return;
@@ -1284,7 +1453,7 @@ function guideParse(markup, language) {
 
 function guideFetch(manualLanguage) {
   if (!guide.cache.has(manualLanguage)) {
-    const request = fetch(`guide/content.${manualLanguage}.html`, { cache: "no-cache" }).then((response) => {
+    const request = fetch(`/guide/content.${manualLanguage}.html`, { cache: "no-cache" }).then((response) => {
       if (!response.ok) throw Object.assign(new Error(`HTTP ${response.status}`), { status: response.status });
       return response.text();
     }).then((markup) => {
@@ -1661,10 +1830,29 @@ function guideShow(chapter) {
     const target = guide.data?.byId.get(id);
     if (target) link.setAttribute("href", guideChapterHref(target.id, id));
   });
+  // 2026-11-12: each chapter has its own title and description (the first chapter keeps the manual's), and an old
+  // #address that opened another chapter on the plain manual address is replaced by that chapter's own address.
+  localizeSiteLinks(article, pageLanguage);
+  // Review 2026-11-12: "<chapter> — Cam Hub <Manual>" keeps titles short enough for a result line, the page heading
+  // names the chapter, and the description is cut to about one result snippet.
+  const first = chapter === guide.data.chapters[0];
+  const heading = document.querySelector(".page-hero h1");
+  document.title = first ? guide.labels.documentTitle : `${chapter.title} — Cam Hub ${plainText(guide.locale?.navGuide || "")}`.trim();
+  if (heading) heading.textContent = first ? plainText(guide.labels.title || heading.textContent) : chapter.title;
+  setDescription(snippet(first || !chapter.lead ? plainText(guide.labels.summary || "") : chapter.lead));
+  const wanted = pagePath("guide", pageLanguage, guideAddressChapter());
+  if (!prerendering && location.pathname !== wanted) {
+    try {
+      history.replaceState(history.state, "", `${wanted}${location.search}${location.hash}`);
+    } catch {
+      // The chapter still shows; only the address keeps the older form.
+    }
+  }
   updateAddressTags();
   guideRenderPager();
   guideMetrics();
   guideObserve();
+  window.__camHubRendered = true;
 }
 
 // Opens the chapter that holds `id` (a chapter, a sub-section or any element inside one; "" = the first chapter)
@@ -1715,6 +1903,7 @@ function guideFail(text) {
   guideEls.layout.classList.remove("has-toc");
   guideEls.current.textContent = "";
   guideShowMessage(text, true);
+  window.__camHubRendered = "failed"; // 2026-11-12: build_site.py stops instead of saving a manual without text
 }
 
 async function guideLoad(manualLanguage) {
@@ -1749,7 +1938,7 @@ async function guideLoad(manualLanguage) {
     id = guideHashId();
     scroll = data.byId.has(id);
     // 2026-11-04: without a known #place, the chapter the address names (`?chapter=`) opens at its start.
-    if (!scroll) id = data.byId.has(addressChapter()) ? addressChapter() : "";
+    if (!scroll) id = data.byId.has(pathChapter()) ? pathChapter() : "";
   } else if (keepSection && data.byId.has(keepSection)) {
     id = keepSection;
     scroll = true;
@@ -1865,9 +2054,9 @@ function initGuide() {
     event.preventDefault();
     guideSetToc(false);
     const url = new URL(link.getAttribute("href"), location.href);
-    if (`${location.search}${location.hash}` !== `${url.search}${url.hash}`) {
+    if (`${location.pathname}${location.search}${location.hash}` !== `${url.pathname}${url.search}${url.hash}`) {
       rememberPosition();
-      history.pushState(null, "", `${location.pathname}${url.search}${url.hash}`);
+      history.pushState(null, "", `${url.pathname}${url.search}${url.hash}`); // 2026-11-12: the chapter's own file
     }
     guide.hash = location.hash;
     guideOpen(id, { smooth: true });
@@ -1877,7 +2066,7 @@ function initGuide() {
   const followAddress = (event) => {
     if (event.type === "hashchange" && location.hash === guide.hash) return;
     guide.hash = location.hash;
-    const id = guideHashId() || addressChapter(); // 2026-11-04: a chapter address without a #place
+    const id = guideHashId() || pathChapter(); // a chapter address without a #place (2026-11-12: the path names it)
     if (id && !guide.data?.byId.has(id)) return;
     const y = event.type === "popstate" && event.state && typeof event.state.guideY === "number" ? event.state.guideY : null;
     guideOpen(id, { y });
@@ -1924,7 +2113,7 @@ function initGuide() {
   window.addEventListener("afterprint", guidePrintEnd);
 }
 
-function applyLanguage(language, persist = false) {
+function applyLanguage(language) {
   const locale = translations[language] || translations.en;
   // A page that a language has no texts for (the device-differences page, until it is translated) shows English.
   const localizedPageData = locale[page] || translations.en[page] || locale.home;
@@ -1955,25 +2144,27 @@ function applyLanguage(language, persist = false) {
     if (page === "guide") renderGuide(language, locale, pageData);
     updateLanguageAddress(language, pageData);
     languageSelect.value = language;
-    if (persist) {
-      localStorage.setItem("camHubSiteLanguage", language);
-      localStorage.setItem("camHubSiteLanguageManual", "1");
-    }
     document.body.classList.remove("is-switching");
+    // build_site.py waits for this (the manual waits for its chapter instead, see guideShow).
+    if (page !== "guide") window.__camHubRendered = true;
   }, 70);
 }
 
-// A language picked from the menu also goes into the address (2026-11-04), so a copied link opens in that language.
+// A language picked from the menu opens this page's file in that language (2026-11-12: every language has its own
+// file), at the same chapter and place of the manual; the choice is remembered (`rememberLanguage`).
 languageSelect.addEventListener("change", (event) => {
-  explicitLanguage = event.target.value;
-  try {
-    // The language first, as in every other address of the site (`addressQuery`).
-    const rest = [...new URLSearchParams(location.search)].filter(([name]) => name !== "lang");
-    history.replaceState(history.state, "", `${location.pathname}${addressQuery(explicitLanguage, rest)}${location.hash}`);
-  } catch {
-    // The page still switches; only the address keeps its old language.
-  }
-  applyLanguage(event.target.value, true);
+  const language = knownLanguage(event.target.value) || "en";
+  rememberLanguage(language);
+  location.assign(`${pagePath(page, language, page === "guide" ? guideAddressChapter() : "")}${location.hash}`);
+});
+// A page restored by Back from the browser's cache still has the language picked before leaving in its menu.
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) languageSelect.value = pageLanguage;
+});
+// The language links at the foot remember the choice as well, so a reader who picks English stays on English.
+document.getElementById("language-links")?.addEventListener("click", (event) => {
+  const link = event.target.closest?.("a[data-language-link]");
+  if (link) rememberLanguage(link.dataset.languageLink);
 });
 themeSelect.addEventListener("change", (event) => applyTheme(event.target.value));
 
@@ -1988,7 +2179,21 @@ document.querySelectorAll(".navlinks a").forEach((link) => link.addEventListener
   menuButton?.setAttribute("aria-expanded", "false");
 }));
 
-if (page === "guide") initGuide();
-loadWebAnalytics();
-applyTheme(preferredTheme());
-applyLanguage(preferredLanguage());
+// 2026-11-12: an older or language-less address is sent on before anything is drawn (`addressRedirect`); an address
+// that only loses its old `?lang=` / `?chapter=` parameters is tidied in place.
+const redirectTo = addressRedirect();
+if (redirectTo && new URL(redirectTo, location.href).pathname !== location.pathname) {
+  location.replace(redirectTo);
+} else {
+  if (redirectTo) {
+    try {
+      history.replaceState(history.state, "", redirectTo);
+    } catch {
+      // Not essential.
+    }
+  }
+  if (page === "guide") initGuide();
+  if (!prerendering) loadWebAnalytics();
+  applyTheme(preferredTheme());
+  applyLanguage(pageLanguage);
+}

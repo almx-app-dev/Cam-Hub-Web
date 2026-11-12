@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en" dir="ltr"><head>
+  <meta charset="utf-8"><script>(function () {
+  var codes = ["zh-Hant", "zh-Hans", "ja", "ko", "de", "es", "es-MX", "fr", "sl", "ar"];
+
+  function pickLanguage(preferences) {
+    var direct = { en: "en", ar: "ar", de: "de", es: "es", fr: "fr", ja: "ja", ko: "ko", sl: "sl" };
+    for (var i = 0; i < preferences.length; i += 1) {
+      var tag = String(preferences[i] || "").replace(/_/g, "-");
+      if (/^es-mx(?:-|$)/i.test(tag)) return "es-MX";
+      var base = tag.split("-")[0].toLowerCase();
+      if (direct[base]) return direct[base];
+      if (base !== "zh") continue;
+      try {
+        var locale = new Intl.Locale(tag).maximize();
+        return locale.script === "Hant" || ["TW", "HK", "MO"].indexOf(locale.region) >= 0 ? "zh-Hant" : "zh-Hans";
+      } catch (error) {
+        return /(?:^|-)Hant(?:-|$)|(?:^|-)(?:TW|HK|MO)(?:-|$)/i.test(tag) ? "zh-Hant" : "zh-Hans";
+      }
+    }
+    return "en";
+  }
+  window.__camHubEarlyPick = pickLanguage;
+
+  try {
+    if (window.__camHubPrerender || /[?&](?:lang|chapter)=/i.test(location.search)) return;
+    if (document.referrer && new URL(document.referrer).origin === location.origin) return;
+    var chosen = null;
+    try {
+      if (localStorage.getItem("camHubSiteLanguageManual") === "1") chosen = localStorage.getItem("camHubSiteLanguage");
+    } catch (error) {
+      chosen = null;
+    }
+    var target = chosen === "en" || codes.indexOf(chosen) >= 0 ? chosen
+      : pickLanguage(navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"]);
+    if (codes.indexOf(target) < 0) return;
+    var path = location.pathname === "/index.html" ? "/" : location.pathname;
+    location.replace("/" + target + path + location.search + location.hash);
+  } catch (error) {
+  }
+})();</script><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="apple-itunes-app" content="app-id=6792057195"><meta name="color-scheme" content="dark light">
+  <meta name="description" content="The Devices tab lists every recorder and camera that has been added, together with YouTube and Twitch streams added as cameras.">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="Cam Hub"><meta property="og:image" content="https://cam-hub.almx.cc/assets/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+  <title>The Devices tab and channels — Cam Hub Manual</title><link rel="icon" href="/assets/icon-48.png" sizes="48x48"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/icon-180.png"><link rel="stylesheet" href="/styles.css?v=20261112-1"><link rel="stylesheet" href="/guide.css?v=20261030-1">
+<meta property="og:description" content="The Devices tab lists every recorder and camera that has been added, together with YouTube and Twitch streams added as cameras."><link rel="canonical" href="https://cam-hub.almx.cc/guide/devices.html"><link rel="alternate" hreflang="x-default" href="https://cam-hub.almx.cc/guide/devices.html"><link rel="alternate" hreflang="en" href="https://cam-hub.almx.cc/guide/devices.html"><link rel="alternate" hreflang="zh-Hant" href="https://cam-hub.almx.cc/zh-Hant/guide/devices.html"><link rel="alternate" hreflang="zh-Hans" href="https://cam-hub.almx.cc/zh-Hans/guide/devices.html"><link rel="alternate" hreflang="ja" href="https://cam-hub.almx.cc/ja/guide/devices.html"><link rel="alternate" hreflang="ko" href="https://cam-hub.almx.cc/ko/guide/devices.html"><link rel="alternate" hreflang="de" href="https://cam-hub.almx.cc/de/guide/devices.html"><link rel="alternate" hreflang="es" href="https://cam-hub.almx.cc/es/guide/devices.html"><link rel="alternate" hreflang="es-MX" href="https://cam-hub.almx.cc/es-MX/guide/devices.html"><link rel="alternate" hreflang="fr" href="https://cam-hub.almx.cc/fr/guide/devices.html"><link rel="alternate" hreflang="sl" href="https://cam-hub.almx.cc/sl/guide/devices.html"><link rel="alternate" hreflang="ar" href="https://cam-hub.almx.cc/ar/guide/devices.html"><meta property="og:url" content="https://cam-hub.almx.cc/guide/devices.html"><meta property="og:title" content="The Devices tab and channels — Cam Hub Manual"></head>
+<body data-page="guide">
+  <header class="topbar" aria-label="Site header">
+    <a class="brand" href="/"><img src="/assets/icon-96.png" alt="" width="42" height="42"><span><strong>Cam&nbsp;Hub</strong><small data-i18n="topline">Operation manual</small></span></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-controls" data-i18n-aria="menuLabel" aria-label="Open menu"><span></span><span></span><span></span><span class="sr-only" data-i18n="menuLabel">Open menu</span></button>
+    <div class="topbar-controls" id="site-controls"><nav class="navlinks" aria-label="Primary"><a href="/" data-nav="home" data-i18n="navHome">Home</a><a href="/product.html" data-nav="product" data-i18n="navProduct">Product</a><a href="/guide.html" data-nav="guide" data-i18n="navGuide" aria-current="page">Manual</a><a href="/support.html" data-nav="support" data-i18n="navSupport">Support</a><a href="/privacy.html" data-nav="privacy" data-i18n="navPrivacy">Privacy</a><a href="/terms.html" data-nav="terms" data-i18n="navTerms">Terms</a></nav><div class="pickers"><label><span class="sr-only" data-i18n="themeLabel">Appearance</span><select id="themeSelect" aria-label="Theme"><option value="auto" data-i18n="themeAuto" selected="">Auto</option><option value="light" data-i18n="themeLight">Light</option><option value="dark" data-i18n="themeDark">Dark</option></select></label><label><span class="sr-only" data-i18n="languageLabel">Language</span><select id="languageSelect" aria-label="Language"><option value="en" selected="">English</option><option value="zh-Hant">繁體中文</option><option value="zh-Hans">简体中文</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="de">Deutsch</option><option value="es">Español</option><option value="es-MX">Español (México)</option><option value="fr">Français</option><option value="sl">Slovenščina</option><option value="ar">العربية</option></select></label></div><a class="store-pill" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeShort">Get the app</a></div>
+  </header>
+  <main class="inner-page guide" style="--g-topbar: 76px; --g-offset: 88px;">
+    <section class="page-hero"><div class="eyebrow" data-i18n="eyebrow">OPERATION MANUAL</div><h1 data-i18n="title">The Devices tab and channels</h1><p class="summary" data-i18n="summary">Step-by-step instructions for adding devices, live view and recording playback, LiveView Mix walls, sharing, and backup.</p></section>
+    <p class="guide-notice" id="guide-notice" role="status" hidden=""></p>
+    <div id="guide-sentinel" aria-hidden="true"></div>
+    <div class="guide-layout has-toc" id="guide-layout" lang="en" dir="ltr">
+      <aside class="guide-side" id="guide-side">
+        <button class="guide-toc-toggle" id="guide-toc-toggle" type="button" aria-expanded="false" aria-controls="guide-toc" lang="en" dir="ltr"><span class="guide-toc-label" data-i18n="tocLabel">Contents</span><span class="guide-toc-current" id="guide-toc-current">4. The Devices tab and channels</span></button>
+        <nav class="guide-toc" id="guide-toc" aria-label="Contents"><ol><li><a href="/guide.html"><span class="toc-num">1</span><span>Quick start</span></a><ol><li><a href="/guide.html#start-prepare"><span>Before you begin</span></a></li><li><a href="/guide.html#start-path"><span>Shortest path to a live picture</span></a></li><li><a href="/guide.html#start-demo"><span>Trying the app without a device</span></a></li></ol></li><li><a href="/guide/tour.html"><span class="toc-num">2</span><span>The tabs and basic behaviour</span></a><ol><li><a href="/guide/tour.html#tour-tabs"><span>The tabs at a glance</span></a></li><li><a href="/guide/tour.html#tour-launch"><span>What opens when the app starts</span></a></li><li><a href="/guide/tour.html#tour-look"><span>Appearance and language</span></a></li><li><a href="/guide/tour.html#tour-rotate"><span>Turning the device</span></a></li><li><a href="/guide/tour.html#tour-duo"><span>iPhone Duo</span></a></li><li><a href="/guide/tour.html#tour-awake"><span>Screen, background and notifications</span></a></li></ol></li><li><a href="/guide/add.html"><span class="toc-num">3</span><span>Adding a device</span></a><ol><li><a href="/guide/add.html#add-form"><span>The Add Device form</span></a></li><li><a href="/guide/add.html#add-auto"><span>Adding without choosing a brand</span></a></li><li><a href="/guide/add.html#add-methods"><span>Choosing the connection method</span></a></li><li><a href="/guide/add.html#add-https"><span>Adding a device over HTTPS</span></a></li><li><a href="/guide/add.html#add-streams"><span>Adding YouTube live streams and Twitch channels</span></a></li><li><a href="/guide/add.html#add-failed"><span>When adding fails: the checklist</span></a></li><li><a href="/guide/add.html#add-report"><span>Device report (experimental)</span></a></li><li><a href="/guide/add.html#add-scan"><span>Finding devices with the network scan</span></a></li></ol></li><li class="is-current"><a href="/guide/devices.html" class="is-active" aria-current="location"><span class="toc-num">4</span><span>The Devices tab and channels</span></a><ol><li><a href="/guide/devices.html#devices-list"><span>The device list</span></a></li><li><a href="/guide/devices.html#devices-page"><span>The device page</span></a></li><li><a href="/guide/devices.html#devices-credentials"><span>Changing the user name and password of a device</span></a></li><li><a href="/guide/devices.html#devices-password-missing"><span>A device without a saved password</span></a></li><li><a href="/guide/devices.html#devices-https"><span>HTTPS for a saved device</span></a></li><li><a href="/guide/devices.html#devices-health"><span>Disk Health</span></a></li><li><a href="/guide/devices.html#devices-streams"><span>YouTube and Twitch streams</span></a></li><li><a href="/guide/devices.html#devices-states"><span>What a thumbnail shows</span></a></li><li><a href="/guide/devices.html#devices-menu"><span>Channel options (long press)</span></a></li><li><a href="/guide/devices.html#devices-plan"><span>Plan limits and enabling channels</span></a></li><li><a href="/guide/devices.html#devices-choose"><span>Choosing which cameras show</span></a></li><li><a href="/guide/devices.html#devices-fullwall"><span>The full-screen wall of a device</span></a></li><li><a href="/guide/devices.html#devices-quality"><span>SD and HD on device screens</span></a></li></ol></li><li><a href="/guide/live.html"><span class="toc-num">5</span><span>The Live tab and the Full Screen Wall</span></a><ol><li><a href="/guide/live.html#live-tab"><span>The Live tab</span></a></li><li><a href="/guide/live.html#live-quality"><span>SD and HD on a wall</span></a></li><li><a href="/guide/live.html#live-wall"><span>The Full Screen Wall</span></a></li><li><a href="/guide/live.html#live-hide"><span>Hiding cameras without signal</span></a></li></ol></li><li><a href="/guide/single.html"><span class="toc-num">6</span><span>Single-camera view</span></a><ol><li><a href="/guide/single.html#single-open"><span>Opening the view</span></a></li><li><a href="/guide/single.html#single-screen"><span>The parts of the screen</span></a></li><li><a href="/guide/single.html#single-zoom"><span>Zoom and pan</span></a></li><li><a href="/guide/single.html#single-controls"><span>Snapshot, sound and quality</span></a></li><li><a href="/guide/single.html#single-clip"><span>Recording a clip</span></a></li><li><a href="/guide/single.html#single-talk"><span>Two-way talk</span></a></li><li><a href="/guide/single.html#single-picture"><span>Black bars, rotation and landscape</span></a></li><li><a href="/guide/single.html#single-ptz"><span>PTZ control: moving the camera</span></a></li><li><a href="/guide/single.html#single-window"><span>A camera in a window of its own</span></a></li><li><a href="/guide/single.html#single-duo"><span>The view on a folded iPhone Duo</span></a></li><li><a href="/guide/single.html#single-streams"><span>YouTube and Twitch streams</span></a></li><li><a href="/guide/single.html#single-states"><span>Connection states and messages</span></a></li><li><a href="/guide/single.html#single-limits"><span>What is not available</span></a></li></ol></li><li><a href="/guide/playback.html"><span class="toc-num">7</span><span>Recording playback and speed</span></a><ol><li><a href="/guide/playback.html#playback-avail"><span>Where playback is available</span></a></li><li><a href="/guide/playback.html#playback-day"><span>Choosing a day</span></a></li><li><a href="/guide/playback.html#playback-calendar"><span>The recording calendar</span></a></li><li><a href="/guide/playback.html#playback-timeline"><span>Using the timeline</span></a></li><li><a href="/guide/playback.html#playback-list"><span>The list of recordings and the search for people</span></a></li><li><a href="/guide/playback.html#playback-playing"><span>While a recording plays</span></a></li><li><a href="/guide/playback.html#playback-speed"><span>Playback speed</span></a></li><li><a href="/guide/playback.html#playback-landscape"><span>Playback in landscape</span></a></li><li><a href="/guide/playback.html#playback-limits"><span>What is not available</span></a></li></ol></li><li><a href="/guide/lvm.html"><span class="toc-num">8</span><span>LiveView Mix</span></a><ol><li><a href="/guide/lvm.html#lvm-tab"><span>The LiveView Mix tab and its preview</span></a></li><li><a href="/guide/lvm.html#lvm-first"><span>Building a first wall of six cameras</span></a></li><li><a href="/guide/lvm.html#lvm-pick"><span>Choosing cameras and quality</span></a></li><li><a href="/guide/lvm.html#lvm-layout"><span>Adjusting the layout</span></a></li><li><a href="/guide/lvm.html#lvm-custom"><span>Drawing a custom layout</span></a></li><li><a href="/guide/lvm.html#lvm-special"><span>Special layouts: big and small tiles on one wall</span></a></li><li><a href="/guide/lvm.html#lvm-arrange"><span>Arranging the wall and its tiles</span></a></li><li><a href="/guide/lvm.html#lvm-move"><span>Moving a tile into an empty tile</span></a></li><li><a href="/guide/lvm.html#lvm-slots"><span>What a tile can show besides a camera</span></a></li><li><a href="/guide/lvm.html#lvm-watermark"><span>Watermark</span></a></li><li><a href="/guide/lvm.html#lvm-fit"><span>Black bars, edge-to-edge video and the angle of the device</span></a></li><li><a href="/guide/lvm.html#lvm-pages"><span>The portrait page</span></a></li><li><a href="/guide/lvm.html#lvm-canvases"><span>Two canvases on iPhone Duo</span></a></li><li><a href="/guide/lvm.html#lvm-wall"><span>The full-screen wall</span></a></li><li><a href="/guide/lvm.html#lvm-closeup"><span>Opening a single camera</span></a></li><li><a href="/guide/lvm.html#lvm-streams"><span>YouTube and Twitch streams on the wall</span></a></li><li><a href="/guide/lvm.html#lvm-states"><span>When a tile cannot show a camera</span></a></li><li><a href="/guide/lvm.html#lvm-limits"><span>How plan limits affect the wall</span></a></li><li><a href="/guide/lvm.html#lvm-settings"><span>LiveView Mix in Settings</span></a></li><li><a href="/guide/lvm.html#lvm-tv"><span>Differences on Apple TV</span></a></li></ol></li><li><a href="/guide/webhook.html"><span class="toc-num">9</span><span>Control panels and webhooks</span></a><ol><li><a href="/guide/webhook.html#webhook-what"><span>What a control panel does</span></a></li><li><a href="/guide/webhook.html#webhook-add"><span>Adding a control panel to the wall</span></a></li><li><a href="/guide/webhook.html#webhook-templates"><span>Templates</span></a></li><li><a href="/guide/webhook.html#webhook-fields"><span>The settings of a panel</span></a></li><li><a href="/guide/webhook.html#webhook-button"><span>Setting up a button</span></a></li><li><a href="/guide/webhook.html#webhook-use"><span>Pressing a button and reading the result</span></a></li><li><a href="/guide/webhook.html#webhook-wall"><span>How a panel looks on the wall</span></a></li><li><a href="/guide/webhook.html#webhook-watch"><span>Buttons on Apple Watch</span></a></li><li><a href="/guide/webhook.html#ha"><span>Using Home Assistant</span></a></li><li><a href="/guide/webhook.html#webhook-security"><span>Security notes</span></a></li></ol></li><li><a href="/guide/share.html"><span class="toc-num">10</span><span>Sharing and backup</span></a><ol><li><a href="/guide/share.html#share-choose"><span>Comparing the two methods</span></a></li><li><a href="/guide/share.html#share-export"><span>Exporting cameras (creating a code)</span></a></li><li><a href="/guide/share.html#share-lock"><span>Locking a code</span></a></li><li><a href="/guide/share.html#share-import"><span>Importing cameras</span></a></li><li><a href="/guide/share.html#share-contents"><span>What backups and codes contain</span></a></li><li><a href="/guide/share.html#share-icloud"><span>Backing up to iCloud</span></a></li><li><a href="/guide/share.html#share-versions"><span>Several named backups: renaming and deleting</span></a></li><li><a href="/guide/share.html#share-restore"><span>Restoring from iCloud</span></a></li><li><a href="/guide/share.html#share-delete"><span>Deleting all iCloud backups</span></a></li><li><a href="/guide/share.html#share-newphone"><span>Moving devices and walls to a new phone</span></a></li><li><a href="/guide/share.html#share-appletv"><span>Bringing the setup to Apple TV</span></a></li></ol></li><li><a href="/guide/plans.html"><span class="toc-num">11</span><span>Plans and limits</span></a><ol><li><a href="/guide/plans.html#plans-tiers"><span>The allowance of each plan</span></a></li><li><a href="/guide/plans.html#plans-stack"><span>How the two groups of plans combine</span></a></li><li><a href="/guide/plans.html#plans-count"><span>What uses allowance</span></a></li><li><a href="/guide/plans.html#plans-examples"><span>Examples of combinations</span></a></li><li><a href="/guide/plans.html#plans-choose"><span>Choosing which cameras show</span></a></li><li><a href="/guide/plans.html#plans-subscribe"><span>Subscribing, restoring purchases and redeeming a code</span></a></li><li><a href="/guide/plans.html#plans-lapse"><span>When a plan ends or is reduced</span></a></li></ol></li><li><a href="/guide/tools.html"><span class="toc-num">12</span><span>The Tools tab</span></a><ol><li><a href="/guide/tools.html#tools-overview"><span>What the Tools tab contains</span></a></li><li><a href="/guide/tools.html#tools-speedometer"><span>Speedometer and compass</span></a></li></ol></li><li><a href="/guide/settings.html"><span class="toc-num">13</span><span>Settings</span></a><ol><li><a href="/guide/settings.html#settings-overview"><span>The sections of the Settings tab</span></a></li><li><a href="/guide/settings.html#settings-subscription"><span>Subscription</span></a></li><li><a href="/guide/settings.html#settings-quality"><span>Default quality</span></a></li><li><a href="/guide/settings.html#settings-picture"><span>Picture: black bars and edge-to-edge</span></a></li><li><a href="/guide/settings.html#settings-hide"><span>Hide offline cameras</span></a></li><li><a href="/guide/settings.html#settings-lvm"><span>LiveView Mix, its pages and Open on launch</span></a></li><li><a href="/guide/settings.html#settings-backup"><span>Backup and sharing of cameras</span></a></li><li><a href="/guide/settings.html#settings-language"><span>Language</span></a></li><li><a href="/guide/settings.html#settings-reset"><span>Reset: defaults, delete all data, delete iCloud backup</span></a></li><li><a href="/guide/settings.html#settings-legal"><span>Terms of Use and Privacy Policy</span></a></li><li><a href="/guide/settings.html#settings-about"><span>About, the user manual, and what Settings does not contain</span></a></li></ol></li><li><a href="/guide/appletv.html"><span class="toc-num">14</span><span>Apple TV</span></a><ol><li><a href="/guide/appletv.html#appletv-prepare"><span>Set up on an iPhone or iPad first</span></a></li><li><a href="/guide/appletv.html#appletv-bring"><span>Bringing the setup to the Apple TV</span></a></li><li><a href="/guide/appletv.html#appletv-differs"><span>What differs on the Apple TV</span></a></li></ol></li><li><a href="/guide/trouble.html"><span class="toc-num">15</span><span>Troubleshooting</span></a><ol><li><a href="/guide/trouble.html#trouble-start"><span>Where to start</span></a></li><li><a href="/guide/trouble.html#trouble-states"><span>What the empty screens say</span></a></li><li><a href="/guide/trouble.html#trouble-add"><span>A device is added, but it is not reachable</span></a></li><li><a href="/guide/trouble.html#trouble-live"><span>Live view</span></a></li><li><a href="/guide/trouble.html#trouble-playback"><span>Recording playback</span></a></li><li><a href="/guide/trouble.html#trouble-lvm"><span>LiveView Mix</span></a></li><li><a href="/guide/trouble.html#trouble-streams"><span>YouTube and Twitch</span></a></li><li><a href="/guide/trouble.html#trouble-panels"><span>Control panels and webhooks</span></a></li><li><a href="/guide/trouble.html#trouble-health"><span>Disk Health</span></a></li><li><a href="/guide/trouble.html#trouble-share"><span>Sharing, import and iCloud backup</span></a></li><li><a href="/guide/trouble.html#trouble-plans"><span>Plans and purchases</span></a></li><li><a href="/guide/trouble.html#trouble-errors"><span>Other error sentences</span></a></li><li><a href="/guide/trouble.html#trouble-permissions"><span>Permission requests and system dialogs</span></a></li><li><a href="/guide/trouble.html#trouble-contact"><span>Reaching the developer</span></a></li><li><a href="/guide/trouble.html#trouble-faq"><span>Questions and answers</span></a></li></ol></li><li><a href="/guide/brands.html"><span class="toc-num">16</span><span>Supported brands and connection methods</span></a><ol><li><a href="/guide/brands.html#brands-methods"><span>Connection methods</span></a></li><li><a href="/guide/brands.html#brands-matrix"><span>What works with which method</span></a></li><li><a href="/guide/brands.html#brands-profiles"><span>The brands in the list</span></a></li><li><a href="/guide/brands.html#brands-requirements"><span>Requirements and limits</span></a></li><li><a href="/guide/brands.html#brands-recorders"><span>Cameras and recorders</span></a></li><li><a href="/guide/brands.html#brands-prepare"><span>What to prepare on the device</span></a></li><li><a href="/guide/brands.html#brands-activate"><span>Activating a new device</span></a></li><li><a href="/guide/brands.html#brands-compat"><span>The compatibility reference in the app</span></a></li></ol></li><li><a href="/guide/about.html" class="no-num"><span>About this manual</span></a><ol><li><a href="/guide/about.html#about-scope"><span>Scope</span></a></li><li><a href="/guide/about.html#about-conventions"><span>Conventions</span></a></li><li><a href="/guide/about.html#about-help"><span>Where to get help</span></a></li></ol></li></ol></nav>
+      </aside>
+      <article class="guide-article" id="guide-content"><section class="chapter" id="devices">
+  <h2><span class="num">4</span>The Devices tab and channels</h2>
+  <p class="lead">The Devices tab lists every recorder and camera that has been added, together with YouTube and Twitch streams added as cameras. Opening a device shows its channels as live thumbnails. From there, channels are renamed, disabled, paused or shown in a full-screen wall, the user name and password of the device are changed, and the disks of supported devices are checked. The limits of the plan decide which channels can show a picture.</p>
+
+  <h3 id="devices-list">The device list</h3>
+  <p>Path: <span class="ui">Devices</span> tab at the bottom of the screen.</p>
+  <p>Each row shows the name of the device, its model and its address. The icon on the left marks a recorder or a camera. On the right, a connection indicator sits above a label that names the type: <span class="ui">Recorder</span> or <span class="ui">Camera</span>. The indicator reports whether the device accepts a connection on its HTTP port. The check starts every time the row appears on the screen and waits for an answer for about 4 seconds.</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Indicator</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Indicator">Small spinning circle</td><td data-label="Meaning">The check is running.</td></tr>
+      <tr><td data-label="Indicator">Green Wi-Fi symbol</td><td data-label="Meaning">The device answered (<span class="ui">Reachable</span>).</td></tr>
+      <tr><td data-label="Indicator">Red, crossed-out Wi-Fi symbol</td><td data-label="Meaning">The device did not answer (<span class="ui ui-long">Can't reach this device — check the network or firewall</span>). The device may be switched off, on a different network, or blocked by a firewall.</td></tr>
+      <tr><td data-label="Indicator">Red play symbol or purple TV symbol</td><td data-label="Meaning">A YouTube stream or a Twitch channel. These have no device to test; see <a class="xref" href="/guide/devices.html#devices-streams">“YouTube and Twitch streams”</a>.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout note">
+    <strong class="t">The indicator tests the HTTP port only</strong>
+    <p>A device that does not accept connections on the stored HTTP port can show the red symbol while its video works, for example a camera that was added through a brand from the list. The sample cameras use the address <code>demo</code>, which is not a device on the network, and always show the red symbol.</p>
+  </div>
+  <p>The plus button at the top right opens a menu. <span class="ui">Add Device</span> adds a recorder or a camera; see <a class="xref" href="/guide/add.html">Chapter 3, “Adding a device”</a>. Where the services are offered, the menu also holds <span class="ui">YouTube Live Stream</span> and <span class="ui">Twitch Channels</span>, which add a live stream as a camera; see <a class="xref" href="/guide/add.html#add-streams">“Adding YouTube live streams and Twitch channels”</a>.</p>
+  <figure class="phone"><img src="/guide/img/devices-list.jpg" alt="The device list with three recorders and two cameras; each row has a connection indicator and a type label on the right, and Edit and the plus button are at the top" decoding="async" width="900" height="1956" data-src="/guide/img/devices-list.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The device list</figcaption></figure>
+
+  <h4>Opening a device</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap the <span class="ui">Devices</span> tab at the bottom of the screen.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen shows the device list. When no device has been added, the screen shows <span class="ui">No Devices</span>, the text <span class="ui">Add your first camera or recorder to get started.</span> and the <span class="ui">Add Device</span> button; see <a class="xref" href="/guide/add.html">Chapter 3, “Adding a device”</a>.</p>
+      <figure class="phone"><img src="/guide/img/devices-empty.jpg" alt="The Devices tab before any device is added, with the No Devices message and the Add Device button" decoding="async" width="900" height="1956" data-src="/guide/img/devices-empty.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The Devices tab without devices</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap a row in the list.</p>
+      <p class="check"><b class="check-label">Check:</b> The device page opens; see <a class="xref" href="/guide/devices.html#devices-page">“The device page”</a>.</p>
+    </li>
+  </ol>
+
+  <h4>Changing the order of the devices</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap <span class="ui" data-ui="system">Edit</span> in the top-left corner. The button is shown only while at least one device exists.</p>
+      <p class="check"><b class="check-label">Check:</b> A drag handle appears on the right of every row, and the button now reads <span class="ui">Done</span>.</p>
+      <figure class="phone"><img src="/guide/img/devices-edit-mode.jpg" alt="The device list in edit mode, with a drag handle on the right of every row and the Done button at the top left" decoding="async" width="900" height="1956" data-src="/guide/img/devices-edit-mode.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The device list in edit mode</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Touch the handle of a row and drag the row to its new position.</p>
+      <p class="check"><b class="check-label">Check:</b> The row stays at the new position.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Done</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The list leaves edit mode. The order is stored. The device selection list in the <span class="ui">Live</span> tab uses the same order.</p>
+    </li>
+  </ol>
+
+  <h4>Deleting a device</h4>
+  <p>Deleting removes the device from Cam Hub. The device itself is not changed.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Swipe left on the row of the device.</p>
+      <p class="check"><b class="check-label">Check:</b> A <span class="ui">Delete</span> button with a trash symbol appears on the right of the row. Even a full swipe only opens the confirmation; nothing is deleted without it.</p>
+      <figure class="phone"><img src="/guide/img/devices-swipe-delete.jpg" alt="The device list after a swipe to the left on the first row: the row has moved to the left, and a round Delete button with a trash symbol is shown on its right" decoding="async" width="900" height="1956" data-src="/guide/img/devices-swipe-delete.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The Delete button after a swipe to the left</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Delete</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The dialog <span class="ui">Delete this device?</span> appears. It names the device and the number of its cameras and states that the action cannot be undone. When a password is saved for the device, it also states that the password is removed.</p>
+      <figure class="phone"><img src="/guide/img/devices-delete-confirm.jpg" alt="The confirmation dialog Delete this device? with the Delete button, shown over the device list" decoding="async" width="900" height="1947" data-src="/guide/img/devices-delete-confirm.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>The confirmation before a device is deleted</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Delete</span> in the dialog. To keep the device, tap anywhere outside the dialog instead.</p>
+      <p class="check"><b class="check-label">Check:</b> The row disappears. The device, its channels, its saved password, its SNMP settings and its disk readings are removed from this iPhone or iPad. The device is also removed from the LiveView Mix wall, and from the choices of the <span class="ui">Live</span> tab and of <span class="ui">Open on launch</span> when it was selected there.</p>
+    </li>
+  </ol>
+  <p>A deleted recorder no longer counts against the number of recorders that the plan allows; see <a class="xref" href="/guide/devices.html#devices-plan">“Plan limits and enabling channels”</a>. To add the device again, see <a class="xref" href="/guide/add.html">Chapter 3, “Adding a device”</a>.</p>
+
+  <h3 id="devices-page">The device page</h3>
+  <p>The device page shows an information card at the top, the <span class="ui">Disk Health</span> row for devices that support it, and, under the heading <span class="ui">Cameras</span>, the channels of the device as thumbnails. The title is the name of the device. The thumbnails are arranged in as many columns as fit on the screen.</p>
+  <figure class="phone"><img src="/guide/img/device-detail.jpg" alt="The device page of a recorder: the information card at the top, the heading Cameras with three live thumbnails of the channels below, and three buttons at the top right" decoding="async" width="900" height="1956" data-src="/guide/img/device-detail.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The device page</figcaption></figure>
+  <ul>
+    <li><b>Information card</b>: shows the name and the type of the device and the rows <span class="ui">Model</span>, <span class="ui">IP address</span>, <span class="ui">Port</span> (the HTTP port), <span class="ui">HTTPS</span> (the HTTPS port, only while HTTPS is on), <span class="ui">Serial number</span>, <span class="ui">Firmware</span> and <span class="ui">Cameras</span> (the number of channels). The serial number and the firmware appear only when the device reports them. For a YouTube or Twitch stream, the row <span class="ui">Link</span> replaces <span class="ui">IP address</span> and <span class="ui">Port</span>.</li>
+    <li><b><span class="ui">Disk Health</span></b>: opens the disk report of the device; see <a class="xref" href="/guide/devices.html#devices-health">“Disk Health”</a>. An orange triangle or a red symbol on the right of the row repeats the worst disk verdict of the last reading.</li>
+    <li><b>Thumbnails</b>: a recorder shows one thumbnail per channel; a standalone camera has one channel and shows one thumbnail. The lower-left corner of every thumbnail shows the number and the name of the channel. The thumbnails use SD or HD according to <span class="path"><span class="ui">Settings</span> › <span class="ui">Default quality</span> › <span class="ui">Multiple cameras</span></span> (SD unless changed). A change in Settings applies to this page at once; the page has no SD/HD button of its own.</li>
+    <li><b>Refresh</b>: Cam Hub reads the channel list from the device when the page opens, at most once a minute for the same device, and every time the page is pulled down. Names and online states are updated, channels that the device has added appear, and channels that the device has removed disappear. A new channel is enabled only when the plan allows it; otherwise it is shown as <span class="ui">Disabled</span>. Names that were set in Cam Hub are kept. When the device does not answer, or returns a list that looks incomplete (no channel at all, or a single channel in place of several), the list stays as it was and no message is shown.</li>
+    <li><b>Refused sign-in</b>: when the device refuses the saved user name or password during the refresh, the message <span class="ui">Wrong username or password.</span> and the button <span class="ui">Edit Credentials</span> appear above the thumbnails; see <a class="xref" href="/guide/devices.html#devices-credentials">“Changing the user name and password of a device”</a>.</li>
+    <li><b>No saved password</b>: when no password is saved for the device on this iPhone or iPad, a message with the buttons <span class="ui">Enter Password</span> and <span class="ui">Restore from iCloud</span> appears above the thumbnails; see <a class="xref" href="/guide/devices.html#devices-password-missing">“A device without a saved password”</a>.</li>
+    <li><b>No channels</b>: when the device reports no channel, the page shows <span class="ui">No cameras found.</span> and the button <span class="ui">Refresh</span>, which reads the channel list again.</li>
+  </ul>
+  <p>The three buttons at the top right are, from left to right: the black-bar button, <span class="ui">Full Screen Wall</span> and the pencil. For a device that signs in with a user name and password, the pencil (<span class="ui">Edit Device</span>) opens a menu with <span class="ui">Rename</span> and <span class="ui">Edit Credentials</span>, and with <span class="ui">HTTPS</span> when the device serves HTTPS or has it turned on; see <a class="xref" href="/guide/devices.html#devices-https">“HTTPS for a saved device”</a>. For the sample cameras and for YouTube and Twitch streams, the pencil is the <span class="ui">Rename</span> button itself.</p>
+  <div class="callout note">
+    <strong class="t">iPhone Duo held like a book</strong>
+    <p>When an iPhone Duo is half open with the fold running from top to bottom, the device page shows the thumbnails on one half and the page of one camera on the other. A tap on a thumbnail shows that camera on the other half instead of opening a new page; at first, the first camera that can show a picture is shown. See <a class="xref" href="/guide/single.html#single-duo">“The view on a folded iPhone Duo”</a>.</p>
+  </div>
+
+  <h4>Hiding or showing the details</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap the arrow on the right of the information card (<span class="ui">Hide details</span>).</p>
+      <p class="check"><b class="check-label">Check:</b> The rows below the name disappear, and the arrow changes direction (<span class="ui">Show details</span>). Tapping it again shows the rows. The choice is stored for each device.</p>
+    </li>
+  </ol>
+
+  <h4>Renaming a device</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap the pencil button at the top right of the device page.</p>
+      <p class="check"><b class="check-label">Check:</b> For a device that signs in with a user name and password, a menu with <span class="ui">Rename</span>, <span class="ui">Edit Credentials</span> and, where offered, <span class="ui">HTTPS</span> opens. For other devices, the dialog of the next step opens at once.</p>
+    </li>
+    <li class="step">
+      <p>When the menu is shown, tap <span class="ui">Rename</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The dialog <span class="ui">Rename Device</span> opens, with the text <span class="ui">Give this device a name you'll recognize.</span> and the current name in the <span class="ui">Name</span> field.</p>
+      <figure class="phone"><img src="/guide/img/device-rename-alert.jpg" alt="The Rename Device dialog with the Name field, the Cancel button and the Save button" decoding="async" width="900" height="1956" data-src="/guide/img/device-rename-alert.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The Rename Device dialog</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Enter the new name in the <span class="ui">Name</span> field.</p>
+      <p class="check"><b class="check-label">Check:</b> The field shows the new name.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Save</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The title of the page and the device list show the new name. An empty name is ignored and the old name stays. The name is stored in Cam Hub only; the device is not changed.</p>
+    </li>
+  </ol>
+
+  <h4>Changing the handling of black bars on this page</h4>
+  <p>The black-bar button is the left one of the three buttons. Each tap selects the next of three modes; after the third mode the first one returns.</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Mode</th><th>Effect</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Mode"><span class="ui">Default</span></td><td data-label="Effect">The whole picture is shown. Black bars appear where the shape of the picture differs from the shape of the thumbnail.</td></tr>
+      <tr><td data-label="Mode"><span class="ui">Enlarge to fill</span></td><td data-label="Effect">The picture is enlarged in proportion until it fills the thumbnail. The edges of the picture are cut off.</td></tr>
+      <tr><td data-label="Mode"><span class="ui">Stretch to fill</span></td><td data-label="Effect">The picture is stretched until it fills the thumbnail. The picture is distorted.</td></tr>
+    </tbody>
+  </table></div>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap the left button of the three buttons at the top right.</p>
+      <p class="check"><b class="check-label">Check:</b> All thumbnails change to the next mode, and the icon of the button changes to match the current mode.</p>
+    </li>
+  </ol>
+  <p>The first mode comes from <span class="path"><span class="ui">Settings</span> › <span class="ui">Picture</span> › <span class="ui">Black bars</span></span>. A change made on this page applies to this page only and is not stored.</p>
+
+  <h3 id="devices-credentials">Changing the user name and password of a device</h3>
+  <p>When the password of a device is changed on the device itself, for example by an installer or after a reset, Cam Hub can no longer sign in, and the thumbnails show <span class="ui">Wrong username or password.</span> <span class="ui">Edit Credentials</span> stores the new user name and password for the same device. The cameras, their names, the enabled and paused choices and the places on LiveView Mix walls stay as they are; deleting the device and adding it again would lose them.</p>
+  <p><span class="ui">Edit Credentials</span> is offered for every device that signs in with a user name and password. It is not offered for the sample cameras or for YouTube and Twitch streams. The address and the ports of the device are not changed here.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the device page of the device.</p>
+      <p class="check"><b class="check-label">Check:</b> The device page is shown. When the last refresh was refused, the message <span class="ui">Wrong username or password.</span> and the button <span class="ui">Edit Credentials</span> appear above the thumbnails; that button opens the same screen as step 3.</p>
+      <figure class="phone"><img src="/guide/img/device-credentials-banner.jpg" alt="The device page of a sample recorder whose password was refused: the message Wrong username or password. with the Edit Credentials button, and the thumbnails with the same message above the channel names" decoding="async" width="900" height="1947" data-src="/guide/img/device-credentials-banner.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>The message after a refused sign-in</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap the pencil button (<span class="ui">Edit Device</span>) at the top right.</p>
+      <p class="check"><b class="check-label">Check:</b> A menu with <span class="ui">Rename</span> and <span class="ui">Edit Credentials</span> opens; <span class="ui">HTTPS</span> follows for a device that offers it.</p>
+      <figure class="phone"><img src="/guide/img/device-edit-menu.jpg" alt="The pencil menu open at the top right of a device page, with Rename and Edit Credentials" decoding="async" width="900" height="1947" data-src="/guide/img/device-edit-menu.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>The pencil menu</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Edit Credentials</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen <span class="ui">Edit Credentials</span> opens. Its section is headed with the name of the device and holds <span class="ui">Username</span>, filled in with the current user name, and an empty <span class="ui">Password</span> field, where the cursor is. The note below the fields reads <span class="ui">The new credentials are checked on the device before they are saved. Its cameras, their names and your LiveView Mix walls stay as they are.</span></p>
+      <figure class="phone"><img src="/guide/img/edit-credentials.jpg" alt="The Edit Credentials screen: the device name above the user name and an empty password field, the note that the new credentials are checked before they are saved, and Cancel and Save at the top" decoding="async" width="900" height="1947" data-src="/guide/img/edit-credentials.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>The Edit Credentials screen</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>When the user name has changed as well, correct it in <span class="ui">Username</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The field shows the user name. <span class="ui">Save</span> is unavailable while <span class="ui">Username</span> is empty.</p>
+    </li>
+    <li class="step">
+      <p>Enter the new password in <span class="ui">Password</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The field shows one dot per character. An empty password is accepted, as when a device is added.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Save</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> A spinner replaces <span class="ui">Save</span> while Cam Hub signs in to the device once with the new credentials and reads its channel list. When the device accepts them, the screen closes, the thumbnails connect again with the new credentials, and the channel list is refreshed. When it does not, the screen stays open, nothing is saved, and the reason appears in red, for example <span class="ui">Wrong username or password.</span> or <span class="ui">Device unreachable. Check the address and your network.</span></p>
+    </li>
+  </ol>
+  <p>Tap <span class="ui">Cancel</span> to close the screen without saving; a check that is still running is stopped and nothing is changed. The new user name must not be one that another saved device at the same address and port already uses; in that case the screen shows <span class="ui">Another device at this address already uses that username.</span></p>
+  <div class="callout note">
+    <strong class="t">One sign-in per device</strong>
+    <p>Many recorders and NAS units lock the account, or the address of the iPhone or iPad, after a few failed sign-ins, and the lock also affects other apps. Cam Hub therefore checks new credentials with a single sign-in through the connection the device was added with, instead of trying several connection methods. For most devices, the thumbnails of a wall also sign in once for the whole device: when the device refuses, every thumbnail of that device shows the failure at once, and Cam Hub tries the same credentials again only after about a minute or when Cam Hub returns to the foreground. Saving new credentials starts over at once.</p>
+  </div>
+
+  <h3 id="devices-password-missing">A device without a saved password</h3>
+  <p>Cam Hub stores the password of each device in the Keychain of the iPhone or iPad. When the contents of the iPhone or iPad move to a new one, the passwords can move with them; an iCloud backup or a sharing code of Cam Hub always carries them (see <a class="xref" href="/guide/share.html#share-contents">“What backups and codes contain”</a>). A device list that arrives without its passwords, for example on a new iPhone, iPad or Mac that was set up without the Keychain of the old one, shows the state below. Cam Hub then sends nothing to the device: it does not sign in with an empty password, and it does not report a wrong password.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the device page of the device.</p>
+      <p class="check"><b class="check-label">Check:</b> Above the thumbnails, the page shows <span class="ui">No password is saved for this device on this iPhone, iPad or Mac. This can happen after moving to a new one. Enter it again, or restore your iCloud backup.</span> with the buttons <span class="ui">Enter Password</span> and <span class="ui">Restore from iCloud</span>. The thumbnails show <span class="ui">No password saved. Enter it again under Devices.</span></p>
+      <figure class="phone"><img src="/guide/img/device-password-missing.jpg" alt="The device page of a sample recorder without a saved password: the message with the buttons Enter Password and Restore from iCloud, and thumbnails that read No password saved. Enter it again under Devices." decoding="async" width="900" height="1947" data-src="/guide/img/device-password-missing.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>A device without a saved password</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Enter Password</span> to type the password of this device, or <span class="ui">Restore from iCloud</span> to bring back the passwords of every device from an iCloud backup.</p>
+      <p class="check"><b class="check-label">Check:</b> <span class="ui">Enter Password</span> opens the screen <span class="ui">Edit Credentials</span>, described in <a class="xref" href="/guide/devices.html#devices-credentials">“Changing the user name and password of a device”</a>. <span class="ui">Restore from iCloud</span> opens the page described in <a class="xref" href="/guide/share.html#share-restore">“Restoring from iCloud”</a>.</p>
+    </li>
+  </ol>
+  <p>Once the password is saved or restored, the message disappears and the thumbnails connect again. A restore brings back the passwords of all devices at once; without a backup, they are entered device by device.</p>
+
+  <h3 id="devices-https">HTTPS for a saved device</h3>
+  <p>A device that serves HTTPS on its web interface can be controlled over HTTPS instead of plain HTTP. HTTPS is off unless it is turned on for the device. With HTTPS, Cam Hub accepts only the certificate that was trusted when HTTPS was turned on, or a certificate that a public certificate authority issued for the address of the device, so that automatic renewals of such a certificate keep working. Video fetched over RTSP is not encrypted by this setting.</p>
+  <p>The pencil menu offers <span class="ui">HTTPS</span> for a device that answered over HTTPS, and for a device that has HTTPS turned on. Cam Hub asks the device without signing in: it only checks whether a port presents a certificate. A device that answered is remembered for a week, one that did not for a day; pulling the device page down asks again at once. The item is not offered for devices connected through the own protocol of a device family, through RTSP or through a brand from the list, nor for the sample cameras and YouTube and Twitch streams.</p>
+  <h4>Turning HTTPS on</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>On the device page, tap the pencil button (<span class="ui">Edit Device</span>) at the top right, then tap <span class="ui">HTTPS</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen <span class="ui">HTTPS</span> opens with the name of the device as the heading of its section. While Cam Hub asks the device, it shows <span class="ui">Checking HTTPS…</span>; then it shows <span class="ui">Port</span>, the port on which the device answered, and <span class="ui">Certificate (SHA-256)</span>, the fingerprint of the certificate that the device presents now, in four lines.</p>
+      <figure class="phone"><img src="/guide/img/device-https.jpg" alt="The HTTPS screen of a sample recorder: the Use HTTPS switch, the port, the certificate fingerprint in four lines, and the note below the section" decoding="async" width="900" height="1947" data-src="/guide/img/device-https.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>The HTTPS screen</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Where possible, compare the fingerprint with the certificate of the device's own web page, for example in the certificate details of a browser.</p>
+      <p class="check"><b class="check-label">Check:</b> The fingerprints are identical. When they differ, another device may be in between; leave HTTPS off.</p>
+    </li>
+    <li class="step">
+      <p>Turn on <span class="ui">Use HTTPS</span>, then tap <span class="ui">Save</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> A spinner replaces <span class="ui">Save</span> while Cam Hub signs in to the device over HTTPS with the saved credentials and reads its channel list. When this succeeds, the screen closes, the thumbnails connect again, and the information card shows the row <span class="ui">HTTPS</span> with the port. When it does not, the screen stays open, nothing is saved, and the reason appears in red.</p>
+    </li>
+  </ol>
+  <ul>
+    <li>When the device does not answer over HTTPS, the screen shows <span class="ui">This device did not answer over HTTPS just now.</span> in orange, and the switch cannot be turned on.</li>
+    <li>The note below the section reads <span class="ui">Off unless you turn it on. With HTTPS, Cam Hub talks to this device encrypted and accepts only the certificate shown here, or a certificate that a public certificate authority issued for this address, so automatic renewals keep working; if you can, compare it with the one on the device's own web page. Video sent over RTSP is not encrypted by this setting.</span></li>
+    <li><b>Turning HTTPS off</b>: turn off <span class="ui">Use HTTPS</span> and tap <span class="ui">Save</span>. Cam Hub first checks that the device answers over plain HTTP with the saved credentials. When it does not, nothing is changed and the screen shows <span class="ui">This device did not answer over plain HTTP, so HTTPS stays on.</span> Turning HTTPS off forgets the trusted certificate, so turning it on again checks the certificate afresh.</li>
+    <li><b>Changed certificate</b>: when the device presents a certificate other than the trusted one, and no public certificate authority issued it for the address, Cam Hub does not connect, and the thumbnails show <span class="ui">This device's security certificate has changed. Check it under HTTPS in the device's edit menu.</span> The HTTPS screen then shows the new fingerprint with <span class="ui">The device now presents a different certificate from the one trusted when HTTPS was turned on. Save to trust it only if you know why it changed, for example after a reset.</span> <span class="ui">Save</span> trusts the new certificate after the same check as when HTTPS is turned on.</li>
+    <li>When the device answers on another HTTPS port with the same certificate, the screen shows the new port, and <span class="ui">Save</span> stores it without a warning.</li>
+    <li>The HTTPS setting, with its port and trusted certificate, travels with iCloud backups and sharing codes; see <a class="xref" href="/guide/share.html#share-contents">“What backups and codes contain”</a>.</li>
+  </ul>
+
+  <h3 id="devices-health">Disk Health</h3>
+  <p><span class="ui">Disk Health</span> reports the state of the disks of a recorder or a NAS: whether each disk is healthy, its temperature and the drive's own S.M.A.R.T. data, so that a failing disk can be replaced before recordings are lost. Cam Hub only reads this information; nothing on the device is changed.</p>
+  <p>The row <span class="ui">Disk Health</span> appears on the device page of devices that can report their disks: devices added with a brand connection that supports it (see <a class="xref" href="/guide/brands.html">Chapter 16, “Supported brands and connection methods”</a>), and NAS units that share their disk health over SNMP. Devices added through ONVIF or with a stream address, YouTube and Twitch streams, and the sample cameras do not show the row.</p>
+
+  <h4>Opening Disk Health</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the device page of the recorder or NAS.</p>
+      <p class="check"><b class="check-label">Check:</b> The row <span class="ui">Disk Health</span> appears below the information card. An orange triangle on the right means that a disk needed attention at the last reading; a red symbol means that a disk was failing.</p>
+      <figure class="phone"><img src="/guide/img/disk-health-row.jpg" alt="The device page of a sample recorder with the Disk Health row and an orange warning triangle, between the information card and the heading Cameras" decoding="async" width="900" height="1947" data-src="/guide/img/disk-health-row.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>The Disk Health row with a warning</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Disk Health</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The page <span class="ui">Disk Health</span> opens and reads the device. For a NAS without SNMP settings, the page shows <span class="ui">This NAS shares its disk health over SNMP. Set it up once to see S.M.A.R.T. data, temperatures and the state of its volumes.</span> and the button <span class="ui">Set Up SNMP</span>; see "Setting up SNMP on a NAS" below. When the device cannot be read, the page shows the reason and <span class="ui">Try Again</span>, and for a NAS also <span class="ui">SNMP Settings</span>.</p>
+      <figure class="phone"><img src="/guide/img/disk-health-recorder.jpg" alt="The Disk Health page of a sample recorder: the first disk marked Needs attention with Status, Capacity, Temperature and Powered on, an orange line about the drive running warm, and the second disk marked Healthy" decoding="async" width="900" height="1947" data-src="/guide/img/disk-health-recorder.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>Disk Health with a warm drive (temperatures in the unit of the iPhone)</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Pull the page down to read the device again.</p>
+      <p class="check"><b class="check-label">Check:</b> The page shows the new reading. When the new reading fails, the previous one stays on the page, with the reason above it and the note <span class="ui">Showing the last reading. Pull down to try again.</span></p>
+    </li>
+  </ol>
+
+  <h4>What the page shows</h4>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Section</th><th>Content</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Section">One section per disk, headed with its name and type</td><td data-label="Content">The verdict (see the next table); <span class="ui">Status</span>, the state that the device reports for the disk, in the language of Cam Hub (for example <span class="ui">Normal</span>, <span class="ui">Sleeping</span>, <span class="ui">Not installed</span> or <span class="ui">From another recorder</span>; a word that Cam Hub does not know is shown as the device sends it); <span class="ui">Capacity</span>; <span class="ui">Temperature</span>; <span class="ui">Powered on</span> in days and years; one sentence per finding; counters that have risen since Cam Hub first read the disk; and <span class="ui">S.M.A.R.T. details</span>, which lists every attribute with its current value, its worst value and its limit (<span class="ui">value · worst · limit</span>), in red when it has failed. When a device does not report S.M.A.R.T. data for a disk, the section says so and shows the state of the disk only.</td></tr>
+      <tr><td data-label="Section"><span class="ui">Volumes</span> (NAS)</td><td data-label="Content">Each volume or disk array with its state (for example <span class="ui">Normal</span>, <span class="ui">Degraded</span> or <span class="ui">Crashed</span>) and its free space.</td></tr>
+      <tr><td data-label="Section"><span class="ui">Device</span></td><td data-label="Content"><span class="ui">System temperature</span> (NAS), <span class="ui">Uptime</span>, failed parts that the device reports (power supply, fan), and the last restarts that Cam Hub noticed (<span class="ui ui-long">The device restarted around Oct 14, 3:12 AM.</span>), in orange when they happened within the last week.</td></tr>
+      <tr><td data-label="Section"><span class="ui">Performance</span> (NAS)</td><td data-label="Content"><span class="ui">CPU</span>, <span class="ui">Load (1 min)</span> and <span class="ui">Memory</span> (used of total, with a bar).</td></tr>
+      <tr><td data-label="Section"><span class="ui">Network</span> (NAS)</td><td data-label="Content">Each network port with its state and speed, the incoming and outgoing traffic, a warning when a connected port runs below 1000 Mbps or has counted 100 errors or more, and a chart of the traffic over the last few minutes.</td></tr>
+      <tr><td data-label="Section"><span class="ui">Disk activity</span> (NAS)</td><td data-label="Content">Reading, writing and how busy each disk is, with a chart of the writing over the last few minutes.</td></tr>
+    </tbody>
+  </table></div>
+  <p>While the page of a NAS is open, the sections <span class="ui">Performance</span>, <span class="ui">Network</span> and <span class="ui">Disk activity</span> are read again every 5 seconds; the speeds are averaged over about the last half minute.</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Verdict of a disk</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Verdict of a disk"><span class="ui">Healthy</span> (green)</td><td data-label="Meaning">Nothing to do. A drive powered on for 5 years or more is noted with a hint to plan a replacement.</td></tr>
+      <tr><td data-label="Verdict of a disk"><span class="ui">Needs attention</span> (orange)</td><td data-label="Meaning">The drive has not failed, but something is worth acting on: an attribute within a few points of its limit, sectors that were remapped, wait to be remapped or cannot be read, data errors between the disk and the device, retries to spin up, a temperature of 55 °C (131 °F) or more, or a disk state other than normal, for example not formatted.</td></tr>
+      <tr><td data-label="Verdict of a disk"><span class="ui">Failing</span> (red)</td><td data-label="Meaning">The device or the drive reports a failure: a disk state such as failed or error, a failed self-assessment or self-test, or an attribute at its limit.</td></tr>
+    </tbody>
+  </table></div>
+  <p>The symbol on the <span class="ui">Disk Health</span> row of the device page shows the worst disk verdict of the last reading. The state of volumes and failed parts are shown on the page itself, in the sections <span class="ui">Volumes</span> and <span class="ui">Device</span>.</p>
+  <p>Temperatures are shown in the unit set for the iPhone or iPad in the iOS Settings app under <span class="path"><span class="ui" data-ui="system">General</span> › <span class="ui" data-ui="system">Language &amp; Region</span></span>: Celsius or Fahrenheit, following the region unless changed there. The warning about a hot drive uses the same unit, for example <span class="ui">Running warm at 133°F. Years above 131°F shorten a drive's life; check ventilation.</span></p>
+
+  <h4>Setting up SNMP on a NAS</h4>
+  <p>A NAS reports its disks over SNMP, a read-only service that answers anyone who knows its community name. First switch on SNMP in the management interface of the NAS: turn on the SNMP service, choose <code>SNMPv1/v2c</code> and set a community name. The iPhone or iPad must be able to reach the NAS on the SNMP port, usually in the same local network. A NAS set to <code>SNMPv3</code> only is not supported. The note on the <span class="ui">SNMP Settings</span> screen names the menu of the NAS where SNMP is switched on.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>On the <span class="ui">Disk Health</span> page of the NAS, tap <span class="ui">Set Up SNMP</span>. Once settings exist, tap <span class="ui">SNMP Settings</span> (the gear at the top right) instead.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen <span class="ui">SNMP Settings</span> opens, with the fields <span class="ui">Community</span> (<code>public</code> on the first visit) and <span class="ui">Port</span> (<code>161</code>), and a note on where to switch SNMP on.</p>
+      <figure class="phone"><img src="/guide/img/snmp-settings.jpg" alt="The SNMP Settings screen of a sample storage device: Community public, Port 161, the note on turning SNMP on, and Cancel and Save at the top" decoding="async" width="900" height="1947" data-src="/guide/img/snmp-settings.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>The SNMP Settings screen</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Enter the community name that is set on the NAS in <span class="ui">Community</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The field shows the community name.</p>
+    </li>
+    <li class="step">
+      <p>Change <span class="ui">Port</span> only when the NAS answers SNMP on a port other than <code>161</code>.</p>
+      <p class="check"><b class="check-label">Check:</b> The field shows the port.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Save</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen closes, and <span class="ui">Disk Health</span> reads the NAS. When a field is empty or the port is not between 1 and 65535, the screen stays open with <span class="ui">Enter a community name and a port from 1 to 65535.</span> When the NAS does not answer, the page says so, names the port it asked on, and asks to check that SNMP is switched on and that the community name matches; a blocked port has the same effect. A NAS does not answer a community name it does not know, so a wrong name looks the same as a NAS that cannot be reached.</p>
+    </li>
+  </ol>
+  <p>When a NAS is added with <span class="ui">Auto-detect</span> and has no SNMP settings yet, the same screen opens right after the device has been added, as an optional step: <span class="ui">Save</span> stores the settings, and <span class="ui">Not Now</span> closes the screen. The device is added either way, and SNMP can be set up later from <span class="ui">Disk Health</span>; see <a class="xref" href="/guide/add.html">Chapter 3, “Adding a device”</a>.</p>
+  <p>The SNMP settings are stored for each device in the Keychain of the iPhone or iPad and are deleted with the device. They are included in share codes and iCloud backups, so <span class="ui">Disk Health</span> works after an import or a restore without being set up again; see <a class="xref" href="/guide/share.html">Chapter 10, “Sharing and backup”</a>.</p>
+
+  <h3 id="devices-streams">YouTube and Twitch streams</h3>
+  <p>A YouTube live stream or a Twitch channel that was added as a camera (see <a class="xref" href="/guide/add.html#add-streams">“Adding YouTube live streams and Twitch channels”</a>) appears in the device list as a camera with one channel. Its row shows the name, the model (<span class="ui" data-ui="value">YouTube Live</span> or <span class="ui" data-ui="value">Twitch</span>) and the short link, for example <code>youtu.be/…</code> or <code>twitch.tv/…</code>. In place of the connection indicator, the row shows a red play symbol for YouTube or a purple TV symbol for Twitch.</p>
+  <ul>
+    <li><b>Device page</b>: the information card shows <span class="ui">Model</span>, <span class="ui">Link</span> (the short link) and <span class="ui">Cameras</span>. There is no <span class="ui">Disk Health</span> row and no <span class="ui">Edit Credentials</span>; the pencil renames the stream.</li>
+    <li><b>Thumbnail</b>: the service's own player shows the stream, without sound and without a name label over it. A tap opens the stream full screen; see <a class="xref" href="/guide/single.html#single-streams">“YouTube and Twitch streams”</a>. The long-press menu offers <span class="ui">Rename Camera</span> and <span class="ui">Disable</span> or <span class="ui">Enable</span>.</li>
+    <li><b>Plan</b>: these streams never count toward the plan and never show <span class="ui">Not in your plan</span>. Their channel can always be enabled.</li>
+    <li><b>Terms not yet agreed</b>: a stream that reached this iPhone or iPad without the add form, for example through a share code or a backup, shows only its name and <span class="ui">Agree to YouTube's terms to play this stream.</span> or <span class="ui">Agree to Twitch's terms to play this channel.</span> A tap opens the full-screen view, where <span class="ui">Review Terms…</span> shows the terms with <span class="ui">Agree and Continue</span>. Once agreed, every stream of that service plays.</li>
+    <li><b>Not available</b>: YouTube and Twitch are not available in some countries and regions. There, a stream on the list shows only its name and <span class="ui">Not available in this region or language.</span></li>
+    <li><b>Deleting</b>: swipe left on the row and confirm, as for any device; see <a class="xref" href="/guide/devices.html#devices-list">“The device list”</a>. The dialog does not mention a password, because none is saved.</li>
+  </ul>
+
+  <h3 id="devices-states">What a thumbnail shows</h3>
+  <p>The content of a thumbnail depends on the state of the channel. The table lists the states in the order in which Cam Hub decides between them. A tap opens the single-camera view only for an online channel that is enabled, within the plan and not paused; see <a class="xref" href="/guide/single.html">Chapter 6, “Single-camera view”</a>. A tap on a disabled or paused thumbnail offers to switch it back on. YouTube and Twitch thumbnails are described in <a class="xref" href="/guide/devices.html#devices-streams">“YouTube and Twitch streams”</a>.</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Thumbnail</th><th>Meaning</th><th>Tapping the thumbnail</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Thumbnail">Grey, with a pause symbol and <span class="ui">Paused</span></td><td data-label="Meaning">The video of the channel was paused by hand. The channel does not stream, and it keeps its place in the plan.</td><td data-label="Tapping the thumbnail">A dialog with the name of the channel offers <span class="ui">Resume Video</span> and <span class="ui">Cancel</span>.</td></tr>
+      <tr><td data-label="Thumbnail"><span class="ui">Disabled</span></td><td data-label="Meaning">The channel is disabled. It does not stream and does not use a place in the plan.</td><td data-label="Tapping the thumbnail">A dialog with the name of the channel offers <span class="ui">Enable</span> and <span class="ui">Cancel</span>; see <a class="xref" href="/guide/devices.html#devices-plan">“Plan limits and enabling channels”</a>.</td></tr>
+      <tr><td data-label="Thumbnail"><span class="ui">Not in your plan</span> with a lock</td><td data-label="Meaning">The channel is enabled, but the plan does not cover it.</td><td data-label="Tapping the thumbnail">The plans screen opens; see <a class="xref" href="/guide/plans.html">Chapter 11, “Plans and limits”</a>.</td></tr>
+      <tr><td data-label="Thumbnail">Live picture</td><td data-label="Meaning">The channel is enabled, within the plan, not paused, and the device reports a signal. A spinner shows while the connection is made.</td><td data-label="Tapping the thumbnail">The single-camera view opens.</td></tr>
+      <tr><td data-label="Thumbnail">Failure message on a dark background</td><td data-label="Meaning">The channel is in order, but the stream could not be opened. Cam Hub tries again by itself, with growing pauses between the attempts. After a refused user name or password, Cam Hub tries at most once more and then stops, so that the device does not lock the account; the message stays until the page is opened again or Cam Hub returns to the foreground. Without a saved password, the message reads <span class="ui ui-long">No password saved. Enter it again under Devices.</span>, and Cam Hub does not contact the device; see <a class="xref" href="/guide/devices.html#devices-password-missing">“A device without a saved password”</a>. The message sits above the number and name of the channel; on a small thumbnail, the symbol is left out so that the whole message fits.</td><td data-label="Tapping the thumbnail">The single-camera view opens.</td></tr>
+      <tr><td data-label="Thumbnail">Grey, with a crossed-out camera and <span class="ui">No signal</span></td><td data-label="Meaning">The device reports that the channel has no signal.</td><td data-label="Tapping the thumbnail">Nothing happens.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Not every device reports a missing signal for each channel. For channels of such devices, a stream that cannot be opened shows a failure message instead of <span class="ui">No signal</span>.</p>
+  <figure class="phone"><img src="/guide/img/device-tile-states.jpg" alt="The device page of a recorder with six channels: one live thumbnail and thumbnails for Disabled, Not in your plan, Paused and No signal" decoding="async" width="900" height="1956" data-src="/guide/img/device-tile-states.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Thumbnails in different states</figcaption></figure>
+  <div class="callout note">
+    <strong class="t">Hide offline cameras affects the walls only</strong>
+    <p>The setting <span class="ui">Hide offline cameras</span> removes cameras without a signal from the live walls. The device page always lists every channel and shows the ones without a signal in grey. LiveView Mix walls are not affected by the setting.</p>
+  </div>
+
+  <h3 id="devices-menu">Channel options (long press)</h3>
+  <p>A long press on a thumbnail opens a menu with the options below.</p>
+  <figure class="phone clip"><video class="clip" aria-label="Long-pressing a channel tile opens its menu; Disable turns the tile into a Disabled tile." muted="" loop="" playsinline="" preload="none" data-src="/guide/vid/rec-channel-longpress.mp4" data-poster="/guide/img/rec-channel-longpress.jpg" poster="/guide/img/rec-channel-longpress.jpg"></video><figcaption>Long-pressing a channel tile opens its menu; Disable turns the tile into a Disabled tile.</figcaption></figure>
+  <figure class="phone"><img src="/guide/img/channel-menu.jpg" alt="The menu after a long press on a thumbnail, with Rename camera, Disable and Pause Video" decoding="async" width="900" height="1956" data-src="/guide/img/channel-menu.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The menu of a channel</figcaption></figure>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Menu item</th><th>Effect</th><th>Uses a place in the plan</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Menu item"><span class="ui">Open in New Window</span></td><td data-label="Effect">Offered on iPad and on the inner display of iPhone Duo. Opens the camera in a window of its own; see <a class="xref" href="/guide/single.html#single-window">“A camera in a window of its own”</a>.</td><td data-label="Uses a place in the plan">None.</td></tr>
+      <tr><td data-label="Menu item"><span class="ui">Rename Camera</span></td><td data-label="Effect">Sets a name of your own for the channel.</td><td data-label="Uses a place in the plan">None.</td></tr>
+      <tr><td data-label="Menu item"><span class="ui">Your plan</span> › <span class="ui">Disable</span> or <span class="ui">Enable</span></td><td data-label="Effect">Only the item that matches the current state is offered. A disabled channel does not stream and shows <span class="ui">Disabled</span>.</td><td data-label="Uses a place in the plan">A disabled channel releases its place.</td></tr>
+      <tr><td data-label="Menu item"><span class="ui">Bandwidth</span> › <span class="ui">Pause Video</span> or <span class="ui">Resume Video</span></td><td data-label="Effect">Offered for channels of a recorder only. A paused channel stops streaming, which saves bandwidth, and shows <span class="ui">Paused</span>.</td><td data-label="Uses a place in the plan">A paused channel keeps its place.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h4>Renaming a channel</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>Long press the thumbnail of the channel.</p>
+      <p class="check"><b class="check-label">Check:</b> The menu of the channel opens.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Rename Camera</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> A dialog opens with the current name in the <span class="ui">Name</span> field and the buttons <span class="ui">Cancel</span>, <span class="ui">Use Device Name</span> and <span class="ui">Save</span>.</p>
+      <figure class="phone"><img src="/guide/img/channel-rename-alert.jpg" alt="The Rename camera dialog with the Name field and the buttons Cancel, Use Device Name and Save" decoding="async" width="900" height="1956" data-src="/guide/img/channel-rename-alert.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The Rename Camera dialog</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Enter the new name and tap <span class="ui">Save</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The lower-left corner of the thumbnail shows the new name. The same name is used on the Live tab, on LiveView Mix walls and as the title of the single-camera view.</p>
+    </li>
+    <li class="step">
+      <p>To return to the name that the device reports, repeat the first two steps and tap <span class="ui">Use Device Name</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The thumbnail shows the name of the device again.</p>
+    </li>
+  </ol>
+  <p>A name set in Cam Hub is not overwritten when the channel list is refreshed, and it is included in backups; see <a class="xref" href="/guide/share.html">Chapter 10, “Sharing and backup”</a>.</p>
+
+  <h4>Pausing and resuming the video of a recorder channel</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>Long press the thumbnail of a channel of a recorder.</p>
+      <p class="check"><b class="check-label">Check:</b> The menu shows the section <span class="ui">Bandwidth</span>.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Pause Video</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The thumbnail turns grey and shows <span class="ui">Paused</span>. Every screen that shows this channel treats it as paused.</p>
+    </li>
+    <li class="step">
+      <p>To resume, tap the paused thumbnail and then <span class="ui">Resume Video</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The live picture returns. <span class="ui">Resume Video</span> is also in the long-press menu.</p>
+    </li>
+  </ol>
+
+  <h3 id="devices-plan">Plan limits and enabling channels</h3>
+  <p>A channel is either enabled or disabled. An enabled channel uses one place of the plan. Only enabled channels within the limits of the plan show a picture; an enabled channel beyond the limits shows <span class="ui">Not in your plan</span>. The limits are listed below; the plans themselves are described in <a class="xref" href="/guide/plans.html">Chapter 11, “Plans and limits”</a>.</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Plan</th><th>Standalone cameras</th><th>Channels of recorders</th><th>Recorders that can be added</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Plan">Free</td><td colspan="2" data-label="Standalone cameras">At most 2 enabled channels in total, counting cameras and recorder channels together. Enabled recorder channels must all belong to the same recorder.</td><td data-label="Channels of recorders">1</td></tr>
+      <tr><td data-label="Plan">Camera plan</td><td data-label="Standalone cameras">Enabled cameras up to the limit of the plan: 8, 16 or unlimited.</td><td data-label="Channels of recorders">As on the free plan: 2 enabled channels, all on one recorder.</td><td data-label="Recorders that can be added">1</td></tr>
+      <tr><td data-label="Plan">NVR plan</td><td data-label="Standalone cameras">As on the free plan: 2 enabled cameras.</td><td data-label="Channels of recorders">Every channel of the recorders that the plan covers.</td><td data-label="Recorders that can be added">2, 4 or unlimited</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>Both plans can be held together. The two limits apply independently: the camera plan raises the limit for standalone cameras, and the NVR plan raises the number of recorders whose channels are all usable.</li>
+    <li>Each control panel on a LiveView Mix page that is shown counts as one camera against the camera limit. Real cameras keep their picture first; panels beyond the limit show <span class="ui">Not in your plan</span>. See <a class="xref" href="/guide/lvm.html">Chapter 8, “LiveView Mix”</a>.</li>
+    <li>A recorder counts toward the number of recorders as soon as it has been added, whether or not any of its channels is enabled. The sample cameras count like real devices.</li>
+    <li>YouTube and Twitch streams are not counted and are never locked; see <a class="xref" href="/guide/devices.html#devices-streams">“YouTube and Twitch streams”</a>.</li>
+    <li>When a plan ends or its limits fall below the number of enabled channels, the stored choices are kept. The channels beyond the limits show <span class="ui">Not in your plan</span>: standalone cameras keep their picture first, then recorder channels, each in the order in which the devices were added and in the order of the channel numbers.</li>
+    <li>When both limits are unlimited, every channel is enabled automatically, and the page <span class="ui">Choose which cameras to show</span> is not offered.</li>
+  </ul>
+
+  <h4>Enabling a disabled channel</h4>
+  <p>Prerequisite: the thumbnail of the channel shows <span class="ui">Disabled</span>.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Long press the thumbnail of the disabled channel.</p>
+      <p class="check"><b class="check-label">Check:</b> The menu shows <span class="ui">Enable</span> below <span class="ui">Your plan</span>. A tap on the disabled thumbnail offers <span class="ui">Enable</span> as well.</p>
+      <figure class="phone"><img src="/guide/img/devices-channel-menu-enable.jpg" alt="The menu after a long press on a disabled thumbnail: Rename camera, then Enable under Your plan, then Pause Video under Bandwidth; the thumbnails behind the menu show Disabled" decoding="async" width="900" height="1956" data-src="/guide/img/devices-channel-menu-enable.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The menu of a disabled channel</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Enable</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> When the plan has a free place, the thumbnail starts to show the live picture; the procedure ends here. When the limit has been reached, the plans screen opens with a message and the channel stays disabled. For a standalone camera the message is <span class="ui">You've reached the Free plan's limit of 2 enabled cameras.</span> on the free plan, or, on a camera plan, <span class="ui">You've reached your plan's limit of 8 enabled cameras.</span> with the number of the plan. For a recorder channel it is <span class="ui">Unlock every channel with an NVR plan.</span></p>
+      <figure class="phone"><img src="/guide/img/devices-plan-reason.jpg" alt="The Plans page opened from a locked recorder channel: a banner with a lock symbol and the message Unlock every channel with an NVR plan., the heading Unlock every camera with a sentence about the Free plan, and a list of short feature lines below" decoding="async" width="900" height="1440" data-src="/guide/img/devices-plan-reason.jpg" style="aspect-ratio: 900 / 1440;" loading="lazy"><figcaption>The plans screen with the reason at the top</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Close the plans screen.</p>
+      <p class="check"><b class="check-label">Check:</b> The device page is shown again.</p>
+    </li>
+    <li class="step">
+      <p>Long press the thumbnail of an enabled channel that is not needed and tap <span class="ui">Disable</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The thumbnail shows <span class="ui">Disabled</span>, and its place in the plan is free.</p>
+    </li>
+    <li class="step">
+      <p>Repeat the first two steps for the channel that should be shown.</p>
+      <p class="check"><b class="check-label">Check:</b> The thumbnail shows the live picture.</p>
+    </li>
+  </ol>
+
+  <h3 id="devices-choose">Choosing which cameras show</h3>
+  <p>Path: <span class="path"><span class="ui">Settings</span> › <span class="ui">Choose which cameras to show</span></span></p>
+  <p>This page lists the channels of all devices in one place, so that the places of the plan can be assigned across devices without opening each device page. The item is offered only while at least one of the two limits of the plan applies.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap the <span class="ui">Settings</span> tab at the bottom of the screen.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen shows the settings.</p>
+    </li>
+    <li class="step">
+      <p>In the <span class="ui">Subscription</span> section, tap <span class="ui">Choose which cameras to show</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The page <span class="ui">Choose which cameras to show</span> opens. The section <span class="ui">Your plan</span> shows the rows <span class="ui">Cameras</span> (for example <span class="ui" data-ui="value">2 cameras</span> or <span class="ui">Unlimited</span>) and <span class="ui">Recorders</span>, and the note <span class="ui">Turn on the cameras you want to watch. The Free plan shows 2 cameras on a single recorder.</span> Below it, one section per device lists every channel with its number, its name and a switch.</p>
+      <figure class="phone"><img src="/guide/img/license-choose-cameras.jpg" alt="The page Choose which cameras to show on the Free plan: Your plan with Cameras and Recorders, the note about the Free plan, and the channels of each sample recorder with a switch each" decoding="async" width="900" height="1947" data-src="/guide/img/license-choose-cameras.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>Choose which cameras to show</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Turn off the switch of a channel that is not needed.</p>
+      <p class="check"><b class="check-label">Check:</b> The switch is off. The channel is disabled and its place in the plan is free. Turning a switch off is always possible.</p>
+    </li>
+    <li class="step">
+      <p>Turn on the switch of the channel that should be shown.</p>
+      <p class="check"><b class="check-label">Check:</b> The switch is on when the plan has a free place. When it has not, the plans screen opens with a message and the switch stays off. On the free plan, the message <span class="ui">On the Free plan, the cameras you show must all be on one recorder.</span> appears when a channel of a second recorder is turned on.</p>
+    </li>
+    <li class="step">
+      <p>Tap the back button in the top-left corner to leave the page.</p>
+      <p class="check"><b class="check-label">Check:</b> The choices apply everywhere: walls and the device pages show a picture for the enabled channels within the plan only.</p>
+    </li>
+  </ol>
+  <p>When no device has been added, the page shows <span class="ui">No Devices</span>, <span class="ui">Add a device first, then choose its cameras here.</span> and the <span class="ui">Add Device</span> button.</p>
+
+  <h3 id="devices-fullwall">The full-screen wall of a device</h3>
+  <p>The full-screen wall shows all enabled channels of one device edge to edge. It opens from the device page and from the <span class="ui">Live</span> tab (see <a class="xref" href="/guide/live.html#live-wall">“The Full Screen Wall”</a>), and it follows the way in which the iPhone is held: upright, the thumbnails keep their 16:9 shape and are stacked in rows of one or two (see the <span class="ui">Layout</span> button below); sideways, two rows fill the height. A device with only one enabled channel shows that camera over the whole screen.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap the <span class="ui">Full Screen Wall</span> button (second of the three buttons) at the top right of the device page.</p>
+      <p class="check"><b class="check-label">Check:</b> The wall covers the screen. It shows the enabled channels of the device; channels beyond the plan show <span class="ui">Not in your plan</span>. When no channel is enabled, the screen shows <span class="ui">No Enabled Cameras</span> and <span class="ui">Enable cameras on the device page.</span></p>
+      <figure class="phone"><img src="/guide/img/fullwall-controls.jpg" alt="The full-screen wall of a recorder with the close button at the top left and, at the top right, the SD button, the layout button and the black-bar button" decoding="async" width="900" height="1956" data-src="/guide/img/fullwall-controls.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The full-screen wall and its buttons</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>When more channels exist than fit on the screen, scroll the wall vertically in upright orientation, or swipe sideways in landscape orientation.</p>
+      <p class="check"><b class="check-label">Check:</b> The next channels or the next page appear. When the wall is divided into pages, dots at the bottom show the current page.</p>
+    </li>
+    <li class="step">
+      <p>Tap a thumbnail that shows a picture.</p>
+      <p class="check"><b class="check-label">Check:</b> A close-up of that camera opens over the wall, with <span class="ui">Back</span> and the camera name at the top.</p>
+      <figure class="phone"><img src="/guide/img/fullwall-closeup.jpg" alt="The close-up of one camera over the wall: the back button and the camera name at the top left, the picture across the middle of the black screen, and the camera control button at the lower right" decoding="async" width="900" height="1956" data-src="/guide/img/fullwall-closeup.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The close-up of a camera</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Back</span> at the top left of the close-up.</p>
+      <p class="check"><b class="check-label">Check:</b> The wall is shown again.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Close</span> (the cross at the top left of the wall).</p>
+      <p class="check"><b class="check-label">Check:</b> The screen returns to the device page or to the <span class="ui">Live</span> tab.</p>
+    </li>
+  </ol>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Button at the top of the wall</th><th>Function</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Button at the top of the wall"><span class="ui">Close</span> (top left)</td><td data-label="Function">Closes the wall.</td></tr>
+      <tr><td data-label="Button at the top of the wall"><span class="ui" data-ui="value">SD</span> or <span class="ui" data-ui="value">HD</span></td><td data-label="Function">Switches all cameras of the wall at once (<span class="ui">Switch all cameras to HD</span> or <span class="ui">Switch all cameras to SD</span>). The text on the button is the current quality. The wall starts with the quality of <span class="path"><span class="ui">Settings</span> › <span class="ui">Default quality</span> › <span class="ui">Multiple cameras</span></span>. The change is not stored.</td></tr>
+      <tr><td data-label="Button at the top of the wall"><span class="ui">Layout</span></td><td data-label="Function">Switches between one and two thumbnails per row. This choice is stored.</td></tr>
+      <tr><td data-label="Button at the top of the wall">Black-bar button</td><td data-label="Function">Cycles through <span class="ui">Default</span>, <span class="ui">Enlarge to fill</span> and <span class="ui">Stretch to fill</span>, as on the device page. The change is not stored.</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li><b>Close-up</b>: the picture uses the quality of <span class="path"><span class="ui">Settings</span> › <span class="ui">Default quality</span> › <span class="ui">Single camera</span></span> (HD unless changed), and the buttons of the wall are not shown. Spread two fingers to enlarge the picture up to 5 times, drag to move it while it is enlarged, and double-tap to switch between normal size and 2 times.</li>
+    <li><b>Speaker</b> (lower left): appears when the camera sends sound; see <a class="xref" href="/guide/single.html#single-controls">“Snapshot, sound and quality”</a>.</li>
+    <li><b>Camera control</b> (lower right): appears when the camera can be moved or zoomed; see <a class="xref" href="/guide/single.html#single-ptz">“PTZ control: moving the camera”</a>.</li>
+    <li><b><span class="ui">Recordings</span></b> (top right): appears for devices that support playback. It opens the single-camera view of the camera over the wall, with <span class="ui">Done</span> in the top-right corner to return; see <a class="xref" href="/guide/playback.html">Chapter 7, “Recording playback and speed”</a>.</li>
+    <li>The setting <span class="ui">Edge-to-edge video</span> and the setting <span class="ui">Hide offline cameras</span> apply to the wall. A tap on a thumbnail with <span class="ui">Not in your plan</span> opens the plans screen.</li>
+    <li>For a YouTube or Twitch stream, the wall shows no SD/HD button and no black-bar button, because the service's player decides both.</li>
+  </ul>
+
+  <h3 id="devices-quality">SD and HD on device screens</h3>
+  <p>SD is the lighter picture and HD the sharper one. Which of the two is used depends on the screen. The starting values come from <span class="ui">Default quality</span> in the settings.</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Screen</th><th>Starting quality</th><th>Switching on the screen</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Screen">Thumbnails on the device page</td><td data-label="Starting quality"><span class="ui">Multiple cameras</span> (SD unless changed); follows the setting at once.</td><td data-label="Switching on the screen">None.</td></tr>
+      <tr><td data-label="Screen">Full-screen wall</td><td data-label="Starting quality"><span class="ui">Multiple cameras</span>.</td><td data-label="Switching on the screen">The SD/HD button switches all cameras. The change is not stored.</td></tr>
+      <tr><td data-label="Screen">Live tab</td><td data-label="Starting quality"><span class="ui">Multiple cameras</span>.</td><td data-label="Switching on the screen">The SD/HD button in the top bar switches all cameras; see <a class="xref" href="/guide/live.html#live-quality">“SD and HD on a wall”</a>.</td></tr>
+      <tr><td data-label="Screen">Close-up in the full-screen wall</td><td data-label="Starting quality"><span class="ui">Single camera</span> (HD unless changed).</td><td data-label="Switching on the screen">None.</td></tr>
+      <tr><td data-label="Screen">Single-camera view</td><td data-label="Starting quality"><span class="ui">Single camera</span>.</td><td data-label="Switching on the screen">The SD/HD switch below the picture, when the device offers two streams. The change is not stored; see <a class="xref" href="/guide/single.html#single-controls">“Snapshot, sound and quality”</a>.</td></tr>
+      <tr><td data-label="Screen">LiveView Mix wall</td><td data-label="Starting quality">Each camera slot has its own choice, SD unless changed, set while the wall is arranged. The close-up of a camera on the wall always uses HD.</td><td data-label="Switching on the screen">See <a class="xref" href="/guide/lvm.html">Chapter 8, “LiveView Mix”</a>.</td></tr>
+      <tr><td data-label="Screen">Recording playback</td><td data-label="Starting quality">The recorded stream is played. There is no choice between SD and HD.</td><td data-label="Switching on the screen">None.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Some devices provide only one stream for a channel. For those, SD and HD show the same picture, and the SD/HD switch of the single-camera view is not shown. YouTube and Twitch streams have no SD/HD choice: the service's player chooses the quality from the size of the picture.</p>
+</section><nav class="guide-pager" aria-label="Contents"><a class="guide-prev" rel="prev" href="/guide/add.html"><span class="pager-dir">Previous chapter</span><span class="pager-title">3. Adding a device</span></a><a class="guide-next" rel="next" href="/guide/live.html"><span class="pager-dir">Next chapter</span><span class="pager-title">5. The Live tab and the Full Screen Wall</span></a></nav></article>
+    </div>
+    <button class="guide-top" id="guide-top" type="button" aria-label="Back to top"></button>
+  </main>
+  <footer class="footer"><span data-i18n="footer">Copyright © 2026 ALMX. All rights reserved.</span><nav><a href="/guide.html" data-i18n="navGuide">Manual</a><a href="/devices.html" data-i18n="navDevices">Device differences</a><a href="/privacy.html" data-i18n="navPrivacy">Privacy</a><a href="/terms.html" data-i18n="navTerms">Terms</a><a class="store-link" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeCTA">Download on the App Store</a></nav><nav class="language-links" id="language-links" aria-label="Language" data-i18n-aria="languageLabel"><a href="/guide/devices.html" hreflang="en" lang="en" data-language-link="en" aria-current="true">English</a><a href="/zh-Hant/guide/devices.html" hreflang="zh-Hant" lang="zh-Hant" data-language-link="zh-Hant">繁體中文</a><a href="/zh-Hans/guide/devices.html" hreflang="zh-Hans" lang="zh-Hans" data-language-link="zh-Hans">简体中文</a><a href="/ja/guide/devices.html" hreflang="ja" lang="ja" data-language-link="ja">日本語</a><a href="/ko/guide/devices.html" hreflang="ko" lang="ko" data-language-link="ko">한국어</a><a href="/de/guide/devices.html" hreflang="de" lang="de" data-language-link="de">Deutsch</a><a href="/es/guide/devices.html" hreflang="es" lang="es" data-language-link="es">Español</a><a href="/es-MX/guide/devices.html" hreflang="es-MX" lang="es-MX" data-language-link="es-MX">Español (México)</a><a href="/fr/guide/devices.html" hreflang="fr" lang="fr" data-language-link="fr">Français</a><a href="/sl/guide/devices.html" hreflang="sl" lang="sl" data-language-link="sl">Slovenščina</a><a href="/ar/guide/devices.html" hreflang="ar" lang="ar" data-language-link="ar">العربية</a></nav></footer>
+  <script src="/additional-locales.js?v=20261103-sl"></script>
+  <script src="/site.js?v=20261112-1"></script>
+
+
+</body></html>

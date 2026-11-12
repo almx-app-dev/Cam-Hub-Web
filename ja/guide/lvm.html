@@ -1,0 +1,948 @@
+<!doctype html>
+<html lang="ja" dir="ltr"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="apple-itunes-app" content="app-id=6792057195"><meta name="color-scheme" content="dark light">
+  <meta name="description" content="LiveView Mix は、異なるデバイスのカメラを 1 つのウォールに配置します。ウォールには、画像、時計、ラベル、コントロールパネル、YouTube や Twitch の配信も置けます。">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="Cam Hub"><meta property="og:image" content="https://cam-hub.almx.cc/assets/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+  <title>LiveView Mix — Cam Hub マニュアル</title><link rel="icon" href="/assets/icon-48.png" sizes="48x48"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/icon-180.png"><link rel="stylesheet" href="/styles.css?v=20261112-1"><link rel="stylesheet" href="/guide.css?v=20261030-1">
+<meta property="og:description" content="LiveView Mix は、異なるデバイスのカメラを 1 つのウォールに配置します。ウォールには、画像、時計、ラベル、コントロールパネル、YouTube や Twitch の配信も置けます。"><link rel="canonical" href="https://cam-hub.almx.cc/ja/guide/lvm.html"><link rel="alternate" hreflang="x-default" href="https://cam-hub.almx.cc/guide/lvm.html"><link rel="alternate" hreflang="en" href="https://cam-hub.almx.cc/guide/lvm.html"><link rel="alternate" hreflang="zh-Hant" href="https://cam-hub.almx.cc/zh-Hant/guide/lvm.html"><link rel="alternate" hreflang="zh-Hans" href="https://cam-hub.almx.cc/zh-Hans/guide/lvm.html"><link rel="alternate" hreflang="ja" href="https://cam-hub.almx.cc/ja/guide/lvm.html"><link rel="alternate" hreflang="ko" href="https://cam-hub.almx.cc/ko/guide/lvm.html"><link rel="alternate" hreflang="de" href="https://cam-hub.almx.cc/de/guide/lvm.html"><link rel="alternate" hreflang="es" href="https://cam-hub.almx.cc/es/guide/lvm.html"><link rel="alternate" hreflang="es-MX" href="https://cam-hub.almx.cc/es-MX/guide/lvm.html"><link rel="alternate" hreflang="fr" href="https://cam-hub.almx.cc/fr/guide/lvm.html"><link rel="alternate" hreflang="sl" href="https://cam-hub.almx.cc/sl/guide/lvm.html"><link rel="alternate" hreflang="ar" href="https://cam-hub.almx.cc/ar/guide/lvm.html"><meta property="og:url" content="https://cam-hub.almx.cc/ja/guide/lvm.html"><meta property="og:title" content="LiveView Mix — Cam Hub マニュアル"></head>
+<body data-page="guide">
+  <header class="topbar" aria-label="Site header">
+    <a class="brand" href="/ja/"><img src="/assets/icon-96.png" alt="" width="42" height="42"><span><strong>Cam<wbr data-phrase-break="">&nbsp;<wbr data-phrase-break="">Hub</strong><small data-i18n="topline">操作<wbr data-phrase-break="">マニュアル</small></span></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-controls" data-i18n-aria="menuLabel" aria-label="メニューを開く"><span></span><span></span><span></span><span class="sr-only" data-i18n="menuLabel">メニューを開く</span></button>
+    <div class="topbar-controls" id="site-controls"><nav class="navlinks" aria-label="Primary"><a href="/ja/" data-nav="home" data-i18n="navHome">ホーム</a><a href="/ja/product.html" data-nav="product" data-i18n="navProduct">機能</a><a href="/ja/guide.html" data-nav="guide" data-i18n="navGuide" aria-current="page">マニュアル</a><a href="/ja/support.html" data-nav="support" data-i18n="navSupport">サポート</a><a href="/ja/privacy.html" data-nav="privacy" data-i18n="navPrivacy">プライバシー</a><a href="/ja/terms.html" data-nav="terms" data-i18n="navTerms">利用<wbr data-phrase-break="">規約</a></nav><div class="pickers"><label><span class="sr-only" data-i18n="themeLabel">外観</span><select id="themeSelect" aria-label="Theme"><option value="auto" data-i18n="themeAuto" selected="">自動</option><option value="light" data-i18n="themeLight">ライト</option><option value="dark" data-i18n="themeDark">ダーク</option></select></label><label><span class="sr-only" data-i18n="languageLabel">言語</span><select id="languageSelect" aria-label="Language"><option value="en">English</option><option value="zh-Hant">繁體中文</option><option value="zh-Hans">简体中文</option><option value="ja" selected="">日本語</option><option value="ko">한국어</option><option value="de">Deutsch</option><option value="es">Español</option><option value="es-MX">Español (México)</option><option value="fr">Français</option><option value="sl">Slovenščina</option><option value="ar">العربية</option></select></label></div><a class="store-pill" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeShort">アプリ<wbr data-phrase-break="">を<wbr data-phrase-break="">入手</a></div>
+  </header>
+  <main class="inner-page guide" style="--g-topbar: 76px; --g-offset: 88px;">
+    <section class="page-hero"><div class="eyebrow" data-i18n="eyebrow">OPERATION MANUAL</div><h1 data-i18n="title">LiveView Mix</h1><p class="summary" data-i18n="summary">デバイス<wbr data-phrase-break="">の<wbr data-phrase-break="">追加、<wbr data-phrase-break="">ライブ<wbr data-phrase-break="">映像<wbr data-phrase-break="">と<wbr data-phrase-break="">録画<wbr data-phrase-break="">の<wbr data-phrase-break="">再生、<wbr data-phrase-break="">LiveView<wbr data-phrase-break=""> <wbr data-phrase-break="">Mix、<wbr data-phrase-break="">共有<wbr data-phrase-break="">と<wbr data-phrase-break="">バックアップ<wbr data-phrase-break="">まで、<wbr data-phrase-break="">手順<wbr data-phrase-break="">に<wbr data-phrase-break="">沿<wbr data-phrase-break="">って<wbr data-phrase-break="">説明<wbr data-phrase-break="">し<wbr data-phrase-break="">ます。</p></section>
+    <p class="guide-notice" id="guide-notice" role="status" hidden=""></p>
+    <div id="guide-sentinel" aria-hidden="true"></div>
+    <div class="guide-layout has-toc" id="guide-layout" lang="ja" dir="ltr">
+      <aside class="guide-side" id="guide-side">
+        <button class="guide-toc-toggle" id="guide-toc-toggle" type="button" aria-expanded="false" aria-controls="guide-toc" lang="ja" dir="ltr"><span class="guide-toc-label" data-i18n="tocLabel">目次</span><span class="guide-toc-current" id="guide-toc-current">8. LiveView Mix</span></button>
+        <nav class="guide-toc" id="guide-toc" aria-label="目次"><ol><li><a href="/ja/guide.html"><span class="toc-num">1</span><span>クイックスタート</span></a><ol><li><a href="/ja/guide.html#start-prepare"><span>事前の準備</span></a></li><li><a href="/ja/guide.html#start-path"><span>ライブ映像までの最短手順</span></a></li><li><a href="/ja/guide.html#start-demo"><span>デバイスなしで試す</span></a></li></ol></li><li><a href="/ja/guide/tour.html"><span class="toc-num">2</span><span>タブと基本動作</span></a><ol><li><a href="/ja/guide/tour.html#tour-tabs"><span>5 つのタブの一覧</span></a></li><li><a href="/ja/guide/tour.html#tour-launch"><span>起動時に開く画面</span></a></li><li><a href="/ja/guide/tour.html#tour-look"><span>外観と言語</span></a></li><li><a href="/ja/guide/tour.html#tour-rotate"><span>端末の向き</span></a></li><li><a href="/ja/guide/tour.html#tour-duo"><span>iPhone Duo</span></a></li><li><a href="/ja/guide/tour.html#tour-awake"><span>画面、バックグラウンド、通知</span></a></li></ol></li><li><a href="/ja/guide/add.html"><span class="toc-num">3</span><span>デバイスの追加</span></a><ol><li><a href="/ja/guide/add.html#add-form"><span>デバイス追加フォーム</span></a></li><li><a href="/ja/guide/add.html#add-auto"><span>ブランドを選ばずに追加する</span></a></li><li><a href="/ja/guide/add.html#add-methods"><span>接続方法の選び方</span></a></li><li><a href="/ja/guide/add.html#add-https"><span>HTTPS でデバイスを追加する</span></a></li><li><a href="/ja/guide/add.html#add-streams"><span>YouTube のライブ配信と Twitch のチャンネルを追加する</span></a></li><li><a href="/ja/guide/add.html#add-failed"><span>追加に失敗したとき：チェックリスト</span></a></li><li><a href="/ja/guide/add.html#add-report"><span>デバイスレポート（実験的）</span></a></li><li><a href="/ja/guide/add.html#add-scan"><span>ネットワークスキャンでデバイスを探す</span></a></li></ol></li><li><a href="/ja/guide/devices.html"><span class="toc-num">4</span><span>デバイスタブとチャンネル</span></a><ol><li><a href="/ja/guide/devices.html#devices-list"><span>デバイスの一覧</span></a></li><li><a href="/ja/guide/devices.html#devices-page"><span>デバイスのページ</span></a></li><li><a href="/ja/guide/devices.html#devices-credentials"><span>デバイスのユーザー名とパスワードの変更</span></a></li><li><a href="/ja/guide/devices.html#devices-password-missing"><span>パスワードが保存されていないデバイス</span></a></li><li><a href="/ja/guide/devices.html#devices-https"><span>保存したデバイスの HTTPS</span></a></li><li><a href="/ja/guide/devices.html#devices-health"><span>ディスクの状態</span></a></li><li><a href="/ja/guide/devices.html#devices-streams"><span>YouTube と Twitch の配信</span></a></li><li><a href="/ja/guide/devices.html#devices-states"><span>サムネイルの表示内容</span></a></li><li><a href="/ja/guide/devices.html#devices-menu"><span>チャンネルのオプション（長押し）</span></a></li><li><a href="/ja/guide/devices.html#devices-plan"><span>プランの上限とチャンネルの有効化</span></a></li><li><a href="/ja/guide/devices.html#devices-choose"><span>表示するカメラを選択する</span></a></li><li><a href="/ja/guide/devices.html#devices-fullwall"><span>デバイスのフルスクリーンウォール</span></a></li><li><a href="/ja/guide/devices.html#devices-quality"><span>デバイスの画面での SD と HD</span></a></li></ol></li><li><a href="/ja/guide/live.html"><span class="toc-num">5</span><span>ライブタブとフルスクリーンウォール</span></a><ol><li><a href="/ja/guide/live.html#live-tab"><span>ライブタブ</span></a></li><li><a href="/ja/guide/live.html#live-quality"><span>ウォールでの SD と HD</span></a></li><li><a href="/ja/guide/live.html#live-wall"><span>フルスクリーンウォール</span></a></li><li><a href="/ja/guide/live.html#live-hide"><span>信号のないカメラを隠す</span></a></li></ol></li><li><a href="/ja/guide/single.html"><span class="toc-num">6</span><span>1 台表示</span></a><ol><li><a href="/ja/guide/single.html#single-open"><span>画面を開く</span></a></li><li><a href="/ja/guide/single.html#single-screen"><span>画面の構成</span></a></li><li><a href="/ja/guide/single.html#single-zoom"><span>ズームと移動</span></a></li><li><a href="/ja/guide/single.html#single-controls"><span>スナップショット、音声、画質</span></a></li><li><a href="/ja/guide/single.html#single-clip"><span>クリップの録画</span></a></li><li><a href="/ja/guide/single.html#single-talk"><span>双方向のトーク</span></a></li><li><a href="/ja/guide/single.html#single-picture"><span>黒帯、回転、横向き</span></a></li><li><a href="/ja/guide/single.html#single-ptz"><span>PTZ 操作：カメラを動かす</span></a></li><li><a href="/ja/guide/single.html#single-window"><span>カメラを独立したウインドウで開く</span></a></li><li><a href="/ja/guide/single.html#single-duo"><span>折り曲げた iPhone Duo での表示</span></a></li><li><a href="/ja/guide/single.html#single-streams"><span>YouTube と Twitch の配信</span></a></li><li><a href="/ja/guide/single.html#single-states"><span>接続状態とメッセージ</span></a></li><li><a href="/ja/guide/single.html#single-limits"><span>利用できないもの</span></a></li></ol></li><li><a href="/ja/guide/playback.html"><span class="toc-num">7</span><span>録画の再生と再生速度</span></a><ol><li><a href="/ja/guide/playback.html#playback-avail"><span>再生を利用できる場所</span></a></li><li><a href="/ja/guide/playback.html#playback-day"><span>日付を選ぶ</span></a></li><li><a href="/ja/guide/playback.html#playback-calendar"><span>録画カレンダー</span></a></li><li><a href="/ja/guide/playback.html#playback-timeline"><span>タイムラインの使い方</span></a></li><li><a href="/ja/guide/playback.html#playback-list"><span>録画の一覧と人物の検索</span></a></li><li><a href="/ja/guide/playback.html#playback-playing"><span>録画の再生中</span></a></li><li><a href="/ja/guide/playback.html#playback-speed"><span>再生速度</span></a></li><li><a href="/ja/guide/playback.html#playback-landscape"><span>横向きでの再生</span></a></li><li><a href="/ja/guide/playback.html#playback-limits"><span>利用できないもの</span></a></li></ol></li><li class="is-current"><a href="/ja/guide/lvm.html" class="is-active" aria-current="location"><span class="toc-num">8</span><span>LiveView Mix</span></a><ol><li><a href="/ja/guide/lvm.html#lvm-tab"><span>LiveView Mix タブとプレビュー</span></a></li><li><a href="/ja/guide/lvm.html#lvm-first"><span>6 台のカメラで最初のウォールを作る</span></a></li><li><a href="/ja/guide/lvm.html#lvm-pick"><span>カメラと画質の選択</span></a></li><li><a href="/ja/guide/lvm.html#lvm-layout"><span>レイアウトの調整</span></a></li><li><a href="/ja/guide/lvm.html#lvm-custom"><span>カスタムレイアウトを作成する</span></a></li><li><a href="/ja/guide/lvm.html#lvm-special"><span>特別なレイアウト：大小のタイルを 1 つのウォールに</span></a></li><li><a href="/ja/guide/lvm.html#lvm-arrange"><span>ウォールとタイルの配置</span></a></li><li><a href="/ja/guide/lvm.html#lvm-move"><span>タイルを空のタイルに移動する</span></a></li><li><a href="/ja/guide/lvm.html#lvm-slots"><span>タイルにカメラ以外に表示できるもの</span></a></li><li><a href="/ja/guide/lvm.html#lvm-watermark"><span>透かし</span></a></li><li><a href="/ja/guide/lvm.html#lvm-fit"><span>黒帯、画面いっぱいの表示、端末の角度</span></a></li><li><a href="/ja/guide/lvm.html#lvm-pages"><span>縦向きページ</span></a></li><li><a href="/ja/guide/lvm.html#lvm-canvases"><span>iPhone Duo の 2 つのキャンバス</span></a></li><li><a href="/ja/guide/lvm.html#lvm-wall"><span>フルスクリーンウォール</span></a></li><li><a href="/ja/guide/lvm.html#lvm-closeup"><span>1 台のカメラを開く</span></a></li><li><a href="/ja/guide/lvm.html#lvm-streams"><span>ウォール上の YouTube と Twitch の配信</span></a></li><li><a href="/ja/guide/lvm.html#lvm-states"><span>タイルがカメラを表示できないとき</span></a></li><li><a href="/ja/guide/lvm.html#lvm-limits"><span>プランの上限がウォールに与える影響</span></a></li><li><a href="/ja/guide/lvm.html#lvm-settings"><span>設定の LiveView Mix</span></a></li><li><a href="/ja/guide/lvm.html#lvm-tv"><span>Apple TV での違い</span></a></li></ol></li><li><a href="/ja/guide/webhook.html"><span class="toc-num">9</span><span>コントロールパネルと Webhook</span></a><ol><li><a href="/ja/guide/webhook.html#webhook-what"><span>コントロールパネルの機能</span></a></li><li><a href="/ja/guide/webhook.html#webhook-add"><span>ウォールにコントロールパネルを追加する</span></a></li><li><a href="/ja/guide/webhook.html#webhook-templates"><span>テンプレート</span></a></li><li><a href="/ja/guide/webhook.html#webhook-fields"><span>パネルの設定項目</span></a></li><li><a href="/ja/guide/webhook.html#webhook-button"><span>ボタンの設定</span></a></li><li><a href="/ja/guide/webhook.html#webhook-use"><span>ボタンを押して結果を確認する</span></a></li><li><a href="/ja/guide/webhook.html#webhook-wall"><span>ウォール上でのパネルの見え方</span></a></li><li><a href="/ja/guide/webhook.html#webhook-watch"><span>Apple Watch のボタン</span></a></li><li><a href="/ja/guide/webhook.html#ha"><span>Home Assistant を使う</span></a></li><li><a href="/ja/guide/webhook.html#webhook-security"><span>セキュリティに関する注意</span></a></li></ol></li><li><a href="/ja/guide/share.html"><span class="toc-num">10</span><span>共有とバックアップ</span></a><ol><li><a href="/ja/guide/share.html#share-choose"><span>2 つの方法の比較</span></a></li><li><a href="/ja/guide/share.html#share-export"><span>カメラの書き出し（コードの作成）</span></a></li><li><a href="/ja/guide/share.html#share-lock"><span>コードのロック</span></a></li><li><a href="/ja/guide/share.html#share-import"><span>カメラの取り込み</span></a></li><li><a href="/ja/guide/share.html#share-contents"><span>バックアップとコードに含まれる内容</span></a></li><li><a href="/ja/guide/share.html#share-icloud"><span>iCloud にバックアップする</span></a></li><li><a href="/ja/guide/share.html#share-versions"><span>複数の名前付きバックアップ：名前の変更と削除</span></a></li><li><a href="/ja/guide/share.html#share-restore"><span>iCloud から復元する</span></a></li><li><a href="/ja/guide/share.html#share-delete"><span>すべての iCloud バックアップを削除する</span></a></li><li><a href="/ja/guide/share.html#share-newphone"><span>新しいスマートフォンへのデバイスとウォールの移行</span></a></li><li><a href="/ja/guide/share.html#share-appletv"><span>Apple TV への設定の移行</span></a></li></ol></li><li><a href="/ja/guide/plans.html"><span class="toc-num">11</span><span>プランと上限</span></a><ol><li><a href="/ja/guide/plans.html#plans-tiers"><span>各プランの利用枠</span></a></li><li><a href="/ja/guide/plans.html#plans-stack"><span>2 つのプランの組み合わせ方</span></a></li><li><a href="/ja/guide/plans.html#plans-count"><span>利用枠を使用するもの</span></a></li><li><a href="/ja/guide/plans.html#plans-examples"><span>組み合わせの例</span></a></li><li><a href="/ja/guide/plans.html#plans-choose"><span>表示するカメラを選択する</span></a></li><li><a href="/ja/guide/plans.html#plans-subscribe"><span>登録、購入の復元、コードの利用</span></a></li><li><a href="/ja/guide/plans.html#plans-lapse"><span>プランの終了と縮小</span></a></li></ol></li><li><a href="/ja/guide/tools.html"><span class="toc-num">12</span><span>ツールタブ</span></a><ol><li><a href="/ja/guide/tools.html#tools-overview"><span>ツールタブの内容</span></a></li><li><a href="/ja/guide/tools.html#tools-speedometer"><span>スピードメーターとコンパス</span></a></li></ol></li><li><a href="/ja/guide/settings.html"><span class="toc-num">13</span><span>設定</span></a><ol><li><a href="/ja/guide/settings.html#settings-overview"><span>設定タブのセクション</span></a></li><li><a href="/ja/guide/settings.html#settings-subscription"><span>サブスクリプション</span></a></li><li><a href="/ja/guide/settings.html#settings-quality"><span>デフォルトの画質</span></a></li><li><a href="/ja/guide/settings.html#settings-picture"><span>映像：黒帯と画面いっぱいの表示</span></a></li><li><a href="/ja/guide/settings.html#settings-hide"><span>オフラインのカメラを非表示</span></a></li><li><a href="/ja/guide/settings.html#settings-lvm"><span>LiveView Mix、そのページ、起動時に開く</span></a></li><li><a href="/ja/guide/settings.html#settings-backup"><span>バックアップとカメラの共有</span></a></li><li><a href="/ja/guide/settings.html#settings-language"><span>言語</span></a></li><li><a href="/ja/guide/settings.html#settings-reset"><span>リセット：デフォルトに戻す、すべてのデータを削除、iCloud バックアップを削除</span></a></li><li><a href="/ja/guide/settings.html#settings-legal"><span>利用規約とプライバシーポリシー</span></a></li><li><a href="/ja/guide/settings.html#settings-about"><span>情報、マニュアル、設定にないもの</span></a></li></ol></li><li><a href="/ja/guide/appletv.html"><span class="toc-num">14</span><span>Apple TV</span></a><ol><li><a href="/ja/guide/appletv.html#appletv-prepare"><span>先に iPhone または iPad で設定する</span></a></li><li><a href="/ja/guide/appletv.html#appletv-bring"><span>設定を Apple TV に移す</span></a></li><li><a href="/ja/guide/appletv.html#appletv-differs"><span>Apple TV で異なる点</span></a></li></ol></li><li><a href="/ja/guide/trouble.html"><span class="toc-num">15</span><span>トラブルシューティング</span></a><ol><li><a href="/ja/guide/trouble.html#trouble-start"><span>最初に確認すること</span></a></li><li><a href="/ja/guide/trouble.html#trouble-states"><span>空の画面が示す内容</span></a></li><li><a href="/ja/guide/trouble.html#trouble-add"><span>デバイスは追加済みだが、接続できない</span></a></li><li><a href="/ja/guide/trouble.html#trouble-live"><span>ライブ表示</span></a></li><li><a href="/ja/guide/trouble.html#trouble-playback"><span>録画再生</span></a></li><li><a href="/ja/guide/trouble.html#trouble-lvm"><span>LiveView Mix</span></a></li><li><a href="/ja/guide/trouble.html#trouble-streams"><span>YouTube と Twitch</span></a></li><li><a href="/ja/guide/trouble.html#trouble-panels"><span>コントロールパネルと Webhook</span></a></li><li><a href="/ja/guide/trouble.html#trouble-health"><span>ディスクの状態</span></a></li><li><a href="/ja/guide/trouble.html#trouble-share"><span>共有、取り込み、iCloud バックアップ</span></a></li><li><a href="/ja/guide/trouble.html#trouble-plans"><span>プランと購入</span></a></li><li><a href="/ja/guide/trouble.html#trouble-errors"><span>その他のエラーメッセージ</span></a></li><li><a href="/ja/guide/trouble.html#trouble-permissions"><span>許可の要求とシステムのダイアログ</span></a></li><li><a href="/ja/guide/trouble.html#trouble-contact"><span>開発者への連絡</span></a></li><li><a href="/ja/guide/trouble.html#trouble-faq"><span>よくある質問</span></a></li></ol></li><li><a href="/ja/guide/brands.html"><span class="toc-num">16</span><span>対応ブランドと接続方法</span></a><ol><li><a href="/ja/guide/brands.html#brands-methods"><span>接続方法</span></a></li><li><a href="/ja/guide/brands.html#brands-matrix"><span>方法ごとにできること</span></a></li><li><a href="/ja/guide/brands.html#brands-profiles"><span>一覧のブランド</span></a></li><li><a href="/ja/guide/brands.html#brands-requirements"><span>要件と制限</span></a></li><li><a href="/ja/guide/brands.html#brands-recorders"><span>カメラとレコーダー</span></a></li><li><a href="/ja/guide/brands.html#brands-prepare"><span>デバイスで準備すること</span></a></li><li><a href="/ja/guide/brands.html#brands-activate"><span>新しいデバイスのアクティベート</span></a></li><li><a href="/ja/guide/brands.html#brands-compat"><span>アプリ内の対応リファレンス</span></a></li></ol></li><li><a href="/ja/guide/about.html" class="no-num"><span>このマニュアルについて</span></a><ol><li><a href="/ja/guide/about.html#about-scope"><span>対象範囲</span></a></li><li><a href="/ja/guide/about.html#about-conventions"><span>表記</span></a></li><li><a href="/ja/guide/about.html#about-help"><span>サポート</span></a></li></ol></li></ol></nav>
+      </aside>
+      <article class="guide-article" id="guide-content"><section class="chapter" id="lvm">
+  <h2><span class="num">8</span>LiveView Mix</h2>
+  <p class="lead">LiveView Mix は、異なるデバイスのカメラを 1 つのウォールに配置します。ウォールには、画像、時計、ラベル、コントロールパネル、YouTube や Twitch の配信も置けます。どれも、どのタイルにでも置けます。この章は、作業の順序に沿って、タブとプレビュー、カメラの選択、レイアウト、配置、任意の縦向きページ、iPhone Duo の 2 つのキャンバス、フルスクリーンウォール、プランの上限がウォールに与える影響を説明します。</p>
+
+  <figure class="mixmap" aria-label="複数のレコーダーと単体カメラを 1 つのウォールにまとめた図">
+    <div class="mm-sources">
+      <div class="mm-src"><b>NVR 1</b><span>裏庭</span>
+        <div class="mm-thumbs"><img src="/guide/img/src/nvr1-gate.jpg" alt="NVR 1 のゲート" decoding="async" width="480" height="270" data-src="/guide/img/src/nvr1-gate.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"><img src="/guide/img/src/nvr1-lawn.jpg" alt="NVR 1 の芝生" decoding="async" width="480" height="270" data-src="/guide/img/src/nvr1-lawn.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"><img src="/guide/img/src/nvr1-patio.jpg" alt="NVR 1 のパティオ" decoding="async" width="480" height="270" data-src="/guide/img/src/nvr1-patio.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"></div></div>
+      <div class="mm-src"><b>NVR 2</b><span>店舗</span>
+        <div class="mm-thumbs"><img src="/guide/img/src/nvr2-counter.jpg" alt="NVR 2 のカウンター" decoding="async" width="480" height="270" data-src="/guide/img/src/nvr2-counter.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"><img src="/guide/img/src/nvr2-shelves.jpg" alt="NVR 2 の棚" decoding="async" width="480" height="270" data-src="/guide/img/src/nvr2-shelves.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"><img src="/guide/img/src/nvr2-window.jpg" alt="NVR 2 のショーウィンドウ" decoding="async" width="480" height="270" data-src="/guide/img/src/nvr2-window.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"></div></div>
+      <div class="mm-src"><b>NVR 3</b><span>夜の通り</span>
+        <div class="mm-thumbs"><img src="/guide/img/src/nvr3-street.jpg" alt="NVR 3 の通り" decoding="async" width="480" height="270" data-src="/guide/img/src/nvr3-street.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"><img src="/guide/img/src/nvr3-parking.jpg" alt="NVR 3 の駐車場" decoding="async" width="480" height="270" data-src="/guide/img/src/nvr3-parking.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"><img src="/guide/img/src/nvr3-rooftop.jpg" alt="NVR 3 の屋上" decoding="async" width="480" height="270" data-src="/guide/img/src/nvr3-rooftop.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"></div></div>
+      <div class="mm-src"><b>単体カメラ 1、2</b><span>レコーダーに接続されていない</span>
+        <div class="mm-thumbs"><img src="/guide/img/src/solo1-entrance.jpg" alt="単体カメラ 1 の玄関" decoding="async" width="480" height="270" data-src="/guide/img/src/solo1-entrance.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"><img src="/guide/img/src/solo2-tank.jpg" alt="単体カメラ 2 の水槽" decoding="async" width="480" height="270" data-src="/guide/img/src/solo2-tank.jpg" style="aspect-ratio: 480 / 270;" loading="lazy"></div></div>
+    </div>
+    <div class="mm-arrow" aria-hidden="true"><i>⟶</i><small>1 つのウォール</small></div>
+    <div class="mm-wall"><img src="/guide/img/ja/lvm-wall-fullscreen.jpg" alt="3 台のレコーダーと 2 台の単体カメラを 1 つの横向きの LiveView Mix ウォールに表示した画面。コントロールパネルと時計もある" decoding="async" width="1600" height="736" data-src="/guide/img/ja/lvm-wall-fullscreen.jpg" data-fallback="/guide/img/lvm-wall-fullscreen.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"></div>
+    <figcaption>3 台のレコーダーと 2 台の単体カメラの映像を、1 つのウォールにまとめています。このウォールには、手で描いたレイアウトを使っています。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-special">「特別なレイアウト：大小のタイルを 1 つのウォールに」</a>を参照してください。</figcaption>
+  </figure>
+
+  <div class="callout note">
+    <strong class="t">この章で使う用語</strong>
+    <p><b>タイル</b>：ウォール上の番号の付いた 1 つの位置。タイルには、カメラ、画像、時計、ラベル、コントロールパネルを入れることも、空のままにすることもできます。どのタイルにでも内容を入れられます。その前のタイルを先に埋める必要はありません。</p>
+    <p><b>レイアウト</b>：画面上のタイルの配置。例：<span class="ui" data-ui="value">2 × 3</span>、<span class="ui" data-ui="value">1 + 5</span>。</p>
+    <p><b>ウォールのページ</b>：レイアウトが一度に表示するタイル。ウォールのタイルがレイアウトの収容数より多い場合、フルスクリーンウォールはウォールのページに分かれ、スワイプで切り替えます。</p>
+    <p><b>横向きページと縦向きページ</b>：2 つの独立したウォールです。一方は端末を横向きに持ったとき、もう一方（任意）は縦向きに持ったときに使われます。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-pages">「縦向きページ」</a>を参照してください。</p>
+  </div>
+
+  <h3 id="lvm-tab">LiveView Mix タブとプレビュー</h3>
+  <p>場所：画面下部の左端にある<span class="ui">LiveView Mix</span>タブ。設定前は、画面に説明と<span class="ui">LiveView Mix を設定</span>ボタンが表示されます。手順は<a class="xref" href="/ja/guide/lvm.html#lvm-first">「6 台のカメラで最初のウォールを作る」</a>を参照してください。ウォールに、内容のあるタイル（カメラ、画像、コントロールパネル、時計、ラベル）が 1 つ以上あると、タブにはプレビューが表示され、その下にメモ<span class="ui">プレビューのみ。フルスクリーンでレイアウトを表示します。</span>と<span class="ui">配置：自動</span>ボタンが表示されます。</p>
+  <p>右上の 3 つのボタンは、左から順に次のとおりです。</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>ボタン</th><th>用途</th><th>詳細</th></tr></thead>
+    <tbody>
+      <tr><td data-label="ボタン"><span class="ui">フルスクリーン</span>（金色のウォールのアイコン）</td><td data-label="用途">選択したレイアウトでウォールを開きます。</td><td data-label="詳細"><a class="xref" href="/ja/guide/lvm.html#lvm-wall">「フルスクリーンウォール」</a></td></tr>
+      <tr><td data-label="ボタン"><span class="ui">カメラを選択</span>（カメラのアイコン）</td><td data-label="用途">ウォールに表示するカメラとその画質を選択します。</td><td data-label="詳細"><a class="xref" href="/ja/guide/lvm.html#lvm-pick">「カメラと画質の選択」</a></td></tr>
+      <tr><td data-label="ボタン"><span class="ui">レイアウトを調整</span>（グリッドのアイコン）</td><td data-label="用途">レイアウト、黒帯の扱い、透かし、ページ送りを選択し、配置を開きます。</td><td data-label="詳細"><a class="xref" href="/ja/guide/lvm.html#lvm-layout">「レイアウトの調整」</a></td></tr>
+    </tbody>
+  </table></div>
+  <figure class="land"><img src="/guide/img/ja/lvm-tab-preview.jpg" alt="横向きの LiveView Mix タブ。右上に金色のフルスクリーンのアイコンとほかの 2 つのボタン、その下に 8 台のカメラのプレビュー、プレビューについてのメモと「配置：自動」がある" decoding="async" width="1600" height="739" data-src="/guide/img/ja/lvm-tab-preview.jpg" data-fallback="/guide/img/lvm-tab-preview.jpg" style="aspect-ratio: 1600 / 739;" loading="lazy"><figcaption>横向きのプレビュー</figcaption></figure>
+  <figure class="phone"><img src="/guide/img/ja/lvm-preview-portrait.jpg" alt="縦向きの LiveView Mix タブ。プレビューにカメラ映像が 2 列で表示され、その下にプレビューについてのメモがある" decoding="async" width="900" height="1956" data-src="/guide/img/ja/lvm-preview-portrait.jpg" data-fallback="/guide/img/lvm-preview-portrait.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>縦向きのプレビュー</figcaption></figure>
+  <p>プレビューの動作は次のとおりです。</p>
+  <ul>
+    <li>プレビューには、内容のあるタイルが番号順に、均等なグリッドで表示されます。空のタイルは省かれるので、タイル 2 と 7 にだけカメラがあるウォールでは、2 つの映像が横に並びます。プレビューは選択したレイアウトの形にはならず、レイアウトが反映されるのはフルスクリーンウォールだけです。</li>
+    <li>プレビューは、各カメラの SD または HD の設定、ウォールの黒帯の設定、透かしを使用します。</li>
+    <li><span class="ui">自動</span>（デフォルト）では、縦向きの iPhone のプレビューは 2 列になり、行数は画面の高さによって決まります。横向きでは、2 行で画面が埋まるように列が増えます（通常は 4 列）。iPad では、通常は 2 列のままです。ウォールに内容のあるタイルが 1 つだけの場合、そのタイルがプレビュー領域全体に表示されます。代わりに、列数と行数を固定することもできます。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-preview-grid">「プレビューの配置」</a>を参照してください。</li>
+    <li>タイルが収まる数より多い場合は、左右にスワイプしてページを切り替えます。ページのドットがプレビューの下に表示されます。</li>
+    <li>透かしがオフの間、各カメラの左下にはチャンネルの番号と名前が表示されます。透かしがオンの場合は、透かしがこのラベルの代わりに表示されます。</li>
+    <li>カメラ映像をタップすると、フルスクリーンビューアが開きます。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-closeup">「1 台のカメラを開く」</a>を参照してください。YouTube または Twitch のタイルをタップすると、その配信がフルスクリーンで開きます。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-streams">「ウォール上の YouTube と Twitch の配信」</a>を参照してください。コントロールパネルのボタンをタップすると、そのリクエストが送信されます。ボタンが先に確認を求める設定になっている場合は、確認ダイアログが表示されます。詳しくは<a class="xref" href="/ja/guide/webhook.html">第9章「コントロールパネルと Webhook」</a>を参照してください。</li>
+    <li>表示できないカメラは、タイルを維持したまま、状態を示すテキストを表示します。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-states">「タイルがカメラを表示できないとき」</a>を参照してください。</li>
+    <li>フルスクリーンウォールが開いている間、プレビューのストリームは一時停止し、タブが再び表示されると再開します。iPhone では、<span class="ui">カメラを選択</span>または<span class="ui">レイアウトを調整</span>のページがプレビューを覆っている間も、プレビューは一時停止します。</li>
+    <li>縦向きページをオンにしている場合、タブは、縦が横より長い間は縦向きページを表示します。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-pages">「縦向きページ」</a>を参照してください。2 つのキャンバスを使う iPhone Duo では、代わりに両方のキャンバスを表示します。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-canvases">「iPhone Duo の 2 つのキャンバス」</a>を参照してください。</li>
+    <li>表示するものがタイルに 1 つもない場合（たとえば、すべてのタイルが削除されたカメラを指している場合）は、設定への案内とともに<span class="ui">LiveView Mix は空です</span>と表示されます。</li>
+  </ul>
+  <div class="callout tip">
+    <strong class="t">端末を横向きにする</strong>
+    <p>レイアウトは、横長の画面に合わせて描かれています。横向きでは、タイルがカメラ映像の横長の形を保ちます。縦向きでは、レイアウトが対角線を軸に反転します（<a class="xref" href="/ja/guide/lvm.html#lvm-fit">「黒帯、画面いっぱいの表示、端末の角度」</a>を参照）。ただし、専用の縦向きページをオンにしている場合は除きます（<a class="xref" href="/ja/guide/lvm.html#lvm-pages">「縦向きページ」</a>を参照）。プレビューとフルスクリーンウォールは、端末の角度に合わせて自動的に配置し直されます。</p>
+  </div>
+
+  <h4 id="lvm-preview-grid">プレビューの配置</h4>
+  <p>プレビューについてのメモの末尾にある<span class="ui">配置：自動</span>ボタンで、プレビューの各ページに表示するタイルの列数と行数を設定します。この選択はアプリ設定の 1 つで、ウォールの一部ではありません。フルスクリーンウォールは変わらず、バックアップや共有コードでは、アプリ設定と一緒に渡されます（<a class="xref" href="/ja/guide/share.html#share-contents">「バックアップとコードに含まれる内容」</a>を参照）。選んだ列数と行数は、端末の向きにかかわらず同じです。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>LiveView Mix タブで、プレビューの下の<span class="ui">配置：自動</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>プレビューの上に小さなウインドウが開き、<span class="ui">自動</span>スイッチが表示されます。デフォルトではオンです。</p>
+      <figure class="land"><img src="/guide/img/lvm-preview-grid.jpg" alt="横向きの LiveView Mix のプレビューの上に開いた配置のウインドウ。「自動」はオフで、「列数」2 と「行数」4 にそれぞれマイナスとプラスのボタンがあり、その下に 2 × 4 と表示されている" decoding="async" width="1600" height="739" data-src="/guide/img/lvm-preview-grid.jpg" style="aspect-ratio: 1600 / 739;" loading="lazy"><figcaption>プレビューの配置</figcaption></figure>
+    </li>
+    <li class="step">
+      <p><span class="ui">自動</span>をオフにします。</p>
+      <p class="check"><b class="check-label">確認：</b>ウインドウに、それぞれ − と + の付いた<span class="ui">列数</span>と<span class="ui">行数</span>が表示され、どちらも 2 に設定されます。プレビューは 2 × 2 のグリッドに変わります。</p>
+    </li>
+    <li class="step">
+      <p>目的のグリッドになるまで、<span class="ui">列数</span>と<span class="ui">行数</span>の横の − または + をタップします。どちらも 1 から 4 までです。</p>
+      <p class="check"><b class="check-label">確認：</b>タップするたびにプレビューが変わり、各タイルが画面の割り当て分いっぱいに表示されます。</p>
+    </li>
+    <li class="step">
+      <p>ウインドウの外側をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>ウインドウが閉じ、ボタンに選んだグリッドが表示されます。例：<span class="ui">配置：2 × 4</span>。</p>
+    </li>
+  </ol>
+  <p>自動のグリッドに戻すには、<span class="ui">自動</span>をもう一度オンにします。固定したグリッドの最後のページがいっぱいにならない場合、残りのセルは空のままです。</p>
+
+  <h3 id="lvm-first">6 台のカメラで最初のウォールを作る</h3>
+  <p>目的：6 台のカメラを 1 つのウォールに配置し、<span class="ui" data-ui="value">1 + 5</span>のレイアウトでフルスクリーンに表示します。所要時間：約 5 分。</p>
+  <p>前提条件：</p>
+  <ul>
+    <li>デバイスが追加済みで、選択できるチャンネルが 6 つ以上あること。追加の手順は<a class="xref" href="/ja/guide/add.html">第3章「デバイスの追加」</a>を参照してください。</li>
+    <li>6 つのチャンネルがすべて有効で、プランの上限内にあること。無料プランで有効にできるチャンネルは、アプリ全体で 2 つまでです。それを超えるチャンネルは、ウォールに<span class="ui">無効</span>または<span class="ui">プランに含まれていません</span>と表示されます。上限とチャンネルの有効化については、<a class="xref" href="/ja/guide/lvm.html#lvm-limits">「プランの上限がウォールに与える影響」</a>と<a class="xref" href="/ja/guide/plans.html">第11章「プランと上限」</a>を参照してください。</li>
+    <li>iPhone または iPad を使用していること。Apple TV については、<a class="xref" href="/ja/guide/lvm.html#lvm-tv">「Apple TV での違い」</a>を参照してください。</li>
+  </ul>
+  <ol class="steps">
+    <li class="step">
+      <p>画面下部の<span class="ui">LiveView Mix</span>タブをタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>LiveView Mix が未設定の場合、画面に説明と<span class="ui">LiveView Mix を設定</span>ボタンが表示されます。</p>
+      <figure class="phone"><img src="/guide/img/ja/lvm-empty.jpg" alt="設定前の LiveView Mix タブ。画面の中央に説明と設定ボタンがある" decoding="async" width="900" height="1956" data-src="/guide/img/ja/lvm-empty.jpg" data-fallback="/guide/img/lvm-empty.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>設定前の LiveView Mix タブ</figcaption></figure>
+    </li>
+    <li class="step">
+      <p><span class="ui">LiveView Mix を設定</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">カメラを選択</span>ページが開き、すべてのチャンネルがデバイスごとにまとめて一覧表示されます。ページの上部には、<span class="ui">横向きページ</span>が選択された<span class="ui">横向きページ</span>と<span class="ui">縦向きページ</span>の切り替えがあり、その下に<span class="ui" data-ui="value">0 台のカメラを選択中</span>と表示されます。</p>
+    </li>
+    <li class="step">
+      <p>6 つのチャンネルのうち、1 つ目のチャンネルの前にある丸をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>丸にチェックが入り、行の右側に<span class="ui">SD</span>と<span class="ui">HD</span>の選択が表示されて、<span class="ui">SD</span>が選ばれています。</p>
+    </li>
+    <li class="step">
+      <p>ウォールに表示したい順に、さらに 5 つのチャンネルにチェックを入れます。</p>
+      <p class="check"><b class="check-label">確認：</b>ページの上部に<span class="ui" data-ui="value">6 台のカメラを選択中</span>と表示されます。</p>
+      <figure class="phone"><img src="/guide/img/ja/lvm-pick-selected.jpg" alt="6 台のカメラを選択した「カメラを選択」ページ。チェックを入れた各チャンネルの右側に SD と HD の選択があり、上部に「すべて SD」と「すべて HD」のボタンがある" decoding="async" width="900" height="1956" data-src="/guide/img/ja/lvm-pick-selected.jpg" data-fallback="/guide/img/lvm-pick-selected.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>6 台のカメラを選択した状態</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>任意：より鮮明に表示したいカメラごとに、<span class="ui">HD</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>そのカメラの選択が<span class="ui">HD</span>になります。ほかのカメラは変わりません。</p>
+    </li>
+    <li class="step">
+      <p>右上の<span class="ui">完了</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>ページが閉じ、タブに 6 台のカメラのプレビューが表示されます。</p>
+    </li>
+    <li class="step">
+      <p>右上の<span class="ui">レイアウトを調整</span>（グリッドのアイコン）をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">レイアウトを調整</span>ページが開きます。ページの上部には<span class="ui" data-ui="value">このレイアウトは 4 枠 · 6 枠を配置</span>と表示されます。デフォルトのレイアウトは 1 ページに 4 タイルしか入らないため、6 台のカメラではウォールのページが 2 つになります。</p>
+    </li>
+    <li class="step">
+      <p><span class="ui">フルスクリーンのレイアウト</span>セクションで、<span class="ui" data-ui="value">1 + 5</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>レイアウトがハイライトされ、ページの上部に<span class="ui" data-ui="value">このレイアウトは 6 枠 · 6 枠を配置</span>と表示されます。</p>
+      <figure class="phone"><img src="/guide/img/ja/lvm-first-layout.jpg" alt="1 + 5 のレイアウトを選択した「レイアウトを調整」ページ。上部に「このレイアウトは 6 枠 · 6 枠を配置」の行がある" decoding="async" width="900" height="1956" data-src="/guide/img/ja/lvm-first-layout.jpg" data-fallback="/guide/img/lvm-first-layout.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>1 + 5 のレイアウトを選択した状態</figcaption></figure>
+    </li>
+    <li class="step">
+      <p><span class="ui">透かし</span>セクションまでスクロールし、<span class="ui">透かしを表示</span>をオンにします。</p>
+      <p class="check"><b class="check-label">確認：</b>セクションに、位置、内容、スタイルのオプションが表示されます。<span class="ui">デバイス名</span>と<span class="ui">カメラ名</span>がオンになっています。</p>
+    </li>
+    <li class="step">
+      <p>右上の<span class="ui">完了</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>ページが閉じます。プレビューのすべてのカメラに、デバイス名とカメラ名が表示されます。</p>
+    </li>
+    <li class="step">
+      <p>端末を横向きにします。</p>
+      <p class="check"><b class="check-label">確認：</b>プレビューが新しい角度に合わせて自動的に配置し直されます。設定は不要です。</p>
+    </li>
+    <li class="step">
+      <p>右上の<span class="ui">フルスクリーン</span>（金色のウォールのアイコン）をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>ウォールが画面を埋めます。左上の大きなタイル（幅と高さの 3 分の 2）に 1 台目のカメラが表示され、ほかの 5 台はその右側と下側に表示されます。左上に<span class="ui" data-ui="icon">✕</span>ボタンがあります。</p>
+      <figure class="land"><img src="/guide/img/ja/lvm-first-wall.jpg" alt="横向きのフルスクリーンウォール。1 + 5 のレイアウトで 6 台のカメラが並び、左上に大きなタイル、各タイルの右下にデバイス名とカメラ名がある" decoding="async" width="1600" height="736" data-src="/guide/img/ja/lvm-first-wall.jpg" data-fallback="/guide/img/lvm-first-wall.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>1 + 5 のレイアウトのフルスクリーンウォール</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>いずれかのカメラの映像をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>画面がそのカメラの 1 台表示に切り替わり、HD で再生されます。左上に戻るボタンがあります。</p>
+    </li>
+    <li class="step">
+      <p>左上の戻るボタン<span class="ui" data-ui="icon">‹</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>フルスクリーンウォールが再び表示されます。</p>
+    </li>
+    <li class="step">
+      <p>左上の<span class="ui" data-ui="icon">✕</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>ウォールが閉じ、LiveView Mix タブのプレビューが再び表示されます。</p>
+    </li>
+  </ol>
+  <p>期待される結果：LiveView Mix タブに 6 台のカメラのプレビューが表示され、フルスクリーンウォールでは<span class="ui" data-ui="value">1 + 5</span>のレイアウトで、1 台目のカメラが大きなタイルに表示されます。別のカメラを大きなタイルに置くには、<a class="xref" href="/ja/guide/lvm.html#lvm-arrange">「ウォールとタイルの配置」</a>を参照してください。タイルに映像ではなく状態を示すテキストが表示される場合は、<a class="xref" href="/ja/guide/lvm.html#lvm-states">「タイルがカメラを表示できないとき」</a>と<a class="xref" href="/ja/guide/trouble.html">第15章「トラブルシューティング」</a>を参照してください。</p>
+
+  <h3 id="lvm-pick">カメラと画質の選択</h3>
+  <p>パス：<span class="path"><span class="ui">LiveView Mix</span> › <span class="ui">カメラを選択</span></span>。このページは、<span class="path"><span class="ui">設定</span> › <span class="ui">LiveView Mix</span></span>からも開けます。そこでは、カメラの選択とレイアウトのオプションが 1 つのページにまとまっています。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-settings">「設定の LiveView Mix」</a>を参照してください。タブからページを開いた場合は、上部の切り替えで、横向きページと縦向きページのどちらを編集するかを選びます。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-pages">「縦向きページ」</a>を参照してください。</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>項目</th><th>説明</th></tr></thead>
+    <tbody>
+      <tr><td data-label="項目">ページ上部のカウント</td><td data-label="説明"><span class="ui" data-ui="value">6 台のカメラを選択中</span>は、チャンネルにチェックを入れるたびに更新されます。数えるのはカメラだけで、空のタイル、画像、時計、ラベル、コントロールパネルは含まれません。</td></tr>
+      <tr><td data-label="項目">チャンネルの行</td><td data-label="説明">デバイスごとに 1 つのセクション、チャンネルごとに 1 つの行があり、丸、サムネイル、チャンネルの番号、名前が表示されます。サムネイルにライブ映像が表示されるのは、プランの対象のチャンネルだけです。それ以外は<span class="ui">無効</span>または<span class="ui">プランに含まれていません</span>と表示されます。YouTube と Twitch の配信は、名前だけが表示されます。</td></tr>
+      <tr><td data-label="項目">チェックを入れた順序</td><td data-label="説明">新しくチェックを入れたカメラは、内容のある最後のタイルの次のタイルに入ります。特定のタイルにカメラを置くには、<span class="ui">ウォールの配置</span>の<span class="ui">ここにカメラを置く</span>を使います。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-arrange">「ウォールとタイルの配置」</a>を参照してください。</td></tr>
+      <tr><td data-label="項目">重複</td><td data-label="説明">1 つのチャンネルは、1 つのウォールに 1 回だけ配置できます。</td></tr>
+      <tr><td data-label="項目"><span class="ui">SD</span> | <span class="ui">HD</span></td><td data-label="説明">チャンネルにチェックを入れると、行の右側に画質の選択が表示されます。新しく追加したカメラは<span class="ui">SD</span>に設定されます。YouTube と Twitch の配信には選択がなく、画質はタイルのサイズに従います。</td></tr>
+      <tr><td data-label="項目"><span class="ui">すべて SD</span>、<span class="ui">すべて HD</span></td><td data-label="説明">ページ上部にある 2 つのボタンで、選択したすべてのカメラの画質を一度に設定します。</td></tr>
+      <tr><td data-label="項目"><span class="ui">デバイスがありません</span></td><td data-label="説明">デバイスをまだ追加していない場合に表示され、先にデバイスを追加するよう案内します。</td></tr>
+    </tbody>
+  </table></div>
+  <div class="shots pair">
+    <figure class="phone"><img src="/guide/img/ja/lvm-pick-empty.jpg" alt="何もチェックされていない「カメラを選択」ページ。NVR ごとにまとめられたチャンネルとサムネイル" decoding="async" width="900" height="1956" data-src="/guide/img/ja/lvm-pick-empty.jpg" data-fallback="/guide/img/lvm-pick-empty.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>何もチェックしていない状態</figcaption></figure>
+    <figure class="phone"><img src="/guide/img/ja/lvm-pick-selected.jpg" alt="「カメラを選択」ページ。チェックを入れた各チャンネルの右側に SD と HD の選択が表示されている" decoding="async" width="900" height="1956" data-src="/guide/img/ja/lvm-pick-selected.jpg" data-fallback="/guide/img/lvm-pick-selected.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>チェック後の SD と HD</figcaption></figure>
+  </div>
+  <h4>LiveView Mix の画質ルール</h4>
+  <ul>
+    <li>LiveView Mix には、タイルごとに設定する独自の画質があります。<span class="ui">1 台のカメラ</span>と<span class="ui">複数のカメラ</span>（<span class="path"><span class="ui">設定</span> › <span class="ui">デフォルトの画質</span></span>）の影響は受けません。これらの設定が適用されるのは、1 台表示と通常のデバイスウォールだけです。</li>
+    <li>ウォールの各タイルは、それぞれの設定に従って SD または HD で再生されます。タイルが小さいと、HD と SD はほとんど同じに見えます。ほとんどのタイルに<span class="ui">SD</span>を使い、はっきり見たいカメラにだけ<span class="ui">HD</span>を使うと、帯域幅とデバイスの負荷を減らせます。</li>
+    <li>ウォールまたはプレビューから開いた 1 台のカメラは、タイルの設定にかかわらず、常に HD で始まります。プレビューのフルスクリーンビューアでは、現在の視聴に限って画質を切り替えられます。この切り替えは保存されません。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-closeup">「1 台のカメラを開く」</a>を参照してください。</li>
+    <li>「カメラを選択」ページと配置キャンバスのサムネイルは、常に SD を使用します。</li>
+  </ul>
+  <p>カメラを選択するには：</p>
+  <ol class="steps">
+    <li class="step">
+      <p>LiveView Mix タブで、<span class="ui">カメラを選択</span>（カメラのアイコン）をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">カメラを選択</span>ページが開きます。すでに選択されているカメラには、チェックが入っています。</p>
+    </li>
+    <li class="step">
+      <p>ウォールに追加するチャンネルの前にある丸をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>丸にチェックが入り、行に<span class="ui">SD</span>と<span class="ui">HD</span>が表示され、上部のカウントが 1 増えます。</p>
+    </li>
+    <li class="step">
+      <p>そのカメラの画質を変更するには、<span class="ui">HD</span>または<span class="ui">SD</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>選択に、選んだ画質が表示されます。影響を受けるのは、このカメラだけです。</p>
+    </li>
+    <li class="step">
+      <p>任意：選択したすべてのカメラの画質を一度に変更するには、<span class="ui">すべて SD</span>または<span class="ui">すべて HD</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>選択したすべてのカメラの選択が、同じ画質になります。</p>
+    </li>
+    <li class="step">
+      <p>ウォールからカメラを外すには、チェックを入れたチャンネルの丸をもう一度タップします。</p>
+      <p class="check"><b class="check-label">確認：</b>丸が空に戻り、上部のカウントが 1 減ります。そのカメラのタイルは空になり、ほかのタイルは動きません。</p>
+    </li>
+    <li class="step">
+      <p>右上の<span class="ui">完了</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>ページが閉じ、プレビューが新しい選択内容に更新されます。</p>
+    </li>
+  </ol>
+  <div class="callout note">
+    <strong class="t">カメラを外すと、そのタイルは空になります</strong>
+    <p>カメラのチェックを外すと、そのタイルはその位置のまま空になります。画像、時計、ラベル、コントロールパネルを含め、ほかのすべてのタイルは、番号とウォール上の位置を保ちます。空になったタイルは、後で<span class="ui">ウォールの配置</span>でもう一度埋められます。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-arrange">「ウォールとタイルの配置」</a>を参照してください。</p>
+  </div>
+  <p>ページを LiveView Mix タブの右上のボタンで開いた場合、左上の<span class="ui">キャンセル</span>で、ページを開く前の状態にウォールが戻ります。<span class="ui">完了</span>では、選択内容が保持されます。</p>
+
+  <h4>削除されたカメラを指すタイル</h4>
+  <p>ウォールのタイルが、Cam Hub にもう存在しないカメラを指している場合（たとえば、そのカメラを追加していない端末で復元した後）、<span class="ui">カメラを選択</span>ページの上部に<span class="ui" data-ui="value">2 個のスロットが、削除されたカメラを指しています。</span>と<span class="ui">該当のスロットを空にする</span>ボタンが表示されます。これらのタイルは、チェックの一覧には表示されません。</p>
+  <ol class="steps">
+    <li class="step">
+      <p><span class="ui">該当のスロットを空にする</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>メモとボタンが消えます。これらのタイルはその位置のまま空になり、ほかのカメラの位置は変わりません。</p>
+      <figure class="phone"><img src="/guide/img/ja/lvm-pick-removed.jpg" alt="「カメラを選択」ページの上部に表示された、削除されたカメラを指すスロットについてのメモと、その下の「該当のスロットを空にする」ボタン" decoding="async" width="900" height="1956" data-src="/guide/img/ja/lvm-pick-removed.jpg" data-fallback="/guide/img/lvm-pick-removed.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>削除されたカメラを指すタイル</figcaption></figure>
+    </li>
+  </ol>
+
+  <h3 id="lvm-layout">レイアウトの調整</h3>
+  <p>パス：<span class="path"><span class="ui">LiveView Mix</span> › <span class="ui">レイアウトを調整</span></span>。ページの上部には<span class="ui" data-ui="value">このレイアウトは 6 枠 · 6 枠を配置</span>と表示されます。最初の数字は選択したレイアウトのウォールの 1 ページあたりのタイル数、2 番目の数字はウォールで内容のあるタイルの数です。配置済みのタイルには、カメラのほか、設定済みの画像、コントロールパネル、時計、ラベルが含まれますが、空のタイルは含まれません。</p>
+  <p><span class="ui">フルスクリーンのレイアウト</span>セクションには、用意されたレイアウトが順に並び、最後に<span class="ui">カスタム</span>があります。各レイアウトは、形を示す小さな図とその名前で表示されます。縦向きページでは、そのウォールが縦長の画面向けにレイアウトされるため、図も縦長に描かれます。</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>レイアウト</th><th>1 ページのタイル数</th><th>形</th></tr></thead>
+    <tbody>
+      <tr><td data-label="レイアウト"><span class="ui" data-ui="value">2 × 2</span></td><td data-label="1 ページのタイル数">4</td><td data-label="形">2 列 2 行、同じサイズのタイル</td></tr>
+      <tr><td data-label="レイアウト"><span class="ui" data-ui="value">2 × 3</span></td><td data-label="1 ページのタイル数">6</td><td data-label="形">2 列 3 行、同じサイズのタイル</td></tr>
+      <tr><td data-label="レイアウト"><span class="ui" data-ui="value">3 × 3</span></td><td data-label="1 ページのタイル数">9</td><td data-label="形">3 列 3 行、同じサイズのタイル</td></tr>
+      <tr><td data-label="レイアウト"><span class="ui" data-ui="value">3 × 4</span></td><td data-label="1 ページのタイル数">12</td><td data-label="形">3 列 4 行、同じサイズのタイル</td></tr>
+      <tr><td data-label="レイアウト"><span class="ui" data-ui="value">4 × 4</span></td><td data-label="1 ページのタイル数">16</td><td data-label="形">4 列 4 行、同じサイズのタイル</td></tr>
+      <tr><td data-label="レイアウト"><span class="ui" data-ui="value">1 + 3</span></td><td data-label="1 ページのタイル数">4</td><td data-label="形">左に大きなタイル 1 つ（幅の 3 分の 2）、右に縦 1 列で小さなタイル 3 つ</td></tr>
+      <tr><td data-label="レイアウト"><span class="ui" data-ui="value">1 + 5</span></td><td data-label="1 ページのタイル数">6</td><td data-label="形">左上に大きなタイル 1 つ（幅と高さの 3 分の 2）、その右側と下側に小さなタイル 5 つ</td></tr>
+      <tr><td data-label="レイアウト"><span class="ui" data-ui="value">1 + 7</span></td><td data-label="1 ページのタイル数">8</td><td data-label="形">左上に大きなタイル 1 つ（幅と高さの 4 分の 3）、その右側と下側に小さなタイル 7 つ</td></tr>
+      <tr><td data-label="レイアウト"><span class="ui">カスタム</span></td><td data-label="1 ページのタイル数">最大 64</td><td data-label="形">手で描いたレイアウト。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-custom">「カスタムレイアウトを作成する」</a>を参照してください。</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>タイル 1 は、レイアウトの最初のタイルです。大きなタイルが 1 つあるレイアウトでは、タイル 1 が大きなタイルです。ほかの番号は、レイアウトの順序に従います。</li>
+    <li>ウォールの 1 ページにすべてのタイルが入らない場合、残りのタイルは次のページに入ります。たとえば、<span class="ui" data-ui="value">2 × 2</span>のレイアウトで 6 つのタイルがある場合はウォールのページが 2 つになり、1 ページ目に 4 タイル、2 ページ目に 2 タイルが入り、残りの位置は黒になります。</li>
+    <li>タイルが 16 を超えるレイアウトの図には、右上にテレビのアイコン（<span class="ui">大画面に最適</span>）が付きます。スマートフォンでは見づらいため、iPad や Apple TV での表示に適しています。</li>
+    <li>iPhone と iPad で選べる用意済みのレイアウトは、タイルが 16 までのものです。タイルが 16 を超える用意済みのレイアウト（<span class="ui" data-ui="value">5 × 4</span>から<span class="ui" data-ui="value">7 × 7</span>、<span class="ui" data-ui="value">1 + 21</span>、<span class="ui" data-ui="value">1 + 27</span>）は、Apple TV でのみ選べます。詳しくは<a class="xref" href="/ja/guide/appletv.html">第14章「Apple TV」</a>を参照してください。すでにこれらのいずれかに設定されているウォール（たとえば復元後）も正しく表示され、その図が一覧に表示されます。スマートフォンや iPad でタイルをさらに配置するには、カスタムレイアウトを使います。</li>
+    <li><span class="ui">カスタム</span>の図には、描いたレイアウトが表示されます。まだ描いていない場合は、開始時の形が表示され、タップするとその形が選択されます。</li>
+  </ul>
+  <figure class="phone"><img src="/guide/img/ja/lvm-layout.jpg" alt="「レイアウトを調整」ページ。上部にタイル数、「フルスクリーンのレイアウト」セクションに 2 × 2 から 4 × 4、1 + 3、1 + 5、1 + 7、カスタム、その下に「カスタムレイアウトを作成」「このウォールの黒帯」「ウォールの配置」がある" decoding="async" width="900" height="1956" data-src="/guide/img/ja/lvm-layout.jpg" data-fallback="/guide/img/lvm-layout.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>「レイアウトを調整」ページ</figcaption></figure>
+  <p>レイアウトを選択するには：</p>
+  <ol class="steps">
+    <li class="step">
+      <p>LiveView Mix タブで、<span class="ui">レイアウトを調整</span>（グリッドのアイコン）をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">レイアウトを調整</span>ページが開きます。使用中のレイアウトがハイライトされています。</p>
+    </li>
+    <li class="step">
+      <p><span class="ui">フルスクリーンのレイアウト</span>セクションで、使用するレイアウトをタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>選択したレイアウトがハイライトされ、上部の 1 ページあたりのタイル数が更新されます。</p>
+    </li>
+    <li class="step">
+      <p>右上の<span class="ui">完了</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>ページが閉じます。プレビューは均等なグリッドのままで、選択したレイアウトはフルスクリーンウォールに反映されます。</p>
+    </li>
+  </ol>
+  <p>同じページには、配置、黒帯、透かし、ページ送りのオプションもあります。それぞれ、<a class="xref" href="/ja/guide/lvm.html#lvm-arrange">「ウォールとタイルの配置」</a>、<a class="xref" href="/ja/guide/lvm.html#lvm-fit">「黒帯、画面いっぱいの表示、端末の角度」</a>、<a class="xref" href="/ja/guide/lvm.html#lvm-watermark">「透かし」</a>、<a class="xref" href="/ja/guide/lvm.html#lvm-settings">「設定の LiveView Mix」</a>で説明します。</p>
+  <div class="callout note">
+    <strong class="t">キャンセルと完了の適用範囲</strong>
+    <p>LiveView Mix タブから開く<span class="ui">カメラを選択</span>ページと<span class="ui">レイアウトを調整</span>ページには、それぞれ<span class="ui">キャンセル</span>と<span class="ui">完了</span>があります。<span class="ui">キャンセル</span>は、ページを開く前の状態にすべてのウォールを戻します。ページ内で行った配置、カスタムレイアウト、もう一方のページでの作業、縦向きページの切り替えも元に戻ります。<span class="ui">カスタムレイアウト</span>、<span class="ui">配置</span>、<span class="ui">スロット N</span>にも、それぞれ独自の<span class="ui">キャンセル</span>と<span class="ui">完了</span>があります。<span class="ui">完了</span>は 1 つ前の階層に戻るだけで、<span class="ui">キャンセル</span>は、その階層に入ってから変更した内容だけを元に戻します。すべての変更を保持するには、いちばん外側のページまで<span class="ui">完了</span>をタップして戻ります。</p>
+  </div>
+
+  <h3 id="lvm-custom">カスタムレイアウトを作成する</h3>
+  <p>パス：<span class="path"><span class="ui">LiveView Mix</span> › <span class="ui">レイアウトを調整</span> › <span class="ui">カスタムレイアウトを作成</span></span>。用意されたレイアウトに合うものがない場合は、グリッドの行数と列数を自由に選び、隣り合うセルを結合して大きなタイルにできます。縦向きページでは、グリッドは縦長に描かれます。</p>
+  <figure class="phone clip"><video class="clip" aria-label="カスタムレイアウトの作成：タップで大きなタイルを分割し、セルの上をドラッグして結合し、ステッパーで行数と列数を変更して、レイアウトを使用します。" muted="" loop="" playsinline="" preload="none" data-src="/guide/vid/ja/rec-custom-layout.mp4" data-fallback="/guide/vid/rec-custom-layout.mp4" data-poster="/guide/img/ja/rec-custom-layout.jpg" data-fallback-poster="/guide/img/rec-custom-layout.jpg" poster="/guide/img/ja/rec-custom-layout.jpg"></video><figcaption>カスタムレイアウトの作成：タップで大きなタイルを分割し、セルの上をドラッグして結合し、ステッパーで行数と列数を変更して、レイアウトを使用します。</figcaption></figure>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>項目</th><th>説明</th></tr></thead>
+    <tbody>
+      <tr><td data-label="項目">開始時の形</td><td data-label="説明">3 × 3 のグリッドで、左上の 2 × 2 のブロックがすでに 1 つの大きなタイルに結合された状態です。タイルは全部で 6 つです。</td></tr>
+      <tr><td data-label="項目"><span class="ui">行数</span>、<span class="ui">列数</span></td><td data-label="説明">− と + で、2 から 8 まで設定します。最大は 8 × 8 で、64 タイルです。</td></tr>
+      <tr><td data-label="項目"><span class="ui">タイル数</span></td><td data-label="説明">結合後のタイルの合計数です。16 タイルを超えると、下にメモ<span class="ui ui-long">タイル数が多いため、iPad または Apple TV での表示に適しています。</span>が表示されます。</td></tr>
+      <tr><td data-label="項目">結合</td><td data-label="説明">グリッドの複数のセルの上で指をドラッグします。覆われた長方形が 1 つの大きなタイルになります。大きなタイルは長方形のみで、L 字などの不規則な形にはできません。</td></tr>
+      <tr><td data-label="項目">分割</td><td data-label="説明">結合したタイルをタップすると、1 つ 1 つのセルに戻ります。1 つのセルをタップしても何も起きません。</td></tr>
+      <tr><td data-label="項目"><span class="ui">すべての結合を解除</span></td><td data-label="説明">すべての大きなタイルを一度に分割します。大きなタイルがない場合、このボタンは使用できません。</td></tr>
+      <tr><td data-label="項目">番号</td><td data-label="説明">各タイルの番号は読み順（左から右、上から下）に従い、配置キャンバスで使われるタイルの番号になります。大きなタイルは、左上のセルの位置に入ります。</td></tr>
+      <tr><td data-label="項目"><span class="ui">このレイアウトを使う</span></td><td data-label="説明">描いたレイアウトを、ウォールのレイアウトにします。すでに使用中の場合、このボタンは<span class="ui ui-long">ウォールでこのレイアウトを使用中です。</span>に置き換わります。</td></tr>
+    </tbody>
+  </table></div>
+  <ol class="steps">
+    <li class="step">
+      <p>LiveView Mix タブで、<span class="ui">レイアウトを調整</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">レイアウトを調整</span>ページが開きます。</p>
+    </li>
+    <li class="step">
+      <p><span class="ui">フルスクリーンのレイアウト</span>セクションで、<span class="ui">カスタムレイアウトを作成</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">カスタムレイアウト</span>ページが開きます。上部にグリッドがあり、その下に<span class="ui">行数</span>、<span class="ui">列数</span>、<span class="ui">タイル数</span>があります。</p>
+      <figure class="phone"><img src="/guide/img/ja/lvm-custom.jpg" alt="「カスタムレイアウト」ページ。左上の 2 × 2 が結合された 3 × 3 のグリッド、6 タイル、その下に行数、列数、タイル数、「このレイアウトを使う」ボタンがある" decoding="async" width="900" height="1956" data-src="/guide/img/ja/lvm-custom.jpg" data-fallback="/guide/img/lvm-custom.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>開始時の形（6 タイル）</figcaption></figure>
+    </li>
+    <li class="step">
+      <p><span class="ui">行数</span>と<span class="ui">列数</span>の右にある − と + で、グリッドのサイズを設定します。</p>
+      <p class="check"><b class="check-label">確認：</b>グリッドが新しい行数と列数で描き直され、<span class="ui">タイル数</span>が更新されます。行数または列数を減らすと、収まらなくなった大きなタイルは取り除かれます。</p>
+    </li>
+    <li class="step">
+      <p>グリッドの上で、結合する最初のセルから最後のセルまで、1 本の指をドラッグします。</p>
+      <p class="check"><b class="check-label">確認：</b>ドラッグ中は、覆われた領域がハイライトされます。指を離すと、その領域のセルが 1 つの大きなタイルに結合され、<span class="ui">タイル数</span>が減り、番号が振り直されます。</p>
+      <figure class="phone"><img src="/guide/img/ja/lvm-custom-drag.jpg" alt="指でドラッグしている途中の「カスタムレイアウト」ページ。覆われたセルがハイライトされている" decoding="async" width="900" height="1956" data-src="/guide/img/ja/lvm-custom-drag.jpg" data-fallback="/guide/img/lvm-custom-drag.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>結合するセルの上をドラッグしている状態</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>大きなタイルを分割するには、そのタイルを 1 回タップします。</p>
+      <p class="check"><b class="check-label">確認：</b>大きなタイルが 1 つ 1 つのセルに分割され、<span class="ui">タイル数</span>が増えます。</p>
+    </li>
+    <li class="step">
+      <p><span class="ui">このレイアウトを使う</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>ボタンが<span class="ui">ウォールでこのレイアウトを使用中です。</span>に置き換わります。</p>
+    </li>
+    <li class="step">
+      <p>右上の<span class="ui">完了</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">レイアウトを調整</span>ページに戻ります。<span class="ui">カスタム</span>の図が選択され、最後に描いた形が表示されます。</p>
+    </li>
+  </ol>
+  <ul>
+    <li>ドラッグが既存の大きなタイルに触れた場合は、そのタイルが先に分割され、ドラッグした長方形だけが結合されます。範囲が自動的に広がることはありません。</li>
+    <li>ドラッグがグリッドの端を越えた場合、範囲は端のセルで止まります。</li>
+    <li>グリッドと大きなタイルへの変更は、すぐに保存されます。左上の<span class="ui">キャンセル</span>をタップすると、ページを開いてから変更した内容がすべて元に戻ります。</li>
+    <li><span class="ui">このレイアウトを使う</span>をタップせずにレイアウトを描いても、現在のウォールは変わりません。使用していない形をここで整えることもできます。</li>
+    <li>描いたレイアウトは、用意されたレイアウトをしばらく選んでいても保持されます。後で<span class="ui">カスタム</span>の図をタップすると、その形に戻ります。</li>
+    <li>カスタムレイアウトは、<span class="ui">配置</span>ページ上部のレイアウトの行でも選択できますが、形の編集はここでしかできません。</li>
+    <li>端末を縦向きにすると、描いたレイアウトも用意されたレイアウトと同様に反転しますが、各カメラは配置したタイルに留まります。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-fit">「黒帯、画面いっぱいの表示、端末の角度」</a>を参照してください。</li>
+  </ul>
+
+  <h3 id="lvm-special">特別なレイアウト：大小のタイルを 1 つのウォールに</h3>
+  <p>カスタムレイアウトでは、隣り合うセルを結合して大きなタイルにできます。これにより、監視センターのビデオウォールのようなレイアウトを作れます。重要なカメラを大きくし、ほかのカメラを小さなタイルに縮小して、時計、ラベル、コントロールパネルも同じウォールに置きます。</p>
+  <p>例：4 行 4 列のグリッドで、左上と左下に 2 × 2 の大きなタイルを結合し、タイルは全部で 10 個です。2 つの大きなタイルと右側の小さなタイルのうち 6 つに 8 台のカメラが入り、残りの 2 つの小さなタイルにコントロールパネルと時計が入ります。</p>
+  <p>前提条件：<a class="xref" href="/ja/guide/lvm.html#lvm-pick">「カメラと画質の選択」</a>の説明に従ってウォールに 8 台のカメラが選択済みで、<a class="xref" href="/ja/guide/lvm.html#lvm-custom">「カスタムレイアウトを作成する」</a>のドラッグ操作を読んであること。所要時間：約 3 分。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>LiveView Mix タブで、<span class="ui">レイアウトを調整</span>をタップし、続いて<span class="ui">カスタムレイアウトを作成</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">カスタムレイアウト</span>ページに、開始時の形（左上に 2 × 2 の大きなタイルがある 3 × 3 のグリッド）が表示されます。</p>
+    </li>
+    <li class="step">
+      <p><span class="ui">行数</span>を <code>4</code>、<span class="ui">列数</span>を <code>4</code> に設定します。</p>
+      <p class="check"><b class="check-label">確認：</b>グリッドが 4 × 4 になり、左上の大きなタイルは保持され、<span class="ui">タイル数</span>が <code>13</code> と表示されます。</p>
+    </li>
+    <li class="step">
+      <p>グリッドの上で、左下の 2 × 2 のセル（3 行目と 4 行目の 1 列目と 2 列目）の上を、1 本の指でドラッグします。</p>
+      <p class="check"><b class="check-label">確認：</b>4 つのセルが 2 つ目の大きなタイルに結合され、<span class="ui">タイル数</span>が <code>10</code> と表示されます。大きなタイルの番号は 1 と 6 です。</p>
+      <figure class="phone"><img src="/guide/img/ja/lvm-custom-merged.jpg" alt="「カスタムレイアウト」ページ。4 行 4 列で、左上と左下に 2 × 2 の大きなタイル、右側に 8 つの小さなタイルがあり、合計 10 タイル" decoding="async" width="900" height="1956" data-src="/guide/img/ja/lvm-custom-merged.jpg" data-fallback="/guide/img/lvm-custom-merged.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>左に大きなタイル 2 つ、右に小さなタイル 8 つ</figcaption></figure>
+    </li>
+    <li class="step">
+      <p><span class="ui">このレイアウトを使う</span>をタップし、続いて<span class="ui">完了</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">レイアウトを調整</span>ページに戻り、<span class="ui">カスタム</span>の図が選択されています。</p>
+    </li>
+    <li class="step">
+      <p><span class="ui">ウォールの配置</span>をタップし、大きくしたいカメラを、番号 1 と 6 の大きなタイルにドラッグします。</p>
+      <p class="check"><b class="check-label">確認：</b>ドラッグしたカメラと、移動先のタイルの内容が入れ替わります。配置については、<a class="xref" href="/ja/guide/lvm.html#lvm-arrange">「ウォールとタイルの配置」</a>を参照してください。</p>
+    </li>
+    <li class="step">
+      <p><span class="ui">配置</span>ページで、未使用のタイル 9 と 10 に、コントロールパネルと時計を入れます。それぞれのタイルをタップして<span class="ui">画像、コントロールパネル、時計、ラベル…</span>を選び、一方は<span class="ui">表示内容</span>を<span class="ui">コントロール</span>に、もう一方は<span class="ui">時計</span>に設定します。</p>
+      <p class="check"><b class="check-label">確認：</b>キャンバスの 2 つのタイルに、コントロールパネルと時計が表示されます。設定については、<a class="xref" href="/ja/guide/lvm.html#lvm-slots">「タイルにカメラ以外に表示できるもの」</a>を参照してください。</p>
+    </li>
+    <li class="step">
+      <p><span class="ui">完了</span>を繰り返しタップして LiveView Mix タブに戻り、端末を横向きにして、<span class="ui">フルスクリーン</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>ウォールに、大小さまざまなサイズのタイルが表示されます。大きなタイルが 2 つと、小さなタイルが 8 つで、下の図のようになります。</p>
+      <figure class="land"><img src="/guide/img/ja/lvm-wall-fullscreen.jpg" alt="大きさの異なるタイルを並べたフルスクリーンウォール。左に大きなタイルが 2 つ、小さなカメラのタイルが 6 つ、コントロールパネルと時計がある" decoding="async" width="1600" height="736" data-src="/guide/img/ja/lvm-wall-fullscreen.jpg" data-fallback="/guide/img/lvm-wall-fullscreen.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>特別なレイアウトのフルスクリーンウォール</figcaption></figure>
+    </li>
+  </ol>
+  <p>期待される結果：ウォールが描いたレイアウトに従い、大きなタイルに重要なカメラが表示されます。コントロールパネルについては、<a class="xref" href="/ja/guide/webhook.html">第9章「コントロールパネルと Webhook」</a>を参照してください。タイル、大きなタイルの位置、各タイルの内容は、この端末に保存されます。端末を変更する場合は、バックアップと復元で引き継げます。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-settings">「設定の LiveView Mix」</a>を参照してください。</p>
+
+  <h3 id="lvm-arrange">ウォールとタイルの配置</h3>
+  <p>パス：<span class="path"><span class="ui">LiveView Mix</span> › <span class="ui">レイアウトを調整</span> › <span class="ui">ウォールの配置</span></span>。このページで、各タイルに何を入れるかを決めます。タイトルは<span class="ui">配置</span>です。ページは上から順に、レイアウトの行、キャンバス、<span class="ui">ヒント</span>、<span class="ui">並び順</span>の一覧で構成されます。<span class="ui">ウォールの配置</span>は、カメラを選択済みか、デバイスがある時点で使用できます。</p>
+  <figure class="phone clip"><video class="clip" aria-label="ウォールの配置：タイルを別のタイルの上にドラッグすると 2 つが入れ替わり、空のセルにドラッグするとそこに移動します。" muted="" loop="" playsinline="" preload="none" data-src="/guide/vid/ja/rec-arrange-swap.mp4" data-fallback="/guide/vid/rec-arrange-swap.mp4" data-poster="/guide/img/ja/rec-arrange-swap.jpg" data-fallback-poster="/guide/img/rec-arrange-swap.jpg" poster="/guide/img/ja/rec-arrange-swap.jpg"></video><figcaption>ウォールの配置：タイルを別のタイルの上にドラッグすると 2 つが入れ替わり、空のセルにドラッグするとそこに移動します。</figcaption></figure>
+  <figure class="phone"><img src="/guide/img/ja/lvm-arrange-full.jpg" alt="「配置」ページ。上部にレイアウトの行、中央に 10 個のタイルがあるキャンバス（タイル 9 はコントロールパネル、タイル 10 は時計）、その下に「並び順」の一覧がある" decoding="async" width="900" height="1956" data-src="/guide/img/ja/lvm-arrange-full.jpg" data-fallback="/guide/img/lvm-arrange-full.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>「配置」ページ</figcaption></figure>
+  <ul>
+    <li><b>レイアウトの行</b>：<span class="ui">レイアウトを調整</span>と同じレイアウトの図で、ここで直接レイアウトを変更できます。<span class="ui">カスタム</span>の図は、レイアウトを描いた後、または使用中の間に表示され、ここでは選択のみ行えます。</li>
+    <li><b>キャンバス</b>：横向きページでは 16:9 の横長、縦向きページでは 9:16 の縦長で描画され、現在のウォールのページを表示します。内容のある各タイルの番号は、左上に表示されます。カメラのタイルにはライブ映像（SD）が表示されます。オフラインのカメラやプラン対象外のカメラは、斜線の入ったカメラのアイコンがある黒いタイルになり、YouTube や Twitch の配信は名前が表示されます。透かしがオフの間は左下にチャンネル名が表示され、オンの場合は透かしがプレビューされます。キャンバス上のコントロールパネルはウォールと同じ見た目で、タップすると編集画面が開き、リクエストは送信されません。縦向きの端末では、実際の横向きのウォールは反転しますが、各タイルの番号は変わりません。</li>
+    <li><b>未使用のタイル</b>：破線の枠と + で表示されます。内容のあるタイルの間、または最後のタイルの後にある、何も入っていないタイルです。タップすると、入れるものを選べます。下の表を参照してください。</li>
+    <li><b>ページの切り替え</b>：レイアウトが収容できる数よりタイルが多い場合、キャンバスの下に矢印と<span class="ui" data-ui="value">1 / 2 ページ</span>が表示されます。左右にスワイプしてもページが切り替わります。</li>
+    <li><b><span class="ui">ヒント</span></b>：折りたたみできるメモです。折りたたんだ状態は記憶されます。</li>
+    <li><b><span class="ui">並び順</span>の一覧</b>：内容のあるタイルだけが、それぞれのタイルの番号の下に並びます。カメラの行には、デバイス名の上にチャンネル名が表示されます。ほかの行には内容の種類（<span class="ui">コントロール</span>、<span class="ui">時計</span>、<span class="ui">ラベル</span>、<span class="ui">スロット画像</span>、または色だけのタイルでは<span class="ui">空きスロット</span>）が表示されます。コントロールパネルの行にはパネルのタイトルも、ラベルの行にはラベルのテキストも表示されるので、同じ種類のタイルを区別できます。</li>
+    <li>ツールバー：左上に<span class="ui">キャンセル</span>、右上に<span class="ui" data-ui="system">編集</span>と<span class="ui">完了</span>があります。</li>
+  </ul>
+  <figure class="phone"><img src="/guide/img/ja/lvm-arrange-pages.jpg" alt="2 ページ構成のウォールの「配置」ページ。キャンバスの下に矢印と「1 / 2 ページ」がある" decoding="async" width="900" height="1956" data-src="/guide/img/ja/lvm-arrange-pages.jpg" data-fallback="/guide/img/lvm-arrange-pages.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>2 ページのウォールでのページ切り替え</figcaption></figure>
+  <p>未使用のタイルをタップすると、タイルの番号（例：<span class="ui" data-ui="value">スロット 7</span>）をタイトルにしたメニューが開きます。</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>選択肢</th><th>動作</th></tr></thead>
+    <tbody>
+      <tr><td data-label="選択肢"><span class="ui">ここにカメラを置く</span></td><td data-label="動作">まだこのウォールにないカメラを、デバイスごとにまとめて一覧表示します。タップしたカメラがこのタイルに入ります。すべてのカメラが配置済みの場合、一覧には<span class="ui ui-long">すべてのカメラがすでにウォールにあります。</span>と表示されます。</td></tr>
+      <tr><td data-label="選択肢"><span class="ui">別のタイルをここに移動…</span></td><td data-label="動作">任意のウォールのページにある内容のあるタイルを、このタイルに移動します。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-move">「タイルを空のタイルに移動する」</a>を参照してください。ウォールに内容のあるタイルが 1 つ以上ある場合に表示されます。</td></tr>
+      <tr><td data-label="選択肢"><span class="ui ui-long">画像、コントロールパネル、時計、ラベル…</span></td><td data-label="動作"><span class="ui">スロット N</span>ページを開き、タイルに画像、コントロールパネル、時計、ラベル、色を設定します。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-slots">「タイルにカメラ以外に表示できるもの」</a>を参照してください。</td></tr>
+      <tr><td data-label="選択肢"><span class="ui">横向きページからコピー…</span>または<span class="ui">縦向きページからコピー…</span></td><td data-label="動作">もう一方のページから、コントロールパネル、時計、ラベル、画像、色の付いたタイルをコピーします。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-pages">「縦向きページ」</a>を参照してください。縦向きページと、縦向きページがオンの間の横向きページで表示されます。</td></tr>
+    </tbody>
+  </table></div>
+  <p>選んだタイルにカメラを置くには：</p>
+  <ol class="steps">
+    <li class="step">
+      <p>LiveView Mix タブで、<span class="ui">レイアウトを調整</span>をタップし、続いて<span class="ui">ウォールの配置</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">配置</span>ページが開きます。</p>
+    </li>
+    <li class="step">
+      <p>キャンバス上の未使用のタイル（例：タイル 7）をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui" data-ui="value">スロット 7</span>というタイトルのメニューが表示されます。</p>
+    </li>
+    <li class="step">
+      <p><span class="ui">ここにカメラを置く</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui" data-ui="value">スロット 7</span>というタイトルで、まだウォールにないカメラの一覧が開きます。</p>
+    </li>
+    <li class="step">
+      <p>カメラをタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>一覧が閉じます。カメラがキャンバスのタイル 7 と、<span class="ui">並び順</span>の一覧の番号 7 の下に表示されます。何も入っていないタイル 1 から 6 は、空のままです。</p>
+    </li>
+  </ol>
+  <p>2 つのタイルの位置を入れ替えるには：</p>
+  <ol class="steps">
+    <li class="step">
+      <p>キャンバス上の内容のあるタイルを、1 本の指で別のタイルの上にドラッグします。先に長押しする必要はありません。</p>
+      <p class="check"><b class="check-label">確認：</b>ドラッグしたタイルが持ち上がって指に追従し、移動先のタイルがハイライトされた枠で表示されます。</p>
+      <figure class="phone"><img src="/guide/img/ja/lvm-arrange-drag.jpg" alt="タイルをドラッグしている途中の「配置」ページ。ドラッグ中のタイルが持ち上がり、移動先のタイルがハイライトされた枠で示されている" decoding="async" width="900" height="1956" data-src="/guide/img/ja/lvm-arrange-drag.jpg" data-fallback="/guide/img/lvm-arrange-drag.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>移動先のタイルへのドラッグ</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>指を離します。</p>
+      <p class="check"><b class="check-label">確認：</b>2 つのタイルの位置が入れ替わり、<span class="ui">並び順</span>の一覧が更新されます。</p>
+    </li>
+  </ol>
+  <ul>
+    <li>タイルを未使用のタイルの上にドロップすると、タイルはそこに移動し、元のタイルは空になります。ほかのタイルは動きません。</li>
+    <li>指がキャンバスの外に出てから離した場合、ウォールは変わりません。</li>
+    <li>ドラッグで届くのは、画面に表示されているウォールのページのタイルだけです。別のウォールのページにあるタイルを空のタイルに移すには<span class="ui">別のタイルをここに移動…</span>を、別のウォールのページにある内容のある 2 つのタイルを入れ替えるには<span class="ui">並び順</span>の一覧を使います。</li>
+    <li>カメラのタイルをタップしても何も起きません。カメラを外すには、<span class="ui">カメラを選択</span>または<span class="ui">並び順</span>の一覧を使います。画像、コントロールパネル、時計、ラベルのあるタイルをタップすると、その編集画面が開きます。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-slots">「タイルにカメラ以外に表示できるもの」</a>を参照してください。</li>
+  </ul>
+  <p>一覧で位置を入れ替えたり、タイルを空にしたりするには：</p>
+  <ol class="steps">
+    <li class="step">
+      <p>右上の<span class="ui" data-ui="system">編集</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">並び順</span>の一覧のすべての行に、並べ替えのハンドルと削除ボタンが表示されます。</p>
+    </li>
+    <li class="step">
+      <p>行の右側にある並べ替えのハンドルを、一覧の新しい位置までドラッグします。</p>
+      <p class="check"><b class="check-label">確認：</b>同じ内容のあるタイルの間で内容が入れ替わり、空のタイルは空のままです。番号とキャンバスが、ウォールのページをまたいで更新されます。</p>
+    </li>
+    <li class="step">
+      <p>タイルを空にするには、その行を左にスワイプして<span class="ui" data-ui="system">削除</span>をタップします。編集モードでは、行の削除ボタンも使用できます。</p>
+      <p class="check"><b class="check-label">確認：</b>行が消え、タイルが空になります。ほかのタイルは動きません。カメラのタイルを空にすると、そのカメラは<span class="ui">カメラを選択</span>でもチェックが外れます。</p>
+    </li>
+    <li class="step">
+      <p>右上の<span class="ui">完了</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">レイアウトを調整</span>ページに戻り、配置が保持されます。</p>
+    </li>
+  </ol>
+  <ul>
+    <li>最後のウォールのページに余裕がある間は、キャンバスに常にいくつかの未使用のタイルが表示されます。レイアウトのすべてのタイルが埋まっている場合は、新しいものを追加する前に、レイアウトの行でタイル数の多いレイアウトを選ぶか、タイルを空にします。</li>
+    <li>左上の<span class="ui">キャンセル</span>をタップすると、<span class="ui">配置</span>ページに入ったときの状態にウォールが戻ります。</li>
+  </ul>
+
+  <h3 id="lvm-move">タイルを空のタイルに移動する</h3>
+  <p><span class="ui">別のタイルをここに移動…</span>は、このウォールのページまたは別のページにある内容のあるタイルを、タップした空のタイルに移動します。元のタイルは空になり、ほかのものは動きません。この方法で、ドラッグでは届かない 2 ページ目のコントロールパネルを、1 ページ目の空のタイルに入れられます。</p>
+  <ol class="steps">
+    <li class="step">
+      <p><span class="ui">配置</span>ページで、内容を受け取る未使用のタイル（例：タイル 9）をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui" data-ui="value">スロット 9</span>というタイトルのメニューが表示されます。</p>
+    </li>
+    <li class="step">
+      <p><span class="ui">別のタイルをここに移動…</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui" data-ui="value">スロット 9</span>というタイトルの一覧が開き、すべてのウォールのページにある内容のあるタイルが、それぞれのタイルの番号の下に、<span class="ui">並び順</span>の一覧と同じ説明で表示されます。一覧の下のメモには、<span class="ui">選んだタイルがここに移動し、元のタイルは空になります。ほかのものは動きません。</span>と書かれています。</p>
+      <figure class="phone"><img src="/guide/img/lvm-move-picker.jpg" alt="スロット 12 で「別のタイルをここに移動…」から開いた一覧。内容のあるすべてのタイルが番号とデバイスとともに並び、選んだタイルが移動して元のタイルは空になるというメモがある" decoding="async" width="900" height="1947" data-src="/guide/img/lvm-move-picker.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>別のタイルを空のタイルに移動する</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>移動するタイル（例：タイル 12 のコントロールパネル）をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>一覧が閉じます。コントロールパネルがタイル 9 に入り、タイル 12 は空になります。ほかのすべてのタイルは位置を保ちます。</p>
+    </li>
+  </ol>
+  <p>何も移動せずに一覧を閉じるには、左上の<span class="ui">キャンセル</span>をタップします。</p>
+
+  <h3 id="lvm-slots">タイルにカメラ以外に表示できるもの</h3>
+  <p>タイルにはカメラ以外のものも入れられます。未使用のタイルをタップして<span class="ui">画像、コントロールパネル、時計、ラベル…</span>を選ぶか、すでにこれらのいずれかがあるタイルをタップして<span class="ui">スロット N</span>ページを開き、<span class="ui">表示内容</span>メニューで内容を選びます。</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>内容</th><th>オプションと説明</th></tr></thead>
+    <tbody>
+      <tr><td data-label="内容"><span class="ui">なし</span></td><td data-label="オプションと説明">単色の空白です。<span class="ui">カラー</span>で色を選びます。デフォルトは黒です。<span class="ui">なし</span>を選ぶと、そのタイルにあった画像、コントロールパネル、時計、ラベルが削除されます。黒以外の色を設定したタイルは、色の付いたタイルとしてウォールに残り、キャンバスには<span class="ui">タップして設定</span>と表示されます。何も入っていない黒いタイルは、未使用として扱われます。</td></tr>
+      <tr><td data-label="内容"><span class="ui">画像</span></td><td data-label="オプションと説明"><span class="ui">写真を選択</span>で写真ライブラリから画像を選び、<span class="ui">写真を撮る</span>でカメラで撮影します（デバイスにカメラがない場合は表示されません）。画像を選ぶと、<span class="ui">いっぱいに表示</span>で、タイルへの収まり方を設定します。<span class="ui">デフォルト</span>（画像全体。黒帯が付く場合があります）、<span class="ui">拡大して埋める</span>（タイルを埋め、端は切り取られます）、<span class="ui">引き伸ばして埋める</span>（タイルを埋め、画像は歪みます）のいずれかです。<span class="ui">最適なサイズ</span>には、<code>3840 × 2160</code> の画面（縦向きページでは <code>2160 × 3840</code>）で、タイルが占めるピクセル数が表示されます。すでに画像を設定している場合は、ボタンが<span class="ui">別の写真を選択</span>に変わり、<span class="ui">画像を削除</span>が表示されます。画像は長辺が最大 <code>512</code> ピクセルに縮小されて保存されるため、大きなタイルでは画像がぼやけて見えることがあります。</td></tr>
+      <tr><td data-label="内容"><span class="ui">コントロール</span></td><td data-label="オプションと説明">ボタンが並んだ行で、各ボタンはタップすると HTTP リクエストを送信します。コントロールパネルとそのボタンの設定については、<a class="xref" href="/ja/guide/webhook.html">第9章「コントロールパネルと Webhook」</a>を参照してください。</td></tr>
+      <tr><td data-label="内容"><span class="ui">時計</span></td><td data-label="オプションと説明">現在の時刻を表示します。オプション：<span class="ui">24時間表示</span>（デフォルトでオン。オフの場合は、アプリの言語の慣習に従います）、<span class="ui">秒を表示</span>、<span class="ui">日付を表示</span>（デフォルトでオン）、<span class="ui">曜日を表示</span>。曜日と月の名前はアプリの言語に従い、その並びもその言語の慣習に従います。</td></tr>
+      <tr><td data-label="内容"><span class="ui">ラベル</span></td><td data-label="オプションと説明">複数行のテキストです。<span class="ui">テキスト</span>に内容を入力します。<span class="ui">アイコン</span>には、テキストの上に表示するシステムシンボルの名前を指定します（<span class="ui">SF Symbol（任意）</span>。空の場合はシンボルなし）。<span class="ui">文字色</span>と<span class="ui">背景</span>で色を設定します。デフォルトは、黒い背景に白い文字です。</td></tr>
+    </tbody>
+  </table></div>
+  <figure class="phone"><img src="/guide/img/ja/lvm-slot-kinds.jpg" alt="タイル 7 のページ。「表示内容」メニューに、なし、画像、コントロール、時計、ラベルが並んでいる" decoding="async" width="900" height="1956" data-src="/guide/img/ja/lvm-slot-kinds.jpg" data-fallback="/guide/img/lvm-slot-kinds.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>「表示内容」メニュー</figcaption></figure>
+  <div class="callout warn">
+    <strong class="t">内容の種類を変更すると、以前の内容は削除されます</strong>
+    <p><span class="ui">表示内容</span>メニューで別の種類を選ぶと、以前の内容はすぐに削除されます。たとえば、<span class="ui">コントロール</span>を<span class="ui">時計</span>に変更すると、コントロールパネルのボタン設定が削除されます。左上の<span class="ui">キャンセル</span>で元に戻せます。</p>
+  </div>
+  <p>未使用のタイルに画像を置くには：</p>
+  <ol class="steps">
+    <li class="step">
+      <p><span class="ui">配置</span>ページで、キャンバス上の未使用のタイルをタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>タイルの番号をタイトルにしたメニューが表示されます。</p>
+    </li>
+    <li class="step">
+      <p><span class="ui">画像、コントロールパネル、時計、ラベル…</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">スロット N</span>ページが開き、<span class="ui">表示内容</span>が<span class="ui">なし</span>になっています。</p>
+    </li>
+    <li class="step">
+      <p><span class="ui">表示内容</span>をタップし、<span class="ui">画像</span>を選択します。</p>
+      <p class="check"><b class="check-label">確認：</b>ページに、<span class="ui">写真を選択</span>ボタンがある<span class="ui">画像</span>セクションが表示されます。</p>
+    </li>
+    <li class="step">
+      <p><span class="ui">写真を選択</span>をタップし、システムの写真選択画面で写真をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>ページに画像のプレビューが表示され、<span class="ui">いっぱいに表示</span>、<span class="ui">最適なサイズ</span>、<span class="ui">別の写真を選択</span>、<span class="ui">画像を削除</span>が表示されます。</p>
+      <figure class="phone"><img src="/guide/img/ja/lvm-slot-image.jpg" alt="「表示内容」を「画像」にしたタイルのページ。画像のプレビューと、その下に「いっぱいに表示」「最適なサイズ」「別の写真を選択」「画像を削除」が並んでいる" decoding="async" width="900" height="1956" data-src="/guide/img/ja/lvm-slot-image.jpg" data-fallback="/guide/img/lvm-slot-image.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>画像のタイルのオプション</figcaption></figure>
+    </li>
+    <li class="step">
+      <p><span class="ui">いっぱいに表示</span>メニューで、画像がタイルを埋める方法を選択します。</p>
+      <p class="check"><b class="check-label">確認：</b>メニューに、選択した方法が表示されます。</p>
+    </li>
+    <li class="step">
+      <p>右上の<span class="ui">完了</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>キャンバスのタイルに画像が表示されます。</p>
+    </li>
+  </ol>
+  <p>未使用のタイルに時計を置くには：</p>
+  <ol class="steps">
+    <li class="step">
+      <p>キャンバス上の未使用のタイルをタップし、<span class="ui">画像、コントロールパネル、時計、ラベル…</span>をタップして、<span class="ui">表示内容</span>メニューで<span class="ui">時計</span>を選択します。</p>
+      <p class="check"><b class="check-label">確認：</b>ページに、<span class="ui">24時間表示</span>、<span class="ui">秒を表示</span>、<span class="ui">日付を表示</span>、<span class="ui">曜日を表示</span>がある<span class="ui">時計</span>セクションが表示されます。</p>
+      <figure class="phone"><img src="/guide/img/ja/lvm-clock-slot.jpg" alt="「表示内容」を「時計」にしたタイル 10 のページ。24時間表示、秒を表示、日付を表示、曜日を表示の 4 つのスイッチがある" decoding="async" width="900" height="1956" data-src="/guide/img/ja/lvm-clock-slot.jpg" data-fallback="/guide/img/lvm-clock-slot.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>時計のオプション</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>必要に応じて、各オプションをオンまたはオフにします。</p>
+      <p class="check"><b class="check-label">確認：</b>キャンバスの時計に、設定がすぐに反映されます。</p>
+    </li>
+    <li class="step">
+      <p>右上の<span class="ui">完了</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>ページが閉じ、キャンバスに時計が表示されます。</p>
+    </li>
+  </ol>
+  <p>未使用のタイルにラベルを置くには：</p>
+  <ol class="steps">
+    <li class="step">
+      <p>キャンバス上の未使用のタイルをタップし、<span class="ui">画像、コントロールパネル、時計、ラベル…</span>をタップして、<span class="ui">表示内容</span>メニューで<span class="ui">ラベル</span>を選択します。</p>
+      <p class="check"><b class="check-label">確認：</b>ページに、<span class="ui">テキスト</span>、<span class="ui">アイコン</span>、<span class="ui">文字色</span>、<span class="ui">背景</span>がある<span class="ui">ラベル</span>セクションが表示されます。</p>
+      <figure class="phone"><img src="/guide/img/ja/lvm-slot-label.jpg" alt="「表示内容」を「ラベル」にしたタイルのページ。テキスト、アイコン、文字色、背景がある" decoding="async" width="900" height="1956" data-src="/guide/img/ja/lvm-slot-label.jpg" data-fallback="/guide/img/lvm-slot-label.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>ラベルのオプション</figcaption></figure>
+    </li>
+    <li class="step">
+      <p><span class="ui">テキスト</span>欄に、表示するテキストを入力します。</p>
+      <p class="check"><b class="check-label">確認：</b>キャンバスのタイルにテキストが表示されます。</p>
+    </li>
+    <li class="step">
+      <p>任意：<span class="ui">アイコン</span>欄にシステムシンボルの名前を入力し、<span class="ui">文字色</span>と<span class="ui">背景</span>で色を調整します。</p>
+      <p class="check"><b class="check-label">確認：</b>タイルにシンボルが表示され、色がそれに合わせて変わります。</p>
+    </li>
+    <li class="step">
+      <p>右上の<span class="ui">完了</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>ページが閉じ、キャンバスにラベルが表示されます。</p>
+    </li>
+  </ol>
+  <p>新しいタイルの<span class="ui">スロット N</span>ページを、タイルに何も設定せずに閉じた場合、そのタイルは未使用のままです。画像、時計、ラベルは、プランのカメラの上限を使用しません。コントロールパネルは使用します。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-limits">「プランの上限がウォールに与える影響」</a>を参照してください。</p>
+
+  <h3 id="lvm-watermark">透かし</h3>
+  <p>パス：<span class="path"><span class="ui">LiveView Mix</span> › <span class="ui">レイアウトを調整</span></span>から、<span class="ui">透かし</span>セクションまでスクロールします。透かしは、各カメラのタイルの映像の上にテキストを重ねて、どのデバイスのどのカメラの映像かを示します。フルスクリーンウォールでは、映像にラベルがデフォルトでは付かないため、複数のデバイスのカメラを 1 つのウォールに並べる場合は、透かしを推奨します。各ウォール（横向きページ、縦向きページ、iPhone Duo の各キャンバス）には、それぞれ独自の透かしの設定があります。</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>オプション</th><th>説明</th><th>デフォルト</th></tr></thead>
+    <tbody>
+      <tr><td data-label="オプション"><span class="ui">透かしを表示</span></td><td data-label="説明">メインのスイッチです。下のオプションは、オンのときにのみ表示されます。</td><td data-label="デフォルト">オフ</td></tr>
+      <tr><td data-label="オプション"><span class="ui">位置</span></td><td data-label="説明"><span class="ui">左上</span>、<span class="ui">上</span>、<span class="ui">右上</span>、<span class="ui">中央</span>、<span class="ui">左下</span>、<span class="ui">下</span>、<span class="ui">右下</span>のいずれかです。</td><td data-label="デフォルト"><span class="ui">右下</span></td></tr>
+      <tr><td data-label="オプション"><span class="ui">デバイス名</span></td><td data-label="説明">デバイスの名前を表示します。</td><td data-label="デフォルト">オン</td></tr>
+      <tr><td data-label="オプション"><span class="ui">カメラ名</span></td><td data-label="説明">チャンネルの名前を表示します。</td><td data-label="デフォルト">オン</td></tr>
+      <tr><td data-label="オプション"><span class="ui">IP アドレス</span></td><td data-label="説明">カメラ自体のアドレスを表示します。デバイスがアドレスを報告しない場合は、デバイスのアドレスを表示します。</td><td data-label="デフォルト">オフ</td></tr>
+      <tr><td data-label="オプション"><span class="ui">不透明度</span></td><td data-label="説明">0.2 から 1 までのスライダーです。</td><td data-label="デフォルト">0.85</td></tr>
+      <tr><td data-label="オプション"><span class="ui">カラー</span></td><td data-label="説明">テキストの色です。</td><td data-label="デフォルト">白</td></tr>
+      <tr><td data-label="オプション"><span class="ui">文字サイズ</span></td><td data-label="説明">8 から 28 までのスライダーです。</td><td data-label="デフォルト">11</td></tr>
+      <tr><td data-label="オプション"><span class="ui">フォント</span></td><td data-label="説明"><span class="ui">システム</span>、<span class="ui">丸ゴシック</span>、<span class="ui">等幅</span>、<span class="ui">明朝</span>のいずれかです。</td><td data-label="デフォルト"><span class="ui">システム</span></td></tr>
+      <tr><td data-label="オプション"><span class="ui">見やすさ</span></td><td data-label="説明">映像の上でテキストを読みやすく保ちます。<span class="ui">影</span>、<span class="ui">アウトライン</span>、<span class="ui">背景</span>（テキストの後ろの半透明のプレート）、<span class="ui">なし</span>のいずれかです。背景が明るすぎる場合や複雑な場合は、<span class="ui">背景</span>を使います。</td><td data-label="デフォルト"><span class="ui">影</span></td></tr>
+      <tr><td data-label="オプション"><span class="ui">プレビュー</span></td><td data-label="説明">明るい色と暗い色の見本の上で、透かしをプレビューします。サンプルの名前は、ウォールの最初のカメラのものです。</td><td data-label="デフォルト">—</td></tr>
+    </tbody>
+  </table></div>
+  <ol class="steps">
+    <li class="step">
+      <p><span class="ui">レイアウトを調整</span>ページで、<span class="ui">透かし</span>セクションまでスクロールし、<span class="ui">透かしを表示</span>をオンにします。</p>
+      <p class="check"><b class="check-label">確認：</b>セクションが展開され、オプションが表示されます。</p>
+      <div class="shots pair">
+        <figure class="phone"><img src="/guide/img/ja/lvm-watermark.jpg" alt="透かしのオプションの上半分。透かしを表示、位置、デバイス名、カメラ名、IP アドレス、不透明度" decoding="async" width="900" height="1956" data-src="/guide/img/ja/lvm-watermark.jpg" data-fallback="/guide/img/lvm-watermark.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>スイッチ、位置、内容</figcaption></figure>
+        <figure class="phone"><img src="/guide/img/ja/lvm-watermark-b.jpg" alt="透かしのオプションの下半分。カラー、文字サイズ、フォント、見やすさ、明るい見本と暗い見本でのプレビュー" decoding="async" width="900" height="1956" data-src="/guide/img/ja/lvm-watermark-b.jpg" data-fallback="/guide/img/lvm-watermark-b.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>色、サイズ、フォント、プレビュー</figcaption></figure>
+      </div>
+    </li>
+    <li class="step">
+      <p><span class="ui">位置</span>を選択し、表示する名前（<span class="ui">デバイス名</span>、<span class="ui">カメラ名</span>、<span class="ui">IP アドレス</span>）をオンにします。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">プレビュー</span>の 2 つの見本に、選択した内容と位置が表示されます。</p>
+    </li>
+    <li class="step">
+      <p><span class="ui">不透明度</span>、<span class="ui">カラー</span>、<span class="ui">文字サイズ</span>、<span class="ui">フォント</span>、<span class="ui">見やすさ</span>を調整します。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">プレビュー</span>に、調整内容がすぐに反映されます。</p>
+    </li>
+    <li class="step">
+      <p>右上の<span class="ui">完了</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>ページが閉じます。プレビュー、配置キャンバス、フルスクリーンウォールのカメラ映像に、透かしが表示されます。</p>
+    </li>
+  </ol>
+  <ul>
+    <li>透かしが描かれるのはカメラのタイルだけで、コントロールパネル、画像、時計、ラベルには描かれません。</li>
+    <li>3 つの名前をすべてオフにすると、テキストは表示されません。</li>
+    <li>透かしはタッチを妨げません。映像をタップしたときの動作は、これまでどおりです。</li>
+    <li>透かしがオフの間、プレビューと配置キャンバスのカメラのタイルにはチャンネルの番号と名前が表示されます。フルスクリーンウォールには、ラベルがまったく表示されません。</li>
+  </ul>
+
+  <h3 id="lvm-fit">黒帯、画面いっぱいの表示、端末の角度</h3>
+  <p>パス：<span class="path"><span class="ui">LiveView Mix</span> › <span class="ui">レイアウトを調整</span> › <span class="ui">このウォールの黒帯</span></span>。カメラ映像の形とタイルの形が異なると、黒帯が表示されます。<span class="ui">このウォールの黒帯</span>は、ウォールのすべてのカメラ映像でこれをどう扱うかを決めます。選択肢は 3 つです。</p>
+  <ul>
+    <li><span class="ui">デフォルト</span>：映像全体が表示され、黒帯が付く場合があります。</li>
+    <li><span class="ui">拡大して埋める</span>：タイルがいっぱいになるまで、縦横比を保って映像が拡大されます。端は切り取られ、黒帯はありません。</li>
+    <li><span class="ui">引き伸ばして埋める</span>：映像がタイルいっぱいに引き伸ばされます。切り取りも黒帯もありませんが、映像は歪みます。</li>
+  </ul>
+  <p>YouTube と Twitch の配信は、この設定にかかわらず、常に映像全体を表示します。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-streams">「ウォール上の YouTube と Twitch の配信」</a>を参照してください。</p>
+  <ol class="steps">
+    <li class="step">
+      <p><span class="ui">レイアウトを調整</span>ページで、<span class="ui">このウォールの黒帯</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>メニューに、<span class="ui">デフォルト</span>、<span class="ui">拡大して埋める</span>、<span class="ui">引き伸ばして埋める</span>が表示されます。</p>
+    </li>
+    <li class="step">
+      <p>オプションを選択します。</p>
+      <p class="check"><b class="check-label">確認：</b>メニューに、選択したオプションが表示されます。プレビューとフルスクリーンウォールのカメラ映像が、それに従います。</p>
+      <div class="shots land-pair">
+        <figure class="land"><img src="/guide/img/ja/lvm-fill-default.jpg" alt="このウォールの黒帯を「デフォルト」にした横向きのウォール。カメラ映像は全体が表示され、タイルの周囲に黒帯がある" decoding="async" width="1600" height="736" data-src="/guide/img/ja/lvm-fill-default.jpg" data-fallback="/guide/img/lvm-fill-default.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>デフォルト</figcaption></figure>
+        <figure class="land"><img src="/guide/img/ja/lvm-fill-enlarge.jpg" alt="このウォールの黒帯を「拡大して埋める」にした横向きのウォール。カメラ映像がタイルを埋め、端が切り取られている" decoding="async" width="1600" height="736" data-src="/guide/img/ja/lvm-fill-enlarge.jpg" data-fallback="/guide/img/lvm-fill-enlarge.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>拡大して埋める</figcaption></figure>
+      </div>
+    </li>
+  </ol>
+  <ul>
+    <li>この設定は LiveView Mix 専用で、<span class="path"><span class="ui">設定</span> › <span class="ui">映像</span> › <span class="ui">黒帯</span></span>のデフォルトとは独立しています。画像のタイルには、独自の<span class="ui">いっぱいに表示</span>オプションがあります。</li>
+    <li>フルスクリーンウォールから開く 1 台表示は、常に映像全体を表示します。プレビューのフルスクリーンビューアには、独自のスイッチがあります。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-closeup">「1 台のカメラを開く」</a>を参照してください。</li>
+    <li><span class="path"><span class="ui">設定</span> › <span class="ui">映像</span> › <span class="ui">画面いっぱいに表示</span></span>は、デフォルトでオンです。これにより、フルスクリーンの映像が Dynamic Island と画面の角丸の下まで広がり、最大の映像になります。オフの場合、映像はこれらの領域を避けますが、その分、黒帯が付きます。この設定は、LiveView Mix のフルスクリーンウォールにも適用されます。</li>
+  </ul>
+  <h4>端末の角度</h4>
+  <p>フルスクリーンウォールは、向きが固定されていません。端末の角度に合わせて自動的に配置し直されます。設定は不要です。決め手になるのはウォールが表示される領域の形なので、Split View で幅を狭めた iPad のウインドウは縦向きとして扱われます。</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>端末の角度</th><th>ウォールの見え方</th></tr></thead>
+    <tbody>
+      <tr><td data-label="端末の角度">横向き（縦より横が長い）</td><td data-label="ウォールの見え方">レイアウトがそのまま表示されます。</td></tr>
+      <tr><td data-label="端末の角度">縦向き（横より縦が長い）、用意されたレイアウト</td><td data-label="ウォールの見え方">レイアウトが対角線を軸に反転します。4 列 2 行は 2 列 4 行になり、左の大きなタイルは上に移動します。タイルは読み順（左から右、次に上から下）で番号が振り直され、内容は番号に従います。</td></tr>
+      <tr><td data-label="端末の角度">縦向き、描いたレイアウト</td><td data-label="ウォールの見え方">レイアウトは同様に対角線を軸に反転しますが、各カメラは配置したタイルに留まります。そのため、大きなタイルに置いたカメラは、その大きなタイルにあるままです。</td></tr>
+      <tr><td data-label="端末の角度">縦向き、縦向きページがオン</td><td data-label="ウォールの見え方">代わりに縦向きページが、レイアウトしたとおりに表示されます。反転はしません。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-pages">「縦向きページ」</a>を参照してください。</td></tr>
+      <tr><td data-label="端末の角度">幅と高さが等しい領域</td><td data-label="ウォールの見え方">レイアウトは反転しません。</td></tr>
+    </tbody>
+  </table></div>
+  <figure class="phone"><img src="/guide/img/ja/lvm-wall-portrait.jpg" alt="縦向きのフルスクリーンウォール。1 + 5 のレイアウトが反転して、大きなタイルが上に、ほかの 5 つのタイルがその下と右側にある" decoding="async" width="900" height="1956" data-src="/guide/img/ja/lvm-wall-portrait.jpg" data-fallback="/guide/img/lvm-wall-portrait.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>縦向きでは、レイアウトが対角線を軸に反転します</figcaption></figure>
+  <p><span class="ui">配置</span>ページの横向きページのキャンバスは、常に横向きで描画されます。縦向きでは、実際のウォールは上の説明のとおりに反転します。</p>
+
+  <h3 id="lvm-pages">縦向きページ</h3>
+  <p>LiveView Mix は、端末を横向きに持つことを前提にレイアウトされています。縦向きページは、端末を縦向きに持っている間に表示される任意の 2 つ目のウォールで、独自のカメラ、レイアウト、コントロールパネル、時計、ラベル、画像、透かしを持ちます。デフォルトではオフです。オフの間、縦向きの端末には、横向きのウォールが反転して表示されます（<a class="xref" href="/ja/guide/lvm.html#lvm-fit">「黒帯、画面いっぱいの表示、端末の角度」</a>を参照）。iPad では、iPad またはそのウインドウが横より縦に長い間、縦向きページが表示されます。</p>
+  <ul>
+    <li>縦向きページは、縦長の画面向けにレイアウトされます。レイアウトの図、描画用のグリッド、配置キャンバスは縦長で、ウォールが反転することはありません。</li>
+    <li>タブ、プレビュー、フルスクリーンウォールは、端末の向きに合わせて横向きページと縦向きページを切り替えます。ウォールから開いたカメラが表示されている間は、カメラを閉じるまでウォールはそのままです。</li>
+    <li>縦向きページがオンでも、まだ何もない場合、縦向きのタブには<span class="ui">縦向きページ</span>と、<span class="ui">このウォールは iPhone を縦向きに持ったときに表示されます。カメラを選び、縦長の画面に合わせてレイアウトしてください。</span>のメモ、<span class="ui">LiveView Mix を設定</span>ボタンが表示されます。</li>
+    <li>タブの<span class="ui">カメラを選択</span>ボタンと<span class="ui">レイアウトを調整</span>ボタンは、画面に表示されているページを開きます。これらのページの上部にある<span class="ui">横向きページ</span>と<span class="ui">縦向きページ</span>の切り替えで、2 つのページを行き来します。縦向きページでは、<span class="ui">縦向きのときにこのページを表示</span>スイッチ（iPad では<span class="ui">画面が縦長のときにこのページを表示</span>）で、縦向きページのオンとオフを切り替えます。このエディタでスイッチをまだ使っていない場合は、縦向きページに最初の変更を加えると、縦向きページがオンになります。</li>
+    <li>縦向きページは、<span class="path"><span class="ui">設定</span> › <span class="ui">縦向きページ</span></span>でもオンとオフを切り替えられ、そこで設定することもできます。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-settings">「設定の LiveView Mix」</a>を参照してください。</li>
+    <li>iPhone Duo で 2 つのキャンバスが表示されている間は、縦向きページの代わりに 2 つのキャンバスが表示されます。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-canvases">「iPhone Duo の 2 つのキャンバス」</a>を参照してください。</li>
+    <li>縦向きページのコントロールパネルは、縦向きページがオンの間、プランに数えられます。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-limits">「プランの上限がウォールに与える影響」</a>を参照してください。そのボタンは Apple Watch にも表示されます。詳しくは<a class="xref" href="/ja/guide/webhook.html#webhook-watch">「Apple Watch のボタン」</a>を参照してください。</li>
+  </ul>
+  <p>LiveView Mix タブから縦向きページを設定するには：</p>
+  <ol class="steps">
+    <li class="step">
+      <p>LiveView Mix タブで、<span class="ui">カメラを選択</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">カメラを選択</span>ページが開き、上部に<span class="ui">横向きページ</span>と<span class="ui">縦向きページ</span>の切り替えがあります。</p>
+    </li>
+    <li class="step">
+      <p>切り替えの<span class="ui">縦向きページ</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>ページに縦向きページのカメラが表示され、ページの切り替えの下に、オフになっている<span class="ui">縦向きのときにこのページを表示</span>スイッチが表示されます。</p>
+      <figure class="phone"><img src="/guide/img/lvm-page-switch.jpg" alt="「縦向きページ」を選択した「カメラを選択」ページ。「縦向きのときにこのページを表示」スイッチがオンで、2 台のカメラが選択されている" decoding="async" width="900" height="1947" data-src="/guide/img/lvm-page-switch.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>縦向きページのカメラの選択</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>縦向きのウォールに表示するカメラにチェックを入れます。</p>
+      <p class="check"><b class="check-label">確認：</b>上部のカウントが増え、最初のチェックで<span class="ui">縦向きのときにこのページを表示</span>がオンになります。</p>
+    </li>
+    <li class="step">
+      <p>右上の<span class="ui">完了</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>ページが閉じます。</p>
+    </li>
+    <li class="step">
+      <p>iPhone を縦向きに持ちます。</p>
+      <p class="check"><b class="check-label">確認：</b>タブに縦向きページのプレビューが表示されます。横向きに持つと、再び横向きページが表示されます。</p>
+    </li>
+    <li class="step">
+      <p>iPhone を縦向きに持ったまま、<span class="ui">レイアウトを調整</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">レイアウトを調整</span>ページが縦向きページで開き、縦長のレイアウトの図が表示されます。横向きページと同様に、レイアウトを選んでタイルを配置します。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-layout">「レイアウトの調整」</a>と<a class="xref" href="/ja/guide/lvm.html#lvm-arrange">「ウォールとタイルの配置」</a>を参照してください。</p>
+      <figure class="phone"><img src="/guide/img/lvm-portrait-wall.jpg" alt="縦向きの iPhone での縦向きページのフルスクリーンウォール。2 × 3 のレイアウトで、上の行に 2 台のカメラ、左上に閉じるボタンがある" decoding="async" width="900" height="1947" data-src="/guide/img/lvm-portrait-wall.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>フルスクリーンの縦向きページ</figcaption></figure>
+    </li>
+  </ol>
+  <h4>ページ間でコントロールパネル、時計、ラベル、画像をコピーする</h4>
+  <p>一方のページで設定したコントロールパネル、時計、ラベル、画像、色の付いたタイルは、作り直す代わりに、もう一方のページにコピーできます。カメラはコピーされません。カメラは<span class="ui">ここにカメラを置く</span>で配置します。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>縦向きページの<span class="ui">配置</span>ページで、未使用のタイルをタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>タイルの番号をタイトルにしたメニューの選択肢に、<span class="ui">横向きページからコピー…</span>があります。横向きページでは、縦向きページがオンの間、選択肢は<span class="ui">縦向きページからコピー…</span>になります。</p>
+    </li>
+    <li class="step">
+      <p><span class="ui">横向きページからコピー…</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">横向きページ</span>の見出しの下に一覧が開きます。各行には、タイルの種類、コントロールパネルのタイトルまたはラベルのテキスト、そのページでのタイルの番号が表示されます。コピーできるものがない場合、一覧には<span class="ui">コピーできるものがありません</span>と表示されます。</p>
+    </li>
+    <li class="step">
+      <p>コピーするタイルをタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>一覧が閉じ、タップしたタイルにコピーが表示されます。</p>
+    </li>
+  </ol>
+  <p>一覧の下のメモにあるとおり、コピーは元のものから独立しています：<span class="ui">コピーは独立しています。あとで変更しても、もう一方のページはそのままです。</span>コピーしたコントロールパネルは、それ自体がプランに数えられます。コピーした画像は 2 回保存されます。もう一方のページに画像がある場合は、そのことを示す 2 つ目のメモが表示されます：<span class="ui">コピーした画像は 2 つ保存されるため、iCloud バックアップのサイズにも 2 つ分として数えられます。</span></p>
+
+  <h3 id="lvm-canvases">iPhone Duo の 2 つのキャンバス</h3>
+  <p>iPhone Duo を半分に折り曲げ、折り目が画面を横切る向きで持つと、LiveView Mix を折り目の位置で 2 つのキャンバスに分けられます。折り目の上が上のキャンバス、下が下のキャンバスです。各キャンバスは独立したウォールで、それぞれ独自のカメラ、レイアウト、ウォールのページ、コントロールパネル、拡大表示を持ちます。典型的な使い方は、上のキャンバスにカメラ、下のキャンバスにコントロールパネルを置くことです。この設定は iPhone Duo でのみ表示されます。iPhone Duo 全般については、<a class="xref" href="/ja/guide/tour.html#tour-duo">「iPhone Duo」</a>を参照してください。</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>iPhone Duo の状態</th><th>LiveView Mix の表示</th></tr></thead>
+    <tbody>
+      <tr><td data-label="iPhone Duo の状態">半分に折り曲げ、折り目が画面を横切る向き</td><td data-label="LiveView Mix の表示">折り目の上に上のキャンバス、下に下のキャンバスが表示され、その間を折り目に重なる暗い帯が区切ります。</td></tr>
+      <tr><td data-label="iPhone Duo の状態">完全に開いた状態、閉じた状態、または本のように縦に持った状態</td><td data-label="LiveView Mix の表示">上のキャンバスだけが表示されます。その最後のウォールのページを越えてスワイプすると下のキャンバスが表示され、下のキャンバスの最初のウォールのページを越えて戻ると上のキャンバスに戻ります。画面上部の 2 つのドットで、どちらのキャンバスが表示されているかがわかります。縦向きページがオンで画面が縦長の場合は、上のキャンバスの代わりに縦向きページが表示されます。</td></tr>
+    </tbody>
+  </table></div>
+  <p>2 つのキャンバスをオンにして、下のキャンバスを設定するには：</p>
+  <ol class="steps">
+    <li class="step">
+      <p>iPhone Duo で<span class="ui">設定</span>タブをタップし、<span class="ui">2 つのキャンバス</span>をオンにします。</p>
+      <p class="check"><b class="check-label">確認：</b>スイッチがオンになります。<span class="ui">LiveView Mix</span>セクションに、<span class="ui">上のキャンバス</span>と<span class="ui">下のキャンバス</span>が表示されます。</p>
+    </li>
+    <li class="step">
+      <p>iPhone Duo を半分に折り曲げ、<span class="ui">LiveView Mix</span>タブをタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>タブの折り目の上に上のキャンバス、下に下のキャンバスが表示されます。空のキャンバスには、その名前と<span class="ui">LiveView Mix を設定</span>ボタンが表示されます。画面の右上には、<span class="ui">フルスクリーン</span>ボタンだけが残ります。</p>
+      <figure class="device tall"><img src="/guide/img/duo-lvm-canvases.png" alt="2 つのキャンバスをオンにして半分に折り曲げた iPhone Duo：折り目の上の上のキャンバスに 4 台、下のキャンバスに 4 台のカメラ、折り目には暗い帯" decoding="async" width="690" height="852" data-src="/guide/img/duo-lvm-canvases.png" style="aspect-ratio: 690 / 852;" loading="lazy"><figcaption>2 つのキャンバス：ウォールが折り目で上下に分かれる</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>下のキャンバスの右上にある、スライダーの記号の丸いボタンをタップします。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">下のキャンバス</span>というタイトルのメニューに、<span class="ui">カメラを選択</span>と<span class="ui">レイアウトを調整</span>が表示されます。</p>
+    </li>
+    <li class="step">
+      <p><span class="ui">レイアウトを調整</span>をタップし、ほかのウォールと同様に下のキャンバスを設定します。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-layout">「レイアウトの調整」</a>と<a class="xref" href="/ja/guide/lvm.html#lvm-arrange">「ウォールとタイルの配置」</a>を参照してください。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">完了</span>の後、下のキャンバスの折り目の下にタイルが表示されます。</p>
+    </li>
+  </ol>
+  <ul>
+    <li><span class="ui">フルスクリーン</span>で、両方のキャンバスが画面いっぱいに開き、上のキャンバスの左上に<span class="ui" data-ui="icon">✕</span>ボタンが表示されます。</li>
+    <li>2 つのキャンバスが表示されている間は、エディタに<span class="ui">横向きページ</span>と<span class="ui">縦向きページ</span>の切り替えはありません。</li>
+    <li>下のキャンバスのコントロールパネルがプランに数えられ、Apple Watch に表示されるのは、2 つのキャンバスがオンの間だけです。</li>
+    <li>下のキャンバスはバックアップに含まれます。iPhone または iPad に復元した場合は保持されますが表示されず、再び iPhone Duo に復元すると元に戻ります。</li>
+  </ul>
+
+  <h3 id="lvm-wall">フルスクリーンウォール</h3>
+  <p>パス：<span class="path"><span class="ui">LiveView Mix</span> › <span class="ui">フルスクリーン</span></span>。フルスクリーンウォールは、すべてのタイルを選択したレイアウトで配置し、画面いっぱいに表示します。透かしをオンにしない限り、ウォールにラベルは表示されません。</p>
+  <figure class="clip land"><video class="clip" aria-label="フルスクリーンウォール：スワイプでページを移動し、カメラをタップすると拡大表示が開き、戻るでウォールに戻ります。" muted="" loop="" playsinline="" preload="none" data-src="/guide/vid/ja/rec-wall-paging.mp4" data-fallback="/guide/vid/rec-wall-paging.mp4" data-poster="/guide/img/ja/rec-wall-paging.jpg" data-fallback-poster="/guide/img/rec-wall-paging.jpg" poster="/guide/img/ja/rec-wall-paging.jpg"></video><figcaption>フルスクリーンウォール：スワイプでページを移動し、カメラをタップすると拡大表示が開き、戻るでウォールに戻ります。</figcaption></figure>
+  <ol class="steps">
+    <li class="step">
+      <p>LiveView Mix タブで、右上の<span class="ui">フルスクリーン</span>（金色のウォールのアイコン）をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>画面がフルスクリーンウォールに切り替わります。ステータスバーは非表示になり、左上に<span class="ui" data-ui="icon">✕</span>ボタン（<span class="ui">閉じる</span>）があります。</p>
+      <figure class="land"><img src="/guide/img/ja/lvm-wall-fullscreen.jpg" alt="横向きのフルスクリーンウォール。大きなタイルが 2 つ、小さなカメラのタイルが 6 つ、コントロールパネルと時計があり、左上に閉じるボタンがある" decoding="async" width="1600" height="736" data-src="/guide/img/ja/lvm-wall-fullscreen.jpg" data-fallback="/guide/img/lvm-wall-fullscreen.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>フルスクリーンウォール</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>ウォールが複数のウォールのページに分かれている場合は、左にスワイプします。</p>
+      <p class="check"><b class="check-label">確認：</b>次のウォールのページが表示され、画面下部のページのドットが次のドットに移ります。</p>
+      <figure class="land"><img src="/guide/img/ja/lvm-wall-paging.jpg" alt="横向きのフルスクリーンウォール。2 ページのウォールで、画面下部にページのドットがある" decoding="async" width="1600" height="736" data-src="/guide/img/ja/lvm-wall-paging.jpg" data-fallback="/guide/img/lvm-wall-paging.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>2 ページのウォール</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>右にスワイプします。</p>
+      <p class="check"><b class="check-label">確認：</b>前のウォールのページが再び表示されます。</p>
+    </li>
+    <li class="step">
+      <p>左上の<span class="ui" data-ui="icon">✕</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>ウォールが閉じ、LiveView Mix タブが再び表示されます。</p>
+    </li>
+  </ol>
+  <ul>
+    <li><b>ページ送り</b>：レイアウトが収容できる数よりタイルが多い場合、ウォールはウォールのページに分かれます。ウォールのページ数は、タイル数を 1 ページのタイル数で割って切り上げた数です。ウォールのページが埋めない位置と空のタイルは黒になります。ウォールのページが複数ある場合は、画面下部にページのドットが表示されます。</li>
+    <li><b>最初のページ</b>：ウォールは、表示するものがある最初のウォールのページで開きます。長いウォールの先頭に、存在しないカメラを指すタイルが続く場合も、状態を示すテキストだけのページで止まることはありません。</li>
+    <li><b>ストリーム</b>：再生されるのは表示中のウォールのページだけで、隣のページには接続しないので、帯域幅を節約できます。<span class="ui">ページを移動しても接続を維持</span>でこれを変更できます。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-settings">「設定の LiveView Mix」</a>を参照してください。</li>
+    <li><b>映像の上のボタン</b>：閉じるボタンと、ウォールから開いたカメラの上のボタンは、細い白い縁取りの付いた暗い円の上に大きな白い記号で表示されるので、黒い映像や明るい映像の上でも見やすく、確実にタップできます。</li>
+    <li><b>カメラのタップ</b>：そのカメラの 1 台表示が開きます。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-closeup">「1 台のカメラを開く」</a>を参照してください。</li>
+    <li><b>YouTube または Twitch のタイルのタップ</b>：その配信がフルスクリーンで開きます。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-streams">「ウォール上の YouTube と Twitch の配信」</a>を参照してください。</li>
+    <li><b>コントロールパネルのボタンのタップ</b>：リクエストを送信します。ボタンが先に確認を求める設定になっている場合は、確認ダイアログが表示されます。詳しくは<a class="xref" href="/ja/guide/webhook.html">第9章「コントロールパネルと Webhook」</a>を参照してください。</li>
+    <li><b>状態を示すテキスト</b>：表示できないタイルは、位置を維持したまま状態を示すテキストを表示し、タップしても何も起きません。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-states">「タイルがカメラを表示できないとき」</a>を参照してください。</li>
+    <li><b>ドラッグでウォールを並べ替えることはできません。</b>タイルを調整するには、<span class="ui">配置</span>に戻ります。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-arrange">「ウォールとタイルの配置」</a>を参照してください。</li>
+    <li><b>端末の向きを変えたとき</b>：縦向きページがオンの場合、端末の向きに合わせて、ウォールが横向きページと縦向きページの間で切り替わります。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-pages">「縦向きページ」</a>を参照してください。2 つのキャンバスを使う iPhone Duo については、<a class="xref" href="/ja/guide/lvm.html#lvm-canvases">「iPhone Duo の 2 つのキャンバス」</a>を参照してください。</li>
+    <li><b>画面</b>：ウォールにライブ映像が表示されている間は、端末の画面が自動的にロックされません。</li>
+    <li><b>表示するものがない場合</b>：タイルがまったくない場合は、<span class="ui">LiveView Mix は空です</span>と表示されます。すべてのタイルが、この端末にないカメラを指している場合（たとえば、デバイスを追加する前にバックアップから復元した後）は、<span class="ui">これらのカメラはこの端末にありません</span>と表示されます。</li>
+  </ul>
+
+  <h3 id="lvm-closeup">1 台のカメラを開く</h3>
+  <p>ウォールまたはプレビューでカメラをタップすると、そのカメラの大きな映像が開きます。2 つの入口では、異なる画面が開きます。YouTube または Twitch のタイルでは、代わりに専用のフルスクリーン表示が開きます。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-streams">「ウォール上の YouTube と Twitch の配信」</a>を参照してください。</p>
+  <h4>フルスクリーンウォールから</h4>
+  <p>画面は、そのカメラの 1 台表示で、常に HD で再生されます。左上には、戻るボタン<span class="ui" data-ui="icon">‹</span>（<span class="ui">戻る</span>）とカメラ名があります。デバイスが録画再生に対応している場合は、右上に<span class="ui">録画</span>ボタン（時計のアイコン）があります。カメラが PTZ に対応している場合は、右下に PTZ パッドがあります。映像に音声がある場合は、左下にスピーカーボタン（<span class="ui">消音</span>、<span class="ui">消音解除</span>）があります。この画面には、SD と HD のスイッチも、黒帯のスイッチもありません。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>フルスクリーンウォールで、カメラの映像をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>画面が、そのカメラの 1 台表示に切り替わります。</p>
+      <div class="shots land-pair">
+        <figure class="land"><img src="/guide/img/ja/lvm-wall-zoom.jpg" alt="ウォールから開いた 1 台表示。左上に戻るボタンと名前、右下に PTZ パッドがある" decoding="async" width="1600" height="736" data-src="/guide/img/ja/lvm-wall-zoom.jpg" data-fallback="/guide/img/lvm-wall-zoom.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>ウォールから開いた 1 台表示</figcaption></figure>
+        <figure class="land"><img src="/guide/img/ja/lvm-immersive.jpg" alt="プレビューから開いたフルスクリーンビューア。左上に閉じるボタン、上部に名前、HD ボタン、黒帯ボタン、下にページのドットがある" decoding="async" width="1600" height="736" data-src="/guide/img/ja/lvm-immersive.jpg" data-fallback="/guide/img/lvm-immersive.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>プレビューから開いたフルスクリーンビューア</figcaption></figure>
+      </div>
+    </li>
+    <li class="step">
+      <p>映像の上で、2 本の指を広げます。</p>
+      <p class="check"><b class="check-label">確認：</b>映像が最大 5 倍まで拡大されます。拡大中は、1 本の指でドラッグすると映像が動きます。</p>
+    </li>
+    <li class="step">
+      <p>映像をダブルタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>映像が 2 倍に拡大されます。もう一度ダブルタップすると、元のサイズに戻ります。</p>
+    </li>
+    <li class="step">
+      <p>デバイスが録画再生に対応している場合は、右上の<span class="ui">録画</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>そのカメラの映像と録画再生が開き、右上に<span class="ui">完了</span>があります。操作については、<a class="xref" href="/ja/guide/single.html">第6章「1 台表示」</a>と<a class="xref" href="/ja/guide/playback.html">第7章「録画の再生と再生速度」</a>を参照してください。</p>
+    </li>
+    <li class="step">
+      <p>左上の戻るボタン<span class="ui" data-ui="icon">‹</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>フルスクリーンウォールが再び表示されます。回転中のカメラヘッドは止まります。PTZ 操作については、<a class="xref" href="/ja/guide/single.html#single-ptz">「PTZ 操作：カメラを動かす」</a>を参照してください。</p>
+    </li>
+  </ol>
+  <h4>プレビューから</h4>
+  <p>画面は、フルスクリーンビューアです。一度に 1 台のカメラを表示し、左右にスワイプすると次のカメラに切り替わります。表示できるカメラは、プレビューにあるカメラのうち再生できるもの（オンライン、プランの範囲内、一時停止中でないもの）で、ウォールと同じ順序です。画面下部にページのドットがあります。</p>
+  <ul>
+    <li><span class="ui" data-ui="icon">✕</span>（<span class="ui">閉じる</span>）：ビューアを閉じ、プレビューに戻ります。</li>
+    <li>カメラ名は、上部の中央にあります。</li>
+    <li>右上の<span class="ui">HD</span> / <span class="ui">SD</span>ボタンで、画質を切り替えます。ボタンの文字は、現在の画質です。ビューアは常に HD で開き、切り替えは現在の視聴にのみ適用され、保存されません。</li>
+    <li>右上の黒帯ボタンは、<span class="ui">デフォルト</span>と<span class="ui">引き伸ばして埋める</span>を切り替えます。こちらも現在の視聴に限ります。ウォールの黒帯の設定が<span class="ui">デフォルト</span>以外の場合、ビューアは<span class="ui">引き伸ばして埋める</span>で始まります。</li>
+    <li>左下のスピーカーボタンは、映像に音声がある場合にのみ表示されます。</li>
+  </ul>
+  <p>プレビューで、プランの対象外のカメラ（<span class="ui">プランに含まれていません</span>）をタップすると、プランのページが開きます。詳しくは<a class="xref" href="/ja/guide/plans.html">第11章「プランと上限」</a>を参照してください。オフライン、無効、一時停止中のカメラをタップしても、何も起きません。音声が再生されるのは、1 台表示とこのフルスクリーンビューアだけです。音声をオンにする方法は、<a class="xref" href="/ja/guide/single.html">第6章「1 台表示」</a>を参照してください。</p>
+
+  <h3 id="lvm-streams">ウォール上の YouTube と Twitch の配信</h3>
+  <p>Cam Hub に追加した YouTube ライブ配信や Twitch チャンネル（<a class="xref" href="/ja/guide/add.html#add-streams">「YouTube のライブ配信と Twitch のチャンネルを追加する」</a>と<a class="xref" href="/ja/guide/single.html#single-streams">「YouTube と Twitch の配信」</a>を参照）は、<span class="ui">カメラを選択</span>または<span class="ui">ここにカメラを置く</span>で、カメラと同じようにタイルに配置できます。</p>
+  <ul>
+    <li>タイルは、サイト独自のプレーヤーで配信を音声なしで再生するので、複数のタイルの音声が重なることはありません。</li>
+    <li>プレビューまたはフルスクリーンウォールでタイルをタップすると、配信が画面の許す限り大きく開きます。配信を読み込み直さずに、映像がそのまま続きます。そこではサイト独自のコントロールが使えます。<span class="ui" data-ui="icon">✕</span>ボタン（<span class="ui">閉じる</span>）とスピーカーボタン（<span class="ui">消音</span>、<span class="ui">消音解除</span>）は、映像に重ならないように映像の横にあります。スピーカーボタンは、カメラと同じ音声のスイッチに従います。</li>
+    <li>配信には SD と HD の設定がありません。画質はタイルのサイズに従い、フルスクリーン表示では画面のサイズで再生されます。</li>
+    <li>配信は常に映像全体が表示され、タイルと形が異なる部分には黒帯が付きます。サイト独自のプレーヤーは切り取ってはならない場合があるため、<span class="ui">このウォールの黒帯</span>はカメラにのみ適用されます。</li>
+    <li>この端末でサイトの規約に同意するまで、タイルには配信の名前と、<span class="ui">このライブ配信を再生するには、YouTube の規約に同意してください。</span>または<span class="ui">このチャンネルを再生するには、Twitch の規約に同意してください。</span>が表示されます。タイルをタップすると、<span class="ui">規約を確認…</span>のあるフルスクリーン表示が開き、<span class="ui">同意して続ける</span>の後に配信が再生されます。</li>
+    <li>YouTube と Twitch を利用できない場所では、共有コードやバックアップで届いた配信には、名前と<span class="ui">この地域または言語ではご利用いただけません。</span>が表示されます。</li>
+    <li>YouTube と Twitch の配信はプランに数えられず、ロックされることもありません。</li>
+    <li>Apple TV では、これらのタイルには配信の名前だけが表示されます。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-tv">「Apple TV での違い」</a>を参照してください。</li>
+  </ul>
+
+  <h3 id="lvm-states">タイルがカメラを表示できないとき</h3>
+  <p>表示できないカメラは、ウォール上の位置を維持し、そのタイルには状態を示すテキストが付いた暗いプレートが表示されます。位置が維持されるため、ほかのタイルは動きません。</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>表示</th><th>意味</th><th>対処</th></tr></thead>
+    <tbody>
+      <tr><td data-label="表示"><span class="ui">信号なし</span></td><td data-label="意味">デバイスが、チャンネルをオフラインと報告しています。</td><td data-label="対処">カメラの電源とネットワークを確認します。詳しくは<a class="xref" href="/ja/guide/trouble.html">第15章「トラブルシューティング」</a>を参照してください。</td></tr>
+      <tr><td data-label="表示"><span class="ui">無効</span></td><td data-label="意味">チャンネルが有効になっていません。</td><td data-label="対処">デバイスのページ、または<span class="path"><span class="ui">設定</span> › <span class="ui">表示するカメラを選択</span></span>でチャンネルを有効にします。詳しくは<a class="xref" href="/ja/guide/devices.html">第4章「デバイスタブとチャンネル」</a>を参照してください。</td></tr>
+      <tr><td data-label="表示"><span class="ui">プランに含まれていません</span></td><td data-label="意味">チャンネルは有効ですが、現在のプランの上限を超えています。</td><td data-label="対処">詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-limits">「プランの上限がウォールに与える影響」</a>と<a class="xref" href="/ja/guide/plans.html">第11章「プランと上限」</a>を参照してください。</td></tr>
+      <tr><td data-label="表示"><span class="ui">一時停止中</span></td><td data-label="意味">チャンネルが<span class="ui">映像を一時停止</span>で一時停止されています。タイルにはグレーのプレートが表示されます。</td><td data-label="対処">デバイスのページで<span class="ui">映像を再開</span>を使って再開します。詳しくは<a class="xref" href="/ja/guide/devices.html">第4章「デバイスタブとチャンネル」</a>を参照してください。</td></tr>
+      <tr><td data-label="表示"><span class="ui">カメラを削除しました</span></td><td data-label="意味">タイルが、Cam Hub にもう存在しないカメラを指しています。</td><td data-label="対処"><span class="ui">カメラを選択</span>ページの<span class="ui">該当のスロットを空にする</span>で対処します。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-pick">「カメラと画質の選択」</a>を参照してください。</td></tr>
+    </tbody>
+  </table></div>
+  <figure class="land"><img src="/guide/img/ja/lvm-wall-states.jpg" alt="横向きのフルスクリーンウォール。複数のタイルに、信号なし、プランに含まれていません、無効、カメラを削除しましたが表示されている" decoding="async" width="1600" height="736" data-src="/guide/img/ja/lvm-wall-states.jpg" data-fallback="/guide/img/lvm-wall-states.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>カメラを表示できないタイル</figcaption></figure>
+  <figure class="phone"><img src="/guide/img/ja/lvm-unavailable-plates.jpg" alt="LiveView Mix タブのプレビューに 6 つのタイル。ライブ映像が 1 つ、「カメラを削除しました」が 2 つ、「無効」「信号なし」「プランに含まれていません」（ロック付き）が 1 つずつあり、下に「プレビューのみ。フルスクリーンでレイアウトを表示します。」のメモがある" decoding="async" width="900" height="1956" data-src="/guide/img/ja/lvm-unavailable-plates.jpg" data-fallback="/guide/img/lvm-unavailable-plates.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>LiveView Mix タブのプレビューにも、同じプレートが表示されます</figcaption></figure>
+  <ul>
+    <li>タイルが接続中の間は、回転する円が表示されます。接続に失敗した場合、タイルに短いテキストで理由が示されます。一時的な失敗は自動的に再試行されます。</li>
+    <li><span class="ui">ページを移動しても接続を維持</span>がオフの間は、ウォールのページが表示された瞬間にはタイルにカメラ名だけが表示され、続いて映像が表示されます。</li>
+    <li>設定の<span class="ui">オフラインのカメラを非表示</span>が適用されるのは、ライブタブのウォールだけです。LiveView Mix からタイルが取り除かれることはありません。</li>
+    <li>アプリでデバイスを削除すると、すべてのウォールで、そのデバイスに属するタイルが空になります。ほかのタイルは動かず、コントロールパネルも位置を保ちます。</li>
+  </ul>
+
+  <h3 id="lvm-limits">プランの上限がウォールに与える影響</h3>
+  <p>LiveView Mix 自体は、ウォールに置けるカメラの数を制限しません。同時に映像を表示できるチャンネルの数は、プランによって決まります。上限の詳細は<a class="xref" href="/ja/guide/plans.html">第11章「プランと上限」</a>を参照してください。</p>
+  <ul>
+    <li><b>無料プラン</b>：有効にできるチャンネルは、アプリ全体で最大 2 つ（単体カメラとレコーダーのチャンネルの合計）、レコーダーは最大 1 台です。上限を超えたチャンネルは、ウォールに<span class="ui">無効</span>と表示されます。有効になっているのに上限を超えているチャンネルには、<span class="ui">プランに含まれていません</span>と表示されます。どちらの場合も、タイルの位置は維持されます。</li>
+    <li><b>カメラプランと NVR プラン</b>：それぞれ、有効にできる単体カメラの数と、レコーダーの台数を引き上げます。NVR プランでは、登録したレコーダーのすべてのチャンネルを使用できます。</li>
+    <li><b>チャンネルの有効化</b>：プランをアップグレードした後も、無効だったチャンネルは自動では有効になりません。デバイスのページ、または<span class="path"><span class="ui">設定</span> › <span class="ui">表示するカメラを選択</span></span>でオンにする必要があります。どちらの軸にも上限がないプランでは、すべてのチャンネルが自動的に有効になり、設定に<span class="ui">表示するカメラを選択</span>は表示されません。</li>
+    <li><b>コントロールパネルは、カメラの後にカメラの上限を使用します</b>：各コントロールパネルは、プランのカメラの上限に対して単体カメラ 1 台として数えられ、レコーダーの上限には数えられません。パネルが使うのは、カメラが使った後に残る上限（無料プランでは、カメラとレコーダーのチャンネルが使った後に残る分）だけなので、コントロールパネルのせいでカメラの映像が表示されなくなることはありません。上限を使い切ると、コントロールパネルは位置を維持しますが、ボタンがロックされ、タイルにロックの記号、パネルのタイトル、<span class="ui">プランに含まれていません</span>が表示されます。画像、時計、ラベルは上限を使用しません。</li>
+    <li><b>各ウォールの各パネルが数えられます</b>：横向きページのコントロールパネルは常に数えられます。縦向きページのパネルは縦向きページがオンの間、下のキャンバスのパネルは iPhone Duo の 2 つのキャンバスがオンの間に数えられます。もう一方のページにコピーしたパネルは、それ自体が数えられます。パネルは、横向きページ、下のキャンバス、縦向きページの順に、各ウォールではタイルの順に、上限の対象になります。</li>
+    <li><b>YouTube と Twitch の配信</b>：プランに数えられず、ロックされることもありません。</li>
+    <li><b>ロックされたチャンネル</b>：プレビューで、プランの対象外のカメラをタップすると、プランのページが開きます。「カメラを選択」ページと配置キャンバスでは、これらのチャンネルにライブ映像は表示されません。</li>
+    <li><b>カスタムレイアウト</b>：最大 8 × 8 で、64 タイルです。詳しくは<a class="xref" href="/ja/guide/lvm.html#lvm-custom">「カスタムレイアウトを作成する」</a>を参照してください。</li>
+  </ul>
+
+  <h3 id="lvm-settings">設定の LiveView Mix</h3>
+  <p>パス：<span class="path"><span class="ui">設定</span> › <span class="ui">LiveView Mix</span></span>。<span class="ui">LiveView Mix</span>セクションには、ウォールごとに 1 つの行があり、各行の末尾に選択したカメラの数（<span class="ui" data-ui="value">6 台のカメラ</span>）、または設定前は<span class="ui">未設定</span>が表示されます。</p>
+  <ul>
+    <li><span class="ui">LiveView Mix</span>：ウォールです。縦向きページがオンの間は、この行は<span class="ui">横向きページ</span>になります。2 つのキャンバスを使う iPhone Duo では、<span class="ui">上のキャンバス</span>になります。</li>
+    <li><span class="ui">縦向きページ</span>：縦向きページがオンの間に表示されます。</li>
+    <li><span class="ui">下のキャンバス</span>：iPhone Duo で、2 つのキャンバスがオンの間に表示されます。</li>
+  </ul>
+  <p>行をタップすると、そのウォールのカメラの選択、フルスクリーンのレイアウト、透かし、ページ送りが 1 つにまとまったページが開きます。オプションは、上の各節で説明したとおりに動作します。左上の<span class="ui">キャンセル</span>で、ページに入ってから変更した内容がすべて元に戻り、右上の<span class="ui">完了</span>で変更が保持されます。</p>
+  <p><span class="ui">LiveView Mix</span>セクションの下には、<span class="ui">縦向きページ</span>スイッチの独立したセクションがあります（<a class="xref" href="/ja/guide/lvm.html#lvm-pages">「縦向きページ」</a>を参照）。iPhone Duo では、<span class="ui">2 つのキャンバス</span>スイッチにも独立したセクションがあります（<a class="xref" href="/ja/guide/lvm.html#lvm-canvases">「iPhone Duo の 2 つのキャンバス」</a>を参照）。どちらもデフォルトではオフです。</p>
+  <figure class="phone"><img src="/guide/img/ja/settings-2.jpg" alt="設定タブ。LiveView Mix セクションの行の末尾にカメラの数が表示され、その下の「起動時に開く」メニューが「前回の画面」になっており、「縦向きページ」スイッチがある" decoding="async" width="900" height="1947" data-src="/guide/img/ja/settings-2.jpg" data-fallback="/guide/img/settings-2.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>設定タブの LiveView Mix セクション</figcaption></figure>
+  <h4>起動時に開く</h4>
+  <p><span class="ui">起動時に開く</span>は、アプリの起動時に表示する画面を決めます。</p>
+  <ul>
+    <li><span class="ui">前回の画面</span>（デフォルト）。</li>
+    <li><span class="ui">LiveView Mix</span>：LiveView Mix タブを開きます。</li>
+    <li><span class="ui">LiveView Mix フルスクリーン</span>：LiveView Mix タブを開き、起動後に 1 回だけ、そのままフルスクリーンウォールに入ります。<span class="ui" data-ui="icon">✕</span>をタップすると、タブのプレビューに戻ります。</li>
+    <li>各デバイス：ライブタブを開き、そのデバイスを表示します。</li>
+  </ul>
+  <p><span class="ui">LiveView Mix</span>と<span class="ui">LiveView Mix フルスクリーン</span>のオプションは、ウォールを設定した後、または縦向きページや 2 つのキャンバスがオンの間にのみ表示されます。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>画面下部の<span class="ui">設定</span>タブをタップし、<span class="ui">LiveView Mix</span>セクションまでスクロールします。</p>
+      <p class="check"><b class="check-label">確認：</b>LiveView Mix の行と<span class="ui">起動時に開く</span>メニューが表示されます。</p>
+    </li>
+    <li class="step">
+      <p><span class="ui">起動時に開く</span>をタップします。</p>
+      <p class="check"><b class="check-label">確認：</b>オプションの一覧が表示され、現在のオプションにチェックが入っています。</p>
+      <figure class="phone"><img src="/guide/img/ja/lvm-open-on-launch.jpg" alt="「起動時に開く」のオプション。前回の画面、LiveView Mix、LiveView Mix フルスクリーン、各デバイス" decoding="async" width="900" height="1956" data-src="/guide/img/ja/lvm-open-on-launch.jpg" data-fallback="/guide/img/lvm-open-on-launch.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>「起動時に開く」のオプション</figcaption></figure>
+    </li>
+    <li class="step">
+      <p><span class="ui">LiveView Mix フルスクリーン</span>を選択します。</p>
+      <p class="check"><b class="check-label">確認：</b>メニューに<span class="ui">LiveView Mix フルスクリーン</span>と表示されます。次回アプリを起動すると、そのままフルスクリーンウォールに入ります。</p>
+    </li>
+  </ol>
+  <h4>ページを移動しても接続を維持</h4>
+  <p><span class="ui">ページ送り</span>セクションの<span class="ui">ページを移動しても接続を維持</span>は、デフォルトではオフです。オンにすると、表示していないウォールのページも接続が維持されるため、スワイプしたときに、カメラが再接続されるまでの黒いタイルではなく、すぐに映像が表示されます。その分、帯域幅とバッテリーを多く使います。セッションでサインインするレコーダーで、特に効果が大きくなります。維持されるストリームは、最大 12 本です。スイッチをオフにすると、維持されていた接続はすぐに閉じられます。このスイッチは、アプリ全体のストリームに適用されます。</p>
+  <ol class="steps">
+    <li class="step">
+      <p><span class="ui">レイアウトを調整</span>ページで、<span class="ui">ページ送り</span>セクションまでスクロールします。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">ページを移動しても接続を維持</span>のスイッチと、その説明が表示されます。</p>
+      <figure class="phone"><img src="/guide/img/ja/lvm-layout-2.jpg" alt="「レイアウトを調整」ページの下半分。透かしセクションと、「ページを移動しても接続を維持」のスイッチがあるページ送りセクション" decoding="async" width="900" height="1956" data-src="/guide/img/ja/lvm-layout-2.jpg" data-fallback="/guide/img/lvm-layout-2.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>ページ送りセクション</figcaption></figure>
+    </li>
+    <li class="step">
+      <p><span class="ui">ページを移動しても接続を維持</span>をオンにします。</p>
+      <p class="check"><b class="check-label">確認：</b>スイッチがオンになります。</p>
+    </li>
+  </ol>
+  <h4>バックアップと復元</h4>
+  <p>すべてのウォールの設定（横向きページ、縦向きページ、下のキャンバスの、それぞれのカメラとタイル、レイアウト、カスタムレイアウト、透かし、コントロールパネル、画像）、縦向きページと 2 つのキャンバスのスイッチ、プレビューの配置は、アプリ設定に含まれ、iCloud バックアップとともに保存されます（<a class="xref" href="/ja/guide/share.html#share-versions">「複数の名前付きバックアップ：名前の変更と削除」</a>を参照）。カメラを書き出すときに<span class="ui">アプリ設定を含める</span>をオンにすると、これらも一緒に引き継がれます。復元時は、新しい端末に存在しないデバイスに属するタイルは保持されません。画像があるとバックアップは大きくなり、もう一方のページにコピーした画像は 2 回分として数えられます。手順は<a class="xref" href="/ja/guide/share.html">第10章「共有とバックアップ」</a>を参照してください。</p>
+
+  <h3 id="lvm-tv">Apple TV での違い</h3>
+  <p>Apple TV には、iPhone または iPad で作成したウォールが表示されます。ウォールの配置、タイルの編集、カスタムレイアウトの作成は、iPhone または iPad で行います。詳しくは<a class="xref" href="/ja/guide/appletv.html">第14章「Apple TV」</a>を参照してください。Apple TV が表示するのは横向きページだけです。縦向きページと iPhone Duo の下のキャンバスは表示されず、それらのコントロールパネルは Apple TV ではプランに数えられません。YouTube と Twitch のタイルには、配信の名前と、これらの配信は iPhone と iPad でのみ再生されるというメモが表示されます。</p>
+</section><nav class="guide-pager" aria-label="目次"><a class="guide-prev" rel="prev" href="/ja/guide/playback.html"><span class="pager-dir">前の章</span><span class="pager-title">7. 録画の再生と再生速度</span></a><a class="guide-next" rel="next" href="/ja/guide/webhook.html"><span class="pager-dir">次の章</span><span class="pager-title">9. コントロールパネルと Webhook</span></a></nav></article>
+    </div>
+    <button class="guide-top" id="guide-top" type="button" aria-label="ページの先頭へ"></button>
+  </main>
+  <footer class="footer"><span data-i18n="footer">Copyright<wbr data-phrase-break=""> <wbr data-phrase-break="">©<wbr data-phrase-break=""> <wbr data-phrase-break="">2026<wbr data-phrase-break=""> <wbr data-phrase-break="">ALMX<wbr data-phrase-break="">.<wbr data-phrase-break=""> <wbr data-phrase-break="">All<wbr data-phrase-break=""> <wbr data-phrase-break="">rights<wbr data-phrase-break=""> <wbr data-phrase-break="">reserved<wbr data-phrase-break="">.</span><nav><a href="/ja/guide.html" data-i18n="navGuide">マニュアル</a><a href="/ja/devices.html" data-i18n="navDevices">端末<wbr data-phrase-break="">ごと<wbr data-phrase-break="">の<wbr data-phrase-break="">違い</a><a href="/ja/privacy.html" data-i18n="navPrivacy">プライバシー</a><a href="/ja/terms.html" data-i18n="navTerms">利用<wbr data-phrase-break="">規約</a><a class="store-link" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeCTA">App<wbr data-phrase-break=""> <wbr data-phrase-break="">Store<wbr data-phrase-break=""> <wbr data-phrase-break="">で<wbr data-phrase-break="">ダウンロード</a></nav><nav class="language-links" id="language-links" aria-label="言語" data-i18n-aria="languageLabel"><a href="/guide/lvm.html" hreflang="en" lang="en" data-language-link="en">English</a><a href="/zh-Hant/guide/lvm.html" hreflang="zh-Hant" lang="zh-Hant" data-language-link="zh-Hant">繁體中文</a><a href="/zh-Hans/guide/lvm.html" hreflang="zh-Hans" lang="zh-Hans" data-language-link="zh-Hans">简体中文</a><a href="/ja/guide/lvm.html" hreflang="ja" lang="ja" data-language-link="ja" aria-current="true">日本語</a><a href="/ko/guide/lvm.html" hreflang="ko" lang="ko" data-language-link="ko">한국어</a><a href="/de/guide/lvm.html" hreflang="de" lang="de" data-language-link="de">Deutsch</a><a href="/es/guide/lvm.html" hreflang="es" lang="es" data-language-link="es">Español</a><a href="/es-MX/guide/lvm.html" hreflang="es-MX" lang="es-MX" data-language-link="es-MX">Español (México)</a><a href="/fr/guide/lvm.html" hreflang="fr" lang="fr" data-language-link="fr">Français</a><a href="/sl/guide/lvm.html" hreflang="sl" lang="sl" data-language-link="sl">Slovenščina</a><a href="/ar/guide/lvm.html" hreflang="ar" lang="ar" data-language-link="ar">العربية</a></nav></footer>
+  <script src="/additional-locales.js?v=20261103-sl"></script>
+  <script src="/site.js?v=20261112-1"></script>
+
+
+</body></html>

@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="es" dir="ltr"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="apple-itunes-app" content="app-id=6792057195"><meta name="color-scheme" content="dark light">
+  <meta name="description" content="Un panel de control es una casilla de un mural de LiveView Mix que contiene una fila de botones.">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="Cam Hub"><meta property="og:image" content="https://cam-hub.almx.cc/assets/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+  <title>Paneles de control y webhooks — Cam Hub Manual</title><link rel="icon" href="/assets/icon-48.png" sizes="48x48"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/icon-180.png"><link rel="stylesheet" href="/styles.css?v=20261112-1"><link rel="stylesheet" href="/guide.css?v=20261030-1">
+<meta property="og:description" content="Un panel de control es una casilla de un mural de LiveView Mix que contiene una fila de botones."><link rel="canonical" href="https://cam-hub.almx.cc/es/guide/webhook.html"><link rel="alternate" hreflang="x-default" href="https://cam-hub.almx.cc/guide/webhook.html"><link rel="alternate" hreflang="en" href="https://cam-hub.almx.cc/guide/webhook.html"><link rel="alternate" hreflang="zh-Hant" href="https://cam-hub.almx.cc/zh-Hant/guide/webhook.html"><link rel="alternate" hreflang="zh-Hans" href="https://cam-hub.almx.cc/zh-Hans/guide/webhook.html"><link rel="alternate" hreflang="ja" href="https://cam-hub.almx.cc/ja/guide/webhook.html"><link rel="alternate" hreflang="ko" href="https://cam-hub.almx.cc/ko/guide/webhook.html"><link rel="alternate" hreflang="de" href="https://cam-hub.almx.cc/de/guide/webhook.html"><link rel="alternate" hreflang="es" href="https://cam-hub.almx.cc/es/guide/webhook.html"><link rel="alternate" hreflang="es-MX" href="https://cam-hub.almx.cc/es-MX/guide/webhook.html"><link rel="alternate" hreflang="fr" href="https://cam-hub.almx.cc/fr/guide/webhook.html"><link rel="alternate" hreflang="sl" href="https://cam-hub.almx.cc/sl/guide/webhook.html"><link rel="alternate" hreflang="ar" href="https://cam-hub.almx.cc/ar/guide/webhook.html"><meta property="og:url" content="https://cam-hub.almx.cc/es/guide/webhook.html"><meta property="og:title" content="Paneles de control y webhooks — Cam Hub Manual"></head>
+<body data-page="guide">
+  <header class="topbar" aria-label="Site header">
+    <a class="brand" href="/es/"><img src="/assets/icon-96.png" alt="" width="42" height="42"><span><strong>Cam&nbsp;Hub</strong><small data-i18n="topline">Manual de uso</small></span></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-controls" data-i18n-aria="menuLabel" aria-label="Abrir menú"><span></span><span></span><span></span><span class="sr-only" data-i18n="menuLabel">Abrir menú</span></button>
+    <div class="topbar-controls" id="site-controls"><nav class="navlinks" aria-label="Primary"><a href="/es/" data-nav="home" data-i18n="navHome">Inicio</a><a href="/es/product.html" data-nav="product" data-i18n="navProduct">Funciones</a><a href="/es/guide.html" data-nav="guide" data-i18n="navGuide" aria-current="page">Manual</a><a href="/es/support.html" data-nav="support" data-i18n="navSupport">Soporte</a><a href="/es/privacy.html" data-nav="privacy" data-i18n="navPrivacy">Privacidad</a><a href="/es/terms.html" data-nav="terms" data-i18n="navTerms">Términos</a></nav><div class="pickers"><label><span class="sr-only" data-i18n="themeLabel">Apariencia</span><select id="themeSelect" aria-label="Theme"><option value="auto" data-i18n="themeAuto" selected="">Automático</option><option value="light" data-i18n="themeLight">Claro</option><option value="dark" data-i18n="themeDark">Oscuro</option></select></label><label><span class="sr-only" data-i18n="languageLabel">Idioma</span><select id="languageSelect" aria-label="Language"><option value="en">English</option><option value="zh-Hant">繁體中文</option><option value="zh-Hans">简体中文</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="de">Deutsch</option><option value="es" selected="">Español</option><option value="es-MX">Español (México)</option><option value="fr">Français</option><option value="sl">Slovenščina</option><option value="ar">العربية</option></select></label></div><a class="store-pill" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeShort">Obtener la app</a></div>
+  </header>
+  <main class="inner-page guide" style="--g-topbar: 76px; --g-offset: 88px;">
+    <section class="page-hero"><div class="eyebrow" data-i18n="eyebrow">OPERATION MANUAL</div><h1 data-i18n="title">Paneles de control y webhooks</h1><p class="summary" data-i18n="summary">Instrucciones paso a paso para añadir dispositivos, ver vídeo en directo y grabado, crear paneles LiveView Mix, compartir y hacer copias de seguridad.</p></section>
+    <p class="guide-notice" id="guide-notice" role="status" hidden=""></p>
+    <div id="guide-sentinel" aria-hidden="true"></div>
+    <div class="guide-layout has-toc" id="guide-layout" lang="es" dir="ltr">
+      <aside class="guide-side" id="guide-side">
+        <button class="guide-toc-toggle" id="guide-toc-toggle" type="button" aria-expanded="false" aria-controls="guide-toc" lang="es" dir="ltr"><span class="guide-toc-label" data-i18n="tocLabel">Contenido</span><span class="guide-toc-current" id="guide-toc-current">9. Paneles de control y webhooks</span></button>
+        <nav class="guide-toc" id="guide-toc" aria-label="Contenido"><ol><li><a href="/es/guide.html"><span class="toc-num">1</span><span>Inicio rápido</span></a><ol><li><a href="/es/guide.html#start-prepare"><span>Antes de empezar</span></a></li><li><a href="/es/guide.html#start-path"><span>Camino más corto hasta una imagen en directo</span></a></li><li><a href="/es/guide.html#start-demo"><span>Probar la app sin un dispositivo</span></a></li></ol></li><li><a href="/es/guide/tour.html"><span class="toc-num">2</span><span>Las pestañas y el comportamiento básico</span></a><ol><li><a href="/es/guide/tour.html#tour-tabs"><span>Las pestañas de un vistazo</span></a></li><li><a href="/es/guide/tour.html#tour-launch"><span>Qué se abre al iniciar la app</span></a></li><li><a href="/es/guide/tour.html#tour-look"><span>Apariencia e idioma</span></a></li><li><a href="/es/guide/tour.html#tour-rotate"><span>Girar el dispositivo</span></a></li><li><a href="/es/guide/tour.html#tour-duo"><span>iPhone Duo</span></a></li><li><a href="/es/guide/tour.html#tour-awake"><span>Pantalla, segundo plano y notificaciones</span></a></li></ol></li><li><a href="/es/guide/add.html"><span class="toc-num">3</span><span>Añadir un dispositivo</span></a><ol><li><a href="/es/guide/add.html#add-form"><span>El formulario Añadir dispositivo</span></a></li><li><a href="/es/guide/add.html#add-auto"><span>Añadir sin elegir una marca</span></a></li><li><a href="/es/guide/add.html#add-methods"><span>Elegir el método de conexión</span></a></li><li><a href="/es/guide/add.html#add-https"><span>Añadir un dispositivo por HTTPS</span></a></li><li><a href="/es/guide/add.html#add-streams"><span>Añadir emisiones en directo de YouTube y canales de Twitch</span></a></li><li><a href="/es/guide/add.html#add-failed"><span>Cuando falla la adición: la lista de comprobaciones</span></a></li><li><a href="/es/guide/add.html#add-report"><span>Informe del dispositivo (experimental)</span></a></li><li><a href="/es/guide/add.html#add-scan"><span>Encontrar dispositivos con el análisis de la red</span></a></li></ol></li><li><a href="/es/guide/devices.html"><span class="toc-num">4</span><span>La pestaña Dispositivos y los canales</span></a><ol><li><a href="/es/guide/devices.html#devices-list"><span>La lista de dispositivos</span></a></li><li><a href="/es/guide/devices.html#devices-page"><span>La página del dispositivo</span></a></li><li><a href="/es/guide/devices.html#devices-credentials"><span>Cambiar el nombre de usuario y la contraseña de un dispositivo</span></a></li><li><a href="/es/guide/devices.html#devices-password-missing"><span>Un dispositivo sin contraseña guardada</span></a></li><li><a href="/es/guide/devices.html#devices-https"><span>HTTPS en un dispositivo guardado</span></a></li><li><a href="/es/guide/devices.html#devices-health"><span>Estado del disco</span></a></li><li><a href="/es/guide/devices.html#devices-streams"><span>Emisiones de YouTube y de Twitch</span></a></li><li><a href="/es/guide/devices.html#devices-states"><span>Qué muestra una miniatura</span></a></li><li><a href="/es/guide/devices.html#devices-menu"><span>Opciones del canal (pulsación larga)</span></a></li><li><a href="/es/guide/devices.html#devices-plan"><span>Límites del plan y activación de canales</span></a></li><li><a href="/es/guide/devices.html#devices-choose"><span>Elegir qué cámaras se muestran</span></a></li><li><a href="/es/guide/devices.html#devices-fullwall"><span>El mural a pantalla completa de un dispositivo</span></a></li><li><a href="/es/guide/devices.html#devices-quality"><span>SD y HD en las pantallas de dispositivo</span></a></li></ol></li><li><a href="/es/guide/live.html"><span class="toc-num">5</span><span>La pestaña En directo y el mural a pantalla completa</span></a><ol><li><a href="/es/guide/live.html#live-tab"><span>La pestaña En directo</span></a></li><li><a href="/es/guide/live.html#live-quality"><span>SD y HD en un mural</span></a></li><li><a href="/es/guide/live.html#live-wall"><span>El mural a pantalla completa</span></a></li><li><a href="/es/guide/live.html#live-hide"><span>Ocultar las cámaras sin señal</span></a></li></ol></li><li><a href="/es/guide/single.html"><span class="toc-num">6</span><span>Vista individual de una cámara</span></a><ol><li><a href="/es/guide/single.html#single-open"><span>Abrir la vista</span></a></li><li><a href="/es/guide/single.html#single-screen"><span>Las partes de la pantalla</span></a></li><li><a href="/es/guide/single.html#single-zoom"><span>Zoom y desplazamiento</span></a></li><li><a href="/es/guide/single.html#single-controls"><span>Captura, sonido y calidad</span></a></li><li><a href="/es/guide/single.html#single-clip"><span>Grabar un clip</span></a></li><li><a href="/es/guide/single.html#single-talk"><span>Hablar a través de la cámara</span></a></li><li><a href="/es/guide/single.html#single-picture"><span>Franjas negras, rotación y orientación horizontal</span></a></li><li><a href="/es/guide/single.html#single-ptz"><span>Control PTZ: mover la cámara</span></a></li><li><a href="/es/guide/single.html#single-window"><span>Una cámara en una ventana propia</span></a></li><li><a href="/es/guide/single.html#single-duo"><span>La vista en un iPhone Duo plegado</span></a></li><li><a href="/es/guide/single.html#single-streams"><span>Emisiones de YouTube y de Twitch</span></a></li><li><a href="/es/guide/single.html#single-states"><span>Estados de la conexión y mensajes</span></a></li><li><a href="/es/guide/single.html#single-limits"><span>Lo que no está disponible</span></a></li></ol></li><li><a href="/es/guide/playback.html"><span class="toc-num">7</span><span>Reproducción de grabaciones y velocidad</span></a><ol><li><a href="/es/guide/playback.html#playback-avail"><span>Dónde está disponible la reproducción</span></a></li><li><a href="/es/guide/playback.html#playback-day"><span>Elegir un día</span></a></li><li><a href="/es/guide/playback.html#playback-calendar"><span>El calendario de grabaciones</span></a></li><li><a href="/es/guide/playback.html#playback-timeline"><span>Usar la cronología</span></a></li><li><a href="/es/guide/playback.html#playback-list"><span>La lista de grabaciones y la búsqueda de personas</span></a></li><li><a href="/es/guide/playback.html#playback-playing"><span>Mientras se reproduce una grabación</span></a></li><li><a href="/es/guide/playback.html#playback-speed"><span>Velocidad de reproducción</span></a></li><li><a href="/es/guide/playback.html#playback-landscape"><span>Reproducción en horizontal</span></a></li><li><a href="/es/guide/playback.html#playback-limits"><span>Lo que no está disponible</span></a></li></ol></li><li><a href="/es/guide/lvm.html"><span class="toc-num">8</span><span>LiveView Mix</span></a><ol><li><a href="/es/guide/lvm.html#lvm-tab"><span>La pestaña LiveView Mix y su vista previa</span></a></li><li><a href="/es/guide/lvm.html#lvm-first"><span>Crear un primer mural de seis cámaras</span></a></li><li><a href="/es/guide/lvm.html#lvm-pick"><span>Elegir las cámaras y la calidad</span></a></li><li><a href="/es/guide/lvm.html#lvm-layout"><span>Ajustar el diseño</span></a></li><li><a href="/es/guide/lvm.html#lvm-custom"><span>Dibujar un diseño personalizado</span></a></li><li><a href="/es/guide/lvm.html#lvm-special"><span>Diseños especiales: casillas grandes y pequeñas en un mismo mural</span></a></li><li><a href="/es/guide/lvm.html#lvm-arrange"><span>Organizar el mural y sus casillas</span></a></li><li><a href="/es/guide/lvm.html#lvm-move"><span>Mover una casilla a una casilla vacía</span></a></li><li><a href="/es/guide/lvm.html#lvm-slots"><span>Qué puede mostrar una casilla además de una cámara</span></a></li><li><a href="/es/guide/lvm.html#lvm-watermark"><span>Marca de agua</span></a></li><li><a href="/es/guide/lvm.html#lvm-fit"><span>Franjas negras, vídeo a pantalla completa y ángulo del dispositivo</span></a></li><li><a href="/es/guide/lvm.html#lvm-pages"><span>La página vertical</span></a></li><li><a href="/es/guide/lvm.html#lvm-canvases"><span>Dos lienzos en el iPhone Duo</span></a></li><li><a href="/es/guide/lvm.html#lvm-wall"><span>El mural a pantalla completa</span></a></li><li><a href="/es/guide/lvm.html#lvm-closeup"><span>Abrir una cámara individual</span></a></li><li><a href="/es/guide/lvm.html#lvm-streams"><span>Emisiones de YouTube y de Twitch en el mural</span></a></li><li><a href="/es/guide/lvm.html#lvm-states"><span>Cuando una casilla no puede mostrar una cámara</span></a></li><li><a href="/es/guide/lvm.html#lvm-limits"><span>Cómo afectan los límites del plan al mural</span></a></li><li><a href="/es/guide/lvm.html#lvm-settings"><span>LiveView Mix en Ajustes</span></a></li><li><a href="/es/guide/lvm.html#lvm-tv"><span>Diferencias en Apple TV</span></a></li></ol></li><li class="is-current"><a href="/es/guide/webhook.html" class="is-active" aria-current="location"><span class="toc-num">9</span><span>Paneles de control y webhooks</span></a><ol><li><a href="/es/guide/webhook.html#webhook-what"><span>Qué hace un panel de control</span></a></li><li><a href="/es/guide/webhook.html#webhook-add"><span>Añadir un panel de control al mural</span></a></li><li><a href="/es/guide/webhook.html#webhook-templates"><span>Plantillas</span></a></li><li><a href="/es/guide/webhook.html#webhook-fields"><span>Los ajustes de un panel</span></a></li><li><a href="/es/guide/webhook.html#webhook-button"><span>Configurar un botón</span></a></li><li><a href="/es/guide/webhook.html#webhook-use"><span>Pulsar un botón e interpretar el resultado</span></a></li><li><a href="/es/guide/webhook.html#webhook-wall"><span>Aspecto de un panel en el mural</span></a></li><li><a href="/es/guide/webhook.html#webhook-watch"><span>Botones en el Apple Watch</span></a></li><li><a href="/es/guide/webhook.html#ha"><span>Usar Home Assistant</span></a></li><li><a href="/es/guide/webhook.html#webhook-security"><span>Notas de seguridad</span></a></li></ol></li><li><a href="/es/guide/share.html"><span class="toc-num">10</span><span>Compartir y copia de seguridad</span></a><ol><li><a href="/es/guide/share.html#share-choose"><span>Comparación de los dos métodos</span></a></li><li><a href="/es/guide/share.html#share-export"><span>Exportar cámaras (crear un código)</span></a></li><li><a href="/es/guide/share.html#share-lock"><span>Bloquear un código</span></a></li><li><a href="/es/guide/share.html#share-import"><span>Importar cámaras</span></a></li><li><a href="/es/guide/share.html#share-contents"><span>Qué contienen las copias y los códigos</span></a></li><li><a href="/es/guide/share.html#share-icloud"><span>Hacer una copia en iCloud</span></a></li><li><a href="/es/guide/share.html#share-versions"><span>Varias copias con nombre: renombrar y eliminar</span></a></li><li><a href="/es/guide/share.html#share-restore"><span>Restaurar desde iCloud</span></a></li><li><a href="/es/guide/share.html#share-delete"><span>Borrar todas las copias de iCloud</span></a></li><li><a href="/es/guide/share.html#share-newphone"><span>Pasar dispositivos y murales a un teléfono nuevo</span></a></li><li><a href="/es/guide/share.html#share-appletv"><span>Llevar la configuración a Apple TV</span></a></li></ol></li><li><a href="/es/guide/plans.html"><span class="toc-num">11</span><span>Planes y límites</span></a><ol><li><a href="/es/guide/plans.html#plans-tiers"><span>El cupo de cada plan</span></a></li><li><a href="/es/guide/plans.html#plans-stack"><span>Cómo se combinan los dos grupos de planes</span></a></li><li><a href="/es/guide/plans.html#plans-count"><span>Qué consume cupo</span></a></li><li><a href="/es/guide/plans.html#plans-examples"><span>Ejemplos de combinaciones</span></a></li><li><a href="/es/guide/plans.html#plans-choose"><span>Elegir qué cámaras se muestran</span></a></li><li><a href="/es/guide/plans.html#plans-subscribe"><span>Suscribirse, restaurar compras y canjear un código</span></a></li><li><a href="/es/guide/plans.html#plans-lapse"><span>Cuando un plan termina o se reduce</span></a></li></ol></li><li><a href="/es/guide/tools.html"><span class="toc-num">12</span><span>La pestaña Herramientas</span></a><ol><li><a href="/es/guide/tools.html#tools-overview"><span>Qué contiene la pestaña Herramientas</span></a></li><li><a href="/es/guide/tools.html#tools-speedometer"><span>Velocímetro y brújula</span></a></li></ol></li><li><a href="/es/guide/settings.html"><span class="toc-num">13</span><span>Ajustes</span></a><ol><li><a href="/es/guide/settings.html#settings-overview"><span>Las secciones de la pestaña Ajustes</span></a></li><li><a href="/es/guide/settings.html#settings-subscription"><span>Suscripción</span></a></li><li><a href="/es/guide/settings.html#settings-quality"><span>Calidad predeterminada</span></a></li><li><a href="/es/guide/settings.html#settings-picture"><span>Imagen: franjas negras y vídeo a pantalla completa</span></a></li><li><a href="/es/guide/settings.html#settings-hide"><span>Ocultar cámaras sin conexión</span></a></li><li><a href="/es/guide/settings.html#settings-lvm"><span>LiveView Mix, sus páginas y Abrir al iniciar</span></a></li><li><a href="/es/guide/settings.html#settings-backup"><span>Copia de seguridad y uso compartido de cámaras</span></a></li><li><a href="/es/guide/settings.html#settings-language"><span>Idioma</span></a></li><li><a href="/es/guide/settings.html#settings-reset"><span>Restablecer: valores predeterminados, borrar todos los datos, borrar la copia de iCloud</span></a></li><li><a href="/es/guide/settings.html#settings-legal"><span>Términos de uso y Política de privacidad</span></a></li><li><a href="/es/guide/settings.html#settings-about"><span>Información, el manual y lo que Ajustes no contiene</span></a></li></ol></li><li><a href="/es/guide/appletv.html"><span class="toc-num">14</span><span>Apple TV</span></a><ol><li><a href="/es/guide/appletv.html#appletv-prepare"><span>Configurar primero en un iPhone o iPad</span></a></li><li><a href="/es/guide/appletv.html#appletv-bring"><span>Llevar la configuración al Apple TV</span></a></li><li><a href="/es/guide/appletv.html#appletv-differs"><span>Qué difiere en el Apple TV</span></a></li></ol></li><li><a href="/es/guide/trouble.html"><span class="toc-num">15</span><span>Solución de problemas</span></a><ol><li><a href="/es/guide/trouble.html#trouble-start"><span>Por dónde empezar</span></a></li><li><a href="/es/guide/trouble.html#trouble-states"><span>Qué dicen las pantallas vacías</span></a></li><li><a href="/es/guide/trouble.html#trouble-add"><span>Un dispositivo se añade, pero no es accesible</span></a></li><li><a href="/es/guide/trouble.html#trouble-live"><span>Vista en directo</span></a></li><li><a href="/es/guide/trouble.html#trouble-playback"><span>Reproducción de grabaciones</span></a></li><li><a href="/es/guide/trouble.html#trouble-lvm"><span>LiveView Mix</span></a></li><li><a href="/es/guide/trouble.html#trouble-streams"><span>YouTube y Twitch</span></a></li><li><a href="/es/guide/trouble.html#trouble-panels"><span>Paneles de control y webhooks</span></a></li><li><a href="/es/guide/trouble.html#trouble-health"><span>Estado del disco</span></a></li><li><a href="/es/guide/trouble.html#trouble-share"><span>Compartir, importar y copia de iCloud</span></a></li><li><a href="/es/guide/trouble.html#trouble-plans"><span>Planes y compras</span></a></li><li><a href="/es/guide/trouble.html#trouble-errors"><span>Otras frases de error</span></a></li><li><a href="/es/guide/trouble.html#trouble-permissions"><span>Solicitudes de permiso y cuadros de diálogo del sistema</span></a></li><li><a href="/es/guide/trouble.html#trouble-contact"><span>Ponerse en contacto con el desarrollador</span></a></li><li><a href="/es/guide/trouble.html#trouble-faq"><span>Preguntas y respuestas</span></a></li></ol></li><li><a href="/es/guide/brands.html"><span class="toc-num">16</span><span>Marcas compatibles y métodos de conexión</span></a><ol><li><a href="/es/guide/brands.html#brands-methods"><span>Métodos de conexión</span></a></li><li><a href="/es/guide/brands.html#brands-matrix"><span>Qué funciona con cada método</span></a></li><li><a href="/es/guide/brands.html#brands-profiles"><span>Las marcas de la lista</span></a></li><li><a href="/es/guide/brands.html#brands-requirements"><span>Requisitos y límites</span></a></li><li><a href="/es/guide/brands.html#brands-recorders"><span>Cámaras y grabadores</span></a></li><li><a href="/es/guide/brands.html#brands-prepare"><span>Qué preparar en el dispositivo</span></a></li><li><a href="/es/guide/brands.html#brands-activate"><span>Activar un dispositivo nuevo</span></a></li><li><a href="/es/guide/brands.html#brands-compat"><span>La referencia de compatibilidad de la app</span></a></li></ol></li><li><a href="/es/guide/about.html" class="no-num"><span>Acerca de este manual</span></a><ol><li><a href="/es/guide/about.html#about-scope"><span>Alcance</span></a></li><li><a href="/es/guide/about.html#about-conventions"><span>Convenciones</span></a></li><li><a href="/es/guide/about.html#about-help"><span>Dónde obtener ayuda</span></a></li></ol></li></ol></nav>
+      </aside>
+      <article class="guide-article" id="guide-content"><section class="chapter" id="webhook">
+  <h2><span class="num">9</span>Paneles de control y webhooks</h2>
+  <p class="lead">Un panel de control es una casilla de un mural de LiveView Mix que contiene una fila de botones. Cada botón envía, al pulsarlo, una solicitud HTTP a la dirección que se elija, lo que resulta útil para un webhook o una llamada de servicio de Home Assistant, una placa de relés, Node-RED o cualquier otro servicio HTTP al que pueda llegar el teléfono. Los mismos botones también se pueden pulsar en un Apple Watch.</p>
+
+  <h3 id="webhook-what">Qué hace un panel de control</h3>
+  <p>Un panel de control consta de un título, varios botones y un reloj opcional. Cada botón guarda una solicitud HTTP completa: método, URL, cabeceras y cuerpo. Al pulsar un botón, la solicitud sale directamente de este iPhone, iPad o Apple TV hacia la dirección, sin pasar por ningún servidor de Cam Hub. Un botón pulsado en un Apple Watch lo envía el propio reloj o el iPhone enlazado; consulta <a class="xref" href="/es/guide/webhook.html#webhook-watch">«Botones en el Apple Watch»</a>.</p>
+  <ul>
+    <li>Cam Hub solo envía la solicitud. La URL y el contenido los elige por completo el usuario. Cam Hub no comprueba qué tipo de servicio responde y no es un controlador específico de ningún producto de domótica.</li>
+    <li>Una solicitud se envía solo cuando se pulsa un botón en el mural o en el reloj. Al tocar un panel en la pantalla de organización se abre su editor y no se envía nada.</li>
+    <li>Los paneles de control se crean y se editan en iPhone y iPad. Apple TV muestra y ejecuta los paneles de la página horizontal; consulta <a class="xref" href="/es/guide/webhook.html#webhook-wall">«Aspecto de un panel en el mural»</a>. Apple Watch muestra sus botones; consulta <a class="xref" href="/es/guide/webhook.html#webhook-watch">«Botones en el Apple Watch»</a>.</li>
+  </ul>
+  <div class="callout warn">
+    <strong class="t">Un panel de control consume un cupo de cámara</strong>
+  <p>Cada panel de control consume un cupo de cámara del plan, del que dejan libre las cámaras, de modo que un panel nunca le quita la imagen a una cámara. Si el cupo no basta, el panel queda bloqueado y sus botones no están disponibles, ni en el mural ni en el reloj. Para los detalles, consulta <a class="xref" href="/es/guide/lvm.html#lvm-limits">«Cómo afectan los límites del plan al mural»</a> y <a class="xref" href="/es/guide/plans.html#plans-count">«Qué consume cupo»</a>.</p>
+  </div>
+
+  <h3 id="webhook-add">Añadir un panel de control al mural</h3>
+  <p>Requisito previo: LiveView Mix está configurado y el mural contiene al menos una cámara; para la configuración, consulta <a class="xref" href="/es/guide/lvm.html#lvm-first">«Crear un primer mural de seis cámaras»</a>. Mientras no esté configurado, también se puede llegar a <span class="ui">Organizar el mural</span> mediante <span class="path"><span class="ui">Ajustes</span> › <span class="ui">LiveView Mix</span></span> en cuanto se ha añadido un dispositivo. Un panel de control se puede colocar en la página horizontal, en la página vertical o en cualquiera de los dos lienzos de un iPhone Duo; los pasos son los mismos.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Toca la pestaña <span class="ui">LiveView Mix</span>, en la parte inferior de la pantalla.</p>
+      <p class="check"><b class="check-label">Resultado:</b> La pantalla muestra el mural de vista previa, con tres botones en la esquina superior derecha.</p>
+    </li>
+    <li class="step">
+      <p>Toca el botón <span class="ui">Ajustar el diseño</span>, el situado más a la derecha de los tres botones de la esquina superior derecha.</p>
+      <p class="check"><b class="check-label">Resultado:</b> Se abre la página <span class="ui">Ajustar el diseño</span>.</p>
+    </li>
+    <li class="step">
+      <p>Toca <span class="ui">Organizar el mural</span>.</p>
+      <p class="check"><b class="check-label">Resultado:</b> Se abre la página <span class="ui">Organizar</span>: el lienzo del mural está en la parte superior y, debajo, la lista <span class="ui">Orden</span> enumera cada casilla ocupada con su número.</p>
+      <figure class="phone"><img src="/guide/img/lvm-arrange-full.jpg" alt="La página Organizar: el lienzo del mural en la parte superior con un panel de control en la casilla 9 y un reloj en la casilla 10, y debajo la lista de casillas ocupadas" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-arrange-full.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>La página Organizar</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Toca una casilla sin usar del lienzo, que se muestra con un contorno discontinuo y un +. Si las casillas sin usar están en otra página del mural, usa primero las flechas situadas debajo del lienzo o desliza hacia un lado.</p>
+      <p class="check"><b class="check-label">Resultado:</b> Aparece un menú cuyo título es el número de la casilla, por ejemplo <span class="ui" data-ui="value">Casilla 9</span>.</p>
+    </li>
+    <li class="step">
+      <p>Toca <span class="ui">Imagen, panel de control, reloj o etiqueta…</span>.</p>
+      <p class="check"><b class="check-label">Resultado:</b> El editor de la casilla se abre desde la parte inferior de la pantalla, con el título <span class="ui" data-ui="value">Casilla 9</span>. La primera fila es <span class="ui">Contenido</span> y su valor actual es <span class="ui">Vacío</span>.</p>
+    </li>
+    <li class="step">
+      <p>Toca <span class="ui">Contenido</span> y selecciona <span class="ui">Panel</span> en el menú.</p>
+      <p class="check"><b class="check-label">Resultado:</b> La página muestra las tres secciones <span class="ui">Plantilla</span>, <span class="ui">Panel</span> y <span class="ui">Botones</span>. La plantilla es <span class="ui">Portón / Persiana</span>, el título del panel es <span class="ui">Portón</span> (en el idioma de la app) y la sección de botones contiene tres botones, cada uno con <span class="ui">Sin endpoint definido</span> en naranja debajo.</p>
+    </li>
+    <li class="step">
+      <p>Toca <span class="ui">Plantilla</span> y selecciona el tipo más parecido.</p>
+      <p class="check"><b class="check-label">Resultado:</b> La sección de botones se sustituye por los botones predeterminados de esa plantilla. Para el contenido de las plantillas, consulta <a class="xref" href="/es/guide/webhook.html#webhook-templates">«Plantillas»</a>.</p>
+    </li>
+    <li class="step">
+      <p>En la sección <span class="ui">Panel</span>, introduce el nombre del panel en el campo <span class="ui">Título</span>.</p>
+      <p class="check"><b class="check-label">Resultado:</b> El campo muestra el nombre, que más tarde aparece encima de los botones del panel.</p>
+    </li>
+    <li class="step">
+      <p>Opcional: toca <span class="ui">Color</span> y selecciona el color del borde y de los botones.</p>
+      <p class="check"><b class="check-label">Resultado:</b> El icono de color muestra el color seleccionado. El valor predeterminado es el cian.</p>
+    </li>
+    <li class="step">
+      <p>Opcional: activa <span class="ui">Mostrar la hora</span>.</p>
+      <p class="check"><b class="check-label">Resultado:</b> Aparecen cuatro interruptores: <span class="ui">Segundos</span>, <span class="ui">Fecha</span>, <span class="ui">Día de la semana</span> y <span class="ui">Formato de 24 horas</span>. El reloj se muestra en el espacio situado debajo de los botones.</p>
+    </li>
+    <li class="step">
+      <p>Define la URL y el contenido de cada botón como se describe en <a class="xref" href="/es/guide/webhook.html#webhook-button">«Configurar un botón»</a>.</p>
+      <p class="check"><b class="check-label">Resultado:</b> Cada fila de la sección de botones muestra, debajo de su etiqueta, el nombre de host de la URL en lugar de <span class="ui">Sin endpoint definido</span>.</p>
+    </li>
+    <li class="step">
+      <p>Toca <span class="ui">Listo</span>, en la esquina superior derecha del editor de la casilla.</p>
+      <p class="check"><b class="check-label">Resultado:</b> La pantalla vuelve a la página <span class="ui">Organizar</span> y la casilla del lienzo muestra el panel tal como aparece en el mural.</p>
+    </li>
+    <li class="step">
+      <p>Toca <span class="ui">Listo</span>, en la esquina superior derecha de la página <span class="ui">Organizar</span>.</p>
+      <p class="check"><b class="check-label">Resultado:</b> La pantalla vuelve a la página <span class="ui">Ajustar el diseño</span>.</p>
+    </li>
+    <li class="step">
+      <p>Toca <span class="ui">Listo</span>, en la esquina superior derecha de la página <span class="ui">Ajustar el diseño</span>.</p>
+      <p class="check"><b class="check-label">Resultado:</b> La pantalla vuelve a la pestaña LiveView Mix y el mural de vista previa muestra el nuevo panel de control.</p>
+    </li>
+  </ol>
+  <div class="shots pair">
+    <figure class="phone"><img src="/guide/img/lvm-slot-kinds.jpg" alt="El menú Contenido del editor de la casilla: Vacío, Imagen, Panel, Reloj y Etiqueta" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-slot-kinds.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>El menú Contenido</figcaption></figure>
+    <figure class="phone"><img src="/guide/img/lvm-control-panel.jpg" alt="Los ajustes de un panel de control: plantilla, panel y la lista de botones, cada uno con Sin endpoint definido debajo" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-control-panel.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Los ajustes de un panel de control</figcaption></figure>
+  </div>
+  <ul>
+    <li>Si todas las casillas del diseño están ocupadas, el lienzo no muestra ninguna casilla sin usar. Selecciona primero un diseño con más casillas en la fila de diseños de la parte superior de la página <span class="ui">Organizar</span>, o vacía una casilla; consulta <a class="xref" href="/es/guide/lvm.html#lvm-arrange">«Organizar el mural y sus casillas»</a>.</li>
+    <li>Un panel que ya existe en la otra página se puede copiar en lugar de crearlo de nuevo; consulta <a class="xref" href="/es/guide/lvm.html#lvm-pages">«La página vertical»</a>. Un panel de otra página del mural se puede mover a una casilla vacía; consulta <a class="xref" href="/es/guide/lvm.html#lvm-move">«Mover una casilla a una casilla vacía»</a>.</li>
+    <li>Al tocar <span class="ui">Cancelar</span>, en la esquina superior izquierda del editor de la casilla, todo el mural vuelve al estado que tenía cuando se abrió el editor, incluido cualquier cambio en los botones.</li>
+    <li>Si se cambia <span class="ui">Contenido</span> a otro elemento, se borran el título y todos los botones del panel. Para eliminar el panel, establece <span class="ui">Contenido</span> en <span class="ui">Vacío</span>, o desliza su fila hacia la izquierda en la lista <span class="ui">Orden</span> de la página <span class="ui">Organizar</span> y toca <span class="ui" data-ui="system">Eliminar</span>. En ambos casos, la casilla queda vacía y ninguna otra casilla se mueve.</li>
+    <li>Para las casillas de imagen, reloj y etiqueta, consulta <a class="xref" href="/es/guide/lvm.html#lvm-slots">«Qué puede mostrar una casilla además de una cámara»</a>.</li>
+    <li>Si se llega a <span class="ui">Organizar el mural</span> mediante <span class="path"><span class="ui">Ajustes</span> › <span class="ui">LiveView Mix</span></span>, el procedimiento posterior es el mismo.</li>
+  </ul>
+
+  <h3 id="webhook-templates">Plantillas</h3>
+  <p>El menú <span class="ui">Plantilla</span> ofrece once plantillas. Una plantilla solo determina el título predeterminado, el número de botones, sus iconos y el valor inicial de <span class="ui">Confirmar antes de ejecutar</span>. Ninguna plantilla contiene una URL; cada botón necesita la suya.</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Plantilla</th><th>Título predeterminado</th><th>Botones predeterminados</th><th>Botones con «Confirmar antes de ejecutar» activado de forma predeterminada</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Plantilla"><span class="ui">Portón / Persiana</span></td><td data-label="Título predeterminado"><span class="ui">Portón</span></td><td data-label="Botones predeterminados"><span class="ui">Abrir</span>, <span class="ui">Detener</span>, <span class="ui">Cerrar</span></td><td data-label="Botones con «Confirmar antes de ejecutar» activado de forma predeterminada"><span class="ui">Abrir</span></td></tr>
+      <tr><td data-label="Plantilla"><span class="ui">Puerta de garaje</span></td><td data-label="Título predeterminado"><span class="ui">Garaje</span></td><td data-label="Botones predeterminados"><span class="ui">Abrir</span>, <span class="ui">Detener</span>, <span class="ui">Cerrar</span></td><td data-label="Botones con «Confirmar antes de ejecutar» activado de forma predeterminada"><span class="ui">Abrir</span></td></tr>
+      <tr><td data-label="Plantilla"><span class="ui">Luz</span></td><td data-label="Título predeterminado"><span class="ui">Luz</span></td><td data-label="Botones predeterminados"><span class="ui">Encender</span>, <span class="ui">Apagar</span></td><td data-label="Botones con «Confirmar antes de ejecutar» activado de forma predeterminada">Ninguno</td></tr>
+      <tr><td data-label="Plantilla"><span class="ui">Cerradura</span></td><td data-label="Título predeterminado"><span class="ui">Puerta</span></td><td data-label="Botones predeterminados"><span class="ui">Desbloquear</span>, <span class="ui">Bloquear</span></td><td data-label="Botones con «Confirmar antes de ejecutar» activado de forma predeterminada"><span class="ui">Desbloquear</span></td></tr>
+      <tr><td data-label="Plantilla"><span class="ui">Cortina / Persiana</span></td><td data-label="Título predeterminado"><span class="ui">Cortina</span></td><td data-label="Botones predeterminados"><span class="ui">Abrir</span>, <span class="ui">Detener</span>, <span class="ui">Cerrar</span></td><td data-label="Botones con «Confirmar antes de ejecutar» activado de forma predeterminada">Ninguno</td></tr>
+      <tr><td data-label="Plantilla"><span class="ui">Escena / Automatización</span></td><td data-label="Título predeterminado"><span class="ui">Escena</span></td><td data-label="Botones predeterminados"><span class="ui">Ejecutar</span></td><td data-label="Botones con «Confirmar antes de ejecutar» activado de forma predeterminada">Ninguno</td></tr>
+      <tr><td data-label="Plantilla"><span class="ui">Alarma / Sirena</span></td><td data-label="Título predeterminado"><span class="ui">Alarma</span></td><td data-label="Botones predeterminados"><span class="ui">Activar alarma</span>, <span class="ui">Desactivar alarma</span>, <span class="ui">Emergencia</span></td><td data-label="Botones con «Confirmar antes de ejecutar» activado de forma predeterminada"><span class="ui">Activar alarma</span>, <span class="ui">Emergencia</span></td></tr>
+      <tr><td data-label="Plantilla"><span class="ui">Ventilador</span></td><td data-label="Título predeterminado"><span class="ui">Ventilador</span></td><td data-label="Botones predeterminados"><span class="ui">Encender</span>, <span class="ui">Apagar</span></td><td data-label="Botones con «Confirmar antes de ejecutar» activado de forma predeterminada">Ninguno</td></tr>
+      <tr><td data-label="Plantilla"><span class="ui">Enchufe inteligente</span></td><td data-label="Título predeterminado"><span class="ui">Enchufe</span></td><td data-label="Botones predeterminados"><span class="ui">Encender</span>, <span class="ui">Apagar</span></td><td data-label="Botones con «Confirmar antes de ejecutar» activado de forma predeterminada">Ninguno</td></tr>
+      <tr><td data-label="Plantilla"><span class="ui">Aire acondicionado</span></td><td data-label="Título predeterminado"><span class="ui">Aire acondicionado</span></td><td data-label="Botones predeterminados"><span class="ui">Encender</span>, <span class="ui">Apagar</span></td><td data-label="Botones con «Confirmar antes de ejecutar» activado de forma predeterminada">Ninguno</td></tr>
+      <tr><td data-label="Plantilla"><span class="ui">Personalizado</span></td><td data-label="Título predeterminado">Vacío</td><td data-label="Botones predeterminados">Un botón con la etiqueta <span class="ui">Botón</span></td><td data-label="Botones con «Confirmar antes de ejecutar» activado de forma predeterminada">Ninguno</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>El título y las etiquetas de los botones predeterminados de una plantilla aparecen en el idioma de la app y lo siguen si después se cambia el idioma de la app, en el mural, en el editor y en el Apple Watch. Un título o una etiqueta que se haya escrito o editado se queda exactamente como se escribió. Las palabras predeterminadas de los paneles creados anteriormente se reconocen en todos los idiomas de la app y también siguen el idioma actual.</li>
+    <li>Al cambiar de plantilla se sustituyen todos los botones existentes por los de la nueva plantilla, y con ellos se borran las URL, las cabeceras y el contenido ya introducidos. El título solo se sustituye si todavía está vacío o sigue siendo un título predeterminado; un título escrito por el usuario no cambia. Selecciona primero la plantilla y ajusta después los detalles.</li>
+    <li>La plantilla inicial de un panel de control recién añadido es <span class="ui">Portón / Persiana</span>.</li>
+  </ul>
+  <figure class="phone"><img src="/guide/img/lvm-control-templates.jpg" alt="El menú Plantilla abierto, con Portón / Persiana, Puerta de garaje, Luz, Cerradura, Cortina / Persiana, Escena / Automatización, Alarma / Sirena, Ventilador, Enchufe inteligente, Aire acondicionado y Personalizado" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-control-templates.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>El menú Plantilla</figcaption></figure>
+
+  <h3 id="webhook-fields">Los ajustes de un panel</h3>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Elemento</th><th>Descripción</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Elemento"><span class="ui">Contenido</span></td><td data-label="Descripción">El contenido de la casilla: <span class="ui">Vacío</span>, <span class="ui">Imagen</span>, <span class="ui">Panel</span>, <span class="ui">Reloj</span> o <span class="ui">Etiqueta</span>. Al seleccionar <span class="ui">Panel</span>, la casilla se convierte en un panel de control.</td></tr>
+      <tr><td data-label="Elemento"><span class="ui">Plantilla</span></td><td data-label="Descripción">Consulta <a class="xref" href="/es/guide/webhook.html#webhook-templates">«Plantillas»</a>.</td></tr>
+      <tr><td data-label="Elemento"><span class="ui">Título</span></td><td data-label="Descripción">Se muestra encima de los botones para indicar qué controla el panel y se usa como encabezado del grupo en el Apple Watch. Si está vacío, no se muestra ningún título.</td></tr>
+      <tr><td data-label="Elemento"><span class="ui">Color</span></td><td data-label="Descripción">El color del borde y de los botones del panel, que también se usa para los iconos en el Apple Watch.</td></tr>
+      <tr><td data-label="Elemento"><span class="ui">Mostrar la hora</span></td><td data-label="Descripción">Muestra la hora actual en el espacio situado debajo de los botones. Si está activado, se pueden seleccionar <span class="ui">Segundos</span>, <span class="ui">Fecha</span>, <span class="ui">Día de la semana</span> y <span class="ui">Formato de 24 horas</span>. Los nombres de los días y de los meses siguen el idioma de la app.</td></tr>
+      <tr><td data-label="Elemento"><span class="ui">Botones</span></td><td data-label="Descripción">La lista de botones. Toca una fila para editar ese botón, desliza una fila hacia la izquierda para eliminarla y toca <span class="ui">Añadir botón</span> para añadir un botón en blanco al final. La lista no se puede reordenar; para cambiar la secuencia, elimina un botón y vuelve a añadirlo. Cada fila muestra el icono, la etiqueta y el nombre de host de la URL; mientras no se haya introducido una URL válida, se muestra en su lugar <span class="ui">Sin endpoint definido</span> en naranja. Si la etiqueta está vacía, la fila muestra <span class="ui">Botón</span>.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="webhook-button">Configurar un botón</h3>
+  <p>Requisito previo: el editor de la casilla está abierto como se describe en <a class="xref" href="/es/guide/webhook.html#webhook-add">«Añadir un panel de control al mural»</a> y <span class="ui">Panel</span> está seleccionado.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>En la sección <span class="ui">Botones</span>, toca el botón que quieras configurar. Para crear un botón nuevo, toca primero <span class="ui">Añadir botón</span> y, después, la fila nueva.</p>
+      <p class="check"><b class="check-label">Resultado:</b> La pantalla muestra el editor de ese botón. Su título es la etiqueta del botón y la esquina superior izquierda solo contiene una flecha de retroceso.</p>
+    </li>
+    <li class="step">
+      <p>En la fila de iconos situada debajo de la fila <span class="ui">Icono</span>, toca el icono que quieras usar o escribe el nombre de un icono de <code>SF Symbols</code> en el campo de la derecha.</p>
+      <p class="check"><b class="check-label">Resultado:</b> La fila <span class="ui">Icono</span> muestra el icono seleccionado y su nombre, por ejemplo <code>arrow.up.to.line</code>.</p>
+    </li>
+    <li class="step">
+      <p>Introduce en el campo <span class="ui">Etiqueta</span> el texto que se mostrará debajo del icono.</p>
+      <p class="check"><b class="check-label">Resultado:</b> El campo muestra el texto. El título de la página cambia al mismo texto.</p>
+    </li>
+    <li class="step">
+      <p>Si el botón debe confirmarse antes de ejecutarse, activa <span class="ui">Confirmar antes de ejecutar</span>.</p>
+      <p class="check"><b class="check-label">Resultado:</b> El interruptor queda activado. Ahora, al pulsar el botón aparece un cuadro de confirmación, en el mural y en el reloj; consulta <a class="xref" href="/es/guide/webhook.html#webhook-use">«Pulsar un botón e interpretar el resultado»</a>.</p>
+    </li>
+    <li class="step">
+      <p>En la sección <span class="ui">Solicitud</span>, selecciona <code>GET</code>, <code>POST</code>, <code>PUT</code> o <code>DELETE</code> en el menú <span class="ui">Método</span>.</p>
+      <p class="check"><b class="check-label">Resultado:</b> El menú muestra el método seleccionado. Con <code>GET</code>, la sección <span class="ui">Cuerpo</span> no aparece en la parte inferior de la página; los otros tres métodos la muestran.</p>
+    </li>
+    <li class="step">
+      <p>Introduce la URL completa en el campo situado debajo de <span class="ui">Método</span>, empezando por <code>http://</code> o <code>https://</code>.</p>
+      <p class="check"><b class="check-label">Resultado:</b> El campo muestra la URL.</p>
+    </li>
+    <li class="step">
+      <p>En un iPhone, opcional: en la sección Apple Watch, toca <span class="ui">Forma de envío</span> y selecciona <span class="ui">Automático</span>, <span class="ui">Directamente desde el Apple Watch</span> o <span class="ui">A través del iPhone</span>.</p>
+      <p class="check"><b class="check-label">Resultado:</b> El menú muestra la opción y la nota situada debajo explica lo que hace. Para el significado de cada opción, consulta <a class="xref" href="/es/guide/webhook.html#webhook-watch">«Botones en el Apple Watch»</a>.</p>
+    </li>
+    <li class="step">
+      <p>Si se necesita una cabecera, toca <span class="ui">Añadir cabecera</span> e introduce el nombre y el valor de la cabecera en los campos <span class="ui">Nombre</span> y <span class="ui">Valor</span>.</p>
+      <p class="check"><b class="check-label">Resultado:</b> La sección <span class="ui">Cabeceras</span> gana una fila y ambos campos muestran el texto introducido. Repite el paso para más cabeceras; desliza una fila hacia la izquierda para eliminar la cabecera.</p>
+    </li>
+    <li class="step">
+      <p>Si hay que enviar contenido, confirma el tipo de contenido en el campo superior de la sección <span class="ui">Cuerpo</span> (<code>application/json</code> de forma predeterminada) e introduce el contenido en el cuadro de texto situado debajo.</p>
+      <p class="check"><b class="check-label">Resultado:</b> El cuadro de texto muestra el contenido. El contenido se envía exactamente como se escribió.</p>
+    </li>
+    <li class="step">
+      <p>Toca la flecha de retroceso, en la esquina superior izquierda.</p>
+      <p class="check"><b class="check-label">Resultado:</b> La pantalla vuelve al editor de la casilla y la fila del botón muestra, debajo de su etiqueta, el nombre de host de la URL.</p>
+    </li>
+  </ol>
+  <div class="shots pair">
+    <figure class="phone"><img src="/guide/img/lvm-button-editor.jpg" alt="El editor de botones: icono, etiqueta, Confirmar antes de ejecutar, y el método y la URL de la sección Solicitud" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-button-editor.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>El editor de botones (parte superior)</figcaption></figure>
+    <figure class="phone"><img src="/guide/img/lvm-button-headers.jpg" alt="La parte inferior del editor de botones: la sección Cabeceras con una fila Authorization y la sección Cuerpo con el tipo de contenido y el contenido JSON" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-button-headers.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>El editor de botones (parte inferior)</figcaption></figure>
+  </div>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Campo</th><th>Descripción</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Campo"><span class="ui">Icono</span></td><td data-label="Descripción">Los veinte iconos habituales situados debajo de la fila se pueden tocar directamente. También se puede escribir el nombre de cualquier icono de <code>SF Symbols</code>.</td></tr>
+      <tr><td data-label="Campo"><span class="ui">Etiqueta</span></td><td data-label="Descripción">Se muestra debajo del icono y se usa como texto del botón rojo del cuadro de confirmación. Si la etiqueta está vacía, el botón muestra solo el icono y el botón rojo del cuadro de confirmación dice <span class="ui">Confirmar</span>.</td></tr>
+      <tr><td data-label="Campo"><span class="ui">Confirmar antes de ejecutar</span></td><td data-label="Descripción">Si está activado, al pulsar el botón se abre primero un cuadro de confirmación. Los botones que hacen mover un equipo físico, como abrir una puerta, desbloquear y las alarmas, deberían tenerlo activado.</td></tr>
+      <tr><td data-label="Campo"><span class="ui">Método</span></td><td data-label="Descripción"><code>GET</code>, <code>POST</code>, <code>PUT</code> o <code>DELETE</code>; el valor predeterminado es <code>POST</code>. <code>GET</code> no envía cuerpo.</td></tr>
+      <tr><td data-label="Campo">URL</td><td data-label="Descripción">Debe empezar por <code>http://</code> o <code>https://</code> y contener un nombre de host o una dirección. Los espacios del principio y del final se ignoran. Los parámetros de consulta se escriben en la propia URL. Si la URL está vacía o tiene un formato incorrecto, al pulsar el botón se muestra un fallo, y el botón no aparece en el Apple Watch.</td></tr>
+      <tr><td data-label="Campo"><span class="ui">Forma de envío</span></td><td data-label="Descripción">Solo se muestra en un iPhone, en la sección Apple Watch. Decide si una pulsación en el reloj la envía el propio reloj o el iPhone; el valor predeterminado es <span class="ui">Automático</span>. Consulta <a class="xref" href="/es/guide/webhook.html#webhook-watch">«Botones en el Apple Watch»</a>.</td></tr>
+      <tr><td data-label="Campo"><span class="ui">Cabeceras</span></td><td data-label="Descripción">Cualquier número de nombres y valores. Las filas con el nombre vacío se omiten. Una cabecera <code>Content-Type</code> introducida aquí tiene prioridad sobre el campo de tipo de contenido de la sección <span class="ui">Cuerpo</span>.</td></tr>
+      <tr><td data-label="Campo"><span class="ui">Cuerpo</span></td><td data-label="Descripción">Se muestra solo con <code>POST</code>, <code>PUT</code> y <code>DELETE</code>. El campo superior es el tipo de contenido, <code>application/json</code> de forma predeterminada; el cuadro de texto situado debajo es el contenido. Un contenido vacío no envía cuerpo. El valor del campo de tipo de contenido se adjunta solo cuando el contenido no está vacío y no se ha introducido ninguna cabecera <code>Content-Type</code>.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="webhook-use">Pulsar un botón e interpretar el resultado</h3>
+  <p>Los botones se pueden pulsar en el mural de vista previa de la pestaña LiveView Mix y en el mural a pantalla completa. Un botón recién configurado no tiene una función de prueba independiente; pulsarlo una vez sirve de prueba, seguida de una comprobación en el lado receptor de que la solicitud llegó.</p>
+  <figure class="clip land"><video class="clip" aria-label="Pulsación de los botones de un panel de control en el mural: un indicador de actividad mientras se envía la solicitud y, después, una marca de verificación verde si la respuesta es positiva y un triángulo de advertencia naranja si no lo es." muted="" loop="" playsinline="" preload="none" data-src="/guide/vid/rec-webhook-button.mp4" data-poster="/guide/img/rec-webhook-button.jpg" poster="/guide/img/rec-webhook-button.jpg"></video><figcaption>Pulsación de los botones de un panel de control en el mural: un indicador de actividad mientras se envía la solicitud y, después, una marca de verificación verde si la respuesta es positiva y un triángulo de advertencia naranja si no lo es.</figcaption></figure>
+  <ol class="steps">
+    <li class="step">
+      <p>En el mural de vista previa o en el mural a pantalla completa, toca un botón del panel.</p>
+      <p class="check"><b class="check-label">Resultado:</b> Un botón sin <span class="ui">Confirmar antes de ejecutar</span> cambia su icono a un indicador de actividad de inmediato, lo que significa que la solicitud se ha enviado. Un botón que lo tiene activado abre un cuadro de confirmación junto al panel, con el título del panel como título (o <span class="ui">¿Ejecutar esta acción?</span> si el panel no tiene título).</p>
+    </li>
+    <li class="step">
+      <p>Cuando aparezca el cuadro de confirmación, toca el botón rojo, que lleva la etiqueta del botón pulsado. Para cancelar, toca en cualquier lugar fuera del cuadro.</p>
+      <p class="check"><b class="check-label">Resultado:</b> El cuadro se cierra y el icono cambia a un indicador de actividad. Si se cancela, no se envía ninguna solicitud.</p>
+      <figure class="phone"><img src="/guide/img/lvm-webhook-confirm.jpg" alt="La pestaña LiveView Mix tras pulsar el botón Open del panel del portón: junto al panel aparece un cuadro de confirmación" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-webhook-confirm.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>El cuadro de confirmación</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Observa el icono del botón.</p>
+      <p class="check"><b class="check-label">Resultado:</b> Según el resultado, el icono cambia a una marca de verificación verde o a un triángulo de advertencia naranja, y vuelve al icono original pasados unos 1,6 segundos.</p>
+      <figure class="land"><img src="/guide/img/lvm-webhook-states.jpg" alt="Tres estados de un mismo botón: el indicador de actividad durante el envío, la marca de verificación verde tras un éxito y el triángulo de advertencia naranja tras un fallo" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-webhook-states.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>Los tres estados de un botón</figcaption></figure>
+    </li>
+  </ol>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>El botón muestra</th><th>Significado</th></tr></thead>
+    <tbody>
+      <tr><td data-label="El botón muestra">El icono configurado</td><td data-label="Significado">En reposo, o ya se mostró el resultado.</td></tr>
+      <tr><td data-label="El botón muestra">Un indicador de actividad</td><td data-label="Significado">La solicitud se ha enviado y se espera la respuesta. Si no llega ninguna respuesta en 10 segundos, la solicitud se considera fallida.</td></tr>
+      <tr><td data-label="El botón muestra">Una marca de verificación verde</td><td data-label="Significado">El lado receptor respondió con un código de estado de 200 a 299. Las redirecciones se siguen automáticamente y decide la respuesta final.</td></tr>
+      <tr><td data-label="El botón muestra">Un triángulo de advertencia naranja</td><td data-label="Significado">La solicitud no tuvo éxito. La causa puede ser una URL vacía o con formato incorrecto, la falta de conexión, un tiempo de espera agotado, un certificado no fiable o un código de estado fuera del rango de 200 a 299, por ejemplo 401, 404 o 500. La pantalla no muestra la causa y no se conserva ningún registro.</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>Una marca de verificación verde solo significa que el lado receptor respondió correctamente. No demuestra que el equipo se haya movido. Para comprobar el resultado, consulta el registro del lado receptor.</li>
+    <li>Cada pulsación envía una solicitud y nada impide las pulsaciones repetidas. Pulsar dos veces seguidas envía dos solicitudes. Los botones que hacen mover un equipo físico deberían tener <span class="ui">Confirmar antes de ejecutar</span> activado.</li>
+    <li>Si el triángulo naranja aparece repetidamente, comprueba por este orden: si la URL es válida, si el teléfono y el lado receptor están en la misma red o pueden alcanzarse y si la dirección del lado receptor se puede resolver. Si el lado receptor está en la red local, Cam Hub debe tener permiso para acceder a la red local; consulta <a class="xref" href="/es/guide/add.html#add-scan">«Encontrar dispositivos con el análisis de la red»</a>. Para otros problemas, consulta <a class="xref" href="/es/guide/trouble.html">capítulo 15, «Solución de problemas»</a>.</li>
+    <li>Para pulsar botones en un Apple Watch, consulta <a class="xref" href="/es/guide/webhook.html#webhook-watch">«Botones en el Apple Watch»</a>.</li>
+  </ul>
+
+  <h3 id="webhook-wall">Aspecto de un panel en el mural</h3>
+  <ul>
+    <li><b>Disposición de los botones</b>: 1 botón se coloca en 1 columna, 2 botones en 2 columnas, 3 botones en 3 columnas, 4 botones como 2 × 2 y 5 o más botones en 3 columnas.</li>
+    <li><b>Casillas pequeñas</b>: el panel se reduce automáticamente. Primero se oculta el reloj, después las etiquetas situadas debajo de los iconos; el título y los iconos permanecen.</li>
+    <li><b>Plan</b>: cada panel de control consume un cupo de cámara, del que dejan libre las cámaras. Un panel que supera el cupo muestra un candado, su título y <span class="ui">No incluido en tu plan</span>, y sus botones no están disponibles; en la vista previa, la casilla muestra un candado y <span class="ui">No incluido en tu plan</span>. Cada panel de cada mural cuenta por separado: la página horizontal, siempre; la página vertical, mientras está activada, y el lienzo inferior de un iPhone Duo, mientras los dos lienzos están activados; un panel copiado cuenta aparte de su original. Las casillas de reloj, etiqueta, imagen y vacías no consumen cupo. Una suscripción a un plan NVR por sí sola no eleva el cupo disponible para los paneles. Para las reglas de cómputo, consulta <a class="xref" href="/es/guide/lvm.html#lvm-limits">«Cómo afectan los límites del plan al mural»</a> y <a class="xref" href="/es/guide/plans.html#plans-count">«Qué consume cupo»</a>.</li>
+    <li><b>Apple TV</b>: un panel se crea en un iPhone o un iPad, y los paneles de la página horizontal se muestran en el mural del Apple TV; consulta <a class="xref" href="/es/guide/appletv.html">capítulo 14, «Apple TV»</a>.</li>
+    <li><b>Apple Watch</b>: los botones de todos los paneles que cubre el plan aparecen en el Apple Watch enlazado; consulta <a class="xref" href="/es/guide/webhook.html#webhook-watch">«Botones en el Apple Watch»</a>.</li>
+    <li><b>Copia de seguridad y compartir</b>: los ajustes de un panel, incluidos los valores de las cabeceras, forman parte de los ajustes de la app. Entran en cada copia de seguridad de iCloud y también en un código para compartir si <span class="ui">Incluir los ajustes de la app</span> está activado durante la exportación; consulta <a class="xref" href="/es/guide/share.html">capítulo 10, «Compartir y copia de seguridad»</a>.</li>
+  </ul>
+  <div class="shots land-pair">
+    <figure class="land"><img src="/guide/img/lvm-wall.jpg" alt="El mural a pantalla completa: un panel de control titulado Gate en la fila inferior con tres botones, un reloj a su derecha e imágenes de cámaras en las demás casillas" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-wall.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>Un panel de control y un reloj en el mural</figcaption></figure>
+    <figure class="land"><img src="/guide/img/lvm-panel-locked.jpg" alt="El mural a pantalla completa: un panel de control que supera el cupo, con un candado, su título y No incluido en tu plan" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-panel-locked.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>Un panel de control bloqueado por el cupo</figcaption></figure>
+  </div>
+
+  <h3 id="webhook-watch">Botones en el Apple Watch</h3>
+  <p>Cam Hub en el Apple Watch muestra los botones de los paneles de control configurados en el iPhone enlazado y ejecuta un botón con un solo toque. No muestra nada más: ni vídeo ni cámaras. La app del reloj no tiene ajustes, inicio de sesión ni compras propios; el iPhone decide qué botones muestra.</p>
+  <ul>
+    <li><b>Qué botones</b>: todos los botones con una URL válida de todos los paneles de control que cubre el plan: la página horizontal, la página vertical mientras está activada y el lienzo inferior de un iPhone Duo mientras los dos lienzos están activados. Un botón de la página vertical idéntico a uno de la página horizontal (mismo título del panel, misma etiqueta y misma solicitud) aparece una sola vez.</li>
+    <li><b>La lista</b>: la pantalla lleva el título <span class="ui" data-ui="value">Controles</span>. Los botones se agrupan bajo los títulos de sus paneles, en el orden del mural. Cada fila muestra el icono en el color del panel y la etiqueta del botón (la URL si la etiqueta está vacía).</li>
+    <li><b>Sincronización</b>: cuando se cambia un panel o un botón en el iPhone, o cambia el plan, el iPhone envía al reloj una lista nueva. Un panel que el plan ya no cubre desaparece del reloj.</li>
+    <li><b>Funcionamiento independiente</b>: la lista se guarda en el reloj. La app del reloj se abre y la muestra aunque la app del iPhone no se esté ejecutando o el iPhone esté fuera de alcance; los botones que el propio reloj puede enviar siguen funcionando en ese caso.</li>
+    <li><b>Idioma</b>: el reloj muestra sus textos y las palabras predeterminadas de los paneles en el idioma de la app del iPhone, no en el idioma del reloj.</li>
+    <li><b>Antes de que lleguen los primeros botones</b>: el reloj muestra <span class="ui" data-ui="value">Aún no hay botones</span> con una nota que indica que allí aparecen los botones de un panel de control añadido a LiveView Mix en el iPhone.</li>
+  </ul>
+  <figure class="phone"><img src="/guide/img/watch-buttons.jpg" alt="Un Apple Watch con la lista Controles: un panel Garden Lights con Lights on, marcado con una marca de verificación verde tras responder, y Lights off" decoding="async" width="416" height="496" data-src="/guide/img/watch-buttons.jpg" style="aspect-ratio: 416 / 496;" loading="lazy"><figcaption>Botones de un panel de control en el Apple Watch</figcaption></figure>
+  <h4>Cómo se envía una pulsación</h4>
+  <p>Cada botón tiene su propia opción en <span class="ui">Forma de envío</span>, en el editor del botón del iPhone (consulta <a class="xref" href="/es/guide/webhook.html#webhook-button">«Configurar un botón»</a>):</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Opción</th><th>Qué ocurre al pulsar</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Opción"><span class="ui">Automático</span> (predeterminado)</td><td data-label="Qué ocurre al pulsar">Una dirección pública se envía directamente desde el reloj. Una dirección de la red doméstica o de una VPN, por ejemplo <code>192.168.x.x</code> o un nombre que termina en <code>.local</code>, pasa primero por el iPhone, que sí puede llegar a ella.</td></tr>
+      <tr><td data-label="Opción"><span class="ui ui-long">Directamente desde el Apple Watch</span></td><td data-label="Qué ocurre al pulsar">El reloj siempre envía la solicitud por sí mismo, mediante su propia conexión Wi-Fi o móvil o mediante la conexión del iPhone. Es la forma más rápida, pero una dirección de la red doméstica o de una VPN puede quedar fuera del alcance del reloj.</td></tr>
+      <tr><td data-label="Opción"><span class="ui">A través del iPhone</span></td><td data-label="Qué ocurre al pulsar">Para un servidor al que solo se llega mediante una VPN del iPhone, sobre todo cuando su dirección parece pública: el reloj no tiene VPN propia. El reloj envía la solicitud por sí mismo solo cuando el iPhone está fuera de alcance.</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>Cuando una pulsación pasa por el iPhone, el reloj comprueba primero que el iPhone responde, con una espera de hasta unos 6 segundos; para ello, la app del iPhone se puede iniciar en segundo plano. Después, el iPhone envía la solicitud igual que lo hace su mural, tras comprobar que el plan sigue cubriendo el panel.</li>
+    <li>Si el iPhone no responde a esa comprobación, el reloj envía la solicitud por sí mismo. Si el iPhone aceptó la solicitud pero su respuesta se perdió, la pulsación se muestra como fallida y no se vuelve a enviar, de modo que un interruptor nunca se acciona dos veces.</li>
+    <li>Una solicitud que el reloj envió por sí mismo y que falló no se repite a través del iPhone. Una solicitud del reloj a una dirección de la red doméstica solo funciona mientras el reloj está en la misma red Wi-Fi.</li>
+  </ul>
+  <h4>Pulsar un botón en el reloj</h4>
+  <p>Requisito previo: Cam Hub está instalado en el Apple Watch enlazado con el iPhone, y en el mural hay al menos un panel de control con una URL válida.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Abre Cam Hub en el Apple Watch.</p>
+      <p class="check"><b class="check-label">Resultado:</b> El reloj muestra <span class="ui" data-ui="value">Controles</span> y los botones, agrupados por panel.</p>
+    </li>
+    <li class="step">
+      <p>Toca un botón.</p>
+      <p class="check"><b class="check-label">Resultado:</b> Un botón sin <span class="ui">Confirmar antes de ejecutar</span> muestra al instante un indicador de actividad al final de su fila. Un botón que lo tiene activado pregunta <span class="ui">¿Ejecutar esta acción?</span>, con el título del panel debajo, un botón rojo con la etiqueta del botón y <span class="ui">Cancelar</span>.</p>
+    </li>
+    <li class="step">
+      <p>Cuando aparezca la pregunta, toca el botón rojo. Para cancelar, toca <span class="ui">Cancelar</span>.</p>
+      <p class="check"><b class="check-label">Resultado:</b> La pregunta se cierra y la fila muestra un indicador de actividad. Si se cancela, no se envía nada.</p>
+    </li>
+    <li class="step">
+      <p>Observa el final de la fila.</p>
+      <p class="check"><b class="check-label">Resultado:</b> Una marca de verificación verde significa que el endpoint respondió correctamente; un triángulo de advertencia rojo, que la solicitud no tuvo éxito. El reloj también da un toque en la muñeca, y la fila vuelve a la normalidad pasados unos 2,5 segundos.</p>
+    </li>
+  </ol>
+  <p>Un toque en un botón que todavía está enviando se ignora, de modo que un segundo toque impaciente no envía la solicitud dos veces. Igual que en el mural, una marca de verificación verde solo significa que el lado receptor respondió; no demuestra que el equipo se haya movido.</p>
+
+  <h3 id="ha">Usar Home Assistant</h3>
+  <p>Los dos métodos siguientes usan Home Assistant como ejemplo. La dirección <code>homeassistant.local</code>, el identificador <code>gate-open-7f3c9a21</code> y el nombre de entidad <code>cover.gate</code> son valores de ejemplo y deben sustituirse por los reales. El comportamiento del lado de Home Assistant lo define su propia documentación y puede cambiar entre versiones.</p>
+  <p>Requisitos previos: Home Assistant funciona en la red doméstica y el teléfono puede llegar a su dirección; una casilla del mural de LiveView Mix tiene <span class="ui">Panel</span> seleccionado (consulta <a class="xref" href="/es/guide/webhook.html#webhook-add">«Añadir un panel de control al mural»</a>). Home Assistant usa <code>http</code> y el puerto <code>8123</code> de forma predeterminada. El texto de ejemplo del campo de URL de la app empieza por <code>https</code> y debe cambiarse para que coincida con la configuración real.</p>
+
+  <h4>Opción 1: desencadenante webhook (no hace falta token)</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>En Home Assistant, crea una automatización nueva.</p>
+      <p class="check"><b class="check-label">Resultado:</b> La pantalla muestra el editor de la automatización.</p>
+    </li>
+    <li class="step">
+      <p>Selecciona Webhook como desencadenante e introduce un identificador difícil de adivinar, por ejemplo <code>gate-open-7f3c9a21</code>.</p>
+      <p class="check"><b class="check-label">Resultado:</b> El editor muestra el identificador. El identificador funciona como una contraseña: quien lo conozca, junto con la dirección, puede iniciar la automatización.</p>
+    </li>
+    <li class="step">
+      <p>Define la acción, por ejemplo la entidad que abre el portón, y guarda la automatización.</p>
+      <p class="check"><b class="check-label">Resultado:</b> La automatización aparece en la lista de automatizaciones de Home Assistant.</p>
+    </li>
+    <li class="step">
+      <p>En Cam Hub, abre el editor del botón que quieras usar, como se describe en el paso 1 de <a class="xref" href="/es/guide/webhook.html#webhook-button">«Configurar un botón»</a>.</p>
+      <p class="check"><b class="check-label">Resultado:</b> La pantalla muestra el editor de ese botón.</p>
+    </li>
+    <li class="step">
+      <p>Selecciona <code>POST</code> como <span class="ui">Método</span> e introduce <code>http://homeassistant.local:8123/api/webhook/gate-open-7f3c9a21</code> en el campo de URL. Las cabeceras y el cuerpo pueden quedar vacíos.</p>
+      <p class="check"><b class="check-label">Resultado:</b> El campo muestra la URL y, tras volver, la fila del botón muestra el nombre de host <code>homeassistant.local</code>.</p>
+    </li>
+    <li class="step">
+      <p>Vuelve al mural y pulsa el botón.</p>
+      <p class="check"><b class="check-label">Resultado:</b> El icono muestra primero un indicador de actividad y, después, una marca de verificación verde.</p>
+    </li>
+    <li class="step">
+      <p>En Home Assistant, abre el registro de ejecución de la automatización.</p>
+      <p class="check"><b class="check-label">Resultado:</b> El registro muestra la ejecución que inició la pulsación. Home Assistant también puede responder correctamente a un identificador que no existe, de modo que decide el registro de ejecución, no la marca de verificación verde.</p>
+    </li>
+  </ol>
+  <p>La solicitud equivalente es:</p>
+  <pre><code>POST /api/webhook/gate-open-7f3c9a21 HTTP/1.1
+Host: homeassistant.local:8123</code></pre>
+  <p>La automatización también se puede escribir como archivo de configuración. El ejemplo siguiente es solo a título comparativo y la sintaxis depende de la versión de Home Assistant:</p>
+  <pre><code>triggers:
+  - trigger: webhook
+    webhook_id: gate-open-7f3c9a21
+    allowed_methods:
+      - POST
+    local_only: true
+actions:
+  - action: cover.open_cover
+    target:
+      entity_id: cover.gate</code></pre>
+  <p>Un desencadenante webhook acepta de forma predeterminada solo <code>POST</code> y <code>PUT</code>, y solo solicitudes de la red local. Para usarlo desde una red exterior se necesitan medidas adicionales; consulta <a class="xref" href="/es/guide/webhook.html#webhook-security">«Notas de seguridad»</a>. Un botón pulsado en un Apple Watch llega a una dirección como <code>homeassistant.local</code> a través del iPhone cuando <span class="ui">Forma de envío</span> está en <span class="ui">Automático</span> o en <span class="ui">A través del iPhone</span>; consulta <a class="xref" href="/es/guide/webhook.html#webhook-watch">«Botones en el Apple Watch»</a>.</p>
+
+  <h4>Opción 2: llamada a un servicio (hace falta token)</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>En la página de perfil de Home Assistant, crea un token de acceso de larga duración y cópialo de inmediato.</p>
+      <p class="check"><b class="check-label">Resultado:</b> La pantalla muestra el token. Normalmente, un token se muestra completo una sola vez, cuando se crea.</p>
+    </li>
+    <li class="step">
+      <p>En Cam Hub, abre el editor del botón, selecciona <code>POST</code> como <span class="ui">Método</span> e introduce <code>http://homeassistant.local:8123/api/services/cover/open_cover</code> en el campo de URL.</p>
+      <p class="check"><b class="check-label">Resultado:</b> El campo muestra la URL.</p>
+    </li>
+    <li class="step">
+      <p>Toca <span class="ui">Añadir cabecera</span>.</p>
+      <p class="check"><b class="check-label">Resultado:</b> La sección <span class="ui">Cabeceras</span> gana una fila con los dos campos <span class="ui">Nombre</span> y <span class="ui">Valor</span>.</p>
+    </li>
+    <li class="step">
+      <p>Introduce <code>Authorization</code> en el campo <span class="ui">Nombre</span> y <code>Bearer</code>, un espacio y el token copiado en el campo <span class="ui">Valor</span>.</p>
+      <p class="check"><b class="check-label">Resultado:</b> Ambos campos muestran el texto introducido. El valor de la cabecera se muestra en texto sin formato.</p>
+    </li>
+    <li class="step">
+      <p>En la sección <span class="ui">Cuerpo</span>, confirma que el tipo de contenido es <code>application/json</code> e introduce <code>{"entity_id":"cover.gate"}</code> en el cuadro de texto.</p>
+      <p class="check"><b class="check-label">Resultado:</b> El cuadro de texto muestra el contenido.</p>
+    </li>
+    <li class="step">
+      <p>Vuelve al mural y pulsa el botón.</p>
+      <p class="check"><b class="check-label">Resultado:</b> El icono muestra primero un indicador de actividad y, después, una marca de verificación verde. El registro de Home Assistant muestra que se llamó al servicio.</p>
+    </li>
+  </ol>
+  <p>La solicitud equivalente es:</p>
+  <pre><code>POST /api/services/cover/open_cover HTTP/1.1
+Host: homeassistant.local:8123
+Authorization: Bearer &lt;long-lived access token&gt;
+Content-Type: application/json
+
+{"entity_id":"cover.gate"}</code></pre>
+  <div class="callout tip">
+    <strong class="t">Prefiere el desencadenante webhook</strong>
+    <p>Si se filtra el identificador de un webhook, el efecto se limita a la única automatización a la que pertenece. Un token de acceso de larga duración puede manejar todo Home Assistant. Para cualquier acción que pueda realizar la opción 1, usa la opción 1.</p>
+  </div>
+
+  <h3 id="webhook-security">Notas de seguridad</h3>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Tema</th><th>Descripción y recomendación</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Tema">HTTP y HTTPS</td><td data-label="Descripción y recomendación">Una solicitud enviada con <code>http://</code> no está cifrada. Cualquiera que esté en el mismo recorrido de red puede leer la URL, el token de una cabecera y el cuerpo. Usa HTTP solo dentro de una red doméstica de confianza y para webhooks que no lleven datos sensibles. Siempre que una solicitud lleve un token o salga de la red doméstica, usa <code>https://</code>.</td></tr>
+      <tr><td data-label="Tema">Certificados HTTPS</td><td data-label="Descripción y recomendación">Cam Hub no tiene ninguna opción para confiar en un certificado autofirmado. Una dirección <code>https://</code> con un certificado autofirmado falla y el botón muestra el triángulo naranja. Dentro de la red local se puede usar <code>http://</code> en su lugar o instalar en el lado receptor un certificado en el que confíe el teléfono.</td></tr>
+      <tr><td data-label="Tema">Almacenamiento de tokens e identificadores</td><td data-label="Descripción y recomendación">Los valores de las cabeceras se muestran en texto sin formato en el editor y se guardan en texto sin formato en los ajustes de la app de este dispositivo.</td></tr>
+      <tr><td data-label="Tema">Apple Watch</td><td data-label="Descripción y recomendación">Los botones que llegan al reloj llevan su solicitud completa, incluidas la URL, las cabeceras y el cuerpo. Se copian al Apple Watch enlazado y se guardan allí, de modo que un token de una cabecera también queda guardado en el reloj.</td></tr>
+      <tr><td data-label="Tema">Copias de seguridad y códigos para compartir</td><td data-label="Descripción y recomendación">Los ajustes de un panel entran en cada copia de seguridad de iCloud y en cada código para compartir exportado con <span class="ui ui-long">Incluir los ajustes de la app</span> activado. Trata un código así como una contraseña y bloquéalo con un PIN o una contraseña; consulta <a class="xref" href="/es/guide/share.html#share-lock">«Bloquear un código»</a>. Si un token ha quedado expuesto, revócalo en el lado receptor y crea uno nuevo.</td></tr>
+      <tr><td data-label="Tema">Redes exteriores</td><td data-label="Descripción y recomendación">No se recomienda abrir el puerto <code>8123</code> de Home Assistant directamente a internet. Cómo acceder a él cuando estés fuera de casa, por ejemplo mediante una VPN o el método oficial de acceso remoto de Home Assistant, es decisión tuya; después cambia la URL a la dirección correspondiente.</td></tr>
+      <tr><td data-label="Tema">Acciones físicas</td><td data-label="Descripción y recomendación">Activa <span class="ui">Confirmar antes de ejecutar</span> en los botones que abren puertas, desbloquean y hacen sonar alarmas. Cam Hub no tiene ningún otro bloqueo en los botones de los paneles; cualquiera que pueda manejar el dispositivo desbloqueado, o el reloj, puede pulsarlos.</td></tr>
+      <tr><td data-label="Tema">Resolución de nombres</td><td data-label="Descripción y recomendación">Los nombres que terminan en <code>.local</code> pueden no resolverse en algunas redes. Si las conexiones fallan, introduce en su lugar la dirección IP fija del lado receptor.</td></tr>
+    </tbody>
+  </table></div>
+</section><nav class="guide-pager" aria-label="Contenido"><a class="guide-prev" rel="prev" href="/es/guide/lvm.html"><span class="pager-dir">Capítulo anterior</span><span class="pager-title">8. LiveView Mix</span></a><a class="guide-next" rel="next" href="/es/guide/share.html"><span class="pager-dir">Capítulo siguiente</span><span class="pager-title">10. Compartir y copia de seguridad</span></a></nav></article>
+    </div>
+    <button class="guide-top" id="guide-top" type="button" aria-label="Volver arriba"></button>
+  </main>
+  <footer class="footer"><span data-i18n="footer">Copyright © 2026 ALMX. All rights reserved.</span><nav><a href="/es/guide.html" data-i18n="navGuide">Manual</a><a href="/es/devices.html" data-i18n="navDevices">Diferencias entre dispositivos</a><a href="/es/privacy.html" data-i18n="navPrivacy">Privacidad</a><a href="/es/terms.html" data-i18n="navTerms">Términos</a><a class="store-link" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeCTA">Descargar en el App Store</a></nav><nav class="language-links" id="language-links" aria-label="Idioma" data-i18n-aria="languageLabel"><a href="/guide/webhook.html" hreflang="en" lang="en" data-language-link="en">English</a><a href="/zh-Hant/guide/webhook.html" hreflang="zh-Hant" lang="zh-Hant" data-language-link="zh-Hant">繁體中文</a><a href="/zh-Hans/guide/webhook.html" hreflang="zh-Hans" lang="zh-Hans" data-language-link="zh-Hans">简体中文</a><a href="/ja/guide/webhook.html" hreflang="ja" lang="ja" data-language-link="ja">日本語</a><a href="/ko/guide/webhook.html" hreflang="ko" lang="ko" data-language-link="ko">한국어</a><a href="/de/guide/webhook.html" hreflang="de" lang="de" data-language-link="de">Deutsch</a><a href="/es/guide/webhook.html" hreflang="es" lang="es" data-language-link="es" aria-current="true">Español</a><a href="/es-MX/guide/webhook.html" hreflang="es-MX" lang="es-MX" data-language-link="es-MX">Español (México)</a><a href="/fr/guide/webhook.html" hreflang="fr" lang="fr" data-language-link="fr">Français</a><a href="/sl/guide/webhook.html" hreflang="sl" lang="sl" data-language-link="sl">Slovenščina</a><a href="/ar/guide/webhook.html" hreflang="ar" lang="ar" data-language-link="ar">العربية</a></nav></footer>
+  <script src="/additional-locales.js?v=20261103-sl"></script>
+  <script src="/site.js?v=20261112-1"></script>
+
+
+</body></html>

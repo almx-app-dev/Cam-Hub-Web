@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en" dir="ltr"><head>
+  <meta charset="utf-8"><script>(function () {
+  var codes = ["zh-Hant", "zh-Hans", "ja", "ko", "de", "es", "es-MX", "fr", "sl", "ar"];
+
+  function pickLanguage(preferences) {
+    var direct = { en: "en", ar: "ar", de: "de", es: "es", fr: "fr", ja: "ja", ko: "ko", sl: "sl" };
+    for (var i = 0; i < preferences.length; i += 1) {
+      var tag = String(preferences[i] || "").replace(/_/g, "-");
+      if (/^es-mx(?:-|$)/i.test(tag)) return "es-MX";
+      var base = tag.split("-")[0].toLowerCase();
+      if (direct[base]) return direct[base];
+      if (base !== "zh") continue;
+      try {
+        var locale = new Intl.Locale(tag).maximize();
+        return locale.script === "Hant" || ["TW", "HK", "MO"].indexOf(locale.region) >= 0 ? "zh-Hant" : "zh-Hans";
+      } catch (error) {
+        return /(?:^|-)Hant(?:-|$)|(?:^|-)(?:TW|HK|MO)(?:-|$)/i.test(tag) ? "zh-Hant" : "zh-Hans";
+      }
+    }
+    return "en";
+  }
+  window.__camHubEarlyPick = pickLanguage;
+
+  try {
+    if (window.__camHubPrerender || /[?&](?:lang|chapter)=/i.test(location.search)) return;
+    if (document.referrer && new URL(document.referrer).origin === location.origin) return;
+    var chosen = null;
+    try {
+      if (localStorage.getItem("camHubSiteLanguageManual") === "1") chosen = localStorage.getItem("camHubSiteLanguage");
+    } catch (error) {
+      chosen = null;
+    }
+    var target = chosen === "en" || codes.indexOf(chosen) >= 0 ? chosen
+      : pickLanguage(navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"]);
+    if (codes.indexOf(target) < 0) return;
+    var path = location.pathname === "/index.html" ? "/" : location.pathname;
+    location.replace("/" + target + path + location.search + location.hash);
+  } catch (error) {
+  }
+})();</script><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="apple-itunes-app" content="app-id=6792057195"><meta name="color-scheme" content="dark light">
+  <meta name="description" content="Devices with their passwords, and optionally the app settings (LiveView Mix pages and control panels), can be moved to another device or shared with other…">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="Cam Hub"><meta property="og:image" content="https://cam-hub.almx.cc/assets/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+  <title>Sharing and backup — Cam Hub Manual</title><link rel="icon" href="/assets/icon-48.png" sizes="48x48"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/icon-180.png"><link rel="stylesheet" href="/styles.css?v=20261112-1"><link rel="stylesheet" href="/guide.css?v=20261030-1">
+<meta property="og:description" content="Devices with their passwords, and optionally the app settings (LiveView Mix pages and control panels), can be moved to another device or shared with other…"><link rel="canonical" href="https://cam-hub.almx.cc/guide/share.html"><link rel="alternate" hreflang="x-default" href="https://cam-hub.almx.cc/guide/share.html"><link rel="alternate" hreflang="en" href="https://cam-hub.almx.cc/guide/share.html"><link rel="alternate" hreflang="zh-Hant" href="https://cam-hub.almx.cc/zh-Hant/guide/share.html"><link rel="alternate" hreflang="zh-Hans" href="https://cam-hub.almx.cc/zh-Hans/guide/share.html"><link rel="alternate" hreflang="ja" href="https://cam-hub.almx.cc/ja/guide/share.html"><link rel="alternate" hreflang="ko" href="https://cam-hub.almx.cc/ko/guide/share.html"><link rel="alternate" hreflang="de" href="https://cam-hub.almx.cc/de/guide/share.html"><link rel="alternate" hreflang="es" href="https://cam-hub.almx.cc/es/guide/share.html"><link rel="alternate" hreflang="es-MX" href="https://cam-hub.almx.cc/es-MX/guide/share.html"><link rel="alternate" hreflang="fr" href="https://cam-hub.almx.cc/fr/guide/share.html"><link rel="alternate" hreflang="sl" href="https://cam-hub.almx.cc/sl/guide/share.html"><link rel="alternate" hreflang="ar" href="https://cam-hub.almx.cc/ar/guide/share.html"><meta property="og:url" content="https://cam-hub.almx.cc/guide/share.html"><meta property="og:title" content="Sharing and backup — Cam Hub Manual"></head>
+<body data-page="guide">
+  <header class="topbar" aria-label="Site header">
+    <a class="brand" href="/"><img src="/assets/icon-96.png" alt="" width="42" height="42"><span><strong>Cam&nbsp;Hub</strong><small data-i18n="topline">Operation manual</small></span></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-controls" data-i18n-aria="menuLabel" aria-label="Open menu"><span></span><span></span><span></span><span class="sr-only" data-i18n="menuLabel">Open menu</span></button>
+    <div class="topbar-controls" id="site-controls"><nav class="navlinks" aria-label="Primary"><a href="/" data-nav="home" data-i18n="navHome">Home</a><a href="/product.html" data-nav="product" data-i18n="navProduct">Product</a><a href="/guide.html" data-nav="guide" data-i18n="navGuide" aria-current="page">Manual</a><a href="/support.html" data-nav="support" data-i18n="navSupport">Support</a><a href="/privacy.html" data-nav="privacy" data-i18n="navPrivacy">Privacy</a><a href="/terms.html" data-nav="terms" data-i18n="navTerms">Terms</a></nav><div class="pickers"><label><span class="sr-only" data-i18n="themeLabel">Appearance</span><select id="themeSelect" aria-label="Theme"><option value="auto" data-i18n="themeAuto" selected="">Auto</option><option value="light" data-i18n="themeLight">Light</option><option value="dark" data-i18n="themeDark">Dark</option></select></label><label><span class="sr-only" data-i18n="languageLabel">Language</span><select id="languageSelect" aria-label="Language"><option value="en" selected="">English</option><option value="zh-Hant">繁體中文</option><option value="zh-Hans">简体中文</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="de">Deutsch</option><option value="es">Español</option><option value="es-MX">Español (México)</option><option value="fr">Français</option><option value="sl">Slovenščina</option><option value="ar">العربية</option></select></label></div><a class="store-pill" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeShort">Get the app</a></div>
+  </header>
+  <main class="inner-page guide" style="--g-topbar: 76px; --g-offset: 88px;">
+    <section class="page-hero"><div class="eyebrow" data-i18n="eyebrow">OPERATION MANUAL</div><h1 data-i18n="title">Sharing and backup</h1><p class="summary" data-i18n="summary">Step-by-step instructions for adding devices, live view and recording playback, LiveView Mix walls, sharing, and backup.</p></section>
+    <p class="guide-notice" id="guide-notice" role="status" hidden=""></p>
+    <div id="guide-sentinel" aria-hidden="true"></div>
+    <div class="guide-layout has-toc" id="guide-layout" lang="en" dir="ltr">
+      <aside class="guide-side" id="guide-side">
+        <button class="guide-toc-toggle" id="guide-toc-toggle" type="button" aria-expanded="false" aria-controls="guide-toc" lang="en" dir="ltr"><span class="guide-toc-label" data-i18n="tocLabel">Contents</span><span class="guide-toc-current" id="guide-toc-current">10. Sharing and backup</span></button>
+        <nav class="guide-toc" id="guide-toc" aria-label="Contents"><ol><li><a href="/guide.html"><span class="toc-num">1</span><span>Quick start</span></a><ol><li><a href="/guide.html#start-prepare"><span>Before you begin</span></a></li><li><a href="/guide.html#start-path"><span>Shortest path to a live picture</span></a></li><li><a href="/guide.html#start-demo"><span>Trying the app without a device</span></a></li></ol></li><li><a href="/guide/tour.html"><span class="toc-num">2</span><span>The tabs and basic behaviour</span></a><ol><li><a href="/guide/tour.html#tour-tabs"><span>The tabs at a glance</span></a></li><li><a href="/guide/tour.html#tour-launch"><span>What opens when the app starts</span></a></li><li><a href="/guide/tour.html#tour-look"><span>Appearance and language</span></a></li><li><a href="/guide/tour.html#tour-rotate"><span>Turning the device</span></a></li><li><a href="/guide/tour.html#tour-duo"><span>iPhone Duo</span></a></li><li><a href="/guide/tour.html#tour-awake"><span>Screen, background and notifications</span></a></li></ol></li><li><a href="/guide/add.html"><span class="toc-num">3</span><span>Adding a device</span></a><ol><li><a href="/guide/add.html#add-form"><span>The Add Device form</span></a></li><li><a href="/guide/add.html#add-auto"><span>Adding without choosing a brand</span></a></li><li><a href="/guide/add.html#add-methods"><span>Choosing the connection method</span></a></li><li><a href="/guide/add.html#add-https"><span>Adding a device over HTTPS</span></a></li><li><a href="/guide/add.html#add-streams"><span>Adding YouTube live streams and Twitch channels</span></a></li><li><a href="/guide/add.html#add-failed"><span>When adding fails: the checklist</span></a></li><li><a href="/guide/add.html#add-report"><span>Device report (experimental)</span></a></li><li><a href="/guide/add.html#add-scan"><span>Finding devices with the network scan</span></a></li></ol></li><li><a href="/guide/devices.html"><span class="toc-num">4</span><span>The Devices tab and channels</span></a><ol><li><a href="/guide/devices.html#devices-list"><span>The device list</span></a></li><li><a href="/guide/devices.html#devices-page"><span>The device page</span></a></li><li><a href="/guide/devices.html#devices-credentials"><span>Changing the user name and password of a device</span></a></li><li><a href="/guide/devices.html#devices-password-missing"><span>A device without a saved password</span></a></li><li><a href="/guide/devices.html#devices-https"><span>HTTPS for a saved device</span></a></li><li><a href="/guide/devices.html#devices-health"><span>Disk Health</span></a></li><li><a href="/guide/devices.html#devices-streams"><span>YouTube and Twitch streams</span></a></li><li><a href="/guide/devices.html#devices-states"><span>What a thumbnail shows</span></a></li><li><a href="/guide/devices.html#devices-menu"><span>Channel options (long press)</span></a></li><li><a href="/guide/devices.html#devices-plan"><span>Plan limits and enabling channels</span></a></li><li><a href="/guide/devices.html#devices-choose"><span>Choosing which cameras show</span></a></li><li><a href="/guide/devices.html#devices-fullwall"><span>The full-screen wall of a device</span></a></li><li><a href="/guide/devices.html#devices-quality"><span>SD and HD on device screens</span></a></li></ol></li><li><a href="/guide/live.html"><span class="toc-num">5</span><span>The Live tab and the Full Screen Wall</span></a><ol><li><a href="/guide/live.html#live-tab"><span>The Live tab</span></a></li><li><a href="/guide/live.html#live-quality"><span>SD and HD on a wall</span></a></li><li><a href="/guide/live.html#live-wall"><span>The Full Screen Wall</span></a></li><li><a href="/guide/live.html#live-hide"><span>Hiding cameras without signal</span></a></li></ol></li><li><a href="/guide/single.html"><span class="toc-num">6</span><span>Single-camera view</span></a><ol><li><a href="/guide/single.html#single-open"><span>Opening the view</span></a></li><li><a href="/guide/single.html#single-screen"><span>The parts of the screen</span></a></li><li><a href="/guide/single.html#single-zoom"><span>Zoom and pan</span></a></li><li><a href="/guide/single.html#single-controls"><span>Snapshot, sound and quality</span></a></li><li><a href="/guide/single.html#single-clip"><span>Recording a clip</span></a></li><li><a href="/guide/single.html#single-talk"><span>Two-way talk</span></a></li><li><a href="/guide/single.html#single-picture"><span>Black bars, rotation and landscape</span></a></li><li><a href="/guide/single.html#single-ptz"><span>PTZ control: moving the camera</span></a></li><li><a href="/guide/single.html#single-window"><span>A camera in a window of its own</span></a></li><li><a href="/guide/single.html#single-duo"><span>The view on a folded iPhone Duo</span></a></li><li><a href="/guide/single.html#single-streams"><span>YouTube and Twitch streams</span></a></li><li><a href="/guide/single.html#single-states"><span>Connection states and messages</span></a></li><li><a href="/guide/single.html#single-limits"><span>What is not available</span></a></li></ol></li><li><a href="/guide/playback.html"><span class="toc-num">7</span><span>Recording playback and speed</span></a><ol><li><a href="/guide/playback.html#playback-avail"><span>Where playback is available</span></a></li><li><a href="/guide/playback.html#playback-day"><span>Choosing a day</span></a></li><li><a href="/guide/playback.html#playback-calendar"><span>The recording calendar</span></a></li><li><a href="/guide/playback.html#playback-timeline"><span>Using the timeline</span></a></li><li><a href="/guide/playback.html#playback-list"><span>The list of recordings and the search for people</span></a></li><li><a href="/guide/playback.html#playback-playing"><span>While a recording plays</span></a></li><li><a href="/guide/playback.html#playback-speed"><span>Playback speed</span></a></li><li><a href="/guide/playback.html#playback-landscape"><span>Playback in landscape</span></a></li><li><a href="/guide/playback.html#playback-limits"><span>What is not available</span></a></li></ol></li><li><a href="/guide/lvm.html"><span class="toc-num">8</span><span>LiveView Mix</span></a><ol><li><a href="/guide/lvm.html#lvm-tab"><span>The LiveView Mix tab and its preview</span></a></li><li><a href="/guide/lvm.html#lvm-first"><span>Building a first wall of six cameras</span></a></li><li><a href="/guide/lvm.html#lvm-pick"><span>Choosing cameras and quality</span></a></li><li><a href="/guide/lvm.html#lvm-layout"><span>Adjusting the layout</span></a></li><li><a href="/guide/lvm.html#lvm-custom"><span>Drawing a custom layout</span></a></li><li><a href="/guide/lvm.html#lvm-special"><span>Special layouts: big and small tiles on one wall</span></a></li><li><a href="/guide/lvm.html#lvm-arrange"><span>Arranging the wall and its tiles</span></a></li><li><a href="/guide/lvm.html#lvm-move"><span>Moving a tile into an empty tile</span></a></li><li><a href="/guide/lvm.html#lvm-slots"><span>What a tile can show besides a camera</span></a></li><li><a href="/guide/lvm.html#lvm-watermark"><span>Watermark</span></a></li><li><a href="/guide/lvm.html#lvm-fit"><span>Black bars, edge-to-edge video and the angle of the device</span></a></li><li><a href="/guide/lvm.html#lvm-pages"><span>The portrait page</span></a></li><li><a href="/guide/lvm.html#lvm-canvases"><span>Two canvases on iPhone Duo</span></a></li><li><a href="/guide/lvm.html#lvm-wall"><span>The full-screen wall</span></a></li><li><a href="/guide/lvm.html#lvm-closeup"><span>Opening a single camera</span></a></li><li><a href="/guide/lvm.html#lvm-streams"><span>YouTube and Twitch streams on the wall</span></a></li><li><a href="/guide/lvm.html#lvm-states"><span>When a tile cannot show a camera</span></a></li><li><a href="/guide/lvm.html#lvm-limits"><span>How plan limits affect the wall</span></a></li><li><a href="/guide/lvm.html#lvm-settings"><span>LiveView Mix in Settings</span></a></li><li><a href="/guide/lvm.html#lvm-tv"><span>Differences on Apple TV</span></a></li></ol></li><li><a href="/guide/webhook.html"><span class="toc-num">9</span><span>Control panels and webhooks</span></a><ol><li><a href="/guide/webhook.html#webhook-what"><span>What a control panel does</span></a></li><li><a href="/guide/webhook.html#webhook-add"><span>Adding a control panel to the wall</span></a></li><li><a href="/guide/webhook.html#webhook-templates"><span>Templates</span></a></li><li><a href="/guide/webhook.html#webhook-fields"><span>The settings of a panel</span></a></li><li><a href="/guide/webhook.html#webhook-button"><span>Setting up a button</span></a></li><li><a href="/guide/webhook.html#webhook-use"><span>Pressing a button and reading the result</span></a></li><li><a href="/guide/webhook.html#webhook-wall"><span>How a panel looks on the wall</span></a></li><li><a href="/guide/webhook.html#webhook-watch"><span>Buttons on Apple Watch</span></a></li><li><a href="/guide/webhook.html#ha"><span>Using Home Assistant</span></a></li><li><a href="/guide/webhook.html#webhook-security"><span>Security notes</span></a></li></ol></li><li class="is-current"><a href="/guide/share.html" class="is-active" aria-current="location"><span class="toc-num">10</span><span>Sharing and backup</span></a><ol><li><a href="/guide/share.html#share-choose"><span>Comparing the two methods</span></a></li><li><a href="/guide/share.html#share-export"><span>Exporting cameras (creating a code)</span></a></li><li><a href="/guide/share.html#share-lock"><span>Locking a code</span></a></li><li><a href="/guide/share.html#share-import"><span>Importing cameras</span></a></li><li><a href="/guide/share.html#share-contents"><span>What backups and codes contain</span></a></li><li><a href="/guide/share.html#share-icloud"><span>Backing up to iCloud</span></a></li><li><a href="/guide/share.html#share-versions"><span>Several named backups: renaming and deleting</span></a></li><li><a href="/guide/share.html#share-restore"><span>Restoring from iCloud</span></a></li><li><a href="/guide/share.html#share-delete"><span>Deleting all iCloud backups</span></a></li><li><a href="/guide/share.html#share-newphone"><span>Moving devices and walls to a new phone</span></a></li><li><a href="/guide/share.html#share-appletv"><span>Bringing the setup to Apple TV</span></a></li></ol></li><li><a href="/guide/plans.html"><span class="toc-num">11</span><span>Plans and limits</span></a><ol><li><a href="/guide/plans.html#plans-tiers"><span>The allowance of each plan</span></a></li><li><a href="/guide/plans.html#plans-stack"><span>How the two groups of plans combine</span></a></li><li><a href="/guide/plans.html#plans-count"><span>What uses allowance</span></a></li><li><a href="/guide/plans.html#plans-examples"><span>Examples of combinations</span></a></li><li><a href="/guide/plans.html#plans-choose"><span>Choosing which cameras show</span></a></li><li><a href="/guide/plans.html#plans-subscribe"><span>Subscribing, restoring purchases and redeeming a code</span></a></li><li><a href="/guide/plans.html#plans-lapse"><span>When a plan ends or is reduced</span></a></li></ol></li><li><a href="/guide/tools.html"><span class="toc-num">12</span><span>The Tools tab</span></a><ol><li><a href="/guide/tools.html#tools-overview"><span>What the Tools tab contains</span></a></li><li><a href="/guide/tools.html#tools-speedometer"><span>Speedometer and compass</span></a></li></ol></li><li><a href="/guide/settings.html"><span class="toc-num">13</span><span>Settings</span></a><ol><li><a href="/guide/settings.html#settings-overview"><span>The sections of the Settings tab</span></a></li><li><a href="/guide/settings.html#settings-subscription"><span>Subscription</span></a></li><li><a href="/guide/settings.html#settings-quality"><span>Default quality</span></a></li><li><a href="/guide/settings.html#settings-picture"><span>Picture: black bars and edge-to-edge</span></a></li><li><a href="/guide/settings.html#settings-hide"><span>Hide offline cameras</span></a></li><li><a href="/guide/settings.html#settings-lvm"><span>LiveView Mix, its pages and Open on launch</span></a></li><li><a href="/guide/settings.html#settings-backup"><span>Backup and sharing of cameras</span></a></li><li><a href="/guide/settings.html#settings-language"><span>Language</span></a></li><li><a href="/guide/settings.html#settings-reset"><span>Reset: defaults, delete all data, delete iCloud backup</span></a></li><li><a href="/guide/settings.html#settings-legal"><span>Terms of Use and Privacy Policy</span></a></li><li><a href="/guide/settings.html#settings-about"><span>About, the user manual, and what Settings does not contain</span></a></li></ol></li><li><a href="/guide/appletv.html"><span class="toc-num">14</span><span>Apple TV</span></a><ol><li><a href="/guide/appletv.html#appletv-prepare"><span>Set up on an iPhone or iPad first</span></a></li><li><a href="/guide/appletv.html#appletv-bring"><span>Bringing the setup to the Apple TV</span></a></li><li><a href="/guide/appletv.html#appletv-differs"><span>What differs on the Apple TV</span></a></li></ol></li><li><a href="/guide/trouble.html"><span class="toc-num">15</span><span>Troubleshooting</span></a><ol><li><a href="/guide/trouble.html#trouble-start"><span>Where to start</span></a></li><li><a href="/guide/trouble.html#trouble-states"><span>What the empty screens say</span></a></li><li><a href="/guide/trouble.html#trouble-add"><span>A device is added, but it is not reachable</span></a></li><li><a href="/guide/trouble.html#trouble-live"><span>Live view</span></a></li><li><a href="/guide/trouble.html#trouble-playback"><span>Recording playback</span></a></li><li><a href="/guide/trouble.html#trouble-lvm"><span>LiveView Mix</span></a></li><li><a href="/guide/trouble.html#trouble-streams"><span>YouTube and Twitch</span></a></li><li><a href="/guide/trouble.html#trouble-panels"><span>Control panels and webhooks</span></a></li><li><a href="/guide/trouble.html#trouble-health"><span>Disk Health</span></a></li><li><a href="/guide/trouble.html#trouble-share"><span>Sharing, import and iCloud backup</span></a></li><li><a href="/guide/trouble.html#trouble-plans"><span>Plans and purchases</span></a></li><li><a href="/guide/trouble.html#trouble-errors"><span>Other error sentences</span></a></li><li><a href="/guide/trouble.html#trouble-permissions"><span>Permission requests and system dialogs</span></a></li><li><a href="/guide/trouble.html#trouble-contact"><span>Reaching the developer</span></a></li><li><a href="/guide/trouble.html#trouble-faq"><span>Questions and answers</span></a></li></ol></li><li><a href="/guide/brands.html"><span class="toc-num">16</span><span>Supported brands and connection methods</span></a><ol><li><a href="/guide/brands.html#brands-methods"><span>Connection methods</span></a></li><li><a href="/guide/brands.html#brands-matrix"><span>What works with which method</span></a></li><li><a href="/guide/brands.html#brands-profiles"><span>The brands in the list</span></a></li><li><a href="/guide/brands.html#brands-requirements"><span>Requirements and limits</span></a></li><li><a href="/guide/brands.html#brands-recorders"><span>Cameras and recorders</span></a></li><li><a href="/guide/brands.html#brands-prepare"><span>What to prepare on the device</span></a></li><li><a href="/guide/brands.html#brands-activate"><span>Activating a new device</span></a></li><li><a href="/guide/brands.html#brands-compat"><span>The compatibility reference in the app</span></a></li></ol></li><li><a href="/guide/about.html" class="no-num"><span>About this manual</span></a><ol><li><a href="/guide/about.html#about-scope"><span>Scope</span></a></li><li><a href="/guide/about.html#about-conventions"><span>Conventions</span></a></li><li><a href="/guide/about.html#about-help"><span>Where to get help</span></a></li></ol></li></ol></nav>
+      </aside>
+      <article class="guide-article" id="guide-content"><section class="chapter" id="share">
+  <h2><span class="num">10</span>Sharing and backup</h2>
+  <p class="lead">Devices with their passwords, and optionally the app settings (LiveView Mix pages and control panels), can be moved to another device or shared with other people as an encrypted code, or backed up to iCloud as several named backups and restored on one's own iPhone, iPad and Apple TV.</p>
+
+  <h3 id="share-choose">Comparing the two methods</h3>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Topic</th><th>Sharing code</th><th>iCloud backup</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Topic">Where</td><td data-label="Sharing code"><span class="path"><span class="ui">Settings</span> › <span class="ui">Export Cameras</span></span> and <span class="path"><span class="ui">Settings</span> › <span class="ui">Import Cameras</span></span>, in the <span class="ui">Share Cameras</span> section</td><td data-label="iCloud backup"><span class="path"><span class="ui">Settings</span> › <span class="ui">Back Up to iCloud</span></span> and <span class="path"><span class="ui">Settings</span> › <span class="ui">Restore from iCloud</span></span>, in the <span class="ui">Backup &amp; Restore</span> section</td></tr>
+      <tr><td data-label="Topic">iCloud needed</td><td data-label="Sharing code">No. The code travels by any means the user chooses.</td><td data-label="iCloud backup">Yes. Both devices must be signed in to iCloud with the same Apple Account.</td></tr>
+      <tr><td data-label="Topic">Choice of devices</td><td data-label="Sharing code">The devices to export can be ticked.</td><td data-label="iCloud backup">All devices.</td></tr>
+      <tr><td data-label="Topic">App settings</td><td data-label="Sharing code">Optional; included only when <span class="ui">Include app settings</span> is on, and applied only when the recipient agrees.</td><td data-label="iCloud backup">Always included.</td></tr>
+      <tr><td data-label="Topic">Copies kept</td><td data-label="Sharing code">Each export produces a separate code.</td><td data-label="iCloud backup"><span class="ui">My Backup</span> keeps several backups, each with an optional name; the <span class="ui">Apple TV</span> destination keeps one copy.</td></tr>
+      <tr><td data-label="Topic">Lock</td><td data-label="Sharing code">No lock, a six-digit PIN, or a password.</td><td data-label="iCloud backup">No PIN. Encrypted with a key built into the app.</td></tr>
+      <tr><td data-label="Topic">Devices that can use it</td><td data-label="Sharing code">Cam Hub of other people, and one's own iPhone and iPad. Apple TV can only import.</td><td data-label="iCloud backup">One's own iPhone, iPad and Apple TV.</td></tr>
+      <tr><td data-label="Topic">Typical use</td><td data-label="Sharing code">Sharing with other people, or two devices that do not share an Apple Account.</td><td data-label="iCloud backup">Changing phones, keeping earlier states of the setup, or bringing the settings to Apple TV.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="share-export">Exporting cameras (creating a code)</h3>
+  <p>Prerequisite: at least one device has been added. While there is no device, <span class="ui">Export Cameras</span> is unavailable.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap the <span class="ui">Settings</span> tab at the bottom of the screen.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen shows the settings list.</p>
+    </li>
+    <li class="step">
+      <p>In the <span class="ui">Share Cameras</span> section, tap <span class="ui">Export Cameras</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The <span class="ui">Export Cameras</span> page opens: the <span class="ui">Devices to export</span> list (all ticked by default), <span class="ui">Lock with a PIN</span>, <span class="ui">Include app settings</span>, and a button such as <span class="ui">Export 5 devices</span>.</p>
+      <figure class="phone"><img src="/guide/img/export-1.jpg" alt="The Export Cameras page: five devices ticked, the switches Lock with a PIN and Include app settings below them, and the export button" decoding="async" width="900" height="1956" data-src="/guide/img/export-1.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The Export Cameras page</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Optional: tap a device row to clear or restore its tick. The <span class="ui">Deselect all</span> button at the right of the list title clears every tick.</p>
+      <p class="check"><b class="check-label">Check:</b> The button shows the number of selected devices, for example <span class="ui">Export 3 devices</span>. While no device is selected, the button is unavailable and the button at the right of the list title reads <span class="ui">Select all</span>.</p>
+    </li>
+    <li class="step">
+      <p>Optional: turn on <span class="ui">Include app settings</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The switch is on, and the explanation below it changes to say that the code also carries the app settings, the same as restoring from iCloud. For the items carried, see <a class="xref" href="/guide/share.html#share-contents">“What backups and codes contain”</a>.</p>
+      <figure class="phone"><img src="/guide/img/export-settings-on.jpg" alt="The Export Cameras page with the Include app settings switch on and the changed explanation below it" decoding="async" width="900" height="1956" data-src="/guide/img/export-settings-on.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Include app settings turned on</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Optional: set the lock as described in <a class="xref" href="/guide/share.html#share-lock">“Locking a code”</a>.</p>
+      <p class="check"><b class="check-label">Check:</b> After a lock has been set, <span class="ui">Export 3 devices</span> stays unavailable until the entry is complete. Without a lock, the code is open: anyone who has the code and Cam Hub can import it.</p>
+    </li>
+    <li class="step">
+      <p>Tap the export button, for example <span class="ui">Export 3 devices</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The result page opens with the title <span class="ui">Export Cameras</span>. Its top part explains that the code contains the cameras and their passwords, encrypted. For an open code it adds, with an orange mark, that anyone with the code and Cam Hub can add them; for a locked code it reminds that the PIN or password must be sent separately. Below are the buttons <span class="ui">Share</span> and <span class="ui">Copy</span>, and below those the full text of the code.</p>
+      <figure class="phone"><img src="/guide/img/export-code.jpg" alt="The export result page: the Share and Copy buttons, with the full text of the code below them, beginning with a short explanation" decoding="async" width="900" height="1956" data-src="/guide/img/export-code.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The export result page</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Share</span> and select a way to send, or tap <span class="ui">Copy</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> Tapping <span class="ui">Share</span> opens the system share sheet, with options such as Messages, Mail or AirDrop. Tapping <span class="ui">Copy</span> changes the button to <span class="ui">Copied</span>, and the complete text of the code is on the clipboard.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Done</span> in the top-right corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The result page closes and the <span class="ui">Export Cameras</span> page is shown again.</p>
+    </li>
+  </ol>
+  <ul>
+    <li><b>Share sends a link, Copy copies text</b>. <span class="ui">Share</span> sends a link that begins with <code>https://cam-hub.almx.cc/i#</code>, with the code after the “#”, which browsers do not send to the web server. <span class="ui">Copy</span> places the complete text on the clipboard.</li>
+    <li><b>The recipient</b>: when Cam Hub is installed, opening the link opens the import page directly with the code filled in. When it is not installed, the link opens a web page that points to the download page of the app and shows the code for copying.</li>
+    <li><b>The text of the code</b> begins with a short English explanation and the install address, followed by the code, which begins with <code>CAMHUB1:</code>, <code>CAMHUB1L:</code> or <code>CAMHUB2:</code> and can be thousands of characters long. When importing, the whole text can be pasted, or the code alone.</li>
+    <li><b>A code contains the passwords of the devices</b>. A code does not expire, and deleting the devices or the app on the source device does not invalidate a code that has already been shared. When a code may have been exposed, change the passwords of the devices concerned.</li>
+  </ul>
+  <div class="callout danger">
+    <strong class="t">A code hands over the passwords of the devices</strong>
+    <p>Anyone who obtains a code without a lock and has Cam Hub can import every device in it with its password. Send the code only to people who are trusted, and set a lock when needed.</p>
+  </div>
+
+  <h3 id="share-lock">Locking a code</h3>
+  <p>A code can be open, locked with a six-digit PIN, or locked with a password (<span class="ui">Complex encryption</span>). The strength of the protection differs greatly between the three, and the choice depends on how the code is sent.</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Topic</th><th>Open</th><th>Six-digit PIN</th><th>Password (complex encryption)</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Topic">How to set</td><td data-label="Open">Both switches stay off (default)</td><td data-label="Six-digit PIN">Turn on <span class="ui">Lock with a PIN</span></td><td data-label="Password (complex encryption)">Turn on <span class="ui">Lock with a PIN</span>, then turn on <span class="ui">Complex encryption</span></td></tr>
+      <tr><td data-label="Topic">What to enter</td><td data-label="Open">Nothing</td><td data-label="Six-digit PIN">Six digits, on the numeric keypad</td><td data-label="Password (complex encryption)">8 characters or more, any characters, on the full keyboard, entered twice</td></tr>
+      <tr><td data-label="Topic">The code begins with</td><td data-label="Open"><code>CAMHUB1:</code></td><td data-label="Six-digit PIN"><code>CAMHUB1L:</code></td><td data-label="Password (complex encryption)"><code>CAMHUB2:</code></td></tr>
+      <tr><td data-label="Topic">When importing</td><td data-label="Open">Imports directly</td><td data-label="Six-digit PIN">The <span class="ui">Enter PIN</span> dialog appears</td><td data-label="Password (complex encryption)">The <span class="ui">Enter Password</span> dialog appears</td></tr>
+      <tr><td data-label="Topic">Strength</td><td data-label="Open">The encryption key is built into the app, so any Cam Hub of the same version can open the code. It only keeps the contents from being read at a glance. It does not protect against anyone who has both the code and the app.</td><td data-label="Six-digit PIN">Encrypted with the PIN, using PBKDF2 (600,000 rounds) and AES-256-GCM. A PIN has only a million possibilities, so someone who obtains the code can try them all offline on their own computer. It protects against casual access, not against a determined person.</td><td data-label="Password (complex encryption)">The same encryption, with the key derived from the password. Only a long password that is not used elsewhere makes guessing impractical.</td></tr>
+      <tr><td data-label="Topic">Older apps</td><td data-label="Open">Imports with an app of the same version</td><td data-label="Six-digit PIN">Imports with an app of the same version</td><td data-label="Password (complex encryption)">An older app that does not know the format shows <span class="ui">Update Cam Hub</span> and must be updated first</td></tr>
+    </tbody>
+  </table></div>
+
+  <h4>Locking with a six-digit PIN</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>On the <span class="ui">Export Cameras</span> page, turn on <span class="ui">Lock with a PIN</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The field <span class="ui">PIN (6 digits)</span> appears below the switch, and the explanation changes to say that whoever imports must enter this PIN and that it must be sent separately from the code.</p>
+      <figure class="phone"><img src="/guide/img/export-pin.jpg" alt="Lock with a PIN turned on, with the numeric keypad shown below the field" decoding="async" width="900" height="1956" data-src="/guide/img/export-pin.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>PIN lock: the numeric keypad</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Enter six digits.</p>
+      <p class="check"><b class="check-label">Check:</b> The field accepts digits only, the keypad closes after the sixth digit, and the export button becomes available. With fewer digits, the export button stays unavailable.</p>
+    </li>
+  </ol>
+
+  <h4>Locking with a password (complex encryption)</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>On the <span class="ui">Export Cameras</span> page, turn on <span class="ui">Lock with a PIN</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The <span class="ui">Complex encryption</span> switch and the <span class="ui">PIN (6 digits)</span> field appear.</p>
+    </li>
+    <li class="step">
+      <p>Turn on <span class="ui">Complex encryption</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The PIN field is replaced by the two fields <span class="ui">Password (8+ characters)</span> and <span class="ui">Confirm password</span>, and anything typed earlier is cleared.</p>
+    </li>
+    <li class="step">
+      <p>Enter the password in the <span class="ui">Password (8+ characters)</span> field.</p>
+      <p class="check"><b class="check-label">Check:</b> The field masks the characters with dots. Any letters, numbers and symbols can be used, and a longer password is stronger.</p>
+    </li>
+    <li class="step">
+      <p>Enter the same password again in the <span class="ui">Confirm password</span> field.</p>
+      <p class="check"><b class="check-label">Check:</b> When both entries match and have at least 8 characters, the export button becomes available. When they differ, the orange text <span class="ui">The two passwords don't match.</span> appears below the field and the button stays unavailable.</p>
+      <figure class="phone"><img src="/guide/img/export-complex.jpg" alt="Complex encryption turned on: both password fields filled in, with the explanation and the Include app settings switch below" decoding="async" width="900" height="1956" data-src="/guide/img/export-complex.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Complex encryption: the two password fields</figcaption></figure>
+    </li>
+  </ol>
+  <ul>
+    <li><b>Send the PIN or the password separately from the code</b>, never in the same message.</li>
+    <li><b>A forgotten PIN or password cannot be recovered</b>. Cam Hub does not store it and does not send it to the developer. When it is forgotten, export a new code.</li>
+    <li>A password is case-sensitive, and spaces count. The same accented letter typed on different keyboards is treated as identical.</li>
+    <li>When a code is placed somewhere that is not private, such as a chat group or an e-mail, lock it with a password and send the password by another channel.</li>
+    <li>The person who imports does not need to know in advance which lock was used. After the code is pasted, Cam Hub recognizes the lock itself and shows the matching prompt and keyboard; see <a class="xref" href="/guide/share.html#share-import">“Importing cameras”</a>.</li>
+  </ul>
+
+  <h3 id="share-import">Importing cameras</h3>
+  <p>Where: <span class="path"><span class="ui">Settings</span> › <span class="ui">Import Cameras</span></span>, or directly by tapping a received sharing link.</p>
+  <h4>Pasting a code</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap the <span class="ui">Settings</span> tab at the bottom of the screen.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen shows the settings list.</p>
+    </li>
+    <li class="step">
+      <p>In the <span class="ui">Share Cameras</span> section, tap <span class="ui">Import Cameras</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The <span class="ui">Import Cameras</span> page opens. The section title is <span class="ui">Paste the code</span>, with the buttons <span class="ui">Paste</span> and <span class="ui">Import Cameras</span> and a text box.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Paste</span>. Alternatively, touch and hold in the text box and paste manually.</p>
+      <p class="check"><b class="check-label">Check:</b> The code appears in the text box. When the code is locked, a lock note appears below the buttons: <span class="ui">Locked with a 6-digit PIN — you'll be asked for it.</span> or <span class="ui">Locked with a password — you'll be asked for it.</span> An open code shows no note.</p>
+      <figure class="phone"><img src="/guide/img/import-detect.jpg" alt="The Import Cameras page with the code pasted and the lock note Locked with a password below the buttons" decoding="async" width="900" height="1956" data-src="/guide/img/import-detect.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The lock is recognized after pasting</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Import Cameras</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> An open code without app settings is imported directly, and the screen shows <span class="ui">Added 3 cameras</span>. An open code that carries app settings opens the dialog <span class="ui">This code also has the sender's app settings</span>. A locked code opens the <span class="ui">Enter PIN</span> dialog (numeric keypad, field <span class="ui">6 digits</span>) or the <span class="ui">Enter Password</span> dialog (full keyboard).</p>
+    </li>
+    <li class="step">
+      <p>For a locked code, enter the PIN or the password and tap <span class="ui">Import</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The dialog closes. A code without app settings is imported, and the screen shows <span class="ui">Added 3 cameras</span>. A code that carries app settings opens the dialog <span class="ui">This code also has the sender's app settings</span>.</p>
+    </li>
+    <li class="step">
+      <p>When the dialog <span class="ui">This code also has the sender's app settings</span> appears, tap <span class="ui">Add Cameras Only</span> or <span class="ui">Also Use Their Settings</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The dialog explains that the LiveView Mix walls, language and other preferences of the sender would replace those of this device and that this cannot be undone. After either choice the screen shows <span class="ui">Added 3 cameras</span>. <span class="ui">Add Cameras Only</span> leaves the settings of this device as they are; <span class="ui">Also Use Their Settings</span> applies the settings of the code. <span class="ui">Cancel</span> closes the dialog and imports nothing.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Done</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen returns to the settings list, and the added devices appear in the Devices tab.</p>
+    </li>
+  </ol>
+  <div class="shots pair">
+    <figure class="phone"><img src="/guide/img/import-pin.jpg" alt="The Enter PIN dialog: it explains that the code is locked, has a six-digit field, and the numeric keypad is shown below" decoding="async" width="900" height="1956" data-src="/guide/img/import-pin.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>PIN lock: the numeric keypad</figcaption></figure>
+    <figure class="phone"><img src="/guide/img/import-password.jpg" alt="The Enter Password dialog, with the full keyboard shown below" decoding="async" width="900" height="1956" data-src="/guide/img/import-password.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Password lock: the full keyboard</figcaption></figure>
+  </div>
+  <p>When <span class="ui">Paste</span> is tapped, the system can ask whether Cam Hub may paste from another app; allow it. Alternatively, touch and hold in the text box and paste with the edit menu.</p>
+  <h4>Importing from a link</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>On an iPhone or iPad that has Cam Hub, tap the received sharing link.</p>
+      <p class="check"><b class="check-label">Check:</b> Cam Hub opens the <span class="ui">Import Cameras</span> page with the code already in the text box. For a locked code, the matching lock note is shown.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Import Cameras</span> and, for a locked code, enter the PIN or the password.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen shows <span class="ui">Added 3 cameras</span>, or, for a code that carries app settings, the dialog <span class="ui">This code also has the sender's app settings</span>.</p>
+    </li>
+    <li class="step">
+      <p>If the dialog appears, tap <span class="ui">Add Cameras Only</span> or <span class="ui">Also Use Their Settings</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen shows <span class="ui">Added 3 cameras</span>.</p>
+    </li>
+  </ol>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Message when importing</th><th>Meaning and action</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Message when importing"><span class="ui">Added 3 cameras</span></td><td data-label="Meaning and action">The import is complete. The number is the number of imported devices; a recorder counts as one.</td></tr>
+      <tr><td data-label="Message when importing"><span class="ui">Wrong PIN</span></td><td data-label="Meaning and action">The PIN is not correct. Ask the sender for the six digits, then tap <span class="ui">Import Cameras</span> again and re-enter it.</td></tr>
+      <tr><td data-label="Message when importing"><span class="ui">Wrong password</span></td><td data-label="Meaning and action">The password is not correct. Capitals, spaces and symbols must match exactly.</td></tr>
+      <tr><td data-label="Message when importing"><span class="ui">Update Cam Hub</span></td><td data-label="Meaning and action">The code was made with a different version of Cam Hub, or it uses a format that this version does not know. Update the app on both devices and try again.</td></tr>
+      <tr><td data-label="Message when importing"><span class="ui">Couldn't read that code</span></td><td data-label="Meaning and action">The pasted content is not a code, the code is incomplete, or it has been damaged. Make sure the whole code has been pasted.</td></tr>
+      <tr><td data-label="Message when importing"><span class="ui ui-long">The cameras could not be saved. Try again.</span></td><td data-label="Meaning and action">The code itself was readable, but writing the devices failed. Try again.</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li><b>Importing merges</b>. A device that matches a device already on this device has its name, address, account, password and channels replaced by the contents of the code, and, when the code carries them, the SNMP settings of a NAS (see <a class="xref" href="/guide/devices.html#devices-health">“Disk Health”</a>); the other devices are added. Other devices already on this device are not deleted.</li>
+    <li><b>The enabled state of channels is checked against the plan of this device</b>. When a plan is held, channels beyond its allowance are imported as <span class="ui">Disabled</span>. On the free plan, the enabled state is kept as it is in the code, and channels beyond the free allowance show <span class="ui">Not in your plan</span> and a lock until a plan covers them. For the allowances, see <a class="xref" href="/guide/plans.html">Chapter 11, “Plans and limits”</a>.</li>
+    <li><b>App settings</b> are applied only when the code was exported with <span class="ui">Include app settings</span> on and <span class="ui">Also Use Their Settings</span> is chosen. They then replace the matching settings on this device, including the LiveView Mix pages and the language. A tile that shows a camera not imported with the code becomes an empty tile, and every other tile keeps its place. With <span class="ui">Add Cameras Only</span>, or for a code without app settings, the settings of this device stay unchanged.</li>
+    <li><b>YouTube and Twitch streams</b> in a code are imported like the other devices and use no plan allowance. Before the first stream of a service plays on this device, the terms of that service are shown for agreement; see <a class="xref" href="/guide/single.html#single-streams">“YouTube and Twitch streams”</a>.</li>
+  </ul>
+
+  <h3 id="share-contents">What backups and codes contain</h3>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Item</th><th>iCloud backup</th><th>Sharing code</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Item">Devices</td><td data-label="iCloud backup">All devices, including YouTube and Twitch streams</td><td data-label="Sharing code">The ticked devices, including YouTube and Twitch streams</td></tr>
+      <tr><td data-label="Item">Data of each device</td><td colspan="2" data-label="iCloud backup">Name, address, ports, username, password, connection method, the HTTPS setting with its port and trusted certificate, model, serial number, firmware version, the position of the device in the list, and for a NAS the SNMP settings used by Disk Health (community name and port).</td></tr>
+      <tr><td data-label="Item">Channels</td><td colspan="2" data-label="iCloud backup">Channel names and custom names, the enabled state, the paused state.</td></tr>
+      <tr><td data-label="Item">App settings</td><td data-label="iCloud backup">Always included</td><td data-label="Sharing code">Included only when <span class="ui">Include app settings</span> is on, and applied only when the recipient chooses <span class="ui">Also Use Their Settings</span></td></tr>
+    </tbody>
+  </table></div>
+  <p>The app settings comprise: the language; LiveView Mix, that is the landscape page, the portrait page with the <span class="ui">Portrait page</span> switch, and the two canvases of iPhone Duo with the <span class="ui">Two canvases</span> switch, each with its layout, tile pictures and control panels (with the values of their headers); the arrangement of the preview on the LiveView Mix tab; the option <span class="ui">Keep cameras connected between pages</span>; the choice in <span class="ui">Open on launch</span>; the device of the Live tab and the <span class="ui">Layout</span> of the Full Screen Wall; <span class="ui">Default quality</span>, <span class="ui">Black bars</span>, <span class="ui">Edge-to-edge video</span> and <span class="ui">Hide offline cameras</span>; the sound preference; and the range of the network scan. For the LiveView Mix pages, see <a class="xref" href="/guide/lvm.html#lvm-pages">“The portrait page”</a>.</p>
+  <p>On a device other than iPhone Duo, the lower canvas and the <span class="ui">Two canvases</span> switch are kept but not used; they take effect again when the settings reach an iPhone Duo. Apple TV shows only the landscape page.</p>
+  <p>Not included: the plan and subscription state (it follows the Apple Account and is retrieved with <span class="ui">Restore Purchases</span>; see <a class="xref" href="/guide/plans.html#plans-subscribe">“Subscribing, restoring purchases and redeeming a code”</a>), saved device reports, the agreement to the terms of YouTube or Twitch (each device asks for it once), and anything not listed above.</p>
+
+  <h3 id="share-icloud">Backing up to iCloud</h3>
+  <p>Prerequisite: this device is signed in to iCloud in the system settings. Without a sign-in, the backup stays on this device and does not reach other devices.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap the <span class="ui">Settings</span> tab at the bottom of the screen.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen shows the settings list.</p>
+    </li>
+    <li class="step">
+      <p>In the <span class="ui">Backup &amp; Restore</span> section, tap <span class="ui">Back Up to iCloud</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The <span class="ui">iCloud Backup</span> page opens with <span class="ui">My Backup</span> selected in the <span class="ui">Destination</span> selector. Below it are the field <span class="ui">Name (optional)</span>, the <span class="ui">Back Up Now</span> button and the <span class="ui">Backups in iCloud</span> list. While no backup exists, the list shows <span class="ui">No backup in iCloud yet.</span></p>
+    </li>
+    <li class="step">
+      <p>Optional: tap <span class="ui">Name (optional)</span> and enter a name for the backup, for example <code>Before moving</code>.</p>
+      <p class="check"><b class="check-label">Check:</b> The field shows the name. A name can have up to 60 characters; a longer entry is cut off.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Back Up Now</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> A spinner appears beside the button. When the backup is complete, the page shows the green text <span class="ui">Backed up 3 recorders · 2 cameras to iCloud.</span>, the name field is empty again, and the new backup appears at the top of <span class="ui">Backups in iCloud</span>. The earlier backups stay in the list.</p>
+    </li>
+  </ol>
+
+  <h4>Making the copy for Apple TV</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>On the <span class="ui">iCloud Backup</span> page, select <span class="ui">Apple TV</span> in <span class="ui">Destination</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The explanation below the selector reads <span class="ui">A separate copy for Apple TV to restore. Apple TV can restore only this copy.</span> The <span class="ui">Current Backup</span> section shows <span class="ui">Last backed up</span> and <span class="ui">Devices</span> of the Apple TV copy, or <span class="ui">No backup in iCloud yet.</span> The name field and the list are not shown.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Back Up Now</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The page shows the green success message, and <span class="ui">Current Backup</span> shows the new <span class="ui">Last backed up</span> time and the number of devices. The new copy replaces the previous Apple TV copy.</p>
+    </li>
+  </ol>
+  <ul>
+    <li><b>The two destinations are independent</b>. Each <span class="ui">Back Up Now</span> to <span class="ui">My Backup</span> adds a backup and keeps the earlier ones until they are deleted (see <a class="xref" href="/guide/share.html#share-versions">“Several named backups: renaming and deleting”</a>). The <span class="ui">Apple TV</span> destination keeps one copy, which each new backup replaces. Backing up to one destination does not change the other.</li>
+    <li><b>An iPhone and an iPad can restore any backup; an Apple TV can restore only the <span class="ui">Apple TV</span> copy</b>. After devices or walls have been changed on an iPhone or iPad, back up to <span class="ui">Apple TV</span> again so that the television receives the new content.</li>
+    <li><b>The backup space is limited</b>. All backups together, every backup of <span class="ui">My Backup</span> and the Apple TV copy, share about <code>1 MB</code> of iCloud space. Tile pictures take most of it. When the space is full, the page shows <span class="ui">Cam Hub's backup space in iCloud is full. Delete an older backup or remove some slot images, then try again.</span></li>
+    <li>When this device is not signed in to iCloud, the page shows the orange text <span class="ui">Saved on this device only. Sign in to iCloud to keep a copy in the cloud.</span> When the backup cannot be stored, it shows <span class="ui">Couldn't save the backup. Check that you're signed in to iCloud.</span> or <span class="ui">Backup failed. Make sure you're signed in to iCloud and try again.</span></li>
+    <li>After a successful backup, the system can show a request for a rating, which can be dismissed.</li>
+    <li><b>Back up before deleting all data</b>. <span class="ui">Delete All Data</span> removes every device and saved password from this device. iCloud backups are not affected and can be restored afterwards as described in <a class="xref" href="/guide/share.html#share-restore">“Restoring from iCloud”</a>. Without an iCloud backup, the device passwords cannot be recovered. See <a class="xref" href="/guide/settings.html">Chapter 13, “Settings”</a>.</li>
+  </ul>
+  <div class="callout note">
+    <strong class="t">How a backup is encrypted and protected</strong>
+    <p>A backup is stored encrypted in the private iCloud of the user and is synced only to devices that use the same Apple Account. A backup has no PIN. The encryption key is built into the app and is the same in every installation, so every one of one's own devices can restore without a password to remember. The key only prevents the backup from being stored as plain text; it is not a secret kept from someone who obtains both the backup and the app. The protection of a backup rests on the security of the Apple Account and of iCloud, so the Apple Account must be kept secure.</p>
+  </div>
+
+  <h3 id="share-versions">Several named backups: renaming and deleting</h3>
+  <p>The <span class="ui">Backups in iCloud</span> list under <span class="ui">My Backup</span> shows every backup, newest first. A named backup shows its name, with the date and time and the contents below it, for example <span class="ui" data-ui="value">Oct 28, 2026 at 9:41 PM · 3 recorders · 2 cameras</span>. A backup without a name shows the date and time, with the contents below. The same list, with the same actions, appears on the <span class="ui">Restore from iCloud</span> page; see <a class="xref" href="/guide/share.html#share-restore">“Restoring from iCloud”</a>. The Apple TV copy has no name and does not appear in the list.</p>
+
+  <h4>Renaming a backup</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>On the <span class="ui">iCloud Backup</span> page with <span class="ui">My Backup</span> selected, swipe left on a backup in <span class="ui">Backups in iCloud</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The buttons <span class="ui">Rename</span> and <span class="ui">Delete</span> appear at the right of the row. Touching and holding the row opens a menu with the same two actions.</p>
+      <figure class="phone"><img src="/guide/img/backup-swipe.jpg" alt="The iCloud Backup page with the personal backups selected: the Name (optional) field, Back Up Now, and Backups in iCloud with one row swiped to the left to show Rename and Delete" decoding="async" width="900" height="1956" data-src="/guide/img/backup-swipe.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Renaming or deleting one backup</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Rename</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The dialog <span class="ui">Rename Backup</span> appears, with the field <span class="ui">Name</span> holding the current name and the buttons <span class="ui">Save</span> and <span class="ui">Cancel</span>.</p>
+    </li>
+    <li class="step">
+      <p>Enter the new name and tap <span class="ui">Save</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The row shows the new name. When the field is left empty, the name is removed and the row shows the date and time again.</p>
+    </li>
+  </ol>
+
+  <h4>Deleting one backup</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>Swipe left on the backup to delete.</p>
+      <p class="check"><b class="check-label">Check:</b> The buttons <span class="ui">Rename</span> and <span class="ui">Delete</span> appear.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Delete</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The dialog <span class="ui">Delete this backup?</span> appears and explains that the backup is removed from iCloud permanently, that other signed-in devices lose it when they next sync, and that the devices and settings on this device are not affected.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Delete</span> in the dialog.</p>
+      <p class="check"><b class="check-label">Check:</b> The backup disappears from the list. The other backups, the Apple TV copy and the devices on this device are unchanged.</p>
+    </li>
+  </ol>
+  <ul>
+    <li>Spaces at the start and end of a name are removed. Renaming changes only the name; the contents and the date of the backup stay the same.</li>
+    <li>Backups made, renamed or deleted on another device with the same Apple Account appear in the list when iCloud has synced them, also while the page is open.</li>
+    <li>A backup made with an earlier version of Cam Hub appears in the list as one of the backups.</li>
+    <li>When a new name cannot be stored, the alert <span class="ui">Couldn't save the backup. Check that you're signed in to iCloud.</span> appears.</li>
+    <li>To delete every backup at once, see <a class="xref" href="/guide/share.html#share-delete">“Deleting all iCloud backups”</a>.</li>
+  </ul>
+
+  <h3 id="share-restore">Restoring from iCloud</h3>
+  <p>Prerequisite: this device is signed in with the Apple Account to which the backups belong, and a backup exists in iCloud. Right after a backup, it can take some time before it syncs to another device.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap the <span class="ui">Settings</span> tab at the bottom of the screen.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen shows the settings list.</p>
+    </li>
+    <li class="step">
+      <p>In the <span class="ui">Backup &amp; Restore</span> section, tap <span class="ui">Restore from iCloud</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The <span class="ui">Restore from iCloud</span> page opens with <span class="ui">My Backup</span> selected in the <span class="ui">Source</span> selector, the <span class="ui">Choose a Backup</span> list and the <span class="ui">Restore</span> button. The newest backup is marked with a checkmark. When no backup is found, the list shows <span class="ui">No backup found in iCloud. Back up from your iPhone first, signed in to the same Apple Account.</span> and the <span class="ui">Restore</span> button is unavailable.</p>
+    </li>
+    <li class="step">
+      <p>Tap the backup to restore.</p>
+      <p class="check"><b class="check-label">Check:</b> The checkmark moves to that backup.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Restore</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> A spinner appears beside the button. When the restore is complete, the page shows the green text <span class="ui">Restored 5 devices.</span></p>
+    </li>
+  </ol>
+  <p>To restore the Apple TV copy on an iPhone or iPad, select <span class="ui">Apple TV</span> in <span class="ui">Source</span>: the <span class="ui">iCloud Backup</span> section shows the time of creation (<span class="ui">From</span>) and the number of <span class="ui">Devices</span> of that copy; then tap <span class="ui">Restore</span>. In the <span class="ui">Choose a Backup</span> list, backups can be renamed and deleted with a swipe, as described in <a class="xref" href="/guide/share.html#share-versions">“Several named backups: renaming and deleting”</a>.</p>
+  <ul>
+    <li><b>Devices are merged</b>: a device that matches a device already on this device is updated, including the names and the enabled state of its channels and the SNMP settings of a NAS; the other devices are added. Other devices already present are not deleted.</li>
+    <li><b>App settings</b>: the settings in the backup replace the matching settings on this device, including the LiveView Mix pages, <span class="ui">Open on launch</span> and the language. Settings that are not in the backup stay unchanged. A tile that shows a camera that was not restored becomes an empty tile, and every other tile keeps its place; empty tiles, control panels, clocks, labels and picture tiles are kept.</li>
+    <li><b>The enabled state of channels is checked against the current plan of this device</b>. When a plan is held, channels beyond its allowance are shown as <span class="ui">Disabled</span> after the restore. On the free plan, the enabled state of the backup is kept, and channels beyond the free allowance show <span class="ui">Not in your plan</span> and a lock until the plan is restored or a plan is taken. For the allowances, see <a class="xref" href="/guide/plans.html">Chapter 11, “Plans and limits”</a>.</li>
+    <li>The orange text <span class="ui">Some passwords could not be saved on this device. Open those devices and use Edit Credentials.</span> means that the passwords of some devices could not be stored. Enter them again as described in <a class="xref" href="/guide/devices.html#devices-credentials">“Changing the user name and password of a device”</a>.</li>
+    <li><span class="ui">This backup couldn't be read. Back up again to replace it.</span> means that the backup is damaged, or that it was created by an older app with a PIN. Back up again on the original device.</li>
+    <li><span class="ui">No backup available to restore.</span> and <span class="ui">Restore failed. Please try again.</span> mean that no readable backup exists, or that the restore failed. Check that iCloud is signed in and synced, then try again.</li>
+  </ul>
+
+  <h3 id="share-delete">Deleting all iCloud backups</h3>
+  <p>This action removes every backup at once. To delete a single backup, swipe it in the list as described in <a class="xref" href="/guide/share.html#share-versions">“Several named backups: renaming and deleting”</a>.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap the <span class="ui">Settings</span> tab, then tap <span class="ui">Delete iCloud Backup</span> in the <span class="ui">Reset</span> section.</p>
+      <p class="check"><b class="check-label">Check:</b> The dialog <span class="ui">Delete iCloud backup?</span> appears and explains that all encrypted backups, including the Apple TV copy, are removed from iCloud permanently. While no backup exists, the row is unavailable.</p>
+      <figure class="phone"><img src="/guide/img/settings-3.jpg" alt="The settings page: the sections Share Cameras, Language and Reset, with the rows Restore Default Settings, Delete All Data and Delete iCloud Backup in the Reset section" decoding="async" width="900" height="1947" data-src="/guide/img/settings-3.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>The Reset section of the settings page</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Delete iCloud Backup</span> in the dialog.</p>
+      <p class="check"><b class="check-label">Check:</b> The dialog closes and the row <span class="ui">Delete iCloud Backup</span> becomes unavailable.</p>
+      <figure class="phone"><img src="/guide/img/settings-delete-icloud.jpg" alt="The Delete iCloud backup? dialog in the variant for a device that is not signed in to iCloud: it states that only the local copy is cleared and that the cloud backup may remain until the sign-in, with the button Delete iCloud Backup" decoding="async" width="900" height="1956" data-src="/guide/img/settings-delete-icloud.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The deletion dialog on a device that is not signed in to iCloud</figcaption></figure>
+    </li>
+  </ol>
+  <ul>
+    <li>On an iPhone or iPad this action deletes every backup in iCloud: all backups of <span class="ui">My Backup</span> and the separate copy made for <span class="ui">Apple TV</span>. The same row on an Apple TV deletes only the copy made for Apple TV.</li>
+    <li>Other devices signed in with the same Apple Account lose the backups when they next sync. The devices and settings on this device are not affected.</li>
+    <li>When iCloud is not signed in, the action clears only the copy on this device, and the backups in the cloud can remain until the sign-in.</li>
+  </ul>
+
+  <h3 id="share-newphone">Moving devices and walls to a new phone</h3>
+  <p>The LiveView Mix pages and their control panels belong to the app settings. Both methods below carry them: an iCloud backup always includes them, and a sharing code needs <span class="ui">Include app settings</span> to be on and <span class="ui">Also Use Their Settings</span> to be chosen on the new phone.</p>
+
+  <h4>Method 1: moving with an iCloud backup (recommended)</h4>
+  <p>Prerequisite: Cam Hub is installed on the new phone, which is signed in to iCloud with the same Apple Account.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>On the old phone, open the <span class="ui">Settings</span> tab and tap <span class="ui">Back Up to iCloud</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The <span class="ui">iCloud Backup</span> page opens. A name entered in <span class="ui">Name (optional)</span>, for example <code>Old iPhone</code>, identifies the backup in the list later.</p>
+    </li>
+    <li class="step">
+      <p>Make sure <span class="ui">Destination</span> is <span class="ui">My Backup</span> and tap <span class="ui">Back Up Now</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The page shows the green success message, and the new backup appears at the top of <span class="ui">Backups in iCloud</span>.</p>
+    </li>
+    <li class="step">
+      <p>On the new phone, open Cam Hub, tap the <span class="ui">Settings</span> tab, then tap <span class="ui">Restore from iCloud</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The <span class="ui">Restore from iCloud</span> page opens. With <span class="ui">Source</span> set to <span class="ui">My Backup</span>, the <span class="ui">Choose a Backup</span> list shows the backups, and the newest one is selected. When the backup of the old phone has not synced yet, open the page again a little later.</p>
+    </li>
+    <li class="step">
+      <p>Make sure the backup of the old phone carries the checkmark, then tap <span class="ui">Restore</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The page shows <span class="ui">Restored 5 devices.</span> The LiveView Mix tab shows the wall of the old phone.</p>
+    </li>
+    <li class="step">
+      <p>On the new phone, tap <span class="ui">Restore Purchases</span> in the <span class="ui">Settings</span> tab.</p>
+      <p class="check"><b class="check-label">Check:</b> <span class="ui">Purchases restored.</span> appears. The plan is not part of the backup and is retrieved this way; see <a class="xref" href="/guide/plans.html#plans-subscribe">“Subscribing, restoring purchases and redeeming a code”</a>.</p>
+    </li>
+  </ol>
+
+  <h4>Method 2: moving with a sharing code</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>On the old phone, open the <span class="ui">Settings</span> tab and tap <span class="ui">Export Cameras</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The <span class="ui">Export Cameras</span> page opens, with every device ticked by default.</p>
+    </li>
+    <li class="step">
+      <p>Turn on <span class="ui">Include app settings</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The switch is on, and the LiveView Mix pages and the control panels travel with the code.</p>
+    </li>
+    <li class="step">
+      <p>Optional: set a PIN or a password as described in <a class="xref" href="/guide/share.html#share-lock">“Locking a code”</a>.</p>
+      <p class="check"><b class="check-label">Check:</b> The export button becomes available once the entry is complete.</p>
+    </li>
+    <li class="step">
+      <p>Tap the export button, then tap <span class="ui">Share</span> and send the link to the new phone.</p>
+      <p class="check"><b class="check-label">Check:</b> The system share sheet has sent the link. Send the PIN or the password by another channel.</p>
+    </li>
+    <li class="step">
+      <p>On the new phone, tap the received link, tap <span class="ui">Import Cameras</span> and, for a locked code, enter the PIN or the password.</p>
+      <p class="check"><b class="check-label">Check:</b> The dialog <span class="ui">This code also has the sender's app settings</span> appears.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Also Use Their Settings</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen shows <span class="ui">Added 5 cameras</span>. The LiveView Mix tab shows the wall of the old phone.</p>
+    </li>
+  </ol>
+  <p>Neither method carries the plan. After signing in with the same Apple Account, retrieve it on the new phone with <span class="ui">Restore Purchases</span>; see <a class="xref" href="/guide/plans.html#plans-subscribe">“Subscribing, restoring purchases and redeeming a code”</a>.</p>
+
+  <h3 id="share-appletv">Bringing the setup to Apple TV</h3>
+  <p>Apple TV neither creates nor edits walls, and entering a long code with the remote is laborious. The recommended approach is to finish the setup on an iPhone or iPad first. A backup made with <span class="ui">Apple TV</span> as the destination (see <a class="xref" href="/guide/share.html#share-icloud">“Backing up to iCloud”</a>) or a sharing code (see <a class="xref" href="/guide/share.html#share-export">“Exporting cameras (creating a code)”</a>) then brings the devices and the wall to the television. Apple TV restores only the Apple TV copy, not the backups of <span class="ui">My Backup</span>, and shows YouTube and Twitch streams by name only. The steps for the Apple TV, and what differs there, are described in <a class="xref" href="/guide/appletv.html">Chapter 14, “Apple TV”</a>.</p>
+</section><nav class="guide-pager" aria-label="Contents"><a class="guide-prev" rel="prev" href="/guide/webhook.html"><span class="pager-dir">Previous chapter</span><span class="pager-title">9. Control panels and webhooks</span></a><a class="guide-next" rel="next" href="/guide/plans.html"><span class="pager-dir">Next chapter</span><span class="pager-title">11. Plans and limits</span></a></nav></article>
+    </div>
+    <button class="guide-top" id="guide-top" type="button" aria-label="Back to top"></button>
+  </main>
+  <footer class="footer"><span data-i18n="footer">Copyright © 2026 ALMX. All rights reserved.</span><nav><a href="/guide.html" data-i18n="navGuide">Manual</a><a href="/devices.html" data-i18n="navDevices">Device differences</a><a href="/privacy.html" data-i18n="navPrivacy">Privacy</a><a href="/terms.html" data-i18n="navTerms">Terms</a><a class="store-link" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeCTA">Download on the App Store</a></nav><nav class="language-links" id="language-links" aria-label="Language" data-i18n-aria="languageLabel"><a href="/guide/share.html" hreflang="en" lang="en" data-language-link="en" aria-current="true">English</a><a href="/zh-Hant/guide/share.html" hreflang="zh-Hant" lang="zh-Hant" data-language-link="zh-Hant">繁體中文</a><a href="/zh-Hans/guide/share.html" hreflang="zh-Hans" lang="zh-Hans" data-language-link="zh-Hans">简体中文</a><a href="/ja/guide/share.html" hreflang="ja" lang="ja" data-language-link="ja">日本語</a><a href="/ko/guide/share.html" hreflang="ko" lang="ko" data-language-link="ko">한국어</a><a href="/de/guide/share.html" hreflang="de" lang="de" data-language-link="de">Deutsch</a><a href="/es/guide/share.html" hreflang="es" lang="es" data-language-link="es">Español</a><a href="/es-MX/guide/share.html" hreflang="es-MX" lang="es-MX" data-language-link="es-MX">Español (México)</a><a href="/fr/guide/share.html" hreflang="fr" lang="fr" data-language-link="fr">Français</a><a href="/sl/guide/share.html" hreflang="sl" lang="sl" data-language-link="sl">Slovenščina</a><a href="/ar/guide/share.html" hreflang="ar" lang="ar" data-language-link="ar">العربية</a></nav></footer>
+  <script src="/additional-locales.js?v=20261103-sl"></script>
+  <script src="/site.js?v=20261112-1"></script>
+
+
+</body></html>

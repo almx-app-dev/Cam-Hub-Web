@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="apple-itunes-app" content="app-id=6792057195"><meta name="color-scheme" content="dark light">
+  <meta name="description" content="控制面板是 LiveView Mix 墙上的一个图块，内含一排按钮。每个按钮被按下时，会向指定的地址发送一个 HTTP 请求，适用于 Home Assistant 的 Webhook…">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="Cam Hub"><meta property="og:image" content="https://cam-hub.almx.cc/assets/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+  <title>控制面板与 Webhook — Cam Hub 操作手册</title><link rel="icon" href="/assets/icon-48.png" sizes="48x48"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/icon-180.png"><link rel="stylesheet" href="/styles.css?v=20261112-1"><link rel="stylesheet" href="/guide.css?v=20261030-1">
+<meta property="og:description" content="控制面板是 LiveView Mix 墙上的一个图块，内含一排按钮。每个按钮被按下时，会向指定的地址发送一个 HTTP 请求，适用于 Home Assistant 的 Webhook…"><link rel="canonical" href="https://cam-hub.almx.cc/zh-Hans/guide/webhook.html"><link rel="alternate" hreflang="x-default" href="https://cam-hub.almx.cc/guide/webhook.html"><link rel="alternate" hreflang="en" href="https://cam-hub.almx.cc/guide/webhook.html"><link rel="alternate" hreflang="zh-Hant" href="https://cam-hub.almx.cc/zh-Hant/guide/webhook.html"><link rel="alternate" hreflang="zh-Hans" href="https://cam-hub.almx.cc/zh-Hans/guide/webhook.html"><link rel="alternate" hreflang="ja" href="https://cam-hub.almx.cc/ja/guide/webhook.html"><link rel="alternate" hreflang="ko" href="https://cam-hub.almx.cc/ko/guide/webhook.html"><link rel="alternate" hreflang="de" href="https://cam-hub.almx.cc/de/guide/webhook.html"><link rel="alternate" hreflang="es" href="https://cam-hub.almx.cc/es/guide/webhook.html"><link rel="alternate" hreflang="es-MX" href="https://cam-hub.almx.cc/es-MX/guide/webhook.html"><link rel="alternate" hreflang="fr" href="https://cam-hub.almx.cc/fr/guide/webhook.html"><link rel="alternate" hreflang="sl" href="https://cam-hub.almx.cc/sl/guide/webhook.html"><link rel="alternate" hreflang="ar" href="https://cam-hub.almx.cc/ar/guide/webhook.html"><meta property="og:url" content="https://cam-hub.almx.cc/zh-Hans/guide/webhook.html"><meta property="og:title" content="控制面板与 Webhook — Cam Hub 操作手册"></head>
+<body data-page="guide">
+  <header class="topbar" aria-label="Site header">
+    <a class="brand" href="/zh-Hans/"><img src="/assets/icon-96.png" alt="" width="42" height="42"><span><strong>Cam<wbr data-phrase-break="">&nbsp;<wbr data-phrase-break="">Hub</strong><small data-i18n="topline">操作<wbr data-phrase-break="">手册</small></span></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-controls" data-i18n-aria="menuLabel" aria-label="打开菜单"><span></span><span></span><span></span><span class="sr-only" data-i18n="menuLabel">打开菜单</span></button>
+    <div class="topbar-controls" id="site-controls"><nav class="navlinks" aria-label="Primary"><a href="/zh-Hans/" data-nav="home" data-i18n="navHome">首页</a><a href="/zh-Hans/product.html" data-nav="product" data-i18n="navProduct">功能<wbr data-phrase-break="">介绍</a><a href="/zh-Hans/guide.html" data-nav="guide" data-i18n="navGuide" aria-current="page">操作<wbr data-phrase-break="">手册</a><a href="/zh-Hans/support.html" data-nav="support" data-i18n="navSupport">支持</a><a href="/zh-Hans/privacy.html" data-nav="privacy" data-i18n="navPrivacy">隐私<wbr data-phrase-break="">政策</a><a href="/zh-Hans/terms.html" data-nav="terms" data-i18n="navTerms">使用<wbr data-phrase-break="">条款</a></nav><div class="pickers"><label><span class="sr-only" data-i18n="themeLabel">外观</span><select id="themeSelect" aria-label="Theme"><option value="auto" data-i18n="themeAuto" selected="">自动</option><option value="light" data-i18n="themeLight">浅色</option><option value="dark" data-i18n="themeDark">深色</option></select></label><label><span class="sr-only" data-i18n="languageLabel">语言</span><select id="languageSelect" aria-label="Language"><option value="en">English</option><option value="zh-Hant">繁體中文</option><option value="zh-Hans" selected="">简体中文</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="de">Deutsch</option><option value="es">Español</option><option value="es-MX">Español (México)</option><option value="fr">Français</option><option value="sl">Slovenščina</option><option value="ar">العربية</option></select></label></div><a class="store-pill" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeShort">下载<wbr data-phrase-break=""> <wbr data-phrase-break="">App</a></div>
+  </header>
+  <main class="inner-page guide" style="--g-topbar: 76px; --g-offset: 88px;">
+    <section class="page-hero"><div class="eyebrow" data-i18n="eyebrow">OPERATION MANUAL</div><h1 data-i18n="title">控制面板与 Webhook</h1><p class="summary" data-i18n="summary">从<wbr data-phrase-break="">添加<wbr data-phrase-break="">设备、<wbr data-phrase-break="">实<wbr data-phrase-break="">时<wbr data-phrase-break="">画面<wbr data-phrase-break="">与<wbr data-phrase-break="">录像<wbr data-phrase-break="">回<wbr data-phrase-break="">放，<wbr data-phrase-break="">到<wbr data-phrase-break=""> <wbr data-phrase-break="">LiveView<wbr data-phrase-break=""> <wbr data-phrase-break="">Mix<wbr data-phrase-break=""> <wbr data-phrase-break="">多<wbr data-phrase-break="">机<wbr data-phrase-break="">墙、<wbr data-phrase-break="">共享<wbr data-phrase-break="">与<wbr data-phrase-break="">备份，<wbr data-phrase-break="">依次<wbr data-phrase-break="">说明<wbr data-phrase-break=""> <wbr data-phrase-break="">Cam<wbr data-phrase-break="">&nbsp;<wbr data-phrase-break="">Hub<wbr data-phrase-break=""> <wbr data-phrase-break="">的<wbr data-phrase-break="">操作<wbr data-phrase-break="">方法。</p></section>
+    <p class="guide-notice" id="guide-notice" role="status" hidden=""></p>
+    <div id="guide-sentinel" aria-hidden="true"></div>
+    <div class="guide-layout has-toc" id="guide-layout" lang="zh-Hans" dir="ltr">
+      <aside class="guide-side" id="guide-side">
+        <button class="guide-toc-toggle" id="guide-toc-toggle" type="button" aria-expanded="false" aria-controls="guide-toc" lang="zh-Hans" dir="ltr"><span class="guide-toc-label" data-i18n="tocLabel">目录</span><span class="guide-toc-current" id="guide-toc-current">9. 控制面板与 Webhook</span></button>
+        <nav class="guide-toc" id="guide-toc" aria-label="目录"><ol><li><a href="/zh-Hans/guide.html"><span class="toc-num">1</span><span>快速入门</span></a><ol><li><a href="/zh-Hans/guide.html#start-prepare"><span>准备工作</span></a></li><li><a href="/zh-Hans/guide.html#start-path"><span>看到实时画面的最短路径</span></a></li><li><a href="/zh-Hans/guide.html#start-demo"><span>没有设备时试用</span></a></li></ol></li><li><a href="/zh-Hans/guide/tour.html"><span class="toc-num">2</span><span>标签页与基本行为</span></a><ol><li><a href="/zh-Hans/guide/tour.html#tour-tabs"><span>五个标签页一览</span></a></li><li><a href="/zh-Hans/guide/tour.html#tour-launch"><span>启动时打开的画面</span></a></li><li><a href="/zh-Hans/guide/tour.html#tour-look"><span>外观与语言</span></a></li><li><a href="/zh-Hans/guide/tour.html#tour-rotate"><span>旋转设备</span></a></li><li><a href="/zh-Hans/guide/tour.html#tour-duo"><span>iPhone Duo</span></a></li><li><a href="/zh-Hans/guide/tour.html#tour-awake"><span>屏幕、后台与通知</span></a></li></ol></li><li><a href="/zh-Hans/guide/add.html"><span class="toc-num">3</span><span>添加设备</span></a><ol><li><a href="/zh-Hans/guide/add.html#add-form"><span>添加设备表单</span></a></li><li><a href="/zh-Hans/guide/add.html#add-auto"><span>不选择品牌直接添加</span></a></li><li><a href="/zh-Hans/guide/add.html#add-methods"><span>选择连接方式</span></a></li><li><a href="/zh-Hans/guide/add.html#add-https"><span>通过 HTTPS 添加设备</span></a></li><li><a href="/zh-Hans/guide/add.html#add-failed"><span>添加失败时：检查清单</span></a></li><li><a href="/zh-Hans/guide/add.html#add-report"><span>设备报告（实验性）</span></a></li><li><a href="/zh-Hans/guide/add.html#add-scan"><span>用网络扫描查找设备</span></a></li></ol></li><li><a href="/zh-Hans/guide/devices.html"><span class="toc-num">4</span><span>设备标签页与通道</span></a><ol><li><a href="/zh-Hans/guide/devices.html#devices-list"><span>设备列表</span></a></li><li><a href="/zh-Hans/guide/devices.html#devices-page"><span>设备页</span></a></li><li><a href="/zh-Hans/guide/devices.html#devices-credentials"><span>更改设备的用户名和密码</span></a></li><li><a href="/zh-Hans/guide/devices.html#devices-password-missing"><span>没有保存密码的设备</span></a></li><li><a href="/zh-Hans/guide/devices.html#devices-https"><span>已保存设备的 HTTPS</span></a></li><li><a href="/zh-Hans/guide/devices.html#devices-health"><span>磁盘健康</span></a></li><li><a href="/zh-Hans/guide/devices.html#devices-states"><span>缩略图显示的内容</span></a></li><li><a href="/zh-Hans/guide/devices.html#devices-menu"><span>通道选项（长按）</span></a></li><li><a href="/zh-Hans/guide/devices.html#devices-plan"><span>套餐上限与启用通道</span></a></li><li><a href="/zh-Hans/guide/devices.html#devices-choose"><span>选择要显示的摄像头</span></a></li><li><a href="/zh-Hans/guide/devices.html#devices-fullwall"><span>设备的全屏墙</span></a></li><li><a href="/zh-Hans/guide/devices.html#devices-quality"><span>设备画面上的 SD 和 HD</span></a></li></ol></li><li><a href="/zh-Hans/guide/live.html"><span class="toc-num">5</span><span>实时标签页与全屏墙</span></a><ol><li><a href="/zh-Hans/guide/live.html#live-tab"><span>实时标签页</span></a></li><li><a href="/zh-Hans/guide/live.html#live-quality"><span>墙上的 SD 和 HD</span></a></li><li><a href="/zh-Hans/guide/live.html#live-wall"><span>全屏墙</span></a></li><li><a href="/zh-Hans/guide/live.html#live-hide"><span>隐藏无信号的摄像头</span></a></li></ol></li><li><a href="/zh-Hans/guide/single.html"><span class="toc-num">6</span><span>单摄像头视图</span></a><ol><li><a href="/zh-Hans/guide/single.html#single-open"><span>打开视图</span></a></li><li><a href="/zh-Hans/guide/single.html#single-screen"><span>屏幕的组成部分</span></a></li><li><a href="/zh-Hans/guide/single.html#single-zoom"><span>缩放与平移</span></a></li><li><a href="/zh-Hans/guide/single.html#single-controls"><span>快照、声音与画质</span></a></li><li><a href="/zh-Hans/guide/single.html#single-clip"><span>录制片段</span></a></li><li><a href="/zh-Hans/guide/single.html#single-talk"><span>双向对讲</span></a></li><li><a href="/zh-Hans/guide/single.html#single-picture"><span>黑边、旋转与横屏</span></a></li><li><a href="/zh-Hans/guide/single.html#single-ptz"><span>PTZ 控制：移动摄像头</span></a></li><li><a href="/zh-Hans/guide/single.html#single-window"><span>在独立窗口中打开摄像头</span></a></li><li><a href="/zh-Hans/guide/single.html#single-duo"><span>iPhone Duo 折叠时的视图</span></a></li><li><a href="/zh-Hans/guide/single.html#single-states"><span>连接状态与提示</span></a></li><li><a href="/zh-Hans/guide/single.html#single-limits"><span>不提供的功能</span></a></li></ol></li><li><a href="/zh-Hans/guide/playback.html"><span class="toc-num">7</span><span>录像回放与倍速</span></a><ol><li><a href="/zh-Hans/guide/playback.html#playback-avail"><span>哪些设备可以回放</span></a></li><li><a href="/zh-Hans/guide/playback.html#playback-day"><span>选择日期</span></a></li><li><a href="/zh-Hans/guide/playback.html#playback-calendar"><span>录像日历</span></a></li><li><a href="/zh-Hans/guide/playback.html#playback-timeline"><span>使用时间轴</span></a></li><li><a href="/zh-Hans/guide/playback.html#playback-list"><span>录像列表与人员搜索</span></a></li><li><a href="/zh-Hans/guide/playback.html#playback-playing"><span>录像播放期间</span></a></li><li><a href="/zh-Hans/guide/playback.html#playback-speed"><span>回放速度</span></a></li><li><a href="/zh-Hans/guide/playback.html#playback-landscape"><span>横屏回放</span></a></li><li><a href="/zh-Hans/guide/playback.html#playback-limits"><span>不提供的功能</span></a></li></ol></li><li><a href="/zh-Hans/guide/lvm.html"><span class="toc-num">8</span><span>LiveView Mix</span></a><ol><li><a href="/zh-Hans/guide/lvm.html#lvm-tab"><span>LiveView Mix 标签页与预览</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-first"><span>搭建包含六个摄像头的第一面墙</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-pick"><span>选择摄像头与画质</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-layout"><span>调整布局</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-custom"><span>绘制自定义布局</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-special"><span>特殊布局：同一面墙上的大小图块</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-arrange"><span>排列墙面与图块</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-move"><span>把图块移到空图块中</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-slots"><span>图块除了摄像头还能显示什么</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-watermark"><span>水印</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-fit"><span>黑边、画面铺满屏幕与设备角度</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-pages"><span>竖向页面</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-canvases"><span>iPhone Duo 上的两张画布</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-wall"><span>全屏墙</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-closeup"><span>打开单个摄像头</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-states"><span>图块无法显示摄像头时</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-limits"><span>套餐上限如何影响墙</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-settings"><span>“设置”中的 LiveView Mix</span></a></li><li><a href="/zh-Hans/guide/lvm.html#lvm-tv"><span>Apple TV 上的差异</span></a></li></ol></li><li class="is-current"><a href="/zh-Hans/guide/webhook.html" class="is-active" aria-current="location"><span class="toc-num">9</span><span>控制面板与 Webhook</span></a><ol><li><a href="/zh-Hans/guide/webhook.html#webhook-what"><span>控制面板的作用</span></a></li><li><a href="/zh-Hans/guide/webhook.html#webhook-add"><span>把控制面板添加到墙上</span></a></li><li><a href="/zh-Hans/guide/webhook.html#webhook-templates"><span>模板</span></a></li><li><a href="/zh-Hans/guide/webhook.html#webhook-fields"><span>面板的设置</span></a></li><li><a href="/zh-Hans/guide/webhook.html#webhook-button"><span>设置按钮</span></a></li><li><a href="/zh-Hans/guide/webhook.html#webhook-use"><span>按下按钮并查看结果</span></a></li><li><a href="/zh-Hans/guide/webhook.html#webhook-wall"><span>面板在墙上的外观</span></a></li><li><a href="/zh-Hans/guide/webhook.html#webhook-watch"><span>Apple Watch 上的按钮</span></a></li><li><a href="/zh-Hans/guide/webhook.html#ha"><span>使用 Home Assistant</span></a></li><li><a href="/zh-Hans/guide/webhook.html#webhook-security"><span>安全说明</span></a></li></ol></li><li><a href="/zh-Hans/guide/share.html"><span class="toc-num">10</span><span>共享与备份</span></a><ol><li><a href="/zh-Hans/guide/share.html#share-choose"><span>两种方式的比较</span></a></li><li><a href="/zh-Hans/guide/share.html#share-export"><span>导出摄像头（生成代码）</span></a></li><li><a href="/zh-Hans/guide/share.html#share-lock"><span>锁定代码</span></a></li><li><a href="/zh-Hans/guide/share.html#share-import"><span>导入摄像头</span></a></li><li><a href="/zh-Hans/guide/share.html#share-contents"><span>备份和代码包含的内容</span></a></li><li><a href="/zh-Hans/guide/share.html#share-icloud"><span>备份到 iCloud</span></a></li><li><a href="/zh-Hans/guide/share.html#share-versions"><span>多份命名备份：重命名与删除</span></a></li><li><a href="/zh-Hans/guide/share.html#share-restore"><span>从 iCloud 恢复</span></a></li><li><a href="/zh-Hans/guide/share.html#share-delete"><span>删除所有 iCloud 备份</span></a></li><li><a href="/zh-Hans/guide/share.html#share-newphone"><span>把设备和墙转移到新手机</span></a></li><li><a href="/zh-Hans/guide/share.html#share-appletv"><span>把设置带到 Apple TV</span></a></li></ol></li><li><a href="/zh-Hans/guide/plans.html"><span class="toc-num">11</span><span>套餐与额度</span></a><ol><li><a href="/zh-Hans/guide/plans.html#plans-tiers"><span>各套餐的额度</span></a></li><li><a href="/zh-Hans/guide/plans.html#plans-stack"><span>两组套餐如何组合</span></a></li><li><a href="/zh-Hans/guide/plans.html#plans-count"><span>哪些内容占用额度</span></a></li><li><a href="/zh-Hans/guide/plans.html#plans-examples"><span>组合示例</span></a></li><li><a href="/zh-Hans/guide/plans.html#plans-choose"><span>选择要显示的摄像头</span></a></li><li><a href="/zh-Hans/guide/plans.html#plans-subscribe"><span>订阅、恢复购买与兑换代码</span></a></li><li><a href="/zh-Hans/guide/plans.html#plans-lapse"><span>套餐到期或降级时</span></a></li></ol></li><li><a href="/zh-Hans/guide/tools.html"><span class="toc-num">12</span><span>工具标签页</span></a><ol><li><a href="/zh-Hans/guide/tools.html#tools-overview"><span>工具标签页包含什么</span></a></li><li><a href="/zh-Hans/guide/tools.html#tools-speedometer"><span>速度计与指南针</span></a></li></ol></li><li><a href="/zh-Hans/guide/settings.html"><span class="toc-num">13</span><span>设置</span></a><ol><li><a href="/zh-Hans/guide/settings.html#settings-overview"><span>设置标签页的各个部分</span></a></li><li><a href="/zh-Hans/guide/settings.html#settings-subscription"><span>订阅</span></a></li><li><a href="/zh-Hans/guide/settings.html#settings-quality"><span>默认画质</span></a></li><li><a href="/zh-Hans/guide/settings.html#settings-picture"><span>画面：黑边与画面铺满屏幕</span></a></li><li><a href="/zh-Hans/guide/settings.html#settings-hide"><span>隐藏离线摄像头</span></a></li><li><a href="/zh-Hans/guide/settings.html#settings-lvm"><span>LiveView Mix、其页面与启动时打开</span></a></li><li><a href="/zh-Hans/guide/settings.html#settings-backup"><span>摄像头的备份与共享</span></a></li><li><a href="/zh-Hans/guide/settings.html#settings-language"><span>语言</span></a></li><li><a href="/zh-Hans/guide/settings.html#settings-reset"><span>重置：默认设置、删除所有数据、删除 iCloud 备份</span></a></li><li><a href="/zh-Hans/guide/settings.html#settings-legal"><span>使用条款与隐私政策</span></a></li><li><a href="/zh-Hans/guide/settings.html#settings-about"><span>关于、操作手册，以及设置中没有的内容</span></a></li></ol></li><li><a href="/zh-Hans/guide/appletv.html"><span class="toc-num">14</span><span>Apple TV</span></a><ol><li><a href="/zh-Hans/guide/appletv.html#appletv-prepare"><span>先在 iPhone 或 iPad 上设置</span></a></li><li><a href="/zh-Hans/guide/appletv.html#appletv-bring"><span>把设置带到 Apple TV</span></a></li><li><a href="/zh-Hans/guide/appletv.html#appletv-differs"><span>Apple TV 上的差异</span></a></li></ol></li><li><a href="/zh-Hans/guide/trouble.html"><span class="toc-num">15</span><span>故障排除</span></a><ol><li><a href="/zh-Hans/guide/trouble.html#trouble-start"><span>从哪里入手</span></a></li><li><a href="/zh-Hans/guide/trouble.html#trouble-states"><span>空白界面的含义</span></a></li><li><a href="/zh-Hans/guide/trouble.html#trouble-add"><span>设备已添加，但无法连接</span></a></li><li><a href="/zh-Hans/guide/trouble.html#trouble-live"><span>实时观看</span></a></li><li><a href="/zh-Hans/guide/trouble.html#trouble-playback"><span>录像回放</span></a></li><li><a href="/zh-Hans/guide/trouble.html#trouble-lvm"><span>LiveView Mix</span></a></li><li><a href="/zh-Hans/guide/trouble.html#trouble-panels"><span>控制面板与 Webhook</span></a></li><li><a href="/zh-Hans/guide/trouble.html#trouble-health"><span>磁盘健康</span></a></li><li><a href="/zh-Hans/guide/trouble.html#trouble-share"><span>共享、导入与 iCloud 备份</span></a></li><li><a href="/zh-Hans/guide/trouble.html#trouble-plans"><span>套餐与购买</span></a></li><li><a href="/zh-Hans/guide/trouble.html#trouble-errors"><span>其他错误提示</span></a></li><li><a href="/zh-Hans/guide/trouble.html#trouble-permissions"><span>权限请求与系统对话框</span></a></li><li><a href="/zh-Hans/guide/trouble.html#trouble-contact"><span>联系开发者</span></a></li><li><a href="/zh-Hans/guide/trouble.html#trouble-faq"><span>常见问题</span></a></li></ol></li><li><a href="/zh-Hans/guide/brands.html"><span class="toc-num">16</span><span>支持的品牌与连接方式</span></a><ol><li><a href="/zh-Hans/guide/brands.html#brands-methods"><span>连接方式</span></a></li><li><a href="/zh-Hans/guide/brands.html#brands-matrix"><span>各方式支持哪些功能</span></a></li><li><a href="/zh-Hans/guide/brands.html#brands-profiles"><span>列表中的品牌</span></a></li><li><a href="/zh-Hans/guide/brands.html#brands-requirements"><span>要求与限制</span></a></li><li><a href="/zh-Hans/guide/brands.html#brands-recorders"><span>摄像头与录像机</span></a></li><li><a href="/zh-Hans/guide/brands.html#brands-prepare"><span>在设备上需要做哪些准备</span></a></li><li><a href="/zh-Hans/guide/brands.html#brands-activate"><span>激活新设备</span></a></li><li><a href="/zh-Hans/guide/brands.html#brands-compat"><span>App 中的兼容性参考</span></a></li></ol></li><li><a href="/zh-Hans/guide/about.html" class="no-num"><span>关于本手册</span></a><ol><li><a href="/zh-Hans/guide/about.html#about-scope"><span>适用范围</span></a></li><li><a href="/zh-Hans/guide/about.html#about-conventions"><span>约定</span></a></li><li><a href="/zh-Hans/guide/about.html#about-help"><span>获取帮助</span></a></li></ol></li></ol></nav>
+      </aside>
+      <article class="guide-article" id="guide-content"><section class="chapter" id="webhook">
+  <h2><span class="num">9</span>控制面板与 Webhook</h2>
+  <p class="lead">控制面板是 LiveView Mix 墙上的一个图块，内含一排按钮。每个按钮被按下时，会向指定的地址发送一个 HTTP 请求，适用于 Home Assistant 的 Webhook 或服务调用、继电器板、Node-RED，以及手机能够访问的任何其他 HTTP 服务。同样的按钮也可以在 Apple Watch 上按下。</p>
+
+  <h3 id="webhook-what">控制面板的作用</h3>
+  <p>控制面板由一个标题、若干按钮和一个可选的时钟组成。每个按钮保存一个完整的 HTTP 请求：方法、URL、标头和正文。按下按钮时，请求直接从这台 iPhone、iPad 或 Apple TV 发往该地址，不经过 Cam Hub 的任何服务器。在 Apple Watch 上按下的按钮，由手表自己发送，或通过配对的 iPhone 发送，参见<a class="xref" href="/zh-Hans/guide/webhook.html#webhook-watch">“Apple Watch 上的按钮”</a>。</p>
+  <ul>
+    <li>Cam Hub 只负责发送请求。URL 和内容完全由用户决定。Cam Hub 不检查是什么服务在应答，也不是任何智能家居产品的专用控制器。</li>
+    <li>只有在墙上或手表上按下按钮时才会发送请求。在排列界面点击面板只会打开其编辑界面，不会发送任何内容。</li>
+    <li>控制面板在 iPhone 和 iPad 上创建和编辑。Apple TV 显示并运行横向页面上的面板，参见<a class="xref" href="/zh-Hans/guide/webhook.html#webhook-wall">“面板在墙上的外观”</a>。Apple Watch 显示面板的按钮，参见<a class="xref" href="/zh-Hans/guide/webhook.html#webhook-watch">“Apple Watch 上的按钮”</a>。</li>
+  </ul>
+  <div class="callout warn">
+    <strong class="t">控制面板占用一个摄像头额度</strong>
+    <p>每个控制面板占用套餐的一个摄像头额度，且只使用摄像头剩下的额度，因此面板绝不会让摄像头失去画面。额度不足时，面板被锁定，其按钮在墙上和手表上都不可用。详情参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-limits">“套餐上限如何影响墙”</a>和<a class="xref" href="/zh-Hans/guide/plans.html#plans-count">“哪些内容占用额度”</a>。</p>
+  </div>
+
+  <h3 id="webhook-add">把控制面板添加到墙上</h3>
+  <p>前提条件：已设置 LiveView Mix，且墙上至少有一个摄像头；设置方法参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-first">“搭建包含六个摄像头的第一面墙”</a>。尚未设置时，只要已添加设备，也可通过<span class="path"><span class="ui">设置</span> › <span class="ui">LiveView Mix</span></span> 进入<span class="ui">排列墙面</span>。控制面板可以放在横向页面、竖向页面或 iPhone Duo 的任一张画布上，步骤相同。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>点击屏幕底部的 <span class="ui">LiveView Mix</span> 标签页。</p>
+      <p class="check"><b class="check-label">确认：</b>屏幕显示预览墙，右上角有三个按钮。</p>
+    </li>
+    <li class="step">
+      <p>点击右上角三个按钮中最右边的<span class="ui">调整布局</span>按钮。</p>
+      <p class="check"><b class="check-label">确认：</b>打开<span class="ui">调整布局</span>页面。</p>
+    </li>
+    <li class="step">
+      <p>点击<span class="ui">排列墙面</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>打开<span class="ui">排列</span>页面：墙的画布在顶部，其下的<span class="ui">顺序</span>列表按编号列出每个已填充的图块。</p>
+      <figure class="phone"><img src="/guide/img/lvm-arrange-full.jpg" alt="“排列”页面：顶部是墙的画布，第 9 个图块是控制面板，第 10 个图块是时钟，下方是已填充图块的列表" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-arrange-full.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>“排列”页面</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>点击画布上一个未使用的图块，它带有虚线边框和 +。未使用的图块在墙的另一页上时，先使用画布下方的箭头或左右滑动切换页面。</p>
+      <p class="check"><b class="check-label">确认：</b>出现一个以图块编号为标题的菜单，例如<span class="ui" data-ui="value">第 9 格</span>。</p>
+    </li>
+    <li class="step">
+      <p>点击<span class="ui">图片、控制面板、时钟或标签…</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>图块的编辑界面从屏幕底部弹出，标题为<span class="ui" data-ui="value">第 9 格</span>。第一行是<span class="ui">显示</span>，当前值为<span class="ui">空白</span>。</p>
+    </li>
+    <li class="step">
+      <p>点击<span class="ui">显示</span>，在菜单中选择<span class="ui">控制</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>页面显示<span class="ui">模板</span>、<span class="ui">面板</span>和<span class="ui">按钮</span>三个部分。模板为<span class="ui">大门/卷帘门</span>，面板标题为<span class="ui">大门</span>（使用 App 的语言），按钮部分有三个按钮，每个按钮下方以橙色显示<span class="ui">尚未设置端点</span>。</p>
+    </li>
+    <li class="step">
+      <p>点击<span class="ui">模板</span>并选择最接近的类型。</p>
+      <p class="check"><b class="check-label">确认：</b>按钮部分被该模板的默认按钮取代。模板的内容参见<a class="xref" href="/zh-Hans/guide/webhook.html#webhook-templates">“模板”</a>。</p>
+    </li>
+    <li class="step">
+      <p>在<span class="ui">面板</span>部分的<span class="ui">标题</span>输入框中输入面板的名称。</p>
+      <p class="check"><b class="check-label">确认：</b>输入框显示该名称，之后它会显示在面板按钮的上方。</p>
+    </li>
+    <li class="step">
+      <p>可选：点击<span class="ui">颜色</span>，选择边框和按钮的颜色。</p>
+      <p class="check"><b class="check-label">确认：</b>颜色图标显示所选颜色。默认为青色。</p>
+    </li>
+    <li class="step">
+      <p>可选：打开<span class="ui">显示时间</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>出现四个开关：<span class="ui">秒</span>、<span class="ui">日期</span>、<span class="ui">星期</span>和 <span class="ui">24 小时制</span>。时钟显示在按钮下方的空白处。</p>
+    </li>
+    <li class="step">
+      <p>按<a class="xref" href="/zh-Hans/guide/webhook.html#webhook-button">“设置按钮”</a>所述，设置每个按钮的 URL 和内容。</p>
+      <p class="check"><b class="check-label">确认：</b>按钮部分的每一行，在标签下方显示 URL 的主机名，而不是<span class="ui">尚未设置端点</span>。</p>
+    </li>
+    <li class="step">
+      <p>点击图块编辑界面右上角的<span class="ui">完成</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>屏幕回到<span class="ui">排列</span>页面，画布上的图块按其在墙上的样子显示面板。</p>
+    </li>
+    <li class="step">
+      <p>点击<span class="ui">排列</span>页面右上角的<span class="ui">完成</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>屏幕回到<span class="ui">调整布局</span>页面。</p>
+    </li>
+    <li class="step">
+      <p>点击<span class="ui">调整布局</span>页面右上角的<span class="ui">完成</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>屏幕回到 LiveView Mix 标签页，预览墙显示新的控制面板。</p>
+    </li>
+  </ol>
+  <div class="shots pair">
+    <figure class="phone"><img src="/guide/img/lvm-slot-kinds.jpg" alt="图块编辑界面的“显示”菜单：空白、图片、控制、时钟和标签" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-slot-kinds.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>“显示”菜单</figcaption></figure>
+    <figure class="phone"><img src="/guide/img/lvm-control-panel.jpg" alt="控制面板的设置：模板、面板和按钮列表，每个按钮下方都写着“尚未设置端点”" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-control-panel.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>控制面板的设置</figcaption></figure>
+  </div>
+  <ul>
+    <li>布局的每个图块都已填充时，画布上没有未使用的图块。请先在<span class="ui">排列</span>页面顶部的布局行中选择图块更多的布局，或清空一个图块，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-arrange">“排列墙面与图块”</a>。</li>
+    <li>另一个页面上已有的面板可以直接复制，无需重新搭建，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-pages">“竖向页面”</a>。墙的另一页上的面板可以移到空图块中，参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-move">“把图块移到空图块中”</a>。</li>
+    <li>点击图块编辑界面左上角的<span class="ui">取消</span>，会把整面墙恢复到打开该编辑界面时的状态，包括对按钮所做的每项更改。</li>
+    <li>把<span class="ui">显示</span>改为其他项，会清除面板的标题和所有按钮。要移除面板，把<span class="ui">显示</span>设为<span class="ui">空白</span>，或在<span class="ui">排列</span>页面的<span class="ui">顺序</span>列表中向左滑动其所在行并点击<span class="ui" data-ui="system">删除</span>。无论哪种方式，图块都会变空，其他图块不会移动。</li>
+    <li>图片、时钟和标签图块参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-slots">“图块除了摄像头还能显示什么”</a>。</li>
+    <li>通过<span class="path"><span class="ui">设置</span> › <span class="ui">LiveView Mix</span></span> 进入<span class="ui">排列墙面</span>时，之后的操作相同。</li>
+  </ul>
+
+  <h3 id="webhook-templates">模板</h3>
+  <p><span class="ui">模板</span>菜单提供十一种模板。模板只决定默认标题、按钮的数量、图标以及<span class="ui">执行前先确认</span>的初始设置。没有任何模板包含 URL，每个按钮都需要自己的 URL。</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>模板</th><th>默认标题</th><th>默认按钮</th><th>默认开启“执行前先确认”的按钮</th></tr></thead>
+    <tbody>
+      <tr><td data-label="模板"><span class="ui">大门/卷帘门</span></td><td data-label="默认标题"><span class="ui">大门</span></td><td data-label="默认按钮"><span class="ui">开启</span>、<span class="ui">停止</span>、<span class="ui">关闭</span></td><td data-label="默认开启“执行前先确认”的按钮"><span class="ui">开启</span></td></tr>
+      <tr><td data-label="模板"><span class="ui">车库门</span></td><td data-label="默认标题"><span class="ui">车库</span></td><td data-label="默认按钮"><span class="ui">开启</span>、<span class="ui">停止</span>、<span class="ui">关闭</span></td><td data-label="默认开启“执行前先确认”的按钮"><span class="ui">开启</span></td></tr>
+      <tr><td data-label="模板"><span class="ui">灯光</span></td><td data-label="默认标题"><span class="ui">灯光</span></td><td data-label="默认按钮"><span class="ui">打开</span>、<span class="ui">关闭</span></td><td data-label="默认开启“执行前先确认”的按钮">无</td></tr>
+      <tr><td data-label="模板"><span class="ui">门锁</span></td><td data-label="默认标题"><span class="ui">门</span></td><td data-label="默认按钮"><span class="ui">解锁</span>、<span class="ui">上锁</span></td><td data-label="默认开启“执行前先确认”的按钮"><span class="ui">解锁</span></td></tr>
+      <tr><td data-label="模板"><span class="ui">窗帘/百叶帘</span></td><td data-label="默认标题"><span class="ui">窗帘</span></td><td data-label="默认按钮"><span class="ui">开启</span>、<span class="ui">停止</span>、<span class="ui">关闭</span></td><td data-label="默认开启“执行前先确认”的按钮">无</td></tr>
+      <tr><td data-label="模板"><span class="ui">场景/自动化</span></td><td data-label="默认标题"><span class="ui">场景</span></td><td data-label="默认按钮"><span class="ui">执行</span></td><td data-label="默认开启“执行前先确认”的按钮">无</td></tr>
+      <tr><td data-label="模板"><span class="ui">警报器</span></td><td data-label="默认标题"><span class="ui">报警</span></td><td data-label="默认按钮"><span class="ui">布防</span>、<span class="ui">撤防</span>、<span class="ui">紧急</span></td><td data-label="默认开启“执行前先确认”的按钮"><span class="ui">布防</span>、<span class="ui">紧急</span></td></tr>
+      <tr><td data-label="模板"><span class="ui">电风扇</span></td><td data-label="默认标题"><span class="ui">电风扇</span></td><td data-label="默认按钮"><span class="ui">打开</span>、<span class="ui">关闭</span></td><td data-label="默认开启“执行前先确认”的按钮">无</td></tr>
+      <tr><td data-label="模板"><span class="ui">智能插座</span></td><td data-label="默认标题"><span class="ui">插座</span></td><td data-label="默认按钮"><span class="ui">打开</span>、<span class="ui">关闭</span></td><td data-label="默认开启“执行前先确认”的按钮">无</td></tr>
+      <tr><td data-label="模板"><span class="ui">空调</span></td><td data-label="默认标题"><span class="ui">空调</span></td><td data-label="默认按钮"><span class="ui">打开</span>、<span class="ui">关闭</span></td><td data-label="默认开启“执行前先确认”的按钮">无</td></tr>
+      <tr><td data-label="模板"><span class="ui">自定义</span></td><td data-label="默认标题">空</td><td data-label="默认按钮">一个标签为<span class="ui">按钮</span>的按钮</td><td data-label="默认开启“执行前先确认”的按钮">无</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>模板的默认标题和按钮标签使用 App 的语言显示；之后更改 App 的语言时，它们在墙上、编辑界面和 Apple Watch 上也随之改变。输入或编辑过的标题和标签，完全保持输入时的样子。以前制作的面板中的默认文字，在 App 的每种语言下都能被识别，同样跟随当前语言。</li>
+    <li>更换模板会以新模板的按钮取代现有的全部按钮，已填入的 URL、标头和内容随之清除。标题只在仍为空，或仍是默认标题时才会更换；用户自己输入的标题保持不变。请先选择模板，再调整细节。</li>
+    <li>新添加的控制面板的初始模板为<span class="ui">大门/卷帘门</span>。</li>
+  </ul>
+  <figure class="phone"><img src="/guide/img/lvm-control-templates.jpg" alt="展开的模板菜单，列出大门/卷帘门、车库门、灯光、门锁、窗帘/百叶帘、场景/自动化、警报器、电风扇、智能插座、空调和自定义" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-control-templates.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>模板菜单</figcaption></figure>
+
+  <h3 id="webhook-fields">面板的设置</h3>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>项目</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td data-label="项目"><span class="ui">显示</span></td><td data-label="说明">图块的内容：<span class="ui">空白</span>、<span class="ui">图片</span>、<span class="ui">控制</span>、<span class="ui">时钟</span>或<span class="ui">标签</span>。选择<span class="ui">控制</span>会把图块变成控制面板。</td></tr>
+      <tr><td data-label="项目"><span class="ui">模板</span></td><td data-label="说明">参见<a class="xref" href="/zh-Hans/guide/webhook.html#webhook-templates">“模板”</a>。</td></tr>
+      <tr><td data-label="项目"><span class="ui">标题</span></td><td data-label="说明">显示在按钮上方，说明该面板控制什么，也用作 Apple Watch 上的分组标题。为空时不显示标题。</td></tr>
+      <tr><td data-label="项目"><span class="ui">颜色</span></td><td data-label="说明">面板边框和按钮的颜色，也用于 Apple Watch 上的图标。</td></tr>
+      <tr><td data-label="项目"><span class="ui">显示时间</span></td><td data-label="说明">在按钮下方的空白处显示当前时间。开启后，可选择<span class="ui">秒</span>、<span class="ui">日期</span>、<span class="ui">星期</span>和 <span class="ui">24 小时制</span>。星期和月份的名称跟随 App 的语言。</td></tr>
+      <tr><td data-label="项目"><span class="ui">按钮</span></td><td data-label="说明">按钮列表。点击某一行可编辑该按钮，向左滑动某一行可删除它，点击<span class="ui">添加按钮</span>会在末尾添加一个空白按钮。列表不能重新排序；要改变顺序，请删除按钮再重新添加。每一行显示图标、标签和 URL 的主机名；尚未输入有效 URL 时，改以橙色显示<span class="ui">尚未设置端点</span>。标签为空时，该行显示<span class="ui">按钮</span>。</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="webhook-button">设置按钮</h3>
+  <p>前提条件：已按<a class="xref" href="/zh-Hans/guide/webhook.html#webhook-add">“把控制面板添加到墙上”</a>所述打开图块的编辑界面，并已选择<span class="ui">控制</span>。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>在<span class="ui">按钮</span>部分，点击要设置的按钮。要新建按钮，先点击<span class="ui">添加按钮</span>，再点击新的一行。</p>
+      <p class="check"><b class="check-label">确认：</b>屏幕显示该按钮的编辑界面。标题是按钮的标签，左上角只有一个返回箭头。</p>
+    </li>
+    <li class="step">
+      <p>在<span class="ui">图标</span>一行下方的图标行中，点击要使用的图标，或在右侧的输入框中输入某个 <code>SF Symbols</code> 图标的名称。</p>
+      <p class="check"><b class="check-label">确认：</b><span class="ui">图标</span>一行显示所选图标及其名称，例如 <code>arrow.up.to.line</code>。</p>
+    </li>
+    <li class="step">
+      <p>在<span class="ui">标签</span>输入框中输入显示在图标下方的文字。</p>
+      <p class="check"><b class="check-label">确认：</b>输入框显示该文字。页面标题变为相同的文字。</p>
+    </li>
+    <li class="step">
+      <p>对运行前必须确认的按钮，打开<span class="ui">执行前先确认</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>开关打开。此后在墙上或手表上按下该按钮时，都会出现确认框，参见<a class="xref" href="/zh-Hans/guide/webhook.html#webhook-use">“按下按钮并查看结果”</a>。</p>
+    </li>
+    <li class="step">
+      <p>在<span class="ui">请求</span>部分，从<span class="ui">方法</span>菜单中选择 <code>GET</code>、<code>POST</code>、<code>PUT</code> 或 <code>DELETE</code>。</p>
+      <p class="check"><b class="check-label">确认：</b>菜单显示所选方法。选择 <code>GET</code> 时，页面下部没有<span class="ui">正文</span>部分；其他三种方法则显示该部分。</p>
+    </li>
+    <li class="step">
+      <p>在<span class="ui">方法</span>下方的输入框中输入完整的 URL，以 <code>http://</code> 或 <code>https://</code> 开头。</p>
+      <p class="check"><b class="check-label">确认：</b>输入框显示该 URL。</p>
+    </li>
+    <li class="step">
+      <p>在 iPhone 上，可选：在 Apple Watch 部分点击<span class="ui">发送方式</span>，选择<span class="ui">自动</span>、<span class="ui">由手表直接发送</span>或<span class="ui">通过 iPhone</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>菜单显示所作的选择，其下的说明解释该选择的作用。各选项的含义参见<a class="xref" href="/zh-Hans/guide/webhook.html#webhook-watch">“Apple Watch 上的按钮”</a>。</p>
+    </li>
+    <li class="step">
+      <p>需要标头时，点击<span class="ui">添加标头</span>，并在<span class="ui">名称</span>和<span class="ui">值</span>输入框中输入标头的名称和值。</p>
+      <p class="check"><b class="check-label">确认：</b><span class="ui">标头</span>部分新增一行，两个输入框都显示所输入的文字。其他标头重复此步骤；向左滑动某一行可删除该标头。</p>
+    </li>
+    <li class="step">
+      <p>需要发送内容时，在<span class="ui">正文</span>部分的上方输入框中确认内容类型（默认为 <code>application/json</code>），然后在其下方的文本框中输入内容。</p>
+      <p class="check"><b class="check-label">确认：</b>文本框显示该内容。内容按输入的原样发送。</p>
+    </li>
+    <li class="step">
+      <p>点击左上角的返回箭头。</p>
+      <p class="check"><b class="check-label">确认：</b>屏幕回到图块编辑界面，按钮所在的行在其标签下方显示 URL 的主机名。</p>
+    </li>
+  </ol>
+  <div class="shots pair">
+    <figure class="phone"><img src="/guide/img/lvm-button-editor.jpg" alt="按钮编辑界面：图标、标签、执行前先确认，以及“请求”部分的方法和 URL" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-button-editor.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>按钮编辑界面（上部）</figcaption></figure>
+    <figure class="phone"><img src="/guide/img/lvm-button-headers.jpg" alt="按钮编辑界面的下部：“标头”部分有一行授权标头，“正文”部分有内容类型和 JSON 内容" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-button-headers.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>按钮编辑界面（下部）</figcaption></figure>
+  </div>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>输入项</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td data-label="输入项"><span class="ui">图标</span></td><td data-label="说明">图标行下方的二十个常用图标可直接点击。也可以输入任意 <code>SF Symbols</code> 图标的名称。</td></tr>
+      <tr><td data-label="输入项"><span class="ui">标签</span></td><td data-label="说明">显示在图标下方，并用作确认框中红色按钮的文字。标签为空时，按钮只显示图标，确认框的红色按钮显示<span class="ui">确认</span>。</td></tr>
+      <tr><td data-label="输入项"><span class="ui">执行前先确认</span></td><td data-label="说明">开启后，按下按钮会先打开一个确认框。会使实体设备动作的按钮，例如开门、解锁和警报，应当开启此项。</td></tr>
+      <tr><td data-label="输入项"><span class="ui">方法</span></td><td data-label="说明"><code>GET</code>、<code>POST</code>、<code>PUT</code> 或 <code>DELETE</code>；默认为 <code>POST</code>。<code>GET</code> 不发送正文。</td></tr>
+      <tr><td data-label="输入项">URL</td><td data-label="说明">必须以 <code>http://</code> 或 <code>https://</code> 开头，并包含主机名或地址。开头和结尾的空格会被忽略。查询参数直接写在 URL 中。URL 为空或格式有误时，按下按钮会显示失败，该按钮也不会出现在 Apple Watch 上。</td></tr>
+      <tr><td data-label="输入项"><span class="ui">发送方式</span></td><td data-label="说明">仅在 iPhone 上显示，位于 Apple Watch 部分。决定在手表上的按下由手表自己发送还是通过 iPhone 发送；默认为<span class="ui">自动</span>。参见<a class="xref" href="/zh-Hans/guide/webhook.html#webhook-watch">“Apple Watch 上的按钮”</a>。</td></tr>
+      <tr><td data-label="输入项"><span class="ui">标头</span></td><td data-label="说明">数量不限的名称和值。名称为空的行会被跳过。在此输入的 <code>Content-Type</code> 标头，优先于<span class="ui">正文</span>部分的内容类型输入框。</td></tr>
+      <tr><td data-label="输入项"><span class="ui">正文</span></td><td data-label="说明">仅对 <code>POST</code>、<code>PUT</code> 和 <code>DELETE</code> 显示。上方输入框是内容类型，默认为 <code>application/json</code>；其下的文本框是内容。内容为空时不发送正文。只有在内容不为空、且没有输入 <code>Content-Type</code> 标头时，才会附带内容类型输入框中的值。</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="webhook-use">按下按钮并查看结果</h3>
+  <p>可在 LiveView Mix 标签页的预览墙和全屏墙上按下按钮。新配置的按钮没有单独的测试功能；按一次即相当于测试，随后在接收端确认请求已到达。</p>
+  <figure class="clip land"><video class="clip" aria-label="在墙上按下控制面板的按钮：发送请求期间显示转圈，随后得到肯定应答时显示绿色对勾，否则显示橙色警告三角形。" muted="" loop="" playsinline="" preload="none" data-src="/guide/vid/rec-webhook-button.mp4" data-poster="/guide/img/rec-webhook-button.jpg" poster="/guide/img/rec-webhook-button.jpg"></video><figcaption>在墙上按下控制面板的按钮：发送请求期间显示转圈，随后得到肯定应答时显示绿色对勾，否则显示橙色警告三角形。</figcaption></figure>
+  <ol class="steps">
+    <li class="step">
+      <p>在预览墙或全屏墙上，点击面板上的某个按钮。</p>
+      <p class="check"><b class="check-label">确认：</b>未开启<span class="ui">执行前先确认</span>的按钮，其图标立即变为转圈，表示请求已发出。已开启该项的按钮，会在面板旁打开一个确认框，标题为面板的标题（面板没有标题时为<span class="ui">要执行这个动作吗？</span>）。</p>
+    </li>
+    <li class="step">
+      <p>出现确认框时，点击框中的红色按钮，其文字为被按下按钮的标签。要取消，点击确认框外的任意位置。</p>
+      <p class="check"><b class="check-label">确认：</b>确认框关闭，图标变为转圈。取消时，不发送任何请求。</p>
+      <figure class="phone"><img src="/guide/img/lvm-webhook-confirm.jpg" alt="按下大门面板的“开启”按钮后的 LiveView Mix 标签页：面板旁出现确认框" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-webhook-confirm.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>确认框</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>观察按钮的图标。</p>
+      <p class="check"><b class="check-label">确认：</b>根据结果，图标变为绿色对勾或橙色警告三角形，约 1.6 秒后恢复原来的图标。</p>
+      <figure class="land"><img src="/guide/img/lvm-webhook-states.jpg" alt="同一个按钮的三种状态：发送时的转圈、成功后的绿色对勾，以及失败后的橙色警告三角形" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-webhook-states.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>按钮的三种状态</figcaption></figure>
+    </li>
+  </ol>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>按钮显示</th><th>含义</th></tr></thead>
+    <tbody>
+      <tr><td data-label="按钮显示">配置的图标</td><td data-label="含义">空闲，或结果已显示完毕。</td></tr>
+      <tr><td data-label="按钮显示">转圈</td><td data-label="含义">请求已发出，正在等待应答。10 秒内没有应答时，请求视为失败。</td></tr>
+      <tr><td data-label="按钮显示">绿色对勾</td><td data-label="含义">接收端返回了 200 至 299 的状态码。重定向会被自动跟随，由最终应答决定结果。</td></tr>
+      <tr><td data-label="按钮显示">橙色警告三角形</td><td data-label="含义">请求未成功。原因可能是 URL 为空或格式有误、没有连接、超时、证书不受信任，或状态码不在 200 至 299 之间，例如 401、404 或 500。屏幕不显示原因，也不保留日志。</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>绿色对勾只表示接收端成功应答，并不证明设备已动作。要核实结果，请查看接收端的日志。</li>
+    <li>每次按下都发送一个请求，没有任何机制防止重复按下。连续按两次会发送两个请求。会使实体设备动作的按钮应当开启<span class="ui">执行前先确认</span>。</li>
+    <li>橙色三角形反复出现时，请按以下顺序检查：URL 是否有效，手机与接收端是否在同一网络或能够互相访问，接收端的地址能否解析。接收端位于本地网络时，必须允许 Cam Hub 访问本地网络，参见<a class="xref" href="/zh-Hans/guide/add.html#add-scan">“用网络扫描查找设备”</a>。其他问题参见<a class="xref" href="/zh-Hans/guide/trouble.html">第 15 章“故障排除”</a>。</li>
+    <li>在 Apple Watch 上按下按钮，参见<a class="xref" href="/zh-Hans/guide/webhook.html#webhook-watch">“Apple Watch 上的按钮”</a>。</li>
+  </ul>
+
+  <h3 id="webhook-wall">面板在墙上的外观</h3>
+  <ul>
+    <li><b>按钮布局</b>：1 个按钮排 1 列，2 个按钮排 2 列，3 个按钮排 3 列，4 个按钮排成 2 × 2，5 个或更多按钮排 3 列。</li>
+    <li><b>小图块</b>：面板自动缩小。时钟先被隐藏，然后是图标下方的标签；标题和图标保留。</li>
+    <li><b>套餐</b>：每个控制面板占用一个摄像头额度，且只使用摄像头剩下的额度。超出额度的面板显示锁、标题和<span class="ui">不在您的套餐内</span>，其按钮不可用；在预览中，该图块显示锁和<span class="ui">不在您的套餐内</span>。每面墙上的每个面板都单独计数：横向页面始终计数，竖向页面在打开时计数，iPhone Duo 的下方画布在两张画布打开时计数；复制的面板与原面板分开计数。时钟、标签、图片和空白图块不占用额度。仅订阅 NVR 套餐不会提高面板可用的额度。计数规则参见<a class="xref" href="/zh-Hans/guide/lvm.html#lvm-limits">“套餐上限如何影响墙”</a>和<a class="xref" href="/zh-Hans/guide/plans.html#plans-count">“哪些内容占用额度”</a>。</li>
+    <li><b>Apple TV</b>：面板在 iPhone 或 iPad 上创建，横向页面上的面板显示在 Apple TV 的墙上，参见<a class="xref" href="/zh-Hans/guide/appletv.html">第 14 章“Apple TV”</a>。</li>
+    <li><b>Apple Watch</b>：套餐涵盖的每个面板，其按钮都会出现在配对的 Apple Watch 上，参见<a class="xref" href="/zh-Hans/guide/webhook.html#webhook-watch">“Apple Watch 上的按钮”</a>。</li>
+    <li><b>备份与共享</b>：面板的设置（包括标头的值）属于 App 设置。它们会进入每一份 iCloud 备份；导出时开启<span class="ui">包含 App 设置</span>，它们也会进入共享代码，参见<a class="xref" href="/zh-Hans/guide/share.html">第 10 章“共享与备份”</a>。</li>
+  </ul>
+  <div class="shots land-pair">
+    <figure class="land"><img src="/guide/img/lvm-wall.jpg" alt="全屏墙：底行有一个标题为“大门”、带三个按钮的控制面板，其右侧是时钟，其他图块是摄像头画面" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-wall.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>墙上的控制面板和时钟</figcaption></figure>
+    <figure class="land"><img src="/guide/img/lvm-panel-locked.jpg" alt="全屏墙：一个超出额度的控制面板，显示锁、标题和“不在您的套餐内”" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-panel-locked.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>因额度而被锁定的控制面板</figcaption></figure>
+  </div>
+
+  <h3 id="webhook-watch">Apple Watch 上的按钮</h3>
+  <p>Apple Watch 上的 Cam Hub 显示配对的 iPhone 上所设置的控制面板的按钮，点击一下即可发送。它不显示其他任何内容：没有视频，也没有摄像头。手表 App 没有自己的设置、登录或购买；由 iPhone 决定它显示哪些按钮。</p>
+  <ul>
+    <li><b>哪些按钮</b>：套餐涵盖的每个控制面板中带有有效 URL 的每个按钮：横向页面、打开时的竖向页面，以及两张画布打开时 iPhone Duo 的下方画布。竖向页面上与横向页面完全相同（面板标题、标签和请求都相同）的按钮只列出一次。</li>
+    <li><b>列表</b>：该界面的标题为<span class="ui">控制</span>。按钮按墙上的顺序，归在各自面板的标题之下。每一行显示面板颜色的图标和按钮的标签（标签为空时显示 URL）。</li>
+    <li><b>保持同步</b>：在 iPhone 上更改面板或按钮，或套餐发生变化时，iPhone 会向手表发送新的列表。套餐不再涵盖的面板会从手表上消失。</li>
+    <li><b>独立工作</b>：列表保存在手表上。即使 iPhone 上的 App 未运行，或 iPhone 不在附近，手表 App 也能打开并显示列表；此时手表可以自行发送的按钮仍然有效。</li>
+    <li><b>语言</b>：手表以 iPhone 上 App 的语言（而不是手表的语言）显示其文字和面板的默认文字。</li>
+    <li><b>第一批按钮到达之前</b>：手表显示<span class="ui" data-ui="value">还没有按钮</span>，并说明在 iPhone 上的 LiveView Mix 中添加控制面板后，其按钮就会显示在这里。</li>
+  </ul>
+  <figure class="phone"><img src="/guide/img/watch-buttons.jpg" alt="显示“控制”列表的 Apple Watch：一个“Garden Lights”面板，其中“Lights on”在应答后标有绿色对勾，另有“Lights off”" decoding="async" width="416" height="496" data-src="/guide/img/watch-buttons.jpg" style="aspect-ratio: 416 / 496;" loading="lazy"><figcaption>Apple Watch 上的控制面板按钮</figcaption></figure>
+  <h4>按下后如何发送</h4>
+  <p>每个按钮在 iPhone 上的按钮编辑界面中都有自己的<span class="ui">发送方式</span>选项（参见<a class="xref" href="/zh-Hans/guide/webhook.html#webhook-button">“设置按钮”</a>）：</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>选项</th><th>按下时的处理</th></tr></thead>
+    <tbody>
+      <tr><td data-label="选项"><span class="ui">自动</span>（默认）</td><td data-label="按下时的处理">公网地址直接从手表发送。家庭网络地址（例如 <code>192.168.x.x</code> 或以 <code>.local</code> 结尾的名称）先交给能够访问它的 iPhone 发送。</td></tr>
+      <tr><td data-label="选项"><span class="ui">由手表直接发送</span></td><td data-label="按下时的处理">手表始终自己发送请求，使用其自身的 Wi-Fi 或蜂窝网络连接，或 iPhone 的连接。这是最快的方式，但手表可能无法访问家庭网络地址。</td></tr>
+      <tr><td data-label="选项"><span class="ui">通过 iPhone</span></td><td data-label="按下时的处理">适用于只能通过 iPhone 上的远程连接访问的服务器，尤其是其地址看起来像公网地址时：手表本身没有这类连接。只有在 iPhone 不在附近时，手表才自己发送请求。</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>通过 iPhone 发送时，手表先确认 iPhone 有应答，最多等待约 6 秒；为此 iPhone 上的 App 可能在后台启动。随后 iPhone 在确认套餐仍涵盖该面板之后，以与其墙相同的方式发送请求。</li>
+    <li>iPhone 未对该确认作出应答时，手表自己发送请求。iPhone 已接收请求但其应答丢失时，这次按下显示为失败，不会再次发送，因此开关绝不会被切换两次。</li>
+    <li>手表自己发送且失败的请求，不会再通过 iPhone 重试。手表发往家庭网络地址的请求，只有在手表连接同一 Wi-Fi 网络时才有效。</li>
+  </ul>
+  <h4>在手表上按下按钮</h4>
+  <p>前提条件：与 iPhone 配对的 Apple Watch 上已安装 Cam Hub，且墙上至少有一个带有效 URL 的控制面板。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>在 Apple Watch 上打开 Cam Hub。</p>
+      <p class="check"><b class="check-label">确认：</b>手表显示<span class="ui">控制</span>和按面板分组的按钮。</p>
+    </li>
+    <li class="step">
+      <p>点击一个按钮。</p>
+      <p class="check"><b class="check-label">确认：</b>未开启<span class="ui">执行前先确认</span>的按钮，其所在行的末尾立即显示转圈。已开启该项的按钮会询问<span class="ui">要执行这个动作吗？</span>下方是面板标题、一个文字为按钮标签的红色按钮和<span class="ui">取消</span>。</p>
+    </li>
+    <li class="step">
+      <p>出现询问时，点击红色按钮。要取消，点击<span class="ui">取消</span>。</p>
+      <p class="check"><b class="check-label">确认：</b>询问关闭，该行显示转圈。取消时，不发送任何内容。</p>
+    </li>
+    <li class="step">
+      <p>观察该行的末尾。</p>
+      <p class="check"><b class="check-label">确认：</b>绿色对勾表示端点成功应答；红色警告三角形表示请求未成功。手表同时会轻触手腕，约 2.5 秒后该行恢复正常。</p>
+    </li>
+  </ol>
+  <p>点击仍在发送中的按钮会被忽略，因此不耐烦的第二次点击不会把请求发送两次。与墙上一样，绿色对勾只表示接收端已应答，并不证明设备已动作。</p>
+
+  <h3 id="ha">使用 Home Assistant</h3>
+  <p>下面两种方式以 Home Assistant 为例。地址 <code>homeassistant.local</code>、标识符 <code>gate-open-7f3c9a21</code> 和实体名称 <code>cover.gate</code> 都是示例值，必须替换为实际的值。Home Assistant 一侧的行为由其自身的文档定义，不同版本之间可能变化。</p>
+  <p>前提条件：Home Assistant 运行在家庭网络中，且手机能够访问它的地址；LiveView Mix 墙的某个图块已选择<span class="ui">控制</span>（参见<a class="xref" href="/zh-Hans/guide/webhook.html#webhook-add">“把控制面板添加到墙上”</a>）。Home Assistant 默认使用 <code>http</code> 和端口 <code>8123</code>。App 中 URL 输入框的示例文字以 <code>https</code> 开头，必须改为与实际设置一致。</p>
+
+  <h4>方式一：Webhook 触发器（无需令牌）</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>在 Home Assistant 中创建一个新的自动化。</p>
+      <p class="check"><b class="check-label">确认：</b>屏幕显示自动化编辑器。</p>
+    </li>
+    <li class="step">
+      <p>选择 Webhook 作为触发器，并输入一个难以猜到的标识符，例如 <code>gate-open-7f3c9a21</code>。</p>
+      <p class="check"><b class="check-label">确认：</b>编辑器显示该标识符。标识符相当于密码：任何知道它和地址的人都可以启动该自动化。</p>
+    </li>
+    <li class="step">
+      <p>设置动作，例如打开大门的实体，并保存自动化。</p>
+      <p class="check"><b class="check-label">确认：</b>该自动化出现在 Home Assistant 的自动化列表中。</p>
+    </li>
+    <li class="step">
+      <p>在 Cam Hub 中，按<a class="xref" href="/zh-Hans/guide/webhook.html#webhook-button">“设置按钮”</a>的第 1 步，打开要使用的按钮的编辑界面。</p>
+      <p class="check"><b class="check-label">确认：</b>屏幕显示该按钮的编辑界面。</p>
+    </li>
+    <li class="step">
+      <p>把<span class="ui">方法</span>选为 <code>POST</code>，并在 URL 输入框中输入 <code>http://homeassistant.local:8123/api/webhook/gate-open-7f3c9a21</code>。标头和正文可以留空。</p>
+      <p class="check"><b class="check-label">确认：</b>输入框显示该 URL，返回后，按钮所在的行显示主机名 <code>homeassistant.local</code>。</p>
+    </li>
+    <li class="step">
+      <p>回到墙上并按下按钮。</p>
+      <p class="check"><b class="check-label">确认：</b>图标先显示转圈，然后是绿色对勾。</p>
+    </li>
+    <li class="step">
+      <p>在 Home Assistant 中打开该自动化的运行日志。</p>
+      <p class="check"><b class="check-label">确认：</b>日志显示由这次按下启动的运行。对于不存在的标识符，Home Assistant 也可能返回成功应答，因此应以运行日志为准，而不是绿色对勾。</p>
+    </li>
+  </ol>
+  <p>等效的请求如下：</p>
+  <pre><code>POST /api/webhook/gate-open-7f3c9a21 HTTP/1.1
+Host: homeassistant.local:8123</code></pre>
+  <p>该自动化也可以写成配置文件。以下示例仅供对照，其语法取决于 Home Assistant 的版本：</p>
+  <pre><code>triggers:
+  - trigger: webhook
+    webhook_id: gate-open-7f3c9a21
+    allowed_methods:
+      - POST
+    local_only: true
+actions:
+  - action: cover.open_cover
+    target:
+      entity_id: cover.gate</code></pre>
+  <p>Webhook 触发器默认只接受 <code>POST</code> 和 <code>PUT</code>，且默认只接受来自本地网络的请求。要从外部网络使用，需要另外采取措施，参见<a class="xref" href="/zh-Hans/guide/webhook.html#webhook-security">“安全说明”</a>。<span class="ui">发送方式</span>为<span class="ui">自动</span>或<span class="ui">通过 iPhone</span>时，在 Apple Watch 上按下的按钮会经由 iPhone 到达 <code>homeassistant.local</code> 这样的地址，参见<a class="xref" href="/zh-Hans/guide/webhook.html#webhook-watch">“Apple Watch 上的按钮”</a>。</p>
+
+  <h4>方式二：服务调用（需要令牌）</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>在 Home Assistant 的个人资料页面创建一个长期访问令牌，并立即复制。</p>
+      <p class="check"><b class="check-label">确认：</b>屏幕显示令牌。令牌通常只在创建时完整显示一次。</p>
+    </li>
+    <li class="step">
+      <p>在 Cam Hub 中打开按钮的编辑界面，把<span class="ui">方法</span>选为 <code>POST</code>，并在 URL 输入框中输入 <code>http://homeassistant.local:8123/api/services/cover/open_cover</code>。</p>
+      <p class="check"><b class="check-label">确认：</b>输入框显示该 URL。</p>
+    </li>
+    <li class="step">
+      <p>点击<span class="ui">添加标头</span>。</p>
+      <p class="check"><b class="check-label">确认：</b><span class="ui">标头</span>部分新增一行，带有<span class="ui">名称</span>和<span class="ui">值</span>两个输入框。</p>
+    </li>
+    <li class="step">
+      <p>在<span class="ui">名称</span>输入框中输入 <code>Authorization</code>，在<span class="ui">值</span>输入框中输入 <code>Bearer</code>、一个空格和复制的令牌。</p>
+      <p class="check"><b class="check-label">确认：</b>两个输入框都显示所输入的文字。标头的值以明文显示。</p>
+    </li>
+    <li class="step">
+      <p>在<span class="ui">正文</span>部分，确认内容类型为 <code>application/json</code>，并在文本框中输入 <code>{"entity_id":"cover.gate"}</code>。</p>
+      <p class="check"><b class="check-label">确认：</b>文本框显示该内容。</p>
+    </li>
+    <li class="step">
+      <p>回到墙上并按下按钮。</p>
+      <p class="check"><b class="check-label">确认：</b>图标先显示转圈，然后是绿色对勾。Home Assistant 的日志显示服务已被调用。</p>
+    </li>
+  </ol>
+  <p>等效的请求如下：</p>
+  <pre><code>POST /api/services/cover/open_cover HTTP/1.1
+Host: homeassistant.local:8123
+Authorization: Bearer &lt;long-lived access token&gt;
+Content-Type: application/json
+
+{"entity_id":"cover.gate"}</code></pre>
+  <div class="callout tip">
+    <strong class="t">优先使用 Webhook 触发器</strong>
+    <p>Webhook 标识符泄露时，影响仅限于它所属的那一个自动化。长期访问令牌则可以操作整个 Home Assistant。方式一能完成的任何操作，都应使用方式一。</p>
+  </div>
+
+  <h3 id="webhook-security">安全说明</h3>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>主题</th><th>说明与建议</th></tr></thead>
+    <tbody>
+      <tr><td data-label="主题">HTTP 与 HTTPS</td><td data-label="说明与建议">使用 <code>http://</code> 发送的请求没有加密。同一网络路径上的任何人都可以读取 URL、标头中的令牌和正文。仅在受信任的家庭网络内、且 Webhook 不携带敏感数据时使用 HTTP。只要请求携带令牌或离开家庭网络，就使用 <code>https://</code>。</td></tr>
+      <tr><td data-label="主题">HTTPS 证书</td><td data-label="说明与建议">Cam Hub 没有信任自签名证书的选项。使用自签名证书的 <code>https://</code> 地址会失败，按钮显示橙色三角形。在本地网络内，可以改用 <code>http://</code>，或在接收端安装手机信任的证书。</td></tr>
+      <tr><td data-label="主题">令牌和标识符的保存</td><td data-label="说明与建议">标头的值在编辑界面中以明文显示，并以明文保存在本设备的 App 设置中。</td></tr>
+      <tr><td data-label="主题">Apple Watch</td><td data-label="说明与建议">到达手表的按钮带有完整的请求，包括 URL、标头和正文。它们会被复制到配对的 Apple Watch 并保存在那里，因此标头中的令牌也会保存在手表上。</td></tr>
+      <tr><td data-label="主题">备份与共享代码</td><td data-label="说明与建议">面板的设置会进入每一份 iCloud 备份，以及每一个开启<span class="ui">包含 App 设置</span>导出的共享代码。请像对待密码一样对待这样的代码，并用 PIN 或密码锁定，参见<a class="xref" href="/zh-Hans/guide/share.html#share-lock">“锁定代码”</a>。令牌一旦暴露，请在接收端吊销它并创建新的令牌。</td></tr>
+      <tr><td data-label="主题">外部网络</td><td data-label="说明与建议">不建议把 Home Assistant 的端口 <code>8123</code> 直接开放到互联网。不在家时如何访问它（例如使用 Home Assistant 官方的远程访问方式）由您自行决定，并请把 URL 改为相应的地址。</td></tr>
+      <tr><td data-label="主题">实体动作</td><td data-label="说明与建议">对开门、解锁和鸣响警报的按钮，请开启<span class="ui">执行前先确认</span>。Cam Hub 对面板按钮没有其他锁定措施；任何能操作已解锁设备或手表的人都可以按下它们。</td></tr>
+      <tr><td data-label="主题">名称解析</td><td data-label="说明与建议">以 <code>.local</code> 结尾的名称在某些网络上可能无法解析。连接失败时，改为输入接收端的固定 IP 地址。</td></tr>
+    </tbody>
+  </table></div>
+</section><nav class="guide-pager" aria-label="目录"><a class="guide-prev" rel="prev" href="/zh-Hans/guide/lvm.html"><span class="pager-dir">上一章</span><span class="pager-title">8. LiveView Mix</span></a><a class="guide-next" rel="next" href="/zh-Hans/guide/share.html"><span class="pager-dir">下一章</span><span class="pager-title">10. 共享与备份</span></a></nav></article>
+    </div>
+    <button class="guide-top" id="guide-top" type="button" aria-label="回到顶部"></button>
+  </main>
+  <footer class="footer"><span data-i18n="footer">Copyright<wbr data-phrase-break=""> <wbr data-phrase-break="">©<wbr data-phrase-break=""> <wbr data-phrase-break="">2026<wbr data-phrase-break=""> <wbr data-phrase-break="">ALMX<wbr data-phrase-break="">.<wbr data-phrase-break=""> <wbr data-phrase-break="">All<wbr data-phrase-break=""> <wbr data-phrase-break="">rights<wbr data-phrase-break=""> <wbr data-phrase-break="">reserved<wbr data-phrase-break="">.</span><nav><a href="/zh-Hans/guide.html" data-i18n="navGuide">操作<wbr data-phrase-break="">手册</a><a href="/zh-Hans/devices.html" data-i18n="navDevices">机<wbr data-phrase-break="">型<wbr data-phrase-break="">差异</a><a href="/zh-Hans/privacy.html" data-i18n="navPrivacy">隐私<wbr data-phrase-break="">政策</a><a href="/zh-Hans/terms.html" data-i18n="navTerms">使用<wbr data-phrase-break="">条款</a><a class="store-link" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeCTA">在<wbr data-phrase-break=""> <wbr data-phrase-break="">App<wbr data-phrase-break=""> <wbr data-phrase-break="">Store<wbr data-phrase-break=""> <wbr data-phrase-break="">下载</a></nav><nav class="language-links" id="language-links" aria-label="语言" data-i18n-aria="languageLabel"><a href="/guide/webhook.html" hreflang="en" lang="en" data-language-link="en">English</a><a href="/zh-Hant/guide/webhook.html" hreflang="zh-Hant" lang="zh-Hant" data-language-link="zh-Hant">繁體中文</a><a href="/zh-Hans/guide/webhook.html" hreflang="zh-Hans" lang="zh-Hans" data-language-link="zh-Hans" aria-current="true">简体中文</a><a href="/ja/guide/webhook.html" hreflang="ja" lang="ja" data-language-link="ja">日本語</a><a href="/ko/guide/webhook.html" hreflang="ko" lang="ko" data-language-link="ko">한국어</a><a href="/de/guide/webhook.html" hreflang="de" lang="de" data-language-link="de">Deutsch</a><a href="/es/guide/webhook.html" hreflang="es" lang="es" data-language-link="es">Español</a><a href="/es-MX/guide/webhook.html" hreflang="es-MX" lang="es-MX" data-language-link="es-MX">Español (México)</a><a href="/fr/guide/webhook.html" hreflang="fr" lang="fr" data-language-link="fr">Français</a><a href="/sl/guide/webhook.html" hreflang="sl" lang="sl" data-language-link="sl">Slovenščina</a><a href="/ar/guide/webhook.html" hreflang="ar" lang="ar" data-language-link="ar">العربية</a></nav></footer>
+  <script src="/additional-locales.js?v=20261103-sl"></script>
+  <script src="/site.js?v=20261112-1"></script>
+
+
+</body></html>

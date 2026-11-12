@@ -750,6 +750,11 @@ html:lang(ko) .devices-table { word-break: keep-all; }
 }
 .footer nav { display: flex; flex-wrap: wrap; gap: 10px 20px; }   /* wraps on a phone since the footer gained the device-differences link */
 .footer a { color: #aebbd8; }
+/* 2026-11-12: the page in every language (site.js renderLanguageLinks) - plain links a search engine can follow, on a
+   full-width row of their own under the copyright line and the footer links. */
+.footer { flex-wrap: wrap; }
+.footer .language-links { flex-basis: 100%; gap: 6px 16px; font-size: 12px; }
+.footer .language-links a[aria-current] { color: inherit; font-weight: 600; text-decoration: none; }
 
 :focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
 

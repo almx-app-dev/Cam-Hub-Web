@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en" dir="ltr"><head>
+  <meta charset="utf-8"><script>(function () {
+  var codes = ["zh-Hant", "zh-Hans", "ja", "ko", "de", "es", "es-MX", "fr", "sl", "ar"];
+
+  function pickLanguage(preferences) {
+    var direct = { en: "en", ar: "ar", de: "de", es: "es", fr: "fr", ja: "ja", ko: "ko", sl: "sl" };
+    for (var i = 0; i < preferences.length; i += 1) {
+      var tag = String(preferences[i] || "").replace(/_/g, "-");
+      if (/^es-mx(?:-|$)/i.test(tag)) return "es-MX";
+      var base = tag.split("-")[0].toLowerCase();
+      if (direct[base]) return direct[base];
+      if (base !== "zh") continue;
+      try {
+        var locale = new Intl.Locale(tag).maximize();
+        return locale.script === "Hant" || ["TW", "HK", "MO"].indexOf(locale.region) >= 0 ? "zh-Hant" : "zh-Hans";
+      } catch (error) {
+        return /(?:^|-)Hant(?:-|$)|(?:^|-)(?:TW|HK|MO)(?:-|$)/i.test(tag) ? "zh-Hant" : "zh-Hans";
+      }
+    }
+    return "en";
+  }
+  window.__camHubEarlyPick = pickLanguage;
+
+  try {
+    if (window.__camHubPrerender || /[?&](?:lang|chapter)=/i.test(location.search)) return;
+    if (document.referrer && new URL(document.referrer).origin === location.origin) return;
+    var chosen = null;
+    try {
+      if (localStorage.getItem("camHubSiteLanguageManual") === "1") chosen = localStorage.getItem("camHubSiteLanguage");
+    } catch (error) {
+      chosen = null;
+    }
+    var target = chosen === "en" || codes.indexOf(chosen) >= 0 ? chosen
+      : pickLanguage(navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"]);
+    if (codes.indexOf(target) < 0) return;
+    var path = location.pathname === "/index.html" ? "/" : location.pathname;
+    location.replace("/" + target + path + location.search + location.hash);
+  } catch (error) {
+  }
+})();</script><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="apple-itunes-app" content="app-id=6792057195"><meta name="color-scheme" content="dark light">
+  <meta name="description" content="The Settings tab holds the plan, the default quality and picture settings, the choices for LiveView Mix and its pages and for the start of the app, the backup…">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="Cam Hub"><meta property="og:image" content="https://cam-hub.almx.cc/assets/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+  <title>Settings — Cam Hub Manual</title><link rel="icon" href="/assets/icon-48.png" sizes="48x48"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/icon-180.png"><link rel="stylesheet" href="/styles.css?v=20261112-1"><link rel="stylesheet" href="/guide.css?v=20261030-1">
+<meta property="og:description" content="The Settings tab holds the plan, the default quality and picture settings, the choices for LiveView Mix and its pages and for the start of the app, the backup…"><link rel="canonical" href="https://cam-hub.almx.cc/guide/settings.html"><link rel="alternate" hreflang="x-default" href="https://cam-hub.almx.cc/guide/settings.html"><link rel="alternate" hreflang="en" href="https://cam-hub.almx.cc/guide/settings.html"><link rel="alternate" hreflang="zh-Hant" href="https://cam-hub.almx.cc/zh-Hant/guide/settings.html"><link rel="alternate" hreflang="zh-Hans" href="https://cam-hub.almx.cc/zh-Hans/guide/settings.html"><link rel="alternate" hreflang="ja" href="https://cam-hub.almx.cc/ja/guide/settings.html"><link rel="alternate" hreflang="ko" href="https://cam-hub.almx.cc/ko/guide/settings.html"><link rel="alternate" hreflang="de" href="https://cam-hub.almx.cc/de/guide/settings.html"><link rel="alternate" hreflang="es" href="https://cam-hub.almx.cc/es/guide/settings.html"><link rel="alternate" hreflang="es-MX" href="https://cam-hub.almx.cc/es-MX/guide/settings.html"><link rel="alternate" hreflang="fr" href="https://cam-hub.almx.cc/fr/guide/settings.html"><link rel="alternate" hreflang="sl" href="https://cam-hub.almx.cc/sl/guide/settings.html"><link rel="alternate" hreflang="ar" href="https://cam-hub.almx.cc/ar/guide/settings.html"><meta property="og:url" content="https://cam-hub.almx.cc/guide/settings.html"><meta property="og:title" content="Settings — Cam Hub Manual"></head>
+<body data-page="guide">
+  <header class="topbar" aria-label="Site header">
+    <a class="brand" href="/"><img src="/assets/icon-96.png" alt="" width="42" height="42"><span><strong>Cam&nbsp;Hub</strong><small data-i18n="topline">Operation manual</small></span></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-controls" data-i18n-aria="menuLabel" aria-label="Open menu"><span></span><span></span><span></span><span class="sr-only" data-i18n="menuLabel">Open menu</span></button>
+    <div class="topbar-controls" id="site-controls"><nav class="navlinks" aria-label="Primary"><a href="/" data-nav="home" data-i18n="navHome">Home</a><a href="/product.html" data-nav="product" data-i18n="navProduct">Product</a><a href="/guide.html" data-nav="guide" data-i18n="navGuide" aria-current="page">Manual</a><a href="/support.html" data-nav="support" data-i18n="navSupport">Support</a><a href="/privacy.html" data-nav="privacy" data-i18n="navPrivacy">Privacy</a><a href="/terms.html" data-nav="terms" data-i18n="navTerms">Terms</a></nav><div class="pickers"><label><span class="sr-only" data-i18n="themeLabel">Appearance</span><select id="themeSelect" aria-label="Theme"><option value="auto" data-i18n="themeAuto" selected="">Auto</option><option value="light" data-i18n="themeLight">Light</option><option value="dark" data-i18n="themeDark">Dark</option></select></label><label><span class="sr-only" data-i18n="languageLabel">Language</span><select id="languageSelect" aria-label="Language"><option value="en" selected="">English</option><option value="zh-Hant">繁體中文</option><option value="zh-Hans">简体中文</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="de">Deutsch</option><option value="es">Español</option><option value="es-MX">Español (México)</option><option value="fr">Français</option><option value="sl">Slovenščina</option><option value="ar">العربية</option></select></label></div><a class="store-pill" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeShort">Get the app</a></div>
+  </header>
+  <main class="inner-page guide" style="--g-topbar: 76px; --g-offset: 88px;">
+    <section class="page-hero"><div class="eyebrow" data-i18n="eyebrow">OPERATION MANUAL</div><h1 data-i18n="title">Settings</h1><p class="summary" data-i18n="summary">Step-by-step instructions for adding devices, live view and recording playback, LiveView Mix walls, sharing, and backup.</p></section>
+    <p class="guide-notice" id="guide-notice" role="status" hidden=""></p>
+    <div id="guide-sentinel" aria-hidden="true"></div>
+    <div class="guide-layout has-toc" id="guide-layout" lang="en" dir="ltr">
+      <aside class="guide-side" id="guide-side">
+        <button class="guide-toc-toggle" id="guide-toc-toggle" type="button" aria-expanded="false" aria-controls="guide-toc" lang="en" dir="ltr"><span class="guide-toc-label" data-i18n="tocLabel">Contents</span><span class="guide-toc-current" id="guide-toc-current">13. Settings</span></button>
+        <nav class="guide-toc" id="guide-toc" aria-label="Contents"><ol><li><a href="/guide.html"><span class="toc-num">1</span><span>Quick start</span></a><ol><li><a href="/guide.html#start-prepare"><span>Before you begin</span></a></li><li><a href="/guide.html#start-path"><span>Shortest path to a live picture</span></a></li><li><a href="/guide.html#start-demo"><span>Trying the app without a device</span></a></li></ol></li><li><a href="/guide/tour.html"><span class="toc-num">2</span><span>The tabs and basic behaviour</span></a><ol><li><a href="/guide/tour.html#tour-tabs"><span>The tabs at a glance</span></a></li><li><a href="/guide/tour.html#tour-launch"><span>What opens when the app starts</span></a></li><li><a href="/guide/tour.html#tour-look"><span>Appearance and language</span></a></li><li><a href="/guide/tour.html#tour-rotate"><span>Turning the device</span></a></li><li><a href="/guide/tour.html#tour-duo"><span>iPhone Duo</span></a></li><li><a href="/guide/tour.html#tour-awake"><span>Screen, background and notifications</span></a></li></ol></li><li><a href="/guide/add.html"><span class="toc-num">3</span><span>Adding a device</span></a><ol><li><a href="/guide/add.html#add-form"><span>The Add Device form</span></a></li><li><a href="/guide/add.html#add-auto"><span>Adding without choosing a brand</span></a></li><li><a href="/guide/add.html#add-methods"><span>Choosing the connection method</span></a></li><li><a href="/guide/add.html#add-https"><span>Adding a device over HTTPS</span></a></li><li><a href="/guide/add.html#add-streams"><span>Adding YouTube live streams and Twitch channels</span></a></li><li><a href="/guide/add.html#add-failed"><span>When adding fails: the checklist</span></a></li><li><a href="/guide/add.html#add-report"><span>Device report (experimental)</span></a></li><li><a href="/guide/add.html#add-scan"><span>Finding devices with the network scan</span></a></li></ol></li><li><a href="/guide/devices.html"><span class="toc-num">4</span><span>The Devices tab and channels</span></a><ol><li><a href="/guide/devices.html#devices-list"><span>The device list</span></a></li><li><a href="/guide/devices.html#devices-page"><span>The device page</span></a></li><li><a href="/guide/devices.html#devices-credentials"><span>Changing the user name and password of a device</span></a></li><li><a href="/guide/devices.html#devices-password-missing"><span>A device without a saved password</span></a></li><li><a href="/guide/devices.html#devices-https"><span>HTTPS for a saved device</span></a></li><li><a href="/guide/devices.html#devices-health"><span>Disk Health</span></a></li><li><a href="/guide/devices.html#devices-streams"><span>YouTube and Twitch streams</span></a></li><li><a href="/guide/devices.html#devices-states"><span>What a thumbnail shows</span></a></li><li><a href="/guide/devices.html#devices-menu"><span>Channel options (long press)</span></a></li><li><a href="/guide/devices.html#devices-plan"><span>Plan limits and enabling channels</span></a></li><li><a href="/guide/devices.html#devices-choose"><span>Choosing which cameras show</span></a></li><li><a href="/guide/devices.html#devices-fullwall"><span>The full-screen wall of a device</span></a></li><li><a href="/guide/devices.html#devices-quality"><span>SD and HD on device screens</span></a></li></ol></li><li><a href="/guide/live.html"><span class="toc-num">5</span><span>The Live tab and the Full Screen Wall</span></a><ol><li><a href="/guide/live.html#live-tab"><span>The Live tab</span></a></li><li><a href="/guide/live.html#live-quality"><span>SD and HD on a wall</span></a></li><li><a href="/guide/live.html#live-wall"><span>The Full Screen Wall</span></a></li><li><a href="/guide/live.html#live-hide"><span>Hiding cameras without signal</span></a></li></ol></li><li><a href="/guide/single.html"><span class="toc-num">6</span><span>Single-camera view</span></a><ol><li><a href="/guide/single.html#single-open"><span>Opening the view</span></a></li><li><a href="/guide/single.html#single-screen"><span>The parts of the screen</span></a></li><li><a href="/guide/single.html#single-zoom"><span>Zoom and pan</span></a></li><li><a href="/guide/single.html#single-controls"><span>Snapshot, sound and quality</span></a></li><li><a href="/guide/single.html#single-clip"><span>Recording a clip</span></a></li><li><a href="/guide/single.html#single-talk"><span>Two-way talk</span></a></li><li><a href="/guide/single.html#single-picture"><span>Black bars, rotation and landscape</span></a></li><li><a href="/guide/single.html#single-ptz"><span>PTZ control: moving the camera</span></a></li><li><a href="/guide/single.html#single-window"><span>A camera in a window of its own</span></a></li><li><a href="/guide/single.html#single-duo"><span>The view on a folded iPhone Duo</span></a></li><li><a href="/guide/single.html#single-streams"><span>YouTube and Twitch streams</span></a></li><li><a href="/guide/single.html#single-states"><span>Connection states and messages</span></a></li><li><a href="/guide/single.html#single-limits"><span>What is not available</span></a></li></ol></li><li><a href="/guide/playback.html"><span class="toc-num">7</span><span>Recording playback and speed</span></a><ol><li><a href="/guide/playback.html#playback-avail"><span>Where playback is available</span></a></li><li><a href="/guide/playback.html#playback-day"><span>Choosing a day</span></a></li><li><a href="/guide/playback.html#playback-calendar"><span>The recording calendar</span></a></li><li><a href="/guide/playback.html#playback-timeline"><span>Using the timeline</span></a></li><li><a href="/guide/playback.html#playback-list"><span>The list of recordings and the search for people</span></a></li><li><a href="/guide/playback.html#playback-playing"><span>While a recording plays</span></a></li><li><a href="/guide/playback.html#playback-speed"><span>Playback speed</span></a></li><li><a href="/guide/playback.html#playback-landscape"><span>Playback in landscape</span></a></li><li><a href="/guide/playback.html#playback-limits"><span>What is not available</span></a></li></ol></li><li><a href="/guide/lvm.html"><span class="toc-num">8</span><span>LiveView Mix</span></a><ol><li><a href="/guide/lvm.html#lvm-tab"><span>The LiveView Mix tab and its preview</span></a></li><li><a href="/guide/lvm.html#lvm-first"><span>Building a first wall of six cameras</span></a></li><li><a href="/guide/lvm.html#lvm-pick"><span>Choosing cameras and quality</span></a></li><li><a href="/guide/lvm.html#lvm-layout"><span>Adjusting the layout</span></a></li><li><a href="/guide/lvm.html#lvm-custom"><span>Drawing a custom layout</span></a></li><li><a href="/guide/lvm.html#lvm-special"><span>Special layouts: big and small tiles on one wall</span></a></li><li><a href="/guide/lvm.html#lvm-arrange"><span>Arranging the wall and its tiles</span></a></li><li><a href="/guide/lvm.html#lvm-move"><span>Moving a tile into an empty tile</span></a></li><li><a href="/guide/lvm.html#lvm-slots"><span>What a tile can show besides a camera</span></a></li><li><a href="/guide/lvm.html#lvm-watermark"><span>Watermark</span></a></li><li><a href="/guide/lvm.html#lvm-fit"><span>Black bars, edge-to-edge video and the angle of the device</span></a></li><li><a href="/guide/lvm.html#lvm-pages"><span>The portrait page</span></a></li><li><a href="/guide/lvm.html#lvm-canvases"><span>Two canvases on iPhone Duo</span></a></li><li><a href="/guide/lvm.html#lvm-wall"><span>The full-screen wall</span></a></li><li><a href="/guide/lvm.html#lvm-closeup"><span>Opening a single camera</span></a></li><li><a href="/guide/lvm.html#lvm-streams"><span>YouTube and Twitch streams on the wall</span></a></li><li><a href="/guide/lvm.html#lvm-states"><span>When a tile cannot show a camera</span></a></li><li><a href="/guide/lvm.html#lvm-limits"><span>How plan limits affect the wall</span></a></li><li><a href="/guide/lvm.html#lvm-settings"><span>LiveView Mix in Settings</span></a></li><li><a href="/guide/lvm.html#lvm-tv"><span>Differences on Apple TV</span></a></li></ol></li><li><a href="/guide/webhook.html"><span class="toc-num">9</span><span>Control panels and webhooks</span></a><ol><li><a href="/guide/webhook.html#webhook-what"><span>What a control panel does</span></a></li><li><a href="/guide/webhook.html#webhook-add"><span>Adding a control panel to the wall</span></a></li><li><a href="/guide/webhook.html#webhook-templates"><span>Templates</span></a></li><li><a href="/guide/webhook.html#webhook-fields"><span>The settings of a panel</span></a></li><li><a href="/guide/webhook.html#webhook-button"><span>Setting up a button</span></a></li><li><a href="/guide/webhook.html#webhook-use"><span>Pressing a button and reading the result</span></a></li><li><a href="/guide/webhook.html#webhook-wall"><span>How a panel looks on the wall</span></a></li><li><a href="/guide/webhook.html#webhook-watch"><span>Buttons on Apple Watch</span></a></li><li><a href="/guide/webhook.html#ha"><span>Using Home Assistant</span></a></li><li><a href="/guide/webhook.html#webhook-security"><span>Security notes</span></a></li></ol></li><li><a href="/guide/share.html"><span class="toc-num">10</span><span>Sharing and backup</span></a><ol><li><a href="/guide/share.html#share-choose"><span>Comparing the two methods</span></a></li><li><a href="/guide/share.html#share-export"><span>Exporting cameras (creating a code)</span></a></li><li><a href="/guide/share.html#share-lock"><span>Locking a code</span></a></li><li><a href="/guide/share.html#share-import"><span>Importing cameras</span></a></li><li><a href="/guide/share.html#share-contents"><span>What backups and codes contain</span></a></li><li><a href="/guide/share.html#share-icloud"><span>Backing up to iCloud</span></a></li><li><a href="/guide/share.html#share-versions"><span>Several named backups: renaming and deleting</span></a></li><li><a href="/guide/share.html#share-restore"><span>Restoring from iCloud</span></a></li><li><a href="/guide/share.html#share-delete"><span>Deleting all iCloud backups</span></a></li><li><a href="/guide/share.html#share-newphone"><span>Moving devices and walls to a new phone</span></a></li><li><a href="/guide/share.html#share-appletv"><span>Bringing the setup to Apple TV</span></a></li></ol></li><li><a href="/guide/plans.html"><span class="toc-num">11</span><span>Plans and limits</span></a><ol><li><a href="/guide/plans.html#plans-tiers"><span>The allowance of each plan</span></a></li><li><a href="/guide/plans.html#plans-stack"><span>How the two groups of plans combine</span></a></li><li><a href="/guide/plans.html#plans-count"><span>What uses allowance</span></a></li><li><a href="/guide/plans.html#plans-examples"><span>Examples of combinations</span></a></li><li><a href="/guide/plans.html#plans-choose"><span>Choosing which cameras show</span></a></li><li><a href="/guide/plans.html#plans-subscribe"><span>Subscribing, restoring purchases and redeeming a code</span></a></li><li><a href="/guide/plans.html#plans-lapse"><span>When a plan ends or is reduced</span></a></li></ol></li><li><a href="/guide/tools.html"><span class="toc-num">12</span><span>The Tools tab</span></a><ol><li><a href="/guide/tools.html#tools-overview"><span>What the Tools tab contains</span></a></li><li><a href="/guide/tools.html#tools-speedometer"><span>Speedometer and compass</span></a></li></ol></li><li class="is-current"><a href="/guide/settings.html" class="is-active" aria-current="location"><span class="toc-num">13</span><span>Settings</span></a><ol><li><a href="/guide/settings.html#settings-overview"><span>The sections of the Settings tab</span></a></li><li><a href="/guide/settings.html#settings-subscription"><span>Subscription</span></a></li><li><a href="/guide/settings.html#settings-quality"><span>Default quality</span></a></li><li><a href="/guide/settings.html#settings-picture"><span>Picture: black bars and edge-to-edge</span></a></li><li><a href="/guide/settings.html#settings-hide"><span>Hide offline cameras</span></a></li><li><a href="/guide/settings.html#settings-lvm"><span>LiveView Mix, its pages and Open on launch</span></a></li><li><a href="/guide/settings.html#settings-backup"><span>Backup and sharing of cameras</span></a></li><li><a href="/guide/settings.html#settings-language"><span>Language</span></a></li><li><a href="/guide/settings.html#settings-reset"><span>Reset: defaults, delete all data, delete iCloud backup</span></a></li><li><a href="/guide/settings.html#settings-legal"><span>Terms of Use and Privacy Policy</span></a></li><li><a href="/guide/settings.html#settings-about"><span>About, the user manual, and what Settings does not contain</span></a></li></ol></li><li><a href="/guide/appletv.html"><span class="toc-num">14</span><span>Apple TV</span></a><ol><li><a href="/guide/appletv.html#appletv-prepare"><span>Set up on an iPhone or iPad first</span></a></li><li><a href="/guide/appletv.html#appletv-bring"><span>Bringing the setup to the Apple TV</span></a></li><li><a href="/guide/appletv.html#appletv-differs"><span>What differs on the Apple TV</span></a></li></ol></li><li><a href="/guide/trouble.html"><span class="toc-num">15</span><span>Troubleshooting</span></a><ol><li><a href="/guide/trouble.html#trouble-start"><span>Where to start</span></a></li><li><a href="/guide/trouble.html#trouble-states"><span>What the empty screens say</span></a></li><li><a href="/guide/trouble.html#trouble-add"><span>A device is added, but it is not reachable</span></a></li><li><a href="/guide/trouble.html#trouble-live"><span>Live view</span></a></li><li><a href="/guide/trouble.html#trouble-playback"><span>Recording playback</span></a></li><li><a href="/guide/trouble.html#trouble-lvm"><span>LiveView Mix</span></a></li><li><a href="/guide/trouble.html#trouble-streams"><span>YouTube and Twitch</span></a></li><li><a href="/guide/trouble.html#trouble-panels"><span>Control panels and webhooks</span></a></li><li><a href="/guide/trouble.html#trouble-health"><span>Disk Health</span></a></li><li><a href="/guide/trouble.html#trouble-share"><span>Sharing, import and iCloud backup</span></a></li><li><a href="/guide/trouble.html#trouble-plans"><span>Plans and purchases</span></a></li><li><a href="/guide/trouble.html#trouble-errors"><span>Other error sentences</span></a></li><li><a href="/guide/trouble.html#trouble-permissions"><span>Permission requests and system dialogs</span></a></li><li><a href="/guide/trouble.html#trouble-contact"><span>Reaching the developer</span></a></li><li><a href="/guide/trouble.html#trouble-faq"><span>Questions and answers</span></a></li></ol></li><li><a href="/guide/brands.html"><span class="toc-num">16</span><span>Supported brands and connection methods</span></a><ol><li><a href="/guide/brands.html#brands-methods"><span>Connection methods</span></a></li><li><a href="/guide/brands.html#brands-matrix"><span>What works with which method</span></a></li><li><a href="/guide/brands.html#brands-profiles"><span>The brands in the list</span></a></li><li><a href="/guide/brands.html#brands-requirements"><span>Requirements and limits</span></a></li><li><a href="/guide/brands.html#brands-recorders"><span>Cameras and recorders</span></a></li><li><a href="/guide/brands.html#brands-prepare"><span>What to prepare on the device</span></a></li><li><a href="/guide/brands.html#brands-activate"><span>Activating a new device</span></a></li><li><a href="/guide/brands.html#brands-compat"><span>The compatibility reference in the app</span></a></li></ol></li><li><a href="/guide/about.html" class="no-num"><span>About this manual</span></a><ol><li><a href="/guide/about.html#about-scope"><span>Scope</span></a></li><li><a href="/guide/about.html#about-conventions"><span>Conventions</span></a></li><li><a href="/guide/about.html#about-help"><span>Where to get help</span></a></li></ol></li></ol></nav>
+      </aside>
+      <article class="guide-article" id="guide-content"><section class="chapter" id="settings">
+  <h2><span class="num">13</span>Settings</h2>
+  <p class="lead">The Settings tab holds the plan, the default quality and picture settings, the choices for LiveView Mix and its pages and for the start of the app, the backup and sharing of cameras, the language, the reset actions, the legal pages, the version and the link to this manual. This chapter lists every row in screen order with its effect and its default, and points to the chapter that explains it in depth.</p>
+
+  <h3 id="settings-overview">The sections of the Settings tab</h3>
+  <p>Path: <span class="ui">Settings</span> tab at the bottom of the screen. The tab is a single list that scrolls. The sections follow each other in the order of the table.</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Section</th><th>Rows</th><th>Default</th><th>Details</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Section"><span class="ui">Subscription</span></td><td data-label="Rows"><span class="ui">Plans</span>, <span class="ui">Manage Subscription</span>, <span class="ui">Restore Purchases</span>, <span class="ui">Redeem Code</span>, <span class="ui ui-long">Choose which cameras to show</span></td><td data-label="Default">The row <span class="ui">Plans</span> shows <span class="ui">Free</span> while no plan is held.</td><td data-label="Details"><a class="xref" href="/guide/settings.html#settings-subscription">“Subscription”</a></td></tr>
+      <tr><td data-label="Section"><span class="ui">Default quality</span></td><td data-label="Rows"><span class="ui">Single camera</span>, <span class="ui">Multiple cameras</span></td><td data-label="Default"><span class="ui" data-ui="value">HD</span> and <span class="ui" data-ui="value">SD</span></td><td data-label="Details"><a class="xref" href="/guide/settings.html#settings-quality">“Default quality”</a></td></tr>
+      <tr><td data-label="Section"><span class="ui">Picture</span></td><td data-label="Rows"><span class="ui">Black bars</span>, <span class="ui">Edge-to-edge video</span></td><td data-label="Default"><span class="ui">Default</span> and on</td><td data-label="Details"><a class="xref" href="/guide/settings.html#settings-picture">“Picture: black bars and edge-to-edge”</a></td></tr>
+      <tr><td data-label="Section">(no section title)</td><td data-label="Rows"><span class="ui">Hide offline cameras</span></td><td data-label="Default">Off</td><td data-label="Details"><a class="xref" href="/guide/settings.html#settings-hide">“Hide offline cameras”</a></td></tr>
+      <tr><td data-label="Section"><span class="ui">LiveView Mix</span></td><td data-label="Rows"><span class="ui">LiveView Mix</span> (or <span class="ui">Landscape page</span> or <span class="ui">Upper canvas</span>), <span class="ui">Lower canvas</span>, <span class="ui">Portrait page</span>, <span class="ui">Open on launch</span></td><td data-label="Default"><span class="ui">Not set up</span> and <span class="ui">Last viewed</span></td><td data-label="Details"><a class="xref" href="/guide/settings.html#settings-lvm">“LiveView Mix, its pages and Open on launch”</a></td></tr>
+      <tr><td data-label="Section">(no section title)</td><td data-label="Rows"><span class="ui">Portrait page</span> (switch)</td><td data-label="Default">Off</td><td data-label="Details"><a class="xref" href="/guide/settings.html#settings-lvm">“LiveView Mix, its pages and Open on launch”</a></td></tr>
+      <tr><td data-label="Section">(no section title; iPhone Duo only)</td><td data-label="Rows"><span class="ui">Two canvases</span></td><td data-label="Default">Off</td><td data-label="Details"><a class="xref" href="/guide/settings.html#settings-lvm">“LiveView Mix, its pages and Open on launch”</a></td></tr>
+      <tr><td data-label="Section"><span class="ui">Backup &amp; Restore</span></td><td data-label="Rows"><span class="ui">Back Up to iCloud</span>, <span class="ui">Restore from iCloud</span></td><td data-label="Default">No backup exists until one is made.</td><td data-label="Details"><a class="xref" href="/guide/settings.html#settings-backup">“Backup and sharing of cameras”</a></td></tr>
+      <tr><td data-label="Section"><span class="ui">Share Cameras</span></td><td data-label="Rows"><span class="ui">Export Cameras</span>, <span class="ui">Import Cameras</span></td><td data-label="Default">None.</td><td data-label="Details"><a class="xref" href="/guide/settings.html#settings-backup">“Backup and sharing of cameras”</a></td></tr>
+      <tr><td data-label="Section"><span class="ui" data-ui="value">Language</span></td><td data-label="Rows"><span class="ui" data-ui="value">Language</span></td><td data-label="Default"><span class="ui">Follow System</span></td><td data-label="Details"><a class="xref" href="/guide/settings.html#settings-language">“Language”</a></td></tr>
+      <tr><td data-label="Section"><span class="ui">Reset</span></td><td data-label="Rows"><span class="ui">Restore Default Settings</span>, <span class="ui">Delete All Data</span>, <span class="ui">Delete iCloud Backup</span></td><td data-label="Default">None.</td><td data-label="Details"><a class="xref" href="/guide/settings.html#settings-reset">“Reset: defaults, delete all data, delete iCloud backup”</a></td></tr>
+      <tr><td data-label="Section"><span class="ui">Legal</span></td><td data-label="Rows"><span class="ui">Terms of Use</span>, <span class="ui">Privacy Policy</span></td><td data-label="Default">None.</td><td data-label="Details"><a class="xref" href="/guide/settings.html#settings-legal">“Terms of Use and Privacy Policy”</a></td></tr>
+      <tr><td data-label="Section"><span class="ui">About</span></td><td data-label="Rows"><span class="ui">Version</span></td><td data-label="Default">None.</td><td data-label="Details"><a class="xref" href="/guide/settings.html#settings-about">“About, the user manual, and what Settings does not contain”</a></td></tr>
+      <tr><td data-label="Section">(no section title)</td><td data-label="Rows"><span class="ui">User Manual</span></td><td data-label="Default">None.</td><td data-label="Details"><a class="xref" href="/guide/settings.html#settings-about">“About, the user manual, and what Settings does not contain”</a></td></tr>
+    </tbody>
+  </table></div>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap the <span class="ui">Settings</span> tab at the bottom of the screen.</p>
+      <p class="check"><b class="check-label">Check:</b> The screen shows the settings, beginning with the section <span class="ui">Subscription</span>.</p>
+      <figure class="phone"><img src="/guide/img/settings-1.jpg" alt="The top of the settings page: the Subscription section with the rows Plans, Manage Subscription, Restore Purchases and Redeem Code, and the Default quality section with the SD and HD selectors" decoding="async" width="900" height="1947" data-src="/guide/img/settings-1.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>The top of the settings page</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Scroll down to the end of the list.</p>
+      <p class="check"><b class="check-label">Check:</b> The sections follow in the order of the table. The last sections are <span class="ui">Reset</span>, <span class="ui">Legal</span> and <span class="ui">About</span>, followed by the row <span class="ui">User Manual</span>.</p>
+    </li>
+  </ol>
+  <p>A short text below most sections explains the section. Changes to switches and selectors apply at once; no row needs a confirmation, except the three reset actions. Apple TV has its own settings screen; see <a class="xref" href="/guide/appletv.html">Chapter 14, “Apple TV”</a>.</p>
+
+  <h3 id="settings-subscription">Subscription</h3>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Row</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Row"><span class="ui">Plans</span></td><td data-label="What it does">Opens the plans page over the settings. The grey line below the name shows the current plan, or <span class="ui">Free</span>. When a camera plan and an NVR plan are held, the two names are joined with a plus sign. As long as the names of the plans cannot be loaded, the line shows <span class="ui">Camera plan</span> or <span class="ui">NVR plan</span>.</td></tr>
+      <tr><td data-label="Row"><span class="ui">Manage Subscription</span></td><td data-label="What it does">Opens the system page for subscriptions. There a plan can be changed or canceled, and the renewal date is shown.</td></tr>
+      <tr><td data-label="Row"><span class="ui">Restore Purchases</span></td><td data-label="What it does">Synchronizes the purchases of the Apple Account with the app and shows the result.</td></tr>
+      <tr><td data-label="Row"><span class="ui">Redeem Code</span></td><td data-label="What it does">Opens the system screen for entering a code that grants a plan. When that screen cannot be opened, the alert <span class="ui ui-long">Couldn't open code redemption. Check your connection, or redeem the code in the App Store.</span> appears.</td></tr>
+      <tr><td data-label="Row"><span class="ui ui-long">Choose which cameras to show</span></td><td data-label="What it does">Opens the page of the same name, where each channel of each device is turned on or off. The row is offered unless both limits of the plan are unlimited; see <a class="xref" href="/guide/plans.html#plans-choose">“Choosing which cameras show”</a>.</td></tr>
+    </tbody>
+  </table></div>
+  <p>The plans, the subscription steps and the redemption of a code are described in <a class="xref" href="/guide/plans.html#plans-subscribe">“Subscribing, restoring purchases and redeeming a code”</a>. The steps below show the page and the restoring of purchases.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>In the section <span class="ui">Subscription</span>, tap <span class="ui">Plans</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The page <span class="ui">Plans</span> opens over the settings. It lists the camera plans and the NVR plans and marks the current plan.</p>
+      <figure class="phone"><img src="/guide/img/plans-screen.jpg" alt="The top of the Plans page: the Cam Hub logo, the heading Unlock every camera, a sentence about what the Free plan shows, five short lines about the plans and what they include, and the heading Camera plans · billed yearly at the bottom edge" decoding="async" width="900" height="1215" data-src="/guide/img/plans-screen.jpg" style="aspect-ratio: 900 / 1215;" loading="lazy"><figcaption>The top of the Plans page; the plan cards follow below</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Done</span> in the top-right corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The settings list is shown again.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Restore Purchases</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> After a moment, an alert states the result: <span class="ui">Purchases restored.</span>, <span class="ui">No purchases to restore.</span> or <span class="ui">Restore failed. Please try again.</span> When the system sign-in screen is canceled, no alert appears.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">OK</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The alert closes. When purchases were found, the allowance of the plan is updated.</p>
+    </li>
+  </ol>
+
+  <h3 id="settings-quality">Default quality</h3>
+  <p>The two rows set whether a picture starts as SD (lighter) or HD (sharper). The text below the section advises that viewing one camera can use more resources for a sharper picture, that the capacity of the device matters when many cameras are viewed at once, and that SD and HD look almost the same when each tile is small.</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Row</th><th>Used by</th><th>Default</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Row"><span class="ui">Single camera</span></td><td data-label="Used by">The single-camera view, see <a class="xref" href="/guide/single.html#single-controls">“Snapshot, sound and quality”</a>, and the close-up of a camera in a wall, see <a class="xref" href="/guide/devices.html#devices-fullwall">“The full-screen wall of a device”</a>.</td><td data-label="Default"><span class="ui" data-ui="value">HD</span></td></tr>
+      <tr><td data-label="Row"><span class="ui">Multiple cameras</span></td><td data-label="Used by">The Live tab and the Full Screen Wall, see <a class="xref" href="/guide/live.html#live-quality">“SD and HD on a wall”</a>, and the thumbnails of the device page, see <a class="xref" href="/guide/devices.html#devices-page">“The device page”</a>.</td><td data-label="Default"><span class="ui" data-ui="value">SD</span></td></tr>
+    </tbody>
+  </table></div>
+  <p>LiveView Mix walls are not affected: each camera slot has its own quality; see <a class="xref" href="/guide/lvm.html#lvm-pick">“Choosing cameras and quality”</a>. For all screens, see <a class="xref" href="/guide/devices.html#devices-quality">“SD and HD on device screens”</a>.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>In the <span class="ui">Settings</span> tab, find the section <span class="ui">Default quality</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> Two rows show a selector with <span class="ui" data-ui="value">SD</span> and <span class="ui" data-ui="value">HD</span>. Without a change, <span class="ui" data-ui="value">HD</span> is selected for <span class="ui">Single camera</span> and <span class="ui" data-ui="value">SD</span> for <span class="ui">Multiple cameras</span>.</p>
+      <figure class="phone"><img src="/guide/img/settings-default-quality.jpg" alt="The Settings tab scrolled to the Default quality section: Single camera with HD selected and Multiple cameras with SD selected, the explanation below them, then the Picture section with Black bars set to Default and Edge-to-edge video turned on, and the switch Hide offline cameras turned off" decoding="async" width="900" height="1956" data-src="/guide/img/settings-default-quality.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The Default quality section of the Settings tab</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>In the row <span class="ui">Multiple cameras</span>, tap <span class="ui" data-ui="value">HD</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> <span class="ui" data-ui="value">HD</span> is selected. The thumbnails of the device page change to HD at once. The Live tab changes to HD at once as well, unless the quality button of the Live tab has been used since the app started.</p>
+    </li>
+    <li class="step">
+      <p>To return, tap <span class="ui" data-ui="value">SD</span> in the same row.</p>
+      <p class="check"><b class="check-label">Check:</b> <span class="ui" data-ui="value">SD</span> is selected.</p>
+    </li>
+  </ol>
+  <p>The quality can still be switched while viewing; that change is not stored, as the text below the section states.</p>
+
+  <h3 id="settings-picture">Picture: black bars and edge-to-edge</h3>
+  <p>Both rows decide how much of the screen the picture uses: one inside its tile, the other against the edges of the device.</p>
+  <ul>
+    <li><b><span class="ui">Black bars</span></b> (default <span class="ui">Default</span>): the starting mode for the handling of black bars. <span class="ui">Default</span> shows the whole picture with black bars where the shapes differ, <span class="ui">Enlarge to fill</span> enlarges the picture in proportion and cuts off its edges, and <span class="ui">Stretch to fill</span> stretches the picture and can distort it; see <a class="xref" href="/guide/devices.html#devices-page">“The device page”</a>. The setting is the starting mode of the device page, the Full Screen Wall, the single-camera view and the Live tab. The device page and the Full Screen Wall read it each time they open, the single-camera view applies it at once, and the Live tab reads it when the app starts. The change of mode on a screen is not stored. LiveView Mix has its own setting for each wall; see <a class="xref" href="/guide/lvm.html#lvm-fit">“Black bars, edge-to-edge video and the angle of the device”</a>.</li>
+    <li><b><span class="ui">Edge-to-edge video</span></b> (default on): while the switch is on, full-screen video reaches into the area of the Dynamic Island and the rounded corners. While it is off, the picture stays clear of them, with black bars. The switch applies to the Full Screen Wall, to the full-screen wall of LiveView Mix and to the single-camera view held sideways; see <a class="xref" href="/guide/single.html#single-picture">“Black bars, rotation and landscape”</a>.</li>
+  </ul>
+  <ol class="steps">
+    <li class="step">
+      <p>In the section <span class="ui">Picture</span>, tap <span class="ui">Black bars</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> A menu lists <span class="ui">Default</span>, <span class="ui">Enlarge to fill</span> and <span class="ui">Stretch to fill</span>. The current choice is marked.</p>
+      <figure class="phone"><img src="/guide/img/settings-2.jpg" alt="The settings page: the rows Black bars and Edge-to-edge video with their explanation, the switch Hide offline cameras, and the LiveView Mix section below them" decoding="async" width="900" height="1947" data-src="/guide/img/settings-2.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>The rows of the Picture section</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Enlarge to fill</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The row shows <span class="ui">Enlarge to fill</span>. From now on, the screens named above start with this mode.</p>
+    </li>
+    <li class="step">
+      <p>Tap the switch of <span class="ui">Edge-to-edge video</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The switch is off. Full-screen video keeps clear of the Dynamic Island and the rounded corners. Tap the switch again to turn it on.</p>
+    </li>
+  </ol>
+
+  <h3 id="settings-hide">Hide offline cameras</h3>
+  <p>The row has no section title. While the switch is on, cameras without a signal do not appear on the Live tab and on the Full Screen Wall. The device page still lists them, grayed out. The switch is off by default; the effect, the cameras that are hidden and the way hidden cameras return are described in <a class="xref" href="/guide/live.html#live-hide">“Hiding cameras without signal”</a>.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap the switch of <span class="ui">Hide offline cameras</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The switch is on, and all cameras are checked again. Tap the switch again to turn it off.</p>
+    </li>
+  </ol>
+
+  <h3 id="settings-lvm">LiveView Mix, its pages and Open on launch</h3>
+  <p>The section <span class="ui">LiveView Mix</span> holds one row per LiveView Mix page in use and the choice <span class="ui">Open on launch</span>. Below it follow, each in a section of its own with an explanation, the switch <span class="ui">Portrait page</span> and, on an iPhone Duo only, the switch <span class="ui">Two canvases</span>. For the pages themselves, see <a class="xref" href="/guide/lvm.html#lvm-pages">“The portrait page”</a> and <a class="xref" href="/guide/lvm.html#lvm-canvases">“Two canvases on iPhone Duo”</a>.</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Row</th><th>What it does</th><th>Default</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Row"><span class="ui">LiveView Mix</span></td><td data-label="What it does">Opens one page that combines the choice of cameras, the layout, the watermark and the paging options of the wall. At the end of the row, the number of selected cameras is shown (for example <span class="ui" data-ui="value">6 cameras</span>). <span class="ui">Cancel</span> reverts all changes made on the page, and <span class="ui">Done</span> keeps them. While <span class="ui">Portrait page</span> is on, the row is called <span class="ui">Landscape page</span>; on an iPhone Duo with <span class="ui">Two canvases</span> on, it is called <span class="ui">Upper canvas</span>. See <a class="xref" href="/guide/lvm.html">Chapter 8, “LiveView Mix”</a>.</td><td data-label="Default"><span class="ui">Not set up</span></td></tr>
+      <tr><td data-label="Row"><span class="ui">Lower canvas</span></td><td data-label="What it does">Shown only on an iPhone Duo while <span class="ui">Two canvases</span> is on. Opens the same page for the lower canvas, with its own cameras, layout and control panels.</td><td data-label="Default"><span class="ui">Not set up</span></td></tr>
+      <tr><td data-label="Row"><span class="ui">Portrait page</span></td><td data-label="What it does">Shown only while the switch <span class="ui">Portrait page</span> is on. Opens the same page for the portrait page, with its own cameras, layout and control panels.</td><td data-label="Default"><span class="ui">Not set up</span></td></tr>
+      <tr><td data-label="Row"><span class="ui">Open on launch</span></td><td data-label="What it does">Selects what the app shows when it starts. <span class="ui">Last viewed</span> changes nothing, and the app opens on the LiveView Mix tab. <span class="ui">LiveView Mix</span> opens the LiveView Mix tab, and <span class="ui">LiveView Mix Full Screen</span> opens its full-screen wall straight away. The last two options appear only after LiveView Mix has been set up, or while the portrait page or the two canvases are on. Each device in the list opens the Live tab on that device. See <a class="xref" href="/guide/lvm.html#lvm-settings">“LiveView Mix in Settings”</a>.</td><td data-label="Default"><span class="ui">Last viewed</span></td></tr>
+      <tr><td data-label="Row"><span class="ui">Portrait page</span> (switch)</td><td data-label="What it does">Gives LiveView Mix a portrait layout of its own, with its own cameras and control panels, shown while the iPhone is held upright, or while the iPad or its window is upright. The portrait page can also be set up, and the switch turned on or off, in the LiveView Mix tab while choosing cameras or adjusting the layout. Its control panels count toward the plan while the switch is on; see <a class="xref" href="/guide/plans.html#plans-count">“What uses allowance”</a>.</td><td data-label="Default">Off</td></tr>
+      <tr><td data-label="Row"><span class="ui">Two canvases</span></td><td data-label="What it does">Shown only on iPhone Duo. While the phone is half-folded, LiveView Mix is cut at the hinge into an upper and a lower canvas, each with its own cameras, layout and control panels. Opened flat or closed, it shows one wall again. While half-folded, the two canvases are shown instead of the portrait page.</td><td data-label="Default">Off</td></tr>
+    </tbody>
+  </table></div>
+  <p>The text below the section reads <span class="ui">Watch cameras from different devices together on one wall.</span></p>
+  <ol class="steps">
+    <li class="step">
+      <p>In the section <span class="ui">LiveView Mix</span>, tap <span class="ui">Open on launch</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> A menu lists the options. The current choice is marked.</p>
+      <figure class="phone"><img src="/guide/img/lvm-open-on-launch.jpg" alt="The options of Open on launch: Last viewed, LiveView Mix, LiveView Mix Full Screen and the devices" decoding="async" width="900" height="1956" data-src="/guide/img/lvm-open-on-launch.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The options of Open on launch</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap the option that the app should show at its next start.</p>
+      <p class="check"><b class="check-label">Check:</b> The row shows the choice. The app applies it once, each time it is started.</p>
+    </li>
+    <li class="step">
+      <p>Below the section <span class="ui">LiveView Mix</span>, tap the switch of <span class="ui">Portrait page</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The switch is on. The section <span class="ui">LiveView Mix</span> now lists the rows <span class="ui">Landscape page</span> and <span class="ui">Portrait page</span>; the second shows <span class="ui">Not set up</span> until cameras or tiles are placed on it. Tap the switch again to turn the portrait page off; its content is kept.</p>
+      <figure class="phone"><img src="/guide/img/settings-lvm-pages.jpg" alt="The LiveView Mix section of the Settings tab with Landscape page, Portrait page (Not set up) and Open on launch, and the Portrait page switch turned on with its explanation" decoding="async" width="900" height="1947" data-src="/guide/img/settings-lvm-pages.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>The LiveView Mix section with the portrait page switched on</figcaption></figure>
+    </li>
+  </ol>
+
+  <h3 id="settings-backup">Backup and sharing of cameras</h3>
+  <p>Two sections move devices to another iPhone, iPad or Apple TV. A backup in iCloud serves the same Apple Account. A code serves any other device, with no iCloud, and can be given to another person.</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Row</th><th>What it does</th><th>Details</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Row"><span class="ui">Back Up to iCloud</span></td><td data-label="What it does">Opens <span class="ui">iCloud Backup</span>. A backup of the devices, their passwords and the app settings is stored in encrypted form in the private iCloud. Each backup to <span class="ui">My Backup</span> is kept as a separate backup and can be given a name; the <span class="ui">Apple TV</span> destination keeps one copy. A backup is made only when <span class="ui">Back Up Now</span> is tapped; nothing is backed up automatically.</td><td data-label="Details"><a class="xref" href="/guide/share.html#share-icloud">“Backing up to iCloud”</a>, <a class="xref" href="/guide/share.html#share-versions">“Several named backups: renaming and deleting”</a></td></tr>
+      <tr><td data-label="Row"><span class="ui">Restore from iCloud</span></td><td data-label="What it does">Opens <span class="ui">Restore from iCloud</span>, where the backup to restore is chosen. The devices of the backup are added to this device or updated, and the app settings of the backup are applied.</td><td data-label="Details"><a class="xref" href="/guide/share.html#share-restore">“Restoring from iCloud”</a></td></tr>
+      <tr><td data-label="Row"><span class="ui">Export Cameras</span></td><td data-label="What it does">Opens <span class="ui">Export Cameras</span>, which produces an encrypted code with the selected devices. The row is unavailable while no device exists.</td><td data-label="Details"><a class="xref" href="/guide/share.html#share-export">“Exporting cameras (creating a code)”</a></td></tr>
+      <tr><td data-label="Row"><span class="ui">Import Cameras</span></td><td data-label="What it does">Opens <span class="ui">Import Cameras</span>, where a code is pasted to add its cameras.</td><td data-label="Details"><a class="xref" href="/guide/share.html#share-import">“Importing cameras”</a></td></tr>
+    </tbody>
+  </table></div>
+  <p>The text below the sections reads <span class="ui">Save your cameras and credentials, encrypted, to your private iCloud, then restore them on another iPhone, iPad, or Apple TV signed in to the same Apple Account.</span> and <span class="ui">Move your cameras to another iPhone, iPad, or someone else's Cam Hub as one encrypted code — no iCloud needed.</span> The two ways are compared in <a class="xref" href="/guide/share.html#share-choose">“Comparing the two methods”</a>.</p>
+
+  <h3 id="settings-language">Language</h3>
+  <p>The section title and the row are always written in English, whatever language is selected, so that the row can still be found after switching to a language that is not readable. The default is <span class="ui">Follow System</span>, which uses the language setting of the iPhone or iPad.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap the row <span class="ui" data-ui="value">Language</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> A menu lists <span class="ui">Follow System</span> and the languages <span class="ui" data-ui="value">English</span>, <span class="ui" data-ui="value">繁體中文</span>, <span class="ui" data-ui="value">简体中文</span>, <span class="ui" data-ui="value">日本語</span>, <span class="ui" data-ui="value">한국어</span>, <span class="ui" data-ui="value">العربية</span>, <span class="ui" data-ui="value">Deutsch</span>, <span class="ui" data-ui="value">Español</span>, <span class="ui" data-ui="value">Español (México)</span>, <span class="ui" data-ui="value">Français</span> and <span class="ui" data-ui="value">Slovenščina</span>. Each language is written in its own name.</p>
+      <figure class="phone"><img src="/guide/img/settings-language.jpg" alt="The Language menu of the Settings tab: Follow System with a check mark and the languages, each written in its own name, including Español (México)" decoding="async" width="900" height="1947" data-src="/guide/img/settings-language.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>The Language menu</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap the language.</p>
+      <p class="check"><b class="check-label">Check:</b> The whole app switches to the language at once. No restart is needed, and the screen stays on the Settings tab. For Arabic, the layout is mirrored from right to left; it returns to the usual direction when another language is selected.</p>
+    </li>
+  </ol>
+  <p>The voice of the speedometer follows the language of the app; see <a class="xref" href="/guide/tools.html#tools-speedometer">“Speedometer and compass”</a>.</p>
+
+  <h3 id="settings-reset">Reset: defaults, delete all data, delete iCloud backup</h3>
+  <p>The section <span class="ui">Reset</span> has three rows. Each one asks for a confirmation before it acts. The text below the section reads <span class="ui">Restore Default Settings keeps your devices. Delete All Data also removes every device and saved password from this iPhone or iPad — your iCloud backup and subscription are kept.</span></p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Row</th><th>Removes</th><th>Keeps</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Row"><span class="ui">Restore Default Settings</span></td><td data-label="Removes">The settings listed in the table below, including every LiveView Mix page.</td><td data-label="Keeps">Devices, channels with their enabled state and names, saved passwords and SNMP settings, iCloud backups, subscriptions.</td></tr>
+      <tr><td data-label="Row"><span class="ui">Delete All Data</span></td><td data-label="Removes">Every device with its channels, every saved password and SNMP setting, the downloaded recordings, the clips recorded in the single-camera view and the stored last pictures. Then everything that <span class="ui">Restore Default Settings</span> resets.</td><td data-label="Keeps">iCloud backups and subscriptions.</td></tr>
+      <tr><td data-label="Row"><span class="ui">Delete iCloud Backup</span></td><td data-label="Removes">Every backup in iCloud: all backups of <span class="ui">My Backup</span> and the separate copy for Apple TV. The row is unavailable while no backup exists.</td><td data-label="Keeps">Everything on this device.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout danger">
+    <strong class="t">Restore Default Settings also deletes every LiveView Mix page</strong>
+    <p>The confirmation dialog states that the LiveView Mix wall is cleared, with its layouts, control panels, webhook buttons and pictures. This applies to every page: the landscape page, the portrait page and the two canvases of iPhone Duo, each with its selected cameras, its slots with clocks, labels and pictures, its control panels and its watermark. The pages are not devices and are not kept. They can be brought back only from an iCloud backup made earlier, or from a code that was exported with <span class="ui">Include app settings</span>; see <a class="xref" href="/guide/share.html#share-contents">“What backups and codes contain”</a>. Make a backup before the action when the pages are still needed.</p>
+  </div>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Setting</th><th>After <span class="ui">Restore Default Settings</span></th></tr></thead>
+    <tbody>
+      <tr><td data-label="Setting"><span class="ui" data-ui="value">Language</span></td><td data-label="After Restore Default Settings"><span class="ui">Follow System</span></td></tr>
+      <tr><td data-label="Setting"><span class="ui">Single camera</span> and <span class="ui">Multiple cameras</span></td><td data-label="After Restore Default Settings"><span class="ui" data-ui="value">HD</span> and <span class="ui" data-ui="value">SD</span></td></tr>
+      <tr><td data-label="Setting"><span class="ui">Black bars</span></td><td data-label="After Restore Default Settings"><span class="ui">Default</span></td></tr>
+      <tr><td data-label="Setting"><span class="ui">Edge-to-edge video</span></td><td data-label="After Restore Default Settings">On</td></tr>
+      <tr><td data-label="Setting"><span class="ui">Hide offline cameras</span></td><td data-label="After Restore Default Settings">Off</td></tr>
+      <tr><td data-label="Setting">Sound on the speaker button of the single-camera view</td><td data-label="After Restore Default Settings">Off; see <a class="xref" href="/guide/single.html#single-controls">“Snapshot, sound and quality”</a></td></tr>
+      <tr><td data-label="Setting">The LiveView Mix wall (landscape page), including the choice <span class="ui ui-long">Keep cameras connected between pages</span></td><td data-label="After Restore Default Settings">Deleted; the row <span class="ui">LiveView Mix</span> shows <span class="ui">Not set up</span>. The choice is off.</td></tr>
+      <tr><td data-label="Setting"><span class="ui">Portrait page</span> and the portrait page</td><td data-label="After Restore Default Settings">Off; the portrait page is deleted.</td></tr>
+      <tr><td data-label="Setting"><span class="ui">Two canvases</span> and the lower canvas</td><td data-label="After Restore Default Settings">Off; the lower canvas is deleted.</td></tr>
+      <tr><td data-label="Setting">Arrangement of the preview on the LiveView Mix tab</td><td data-label="After Restore Default Settings"><span class="ui">Automatic</span></td></tr>
+      <tr><td data-label="Setting"><span class="ui">Open on launch</span></td><td data-label="After Restore Default Settings"><span class="ui">Last viewed</span></td></tr>
+      <tr><td data-label="Setting">Device of the Live tab and <span class="ui">Layout</span> of the Full Screen Wall</td><td data-label="After Restore Default Settings">The first device, and two tiles per row</td></tr>
+      <tr><td data-label="Setting">Stored range of the network scan</td><td data-label="After Restore Default Settings">Filled in again with the network of the device; see <a class="xref" href="/guide/tools.html#tools-overview">“What the Tools tab contains”</a></td></tr>
+    </tbody>
+  </table></div>
+  <p>The switch <span class="ui">Announce speed</span> of the speedometer is not changed by the action.</p>
+
+  <h4>Restoring the default settings</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>In the section <span class="ui">Reset</span>, tap <span class="ui">Restore Default Settings</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The dialog <span class="ui">Restore all settings to defaults?</span> appears, with the buttons <span class="ui">Restore Defaults</span> and <span class="ui">Cancel</span>. The text of the dialog states that every setting, including the language, returns to its default, that the LiveView Mix wall (layouts, control panels, webhook buttons and pictures) is cleared, and that the devices and the iCloud backup are kept.</p>
+      <figure class="phone"><img src="/guide/img/settings-restore-defaults.jpg" alt="The dialog Restore all settings to defaults? over the settings page, and the button Restore Defaults" decoding="async" width="900" height="1956" data-src="/guide/img/settings-restore-defaults.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The confirmation before the default settings are restored</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Restore Defaults</span>. Tap <span class="ui">Cancel</span> instead to keep everything as it is.</p>
+      <p class="check"><b class="check-label">Check:</b> The settings show their defaults, and the language follows the system. The row <span class="ui">LiveView Mix</span> shows <span class="ui">Not set up</span>, and the switch <span class="ui">Portrait page</span> is off. The devices are still listed in the Devices tab.</p>
+    </li>
+  </ol>
+
+  <h4>Deleting all data</h4>
+  <p>Use this action to empty the app, for example before the device is passed on. It cannot be undone. Without an iCloud backup or an export code, the passwords of the cameras cannot be recovered, because this action removes them from this device.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>In the section <span class="ui">Reset</span>, tap <span class="ui">Delete All Data</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The dialog <span class="ui">Delete all data?</span> appears, with the buttons <span class="ui">Delete Everything</span> and <span class="ui">Cancel</span>. Its text depends on the iCloud backup. With a backup, it reads <span class="ui">This removes every device, camera, and saved password from this app. Your iCloud backup and subscription are not affected.</span> Without a backup, it reads <span class="ui">There's no iCloud backup, so this can't be undone — camera passwords live only on this device and can't be recovered. Your subscription is not affected.</span></p>
+      <figure class="phone"><img src="/guide/img/settings-delete-all.jpg" alt="The dialog Delete all data? over the settings page, with the buttons Delete Everything and Cancel" decoding="async" width="900" height="1956" data-src="/guide/img/settings-delete-all.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The confirmation before all data is deleted</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Delete Everything</span>. Tap <span class="ui">Cancel</span> instead to keep the data.</p>
+      <p class="check"><b class="check-label">Check:</b> The Devices tab shows <span class="ui">No Devices</span>, and the settings show their defaults. An iCloud backup that exists can be restored as described in <a class="xref" href="/guide/share.html#share-restore">“Restoring from iCloud”</a>.</p>
+    </li>
+  </ol>
+
+  <h4>Deleting the iCloud backup</h4>
+  <p>On an iPhone or iPad the action removes every backup in iCloud: all backups of <span class="ui">My Backup</span> and the separate copy for Apple TV. A single backup is deleted from the backup list instead; see <a class="xref" href="/guide/share.html#share-versions">“Several named backups: renaming and deleting”</a>. The steps and the details are in <a class="xref" href="/guide/share.html#share-delete">“Deleting all iCloud backups”</a>.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>In the section <span class="ui">Reset</span>, tap <span class="ui">Delete iCloud Backup</span>. The row is unavailable while no backup exists.</p>
+      <p class="check"><b class="check-label">Check:</b> The dialog <span class="ui">Delete iCloud backup?</span> appears. It states that all encrypted backups, including the Apple TV copy, are removed from iCloud permanently, that other devices signed in with the same Apple Account lose them when they next sync, and that the devices and settings on this device are not affected.</p>
+      <figure class="phone"><img src="/guide/img/settings-delete-icloud.jpg" alt="The Delete iCloud backup? dialog in the variant for a device that is not signed in to iCloud: it states that only the local copy is cleared and that the cloud backup may remain until the sign-in, with the button Delete iCloud Backup" decoding="async" width="900" height="1956" data-src="/guide/img/settings-delete-icloud.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The deletion dialog on a device that is not signed in to iCloud</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Delete iCloud Backup</span> in the dialog.</p>
+      <p class="check"><b class="check-label">Check:</b> The dialog closes, and the row <span class="ui">Delete iCloud Backup</span> becomes unavailable.</p>
+    </li>
+  </ol>
+
+  <h3 id="settings-legal">Terms of Use and Privacy Policy</h3>
+  <p>The two rows in the section <span class="ui">Legal</span> open the pages of the website in the browser, outside the app. An internet connection is required. The pages are the same ones that are shown before a subscription is taken, and the same links are at the bottom of the plans page.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>In the section <span class="ui">Legal</span>, tap <span class="ui">Terms of Use</span> or <span class="ui">Privacy Policy</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The browser opens the page <code>https://cam-hub.almx.cc/terms.html</code> or <code>https://cam-hub.almx.cc/privacy.html</code>. Return to Cam Hub with the app switcher of the device.</p>
+      <figure class="phone"><img src="/guide/img/settings-legal-about.jpg" alt="The lower part of the settings page: the Legal section with the rows Terms of Use and Privacy Policy, and the About section with the row Version" decoding="async" width="900" height="1947" data-src="/guide/img/settings-legal-about.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>The sections Legal and About</figcaption></figure>
+    </li>
+  </ol>
+
+  <h3 id="settings-about">About, the user manual, and what Settings does not contain</h3>
+  <ol class="steps">
+    <li class="step">
+      <p>Scroll to the end of the <span class="ui">Settings</span> tab.</p>
+      <p class="check"><b class="check-label">Check:</b> The section <span class="ui">About</span> has one row, <span class="ui">Version</span>. It shows the version number of the installed app, followed by a second number in parentheses. The row is for information and opens nothing. Below it is the row <span class="ui">User Manual</span>, with the text <span class="ui">Step-by-step instructions for every feature, on the Cam Hub website.</span></p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">User Manual</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The browser opens this manual at <code>https://cam-hub.almx.cc/guide.html</code>. An internet connection is required. Return to Cam Hub with the app switcher of the device.</p>
+      <figure class="phone"><img src="/guide/img/settings-user-manual.jpg" alt="The end of the Settings tab: Legal with Terms of Use and Privacy Policy, About with Version, and the User Manual row with its explanation" decoding="async" width="900" height="1947" data-src="/guide/img/settings-user-manual.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>The User Manual row</figcaption></figure>
+    </li>
+  </ol>
+  <ul>
+    <li><b>Appearance</b>: the app always uses a dark appearance. There is no setting for it.</li>
+    <li><b>Sound</b>: sound is not switched in Settings but with the speaker button of the single-camera view; see <a class="xref" href="/guide/single.html#single-controls">“Snapshot, sound and quality”</a>.</li>
+    <li><b>Names of devices and channels</b>: they are changed on the device page, not in Settings; see <a class="xref" href="/guide/devices.html#devices-page">“The device page”</a>.</li>
+    <li><b>Disk Health and its SNMP settings</b>: they are on the page of the device, not in Settings; see <a class="xref" href="/guide/devices.html#devices-health">“Disk Health”</a>.</li>
+    <li><b>Temperature unit</b>: temperatures follow the unit of the region settings of the iPhone or iPad (<span class="path"><span class="ui" data-ui="system">Settings</span> › <span class="ui" data-ui="system">General</span> › <span class="ui" data-ui="system">Language &amp; Region</span></span>). Cam Hub has no setting of its own for it.</li>
+    <li><b>Notifications</b>: Cam Hub shows no notifications and has no setting for them.</li>
+  </ul>
+</section><nav class="guide-pager" aria-label="Contents"><a class="guide-prev" rel="prev" href="/guide/tools.html"><span class="pager-dir">Previous chapter</span><span class="pager-title">12. The Tools tab</span></a><a class="guide-next" rel="next" href="/guide/appletv.html"><span class="pager-dir">Next chapter</span><span class="pager-title">14. Apple TV</span></a></nav></article>
+    </div>
+    <button class="guide-top" id="guide-top" type="button" aria-label="Back to top"></button>
+  </main>
+  <footer class="footer"><span data-i18n="footer">Copyright © 2026 ALMX. All rights reserved.</span><nav><a href="/guide.html" data-i18n="navGuide">Manual</a><a href="/devices.html" data-i18n="navDevices">Device differences</a><a href="/privacy.html" data-i18n="navPrivacy">Privacy</a><a href="/terms.html" data-i18n="navTerms">Terms</a><a class="store-link" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeCTA">Download on the App Store</a></nav><nav class="language-links" id="language-links" aria-label="Language" data-i18n-aria="languageLabel"><a href="/guide/settings.html" hreflang="en" lang="en" data-language-link="en" aria-current="true">English</a><a href="/zh-Hant/guide/settings.html" hreflang="zh-Hant" lang="zh-Hant" data-language-link="zh-Hant">繁體中文</a><a href="/zh-Hans/guide/settings.html" hreflang="zh-Hans" lang="zh-Hans" data-language-link="zh-Hans">简体中文</a><a href="/ja/guide/settings.html" hreflang="ja" lang="ja" data-language-link="ja">日本語</a><a href="/ko/guide/settings.html" hreflang="ko" lang="ko" data-language-link="ko">한국어</a><a href="/de/guide/settings.html" hreflang="de" lang="de" data-language-link="de">Deutsch</a><a href="/es/guide/settings.html" hreflang="es" lang="es" data-language-link="es">Español</a><a href="/es-MX/guide/settings.html" hreflang="es-MX" lang="es-MX" data-language-link="es-MX">Español (México)</a><a href="/fr/guide/settings.html" hreflang="fr" lang="fr" data-language-link="fr">Français</a><a href="/sl/guide/settings.html" hreflang="sl" lang="sl" data-language-link="sl">Slovenščina</a><a href="/ar/guide/settings.html" hreflang="ar" lang="ar" data-language-link="ar">العربية</a></nav></footer>
+  <script src="/additional-locales.js?v=20261103-sl"></script>
+  <script src="/site.js?v=20261112-1"></script>
+
+
+</body></html>

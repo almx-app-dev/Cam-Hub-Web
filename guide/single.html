@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en" dir="ltr"><head>
+  <meta charset="utf-8"><script>(function () {
+  var codes = ["zh-Hant", "zh-Hans", "ja", "ko", "de", "es", "es-MX", "fr", "sl", "ar"];
+
+  function pickLanguage(preferences) {
+    var direct = { en: "en", ar: "ar", de: "de", es: "es", fr: "fr", ja: "ja", ko: "ko", sl: "sl" };
+    for (var i = 0; i < preferences.length; i += 1) {
+      var tag = String(preferences[i] || "").replace(/_/g, "-");
+      if (/^es-mx(?:-|$)/i.test(tag)) return "es-MX";
+      var base = tag.split("-")[0].toLowerCase();
+      if (direct[base]) return direct[base];
+      if (base !== "zh") continue;
+      try {
+        var locale = new Intl.Locale(tag).maximize();
+        return locale.script === "Hant" || ["TW", "HK", "MO"].indexOf(locale.region) >= 0 ? "zh-Hant" : "zh-Hans";
+      } catch (error) {
+        return /(?:^|-)Hant(?:-|$)|(?:^|-)(?:TW|HK|MO)(?:-|$)/i.test(tag) ? "zh-Hant" : "zh-Hans";
+      }
+    }
+    return "en";
+  }
+  window.__camHubEarlyPick = pickLanguage;
+
+  try {
+    if (window.__camHubPrerender || /[?&](?:lang|chapter)=/i.test(location.search)) return;
+    if (document.referrer && new URL(document.referrer).origin === location.origin) return;
+    var chosen = null;
+    try {
+      if (localStorage.getItem("camHubSiteLanguageManual") === "1") chosen = localStorage.getItem("camHubSiteLanguage");
+    } catch (error) {
+      chosen = null;
+    }
+    var target = chosen === "en" || codes.indexOf(chosen) >= 0 ? chosen
+      : pickLanguage(navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"]);
+    if (codes.indexOf(target) < 0) return;
+    var path = location.pathname === "/index.html" ? "/" : location.pathname;
+    location.replace("/" + target + path + location.search + location.hash);
+  } catch (error) {
+  }
+})();</script><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="apple-itunes-app" content="app-id=6792057195"><meta name="color-scheme" content="dark light">
+  <meta name="description" content="The single-camera view shows one camera at full width, live or from recordings. It offers zoom and pan, a snapshot, a clip of the picture to share, sound…">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="Cam Hub"><meta property="og:image" content="https://cam-hub.almx.cc/assets/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+  <title>Single-camera view — Cam Hub Manual</title><link rel="icon" href="/assets/icon-48.png" sizes="48x48"><link rel="icon" href="/assets/icon-192.png" sizes="192x192"><link rel="apple-touch-icon" href="/assets/icon-180.png"><link rel="stylesheet" href="/styles.css?v=20261112-1"><link rel="stylesheet" href="/guide.css?v=20261030-1">
+<meta property="og:description" content="The single-camera view shows one camera at full width, live or from recordings. It offers zoom and pan, a snapshot, a clip of the picture to share, sound…"><link rel="canonical" href="https://cam-hub.almx.cc/guide/single.html"><link rel="alternate" hreflang="x-default" href="https://cam-hub.almx.cc/guide/single.html"><link rel="alternate" hreflang="en" href="https://cam-hub.almx.cc/guide/single.html"><link rel="alternate" hreflang="zh-Hant" href="https://cam-hub.almx.cc/zh-Hant/guide/single.html"><link rel="alternate" hreflang="zh-Hans" href="https://cam-hub.almx.cc/zh-Hans/guide/single.html"><link rel="alternate" hreflang="ja" href="https://cam-hub.almx.cc/ja/guide/single.html"><link rel="alternate" hreflang="ko" href="https://cam-hub.almx.cc/ko/guide/single.html"><link rel="alternate" hreflang="de" href="https://cam-hub.almx.cc/de/guide/single.html"><link rel="alternate" hreflang="es" href="https://cam-hub.almx.cc/es/guide/single.html"><link rel="alternate" hreflang="es-MX" href="https://cam-hub.almx.cc/es-MX/guide/single.html"><link rel="alternate" hreflang="fr" href="https://cam-hub.almx.cc/fr/guide/single.html"><link rel="alternate" hreflang="sl" href="https://cam-hub.almx.cc/sl/guide/single.html"><link rel="alternate" hreflang="ar" href="https://cam-hub.almx.cc/ar/guide/single.html"><meta property="og:url" content="https://cam-hub.almx.cc/guide/single.html"><meta property="og:title" content="Single-camera view — Cam Hub Manual"></head>
+<body data-page="guide">
+  <header class="topbar" aria-label="Site header">
+    <a class="brand" href="/"><img src="/assets/icon-96.png" alt="" width="42" height="42"><span><strong>Cam&nbsp;Hub</strong><small data-i18n="topline">Operation manual</small></span></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-controls" data-i18n-aria="menuLabel" aria-label="Open menu"><span></span><span></span><span></span><span class="sr-only" data-i18n="menuLabel">Open menu</span></button>
+    <div class="topbar-controls" id="site-controls"><nav class="navlinks" aria-label="Primary"><a href="/" data-nav="home" data-i18n="navHome">Home</a><a href="/product.html" data-nav="product" data-i18n="navProduct">Product</a><a href="/guide.html" data-nav="guide" data-i18n="navGuide" aria-current="page">Manual</a><a href="/support.html" data-nav="support" data-i18n="navSupport">Support</a><a href="/privacy.html" data-nav="privacy" data-i18n="navPrivacy">Privacy</a><a href="/terms.html" data-nav="terms" data-i18n="navTerms">Terms</a></nav><div class="pickers"><label><span class="sr-only" data-i18n="themeLabel">Appearance</span><select id="themeSelect" aria-label="Theme"><option value="auto" data-i18n="themeAuto" selected="">Auto</option><option value="light" data-i18n="themeLight">Light</option><option value="dark" data-i18n="themeDark">Dark</option></select></label><label><span class="sr-only" data-i18n="languageLabel">Language</span><select id="languageSelect" aria-label="Language"><option value="en" selected="">English</option><option value="zh-Hant">繁體中文</option><option value="zh-Hans">简体中文</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="de">Deutsch</option><option value="es">Español</option><option value="es-MX">Español (México)</option><option value="fr">Français</option><option value="sl">Slovenščina</option><option value="ar">العربية</option></select></label></div><a class="store-pill" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeShort">Get the app</a></div>
+  </header>
+  <main class="inner-page guide" style="--g-topbar: 76px; --g-offset: 88px;">
+    <section class="page-hero"><div class="eyebrow" data-i18n="eyebrow">OPERATION MANUAL</div><h1 data-i18n="title">Single-camera view</h1><p class="summary" data-i18n="summary">Step-by-step instructions for adding devices, live view and recording playback, LiveView Mix walls, sharing, and backup.</p></section>
+    <p class="guide-notice" id="guide-notice" role="status" hidden=""></p>
+    <div id="guide-sentinel" aria-hidden="true"></div>
+    <div class="guide-layout has-toc" id="guide-layout" lang="en" dir="ltr">
+      <aside class="guide-side" id="guide-side">
+        <button class="guide-toc-toggle" id="guide-toc-toggle" type="button" aria-expanded="false" aria-controls="guide-toc" lang="en" dir="ltr"><span class="guide-toc-label" data-i18n="tocLabel">Contents</span><span class="guide-toc-current" id="guide-toc-current">6. Single-camera view</span></button>
+        <nav class="guide-toc" id="guide-toc" aria-label="Contents"><ol><li><a href="/guide.html"><span class="toc-num">1</span><span>Quick start</span></a><ol><li><a href="/guide.html#start-prepare"><span>Before you begin</span></a></li><li><a href="/guide.html#start-path"><span>Shortest path to a live picture</span></a></li><li><a href="/guide.html#start-demo"><span>Trying the app without a device</span></a></li></ol></li><li><a href="/guide/tour.html"><span class="toc-num">2</span><span>The tabs and basic behaviour</span></a><ol><li><a href="/guide/tour.html#tour-tabs"><span>The tabs at a glance</span></a></li><li><a href="/guide/tour.html#tour-launch"><span>What opens when the app starts</span></a></li><li><a href="/guide/tour.html#tour-look"><span>Appearance and language</span></a></li><li><a href="/guide/tour.html#tour-rotate"><span>Turning the device</span></a></li><li><a href="/guide/tour.html#tour-duo"><span>iPhone Duo</span></a></li><li><a href="/guide/tour.html#tour-awake"><span>Screen, background and notifications</span></a></li></ol></li><li><a href="/guide/add.html"><span class="toc-num">3</span><span>Adding a device</span></a><ol><li><a href="/guide/add.html#add-form"><span>The Add Device form</span></a></li><li><a href="/guide/add.html#add-auto"><span>Adding without choosing a brand</span></a></li><li><a href="/guide/add.html#add-methods"><span>Choosing the connection method</span></a></li><li><a href="/guide/add.html#add-https"><span>Adding a device over HTTPS</span></a></li><li><a href="/guide/add.html#add-streams"><span>Adding YouTube live streams and Twitch channels</span></a></li><li><a href="/guide/add.html#add-failed"><span>When adding fails: the checklist</span></a></li><li><a href="/guide/add.html#add-report"><span>Device report (experimental)</span></a></li><li><a href="/guide/add.html#add-scan"><span>Finding devices with the network scan</span></a></li></ol></li><li><a href="/guide/devices.html"><span class="toc-num">4</span><span>The Devices tab and channels</span></a><ol><li><a href="/guide/devices.html#devices-list"><span>The device list</span></a></li><li><a href="/guide/devices.html#devices-page"><span>The device page</span></a></li><li><a href="/guide/devices.html#devices-credentials"><span>Changing the user name and password of a device</span></a></li><li><a href="/guide/devices.html#devices-password-missing"><span>A device without a saved password</span></a></li><li><a href="/guide/devices.html#devices-https"><span>HTTPS for a saved device</span></a></li><li><a href="/guide/devices.html#devices-health"><span>Disk Health</span></a></li><li><a href="/guide/devices.html#devices-streams"><span>YouTube and Twitch streams</span></a></li><li><a href="/guide/devices.html#devices-states"><span>What a thumbnail shows</span></a></li><li><a href="/guide/devices.html#devices-menu"><span>Channel options (long press)</span></a></li><li><a href="/guide/devices.html#devices-plan"><span>Plan limits and enabling channels</span></a></li><li><a href="/guide/devices.html#devices-choose"><span>Choosing which cameras show</span></a></li><li><a href="/guide/devices.html#devices-fullwall"><span>The full-screen wall of a device</span></a></li><li><a href="/guide/devices.html#devices-quality"><span>SD and HD on device screens</span></a></li></ol></li><li><a href="/guide/live.html"><span class="toc-num">5</span><span>The Live tab and the Full Screen Wall</span></a><ol><li><a href="/guide/live.html#live-tab"><span>The Live tab</span></a></li><li><a href="/guide/live.html#live-quality"><span>SD and HD on a wall</span></a></li><li><a href="/guide/live.html#live-wall"><span>The Full Screen Wall</span></a></li><li><a href="/guide/live.html#live-hide"><span>Hiding cameras without signal</span></a></li></ol></li><li class="is-current"><a href="/guide/single.html" class="is-active" aria-current="location"><span class="toc-num">6</span><span>Single-camera view</span></a><ol><li><a href="/guide/single.html#single-open"><span>Opening the view</span></a></li><li><a href="/guide/single.html#single-screen"><span>The parts of the screen</span></a></li><li><a href="/guide/single.html#single-zoom"><span>Zoom and pan</span></a></li><li><a href="/guide/single.html#single-controls"><span>Snapshot, sound and quality</span></a></li><li><a href="/guide/single.html#single-clip"><span>Recording a clip</span></a></li><li><a href="/guide/single.html#single-talk"><span>Two-way talk</span></a></li><li><a href="/guide/single.html#single-picture"><span>Black bars, rotation and landscape</span></a></li><li><a href="/guide/single.html#single-ptz"><span>PTZ control: moving the camera</span></a></li><li><a href="/guide/single.html#single-window"><span>A camera in a window of its own</span></a></li><li><a href="/guide/single.html#single-duo"><span>The view on a folded iPhone Duo</span></a></li><li><a href="/guide/single.html#single-streams"><span>YouTube and Twitch streams</span></a></li><li><a href="/guide/single.html#single-states"><span>Connection states and messages</span></a></li><li><a href="/guide/single.html#single-limits"><span>What is not available</span></a></li></ol></li><li><a href="/guide/playback.html"><span class="toc-num">7</span><span>Recording playback and speed</span></a><ol><li><a href="/guide/playback.html#playback-avail"><span>Where playback is available</span></a></li><li><a href="/guide/playback.html#playback-day"><span>Choosing a day</span></a></li><li><a href="/guide/playback.html#playback-calendar"><span>The recording calendar</span></a></li><li><a href="/guide/playback.html#playback-timeline"><span>Using the timeline</span></a></li><li><a href="/guide/playback.html#playback-list"><span>The list of recordings and the search for people</span></a></li><li><a href="/guide/playback.html#playback-playing"><span>While a recording plays</span></a></li><li><a href="/guide/playback.html#playback-speed"><span>Playback speed</span></a></li><li><a href="/guide/playback.html#playback-landscape"><span>Playback in landscape</span></a></li><li><a href="/guide/playback.html#playback-limits"><span>What is not available</span></a></li></ol></li><li><a href="/guide/lvm.html"><span class="toc-num">8</span><span>LiveView Mix</span></a><ol><li><a href="/guide/lvm.html#lvm-tab"><span>The LiveView Mix tab and its preview</span></a></li><li><a href="/guide/lvm.html#lvm-first"><span>Building a first wall of six cameras</span></a></li><li><a href="/guide/lvm.html#lvm-pick"><span>Choosing cameras and quality</span></a></li><li><a href="/guide/lvm.html#lvm-layout"><span>Adjusting the layout</span></a></li><li><a href="/guide/lvm.html#lvm-custom"><span>Drawing a custom layout</span></a></li><li><a href="/guide/lvm.html#lvm-special"><span>Special layouts: big and small tiles on one wall</span></a></li><li><a href="/guide/lvm.html#lvm-arrange"><span>Arranging the wall and its tiles</span></a></li><li><a href="/guide/lvm.html#lvm-move"><span>Moving a tile into an empty tile</span></a></li><li><a href="/guide/lvm.html#lvm-slots"><span>What a tile can show besides a camera</span></a></li><li><a href="/guide/lvm.html#lvm-watermark"><span>Watermark</span></a></li><li><a href="/guide/lvm.html#lvm-fit"><span>Black bars, edge-to-edge video and the angle of the device</span></a></li><li><a href="/guide/lvm.html#lvm-pages"><span>The portrait page</span></a></li><li><a href="/guide/lvm.html#lvm-canvases"><span>Two canvases on iPhone Duo</span></a></li><li><a href="/guide/lvm.html#lvm-wall"><span>The full-screen wall</span></a></li><li><a href="/guide/lvm.html#lvm-closeup"><span>Opening a single camera</span></a></li><li><a href="/guide/lvm.html#lvm-streams"><span>YouTube and Twitch streams on the wall</span></a></li><li><a href="/guide/lvm.html#lvm-states"><span>When a tile cannot show a camera</span></a></li><li><a href="/guide/lvm.html#lvm-limits"><span>How plan limits affect the wall</span></a></li><li><a href="/guide/lvm.html#lvm-settings"><span>LiveView Mix in Settings</span></a></li><li><a href="/guide/lvm.html#lvm-tv"><span>Differences on Apple TV</span></a></li></ol></li><li><a href="/guide/webhook.html"><span class="toc-num">9</span><span>Control panels and webhooks</span></a><ol><li><a href="/guide/webhook.html#webhook-what"><span>What a control panel does</span></a></li><li><a href="/guide/webhook.html#webhook-add"><span>Adding a control panel to the wall</span></a></li><li><a href="/guide/webhook.html#webhook-templates"><span>Templates</span></a></li><li><a href="/guide/webhook.html#webhook-fields"><span>The settings of a panel</span></a></li><li><a href="/guide/webhook.html#webhook-button"><span>Setting up a button</span></a></li><li><a href="/guide/webhook.html#webhook-use"><span>Pressing a button and reading the result</span></a></li><li><a href="/guide/webhook.html#webhook-wall"><span>How a panel looks on the wall</span></a></li><li><a href="/guide/webhook.html#webhook-watch"><span>Buttons on Apple Watch</span></a></li><li><a href="/guide/webhook.html#ha"><span>Using Home Assistant</span></a></li><li><a href="/guide/webhook.html#webhook-security"><span>Security notes</span></a></li></ol></li><li><a href="/guide/share.html"><span class="toc-num">10</span><span>Sharing and backup</span></a><ol><li><a href="/guide/share.html#share-choose"><span>Comparing the two methods</span></a></li><li><a href="/guide/share.html#share-export"><span>Exporting cameras (creating a code)</span></a></li><li><a href="/guide/share.html#share-lock"><span>Locking a code</span></a></li><li><a href="/guide/share.html#share-import"><span>Importing cameras</span></a></li><li><a href="/guide/share.html#share-contents"><span>What backups and codes contain</span></a></li><li><a href="/guide/share.html#share-icloud"><span>Backing up to iCloud</span></a></li><li><a href="/guide/share.html#share-versions"><span>Several named backups: renaming and deleting</span></a></li><li><a href="/guide/share.html#share-restore"><span>Restoring from iCloud</span></a></li><li><a href="/guide/share.html#share-delete"><span>Deleting all iCloud backups</span></a></li><li><a href="/guide/share.html#share-newphone"><span>Moving devices and walls to a new phone</span></a></li><li><a href="/guide/share.html#share-appletv"><span>Bringing the setup to Apple TV</span></a></li></ol></li><li><a href="/guide/plans.html"><span class="toc-num">11</span><span>Plans and limits</span></a><ol><li><a href="/guide/plans.html#plans-tiers"><span>The allowance of each plan</span></a></li><li><a href="/guide/plans.html#plans-stack"><span>How the two groups of plans combine</span></a></li><li><a href="/guide/plans.html#plans-count"><span>What uses allowance</span></a></li><li><a href="/guide/plans.html#plans-examples"><span>Examples of combinations</span></a></li><li><a href="/guide/plans.html#plans-choose"><span>Choosing which cameras show</span></a></li><li><a href="/guide/plans.html#plans-subscribe"><span>Subscribing, restoring purchases and redeeming a code</span></a></li><li><a href="/guide/plans.html#plans-lapse"><span>When a plan ends or is reduced</span></a></li></ol></li><li><a href="/guide/tools.html"><span class="toc-num">12</span><span>The Tools tab</span></a><ol><li><a href="/guide/tools.html#tools-overview"><span>What the Tools tab contains</span></a></li><li><a href="/guide/tools.html#tools-speedometer"><span>Speedometer and compass</span></a></li></ol></li><li><a href="/guide/settings.html"><span class="toc-num">13</span><span>Settings</span></a><ol><li><a href="/guide/settings.html#settings-overview"><span>The sections of the Settings tab</span></a></li><li><a href="/guide/settings.html#settings-subscription"><span>Subscription</span></a></li><li><a href="/guide/settings.html#settings-quality"><span>Default quality</span></a></li><li><a href="/guide/settings.html#settings-picture"><span>Picture: black bars and edge-to-edge</span></a></li><li><a href="/guide/settings.html#settings-hide"><span>Hide offline cameras</span></a></li><li><a href="/guide/settings.html#settings-lvm"><span>LiveView Mix, its pages and Open on launch</span></a></li><li><a href="/guide/settings.html#settings-backup"><span>Backup and sharing of cameras</span></a></li><li><a href="/guide/settings.html#settings-language"><span>Language</span></a></li><li><a href="/guide/settings.html#settings-reset"><span>Reset: defaults, delete all data, delete iCloud backup</span></a></li><li><a href="/guide/settings.html#settings-legal"><span>Terms of Use and Privacy Policy</span></a></li><li><a href="/guide/settings.html#settings-about"><span>About, the user manual, and what Settings does not contain</span></a></li></ol></li><li><a href="/guide/appletv.html"><span class="toc-num">14</span><span>Apple TV</span></a><ol><li><a href="/guide/appletv.html#appletv-prepare"><span>Set up on an iPhone or iPad first</span></a></li><li><a href="/guide/appletv.html#appletv-bring"><span>Bringing the setup to the Apple TV</span></a></li><li><a href="/guide/appletv.html#appletv-differs"><span>What differs on the Apple TV</span></a></li></ol></li><li><a href="/guide/trouble.html"><span class="toc-num">15</span><span>Troubleshooting</span></a><ol><li><a href="/guide/trouble.html#trouble-start"><span>Where to start</span></a></li><li><a href="/guide/trouble.html#trouble-states"><span>What the empty screens say</span></a></li><li><a href="/guide/trouble.html#trouble-add"><span>A device is added, but it is not reachable</span></a></li><li><a href="/guide/trouble.html#trouble-live"><span>Live view</span></a></li><li><a href="/guide/trouble.html#trouble-playback"><span>Recording playback</span></a></li><li><a href="/guide/trouble.html#trouble-lvm"><span>LiveView Mix</span></a></li><li><a href="/guide/trouble.html#trouble-streams"><span>YouTube and Twitch</span></a></li><li><a href="/guide/trouble.html#trouble-panels"><span>Control panels and webhooks</span></a></li><li><a href="/guide/trouble.html#trouble-health"><span>Disk Health</span></a></li><li><a href="/guide/trouble.html#trouble-share"><span>Sharing, import and iCloud backup</span></a></li><li><a href="/guide/trouble.html#trouble-plans"><span>Plans and purchases</span></a></li><li><a href="/guide/trouble.html#trouble-errors"><span>Other error sentences</span></a></li><li><a href="/guide/trouble.html#trouble-permissions"><span>Permission requests and system dialogs</span></a></li><li><a href="/guide/trouble.html#trouble-contact"><span>Reaching the developer</span></a></li><li><a href="/guide/trouble.html#trouble-faq"><span>Questions and answers</span></a></li></ol></li><li><a href="/guide/brands.html"><span class="toc-num">16</span><span>Supported brands and connection methods</span></a><ol><li><a href="/guide/brands.html#brands-methods"><span>Connection methods</span></a></li><li><a href="/guide/brands.html#brands-matrix"><span>What works with which method</span></a></li><li><a href="/guide/brands.html#brands-profiles"><span>The brands in the list</span></a></li><li><a href="/guide/brands.html#brands-requirements"><span>Requirements and limits</span></a></li><li><a href="/guide/brands.html#brands-recorders"><span>Cameras and recorders</span></a></li><li><a href="/guide/brands.html#brands-prepare"><span>What to prepare on the device</span></a></li><li><a href="/guide/brands.html#brands-activate"><span>Activating a new device</span></a></li><li><a href="/guide/brands.html#brands-compat"><span>The compatibility reference in the app</span></a></li></ol></li><li><a href="/guide/about.html" class="no-num"><span>About this manual</span></a><ol><li><a href="/guide/about.html#about-scope"><span>Scope</span></a></li><li><a href="/guide/about.html#about-conventions"><span>Conventions</span></a></li><li><a href="/guide/about.html#about-help"><span>Where to get help</span></a></li></ol></li></ol></nav>
+      </aside>
+      <article class="guide-article" id="guide-content"><section class="chapter" id="single">
+  <h2><span class="num">6</span>Single-camera view</h2>
+  <p class="lead">The single-camera view shows one camera at full width, live or from recordings. It offers zoom and pan, a snapshot, a clip of the picture to share, sound, two-way talk for cameras that support it, the choice between SD and HD and, for cameras with a movable head, PTZ control. For devices that support playback, the view also holds the recording timeline; see <a class="xref" href="/guide/playback.html">Chapter 7, “Recording playback and speed”</a>. On an iPad and on iPhone Duo, a camera can have a window of its own. YouTube and Twitch streams open in a full-screen viewer of their own.</p>
+
+  <h3 id="single-open">Opening the view</h3>
+  <p>The view opens from four places:</p>
+  <ul>
+    <li>the <span class="ui">Devices</span> tab: a thumbnail on the device page (see <a class="xref" href="/guide/devices.html#devices-page">“The device page”</a>);</li>
+    <li>the <span class="ui">Live</span> tab: a thumbnail on the wall (see <a class="xref" href="/guide/live.html#live-tab">“The Live tab”</a>);</li>
+    <li>the close-up of a camera on a full-screen wall or on a LiveView Mix wall: the <span class="ui">Recordings</span> button, shown for devices that support playback (see <a class="xref" href="/guide/devices.html#devices-fullwall">“The full-screen wall of a device”</a>). The view then opens over the wall, and <span class="ui">Done</span> at the top right returns to the close-up;</li>
+    <li>a window of its own on an iPad or on the inner display of iPhone Duo (see <a class="xref" href="/guide/single.html#single-window">“A camera in a window of its own”</a>).</li>
+  </ul>
+  <p>Prerequisite: the channel is enabled, within the plan and online. On the device page, a tap on a paused or disabled thumbnail offers <span class="ui">Resume Video</span> or <span class="ui">Enable</span> instead of opening the view; see <a class="xref" href="/guide/devices.html#devices-states">“What a thumbnail shows”</a>. The thumbnail of a YouTube or Twitch stream opens the stream full screen instead; see <a class="xref" href="/guide/single.html#single-streams">“YouTube and Twitch streams”</a>.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap the <span class="ui">Devices</span> tab, then tap the device.</p>
+      <p class="check"><b class="check-label">Check:</b> The device page shows the thumbnails of the channels.</p>
+    </li>
+    <li class="step">
+      <p>Tap the thumbnail of a channel that shows a live picture.</p>
+      <p class="check"><b class="check-label">Check:</b> The single-camera view opens. The title is the name of the camera, and the green badge <span class="ui">LIVE</span> is shown at the top left of the picture. The picture starts with the quality of <span class="path"><span class="ui">Settings</span> › <span class="ui">Default quality</span> › <span class="ui">Single camera</span></span> (HD unless changed).</p>
+      <figure class="phone"><img src="/guide/img/single-live.jpg" alt="The single-camera view in live mode: the picture with the LIVE badge and the camera control button, below it Snapshot and the SD and HD switch, and the recording panel with the day, the timeline and the list" decoding="async" width="900" height="1956" data-src="/guide/img/single-live.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The single-camera view in live mode</figcaption></figure>
+    </li>
+  </ol>
+  <p>Tap the back button in the top-left corner to leave the view.</p>
+
+  <h3 id="single-screen">The parts of the screen</h3>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Part</th><th>Content</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Part">Navigation bar</td><td data-label="Content">The back button and the name of the camera. On an iPad and on the inner display of iPhone Duo, the <span class="ui">Open in New Window</span> button is at the right; see <a class="xref" href="/guide/single.html#single-window">“A camera in a window of its own”</a>.</td></tr>
+      <tr><td data-label="Part">Picture (upright, 16:9)</td><td data-label="Content">The badge at the top left names the mode: <span class="ui">LIVE</span> (green) or <span class="ui">PLAYBACK 15:00:03</span>, with the playback time (red). The round button at the lower right is the camera control for PTZ in live mode; see <a class="xref" href="/guide/single.html#single-ptz">“PTZ control: moving the camera”</a>. While a recording plays, it is the speed button; see <a class="xref" href="/guide/playback.html#playback-speed">“Playback speed”</a>.</td></tr>
+      <tr><td data-label="Part">Controls bar</td><td data-label="Content"><span class="ui">Snapshot</span> at the left, then the red record button; next to them the speaker button when the camera sends sound, and the talk button for a camera that can be talked through; at the right the SD/HD switch in live mode or <span class="ui">Back to Live</span> during playback. When the row is short of room, for example in a long language, <span class="ui">Snapshot</span> shows only its camera symbol. See <a class="xref" href="/guide/single.html#single-controls">“Snapshot, sound and quality”</a>, <a class="xref" href="/guide/single.html#single-clip">“Recording a clip”</a> and <a class="xref" href="/guide/single.html#single-talk">“Two-way talk”</a>.</td></tr>
+      <tr><td data-label="Part">Recording panel</td><td data-label="Content">The heading <span class="ui">Recordings</span> with the day, the timeline and the list of recordings, and on supported devices the button for the recording calendar. The panel appears only for devices that support playback; for all other devices, the view consists of the picture and the controls bar. See <a class="xref" href="/guide/playback.html">Chapter 7, “Recording playback and speed”</a>.</td></tr>
+    </tbody>
+  </table></div>
+  <p>While a picture is shown, the screen of the iPhone or iPad does not dim.</p>
+
+  <h3 id="single-zoom">Zoom and pan</h3>
+  <p>The picture can be enlarged on the screen. This is a digital enlargement of the picture and works in live mode and during playback. It does not move the lens of the camera; for that, see <a class="xref" href="/guide/single.html#single-ptz">“PTZ control: moving the camera”</a>.</p>
+  <figure class="phone clip"><video class="clip" aria-label="Zooming the picture: spreading two fingers enlarges it, one finger moves the enlarged picture, and a double tap zooms out and in again." muted="" loop="" playsinline="" preload="none" data-src="/guide/vid/rec-pinch-zoom.mp4" data-poster="/guide/img/rec-pinch-zoom.jpg" poster="/guide/img/rec-pinch-zoom.jpg"></video><figcaption>Zooming the picture: spreading two fingers enlarges it, one finger moves the enlarged picture, and a double tap zooms out and in again.</figcaption></figure>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Gesture</th><th>Effect</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Gesture">Spread two fingers apart on the picture</td><td data-label="Effect">Enlarges the picture up to 6 times. Moving the fingers together reduces it again; below normal size, the picture returns to normal size.</td></tr>
+      <tr><td data-label="Gesture">Drag one finger while the picture is enlarged</td><td data-label="Effect">Moves the picture. The edge of the picture never leaves a gap.</td></tr>
+      <tr><td data-label="Gesture">Double-tap the picture</td><td data-label="Effect">Enlarges the picture to 2.5 times. When the picture is already enlarged, it returns to normal size.</td></tr>
+    </tbody>
+  </table></div>
+  <ol class="steps">
+    <li class="step">
+      <p>Spread two fingers apart on the picture.</p>
+      <p class="check"><b class="check-label">Check:</b> The picture is enlarged. The badge at the top left keeps its place.</p>
+      <figure class="phone"><img src="/guide/img/single-zoom.jpg" alt="The single-camera view with the picture enlarged: only a part of the fence and the dog is visible, and the badge LIVE stays at the top left" decoding="async" width="900" height="1956" data-src="/guide/img/single-zoom.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>An enlarged picture</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Drag one finger across the picture.</p>
+      <p class="check"><b class="check-label">Check:</b> The picture moves in the direction of the finger.</p>
+    </li>
+    <li class="step">
+      <p>Double-tap the picture.</p>
+      <p class="check"><b class="check-label">Check:</b> The picture returns to normal size.</p>
+    </li>
+  </ol>
+  <p>While aiming by touch is on, a drag on the picture draws a box for the camera instead of moving the enlarged picture; see <a class="xref" href="/guide/single.html#single-ptz">“PTZ control: moving the camera”</a>.</p>
+
+  <h3 id="single-controls">Snapshot, sound and quality</h3>
+  <h4>Taking a snapshot</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap <span class="ui">Snapshot</span> at the left of the controls bar.</p>
+      <p class="check"><b class="check-label">Check:</b> The sheet <span class="ui">Snapshot</span> slides up. It shows a progress indicator and then the picture.</p>
+      <figure class="phone"><img src="/guide/img/single-snapshot.jpg" alt="The Snapshot sheet over the single-camera view, with the picture, the Share button and the Done button" decoding="async" width="900" height="1956" data-src="/guide/img/single-snapshot.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The Snapshot sheet</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Share</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The sharing sheet of the system opens. From there, the picture can be saved, copied or sent with the actions that the system offers. <span class="ui" data-ui="system">Save Image</span> puts it in the photo library; the first time, the system asks whether Cam Hub may add to the photo library (see <a class="xref" href="/guide/trouble.html#trouble-permissions">“Permission requests and system dialogs”</a>).</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Done</span> in the top-right corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The sheet closes.</p>
+    </li>
+  </ol>
+  <ul>
+    <li>The snapshot is a current picture that Cam Hub requests from the device. It is taken from the live picture of the device also while a recording plays, and it is not a frame of the recording.</li>
+    <li>When the device does not supply a snapshot, the sheet closes again and the message <span class="ui">Couldn't take a snapshot. Check the connection to the camera and try again.</span> appears. Tap <span class="ui">OK</span> to close it. Some devices cannot supply a snapshot at all, for example a device that was added through a brand from the list.</li>
+  </ul>
+
+  <h4>Switching the sound on and off</h4>
+  <p>The speaker button appears only when the camera sends sound in a format that Cam Hub can play. A camera without sound, or with an unsupported sound format, has no button.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap the speaker button next to <span class="ui">Snapshot</span> (<span class="ui">Unmute</span>).</p>
+      <p class="check"><b class="check-label">Check:</b> The symbol changes from a crossed-out speaker to a speaker with sound waves, and the sound of the camera plays.</p>
+      <figure class="phone"><img src="/guide/img/single-audio.jpg" alt="The controls bar of a camera that sends sound: Snapshot, the speaker button and the SD and HD switch" decoding="async" width="900" height="1956" data-src="/guide/img/single-audio.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The speaker button in the controls bar</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap the speaker button again (<span class="ui">Mute</span>).</p>
+      <p class="check"><b class="check-label">Check:</b> The symbol shows the crossed-out speaker again, and the sound stops.</p>
+    </li>
+  </ol>
+  <ul>
+    <li>The speaker plays the sound of the camera. To speak through the camera, see <a class="xref" href="/guide/single.html#single-talk">“Two-way talk”</a>.</li>
+    <li>The sound plays even when the ring/silent switch of the iPhone is set to silent.</li>
+    <li>The choice is one switch for the whole app. It is remembered and is off at first. Thumbnails and walls never play sound; only the single-camera view, the close-up of a camera and the full-screen viewer of a YouTube or Twitch stream do (see <a class="xref" href="/guide/single.html#single-streams">“YouTube and Twitch streams”</a>).</li>
+    <li>While camera sound plays, other audio on the iPhone is lowered. Sound stops when the app leaves the foreground.</li>
+    <li>During playback, sound plays at normal speed only; see <a class="xref" href="/guide/playback.html#playback-speed">“Playback speed”</a>.</li>
+  </ul>
+
+  <h4>Switching between SD and HD</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap <span class="ui" data-ui="value">SD</span> or <span class="ui" data-ui="value">HD</span> in the switch at the right of the controls bar.</p>
+      <p class="check"><b class="check-label">Check:</b> The stream restarts, <span class="ui">Connecting…</span> shows briefly, and the picture continues with the selected quality. The change is not stored.</p>
+    </li>
+  </ol>
+  <p>The switch is shown only in live mode and only when the device offers two streams for the camera. During playback, <span class="ui">Back to Live</span> takes its place. The starting quality comes from <span class="path"><span class="ui">Settings</span> › <span class="ui">Default quality</span> › <span class="ui">Single camera</span></span>. HD is sharper and uses more bandwidth and more resources of the iPhone. For devices that provide one stream per channel, SD and HD are the same picture. The rules for all screens are in <a class="xref" href="/guide/devices.html#devices-quality">“SD and HD on device screens”</a>.</p>
+
+  <h3 id="single-clip">Recording a clip</h3>
+  <p>The record button saves what the view shows as a video, live or from a recording, so that a moment can be sent to someone or kept in the photo library: for example the visitor at the door at 17:08. The button is the red circle next to <span class="ui">Snapshot</span> (<span class="ui">Record Clip</span>).</p>
+  <p>Prerequisites: an iPhone or iPad, a channel within the plan, and a picture in the view. A few cameras send their picture in a form that cannot be saved as a video; their view has no record button. Apple TV has no record button.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the single-camera view of the camera. For a moment in a recording, play the recording from a little before that moment; see <a class="xref" href="/guide/playback.html#playback-timeline">“Using the timeline”</a>.</p>
+      <p class="check"><b class="check-label">Check:</b> The picture plays, live or from the chosen time.</p>
+    </li>
+    <li class="step">
+      <p>Tap the red record button next to <span class="ui">Snapshot</span> (<span class="ui">Record Clip</span>).</p>
+      <p class="check"><b class="check-label">Check:</b> The button becomes a red stop button (<span class="ui">Stop Recording</span>), and a badge with a red dot and the recorded time, for example <span class="ui" data-ui="value">0:08</span>, appears at the top of the picture. The clip begins with the next full picture from the camera, which can be a second or two after the tap.</p>
+      <figure class="phone"><img src="/guide/img/single-clip-recording.jpg" alt="The single-camera view while a recording plays and a clip is being recorded: the badge PLAYBACK 15:00:11 at the top left, the badge with a red dot and 0:08 at the top of the picture, and the red stop button next to Snapshot" decoding="async" width="900" height="1947" data-src="/guide/img/single-clip-recording.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>A clip being recorded during playback</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap the stop button.</p>
+      <p class="check"><b class="check-label">Check:</b> The sheet <span class="ui">Clip</span> slides up. It plays the clip and shows its name, its length and the <span class="ui">Share</span> button.</p>
+      <figure class="phone"><img src="/guide/img/single-clip-sheet.jpg" alt="The Clip sheet over the single-camera view: the clip in a player, below it the name Gate 2026-11-02 15.00.04, the length 0:18 and the Share button, and Done at the top right" decoding="async" width="900" height="1947" data-src="/guide/img/single-clip-sheet.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>The Clip sheet</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Share</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The sharing sheet of the system opens. From there, the clip can be sent with a messaging app, saved to the photo library with <span class="ui" data-ui="system">Save Video</span>, or passed on with the other actions that the system offers. The first time something is saved to the photo library, the system asks whether Cam Hub may add to it.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Done</span> in the top-right corner.</p>
+      <p class="check"><b class="check-label">Check:</b> The sheet closes, and the view continues.</p>
+    </li>
+  </ol>
+  <ul>
+    <li>A clip is at most 10 minutes long. At 10 minutes, recording stops by itself, and the sheet says <span class="ui">A clip is at most 10 minutes long.</span></li>
+    <li>Recording also stops by itself when the picture changes: when the timeline is moved, SD or HD is chosen, <span class="ui">Back to Live</span> is tapped, or playback continues into the next recording file. The sheet then says <span class="ui">Recording stopped because the picture changed.</span> What was recorded up to that moment is kept.</li>
+    <li>When the app leaves the foreground, recording stops and the clip is kept. The sheet appears when the app returns, with <span class="ui">Recording stopped when Cam Hub went to the background.</span></li>
+    <li>Leaving the view while a clip is recording discards the clip.</li>
+    <li>The clip keeps the picture as the camera sent it, in the quality shown (SD or HD), and the sound of the camera when there is one, whether or not the speaker button is on.</li>
+    <li>The file is named after the camera and the moment the clip begins, on the clock of the device, for example <code>Gate 2026-11-02 15.00.04.mp4</code>. The time matches the time printed in the picture.</li>
+    <li>In landscape, the record button is at the top right of the picture, next to the speaker and talk buttons. While a clip records, the stop button stays on screen.</li>
+    <li>When a recording plays as a file (see <a class="xref" href="/guide/playback.html#playback-playing">“While a recording plays”</a>), a share button (<span class="ui">Share Recording</span>) takes the place of the record button. It opens the same sheet with the whole recording file.</li>
+    <li>Clips wait on the iPhone for one day after they were made and are then removed; a clip that was sent or saved is not affected. <span class="ui">Delete All Data</span> removes them at once.</li>
+    <li>When nothing could be recorded, for example because the picture had not appeared yet, the message <span class="ui">Nothing was recorded. Wait for the picture to appear, then try again.</span> appears. When the clip cannot be written, the message is <span class="ui">Couldn't save the clip. Check the free space on this device and try again.</span></li>
+  </ul>
+  <figure class="land"><img src="/guide/img/single-clip-landscape.jpg" alt="A clip being recorded in landscape during playback: the badge with a red dot and 0:07 at the top, the red stop button at the top right, and the playback strip at the bottom" decoding="async" width="1600" height="736" data-src="/guide/img/single-clip-landscape.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>Recording a clip in landscape</figcaption></figure>
+
+  <h3 id="single-talk">Two-way talk</h3>
+  <p>A standalone camera with a speaker can be talked through. Talk works like a walkie-talkie: hold the button to speak, release it to listen. Cam Hub asks the camera for its talk channel when the view opens; the talk button (a microphone symbol) appears to the right of the speaker button when the camera reports one.</p>
+  <p>Prerequisites: a standalone camera of a supported brand that reports a two-way audio channel, live mode, and a channel within the plan. Channels of a recorder have no talk button: the talk channel of a recorder is the recorder's own audio output, not the speaker of the camera.</p>
+  <figure class="phone"><img src="/guide/img/single-talk.jpg" alt="The single-camera view of a camera with a speaker: the talk button with a microphone symbol beside Snapshot, and the SD and HD switch" decoding="async" width="900" height="1947" data-src="/guide/img/single-talk.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>The talk button beside Snapshot</figcaption></figure>
+  <p>The first time the talk button is pressed, a dialog of the system asks for access to the microphone. Allow it, then press the button again.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Press and hold the talk button (<span class="ui">Talk</span>) in the controls bar.</p>
+      <p class="check"><b class="check-label">Check:</b> The button shows a spinner while the talk channel of the camera opens, then turns red with a sound-wave symbol. While the button is held, the voice comes out of the speaker of the camera, and the sound of the camera pauses.</p>
+    </li>
+    <li class="step">
+      <p>Release the button.</p>
+      <p class="check"><b class="check-label">Check:</b> The button shows the microphone symbol again, the microphone stops, and the sound of the camera can be heard again when the speaker is on.</p>
+    </li>
+  </ol>
+  <ul>
+    <li><b>Microphone</b>: the microphone is used only while the button is held. After a release, the talk channel of the camera stays open for about 15 seconds, so that the next press talks at once.</li>
+    <li><b>End of talk</b>: talk ends when the view is left, when the app leaves the foreground and when playback starts. During playback, the talk button is hidden.</li>
+    <li><b>Landscape</b>: in landscape, the talk button sits at the top right of the picture, next to the speaker button; see <a class="xref" href="/guide/single.html#single-picture">“Black bars, rotation and landscape”</a>.</li>
+    <li><b>VoiceOver</b>: a double tap on the button starts talking, and a second double tap stops it.</li>
+  </ul>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Message at the top of the picture</th><th>Meaning and action</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Message at the top of the picture"><span class="ui ui-long">Microphone access is off for Cam Hub. Turn it on in Settings to talk through the camera.</span></td><td data-label="Meaning and action">Access to the microphone was refused. Allow it for Cam Hub in the Settings app of the iPhone or iPad.</td></tr>
+      <tr><td data-label="Message at the top of the picture"><span class="ui ui-long">The microphone could not be started. Another app may be using it.</span></td><td data-label="Meaning and action">Another app uses the microphone, for example during a call. End the other use and try again.</td></tr>
+      <tr><td data-label="Message at the top of the picture"><span class="ui ui-long">Could not start talking to the camera.</span>, or a message that names the cause, for example <span class="ui">Wrong username or password.</span></td><td data-label="Meaning and action">The talk channel of the camera did not open. Check the connection and the account; see <a class="xref" href="/guide/add.html#add-failed">“When adding fails: the checklist”</a>.</td></tr>
+      <tr><td data-label="Message at the top of the picture"><span class="ui ui-long">The camera stopped taking sound.</span></td><td data-label="Meaning and action">The camera closed the talk channel. Press the button again.</td></tr>
+      <tr><td data-label="Message at the top of the picture">A message that names the sound format of the talk channel</td><td data-label="Meaning and action">The talk channel of the camera uses a format other than <code>G.711</code>. Set the talk channel to <code>G.711</code> in the audio settings of the camera.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 id="single-picture">Black bars, rotation and landscape</h3>
+  <ul>
+    <li><b>Black bars</b>: the picture follows <span class="path"><span class="ui">Settings</span> › <span class="ui">Picture</span> › <span class="ui">Black bars</span></span> (<span class="ui">Default</span>, <span class="ui">Enlarge to fill</span> or <span class="ui">Stretch to fill</span>; see <a class="xref" href="/guide/devices.html#devices-page">“The device page”</a>). The single-camera view has no switch of its own; a change in Settings applies to this view as well.</li>
+    <li><b>Edge-to-edge video</b>: in landscape, the picture extends into the area of the Dynamic Island and the rounded corners when <span class="path"><span class="ui">Settings</span> › <span class="ui">Picture</span> › <span class="ui">Edge-to-edge video</span></span> is on. When the setting is off, the picture stays clear of them, with black bars.</li>
+    <li><b>iPad</b>: the layout does not change with the orientation. The view keeps the arrangement of the upright iPhone in both orientations, and the picture-only landscape layout below is not used.</li>
+  </ul>
+  <h4>Watching in landscape on an iPhone</h4>
+  <p>Prerequisite: the rotation lock of the iPhone is off.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Turn the iPhone sideways.</p>
+      <p class="check"><b class="check-label">Check:</b> The picture fills the whole screen. The navigation bar, the tab bar, the status bar, the controls bar and the recording panel are hidden. The back button and the other buttons of the picture show for about 5 seconds and then fade out.</p>
+      <figure class="land"><img src="/guide/img/single-landscape-live.jpg" alt="The single-camera view in landscape: the picture over the whole screen, the back button at the top left, the badge LIVE next to it and the camera control button at the lower right" decoding="async" width="1600" height="736" data-src="/guide/img/single-landscape-live.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>The single-camera view in landscape</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap the picture once.</p>
+      <p class="check"><b class="check-label">Check:</b> The back button appears at the top left, with the badge next to it. At the top right appear the red record button, the speaker button when the camera sends sound and the talk button when the camera can be talked through. The camera control button is at the lower right when the camera can be moved. The buttons fade out again after about 5 seconds; another tap on the picture shows them again. While a clip records, they stay on screen.</p>
+    </li>
+    <li class="step">
+      <p>Tap the back button at the top left, or turn the iPhone upright again.</p>
+      <p class="check"><b class="check-label">Check:</b> The view leaves the landscape layout or closes. The back button returns to the page from which the view was opened.</p>
+    </li>
+  </ol>
+  <p>Zoom, pan, PTZ control and clip recording work in landscape as in upright orientation. <span class="ui">Snapshot</span>, the SD/HD switch, the day and the list of recordings are available in upright orientation only. For the strip that appears in landscape during playback, see <a class="xref" href="/guide/playback.html#playback-landscape">“Playback in landscape”</a>.</p>
+
+  <h3 id="single-ptz">PTZ control: moving the camera</h3>
+  <p>Prerequisites: a camera with a movable head (pan, tilt or zoom), a device that supports PTZ control, an account that may control PTZ on the device, and live mode. During playback, the camera control is hidden.</p>
+  <figure class="phone clip"><video class="clip" aria-label="The PTZ pad: pressing and holding a direction arrow moves the camera until it is released, the zoom buttons change the zoom, and the star button lists the saved positions." muted="" loop="" playsinline="" preload="none" data-src="/guide/vid/rec-ptz-hold.mp4" data-poster="/guide/img/rec-ptz-hold.jpg" poster="/guide/img/rec-ptz-hold.jpg"></video><figcaption>The PTZ pad: pressing and holding a direction arrow moves the camera until it is released, the zoom buttons change the zoom, and the star button lists the saved positions.</figcaption></figure>
+  <p>Cam Hub asks the device for the abilities of the channel when the view opens. The round button at the lower right of the picture appears when the answer arrives, which can take a moment. A camera that cannot move shows no button. Only the controls that the device reports are shown.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap the round button at the lower right of the picture (<span class="ui">Move camera</span>).</p>
+      <p class="check"><b class="check-label">Check:</b> The pad opens to the left of the button, and the button shows a cross (<span class="ui">Hide camera controls</span>). The pad holds a capsule with plus and minus for zoom, a disc with four arrows and a house symbol in the middle, and a star button. For a camera that supports aiming by touch, an aim button with a target symbol is added next to the disc, above the star.</p>
+      <figure class="phone"><img src="/guide/img/single-ptz.jpg" alt="The single-camera view with the camera control open: the zoom capsule, the direction disc with the house symbol, the aim button, the star button and the cross button on the picture" decoding="async" width="900" height="1947" data-src="/guide/img/single-ptz.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>The camera control on the picture</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Press and hold an arrow of the disc (<span class="ui">Tilt up</span>, <span class="ui">Tilt down</span>, <span class="ui">Pan left</span> or <span class="ui">Pan right</span>).</p>
+      <p class="check"><b class="check-label">Check:</b> The camera turns in that direction for as long as the finger stays on the arrow, and the picture follows. The camera stops when the finger is lifted.</p>
+    </li>
+    <li class="step">
+      <p>Press and hold plus or minus on the capsule (<span class="ui">Zoom in</span> or <span class="ui">Zoom out</span>).</p>
+      <p class="check"><b class="check-label">Check:</b> The lens of the camera zooms in or out for as long as the finger stays, and stops when the finger is lifted.</p>
+    </li>
+    <li class="step">
+      <p>Tap the house symbol (<span class="ui">Home position</span>).</p>
+      <p class="check"><b class="check-label">Check:</b> The camera moves to its home position.</p>
+    </li>
+    <li class="step">
+      <p>Tap the star button (<span class="ui">Saved positions</span>).</p>
+      <p class="check"><b class="check-label">Check:</b> The star shows a spinner while the positions are read from the camera. Then a dialog lists the names of the positions that are stored in the camera. When the camera has none, the dialog shows <span class="ui">This camera has no saved positions.</span> When the positions cannot be read, it shows <span class="ui">Could not load the saved positions. Please try again.</span></p>
+      <figure class="phone"><img src="/guide/img/single-ptz-presets.jpg" alt="The saved positions of the camera as a popover beside the star button on the picture of the single-camera view: a list of four position names, without a visible Cancel button" decoding="async" width="900" height="1956" data-src="/guide/img/single-ptz-presets.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The list of saved positions</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Tap the name of a position.</p>
+      <p class="check"><b class="check-label">Check:</b> The camera moves to that position, and the list closes. Tap outside the list to close it without moving the camera.</p>
+    </li>
+    <li class="step">
+      <p>Tap the cross button (<span class="ui">Hide camera controls</span>).</p>
+      <p class="check"><b class="check-label">Check:</b> The pad closes, and a movement that is still running stops.</p>
+    </li>
+  </ol>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Control</th><th>Shown when the device reports</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Control">Direction disc with four arrows</td><td data-label="Shown when the device reports">The head can pan or tilt. The house symbol sits in the middle of the disc.</td></tr>
+      <tr><td data-label="Control">Capsule with plus and minus</td><td data-label="Shown when the device reports">The head can zoom.</td></tr>
+      <tr><td data-label="Control">Star button</td><td data-label="Shown when the device reports">The camera has saved positions.</td></tr>
+      <tr><td data-label="Control">Aim button with a target symbol (<span class="ui">3D positioning</span>)</td><td data-label="Shown when the device reports">The head can be aimed at a point or an area of the picture. Shown in the single-camera view only.</td></tr>
+      <tr><td data-label="Control">House symbol next to the star</td><td data-label="Shown when the device reports">The head can go to its home position but cannot pan or tilt; the disc is not shown then.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h4>Aiming by touching the picture</h4>
+  <p>On cameras that support it, the camera can be turned toward a spot of the picture, or zoomed straight into an area drawn on the picture. Prerequisite: the pad is open and shows the aim button.</p>
+  <figure class="phone"><img src="/guide/img/single-ptz-aim.jpg" alt="The single-camera view while aiming by touch: the hint at the top of the picture, the lit aim button and the cross button" decoding="async" width="900" height="1947" data-src="/guide/img/single-ptz-aim.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>Aiming by touch</figcaption></figure>
+  <ol class="steps">
+    <li class="step">
+      <p>Tap the aim button (<span class="ui">3D positioning</span>).</p>
+      <p class="check"><b class="check-label">Check:</b> The aim button turns white, and the pad shrinks to this button so that it does not cover the picture. The hint <span class="ui">Tap to center here. Drag a box to zoom in on it; drag up and to the left to zoom out.</span> appears at the top of the picture.</p>
+    </li>
+    <li class="step">
+      <p>Tap a spot on the picture.</p>
+      <p class="check"><b class="check-label">Check:</b> A ring marks the spot briefly, and the camera turns so that the spot moves to the middle of the picture.</p>
+    </li>
+    <li class="step">
+      <p>Drag a box over an area, from its top-left corner to its bottom-right corner.</p>
+      <p class="check"><b class="check-label">Check:</b> A dashed box with a plus magnifier follows the finger. When the finger is lifted, the camera turns to the area and zooms in on it.</p>
+    </li>
+    <li class="step">
+      <p>Drag a box from the bottom right up to the top left.</p>
+      <p class="check"><b class="check-label">Check:</b> The box shows a minus magnifier. When the finger is lifted, the camera zooms out.</p>
+    </li>
+    <li class="step">
+      <p>Tap the aim button again.</p>
+      <p class="check"><b class="check-label">Check:</b> The full pad returns, and a drag on the picture moves the enlarged picture again.</p>
+    </li>
+  </ol>
+  <ul>
+    <li>The touch is measured on the picture itself: black bars, the black-bar mode and the digital enlargement of the view are taken into account. A tap on a black bar sends nothing.</li>
+    <li>When the camera refuses the new position, the hint is replaced for a few seconds by <span class="ui">The camera did not take the new position.</span></li>
+    <li>Closing the pad with the cross button also ends aiming, as does the start of playback.</li>
+    <li>The close-ups on full-screen walls and LiveView Mix walls have the same pad without the aim button.</li>
+  </ul>
+
+  <h4>Notes on PTZ control</h4>
+  <ul>
+    <li><b>Speed</b>: the app has no speed setting. A button moves the camera at one fixed speed, the highest that the app requests, for as long as it is held; a short tap makes a short movement.</li>
+    <li><b>Refused movements</b>: when the device refuses a movement of the pad, no message is shown.</li>
+    <li><b>Saved positions</b>: Cam Hub recalls positions that exist on the camera. Positions are created and changed on the device itself, not in Cam Hub.</li>
+    <li><b>Stopping</b>: a movement stops when the finger is lifted, when the view is left, when the app leaves the foreground, when the pad is closed and when playback starts. The same pad is available in the close-up of a camera on full-screen walls and on LiveView Mix walls.</li>
+  </ul>
+
+  <h3 id="single-window">A camera in a window of its own</h3>
+  <p>On an iPad and on the inner display of iPhone Duo, Cam Hub can show several windows. A camera can then be opened in a window of its own, for example to keep the wall in one window and a camera with its recordings and PTZ pad in another, or to place the camera next to another app. On other iPhones, the command is not shown.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>On the device page, touch and hold the thumbnail of a camera.</p>
+      <p class="check"><b class="check-label">Check:</b> A menu opens with <span class="ui">Open in New Window</span> at the top.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Open in New Window</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> A new window opens with the single-camera view of that camera.</p>
+    </li>
+  </ol>
+  <p>In the single-camera view itself, the <span class="ui">Open in New Window</span> button at the right of the navigation bar does the same.</p>
+  <ul>
+    <li>Each window is a viewer of its own, with its own timeline and playback. Two windows of the same camera share the live picture of the device.</li>
+    <li>The window is closed with the window controls of the system.</li>
+    <li>When the camera has been deleted, the window shows an empty black page.</li>
+  </ul>
+
+  <h3 id="single-duo">The view on a folded iPhone Duo</h3>
+  <p>On iPhone Duo, the single-camera view follows the fold of the inner display. Opened flat, the view looks as on any other iPhone. For the folding positions, see <a class="xref" href="/guide/tour.html#tour-duo">“iPhone Duo”</a>.</p>
+  <h4>Half folded, standing</h4>
+  <p>Prerequisite: the iPhone Duo is held sideways and half folded, so that the fold runs from left to right across the screen, for example when it stands on a table like a small laptop.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the single-camera view and fold the iPhone Duo halfway.</p>
+      <p class="check"><b class="check-label">Check:</b> The picture fills the upper half. The controls bar, the recording panel and the PTZ pad are on the lower half, within reach and clear of the fold. The navigation bar, the tab bar and the status bar are hidden; the back button, the badge, the speaker button and the talk button float over the picture as in landscape and fade out after about 5 seconds. A tap on the picture shows them again.</p>
+      <figure class="device tall"><img src="/guide/img/duo-single-table.png" alt="iPhone Duo half folded and standing: the picture of the camera fills the upper half; Snapshot, SD and HD, and the recordings with their timeline are on the lower half" decoding="async" width="690" height="852" data-src="/guide/img/duo-single-table.png" style="aspect-ratio: 690 / 852;" loading="lazy"><figcaption>Half folded, standing: the picture above the fold, the controls below it</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Open the iPhone Duo flat again.</p>
+      <p class="check"><b class="check-label">Check:</b> The usual layout returns.</p>
+    </li>
+  </ol>
+  <h4>Held like a book</h4>
+  <p>Prerequisite: a camera of a device that supports playback, and the iPhone Duo held upright and half open, so that the fold runs from top to bottom. For a camera without playback, the usual layout stays.</p>
+  <ol class="steps">
+    <li class="step">
+      <p>Open the single-camera view and hold the iPhone Duo half open like a book.</p>
+      <p class="check"><b class="check-label">Check:</b> One half shows the live view as usual, with its controls bar and recording panel. The other half shows the same camera at the same time of day yesterday, on the clock of the device, with a timeline of its own. When nothing was recorded at exactly that time, it starts at the nearest recording. In left-to-right languages the live view is on the left half; in right-to-left languages the halves are swapped.</p>
+      <figure class="device"><img src="/guide/img/duo-single-book.png" alt="iPhone Duo held like a book: the live view with its timeline on the left half, the same camera at the same time yesterday on the right half" decoding="async" width="880" height="680" data-src="/guide/img/duo-single-book.png" style="aspect-ratio: 880 / 680;" loading="lazy"><figcaption>Held like a book: live on one half, yesterday on the other</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>Drag the timeline of either half.</p>
+      <p class="check"><b class="check-label">Check:</b> That half plays from the chosen time; the other half continues unchanged.</p>
+    </li>
+    <li class="step">
+      <p>Open the iPhone Duo flat again.</p>
+      <p class="check"><b class="check-label">Check:</b> The usual layout returns.</p>
+    </li>
+  </ol>
+  <p>On the device page held like a book, the camera wall fills one half and the view of the selected camera the other. A tap on a thumbnail shows that camera on the other half instead of opening a new screen, and the selected thumbnail has a colored frame. At first, the first camera that is online, enabled, within the plan and not paused is selected.</p>
+
+  <h3 id="single-streams">YouTube and Twitch streams</h3>
+  <p>YouTube live streams and Twitch channels can be added like cameras; see <a class="xref" href="/guide/add.html#add-streams">“Adding YouTube live streams and Twitch channels”</a>. They play in the official player of the service, not through the camera functions of Cam Hub. A stream does not count toward the plan and is never locked; see <a class="xref" href="/guide/plans.html">Chapter 11, “Plans and limits”</a>.</p>
+  <ul>
+    <li><b>On a wall</b>: the tile plays the stream without sound and takes no touches of its own. It has no number and name label in its corner. A tap on the tile opens the stream full screen.</li>
+    <li><b>Full screen</b>: the picture is as large as the screen allows, on black. The player chooses its quality from the size of the picture, so full screen plays in a higher quality than a tile. The controls of the service work here. A tap on the logo or the title of the service in the player opens the stream in the YouTube or Twitch app or in the web browser.</li>
+    <li><b>Sound</b>: only in full screen, and only while the speaker switch is on. The speaker button next to <span class="ui">Close</span> is the same app-wide switch as the speaker button of a camera (see <a class="xref" href="/guide/single.html#single-controls">“Snapshot, sound and quality”</a>): when sound was switched on for a camera, the stream plays with sound as soon as it opens.</li>
+  </ul>
+  <ol class="steps">
+    <li class="step">
+      <p>On the <span class="ui">Live</span> tab or on the device page, tap the tile of a YouTube or Twitch stream.</p>
+      <p class="check"><b class="check-label">Check:</b> The stream opens full screen; when the tile was already playing, the picture continues without loading again. The close button (<span class="ui">Close</span>) and the speaker button sit in a strip beside the picture: above it when the iPhone is upright, at its side when it is held sideways. Nothing covers the player.</p>
+    </li>
+    <li class="step">
+      <p>Tap the speaker button (<span class="ui">Unmute</span>).</p>
+      <p class="check"><b class="check-label">Check:</b> The symbol changes to a speaker with sound waves, and the stream plays with sound.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Close</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The wall is shown again, and the tile plays on without sound.</p>
+    </li>
+  </ol>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Tile or full screen shows</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Tile or full screen shows">The player of the service</td><td data-label="Meaning">The stream is live.</td></tr>
+      <tr><td data-label="Tile or full screen shows">The name of the channel with <span class="ui">Offline</span></td><td data-label="Meaning">The Twitch channel is not live. It is checked again every two minutes while it is on screen and starts by itself when the channel goes live. A channel name that does not exist also shows <span class="ui">Offline</span>.</td></tr>
+      <tr><td data-label="Tile or full screen shows"><span class="ui ui-long">This channel isn't live right now, or it doesn't allow its live streams in other apps.</span></td><td data-label="Meaning">The followed YouTube channel has nothing live, or does not allow its streams in other apps. It is checked again every minute while it is on screen and starts by itself when a broadcast begins.</td></tr>
+      <tr><td data-label="Tile or full screen shows"><span class="ui ui-long">This isn't a live stream, or the broadcast has ended. Only live streams can be shown.</span></td><td data-label="Meaning">The YouTube video is not live, or its broadcast has ended. A single broadcast does not return; in full screen, <span class="ui">Try Again</span> asks once more.</td></tr>
+      <tr><td data-label="Tile or full screen shows"><span class="ui ui-long">This video isn't available. It may be private or removed.</span> or <span class="ui ui-long">The owner of this video doesn't allow it to be played in other apps.</span></td><td data-label="Meaning">YouTube does not play the video in Cam Hub: the video does not exist, is private, or its owner does not allow it in other apps.</td></tr>
+      <tr><td data-label="Tile or full screen shows"><span class="ui ui-long">YouTube's player couldn't load. Check your connection and try again.</span> or <span class="ui ui-long">Twitch's player couldn't load. Check your connection and try again.</span></td><td data-label="Meaning">The player did not load, or did not answer within about 30 seconds. Check the internet connection and tap <span class="ui">Try Again</span>. A tile of a wall tries again by itself: a YouTube tile after 1, 2, 4 and 8 minutes and then every 10 minutes, a Twitch tile every 2 minutes.</td></tr>
+      <tr><td data-label="Tile or full screen shows">The name with <span class="ui ui-long">Agree to YouTube's terms to play this stream.</span> or <span class="ui ui-long">Agree to Twitch's terms to play this channel.</span></td><td data-label="Meaning">The terms of the service have not been agreed on this iPhone or iPad yet, for example for a stream that arrived through a share code or a backup. In full screen, <span class="ui">Review Terms…</span> opens the notice; <span class="ui">Agree and Continue</span> starts the player, and <span class="ui">Cancel</span> leaves the stream as it is. The terms are agreed once per service.</td></tr>
+      <tr><td data-label="Tile or full screen shows">The name with <span class="ui ui-long">Not available in this region or language.</span></td><td data-label="Meaning">YouTube and Twitch are not available in some countries and regions. The stream keeps its name and can be deleted like any device.</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>The service may show its own ads or announcements in the player.</li>
+    <li>In a tile of a wall, a message is shortened to two lines and has no button. A tap on the tile opens the stream full screen, where <span class="ui">Try Again</span> is.</li>
+    <li>Streams have no snapshot, PTZ control, talk, zoom, recordings, SD/HD switch or black-bar mode. The <span class="ui">Live</span> tab and the Full Screen Wall show neither the SD/HD button nor the black-bar button for a stream.</li>
+    <li>In a window of its own (see <a class="xref" href="/guide/single.html#single-window">“A camera in a window of its own”</a>), a stream shows the player with the controls of the service and, below it, <span class="ui">Open in YouTube</span> or <span class="ui">Open in Twitch</span> and the link of the stream.</li>
+    <li>On Apple TV, a stream shows its name only; see <a class="xref" href="/guide/appletv.html">Chapter 14, “Apple TV”</a>.</li>
+  </ul>
+
+  <h3 id="single-states">Connection states and messages</h3>
+  <p>The state of the stream is shown over the picture.</p>
+  <div class="table-wrap" tabindex="0"><table>
+    <thead><tr><th>Over the picture</th><th>Meaning and action</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Over the picture">Spinner with <span class="ui">Connecting…</span></td><td data-label="Meaning and action">The first connection is being made.</td></tr>
+      <tr><td data-label="Over the picture">Spinner with <span class="ui">Reconnecting…</span></td><td data-label="Meaning and action">The stream was interrupted, or the picture stopped arriving for about 15 seconds while the connection stayed open, as with a frozen camera. Cam Hub tries again by itself at growing intervals of up to about 15 seconds, and about a minute apart after ten failed attempts in a row, until the view is left. An attempt that the device refuses ends at once, without waiting for a timeout.</td></tr>
+      <tr><td data-label="Over the picture">Message with a warning symbol and <span class="ui">Retry</span></td><td data-label="Meaning and action">The stream could not be opened. The message names the cause, for example an unreachable device; the wording is the same as when a device is added (see <a class="xref" href="/guide/add.html#add-failed">“When adding fails: the checklist”</a>). Tap <span class="ui">Retry</span> to try again.</td></tr>
+      <tr><td data-label="Over the picture"><span class="ui">Wrong username or password.</span> with <span class="ui">Retry</span></td><td data-label="Meaning and action">The device refused the account. Cam Hub signs in once for all cameras of a device, and after a refusal it does not sign in to the device again for about a minute, so that the account is not locked; <span class="ui">Retry</span> within that minute shows the same message. After a password change on the device, enter the new one with <span class="ui">Edit Credentials</span>; see <a class="xref" href="/guide/devices.html#devices-credentials">“Changing the user name and password of a device”</a>.</td></tr>
+      <tr><td data-label="Over the picture"><span class="ui ui-long">Too many requests just now. Try again in a minute.</span> with <span class="ui">Retry</span></td><td data-label="Meaning and action">Too many requests reached the device or its service in a short time. Cam Hub does not try again by itself in this case. Wait a minute, then tap <span class="ui">Retry</span>.</td></tr>
+      <tr><td data-label="Over the picture"><span class="ui ui-long">No password saved. Enter it again under Devices.</span> with <span class="ui">Retry</span></td><td data-label="Meaning and action">No password is saved for the device on this iPhone or iPad, for example after a move to a new one. Nothing is sent to the device. Enter the password, or restore an iCloud backup; see <a class="xref" href="/guide/devices.html#devices-password-missing">“A device without a saved password”</a>.</td></tr>
+      <tr><td data-label="Over the picture"><span class="ui ui-long">This device's security certificate has changed. Check it under HTTPS in the device's edit menu.</span> with <span class="ui">Retry</span></td><td data-label="Meaning and action">HTTPS is on for the device, and it presents a certificate other than the trusted one. Cam Hub does not connect until the certificate has been checked; see <a class="xref" href="/guide/devices.html#devices-https">“HTTPS for a saved device”</a>.</td></tr>
+      <tr><td data-label="Over the picture"><span class="ui ui-long">Could not load the saved password for this device.</span> with <span class="ui">Retry</span></td><td data-label="Meaning and action">The saved password cannot be read. Enter it again with <span class="ui">Edit Credentials</span> on the device page; see <a class="xref" href="/guide/devices.html#devices-credentials">“Changing the user name and password of a device”</a>.</td></tr>
+      <tr><td data-label="Over the picture"><span class="ui ui-long">This recorder encrypts its video, which Cam Hub cannot read over its own protocol. Add it again and choose ONVIF under “Connect using”.</span></td><td data-label="Meaning and action">The recorder sends encrypted video over its own protocol. Add it again with ONVIF as the connection method; see <a class="xref" href="/guide/add.html#add-methods">“Choosing the connection method”</a>.</td></tr>
+      <tr><td data-label="Over the picture"><span class="ui ui-long">The recorder would not play this recording. It may have been overwritten — choose another time.</span></td><td data-label="Meaning and action">The recorder refused the recording, for example because it was overwritten. Choose another time on the timeline.</td></tr>
+      <tr><td data-label="Over the picture"><span class="ui">Locked — upgrade to enable</span> with <span class="ui">Plans</span></td><td data-label="Meaning and action">The channel is outside the plan, for example because the plan ended while the view was open. Tap <span class="ui">Plans</span> to open the plans screen, or free a place as described in <a class="xref" href="/guide/devices.html#devices-plan">“Plan limits and enabling channels”</a>. When the plan covers the channel again, a recording continues where it had reached.</td></tr>
+      <tr><td data-label="Over the picture"><span class="ui">End of recording</span> with <span class="ui">Back to Live</span></td><td data-label="Meaning and action">The recording that was playing has no continuation; see <a class="xref" href="/guide/playback.html#playback-playing">“While a recording plays”</a>.</td></tr>
+      <tr><td data-label="Over the picture"><span class="ui ui-long">No recording at the selected time.</span> with <span class="ui">Retry</span></td><td data-label="Meaning and action">No recording exists at the time that was chosen on the timeline; see <a class="xref" href="/guide/playback.html#playback-timeline">“Using the timeline”</a>.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="shots pair">
+    <figure class="phone"><img src="/guide/img/single-reconnecting.jpg" alt="The single-camera view while the stream reconnects: a spinner with the text Reconnecting… on the black picture area, the LIVE badge at the top left, the camera control button at the lower right, below it Snapshot, the SD and HD switch and the line Could not reach the device., and the recording panel with an empty timeline" decoding="async" width="900" height="1956" data-src="/guide/img/single-reconnecting.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The picture while the connection is made again</figcaption></figure>
+    <figure class="phone"><img src="/guide/img/single-failed.jpg" alt="The single-camera view with a failure message and the Retry button over the dark picture area" decoding="async" width="900" height="1956" data-src="/guide/img/single-failed.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>A failure message with Retry</figcaption></figure>
+  </div>
+  <ol class="steps">
+    <li class="step">
+      <p>Read the message over the picture.</p>
+      <p class="check"><b class="check-label">Check:</b> The message names the cause.</p>
+    </li>
+    <li class="step">
+      <p>Tap <span class="ui">Retry</span>.</p>
+      <p class="check"><b class="check-label">Check:</b> The spinner <span class="ui">Connecting…</span> appears. The picture follows, or the message appears again; in that case, work through the checks in <a class="xref" href="/guide/add.html#add-failed">“When adding fails: the checklist”</a> and <a class="xref" href="/guide/trouble.html">Chapter 15, “Troubleshooting”</a>.</p>
+    </li>
+  </ol>
+  <p>Messages are shown in the language of the app. A few that come from the stream itself can be shown in English whatever the language of the app, for example <code>Connection closed</code>, <code>No video track in SDP</code> or <code>HTTP 404</code>.</p>
+  <p>A picture that stays black without a message can mean that the device sends a video format that the iPhone cannot decode. Cam Hub plays <code>H.264</code> and <code>H.265</code> video only, and a picture size beyond the limit of the decoder of the iPhone is not displayed. A lower resolution or the <code>H.264</code> format in the settings of the device can help.</p>
+  <p>When the app moves to the background or the iPhone is locked, the stream stops. When the app returns, the stream connects again by itself. A recording that was playing resumes where it had reached.</p>
+
+  <h3 id="single-limits">What is not available</h3>
+  <ul>
+    <li>Switching to the next or previous camera by swiping. Each camera is opened from its thumbnail.</li>
+    <li>A button for full screen. Turning the iPhone sideways takes its place.</li>
+    <li>Talk through the channels of a recorder, and talking and listening at the same time: the sound of the camera pauses while the talk button is held.</li>
+    <li>Controls for focus, iris and PTZ speed, and storing or changing saved positions.</li>
+    <li>A snapshot for devices that cannot supply one, and clips longer than 10 minutes; see <a class="xref" href="/guide/single.html#single-clip">“Recording a clip”</a>.</li>
+  </ul>
+</section><nav class="guide-pager" aria-label="Contents"><a class="guide-prev" rel="prev" href="/guide/live.html"><span class="pager-dir">Previous chapter</span><span class="pager-title">5. The Live tab and the Full Screen Wall</span></a><a class="guide-next" rel="next" href="/guide/playback.html"><span class="pager-dir">Next chapter</span><span class="pager-title">7. Recording playback and speed</span></a></nav></article>
+    </div>
+    <button class="guide-top" id="guide-top" type="button" aria-label="Back to top"></button>
+  </main>
+  <footer class="footer"><span data-i18n="footer">Copyright © 2026 ALMX. All rights reserved.</span><nav><a href="/guide.html" data-i18n="navGuide">Manual</a><a href="/devices.html" data-i18n="navDevices">Device differences</a><a href="/privacy.html" data-i18n="navPrivacy">Privacy</a><a href="/terms.html" data-i18n="navTerms">Terms</a><a class="store-link" href="https://apps.apple.com/app/apple-store/id6792057195?pt=129040647&amp;ct=web-guide&amp;mt=8" data-i18n="storeCTA">Download on the App Store</a></nav><nav class="language-links" id="language-links" aria-label="Language" data-i18n-aria="languageLabel"><a href="/guide/single.html" hreflang="en" lang="en" data-language-link="en" aria-current="true">English</a><a href="/zh-Hant/guide/single.html" hreflang="zh-Hant" lang="zh-Hant" data-language-link="zh-Hant">繁體中文</a><a href="/zh-Hans/guide/single.html" hreflang="zh-Hans" lang="zh-Hans" data-language-link="zh-Hans">简体中文</a><a href="/ja/guide/single.html" hreflang="ja" lang="ja" data-language-link="ja">日本語</a><a href="/ko/guide/single.html" hreflang="ko" lang="ko" data-language-link="ko">한국어</a><a href="/de/guide/single.html" hreflang="de" lang="de" data-language-link="de">Deutsch</a><a href="/es/guide/single.html" hreflang="es" lang="es" data-language-link="es">Español</a><a href="/es-MX/guide/single.html" hreflang="es-MX" lang="es-MX" data-language-link="es-MX">Español (México)</a><a href="/fr/guide/single.html" hreflang="fr" lang="fr" data-language-link="fr">Français</a><a href="/sl/guide/single.html" hreflang="sl" lang="sl" data-language-link="sl">Slovenščina</a><a href="/ar/guide/single.html" hreflang="ar" lang="ar" data-language-link="ar">العربية</a></nav></footer>
+  <script src="/additional-locales.js?v=20261103-sl"></script>
+  <script src="/site.js?v=20261112-1"></script>
+
+
+</body></html>
