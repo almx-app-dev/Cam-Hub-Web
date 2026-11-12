@@ -1276,8 +1276,8 @@ const guideLocalGaps = {
     "device-https.jpg", "device-password-missing.jpg", "devices-add-menu.jpg", "disk-health-recorder.jpg",
     "disk-health-row.jpg", "duo-lvm-canvases.png", "duo-open-flat.png", "duo-single-book.png",
     "duo-single-table.png", "edit-credentials.jpg", "lvm-move-picker.jpg", "lvm-page-switch.jpg",
-    "lvm-portrait-wall.jpg", "lvm-preview-grid.jpg", "playback-calendar.jpg", "settings-lvm-pages.jpg",
-    "settings-user-manual.jpg", "single-clip-landscape.jpg", "single-clip-recording.jpg", "single-clip-sheet.jpg",
+    "lvm-portrait-wall.jpg", "lvm-preview-grid.jpg", "playback-calendar.jpg", "playback-event-recordings.jpg",
+    "settings-contact.jpg", "settings-lvm-pages.jpg", "settings-user-manual.jpg", "single-clip-landscape.jpg", "single-clip-recording.jpg", "single-clip-sheet.jpg",
     "single-ptz-aim.jpg", "single-talk.jpg", "snmp-settings.jpg", "tools-demo-devices.jpg",
     "trouble-health-snmp.jpg", "watch-buttons.jpg", "web-stream-terms.jpg"
   ])

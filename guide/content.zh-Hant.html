@@ -74,11 +74,11 @@
       <tr><td><span class="ui">即時</span></td><td>顯示單一設備所有已啟用通道的即時牆。</td><td><a class="xref" href="#live">第 5 章「即時分頁與全螢幕牆」</a></td></tr>
       <tr><td><span class="ui">設備</span></td><td>加入與管理設備。開啟設備可查看各通道。在有提供的地區，YouTube 直播與 Twitch 頻道也在這裡加入為攝影機。</td><td><a class="xref" href="#add">第 3 章「加入設備」</a>、<a class="xref" href="#devices">第 4 章「設備頁與通道」</a>、<a class="xref" href="#add-streams">「加入 YouTube 直播與 Twitch 頻道」</a></td></tr>
       <tr><td><span class="ui">工具</span></td><td>掃描網路，找出攝影機與錄影主機。視地區與語言設定而定，另有附羅盤的時速表。</td><td><a class="xref" href="#tools">第 12 章「工具分頁」</a>、<a class="xref" href="#add-scan">「以網段掃描尋找設備」</a></td></tr>
-      <tr><td><span class="ui">設定</span></td><td>方案、預設畫質、畫面、LiveView Mix、備份與還原、分享攝影機、語言、重設、法律條款，以及本手冊的連結。</td><td><a class="xref" href="#settings">第 13 章「設定」</a></td></tr>
+      <tr><td><span class="ui">設定</span></td><td>方案、預設畫質、畫面、LiveView Mix、備份與還原、分享攝影機、語言、重設、法律條款、版本、本手冊的連結，以及寄電子郵件給開發團隊的一列。</td><td><a class="xref" href="#settings">第 13 章「設定」</a></td></tr>
     </tbody>
   </table></div>
   <figure class="land"><img src="guide/img/tour-tabbar.jpg" alt="畫面底部的分頁列，由左至右為 LiveView Mix、即時、設備、工具與設定五個分頁，目前選取的是即時分頁" loading="lazy" decoding="async" width="900" height="194"><figcaption>含五個分頁的分頁列</figcaption></figure>
-  <p><span class="ui">設定</span>分頁的最後一列<span class="ui">操作手冊</span>，會在 Cam Hub 網站開啟本手冊。除了 iPhone 與 iPad，Cam Hub 也可在 Apple TV 上使用，見<a class="xref" href="#appletv">第 14 章「Apple TV」</a>；Apple Watch 的 App 可直接從手腕送出 LiveView Mix 控制面板按鈕的請求，見<a class="xref" href="#webhook-watch">「Apple Watch 上的按鈕」</a>。</p>
+  <p><span class="ui">設定</span>分頁接近最後的<span class="ui">操作手冊</span>一列，會在 Cam Hub 網站開啟本手冊；最後一列<span class="ui">聯絡開發團隊</span>可寄電子郵件給開發團隊，見<a class="xref" href="#settings-contact">「聯絡開發團隊」</a>。除了 iPhone 與 iPad，Cam Hub 也可在 Apple TV 上使用，見<a class="xref" href="#appletv">第 14 章「Apple TV」</a>；Apple Watch 的 App 可直接從手腕送出 LiveView Mix 控制面板按鈕的請求，見<a class="xref" href="#webhook-watch">「Apple Watch 上的按鈕」</a>。</p>
 
   <h3 id="tour-launch">啟動時開啟哪個畫面</h3>
   <p>App 啟動時一律先開啟 <span class="ui">LiveView Mix</span> 分頁，不會回到上次關閉時所在的分頁。若要改為啟動後直接顯示某台設備的即時牆，或直接顯示全螢幕的 LiveView Mix，請在<span class="ui">設定</span>分頁調整<span class="ui">啟動時開啟</span>，見<a class="xref" href="#settings-lvm">「LiveView Mix、其頁面與啟動時開啟」</a>。</p>
@@ -117,12 +117,12 @@
   <div class="table-wrap"><table>
     <thead><tr><th>欄位</th><th>說明</th><th>預設值</th></tr></thead>
     <tbody>
-      <tr><td><span class="ui">名稱（選填）</span></td><td>設備在 Cam Hub 中顯示的名稱。留空時，使用設備回報的型號。以純 RTSP 連線且品牌不明的攝影機，以其位址命名；透過清單中的品牌加入的設備，以該品牌命名。</td><td>空白</td></tr>
+      <tr><td><span class="ui">名稱（選填）</span></td><td>設備在 Cam Hub 中顯示的名稱。留空時，使用設備回報的型號。自動偵測以純 RTSP 連線、且未辨識出品牌的攝影機，以其位址命名。在<span class="ui">進階</span>中選擇 RTSP 加入的設備，命名為<span class="ui" data-ui="value">RTSP</span>；透過清單中的品牌加入的設備，以該品牌命名。</td><td>空白</td></tr>
       <tr><td><span class="ui">IP 位址或主機名稱</span></td><td>必填。設備的網路位址。在此輸入 YouTube 或 Twitch 連結時，會改為引導到該服務的畫面，見<a class="xref" href="#add-streams">「加入 YouTube 直播與 Twitch 頻道」</a>。</td><td>空白</td></tr>
-      <tr><td><span class="ui">使用者名稱</span></td><td>設備的登入帳號。</td><td><code>admin</code></td></tr>
+      <tr><td><span class="ui">使用者名稱</span></td><td>必填。設備的登入帳號。欄位空白時，<span class="ui">新增</span>無法點選。</td><td><code>admin</code></td></tr>
       <tr><td><span class="ui">密碼</span></td><td>設備的登入密碼。密碼儲存在 iPhone 或 iPad 的鑰匙圈中。</td><td>空白</td></tr>
       <tr><td><span class="path"><span class="ui">進階</span> › <span class="ui">連線方式</span></span></td><td><span class="ui">自動偵測</span>、<span class="ui">ONVIF</span>、RTSP、某一設備系列的專用協定，或清單中的品牌。選擇方式見<a class="xref" href="#add-methods">「連線方式的選擇」</a>。</td><td><span class="ui">自動偵測</span></td></tr>
-      <tr><td><span class="path"><span class="ui">進階</span> › <span class="ui">HTTP 連接埠</span></span></td><td>設備控制介面的連接埠。使用<span class="ui">自動偵測</span>時，Cam Hub 會自行找出開放的連接埠，並優先嘗試此處填入的連接埠。使用<span class="ui">ONVIF</span>時，此欄須填入設備的 ONVIF 服務埠，例如部分設備使用 <code>2020</code> 或 <code>8899</code>。</td><td><code>80</code></td></tr>
+      <tr><td><span class="path"><span class="ui">進階</span> › <span class="ui">HTTP 連接埠</span></span></td><td>設備控制介面的連接埠。使用<span class="ui">自動偵測</span>時，Cam Hub 會自行找出開放的連接埠，並優先嘗試此處填入的連接埠。使用<span class="ui">ONVIF</span>時，此欄須填入設備的 ONVIF 服務埠，例如部分設備使用 <code>2020</code> 或 <code>8899</code>。開啟<span class="ui">使用 HTTPS</span>時，改在 HTTPS 連接埠連到設備；此欄的連接埠會保留，供日後關閉 HTTPS 時使用。</td><td><code>80</code></td></tr>
       <tr><td><span class="path"><span class="ui">進階</span> › <span class="ui">RTSP 連接埠</span></span></td><td>影像串流的連接埠。<span class="ui">自動偵測</span>會優先嘗試此處填入的連接埠。選擇 RTSP 連接埠不是 <code>554</code> 的品牌時，若欄位仍是先前的預設值，會自動改為該品牌的連接埠。</td><td><code>554</code></td></tr>
       <tr><td><span class="path"><span class="ui">進階</span> › <span class="ui">使用 HTTPS</span></span></td><td>選擇<span class="ui">自動偵測</span>或<span class="ui">ONVIF</span>時提供。只在設備的網頁使用 HTTPS 時開啟：Cam Hub 會先在該位址尋找 HTTPS（不登入），再透過 HTTPS 加入設備，並信任設備當下出示的憑證。見<a class="xref" href="#add-https">「透過 HTTPS 加入設備」</a>。</td><td>關閉</td></tr>
       <tr><td><span class="path"><span class="ui">進階</span> › <span class="ui">HTTPS 連接埠</span></span></td><td><span class="ui">使用 HTTPS</span>開啟時顯示。維持 <code>443</code> 時，Cam Hub 也會在 <code>5001</code> 與 <code>8443</code> 尋找；填入其他連接埠時只使用該連接埠。</td><td><code>443</code></td></tr>
@@ -162,10 +162,10 @@
   </ol>
   <p>連線期間，<span class="ui">新增</span>按鈕的位置改為顯示進度指示，表單也無法以下滑手勢關閉。點選<span class="ui">取消</span>會停止嘗試，不會儲存任何內容。Cam Hub 連線後會辨識設備是錄影主機還是獨立攝影機，讀取通道清單並儲存設備。</p>
   <p>新加入的設備是 Cam Hub 可透過 SNMP 讀取硬碟資訊的網路儲存設備（NAS）時，接著會出現<span class="ui">SNMP 設定</span>畫面。此步驟可略過：點選<span class="ui">稍後再說</span>即關閉畫面，日後可在硬碟健康頁面設定 SNMP，見<a class="xref" href="#devices-health">「硬碟健康」</a>。無論是否設定，設備都已儲存。</p>
-  <p>免費方案只會自動啟用額度內的通道，其餘通道顯示為<span class="ui">已停用</span>。已達方案允許的錄影主機數量時，畫面開啟方案頁。範例設備占用免費方案的錄影主機名額時，方案頁會說明此情況；刪除範例設備即可釋出名額。YouTube 直播與 Twitch 頻道一律不計入方案額度。額度說明見<a class="xref" href="#plans">第 11 章「方案與限制」</a>。</p>
+  <p>只有方案額度內的通道會啟用。回報有訊號的通道優先取得額度，其次是沒有訊號的通道，兩者各依設備的順序；其餘通道顯示為<span class="ui">已停用</span>。見<a class="xref" href="#devices-plan">「方案限額與啟用通道」</a>。已達方案允許的錄影主機數量時，畫面開啟方案頁。範例設備占用免費方案的錄影主機名額時，方案頁會說明此情況；刪除範例設備即可釋出名額。YouTube 直播與 Twitch 頻道一律不計入方案額度。額度說明見<a class="xref" href="#plans">第 11 章「方案與限制」</a>。</p>
   <div class="callout note">
     <strong class="t">已加入設備的位址無法編輯</strong>
-    <p>已加入的設備可以重新命名，使用者名稱與密碼可透過<span class="ui">編輯帳號密碼</span>變更，見<a class="xref" href="#devices-credentials">「變更設備的使用者名稱與密碼」</a>。位址則無法變更。IP 位址變更時，新位址會被視為另一台設備，錄影主機也會占用錄影主機額度。此時請先刪除舊設備（見<a class="xref" href="#devices">第 4 章「設備頁與通道」</a>），再以新位址新增。以相同的位址、連接埠與使用者名稱再次新增時，會就地更新已儲存的設備，而不是建立第二台。</p>
+    <p>已加入的設備可以重新命名，使用者名稱與密碼可透過<span class="ui">編輯帳號密碼</span>變更，見<a class="xref" href="#devices-credentials">「變更設備的使用者名稱與密碼」</a>。位址則無法變更。IP 位址變更時，新位址會被視為另一台設備，錄影主機也會占用錄影主機額度。此時請先刪除舊設備（見<a class="xref" href="#devices">第 4 章「設備頁與通道」</a>），再以新位址新增。以相同的位址、連接埠與使用者名稱再次新增時，會就地更新已儲存的設備，而不是建立第二台。既有的通道保留各自的開關狀態。在<span class="ui">名稱（選填）</span>輸入的名稱會取代已儲存的名稱；欄位留空時，保留已儲存的名稱。輸入的密碼會取代已儲存的密碼。開啟<span class="ui">使用 HTTPS</span>時，已儲存的設備改為開啟 HTTPS；未開啟時，設備的 HTTPS 設定維持不變。</p>
   </div>
 
   <h3 id="add-auto">不選品牌直接加入</h3>
@@ -213,7 +213,7 @@
   <p>各選項：</p>
   <ul>
     <li><b><span class="ui">自動偵測</span>（預設）</b>：Cam Hub 自行找出連接埠與協定，見<a class="xref" href="#add-auto">「不選品牌直接加入」</a>。</li>
-    <li><b><span class="ui">ONVIF</span></b>：略過偵測，只在<span class="ui">HTTP 連接埠</span>所填的連接埠上使用開放的 ONVIF 協定。適用於自動偵測找不到的攝影機，或想在同時支援原廠協定的設備上改用 ONVIF。設備上須已開啟 ONVIF；設備有獨立的 ONVIF 使用者清單時，須在其中新增使用者。錄影回放與 PTZ 控制是否可用，取決於設備是否提供。</li>
+    <li><b><span class="ui">ONVIF</span></b>：略過偵測，只在<span class="ui">HTTP 連接埠</span>所填的連接埠上使用開放的 ONVIF 協定（開啟<span class="ui">使用 HTTPS</span>時改在 HTTPS 連接埠，見<a class="xref" href="#add-https">「透過 HTTPS 加入設備」</a>）。適用於自動偵測找不到的攝影機，或想在同時支援原廠協定的設備上改用 ONVIF。設備上須已開啟 ONVIF；設備有獨立的 ONVIF 使用者清單時，須在其中新增使用者。錄影回放與 PTZ 控制是否可用，取決於設備是否提供。</li>
     <li><b>RTSP</b>：以純 RTSP 連線任何品牌的攝影機，並嘗試多數攝影機使用的串流路徑。都無法連線時，填入攝影機說明書或網頁上標示的路徑。</li>
     <li><b>某一設備系列的專用協定</b>：在<span class="ui">設備連接埠</span>上以該協定連線；除非已更改或轉送，連接埠為 <code>34567</code>。適用於自動偵測找不到的錄影主機，或從區域網路之外連入的主機。位址在區域網路之外時，表單以橘色顯示警告：此協定不會加密影像，許多設備對密碼的保護也很薄弱。要用什麼方式從外部連線（例如透過 VPN），由您自行決定。該設備系列的名稱見<a class="xref" href="#brands-methods">「連線方式」</a>。</li>
     <li><b>清單中的品牌</b>：依該品牌文件所載的串流路徑，直接以 RTSP 連線。適用於設備已關閉 ONVIF，或要加入只提供 RTSP 的錄影主機。增加的區塊有兩個欄位：
@@ -262,7 +262,16 @@
   <ul>
     <li>說明文字為<span class="ui">僅適用於網頁使用 HTTPS 的設備；不確定的話請保持關閉。Cam Hub 會在這個連接埠尋找 HTTPS（維持 443 時，也會試 5001 和 8443），並信任設備現在出示的憑證。之後可以在設備頁面的「HTTPS」中查看。</span>開關開啟期間，即使收合<span class="ui">進階</span>，說明仍會顯示。</li>
     <li>尋找 HTTPS 時不會送出使用者名稱與密碼：Cam Hub 只檢查哪些連接埠會出示憑證。沒有任何連接埠出示憑證時，表單顯示<span class="ui">這台設備剛才沒有透過 HTTPS 回應。</span>有多個連接埠出示憑證時會逐一嘗試，轉送到其他設備的連接埠不會讓加入就此中止。</li>
+    <li>出現此訊息時，<span class="ui">請先檢查這些</span>列出的是一般的檢查項目，見<a class="xref" href="#add-failed">「加入失敗時的檢查清單」</a>。另請確認下列事項：
+      <ul>
+        <li>以瀏覽器開啟設備的網頁，位址以 <code>https://</code> 開頭，確認設備是否使用 HTTPS 及其連接埠。</li>
+        <li>在<span class="ui">HTTPS 連接埠</span>輸入該連接埠。維持 <code>443</code> 時，只會檢查 <code>443</code>、<code>5001</code> 與 <code>8443</code>。</li>
+        <li>關閉<span class="ui">使用 HTTPS</span>，改以一般 HTTP 加入設備。</li>
+      </ul>
+    </li>
+    <li>選擇<span class="ui">ONVIF</span>並開啟<span class="ui">使用 HTTPS</span>時，Cam Hub 透過 HTTPS 在 HTTPS 連接埠尋找 ONVIF 服務，而不是在<span class="ui">HTTP 連接埠</span>所填的連接埠。設備的 ONVIF 服務使用其他 HTTPS 連接埠時，在<span class="ui">HTTPS 連接埠</span>輸入該連接埠。</li>
     <li>信任的是加入時設備出示的憑證。之後可以與設備自己網頁的憑證比對，見<a class="xref" href="#devices-https">「已儲存設備的 HTTPS」</a>。</li>
+    <li>開啟<span class="ui">使用 HTTPS</span>時，<span class="ui">自動偵測</span>只在找到的 HTTPS 連接埠上嘗試內建支援的原廠通訊協定與 ONVIF，不會嘗試某一設備系列的專用協定與純 RTSP，因此只提供 RTSP 的攝影機無法以此方式加入；請關閉<span class="ui">使用 HTTPS</span>後再加入。</li>
     <li>HTTPS 加密的是設備控制。透過 RTSP 取得的影像不會因此加密。</li>
   </ul>
 
@@ -293,7 +302,7 @@
     </li>
     <li class="step">
       <p>選用：在<span class="ui">名稱（選填）</span>輸入名稱。</p>
-      <p class="check"><b class="check-label">確認：</b>欄位顯示輸入的名稱。留空時，以直播的標題命名。</p>
+      <p class="check"><b class="check-label">確認：</b>欄位顯示輸入的名稱。留空時，以直播的標題命名；追蹤中但目前沒有直播的頻道，命名為<span class="ui" data-ui="value">YouTube Live</span>。</p>
     </li>
     <li class="step">
       <p>點選右上角的<span class="ui">新增</span>。</p>
@@ -304,6 +313,7 @@
     <li>播放器回報串流正在直播時，<span class="ui">新增</span>才可點選。已錄好的影片、已結束的直播，以及擁有者不允許在其他 App 播放的影片都會被拒絕；播放器上會顯示原因與<span class="ui">再試一次</span>。</li>
     <li>貼上目前沒有直播的頻道連結時，畫面顯示<span class="ui">仍可追蹤這個頻道：它一開始直播就會在這裡播放。</span>，並可點選<span class="ui">新增</span>。追蹤中的頻道，其畫格每分鐘檢查一次，頻道開始直播時會自動播放。</li>
     <li>以 <code>@</code> 開頭的頻道名稱連結無法使用，畫面會顯示<span class="ui">請使用直播本身的連結：在 YouTube 開啟直播，點「分享」，再點「複製連結」。</span>播放清單也無法加入。</li>
+    <li>沒有指向影片的 YouTube 連結，畫面會顯示<span class="ui">這個 YouTube 連結沒有指向影片。請貼上直播的連結。</span></li>
     <li>再次加入同一個直播，只會更新其名稱。</li>
   </ul>
 
@@ -380,15 +390,7 @@
         </ol></td>
       </tr>
       <tr>
-        <td><span class="ui">這台設備剛才沒有透過 HTTPS 回應。</span></td>
-        <td><ol>
-          <li>以瀏覽器開啟設備的網頁，位址以 <code>https://</code> 開頭，確認設備是否使用 HTTPS 及其連接埠。</li>
-          <li>在<span class="ui">HTTPS 連接埠</span>輸入該連接埠。維持 <code>443</code> 時，只會檢查 <code>443</code>、<code>5001</code> 與 <code>8443</code>。</li>
-          <li>關閉<span class="ui">使用 HTTPS</span>，改以一般 HTTP 加入設備。</li>
-        </ol></td>
-      </tr>
-      <tr>
-        <td><span class="ui">發生錯誤。請再試一次。</span>及上列以外的其他訊息</td>
+        <td><span class="ui">發生錯誤。請再試一次。</span>、<span class="ui">這台設備剛才沒有透過 HTTPS 回應。</span>及上列以外的其他訊息</td>
         <td><ol>
           <li>檢查 IP 位址。</li>
           <li>讓手機連上與設備相同的 Wi-Fi。</li>
@@ -400,7 +402,7 @@
       </tr>
     </tbody>
   </table></div>
-  <figure class="phone"><img src="guide/img/add-failure-tips.jpg" alt="加入失敗後出現的「請先檢查這些」清單，列出七項檢查，由檢查 IP 位址開始" loading="lazy" decoding="async" width="900" height="1956"><figcaption>失敗訊息下方的檢查清單</figcaption></figure>
+  <figure class="phone"><img src="guide/img/add-failure-tips.jpg" alt="加入失敗後出現的「請先檢查這些」清單，由檢查 IP 位址開始" loading="lazy" decoding="async" width="900" height="1956"><figcaption>失敗訊息下方的檢查清單</figcaption></figure>
   <p>逐項處理後仍然失敗時，可使用實驗性的設備報告，見<a class="xref" href="#add-report">「設備報告（實驗性功能）」</a>。</p>
 
   <h3 id="add-report">設備報告（實驗性功能）</h3>
@@ -441,8 +443,12 @@
     </li>
     <li class="step">
       <p>點選<span class="ui">以電子郵件寄給開發者</span>。</p>
-      <p class="check"><b class="check-label">確認：</b>畫面開啟郵件撰寫頁面，報告已放入郵件。</p>
+      <p class="check"><b class="check-label">確認：</b>畫面開啟郵件撰寫頁面，收件人為開發者。主旨以 <code>Cam Hub device report</code> 開頭，後接辨識出的廠牌與型號，未辨識出時為 <code>unknown device</code>。郵件內有下方說明的問題與報告，報告也另以 <code>cam-hub-report.txt</code> 檔案附加。</p>
       <figure class="phone"><img src="guide/img/add-report-mail-not-set-up.jpg" alt="設備報告頁面上方的提示「此裝置尚未設定郵件」：說明完整報告已複製到剪貼簿，並有「好」按鈕" loading="lazy" decoding="async" width="900" height="1956"><figcaption>尚未設定郵件帳號時，改為出現這個提示</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>在問題下方填寫回答。</p>
+      <p class="check"><b class="check-label">確認：</b>回答顯示在問題與報告上方的虛線之間。</p>
     </li>
     <li class="step">
       <p>確認郵件內容後，傳送郵件。</p>
@@ -458,7 +464,7 @@
     <li>蒐集期間可點選左上角的<span class="ui">停止</span>。已找到的部分會保留，畫面顯示<span class="ui">您已停止蒐集，因此此報告並不完整。尚未傳送任何內容。</span>，並提供<span class="ui">重新蒐集</span>。</li>
     <li><span class="ui">包含的內容</span>有五個項目：<span class="ui">網路</span>、<span class="ui">HTTP 指紋</span>、<span class="ui">通訊協定探測</span>、<span class="ui">RTSP 與影像</span>與<span class="ui">App 執行記錄</span>，各項前方標有字母代號。檢查結果與報告標頭一律會包含。</li>
     <li>除了<span class="ui">以電子郵件寄給開發者</span>，也可以點選<span class="ui">複製</span>或<span class="ui">分享…</span>。複製的內容只留在這台裝置上，約 2 分鐘後失效。</li>
-    <li>裝置尚未設定郵件時，畫面顯示<span class="ui">此裝置尚未設定郵件</span>：完整報告已複製到剪貼簿，郵件 App 會開啟並帶入報告開頭，須將完整報告貼到郵件中。</li>
+    <li>裝置尚未設定郵件時，畫面顯示<span class="ui">此裝置尚未設定郵件</span>：完整報告已複製到剪貼簿，點選<span class="ui">好</span>會開啟郵件 App 並帶入報告開頭。須將完整報告貼到郵件中。</li>
     <li>報告只有在點選寄出後才會離開裝置。<span class="ui">除非您選擇寄出電子郵件，否則不會傳送任何內容。報告中絕不包含您的密碼。</span></li>
   </ul>
 
@@ -473,11 +479,11 @@
   </ul>
   <div class="callout tip">
     <strong class="t">郵件內的問題</strong>
-    <p>郵件內文附有數個問題，包括設備標籤上印的廠牌與型號、韌體版本、設備種類、預期與實際結果的差異、原廠 App 或媒體播放器能否顯示該設備，以及可在媒體播放器開啟的 RTSP 位址（須先移除使用者名稱、密碼與位址）。回答這些問題有助於開發者判斷。</p>
+    <p>郵件開頭是一句英文，確認此為實驗性功能，且寄出報告不保證獲得支援。接著是<span class="ui">您可以使用自己最熟悉的語言撰寫，開發團隊都能支援。</span>與<span class="ui">請盡量回答以下問題：</span>，以及六個編號的問題：設備標籤上印的廠牌與型號、韌體版本、設備種類、預期與實際結果的差異、原廠 App 或媒體播放器能否顯示該設備，以及可在媒體播放器開啟的 RTSP 位址（須先移除使用者名稱、密碼與位址）。問題之後是填寫回答的空白與一條虛線，再來是報告。回答這些問題有助於開發者判斷。</p>
   </div>
 
   <h4>已儲存的報告</h4>
-  <p>每份報告都會儲存在這台裝置上，保留最近的五份。失敗訊息下方會出現一個顯示儲存日期的上一份報告項目，點選後可再次開啟。已儲存的報告顯示儲存當時的內容，無法逐項開關；需要重新選擇內容時，須重新蒐集。</p>
+  <p>每份報告都會儲存在這台裝置上，保留最近的五份。加入失敗後，<span class="ui">將詳細資訊傳送給開發者</span>下方會出現一個附有儲存日期的項目，例如<span class="ui">上一份報告（2026年11月13日 上午9:41）</span>；點選後開啟最近一份已儲存的報告。已儲存的報告顯示儲存當時的內容，無法逐項開關；需要重新選擇內容時，須重新蒐集。</p>
   <p>刪除已儲存的報告：</p>
   <ol class="steps">
     <li class="step">
@@ -487,7 +493,7 @@
     </li>
     <li class="step">
       <p>點選對話框中的<span class="ui">刪除已儲存的報告</span>。</p>
-      <p class="check"><b class="check-label">確認：</b>所有已儲存的報告已刪除。目前畫面上的報告只顯示在螢幕上，不會再次儲存。</p>
+      <p class="check"><b class="check-label">確認：</b>所有已儲存的報告已刪除。頁面顯示的是已儲存的報告時，頁面隨即關閉；剛蒐集的報告則仍顯示在畫面上，不會再次儲存。</p>
     </li>
   </ol>
 
@@ -520,7 +526,7 @@
   <ul>
     <li>除了位址，表單也會帶入設備回報的內容：名稱或型號作為名稱、管理服務的連接埠作為<span class="ui">HTTP 連接埠</span>，以及清單中品牌的通道數量作為<span class="ui">攝影機</span>。使用專用協定的設備系列，其連接埠不是預設值時，會選好該連線方式與<span class="ui">設備連接埠</span>，並展開<span class="ui">進階</span>。</li>
     <li>掃描回報設備尚未開通時，表單最上方會先顯示須先開通的說明，見<a class="xref" href="#brands-activate">「開通新設備」</a>。</li>
-    <li><span class="ui">範圍</span>從 <code>/26</code>（最小）到 <code>/16</code>（最大）。超過 1,024 個位址時，掃描會均勻取樣，不逐一探測。</li>
+    <li><span class="ui">範圍</span>提供 <code>/26</code>、<code>/25</code>、<code>/24</code>、<code>/23</code>、<code>/22</code> 與 <code>/16</code>，各附網路遮罩，例如 <code>/24, 255.255.255.0</code>；目前所在網路的前綴不在其中時，也會列出該前綴。超過 1,024 個位址時，掃描會均勻取樣，不逐一探測，欄位下方一行會顯示，例如<span class="ui" data-ui="value">將掃描 10.0.0.0/16 · 從 65534 個位址取樣 1024 個</span>。</li>
     <li>位址欄位或範圍與目前所在的網段不同時，會出現<span class="ui">使用我的子網路</span>，點選後恢復為目前的網段。</li>
     <li>位址欄位格式不正確時，畫面顯示<span class="ui">輸入子網路，例如 192.168.1 或 192.168.1.0。</span></li>
     <li>新增完成後，畫面回到工具分頁，而不是設備清單。</li>
@@ -538,7 +544,7 @@
 
   <h3 id="devices-list">設備清單</h3>
   <p>路徑：底部的<span class="ui">設備</span>分頁。</p>
-  <p>每一列顯示設備名稱、型號與位址。左側的圖示標示錄影主機或攝影機；右側的連線指示符號下方有標籤，標明類型：<span class="ui">錄影主機</span>或<span class="ui">攝影機</span>。指示符號顯示設備是否在 HTTP 連接埠接受連線。每次該列出現在畫面上時都會重新檢查，最多等待約 4 秒。</p>
+  <p>每一列顯示設備名稱、型號與位址。左側的圖示標示錄影主機或攝影機；右側的連線指示符號下方有標籤，標明類型：<span class="ui">錄影主機</span>或<span class="ui">攝影機</span>。指示符號顯示設備是否在 HTTP 連接埠接受連線；設備已開啟 HTTPS 時，改為檢查 HTTPS 連接埠（見<a class="xref" href="#devices-https">「已儲存設備的 HTTPS」</a>）。每次該列出現在畫面上時都會重新檢查，最多等待約 4 秒。</p>
   <div class="table-wrap"><table>
     <thead><tr><th>指示符號</th><th>意義</th></tr></thead>
     <tbody>
@@ -549,8 +555,8 @@
     </tbody>
   </table></div>
   <div class="callout note">
-    <strong class="t">指示符號只測試 HTTP 連接埠</strong>
-    <p>設備不接受所儲存的 HTTP 連接埠連線時，即使影像正常，也可能顯示紅色符號，例如以清單中的品牌加入的攝影機。範例攝影機的位址為 <code>demo</code>，並非網路上的設備，一律顯示紅色符號。</p>
+    <strong class="t">指示符號只測試一個連接埠</strong>
+    <p>設備不接受所測試連接埠的連線時，即使影像正常，也可能顯示紅色符號，例如以清單中的品牌加入的攝影機。範例攝影機的位址為 <code>demo</code>，並非網路上的設備，一律顯示紅色符號。</p>
   </div>
   <p>右上角的加號按鈕會開啟選單。<span class="ui">新增設備</span>用於加入錄影主機或攝影機，見<a class="xref" href="#add">第 3 章「加入設備」</a>。在提供這兩項服務的地區，選單中還有<span class="ui">YouTube 直播</span>與<span class="ui">Twitch 頻道</span>，可將直播加入為攝影機，見<a class="xref" href="#add-streams">「加入 YouTube 直播與 Twitch 頻道」</a>。</p>
   <figure class="phone"><img src="guide/img/devices-list.jpg" alt="設備清單，列出三台錄影主機與兩支攝影機；每列右側有連線指示符號與類型標籤，上方有編輯與加號按鈕" loading="lazy" decoding="async" width="900" height="1956"><figcaption>設備清單</figcaption></figure>
@@ -600,7 +606,7 @@
     </li>
     <li class="step">
       <p>點選對話框中的<span class="ui">刪除</span>。要保留設備時，改點對話框以外的任何地方。</p>
-      <p class="check"><b class="check-label">確認：</b>該列消失。設備、設備的通道、已儲存的密碼、SNMP 設定與硬碟讀數會從這支 iPhone 或 iPad 移除。該設備也會從 LiveView Mix 牆面移除；曾在<span class="ui">即時</span>分頁或<span class="ui">啟動時開啟</span>中被選取時，該選取也會一併清除。</p>
+      <p class="check"><b class="check-label">確認：</b>該列消失。設備、設備的通道、已儲存的密碼、SNMP 設定、硬碟讀數，以及從該設備以檔案形式下載的錄影（見<a class="xref" href="#playback-playing">「播放錄影期間」</a>），都會從這支 iPhone 或 iPad 移除。該設備也會從 LiveView Mix 牆面移除；曾在<span class="ui">即時</span>分頁或<span class="ui">啟動時開啟</span>中被選取時，該選取也會一併清除。</p>
     </li>
   </ol>
   <p>已刪除的錄影主機不再計入方案允許的錄影主機數量，見<a class="xref" href="#devices-plan">「方案限額與啟用通道」</a>。重新加入設備的方式見<a class="xref" href="#add">第 3 章「加入設備」</a>。</p>
@@ -612,7 +618,7 @@
     <li><b>資訊卡片</b>：顯示設備名稱與類型，以及<span class="ui">型號</span>、<span class="ui">IP 位址</span>、<span class="ui">連接埠</span>（設備的 HTTP 連接埠）、<span class="ui">HTTPS</span>（HTTPS 連接埠，只在開啟 HTTPS 時顯示）、<span class="ui">序號</span>、<span class="ui">韌體</span>與<span class="ui">攝影機</span>（通道數量）。序號與韌體只在設備有回報時顯示。YouTube 直播或 Twitch 頻道以<span class="ui">連結</span>列取代<span class="ui">IP 位址</span>與<span class="ui">連接埠</span>。</li>
     <li><b><span class="ui">硬碟健康</span></b>：開啟設備的硬碟報告，見<a class="xref" href="#devices-health">「硬碟健康」</a>。該列右側的橘色三角形或紅色符號，表示上一次讀取時最嚴重的硬碟判定結果。</li>
     <li><b>縮圖</b>：錄影主機的每個通道各顯示一個縮圖；獨立攝影機只有一個通道，顯示一個縮圖。每個縮圖的左下角顯示通道編號與名稱。縮圖依<span class="path"><span class="ui">設定</span> › <span class="ui">預設畫質</span> › <span class="ui">多支攝影機</span></span>使用 SD 或 HD，未變更時為 SD。設定變更後，此頁立即套用；此頁本身沒有 SD 與 HD 的切換按鈕。</li>
-    <li><b>重新整理</b>：開啟設備頁時（同一台設備每分鐘最多一次），以及每次在頁面上向下拉時，Cam Hub 會向設備重新讀取通道清單。名稱與連線狀態會更新，設備新增的通道會出現，設備已移除的通道會消失。新出現的通道只有在方案允許時才會啟用，否則顯示為<span class="ui">已停用</span>。在 Cam Hub 中設定的名稱會保留。設備沒有回應，或回傳的清單看起來不完整（完全沒有通道，或以單一通道取代多個通道）時，清單維持原狀，也不顯示訊息。</li>
+    <li><b>重新整理</b>：開啟設備頁時（同一台設備每分鐘最多一次），以及每次在頁面上向下拉時，Cam Hub 會向設備重新讀取通道清單。名稱與連線狀態會更新，設備新增的通道會出現，設備已移除的通道會消失。新出現的通道只有在方案還有空的名額時才會啟用，並由有訊號的通道優先取得名額（見<a class="xref" href="#devices-plan">「方案限額與啟用通道」</a>）；沒有取得名額的新通道顯示為<span class="ui">已停用</span>。原有的通道維持原本的啟用或停用狀態，在 Cam Hub 中設定的名稱也會保留。設備沒有回應，或回傳的清單看起來不完整（完全沒有通道，或以單一通道取代多個通道）時，清單維持原狀，也不顯示訊息。</li>
     <li><b>登入遭拒</b>：重新整理時設備拒絕已儲存的使用者名稱或密碼，縮圖上方會出現訊息<span class="ui">使用者名稱或密碼錯誤。</span>與<span class="ui">編輯帳號密碼</span>按鈕，見<a class="xref" href="#devices-credentials">「變更設備的使用者名稱與密碼」</a>。</li>
     <li><b>沒有儲存密碼</b>：這部 iPhone 或 iPad 上沒有儲存該設備的密碼時，縮圖上方會出現訊息與<span class="ui">重新輸入密碼</span>、<span class="ui">從 iCloud 還原</span>兩個按鈕，見<a class="xref" href="#devices-password-missing">「沒有儲存密碼的設備」</a>。</li>
     <li><b>沒有通道</b>：設備沒有回報任何通道時，頁面顯示<span class="ui">找不到攝影機。</span>與<span class="ui">重新整理</span>按鈕，點選後重新讀取通道清單。</li>
@@ -709,7 +715,7 @@
   </div>
 
   <h3 id="devices-password-missing">沒有儲存密碼的設備</h3>
-  <p>Cam Hub 把每台設備的密碼儲存在 iPhone 或 iPad 的鑰匙圈中。iPhone 或 iPad 的內容搬到新機時，密碼可以一起搬過去；Cam Hub 的 iCloud 備份與分享代碼則一定包含密碼（見<a class="xref" href="#share-contents">「備份與代碼的內容」</a>）。設備清單到了新機卻沒有密碼時，例如新的 iPhone、iPad 或 Mac 沒有沿用舊機的鑰匙圈，就會出現以下狀態。此時 Cam Hub 不會向設備送出任何請求：不會以空白密碼登入，也不會顯示密碼錯誤。</p>
+  <p>Cam Hub 把每台設備的密碼儲存在 iPhone 或 iPad 的鑰匙圈中。iPhone 或 iPad 的內容搬到新機時，密碼可以一起搬過去；Cam Hub 的 iCloud 備份與分享代碼則包含製作當時 iPhone 或 iPad 上已儲存的每一組密碼（見<a class="xref" href="#share-contents">「備份與代碼的內容」</a>）。設備清單到了新機卻沒有密碼時，例如新的 iPhone、iPad 或 Mac 沒有沿用舊機的鑰匙圈，就會出現以下狀態。此時 Cam Hub 不會向設備送出任何請求：不會以空白密碼登入，也不會顯示密碼錯誤。</p>
   <ol class="steps">
     <li class="step">
       <p>開啟該設備的設備頁。</p>
@@ -725,7 +731,7 @@
 
   <h3 id="devices-https">已儲存設備的 HTTPS</h3>
   <p>網頁介面提供 HTTPS 的設備，可以改以 HTTPS 控制，而不使用一般 HTTP。HTTPS 預設關閉，須針對每台設備開啟。開啟後，Cam Hub 只接受開啟 HTTPS 時信任的憑證，或公開憑證機構為該設備位址簽發的憑證，因此這類憑證自動續期後仍可連線。透過 RTSP 取得的影像不會因此設定而加密。</p>
-  <p>設備曾透過 HTTPS 回應，或已開啟 HTTPS 時，鉛筆選單才會提供<span class="ui">HTTPS</span>。Cam Hub 詢問設備時不會登入，只檢查某個連接埠是否出示憑證。有回應的結果保留一週，沒有回應的結果保留一天；在設備頁向下拉，會立即重新詢問。以某一設備系列的專用協定、RTSP 或清單中的品牌連線的設備，以及範例攝影機與 YouTube 直播、Twitch 頻道，不提供這個項目。</p>
+  <p>設備曾透過 HTTPS 回應，或已開啟 HTTPS 時，鉛筆選單才會提供<span class="ui">HTTPS</span>。Cam Hub 詢問設備時不會登入，只檢查某個連接埠是否出示憑證。有回應的結果保留一週，沒有回應的結果保留一天；在設備頁向下拉，會立即重新詢問。Apple TV 沒有向下拉的操作；在 Apple TV 上，沒有回應的設備，超過一小時後再次開啟其設備頁時會重新詢問。以某一設備系列的專用協定、RTSP 或清單中的品牌連線的設備，以及範例攝影機與 YouTube 直播、Twitch 頻道，不提供這個項目。</p>
   <h4>開啟 HTTPS</h4>
   <ol class="steps">
     <li class="step">
@@ -748,7 +754,7 @@
     <li><b>關閉 HTTPS</b>：關閉<span class="ui">使用 HTTPS</span>，再點選<span class="ui">儲存</span>。Cam Hub 會先確認設備能以已儲存的帳號密碼透過一般 HTTP 回應；不能時不做任何變更，畫面顯示<span class="ui">這台設備沒有透過一般 HTTP 回應，因此 HTTPS 維持開啟。</span>關閉 HTTPS 會忘記已信任的憑證，再次開啟時會重新檢查憑證。</li>
     <li><b>憑證變更</b>：設備出示的憑證與信任的憑證不同，而且不是公開憑證機構為該位址簽發的憑證時，Cam Hub 不會連線，縮圖顯示<span class="ui">這台設備的安全憑證已變更。請到設備編輯選單中的「HTTPS」檢查。</span>此時 HTTPS 畫面顯示新的指紋與<span class="ui">這台設備目前出示的憑證，與開啟 HTTPS 時信任的憑證不同。只有在您知道它為何改變時（例如設備重置後），才點選「儲存」信任它。</span>點選<span class="ui">儲存</span>後，經過與開啟 HTTPS 相同的確認，才會信任新的憑證。</li>
     <li>設備改在其他 HTTPS 連接埠以相同憑證回應時，畫面顯示新的連接埠，點選<span class="ui">儲存</span>即儲存，不會出現警告。</li>
-    <li>HTTPS 設定連同連接埠與信任的憑證，會隨 iCloud 備份與分享代碼一起帶走，見<a class="xref" href="#share-contents">「備份與代碼的內容」</a>。</li>
+    <li>HTTPS 設定連同連接埠與信任的憑證，會隨 iCloud 備份與分享代碼一起帶走，但還原或匯入一律不會關閉 HTTPS，見<a class="xref" href="#share-contents">「備份與代碼的內容」</a>。</li>
   </ul>
 
   <h3 id="devices-health">硬碟健康</h3>
@@ -846,6 +852,7 @@
     </tbody>
   </table></div>
   <p>並非每台設備都會回報各通道的訊號中斷。這類設備的通道，串流無法開啟時顯示失敗訊息，而不是<span class="ui">無訊號</span>。</p>
+  <p>已暫停的通道一律顯示<span class="ui">已暫停</span>，即使通道已停用或超出方案範圍也一樣。點選這類縮圖時，已停用的通道會提供<span class="ui">啟用</span>，超出方案範圍的通道則開啟方案畫面。已停用的暫停通道不占用方案的名額。長按選單的<span class="ui">頻寬</span>區段中仍有<span class="ui">繼續播放</span>。</p>
   <figure class="phone"><img src="guide/img/device-tile-states.jpg" alt="有六個通道的錄影主機設備頁：一個即時縮圖，以及已停用、方案未包含、已暫停與無訊號的縮圖" loading="lazy" decoding="async" width="900" height="1956"><figcaption>不同狀態的縮圖</figcaption></figure>
   <div class="callout note">
     <strong class="t">隱藏無訊號攝影機只影響牆面</strong>
@@ -874,12 +881,16 @@
     </li>
     <li class="step">
       <p>點選<span class="ui">重新命名攝影機</span>。</p>
-      <p class="check"><b class="check-label">確認：</b>開啟對話框，<span class="ui">名稱</span>欄位帶入目前的名稱，並有<span class="ui">取消</span>、<span class="ui">使用設備名稱</span>與<span class="ui">儲存</span>三個按鈕。</p>
+      <p class="check"><b class="check-label">確認：</b>開啟<span class="ui">重新命名攝影機</span>對話框，顯示說明<span class="ui">自己為這支攝影機命名。設備原本的名稱仍保留在底層，重新整理設備不會蓋掉您取的名字。</span>，<span class="ui">名稱</span>欄位帶入目前的名稱，並有<span class="ui">取消</span>、<span class="ui">使用設備名稱</span>與<span class="ui">儲存</span>三個按鈕。</p>
       <figure class="phone"><img src="guide/img/channel-rename-alert.jpg" alt="重新命名攝影機對話框，有名稱欄位，以及取消、使用設備名稱與儲存三個按鈕" loading="lazy" decoding="async" width="900" height="1956"><figcaption>重新命名攝影機對話框</figcaption></figure>
     </li>
     <li class="step">
-      <p>輸入新名稱，點選<span class="ui">儲存</span>。</p>
-      <p class="check"><b class="check-label">確認：</b>縮圖左下角顯示新名稱。即時分頁、LiveView Mix 牆面與單機畫面的標題使用相同的名稱。</p>
+      <p>在<span class="ui">名稱</span>欄位輸入新名稱。</p>
+      <p class="check"><b class="check-label">確認：</b>欄位顯示新名稱。</p>
+    </li>
+    <li class="step">
+      <p>點選<span class="ui">儲存</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>縮圖左下角顯示新名稱。即時分頁、LiveView Mix 牆面與單機畫面的標題使用相同的名稱。名稱空白，或與設備回報的名稱相同時，縮圖改回顯示設備的名稱。</p>
     </li>
     <li class="step">
       <p>要還原為設備回報的名稱時，重複前兩個步驟，然後點選<span class="ui">使用設備名稱</span>。</p>
@@ -918,6 +929,7 @@
     <li>兩種方案可同時持有。兩項限額各自獨立：攝影機方案提高獨立攝影機的上限，NVR 方案提高可使用全部通道的錄影主機數量。</li>
     <li>顯示中的 LiveView Mix 頁面上，每個控制面板各計為占用攝影機上限的一支攝影機。真實的攝影機優先保留畫面；超出上限的控制面板顯示<span class="ui">方案未包含</span>。見<a class="xref" href="#lvm">第 8 章「LiveView Mix 多機牆」</a>。</li>
     <li>錄影主機一加入，無論是否有已啟用的通道，即計入錄影主機的數量。範例攝影機與真實設備同樣計入。</li>
+    <li>加入設備時，以及每次重新讀取通道清單並發現新的通道時，方案的空名額依下列順序分配給新的通道：先分配給設備回報有訊號的通道，再分配給沒有訊號的通道，兩組各依設備列出的順序。沒有分配到名額的新通道顯示為<span class="ui">已停用</span>。原有的通道維持原本的啟用或停用狀態。例如：在免費方案中，沒有其他已啟用的通道時，加入一台通道 1、2 沒有訊號、通道 3、4 有訊號的錄影主機，通道 3 與 4 會啟用，通道 1 與 2 顯示為<span class="ui">已停用</span>。</li>
     <li>YouTube 直播與 Twitch 頻道不計入方案，也一律不會被鎖定，見<a class="xref" href="#devices-streams">「YouTube 直播與 Twitch 頻道」</a>。</li>
     <li>方案到期，或限額低於已啟用的通道數量時，已儲存的選擇會保留。超出限額的通道顯示<span class="ui">方案未包含</span>：獨立攝影機優先保留畫面，其次是錄影主機的通道，各依設備加入的先後與通道編號的順序。</li>
     <li>兩項限額都是不限時，所有通道自動啟用，也不再提供<span class="ui">選擇顯示哪些攝影機</span>頁面。</li>
@@ -933,7 +945,7 @@
     </li>
     <li class="step">
       <p>點選<span class="ui">啟用</span>。</p>
-      <p class="check"><b class="check-label">確認：</b>方案還有空的名額時，縮圖開始顯示即時影像，程序到此結束。已達限額時，畫面開啟方案畫面並顯示訊息，通道維持停用。獨立攝影機在免費方案中的訊息為<span class="ui">您已達免費方案可啟用 2 支攝影機的上限。</span>；在攝影機方案中則為<span class="ui">您已達目前方案可啟用 8 支攝影機的上限。</span>，數字為該方案的上限。錄影主機通道的訊息為<span class="ui">訂閱 NVR 方案，解鎖所有通道。</span></p>
+      <p class="check"><b class="check-label">確認：</b>方案還有空的名額時，縮圖開始顯示即時影像，程序到此結束。已達限額時，畫面開啟方案畫面並顯示訊息，通道維持停用。獨立攝影機在免費方案中的訊息為<span class="ui">您已達免費方案可啟用 2 支攝影機的上限。</span>；持有方案時則為<span class="ui">您已達目前方案可啟用 8 支攝影機的上限。</span>，數字為該方案的攝影機上限。錄影主機通道的訊息為<span class="ui">訂閱 NVR 方案，解鎖所有通道。</span></p>
       <figure class="phone"><img src="guide/img/devices-plan-reason.jpg" alt="從已鎖定的錄影主機通道開啟的方案頁：上方的橫幅帶有鎖頭符號與訊息「訂閱 NVR 方案，解鎖所有通道。」，其下為標題「解鎖所有攝影機」、說明免費方案的句子與數條簡短的功能說明" loading="lazy" decoding="async" width="900" height="1440"><figcaption>方案畫面上方顯示原因</figcaption></figure>
     </li>
     <li class="step">
@@ -941,7 +953,11 @@
       <p class="check"><b class="check-label">確認：</b>畫面回到設備頁。</p>
     </li>
     <li class="step">
-      <p>長按一個不需要的已啟用通道的縮圖，點選<span class="ui">停用</span>。</p>
+      <p>長按一個不需要的已啟用通道的縮圖。</p>
+      <p class="check"><b class="check-label">確認：</b>開啟該通道的選單。</p>
+    </li>
+    <li class="step">
+      <p>點選<span class="ui">停用</span>。</p>
       <p class="check"><b class="check-label">確認：</b>縮圖顯示<span class="ui">已停用</span>，該通道在方案中的名額已釋出。</p>
     </li>
     <li class="step">
@@ -961,7 +977,7 @@
     <li class="step">
       <p>在<span class="ui">訂閱</span>區段中，點選<span class="ui">選擇顯示哪些攝影機</span>。</p>
       <p class="check"><b class="check-label">確認：</b>開啟<span class="ui">選擇顯示哪些攝影機</span>頁面。<span class="ui">您的方案</span>區段顯示<span class="ui">攝影機</span>（例如 <span class="ui" data-ui="value">2 支攝影機</span>或<span class="ui">無限</span>）與<span class="ui">錄影主機</span>兩列，以及說明<span class="ui">開啟您想觀看的攝影機。免費方案可顯示同一台錄影主機上的 2 支攝影機。</span>其下每台設備各有一個區段，列出每個通道的編號、名稱與開關。</p>
-      <figure class="phone"><img src="guide/img/license-choose-cameras.jpg" alt="免費方案的「選擇顯示哪些攝影機」頁：您的方案區塊列出攝影機與錄影主機數量、免費方案說明，以及各示範錄影主機的頻道與開關" loading="lazy" decoding="async" width="900" height="1947"><figcaption>選擇顯示哪些攝影機</figcaption></figure>
+      <figure class="phone"><img src="guide/img/license-choose-cameras.jpg" alt="免費方案的「選擇顯示哪些攝影機」頁：您的方案區塊列出攝影機與錄影主機數量、免費方案說明，以及各示範錄影主機的通道與開關" loading="lazy" decoding="async" width="900" height="1947"><figcaption>選擇顯示哪些攝影機</figcaption></figure>
     </li>
     <li class="step">
       <p>關閉不需要的通道的開關。</p>
@@ -1071,7 +1087,7 @@
       <tr><td><span class="ui">全螢幕牆</span></td><td>右上角，第三個</td><td>開啟全螢幕牆，見<a class="xref" href="#live-wall">「全螢幕牆」</a>。</td></tr>
     </tbody>
   </table></div>
-  <p>尚未加入任何設備時，SD 與 HD 按鈕以及<span class="ui">全螢幕牆</span>按鈕無法使用。黑邊按鈕的起始模式取自<span class="path"><span class="ui">設定</span> › <span class="ui">畫面</span> › <span class="ui">黑邊</span></span>。即時分頁在 App 啟動時讀取該模式，因此在設定中的變更要到下次啟動 App 才會反映在即時分頁。</p>
+  <p>尚未加入任何設備時，SD 與 HD 按鈕以及<span class="ui">全螢幕牆</span>按鈕無法使用。清單按鈕（<span class="ui">選擇設備</span>）同樣無法使用，除非 LiveView Mix 牆面上仍有圖片、時鐘、標籤或控制面板；在這種情況下，清單按鈕可以點選，但選單是空的。黑邊按鈕的起始模式取自<span class="path"><span class="ui">設定</span> › <span class="ui">畫面</span> › <span class="ui">黑邊</span></span>。即時分頁在 App 啟動時讀取該模式，因此在設定中的變更要到下次啟動 App 才會反映在即時分頁。</p>
 
   <h4>改看另一台設備</h4>
   <ol class="steps">
@@ -1106,7 +1122,7 @@
       <tr><td>即時影像（連線期間顯示轉圈圖示）</td><td>通道已啟用、在方案範圍內，且連線中。</td><td>開啟單機畫面。</td></tr>
       <tr><td>深色背景上的失敗訊息</td><td>串流無法開啟。Cam Hub 會自行重試，間隔逐漸拉長。登入被拒絕、設備不受支援或要求太多次時則不重試；此時訊息會保留，直到 App 回到前景或再次開啟牆面。</td><td>開啟單機畫面。</td></tr>
       <tr><td>灰色，有斜線攝影機符號與<span class="ui">無訊號</span></td><td>設備回報此通道沒有訊號。</td><td>沒有反應。</td></tr>
-      <tr><td>灰色，有暫停符號與<span class="ui">已暫停</span></td><td>使用者已在設備頁手動暫停此通道的畫面，見<a class="xref" href="#devices-menu">「通道選項（長按）」</a>。要恢復時，請在設備頁操作。</td><td>開啟單機畫面。</td></tr>
+      <tr><td>灰色，有暫停符號與<span class="ui">已暫停</span></td><td>使用者已在設備頁手動暫停此通道的畫面，見<a class="xref" href="#devices-menu">「通道選項（長按）」</a>。要恢復時，請在設備頁操作。</td><td>開啟單機畫面。通道超出方案範圍時，改為開啟方案畫面。設備回報此通道沒有訊號時，沒有反應。</td></tr>
       <tr><td><span class="ui">方案未包含</span>，附鎖頭符號</td><td>通道已啟用，但方案未涵蓋，見<a class="xref" href="#plans">第 11 章「方案與限制」</a>。</td><td>開啟方案畫面。</td></tr>
       <tr><td>YouTube 或 Twitch 的播放器，或直播名稱與一段訊息</td><td>YouTube 或 Twitch 直播，沒有聲音，也沒有編號與名稱標示。各種訊息見<a class="xref" href="#single-streams">「YouTube 與 Twitch 直播」</a>。</td><td>以全螢幕開啟直播。</td></tr>
     </tbody>
@@ -1120,7 +1136,7 @@
     </li>
     <li class="step">
       <p>點選顯示<span class="ui">方案未包含</span>的縮圖。</p>
-      <p class="check"><b class="check-label">確認：</b>開啟方案畫面，頂部有一段訊息：錄影主機的通道顯示<span class="ui">訂閱 NVR 方案，解鎖所有通道。</span>，免費方案的獨立攝影機顯示<span class="ui">您已達免費方案可啟用 2 支攝影機的上限。</span>點選<span class="ui">完成</span>可關閉該畫面。</p>
+      <p class="check"><b class="check-label">確認：</b>開啟方案畫面，頂部有一段訊息：錄影主機的通道顯示<span class="ui">訂閱 NVR 方案，解鎖所有通道。</span>，免費方案的獨立攝影機顯示<span class="ui">您已達免費方案可啟用 2 支攝影機的上限。</span>，持有方案時的獨立攝影機顯示<span class="ui">您已達目前方案可啟用 8 支攝影機的上限。</span>，其中的數字為該方案的攝影機上限。點選<span class="ui">完成</span>可關閉該畫面。</p>
       <figure class="phone"><img src="guide/img/live-locked-tile.jpg" alt="即時分頁：兩個即時畫面的下方有一個縮圖顯示鎖頭與方案未包含" loading="lazy" decoding="async" width="900" height="1956"><figcaption>方案未涵蓋的縮圖</figcaption></figure>
     </li>
   </ol>
@@ -1222,7 +1238,7 @@
   </ol>
 
   <h3 id="live-hide">隱藏無訊號攝影機</h3>
-  <p>設定項目<span class="ui">隱藏無訊號攝影機</span>會將沒有訊號的攝影機從即時分頁與全螢幕牆移除，預設為關閉。設備頁一律列出所有通道，沒有訊號的通道以灰色顯示，見<a class="xref" href="#devices-states">「縮圖的狀態」</a>。LiveView Mix 牆面不受影響：沒有訊號的格子會保留顯示<span class="ui">無訊號</span>的色塊。</p>
+  <p>設定項目<span class="ui">隱藏無訊號攝影機</span>會將沒有訊號的攝影機從即時分頁與全螢幕牆移除，預設為關閉。設備頁一律列出所有通道，沒有訊號的通道以灰色顯示，見<a class="xref" href="#devices-states">「縮圖的狀態」</a>。LiveView Mix 牆面不受影響：沒有訊號的格子會保留顯示<span class="ui">無訊號</span>的色塊。本節說明 iPhone 與 iPad 的情形。在 Apple TV 上，此設定也作用於設備頁與 LiveView Mix 分頁的攝影機預覽，見<a class="xref" href="#appletv-settings">「設定分頁」</a>。</p>
   <ol class="steps">
     <li class="step">
       <p>點選<span class="ui">設定</span>分頁，捲動到<span class="ui">隱藏無訊號攝影機</span>。該列位於<span class="ui">畫面</span>區塊下方，自成一個區塊。</p>
@@ -1240,7 +1256,7 @@
   </ol>
   <ul>
     <li><b>哪些攝影機會被隱藏</b>：設備回報沒有訊號的通道，以及串流連續兩次無法開啟的攝影機。攝影機被隱藏之前，Cam Hub 會再試一次。</li>
-    <li><b>被隱藏的攝影機何時回來</b>：被隱藏的攝影機不會再被嘗試，直到 App 回到前景，或將開關關閉後再開啟。此時攝影機會再試一次：有畫面時留在牆面上，再次失敗時又被隱藏。設備回報沒有訊號的通道，在設備再次回報有訊號時回來；回報的內容在設備頁讀取通道清單時更新。</li>
+    <li><b>被隱藏的攝影機何時回來</b>：被隱藏的攝影機不會再被嘗試，直到 App 回到前景、將開關關閉後再開啟，或為該設備儲存新的帳號密碼、儲存變更後的 HTTPS 設定為止（見<a class="xref" href="#devices-credentials">「變更設備的使用者名稱與密碼」</a>與<a class="xref" href="#devices-https">「已儲存設備的 HTTPS」</a>）。此時攝影機會再試一次：有畫面時留在牆面上，再次失敗時又被隱藏。設備回報沒有訊號的通道，在設備再次回報有訊號時回來；回報的內容在設備頁讀取通道清單時更新。</li>
     <li><b>適用範圍</b>：即時分頁與全螢幕牆，包含設備頁的全螢幕牆。此設定屬於 App 設定的備份內容，並會被<span class="ui">還原預設設定</span>重設，見<a class="xref" href="#settings-reset">「重設：還原預設設定、刪除所有資料、刪除 iCloud 備份」</a>。</li>
   </ul>
 </section>
@@ -1266,7 +1282,7 @@
     <li class="step">
       <p>點選一個顯示即時影像的通道縮圖。</p>
       <p class="check"><b class="check-label">確認：</b>開啟單機畫面。標題為攝影機名稱，畫面左上角顯示綠色標籤<span class="ui">即時</span>。畫面起始時使用<span class="path"><span class="ui">設定</span> › <span class="ui">預設畫質</span> › <span class="ui">單支攝影機</span></span>的畫質（未變更時為 HD）。</p>
-      <figure class="phone"><img src="guide/img/single-live.jpg" alt="即時模式的單機畫面：畫面上有即時標籤與鏡頭控制按鈕，其下為快照與 SD、HD 切換，再下方是錄影面板，含日期、時間軸與錄影清單" loading="lazy" decoding="async" width="900" height="1956"><figcaption>即時模式的單機畫面</figcaption></figure>
+      <figure class="phone"><img src="guide/img/single-live.jpg" alt="即時模式的單機畫面：畫面上有即時標籤與鏡頭控制按鈕，其下為控制列，左側為快照，右側為 SD 與 HD 切換，再下方是錄影面板，含日期、時間軸與錄影清單" loading="lazy" decoding="async" width="900" height="1956"><figcaption>即時模式的單機畫面</figcaption></figure>
     </li>
   </ol>
   <p>點選左上角的返回按鈕，即可離開單機畫面。</p>
@@ -1309,7 +1325,7 @@
       <p class="check"><b class="check-label">確認：</b>畫面回到原大小。</p>
     </li>
   </ol>
-  <p>以觸控瞄準的功能開啟期間，在畫面上拖曳會為攝影機框出區域，而不是移動放大後的畫面，見<a class="xref" href="#single-ptz">「PTZ 控制：移動鏡頭」</a>。</p>
+  <p>以觸控瞄準的功能開啟期間，畫面上的觸控一律用來操作攝影機：拖曳會框出區域，點選則讓攝影機轉向該點，見<a class="xref" href="#single-ptz">「PTZ 控制：移動鏡頭」</a>。瞄準結束前，畫面無法放大、移動或回到原大小；橫向時，點選畫面也不會重新顯示返回按鈕。再點選一次瞄準按鈕，即可結束瞄準。</p>
 
   <h3 id="single-controls">快照、聲音與畫質</h3>
   <h4>拍攝快照</h4>
@@ -1337,9 +1353,9 @@
   <p>只有攝影機傳送 Cam Hub 可播放格式的聲音時，才會出現喇叭按鈕。沒有聲音，或聲音格式不受支援的攝影機，不顯示此按鈕。</p>
   <ol class="steps">
     <li class="step">
-      <p>點選<span class="ui">快照</span>旁的喇叭按鈕（<span class="ui">取消靜音</span>）。</p>
+      <p>點選控制列中的喇叭按鈕（<span class="ui">取消靜音</span>）。</p>
       <p class="check"><b class="check-label">確認：</b>符號由帶斜線的喇叭變為帶聲波的喇叭，並播放攝影機的聲音。</p>
-      <figure class="phone"><img src="guide/img/single-audio.jpg" alt="傳送聲音的攝影機的控制列：快照、喇叭按鈕，以及 SD 與 HD 切換" loading="lazy" decoding="async" width="900" height="1956"><figcaption>控制列中的喇叭按鈕</figcaption></figure>
+      <figure class="phone"><img src="guide/img/single-audio.jpg" alt="傳送聲音的攝影機的控制列：喇叭按鈕位於快照與 SD、HD 切換之間" loading="lazy" decoding="async" width="900" height="1956"><figcaption>控制列中的喇叭按鈕</figcaption></figure>
     </li>
     <li class="step">
       <p>再點選一次喇叭按鈕（<span class="ui">靜音</span>）。</p>
@@ -1349,7 +1365,7 @@
   <ul>
     <li>喇叭播放的是攝影機的聲音。要透過攝影機說話，見<a class="xref" href="#single-talk">「雙向對講」</a>。</li>
     <li>iPhone 的靜音開關設為靜音時，攝影機的聲音仍會播放。</li>
-    <li>此選擇是整個 App 共用的一個開關。選擇會被記住，初始為關閉。縮圖與牆面不會播放聲音，只有單機畫面、攝影機的近看畫面，以及 YouTube 或 Twitch 直播的全螢幕畫面會播放（見<a class="xref" href="#single-streams">「YouTube 與 Twitch 直播」</a>）。</li>
+    <li>此選擇是整個 App 共用的一個開關。選擇會被記住，初始為關閉。縮圖與牆面不會播放聲音，只有單機畫面、攝影機的近看畫面、YouTube 或 Twitch 直播的全螢幕畫面，以及在獨立視窗中或像書本一樣拿著 iPhone Duo 時顯示的直播頁面會播放（見<a class="xref" href="#single-streams">「YouTube 與 Twitch 直播」</a>）。</li>
     <li>播放攝影機聲音期間，iPhone 上的其他音訊會被調低音量。App 離開前景時，聲音停止。</li>
     <li>回放時，只有在一般速度下才會播放聲音，見<a class="xref" href="#playback-speed">「播放速度」</a>。</li>
   </ul>
@@ -1392,22 +1408,22 @@
   </ol>
   <ul>
     <li>片段最長 10 分鐘。錄滿 10 分鐘時會自動停止，頁面顯示<span class="ui">片段最長 10 分鐘。</span></li>
-    <li>畫面改變時也會自動停止：拖動時間軸、切換 SD 或 HD、點選<span class="ui">回到即時</span>，或回放接續播到下一個錄影檔案。頁面此時顯示<span class="ui">畫面已切換，錄製已停止。</span>停止前已錄到的內容會保留。</li>
+    <li>畫面改變時也會自動停止：拖動時間軸、切換 SD 或 HD、回放時點選速度按鈕、點選<span class="ui">回到即時</span>、回放接續播到下一個錄影檔案，或攝影機改變影像的尺寸或格式。頁面此時顯示<span class="ui">畫面已切換，錄製已停止。</span>停止前已錄到的內容會保留。</li>
     <li>App 移到背景時，錄製會停止，片段保留。回到 App 時會顯示頁面，並附上<span class="ui">Cam Hub 移到背景時已停止錄製。</span></li>
     <li>錄製中離開單機畫面，片段會被捨棄。</li>
     <li>片段保留攝影機送來的原始影像與目前顯示的畫質（SD 或 HD）；攝影機有聲音時也會錄進片段，與喇叭按鈕是否開啟無關。</li>
     <li>檔名是攝影機名稱加上片段開始的時刻，以設備的時鐘為準，例如 <code>Gate 2026-11-02 15.00.04.mp4</code>。這個時間與影像上印出的時間一致。</li>
     <li>橫向時，錄製按鈕位於影像右上角，在喇叭與對講按鈕旁。錄製期間，停止按鈕會一直顯示。</li>
     <li>錄影以檔案形式播放時（見<a class="xref" href="#playback-playing">「播放錄影期間」</a>），錄製按鈕的位置改為分享按鈕（<span class="ui">分享錄影</span>），會以同一個頁面提供整個錄影檔案。</li>
-    <li>片段在 iPhone 上保留一天後自動刪除；已傳送或已儲存的片段不受影響。<span class="ui">刪除所有資料</span>會立即清除。</li>
-    <li>什麼都沒錄到時，例如影像還沒出現，會出現訊息<span class="ui">沒有錄到任何畫面。請等畫面出現後再試一次。</span>片段無法寫入時，訊息為<span class="ui">無法儲存片段。請檢查這台裝置的可用空間，然後再試一次。</span></li>
+    <li>頁面關閉後，片段仍保留在 iPhone 或 iPad 上。開始錄製新的片段時，一天以前錄製的片段會被刪除；已傳送或已儲存的片段不受影響。儲存空間不足時，系統也可能刪除這些片段。<span class="ui">刪除所有資料</span>會立即清除。</li>
+    <li>什麼都沒錄到時，例如影像還沒出現，會出現訊息<span class="ui">沒有錄到任何畫面。請等畫面出現後再試一次。</span>攝影機傳送的影像格式無法存進片段時，訊息為<span class="ui">這支攝影機的影像無法存成片段。</span>片段無法寫入時，訊息為<span class="ui">無法儲存片段。請檢查這台裝置的可用空間，然後再試一次。</span></li>
   </ul>
   <figure class="land"><img src="guide/img/single-clip-landscape.jpg" alt="回放時以橫向錄製片段：上方為帶紅點的 0:07 標籤，右上角為紅色停止按鈕，下方為回放控制條" loading="lazy" decoding="async" width="1600" height="736"><figcaption>橫向錄製片段</figcaption></figure>
 
   <h3 id="single-talk">雙向對講</h3>
-  <p>具備喇叭的獨立攝影機可以對講。對講的方式與無線電對講機相同：按住按鈕說話，放開按鈕聆聽。單機畫面開啟時，Cam Hub 會向攝影機詢問對講通道；攝影機回報有對講通道時，喇叭按鈕右側會出現對講按鈕（麥克風符號）。</p>
+  <p>具備喇叭的獨立攝影機可以對講。對講的方式與無線電對講機相同：按住按鈕說話，放開按鈕聆聽。單機畫面開啟時，Cam Hub 會向攝影機詢問對講通道；攝影機回報有對講通道時，控制列中錄製按鈕與喇叭按鈕之後會出現對講按鈕（麥克風符號）。</p>
   <p>前提：支援的品牌的獨立攝影機、攝影機回報具備雙向音訊通道、處於即時模式，且通道在方案範圍內。錄影主機的通道沒有對講按鈕：錄影主機的對講通道是錄影主機本身的音訊輸出，不是攝影機的喇叭。</p>
-  <figure class="phone"><img src="guide/img/single-talk.jpg" alt="支援對講的攝影機單機畫面：快照旁的麥克風對講按鈕，以及 SD 與 HD 切換" loading="lazy" decoding="async" width="900" height="1947"><figcaption>快照旁的對講按鈕</figcaption></figure>
+  <figure class="phone"><img src="guide/img/single-talk.jpg" alt="支援對講的攝影機單機畫面：控制列中的麥克風對講按鈕，以及 SD 與 HD 切換" loading="lazy" decoding="async" width="900" height="1947"><figcaption>控制列中的對講按鈕</figcaption></figure>
   <p>第一次按下對講按鈕時，系統會以對話框詢問麥克風的取用權限。請允許，再重新按住按鈕。</p>
   <ol class="steps">
     <li class="step">
@@ -1447,18 +1463,19 @@
   <ol class="steps">
     <li class="step">
       <p>將 iPhone 轉為橫向。</p>
-      <p class="check"><b class="check-label">確認：</b>畫面佈滿整個螢幕。導覽列、分頁列、狀態列、控制列與錄影面板都隱藏。返回按鈕與畫面上的其他按鈕顯示約 5 秒後淡出。</p>
+      <p class="check"><b class="check-label">確認：</b>畫面佈滿整個螢幕。導覽列、分頁列、狀態列、控制列與錄影面板都隱藏。返回按鈕與右上角的按鈕顯示約 5 秒後淡出。標籤，以及攝影機可移動時右下角的鏡頭控制按鈕，會一直顯示。之後再次將 iPhone 轉為橫向時，返回按鈕與右上角的按鈕維持隱藏，直到點選畫面為止。</p>
       <figure class="land"><img src="guide/img/single-landscape-live.jpg" alt="橫向的單機畫面：影像佈滿整個螢幕，左上角為返回按鈕，其旁為即時標籤，右下角為鏡頭控制按鈕" loading="lazy" decoding="async" width="1600" height="736"><figcaption>橫向的單機畫面</figcaption></figure>
     </li>
     <li class="step">
       <p>在畫面上點選一下。</p>
-      <p class="check"><b class="check-label">確認：</b>左上角出現返回按鈕，其旁為標籤。右上角出現紅色錄製按鈕；攝影機傳送聲音時，另有喇叭按鈕；攝影機可對講時，另有對講按鈕。攝影機可移動時，右下角有鏡頭控制按鈕。這些按鈕約 5 秒後再次淡出；再點選畫面一次，會重新顯示。錄製片段期間，這些按鈕會一直顯示。</p>
+      <p class="check"><b class="check-label">確認：</b>左上角出現返回按鈕，位於標籤旁。右上角出現紅色錄製按鈕；攝影機傳送聲音時，另有喇叭按鈕；攝影機可對講時，另有對講按鈕。攝影機可移動時，右下角有鏡頭控制按鈕。返回按鈕與右上角的按鈕約 5 秒後再次淡出；再點選畫面一次，會重新顯示。錄製片段期間，或按住對講按鈕期間，右上角的按鈕會一直顯示。</p>
     </li>
     <li class="step">
       <p>點選左上角的返回按鈕，或將 iPhone 轉回直向。</p>
       <p class="check"><b class="check-label">確認：</b>畫面離開橫向版面，或單機畫面關閉。返回按鈕會回到開啟單機畫面前的頁面。</p>
     </li>
   </ol>
+  <p>若點選畫面無法重新顯示按鈕，例如影像區顯示<span class="ui">已鎖定——升級以啟用</span>、錄影的下載進度、以系統影片播放器播放的錄影（見<a class="xref" href="#playback-playing">「播放錄影期間」</a>）或連線失敗的訊息，請將 iPhone 轉回直向，即可再次使用控制項目。半摺的 iPhone Duo 則請完全攤平，以使用返回按鈕。</p>
   <p>放大、平移、PTZ 控制與錄製片段在橫向時的使用方式與直向相同。<span class="ui">快照</span>、SD 與 HD 的切換、日期與錄影清單只在直向時提供。回放時橫向出現的控制條，見<a class="xref" href="#playback-landscape">「橫向的錄影回放」</a>。</p>
 
   <h3 id="single-ptz">PTZ 控制：移動鏡頭</h3>
@@ -1543,6 +1560,7 @@
   <h4>PTZ 控制的說明</h4>
   <ul>
     <li><b>速度</b>：App 沒有速度設定。按住按鈕期間，攝影機以固定的一種速度移動，也就是 App 所要求的最高速度；輕點一下則移動一小段。</li>
+    <li><b>旁白</b>：箭頭與變焦按鈕會朗讀為按鈕。點兩下即可讓攝影機移動一小段，並自動停止。</li>
     <li><b>被拒絕的移動</b>：設備拒絕控制板的移動指令時，不會顯示訊息。</li>
     <li><b>已儲存的位置</b>：Cam Hub 只會叫出攝影機上已有的位置。位置在設備本身建立與修改，不在 Cam Hub 中。</li>
     <li><b>停止</b>：手指放開、離開單機畫面、App 離開前景、收合控制板，以及開始回放時，移動都會停止。全螢幕牆與 LiveView Mix 牆面上的攝影機近看畫面也提供相同的控制板。</li>
@@ -1563,8 +1581,9 @@
   <p>在單機畫面中，點選導覽列右側的<span class="ui">在新視窗中開啟</span>按鈕，效果相同。</p>
   <ul>
     <li>每個視窗都是獨立的觀看畫面，有各自的時間軸與回放。同一支攝影機的兩個視窗共用設備的即時影像。</li>
+    <li>設備頁上每支攝影機的選單都提供<span class="ui">在新視窗中開啟</span>，已停用或已暫停的攝影機也不例外。已停用的攝影機在視窗中顯示<span class="ui">已鎖定——升級以啟用</span>與<span class="ui">方案</span>，即使方案仍有名額也是如此。要觀看該攝影機，請在設備頁上啟用（見<a class="xref" href="#devices-plan">「方案限額與啟用通道」</a>），再關閉視窗並重新開啟。以<span class="ui">暫停畫面</span>暫停的錄影主機攝影機，在視窗中照常播放。</li>
     <li>以系統的視窗控制項目關閉視窗。</li>
-    <li>攝影機已被刪除時，視窗顯示空白的黑色畫面。</li>
+    <li>攝影機已被刪除時，視窗顯示黑色畫面，中央有帶斜線的攝影機符號。</li>
   </ul>
 
   <h3 id="single-duo">摺疊 iPhone Duo 時的單機畫面</h3>
@@ -1574,7 +1593,7 @@
   <ol class="steps">
     <li class="step">
       <p>開啟單機畫面，並將 iPhone Duo 摺到一半。</p>
-      <p class="check"><b class="check-label">確認：</b>影像佔滿上半部。控制列、錄影面板與 PTZ 控制板位於下半部，手指容易觸及，且避開摺痕。導覽列、分頁列與狀態列隱藏；返回按鈕、標籤、喇叭按鈕與對講按鈕與橫向時一樣浮在影像上，約 5 秒後淡出。點選影像一下，會重新顯示。</p>
+      <p class="check"><b class="check-label">確認：</b>影像佔滿上半部。控制列、錄影面板與 PTZ 控制板位於下半部，手指容易觸及，且避開摺痕。導覽列、分頁列與狀態列隱藏。與橫向時一樣，返回按鈕浮在影像左上角，旁邊為標籤；錄製按鈕浮在右上角，攝影機可對講或傳送聲音時，旁邊另有對講按鈕或喇叭按鈕。這些按鈕約 5 秒後淡出，標籤則維持顯示。點選影像一下，會重新顯示。</p>
       <figure class="device tall"><img src="guide/img/duo-single-table.png" alt="半摺立起的 iPhone Duo：攝影機畫面占滿上半，快照、SD 與 HD，以及錄影與時間軸在下半" loading="lazy" decoding="async" width="690" height="852"><figcaption>半摺立起：畫面在摺痕上方，控制項在下方</figcaption></figure>
     </li>
     <li class="step">
@@ -1606,12 +1625,12 @@
   <ul>
     <li><b>在牆面上</b>：縮圖播放直播但不出聲，本身不接受觸控。縮圖角落沒有編號與名稱標示。點選縮圖會以全螢幕開啟直播。</li>
     <li><b>全螢幕</b>：畫面在黑色背景上以螢幕允許的最大尺寸顯示。播放器依畫面的大小選擇畫質，因此全螢幕的畫質高於縮圖。此時可使用該服務的控制項目。點選播放器中該服務的標誌或標題時，會在 YouTube 或 Twitch App 或網頁瀏覽器中開啟直播。</li>
-    <li><b>聲音</b>：只在全螢幕播放，且只在喇叭開關開啟時播放。<span class="ui">關閉</span>旁的喇叭按鈕，與攝影機的喇叭按鈕是整個 App 共用的同一個開關（見<a class="xref" href="#single-controls">「快照、聲音與畫質」</a>）：已為攝影機開啟聲音時，直播一開啟就會播放聲音。</li>
+    <li><b>聲音</b>：牆面上的縮圖不會播放聲音。喇叭開關開啟時，全螢幕畫面、獨立視窗，以及像書本一樣拿著的 iPhone Duo 上該直播的設備頁，都會播放直播的聲音。只有全螢幕畫面有喇叭按鈕，位於<span class="ui">關閉</span>旁。此按鈕與攝影機的喇叭按鈕是整個 App 共用的同一個開關（見<a class="xref" href="#single-controls">「快照、聲音與畫質」</a>）：已為攝影機開啟聲音時，直播一開啟就會播放聲音。</li>
   </ul>
   <ol class="steps">
     <li class="step">
       <p>在<span class="ui">即時</span>分頁或設備頁上，點選 YouTube 或 Twitch 直播的縮圖。</p>
-      <p class="check"><b class="check-label">確認：</b>直播以全螢幕開啟；縮圖原本已在播放時，畫面不重新載入，持續播放。關閉按鈕（<span class="ui">關閉</span>）與喇叭按鈕位於影像旁的一條區域中：直向時在影像上方，橫向時在影像側邊。播放器不會被任何東西遮住。</p>
+      <p class="check"><b class="check-label">確認：</b>直播以全螢幕開啟；縮圖原本已在播放時，畫面不重新載入，持續播放。關閉按鈕（<span class="ui">關閉</span>）與喇叭按鈕位於影像旁的一條區域中：一般在影像上方；螢幕比例寬於 16:9 時，例如橫向的 iPhone，則在影像側邊。在 iPad 上，無論直向或橫向，這條區域都在影像上方。播放器不會被任何東西遮住。</p>
     </li>
     <li class="step">
       <p>點選喇叭按鈕（<span class="ui">取消靜音</span>）。</p>
@@ -1639,7 +1658,7 @@
     <li>該服務可能在播放器中顯示自己的廣告或公告。</li>
     <li>在牆面的格子中，訊息縮短為兩行，沒有按鈕。點選格子會以全螢幕開啟該直播，全螢幕畫面有<span class="ui">再試一次</span>。</li>
     <li>直播沒有快照、PTZ 控制、對講、放大、錄影、SD 與 HD 切換或黑邊模式。直播在<span class="ui">即時</span>分頁與全螢幕牆上，不顯示 SD 與 HD 按鈕，也不顯示黑邊按鈕。</li>
-    <li>在獨立視窗中（見<a class="xref" href="#single-window">「在獨立視窗中顯示攝影機」</a>），直播顯示含該服務控制項目的播放器，其下為<span class="ui">在 YouTube 中開啟</span>或<span class="ui">在 Twitch 中開啟</span>，以及直播的連結。</li>
+    <li>在獨立視窗中（見<a class="xref" href="#single-window">「在獨立視窗中顯示攝影機」</a>），直播顯示含該服務控制項目的播放器，其下為<span class="ui">在 YouTube 中開啟</span>或<span class="ui">在 Twitch 中開啟</span>，以及直播的連結。<span class="ui">再試一次</span>與<span class="ui">查看條款…</span>的顯示方式與全螢幕相同。像書本一樣拿著 iPhone Duo 時，直播的設備頁另一半也顯示相同的頁面。</li>
     <li>在 Apple TV 上，直播只顯示名稱，見<a class="xref" href="#appletv">第 14 章「Apple TV」</a>。</li>
   </ul>
 
@@ -1664,7 +1683,7 @@
     </tbody>
   </table></div>
   <div class="shots pair">
-    <figure class="phone"><img src="guide/img/single-reconnecting.jpg" alt="串流重新連線時的單機畫面：黑色的影像區顯示轉圈圖示與「重新連線中…」，左上角為「即時」標籤，右下角為鏡頭控制按鈕；其下為「快照」、SD 與 HD 切換與「無法連線到這台設備。」，再下為時間軸是空的錄影區塊" loading="lazy" decoding="async" width="900" height="1956"><figcaption>重新連線時的畫面</figcaption></figure>
+    <figure class="phone"><img src="guide/img/single-reconnecting.jpg" alt="串流重新連線時的單機畫面：黑色的影像區顯示轉圈圖示與「重新連線中…」，左上角為「即時」標籤，右下角為鏡頭控制按鈕；其下為控制列，左側為「快照」，右側為 SD 與 HD 切換，再下為「無法連線到這台設備。」與時間軸是空的錄影區塊" loading="lazy" decoding="async" width="900" height="1956"><figcaption>重新連線時的畫面</figcaption></figure>
     <figure class="phone"><img src="guide/img/single-failed.jpg" alt="單機畫面：深色的影像區顯示失敗訊息與重試按鈕" loading="lazy" decoding="async" width="900" height="1956"><figcaption>失敗訊息與重試按鈕</figcaption></figure>
   </div>
   <ol class="steps">
@@ -1693,16 +1712,16 @@
 
 <section class="chapter" id="playback">
   <h2><span class="num">7</span>錄影回放與加速</h2>
-  <p class="lead">支援錄影回放的設備，可在單機畫面中由即時影像切換為錄影內容。先選擇日期（支援的設備可從標示有錄影日期的日曆選擇），將 24 小時的時間軸移到想看的時間，再從清單播放某段錄影或偵測到人員的時刻。錄影可以 2×、4× 或 8× 的速度加速播放。日期與時間都依設備的時鐘計算。</p>
+  <p class="lead">支援錄影回放的設備，可在單機畫面中由即時影像切換為錄影內容。先選擇日期（支援的設備可從標示有錄影日期的日曆選擇），將 24 小時的時間軸移到想看的時間，再從清單播放某段錄影或某個事件，例如偵測到人員或移動的時刻。錄影可以 2×、4× 或 8× 的速度加速播放。日期與時間都依設備的時鐘計算。</p>
 
   <h3 id="playback-avail">哪些設備提供錄影回放</h3>
   <p>只有支援錄影回放的設備，單機畫面（見<a class="xref" href="#single">第 6 章「單機畫面」</a>）的影像下方才會出現錄影面板。其他設備的畫面只有即時影像與控制列。進入錄影回放的途徑有三個：單機畫面本身、全螢幕牆上攝影機近看畫面的<span class="ui">錄影</span>按鈕（見<a class="xref" href="#devices-fullwall">「設備的全螢幕牆」</a>），以及 LiveView Mix 牆面上的同一個按鈕。</p>
   <div class="table-wrap"><table>
     <thead><tr><th>項目</th><th>顯示條件</th></tr></thead>
     <tbody>
-      <tr><td>含日期、時間軸與清單的錄影面板</td><td>設備支援錄影回放，且帳號在設備上有讀取錄影的權限。</td></tr>
+      <tr><td>含日期、時間軸與清單的錄影面板</td><td>設備是以提供錄影回放的連線方式加入，見<a class="xref" href="#brands-matrix">「各方式可使用的功能」</a>。帳號沒有讀取錄影的權限時，仍會顯示錄影面板，並在時間軸上方顯示<span class="ui">這個帳號無法讀取這台設備上的錄影。</span></td></tr>
       <tr><td>錄影日曆的按鈕</td><td>設備同時保有每日錄影的索引，見<a class="xref" href="#playback-calendar">「錄影日曆」</a>。</td></tr>
-      <tr><td><span class="ui">連續錄影</span>與<span class="ui">事件錄影</span>的切換</td><td>設備同時保有人員偵測的索引。沒有索引時，只顯示連續錄影的清單，也沒有切換。</td></tr>
+      <tr><td><span class="ui">連續錄影</span>與<span class="ui">事件錄影</span>的切換</td><td>設備是以提供事件索引的連線方式加入：偵測到人員的索引，或移動與警報輸入的索引，見<a class="xref" href="#brands-matrix">「各方式可使用的功能」</a>。即使設備本身不回應該索引的搜尋，仍會顯示切換，見<a class="xref" href="#playback-list">「錄影清單與事件」</a>。以其他連線方式加入的設備，只有在所選日期或前一天有設備因事件而產生的錄影時，才會出現切換。其他情況只顯示連續錄影的清單，也沒有切換。</td></tr>
       <tr><td>速度按鈕</td><td>播放錄影時，且設備可將該錄影加速播放。設備無法加速時會出現提示，見<a class="xref" href="#playback-speed">「播放速度」</a>。</td></tr>
     </tbody>
   </table></div>
@@ -1711,7 +1730,8 @@
     <li><b>獨立攝影機</b>：錄影來自攝影機本身的儲存空間，且攝影機須提供錄影搜尋。沒有錄影的攝影機，該日顯示為空。攝影機回報本身不保存錄影時（例如由錄影主機替它錄影），清單的位置改為顯示<span class="ui">這支攝影機本身不保存錄影。如果有錄影主機替它錄影，請從錄影主機回放。</span></li>
     <li>兩者的畫面與操作相同。錄影主機與攝影機的差別，只在錄影存放的位置，以及設備是否支援錄影回放。</li>
     <li>以設備專用的協定或 ONVIF 連線的設備，在該連線支援時提供錄影回放。哪些品牌與連線方式提供錄影回放，見<a class="xref" href="#brands">第 16 章「支援的品牌與連線方式」</a>。</li>
-    <li>以 ONVIF 加入的設備，須提供 ONVIF 的錄影搜尋與回放服務，才支援錄影回放；否則該日顯示為空的清單。</li>
+    <li>以 ONVIF 加入的設備會顯示錄影面板，但須提供 ONVIF 的錄影搜尋與回放服務，才能找到錄影；否則每一天都顯示空的清單。</li>
+    <li>部分以 ONVIF 連線的錄影主機，只列出最近約 24 小時的錄影。較早的日期會顯示<span class="ui">這一天沒有連續錄影。</span>，但錄影主機仍保有這些錄影。這些錄影可在錄影主機本身播放。</li>
     <li>以清單中的品牌加入的設備只提供即時影像，沒有錄影回放，見<a class="xref" href="#add-methods">「連線方式的選擇」</a>。範例攝影機以及 YouTube 與 Twitch 直播沒有錄影。</li>
   </ul>
 
@@ -1777,8 +1797,8 @@
     <tbody>
       <tr><td>橘色直線與其上方的標籤</td><td>游標，固定在中間。標籤顯示游標所在的時間；游標位於所選日期的前一天時，同時顯示日期。</td></tr>
       <tr><td>藍色長條</td><td>連續錄影。</td></tr>
-      <tr><td>紅色長條</td><td>設備因事件而產生的錄影。</td></tr>
-      <tr><td>細紅線</td><td>偵測到的人員，限保有偵測索引的設備。</td></tr>
+      <tr><td>紅色長條</td><td>設備因事件而產生的錄影。這些錄影以<span class="ui">事件觸發錄影</span>列在<span class="ui">事件錄影</span>下。</td></tr>
+      <tr><td>細紅線</td><td><span class="ui">事件錄影</span>清單中每個事件的開始時間：偵測到的人員、移動、警報輸入，或設備因事件而產生的錄影。無論選擇哪一個清單，都會顯示這些標記。</td></tr>
       <tr><td>深色空白</td><td>該時間沒有錄影。</td></tr>
       <tr><td>左側顏色較暗、帶虛線與日期的部分</td><td>所選日期的前一天。每個午夜都有帶日期的虛線。</td></tr>
       <tr><td>長條下方的時間標示</td><td>刻度。時間軸放大後，刻度會變得更細。</td></tr>
@@ -1810,12 +1830,23 @@
     <li>使用旁白時，時間軸是一個元素：向上或向下滑動可移動游標，點兩下則從該處開始播放。</li>
   </ul>
 
-  <h3 id="playback-list">錄影清單與人員搜尋</h3>
-  <p>時間軸下方的清單顯示所選日期的錄影。設備保有偵測索引時，清單上方有切換開關，可選擇<span class="ui">連續錄影</span>或<span class="ui">事件錄影</span>。</p>
+  <h3 id="playback-list">錄影清單與事件</h3>
+  <p>時間軸下方的清單顯示所選日期的錄影。設備提供事件時（見<a class="xref" href="#playback-avail">「哪些設備提供錄影回放」</a>），清單上方有切換開關，可選擇<span class="ui">連續錄影</span>或<span class="ui">事件錄影</span>。</p>
   <ul>
-    <li><b><span class="ui">連續錄影</span></b>：每一段連續錄影一列，最新的在最上方。每列顯示藍點、開始時間與錄影的長度。前一天的列以日期開頭。正在播放的錄影，該列會反白並顯示喇叭符號。</li>
-    <li><b><span class="ui">事件錄影</span></b>：每一次偵測一列<span class="ui">偵測到人員</span>，最新的在最上方，並附開始時間。相隔 2 秒以內的偵測會合併為一列。</li>
+    <li><b><span class="ui">連續錄影</span></b>：每一段連續錄影一列，最新的在最上方。每列顯示藍點、開始時間，以及以時、分、秒表示的錄影長度。前一天的列以日期開頭。正在播放的錄影，該列會反白並顯示喇叭符號。設備因事件而產生的錄影不在這個清單中。</li>
+    <li><b><span class="ui">事件錄影</span></b>：所選日期的每個事件一列，最新的在最上方。每列顯示紅色符號與事件種類的標題，標題下方為開始時間，右側為播放符號。前一天開始的事件以日期開頭。同一種類、相隔 2 秒以內的事件會合併為一列。正在播放的事件，該列會反白並顯示喇叭符號。</li>
   </ul>
+  <div class="table-wrap"><table>
+    <thead><tr><th><span class="ui">事件錄影</span>下的列</th><th>符號</th><th>意義</th></tr></thead>
+    <tbody>
+      <tr><td><span class="ui">偵測到人員</span></td><td>人形</td><td>設備偵測到的人員，限保有人員偵測索引的設備。</td></tr>
+      <tr><td><span class="ui">偵測到移動</span></td><td>行走的人形</td><td>移動，限在錄影旁標示移動與警報輸入的設備，例如會記錄事件的 NAS。</td></tr>
+      <tr><td><span class="ui">警報輸入</span></td><td>鈴鐺</td><td>設備的警報輸入收到的訊號，限上述同一類設備。</td></tr>
+      <tr><td><span class="ui">事件觸發錄影</span></td><td>錄製符號</td><td>設備因事件而產生的錄影。該列代表整段錄影，這段錄影在時間軸上也以紅色長條顯示。</td></tr>
+    </tbody>
+  </table></div>
+  <p>連線方式不提供事件索引時，<span class="ui">事件錄影</span>下只列出設備因事件而產生的錄影。</p>
+  <figure class="phone"><img src="guide/img/playback-event-recordings.jpg" alt="選擇事件錄影的單機畫面錄影面板：時間軸上有藍色長條與紅色標記，下方為兩列事件觸發錄影，各附錄製符號與開始時間" loading="lazy" decoding="async" width="900" height="1956"><figcaption>事件錄影清單中的事件觸發錄影</figcaption></figure>
   <h4>從清單播放錄影</h4>
   <ol class="steps">
     <li class="step">
@@ -1823,27 +1854,29 @@
       <p class="check"><b class="check-label">確認：</b>影像切換為該段錄影，從開頭播放。該列反白，游標跳到開始時間。</p>
     </li>
   </ol>
-  <h4>尋找人員</h4>
+  <h4>播放事件</h4>
   <ol class="steps">
     <li class="step">
       <p>點選清單上方的<span class="ui">事件錄影</span>。</p>
-      <p class="check"><b class="check-label">確認：</b>清單顯示多列<span class="ui">偵測到人員</span>。時間軸上以細紅線標示偵測的時刻。</p>
-      <figure class="phone"><img src="guide/img/playback-events.jpg" alt="選擇事件錄影的錄影面板：時間軸上有細紅線，下方為多列偵測到人員及其時間" loading="lazy" decoding="async" width="900" height="1956"><figcaption>偵測到人員的清單</figcaption></figure>
+      <p class="check"><b class="check-label">確認：</b>清單顯示所選日期的事件，例如<span class="ui">偵測到人員</span>或<span class="ui">偵測到移動</span>。</p>
+      <figure class="phone"><img src="guide/img/playback-events.jpg" alt="選擇事件錄影的錄影面板：時間軸上有細紅線，下方為多列偵測到人員及其時間" loading="lazy" decoding="async" width="900" height="1956"><figcaption>事件錄影清單中偵測到的人員</figcaption></figure>
     </li>
     <li class="step">
       <p>點選其中一列。</p>
-      <p class="check"><b class="check-label">確認：</b>回放從偵測前約 5 秒開始；錄影開始得較晚時，從該段錄影的開頭開始。標籤顯示回放的時間。</p>
+      <p class="check"><b class="check-label">確認：</b>回放從事件前約 5 秒開始；錄影開始得較晚時，從該段錄影的開頭開始。該列反白，標籤顯示回放的時間。</p>
     </li>
   </ol>
-  <p>搜尋對象只有人員。因其他事件而產生的錄影，在時間軸上以紅色長條呈現，將時間軸移到該處即可播放。Cam Hub 對每個通道、每一天最多讀取約 2,000 段錄影與 2,000 筆偵測紀錄，超出的部分不會列出。</p>
+  <p>各設備列出哪些種類的事件，見<a class="xref" href="#brands-matrix">「各方式可使用的功能」</a>。其他種類的偵測（例如車輛）不會搜尋。Cam Hub 對每個通道、每一天最多讀取約 2,000 段錄影與 2,000 筆偵測到人員的紀錄，超出的部分不會列出。</p>
   <div class="table-wrap"><table>
     <thead><tr><th>訊息</th><th>意義</th></tr></thead>
     <tbody>
       <tr><td><span class="ui">正在載入錄影…</span></td><td>正在向設備搜尋該日的錄影。</td></tr>
-      <tr><td><span class="ui">這一天沒有連續錄影。</span></td><td>該日沒有連續錄影。</td></tr>
+      <tr><td><span class="ui">這一天沒有連續錄影。</span></td><td>該日沒有連續錄影。設備因事件而產生的錄影列在<span class="ui">事件錄影</span>下。</td></tr>
       <tr><td><span class="ui">這支攝影機本身不保存錄影。如果有錄影主機替它錄影，請從錄影主機回放。</span></td><td>攝影機回報本身沒有錄影。請開啟替這支攝影機錄影的錄影主機的通道。</td></tr>
-      <tr><td><span class="ui">這一天未偵測到人員。</span></td><td>該日沒有偵測紀錄。</td></tr>
-      <tr><td><span class="ui">此設備無法搜尋人員事件索引。</span></td><td>設備不回應人員搜尋時，顯示在<span class="ui">事件錄影</span>下。連續錄影的清單不受影響。</td></tr>
+      <tr><td><span class="ui">這一天未偵測到人員。</span></td><td>該日沒有事件，適用於搜尋偵測到人員的設備。</td></tr>
+      <tr><td><span class="ui">這一天沒有事件。</span></td><td>該日沒有事件，適用於其他所有設備。</td></tr>
+      <tr><td><span class="ui">此設備無法搜尋人員事件索引。</span></td><td>設備不回應偵測到人員的搜尋時（例如沒有人員索引的較舊錄影主機），在<span class="ui">事件錄影</span>下取代清單顯示。此時設備因事件而產生的錄影不會列出，但仍可從時間軸上的紅色長條播放。連續錄影的清單不受影響。</td></tr>
+      <tr><td><span class="ui">此設備無法搜尋其事件。</span></td><td>同上，適用於標示移動與警報輸入的設備。</td></tr>
       <tr><td>時間軸上方帶警告符號的訊息：<span class="ui">這個帳號無法讀取這台設備上的錄影。</span>、<span class="ui">無法連線到這台設備。</span>、<span class="ui">這台設備無法辨識這支攝影機的錄影。</span>或<span class="ui">這支攝影機離線。</span></td><td>該日的搜尋因訊息所述的原因而失敗。訊息顯示期間，仍可更換日期，嘗試其他日期。帳號的問題，請檢查帳號在設備上的權限；連線的問題，見<a class="xref" href="#trouble">第 15 章「疑難排解」</a>。</td></tr>
       <tr><td><span class="ui">短時間內要求太多次，請稍候一分鐘再試。</span></td><td>設備或其服務因要求過多而拒絕了搜尋，或設備仍在處理先前的搜尋。等待一分鐘後，重新選擇日期。</td></tr>
       <tr><td>同一位置的其他訊息，例如<span class="ui">設備回覆了非預期的內容。</span>、<span class="ui">連線逾時。</span>或<span class="ui">發生錯誤。請再試一次。</span></td><td>搜尋因其他原因而失敗。請重新選擇日期。訊息持續出現時，見<a class="xref" href="#trouble">第 15 章「疑難排解」</a>。</td></tr>
@@ -1859,7 +1892,7 @@
     <li><b>片段</b>：錄製按鈕會錄下正在播放的錄影，可傳送給別人或存進照片圖庫，見<a class="xref" href="#single-clip">「錄製片段」</a>。</li>
     <li><b>放大與平移</b>：與即時模式相同，見<a class="xref" href="#single-zoom">「放大與平移」</a>。PTZ 的鏡頭控制與對講按鈕在回放時隱藏。</li>
     <li><b>被拒絕的錄影</b>：錄影主機不播放某段錄影時（例如錄影已被覆寫），影像上顯示<span class="ui">錄影主機沒有播放這段錄影，可能已被覆寫——請選擇其他時間。</span>請在時間軸上選擇其他時間。</li>
-    <li><b>以檔案送達的錄影</b>：部分設備將錄影以檔案形式交付。此時影像區顯示<span class="ui">正在下載錄影… 45%</span>與進度條，之後錄影以系統的影片播放器播放，播放器有自己的控制項目。此情況下，時間軸的游標不會跟隨播放。下載的檔案保存在 iPhone 的快取中，上限約 <code>500 MB</code>，因此同一段錄影不必重複下載；<span class="ui">刪除所有資料</span>會清除快取。錄製按鈕的位置改為分享按鈕（<span class="ui">分享錄影</span>），可分享整個檔案，見<a class="xref" href="#single-clip">「錄製片段」</a>。</li>
+    <li><b>以檔案送達的錄影</b>：部分設備將錄影以檔案形式交付。此時影像區顯示<span class="ui">正在下載錄影… 45%</span>與進度條，之後錄影以系統的影片播放器播放，播放器有自己的控制項目。此情況下，時間軸的游標不會跟隨播放。下載的檔案保存在 iPhone 的快取中，上限約 <code>500 MB</code>，因此同一段錄影不必重複下載；<span class="ui">刪除所有資料</span>會清除快取，刪除設備則會移除從該設備下載的檔案。錄製按鈕的位置改為分享按鈕（<span class="ui">分享錄影</span>），可分享整個檔案，見<a class="xref" href="#single-clip">「錄製片段」</a>。</li>
     <li><b>背景</b>：App 離開前景或 iPhone 鎖定時，回放會停止。App 回到前景後，回放從停止時的位置繼續。</li>
   </ul>
   <h4>回到即時影像</h4>
@@ -1884,7 +1917,7 @@
   <figure class="phone clip"><video class="clip" src="guide/vid/rec-speed-chip.mp4" poster="guide/img/rec-speed-chip.jpg" aria-label="速度按鈕依序切換 1×、2×、4×、8×，再回到 1×。" muted loop playsinline preload="metadata"></video><figcaption>速度按鈕依序切換 1×、2×、4×、8×，再回到 1×。</figcaption></figure>
   <ol class="steps">
     <li class="step">
-      <p>依<a class="xref" href="#playback-timeline">「使用時間軸」</a>或<a class="xref" href="#playback-list">「錄影清單與人員搜尋」</a>的說明開始播放一段錄影。</p>
+      <p>依<a class="xref" href="#playback-timeline">「使用時間軸」</a>或<a class="xref" href="#playback-list">「錄影清單與事件」</a>的說明開始播放一段錄影。</p>
       <p class="check"><b class="check-label">確認：</b>影像右下角的速度按鈕顯示 1×。</p>
     </li>
     <li class="step">
@@ -1933,7 +1966,7 @@
     </li>
     <li class="step">
       <p>約 5 秒不碰觸控制條。</p>
-      <p class="check"><b class="check-label">確認：</b>控制條與影像上方的按鈕淡出。點選影像一下，會重新顯示。</p>
+      <p class="check"><b class="check-label">確認：</b>游標跟隨回放移動期間，控制條與影像上方的按鈕持續顯示。游標靜止時（例如最後一段錄影播完，或錄影正在下載或以系統的影片播放器播放時），約 5 秒後淡出。點選影像一下，會重新顯示；但錄影正在下載或以系統的影片播放器播放時，點選影像不會重新顯示，將 iPhone 轉回直向後，控制項目才會重新出現。</p>
     </li>
     <li class="step">
       <p>點選控制條中的<span class="ui">回到即時</span>，或將 iPhone 轉回直向。</p>
@@ -1946,7 +1979,7 @@
   <ul>
     <li>以清單中的品牌加入的設備、範例攝影機，以及 YouTube 與 Twitch 直播，沒有錄影回放，見<a class="xref" href="#playback-avail">「哪些設備提供錄影回放」</a>。</li>
     <li>不保有每日錄影索引的設備的錄影日曆。</li>
-    <li>人員以外的事件搜尋。</li>
+    <li>人員、移動與警報輸入以外的偵測種類搜尋，例如車輛。</li>
     <li>涵蓋範圍超過所選日期與前一天的時間軸。</li>
     <li>刪除錄影。要保留或傳送錄影的某一段，請錄成最長 10 分鐘的片段，見<a class="xref" href="#single-clip">「錄製片段」</a>。快照一律是目前的即時影像。</li>
     <li>回放時選擇 SD 或 HD、慢動作、倒轉播放，以及 1×、2×、4×、8× 以外的速度。</li>
@@ -2003,7 +2036,7 @@
     <li>預覽套用每支攝影機的 SD 或 HD、這面牆的黑邊設定與浮水印。</li>
     <li>選擇<span class="ui">自動</span>（預設）時，直放的 iPhone 以兩欄顯示，行數依畫面高度而定。橫放時預覽增加欄數（一般為四欄），讓兩行填滿畫面。iPad 通常維持兩欄。牆上只有一個內容格子時，該格子占滿整個預覽區域。也可以改為固定的欄數與列數，見<a class="xref" href="#lvm-preview-grid">「預覽的排列」</a>。</li>
     <li>格子多於一頁時，左右滑動換頁，畫面下方顯示頁面圓點。</li>
-    <li>未開啟浮水印時，每支攝影機的左下角顯示通道編號與名稱。開啟後，浮水印取代這個標示。</li>
+    <li>未開啟浮水印且排列為<span class="ui">自動</span>時，每支攝影機的左下角顯示通道編號與名稱。改為固定的欄數與列數時，攝影機畫面沒有任何標示；要標示攝影機，請開啟浮水印。YouTube 與 Twitch 的格子一律不顯示這個標示。開啟浮水印後，浮水印取代這個標示。</li>
     <li>點選攝影機畫面，開啟全螢幕檢視，見<a class="xref" href="#lvm-closeup">「開啟單一攝影機」</a>。點選 YouTube 或 Twitch 的格子，以全螢幕開啟該直播，見<a class="xref" href="#lvm-streams">「牆上的 YouTube 與 Twitch 直播」</a>。點選控制面板的按鈕會送出請求，按鈕設為執行前先確認時，先出現確認對話框，見<a class="xref" href="#webhook">第 9 章「控制面板與 Webhook」</a>。</li>
     <li>無法顯示的攝影機保留原格子位置，並顯示狀態文字，見<a class="xref" href="#lvm-states">「格子無法顯示攝影機時」</a>。</li>
     <li>全螢幕牆面開啟期間，預覽暫停串流；回到分頁後恢復。在 iPhone 上，<span class="ui">選擇攝影機</span>或<span class="ui">調整版面</span>頁面蓋住預覽期間，預覽也會暫停。</li>
@@ -2120,7 +2153,7 @@
     <thead><tr><th>項目</th><th>說明</th></tr></thead>
     <tbody>
       <tr><td>頁面上方的計數</td><td><span class="ui" data-ui="value">已選 6 支攝影機</span>隨勾選即時更新，只計算攝影機，不含空格、圖片、時鐘、標籤與控制面板。</td></tr>
-      <tr><td>通道列</td><td>每台設備一個區塊，每個通道一列：圓圈、縮圖、通道編號與名稱。縮圖只對方案涵蓋的通道顯示即時畫面，其餘顯示<span class="ui">已停用</span>或<span class="ui">方案未包含</span>。YouTube 與 Twitch 直播只顯示名稱。</td></tr>
+      <tr><td>通道列</td><td>每台設備一個區塊，每個通道一列：圓圈、縮圖、通道編號與名稱。縮圖只對方案涵蓋且可以播放的通道顯示即時畫面，其餘顯示與牆上格子相同的狀態文字：<span class="ui">已暫停</span>、<span class="ui">已停用</span>、<span class="ui">方案未包含</span>或<span class="ui">無訊號</span>，見<a class="xref" href="#lvm-states">「格子無法顯示攝影機時」</a>。YouTube 與 Twitch 直播只顯示名稱。</td></tr>
       <tr><td>勾選順序</td><td>新勾選的攝影機放在最後一個有內容的格子之後。要把攝影機放進指定的格子，在<span class="ui">排列牆面</span>使用<span class="ui">在這裡放攝影機</span>，見<a class="xref" href="#lvm-arrange">「排列牆面與格子」</a>。</td></tr>
       <tr><td>重複</td><td>同一個通道在同一面牆上只能放一次。</td></tr>
       <tr><td><span class="ui">SD</span> ｜ <span class="ui">HD</span></td><td>勾選後，該列右側出現畫質選擇鈕，新加入的攝影機預設為 <span class="ui">SD</span>。YouTube 與 Twitch 直播沒有選擇鈕，畫質依格子的大小而定。</td></tr>
@@ -2173,7 +2206,7 @@
   <p>從 LiveView Mix 分頁右上角的按鈕開啟頁面時，點選左上角的<span class="ui">取消</span>會把牆面還原成頁面開啟前的狀態；點選<span class="ui">完成</span>則保留這次的選擇。</p>
 
   <h4>指向已移除攝影機的格子</h4>
-  <p>牆上的格子指向 Cam Hub 已經沒有的攝影機時（例如在未加入該攝影機的裝置上還原後），<span class="ui">選擇攝影機</span>頁面上方顯示<span class="ui" data-ui="value">有 2 個格子指向已移除的攝影機。</span>與<span class="ui">清空這些格子</span>按鈕。這些格子不會出現在勾選清單中。</p>
+  <p>牆上的格子指向 Cam Hub 已經沒有的攝影機時（例如設備已不再回報該通道），<span class="ui">選擇攝影機</span>頁面上方顯示<span class="ui" data-ui="value">有 2 個格子指向已移除的攝影機。</span>與<span class="ui">清空這些格子</span>按鈕。這些格子不會出現在勾選清單中。</p>
   <ol class="steps">
     <li class="step">
       <p>點選<span class="ui">清空這些格子</span>。</p>
@@ -2330,7 +2363,7 @@
   <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="排列頁面：上方是版面列，中間的畫布顯示十個格子，第 9 格為控制面板、第 10 格為時鐘，下方是順序清單" loading="lazy" decoding="async" width="900" height="1956"><figcaption>排列頁面</figcaption></figure>
   <ul>
     <li><b>版面列</b>：與<span class="ui">調整版面</span>相同的版面縮圖，可直接換版面。<span class="ui">自訂</span>縮圖在已畫過或正在使用時顯示，在這裡只能選用。</li>
-    <li><b>畫布</b>：橫向頁面以橫向 16:9 繪製，直向頁面以直向 9:16 繪製，顯示目前這個牆面頁。每個有內容的格子左上角標有格子編號；攝影機格子顯示即時畫面（SD），離線或方案未涵蓋的攝影機顯示黑底與斜線攝影機圖示，YouTube 或 Twitch 直播顯示名稱。未開啟浮水印時左下角顯示通道名稱，開啟後預覽浮水印。畫布上的控制面板與牆面上的樣子相同，點選只會開啟編輯，不會送出請求。直放的裝置上，真正的橫向牆面是翻轉過的，但每個格子保留自己的編號。</li>
+    <li><b>畫布</b>：橫向頁面以橫向 16:9 繪製，直向頁面以直向 9:16 繪製，顯示目前這個牆面頁。每個有內容的格子左上角標有格子編號；攝影機格子顯示即時畫面（SD），離線或方案未涵蓋的攝影機顯示黑底與斜線攝影機圖示，YouTube 或 Twitch 直播顯示名稱。未開啟浮水印時左下角顯示通道名稱，開啟後預覽浮水印。畫布上的控制面板與牆面上的樣子相同，但方案未涵蓋的面板不顯示鎖頭；點選只會開啟編輯，不會送出請求。直放的裝置上，真正的橫向牆面是翻轉過的，但每個格子保留自己的編號。</li>
     <li><b>尚未使用的格子</b>：以虛線與 + 標示，是沒有任何內容的格子，可能位於有內容的格子之間，也可能在最後一格之後。點選後可選擇要放入的內容，見下表。</li>
     <li><b>頁面切換</b>：格子多於版面容量時，畫布下方出現左右箭頭與<span class="ui" data-ui="value">第 1 頁，共 2 頁</span>；也可以左右滑動換頁。</li>
     <li><b><span class="ui">提示</span></b>：可收合的說明。收合狀態會被記住。</li>
@@ -2382,7 +2415,7 @@
   <ul>
     <li>拖曳到尚未使用的格子時，被拖曳的格子移到該處，原本的格子留空，其他格子都不移動。</li>
     <li>手指拖到畫布之外再放開時，牆面不變。</li>
-    <li>拖曳只能到達畫面上這個牆面頁的格子。要把另一個牆面頁的格子移到空格，使用<span class="ui">把其他格移到這裡…</span>；要互換不同牆面頁上兩個有內容的格子，使用<span class="ui">順序</span>清單。</li>
+    <li>拖曳只能到達畫面上這個牆面頁的格子。要把另一個牆面頁的格子移到空格，使用<span class="ui">把其他格移到這裡…</span>。要把有內容的格子移到另一個牆面頁，在<span class="ui">順序</span>清單中拖曳它的那一列；空格維持原位。</li>
     <li>點選攝影機格子沒有作用；攝影機在<span class="ui">選擇攝影機</span>或<span class="ui">順序</span>清單中移除。點選放有圖片、控制面板、時鐘或標籤的格子，會開啟該格的編輯，見<a class="xref" href="#lvm-slots">「攝影機以外，格子可以放什麼」</a>。</li>
   </ul>
   <p>以清單互換位置與清空格子：</p>
@@ -2393,7 +2426,7 @@
     </li>
     <li class="step">
       <p>拖曳一列右側的排序把手，移到清單中新的位置。</p>
-      <p class="check"><b class="check-label">確認：</b>內容在同一組有內容的格子之間互換位置，空格維持空格。編號與畫布同步更新，也可跨牆面頁調整。</p>
+      <p class="check"><b class="check-label">確認：</b>該列移到新的位置，原位置與新位置之間的每一列各往上或往下移一位。內容在同一組有內容的格子之間調換位置，空格維持空格。畫布同步更新，也可跨牆面頁調整。</p>
     </li>
     <li class="step">
       <p>要清空格子時，在該列上向左滑動，再點選<span class="ui" data-ui="system">刪除</span>；編輯狀態中也可點選該列的移除按鈕。</p>
@@ -2555,7 +2588,7 @@
     <li>浮水印只畫在攝影機格子上，控制面板、圖片、時鐘與標籤沒有。</li>
     <li>三項名稱都關閉時，不顯示任何文字。</li>
     <li>浮水印不會攔截觸控，點選畫面的行為不變。</li>
-    <li>未開啟浮水印時，預覽與排列畫布的攝影機格子顯示通道編號與名稱；全螢幕牆面沒有任何標示。</li>
+    <li>未開啟浮水印時，預覽的攝影機格子顯示通道編號與名稱（僅限<span class="ui">自動</span>排列），排列畫布的攝影機格子顯示通道名稱，全螢幕牆面沒有任何標示。</li>
   </ul>
 
   <h3 id="lvm-fit">黑邊、滿版畫面與裝置角度</h3>
@@ -2680,7 +2713,7 @@
     </li>
     <li class="step">
       <p>點選下方畫布右上角帶有滑桿圖案的圓形按鈕。</p>
-      <p class="check"><b class="check-label">確認：</b>出現標題為<span class="ui">下方畫布</span>的選單，提供<span class="ui">選擇攝影機</span>與<span class="ui">調整版面</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>出現標題為<span class="ui">下方畫布</span>的選單，提供<span class="ui">選擇攝影機</span>與<span class="ui">調整版面</span>。上方畫布的同一個按鈕提供上方畫布的相同選項，選單標題為<span class="ui">上方畫布</span>（直向頁面取代上方畫布時為<span class="ui">直向頁面</span>）。</p>
     </li>
     <li class="step">
       <p>點選<span class="ui">調整版面</span>，再依一般牆面的方式設定下方畫布，見<a class="xref" href="#lvm-layout">「調整版面」</a>與<a class="xref" href="#lvm-arrange">「排列牆面與格子」</a>。</p>
@@ -2688,7 +2721,10 @@
     </li>
   </ol>
   <ul>
+    <li>在 LiveView Mix 分頁中，每張畫布都依自己的版面顯示牆面，並有自己的牆面頁，與全螢幕牆面相同。沒有預覽說明，也沒有<span class="ui">排列：自動</span>按鈕。</li>
+    <li>點選畫布上的攝影機，會在該畫布內開啟這支攝影機的單機畫面，說明見<a class="xref" href="#lvm-closeup">「開啟單一攝影機」</a>中的「從全螢幕牆面開啟」。點選標示<span class="ui">方案未包含</span>的格子沒有作用。</li>
     <li><span class="ui">全螢幕</span>以滿版方式同時開啟兩張畫布，上方畫布左上角有 <span class="ui" data-ui="icon">✕</span> 按鈕。</li>
+    <li>只容得下一張畫布時（iPhone Duo 完全展開、闔上，或像書本一樣直拿），全螢幕牆面與分頁相同，一次顯示一張畫布。只有上方畫布（或取代它的直向頁面）有 <span class="ui" data-ui="icon">✕</span>。畫面顯示下方畫布時，要關閉牆面，先在它的第一個牆面頁往回滑，回到上方畫布，再點選 <span class="ui" data-ui="icon">✕</span>。</li>
     <li>顯示兩張畫布期間，編輯頁面沒有<span class="ui">橫向頁面</span>與<span class="ui">直向頁面</span>切換鈕。</li>
     <li>下方畫布的控制面板只在兩張畫布開啟期間計入方案額度，並出現在 Apple Watch 上。</li>
     <li>下方畫布會隨備份帶走。在 iPhone 或 iPad 上還原時會保留但不顯示；再次在 iPhone Duo 上還原時，下方畫布隨之恢復。</li>
@@ -2719,17 +2755,17 @@
   </ol>
   <ul>
     <li><b>翻頁</b>：格子多於版面容量時，牆面分成多個牆面頁，頁數為格子數除以每頁格子數後進位。牆面頁放不滿的位置與空格為黑色。多頁時畫面下方顯示頁面圓點。</li>
-    <li><b>開啟的頁面</b>：牆面開啟在第一個有內容可顯示的牆面頁。長牆的開頭有一段格子指向不存在的攝影機時，不會停在整頁都是狀態文字的頁面。</li>
+    <li><b>開啟的頁面</b>：牆面開啟在第一個有內容可顯示的牆面頁。長牆的開頭有一段無法顯示的攝影機時，不會停在整頁都是狀態文字的頁面。</li>
     <li><b>串流</b>：只有目前看的那個牆面頁播放畫面，相鄰頁面不連線，以節省頻寬。<span class="ui">翻頁時保持攝影機連線</span>可改變這個行為，見<a class="xref" href="#lvm-settings">「設定中的 LiveView Mix」</a>。</li>
     <li><b>畫面上的按鈕</b>：關閉按鈕，以及從牆面開啟的單機畫面上的按鈕，都是深色圓底、外圍一圈細白邊的大型白色符號，在全黑或明亮的畫面上都看得清楚，也容易點中。</li>
     <li><b>點選攝影機</b>：開啟該攝影機的單機畫面，見<a class="xref" href="#lvm-closeup">「開啟單一攝影機」</a>。</li>
     <li><b>點選 YouTube 或 Twitch 的格子</b>：以全螢幕開啟該直播，見<a class="xref" href="#lvm-streams">「牆上的 YouTube 與 Twitch 直播」</a>。</li>
     <li><b>點選控制面板的按鈕</b>：送出請求。按鈕設為執行前先確認時，會先出現確認對話框，見<a class="xref" href="#webhook">第 9 章「控制面板與 Webhook」</a>。</li>
-    <li><b>狀態文字</b>：無法顯示的格子保留原位置並顯示狀態文字，點選沒有作用，見<a class="xref" href="#lvm-states">「格子無法顯示攝影機時」</a>。</li>
+    <li><b>狀態文字</b>：無法顯示的格子保留原位置並顯示狀態文字。點選標示<span class="ui">無訊號</span>、<span class="ui">已停用</span>、<span class="ui">方案未包含</span>或<span class="ui">攝影機已移除</span>的格子沒有作用。點選<span class="ui">已暫停</span>的格子會開啟單機畫面，畫面同樣顯示<span class="ui">已暫停</span>。見<a class="xref" href="#lvm-states">「格子無法顯示攝影機時」</a>。</li>
     <li><b>牆面不能拖曳重排。</b>要調整格子，請回到<span class="ui">排列</span>，見<a class="xref" href="#lvm-arrange">「排列牆面與格子」</a>。</li>
     <li><b>轉動裝置</b>：已開啟直向頁面時，牆面隨裝置轉向在橫向頁面與直向頁面之間切換，見<a class="xref" href="#lvm-pages">「直向頁面」</a>。使用兩張畫布的 iPhone Duo 見<a class="xref" href="#lvm-canvases">「iPhone Duo 的兩張畫布」</a>。</li>
     <li><b>螢幕</b>：牆面上有即時畫面時，裝置不會自動鎖定螢幕。</li>
-    <li><b>牆面沒有內容</b>：沒有任何格子時，畫面顯示<span class="ui">LiveView Mix 是空的</span>。所有格子指向的攝影機都不在這台裝置上（例如從備份還原後尚未加入設備）時，畫面顯示<span class="ui">這些攝影機不在這台裝置上</span>。</li>
+    <li><b>牆面沒有內容</b>：沒有任何格子時，畫面顯示<span class="ui">LiveView Mix 是空的</span>。從第 1 格到最後一個有內容的格子，每一格都是無法顯示的攝影機（<span class="ui">無訊號</span>、<span class="ui">已停用</span>、<span class="ui">方案未包含</span>或<span class="ui">攝影機已移除</span>）時，畫面不顯示格子，改為顯示<span class="ui">這些攝影機不在這台裝置上</span>，並附上說明<span class="ui">請在 iPhone 或 iPad 的「設定 → LiveView Mix」加入攝影機。</span>有任何一格是下列其他內容時，牆面照常顯示：可以播放的攝影機、<span class="ui">已暫停</span>的攝影機、圖片、時鐘、標籤、控制面板、有顏色的格子或空格。LiveView Mix 分頁的預覽仍顯示格子與狀態文字；只有牆上所有攝影機都已移除時，預覽才改為顯示<span class="ui">LiveView Mix 是空的</span>。iPhone Duo 的每張畫布與 Apple TV 的全螢幕牆面也是如此。</li>
   </ul>
 
   <h3 id="lvm-closeup">開啟單一攝影機</h3>
@@ -2798,6 +2834,7 @@
       <tr><td><span class="ui">攝影機已移除</span></td><td>格子指向 Cam Hub 已經沒有的攝影機。</td><td>在<span class="ui">選擇攝影機</span>頁面以<span class="ui">清空這些格子</span>處理，見<a class="xref" href="#lvm-pick">「選擇攝影機與畫質」</a>。</td></tr>
     </tbody>
   </table></div>
+  <p>牆上從第 1 格到最後一個有內容的格子，每一格都顯示<span class="ui">無訊號</span>、<span class="ui">已停用</span>、<span class="ui">方案未包含</span>或<span class="ui">攝影機已移除</span>時，全螢幕牆面不顯示這些底板，改為顯示<span class="ui">這些攝影機不在這台裝置上</span>，見<a class="xref" href="#lvm-wall">「全螢幕牆面」</a>。</p>
   <figure class="land"><img src="guide/img/lvm-wall-states.jpg" alt="橫放的全螢幕牆面：幾個格子分別顯示無訊號、方案未包含、已停用與攝影機已移除" loading="lazy" decoding="async" width="1600" height="736"><figcaption>無法顯示攝影機的格子</figcaption></figure>
   <figure class="phone"><img src="guide/img/lvm-unavailable-plates.jpg" alt="LiveView Mix 分頁的預覽，共六個格子：一個顯示即時畫面，兩個顯示「攝影機已移除」，其餘各顯示「已停用」、「無訊號」與帶鎖頭的「方案未包含」；底部為預覽說明" loading="lazy" decoding="async" width="900" height="1956"><figcaption>LiveView Mix 分頁預覽中的狀態底板</figcaption></figure>
   <ul>
@@ -2813,7 +2850,7 @@
     <li><b>免費方案</b>：全 App 合計最多啟用 2 個通道（單機與錄影主機通道合計），錄影主機最多 1 台。超出額度的通道在牆上顯示為<span class="ui">已停用</span>；已啟用卻超出額度的通道顯示為<span class="ui">方案未包含</span>。兩種情況的格子位置都會保留。</li>
     <li><b>攝影機方案與NVR 方案</b>：分別提高獨立攝影機的啟用上限與錄影主機的數量。NVR 方案下，所訂閱錄影主機的所有通道都可使用。</li>
     <li><b>啟用通道</b>：升級方案後，原本已停用的通道不會自動啟用，須在設備頁或<span class="path"><span class="ui">設定</span> › <span class="ui">選擇顯示哪些攝影機</span></span>開啟。兩個軸向都沒有上限的方案會自動啟用所有通道，此時設定中不顯示<span class="ui">選擇顯示哪些攝影機</span>。</li>
-    <li><b>控制面板占用攝影機額度，排在攝影機之後</b>：每個控制面板算作一支獨立攝影機，計入方案的攝影機額度，不計入錄影主機額度。控制面板只使用攝影機用剩的額度（免費方案則是攝影機與錄影主機通道用剩的額度），因此控制面板不會讓攝影機失去畫面。額度用完時，控制面板保留在原位，但按鈕被鎖住，格子顯示鎖頭、面板標題與<span class="ui">方案未包含</span>。圖片、時鐘與標籤不占用額度。</li>
+    <li><b>控制面板占用攝影機額度，排在攝影機之後</b>：每個控制面板算作一支獨立攝影機，計入方案的攝影機額度，不計入錄影主機額度。控制面板只使用攝影機用剩的額度（免費方案則是攝影機與錄影主機通道用剩的額度），因此控制面板不會讓攝影機失去畫面。額度用完時，控制面板保留在原位，但按鈕被鎖住。在全螢幕牆面上，格子顯示鎖頭、面板標題與<span class="ui">方案未包含</span>（格子較小時只顯示鎖頭與標題，或只顯示鎖頭）。在預覽中，格子顯示鎖頭與<span class="ui">方案未包含</span>。排列畫布仍照常繪出面板與按鈕。圖片、時鐘與標籤不占用額度。</li>
     <li><b>每一面牆上的每個控制面板各自計算</b>：橫向頁面的控制面板一律計入；直向頁面的控制面板在直向頁面開啟期間計入，下方畫布的控制面板在 iPhone Duo 的兩張畫布開啟期間計入。複製到另一個頁面的控制面板單獨計算。額度依橫向頁面、下方畫布、直向頁面的順序分配，同一面牆內依格子編號的順序分配。</li>
     <li><b>YouTube 與 Twitch 直播</b>：不計入方案額度，也不會被鎖住。</li>
     <li><b>鎖住的通道</b>：在預覽中點選方案未涵蓋的攝影機，會開啟方案頁；在選擇攝影機頁面與排列畫布中，這些通道不顯示即時畫面。</li>
@@ -2868,10 +2905,10 @@
     </li>
   </ol>
   <h4>備份與還原</h4>
-  <p>每一面牆的設定（橫向頁面、直向頁面與下方畫布，各自的攝影機與格子、版面、自訂版面、浮水印、控制面板與圖片）、直向頁面與兩張畫布的開關，以及預覽的排列，都屬於 App 設定，隨 iCloud 備份一併儲存（見<a class="xref" href="#share-versions">「多份具名備份：重新命名與刪除」</a>）；匯出攝影機時，開啟<span class="ui">包含 App 設定</span>也會一併帶走。還原時，屬於新裝置上沒有的設備的格子不會保留。圖片會讓備份變大，複製到另一個頁面的圖片計算兩次。操作見<a class="xref" href="#share">第 10 章「分享與備份」</a>。</p>
+  <p>每一面牆的設定（橫向頁面、直向頁面與下方畫布，各自的攝影機與格子、版面、自訂版面、浮水印、控制面板與圖片）、直向頁面與兩張畫布的開關，以及預覽的排列，都屬於 App 設定，隨 iCloud 備份一併儲存（見<a class="xref" href="#share-versions">「多份具名備份：重新命名與刪除」</a>）；匯出攝影機時，開啟<span class="ui">包含 App 設定</span>也會一併帶走。還原時，若備份沒有帶回某個攝影機格子所屬的設備，該格子會變成空格，其他格子都不移動。圖片會讓備份變大，複製到另一個頁面的圖片計算兩次。操作見<a class="xref" href="#share">第 10 章「分享與備份」</a>。</p>
 
   <h3 id="lvm-tv">Apple TV 上的差異</h3>
-  <p>Apple TV 顯示在 iPhone 或 iPad 建立好的牆面。排列牆面、編輯格子與繪製自訂版面，都在 iPhone 或 iPad 上進行，見<a class="xref" href="#appletv">第 14 章「Apple TV」</a>。Apple TV 只顯示橫向頁面：不顯示直向頁面與 iPhone Duo 的下方畫布，其中的控制面板在 Apple TV 上也不計入方案額度。YouTube 與 Twitch 的格子顯示直播名稱，並說明這類直播只能在 iPhone 和 iPad 上播放。</p>
+  <p>Apple TV 顯示隨備份或分享代碼帶來的牆面，也可以在<span class="path"><span class="ui">設定</span> › <span class="ui">LiveView Mix</span></span>自行選擇這面牆的攝影機：選取一支攝影機一次以 SD 加入，再選取一次改為 HD，再選取一次則移除；<span class="ui">全部 SD</span>與<span class="ui">全部 HD</span>可一次設定所有已選攝影機的畫質。<span class="ui">全螢幕版面</span>下方的一排版面可選擇現成版面，或在 iPhone 或 iPad 上畫好的自訂版面；<span class="ui">這面牆的黑邊</span>設定黑邊。排列牆面、編輯格子、繪製自訂版面與建立控制面板，都在 iPhone 或 iPad 上進行，見<a class="xref" href="#appletv-lvm">「LiveView Mix 分頁」</a>。Apple TV 只顯示橫向頁面：不顯示直向頁面與 iPhone Duo 的下方畫布，其中的控制面板在 Apple TV 上也不計入方案額度。控制面板只在全螢幕牆面上顯示，也只能在那裡按下，見<a class="xref" href="#webhook-wall">「面板在牆上的樣子」</a>。YouTube 與 Twitch 的格子顯示直播名稱，並說明這類直播只能在 iPhone 和 iPad 上播放。</p>
 </section>
 
 <section class="chapter" id="webhook">
@@ -2883,7 +2920,7 @@
   <ul>
     <li>Cam Hub 只負責送出請求。網址與內容完全由使用者設定，Cam Hub 不檢查對方是什麼服務，也不是任何智慧家庭產品的專用控制程式。</li>
     <li>請求只在牆上或手錶上按下按鈕時才會送出。在排列畫面中點選面板只會開啟編輯畫面，不會送出請求。</li>
-    <li>控制面板在 iPhone 與 iPad 上建立與編輯。Apple TV 顯示並執行橫向頁面上的面板，見<a class="xref" href="#webhook-wall">「面板在牆上的樣子」</a>。Apple Watch 顯示面板的按鈕，見<a class="xref" href="#webhook-watch">「Apple Watch 上的按鈕」</a>。</li>
+    <li>控制面板在 iPhone 與 iPad 上建立與編輯。Apple TV 在全螢幕牆面上顯示並執行橫向頁面上的面板，見<a class="xref" href="#webhook-wall">「面板在牆上的樣子」</a>。Apple Watch 顯示面板的按鈕，見<a class="xref" href="#webhook-watch">「Apple Watch 上的按鈕」</a>。</li>
   </ul>
   <div class="callout warn">
     <strong class="t">控制面板占用一個攝影機額度</strong>
@@ -2891,7 +2928,7 @@
   </div>
 
   <h3 id="webhook-add">在牆上加入控制面板</h3>
-  <p>前置條件：已設定 LiveView Mix，牆上至少有一支攝影機，設定方式見<a class="xref" href="#lvm-first">「建立第一面六支攝影機的牆」</a>。尚未設定時，在已加入設備的情況下，也可從<span class="path"><span class="ui">設定</span> › <span class="ui">LiveView Mix</span></span>進入<span class="ui">排列牆面</span>。控制面板可以放在橫向頁面、直向頁面，或 iPhone Duo 的任一張畫布上，操作步驟相同。</p>
+  <p>前置條件：已設定 LiveView Mix，牆上至少有一支攝影機，設定方式見<a class="xref" href="#lvm-first">「建立第一面六支攝影機的牆」</a>。尚未設定時，在已加入設備的情況下，也可從<span class="path"><span class="ui">設定</span> › <span class="ui">LiveView Mix</span></span>進入<span class="ui">排列牆面</span>。控制面板可以放在橫向頁面、直向頁面，或 iPhone Duo 的任一張畫布上。要放在直向頁面時，在步驟 2 之後點選<span class="ui">調整版面</span>頁面上方切換鈕中的<span class="ui">直向頁面</span>（已選取時不必點選）。iPhone Duo 開啟兩張畫布期間，分頁右上角只有<span class="ui">全螢幕</span>按鈕：步驟 2 改為點選畫布右上角帶有滑桿圖案的圓形按鈕，再點選選單中的<span class="ui">調整版面</span>，見<a class="xref" href="#lvm-canvases">「iPhone Duo 的兩張畫布」</a>。其餘步驟相同。</p>
   <ol class="steps">
     <li class="step">
       <p>點選底部的 <span class="ui">LiveView Mix</span> 分頁。</p>
@@ -2997,7 +3034,7 @@
       <tr><td><span class="ui">範本</span></td><td>見<a class="xref" href="#webhook-templates">「範本」</a>。</td></tr>
       <tr><td><span class="ui">標題</span></td><td>顯示在按鈕上方，用於說明面板控制的對象，也是 Apple Watch 上的分組標題。留白時不顯示標題。</td></tr>
       <tr><td><span class="ui">顏色</span></td><td>面板邊框與按鈕的色彩，也用於 Apple Watch 上的圖示。</td></tr>
-      <tr><td><span class="ui">顯示時間</span></td><td>在按鈕下方的空白處顯示目前的時間。開啟後可再選擇<span class="ui">秒</span>、<span class="ui">日期</span>、<span class="ui">星期</span>與<span class="ui">24 小時制</span>。星期與月份的名稱隨 App 的語言顯示。</td></tr>
+      <tr><td><span class="ui">顯示時間</span></td><td>在按鈕下方的空白處顯示目前的時間。開啟後可再選擇<span class="ui">秒</span>、<span class="ui">日期</span>、<span class="ui">星期</span>與<span class="ui">24 小時制</span>。<span class="ui">顯示時間</span>與這四個開關預設都是關閉。<span class="ui">24 小時制</span>關閉時，時間依 App 語言的慣例顯示。星期與月份的名稱隨 App 的語言顯示。這些預設值與時鐘格子不同，見<a class="xref" href="#lvm-slots">「攝影機以外，格子可以放什麼」</a>。</td></tr>
       <tr><td><span class="ui">按鈕</span></td><td>按鈕清單。點選一列進入該按鈕的編輯頁面；向左滑動一列可刪除該按鈕；<span class="ui">新增按鈕</span>在清單最後加入一顆空白按鈕。清單沒有排序功能，要更換順序時，刪除按鈕後重新加入。每一列顯示圖示、標籤與網址的主機名稱；尚未填入有效網址時，改以橘色顯示<span class="ui">尚未設定端點</span>。標籤為空白時，該列以<span class="ui">按鈕</span>代替。</td></tr>
     </tbody>
   </table></div>
@@ -3007,11 +3044,11 @@
   <ol class="steps">
     <li class="step">
       <p>在<span class="ui">按鈕</span>區塊點選要設定的按鈕。需要新的按鈕時，先點選<span class="ui">新增按鈕</span>，再點選新增的一列。</p>
-      <p class="check"><b class="check-label">確認：</b>畫面進入該按鈕的編輯頁面，標題為按鈕的標籤，左上角只有返回箭頭。</p>
+      <p class="check"><b class="check-label">確認：</b>畫面進入該按鈕的編輯頁面，標題為按鈕的標籤；標籤為空白時（例如新的按鈕），標題為<span class="ui">按鈕</span>。左上角只有返回箭頭。</p>
     </li>
     <li class="step">
       <p>在<span class="ui">圖示</span>列下方的圖示列點選要使用的圖示，或在右側欄位輸入 <code>SF Symbols</code> 的圖示名稱。</p>
-      <p class="check"><b class="check-label">確認：</b>圖示列顯示所選的圖示與其名稱，例如 <code>arrow.up.to.line</code>。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">圖示</span>列顯示所選的圖示與其名稱，例如 <code>arrow.up.to.line</code>。</p>
     </li>
     <li class="step">
       <p>在<span class="ui">標籤</span>欄輸入顯示在圖示下方的文字。</p>
@@ -3053,7 +3090,7 @@
   <div class="table-wrap"><table>
     <thead><tr><th>欄位</th><th>說明</th></tr></thead>
     <tbody>
-      <tr><td><span class="ui">圖示</span></td><td>下方有 20 個常用圖示可直接點選。也可輸入 <code>SF Symbols</code> 的圖示名稱。</td></tr>
+      <tr><td><span class="ui">圖示</span></td><td>下方有 20 個常用圖示可直接點選。也可輸入 <code>SF Symbols</code> 的圖示名稱，名稱必須完全正確。名稱不是 <code>SF Symbols</code> 的名稱或欄位空白時，按鈕在牆上與 Apple Watch 上都不顯示圖示。欄位空白時，編輯頁面顯示問號，<span class="ui">按鈕</span>清單中的那一列顯示閃電圖示。</td></tr>
       <tr><td><span class="ui">標籤</span></td><td>顯示在圖示下方，也是確認框中紅色按鈕的文字。標籤為空白時，按鈕只顯示圖示，確認框的紅色按鈕顯示<span class="ui">確認</span>。</td></tr>
       <tr><td><span class="ui">執行前先確認</span></td><td>開啟後，按下按鈕會先出現確認框。會讓實體設備動作的按鈕，例如開門、解鎖與警報，建議開啟。</td></tr>
       <tr><td><span class="ui">方法</span></td><td><code>GET</code>、<code>POST</code>、<code>PUT</code> 或 <code>DELETE</code>，預設為 <code>POST</code>。<code>GET</code> 不送出內容。</td></tr>
@@ -3065,12 +3102,12 @@
   </table></div>
 
   <h3 id="webhook-use">按下按鈕與確認結果</h3>
-  <p>按鈕在 LiveView Mix 分頁的預覽牆與全螢幕牆上都可按。新設定的按鈕沒有獨立的測試功能，以實際按下一次作為測試，並在接收端確認請求已到達。</p>
+  <p>按鈕在 LiveView Mix 分頁的預覽牆與全螢幕牆上都可按。在 Apple TV 上，只能在全螢幕牆上按。新設定的按鈕沒有獨立的測試功能，以實際按下一次作為測試，並在接收端確認請求已到達。</p>
   <figure class="clip land"><video class="clip" src="guide/vid/rec-webhook-button.mp4" poster="guide/img/rec-webhook-button.jpg" aria-label="在牆上按控制面板的按鈕：送出請求時顯示轉圈圖示，回應成功顯示綠色勾號，未成功則顯示橘色警告三角形。" muted loop playsinline preload="metadata"></video><figcaption>在牆上按控制面板的按鈕：送出請求時顯示轉圈圖示，回應成功顯示綠色勾號，未成功則顯示橘色警告三角形。</figcaption></figure>
   <ol class="steps">
     <li class="step">
       <p>在預覽牆或全螢幕牆上點選面板中的按鈕。</p>
-      <p class="check"><b class="check-label">確認：</b>未開啟<span class="ui">執行前先確認</span>的按鈕，圖示立即變成轉圈，表示請求已送出。已開啟的按鈕，面板旁出現確認框，標題為面板的標題（面板沒有標題時為<span class="ui">要執行這個動作嗎？</span>）。</p>
+      <p class="check"><b class="check-label">確認：</b>未開啟<span class="ui">執行前先確認</span>的按鈕，圖示立即變成轉圈，表示請求已送出。已開啟的按鈕，面板旁出現確認框。</p>
     </li>
     <li class="step">
       <p>出現確認框時，點選框中的紅色按鈕，文字為該按鈕的標籤。要取消，點選確認框以外的位置。</p>
@@ -3103,8 +3140,8 @@
   <ul>
     <li><b>按鈕排列</b>：1 顆按鈕排成 1 欄，2 顆排成 2 欄，3 顆排成 3 欄，4 顆排成 2 × 2，5 顆以上排成 3 欄。</li>
     <li><b>格子較小時</b>：面板會自動縮小。時鐘最先隱藏，其次是圖示下方的標籤，標題與圖示會保留。</li>
-    <li><b>方案</b>：每個控制面板占用一個攝影機額度，使用的是攝影機用剩的額度。超出額度的面板顯示鎖頭、標題與<span class="ui">方案未包含</span>，按鈕無法使用；在預覽中，該格子顯示鎖頭與<span class="ui">方案未包含</span>。每一面牆上的每個面板各自計算：橫向頁面一律計入，直向頁面在開啟期間計入，iPhone Duo 的下方畫布在兩張畫布開啟期間計入；複製出來的面板與原本的面板分開計算。時鐘、標籤、圖片與空白的格子不占用額度。只訂閱 NVR 方案不會增加面板可用的額度。計算方式見<a class="xref" href="#lvm-limits">「方案限制對牆面的影響」</a>與<a class="xref" href="#plans-count">「哪些項目占用額度」</a>。</li>
-    <li><b>Apple TV</b>：控制面板在 iPhone 或 iPad 建立，橫向頁面上的面板顯示在 Apple TV 的牆面上，見<a class="xref" href="#appletv">第 14 章「Apple TV」</a>。</li>
+    <li><b>方案</b>：每個控制面板占用一個攝影機額度，使用的是攝影機用剩的額度。超出額度的面板顯示鎖頭、標題與<span class="ui">方案未包含</span>（格子較小時只顯示鎖頭與標題，或只顯示鎖頭），按鈕無法使用；在預覽中，該格子顯示鎖頭與<span class="ui">方案未包含</span>。每一面牆上的每個面板各自計算：橫向頁面一律計入，直向頁面在開啟期間計入，iPhone Duo 的下方畫布在兩張畫布開啟期間計入；複製出來的面板與原本的面板分開計算。時鐘、標籤、圖片與空白的格子不占用額度。免費方案下，獨立攝影機、錄影主機通道與控制面板共用同樣的 2 個名額，控制面板排在最後。訂閱任何方案後，這個共用的限制即解除：只訂閱 NVR 方案時，控制面板使用已啟用的獨立攝影機用剩的 2 個攝影機額度，與錄影主機通道的數量無關。只有攝影機方案能把攝影機額度提高到 2 個以上。計算方式見<a class="xref" href="#lvm-limits">「方案限制對牆面的影響」</a>與<a class="xref" href="#plans-count">「哪些項目占用額度」</a>。</li>
+    <li><b>Apple TV</b>：控制面板在 iPhone 或 iPad 建立。Apple TV 只在全螢幕牆面上顯示橫向頁面的面板；<span class="ui">LiveView Mix</span>分頁的預覽只顯示攝影機。牆上沒有這台 Apple TV 上的攝影機時（例如只有控制面板），分頁顯示<span class="ui">開啟全螢幕</span>，並附上說明<span class="ui">您的 LiveView Mix 面板會顯示在全螢幕牆上。</span>選取<span class="ui">全螢幕</span>即可開啟牆面。要按下按鈕時，以遙控器把選取框移到按鈕上，再按選取鍵；每顆按鈕各自是一個選取位置。已開啟<span class="ui">執行前先確認</span>的按鈕會開啟確認對話框，內有按鈕的標籤（標籤為空白時為<span class="ui">確認</span>）與<span class="ui">取消</span>。選取框會跳過被鎖住的面板。Apple TV 上的面板不會縮小，時鐘與標籤一律顯示。見<a class="xref" href="#appletv-lvm">「LiveView Mix 分頁」</a>。</li>
     <li><b>Apple Watch</b>：方案涵蓋的每個面板，其按鈕都會出現在配對的 Apple Watch 上，見<a class="xref" href="#webhook-watch">「Apple Watch 上的按鈕」</a>。</li>
     <li><b>備份與分享</b>：面板的設定，包括標頭中的值，屬於 App 設定，會進入每一份 iCloud 備份；匯出攝影機時開啟<span class="ui">包含 App 設定</span>，也會進入分享代碼，見<a class="xref" href="#share">第 10 章「分享與備份」</a>。</li>
   </ul>
@@ -3117,11 +3154,11 @@
   <p>Apple Watch 上的 Cam Hub 顯示配對的 iPhone 上所設定之控制面板的按鈕，點一下即可送出。手錶上不顯示其他內容，沒有影像，也沒有攝影機。手錶 App 沒有自己的設定、登入或購買項目；顯示哪些按鈕由 iPhone 決定。</p>
   <ul>
     <li><b>哪些按鈕</b>：方案涵蓋的每個控制面板上、網址有效的每顆按鈕，包括橫向頁面、開啟期間的直向頁面，以及 iPhone Duo 在兩張畫布開啟期間的下方畫布。直向頁面上與橫向頁面完全相同的按鈕（面板標題、標籤與請求都相同）只列出一次。</li>
-    <li><b>清單</b>：畫面標題為<span class="ui">控制</span>。按鈕依牆上的順序，分組列在所屬面板的標題下。每一列顯示面板顏色的圖示與按鈕的標籤（標籤為空白時顯示網址）。</li>
-    <li><b>同步</b>：在 iPhone 上修改面板或按鈕，或方案改變時，iPhone 會傳送新的清單給手錶。方案不再涵蓋的面板，會從手錶上消失。</li>
+    <li><b>清單</b>：畫面標題為<span class="ui">控制</span>。按鈕依牆上的順序，分組列在所屬面板的標題下。每一列顯示面板顏色的圖示與按鈕的標籤（標籤為空白時顯示網址）。標題相同的面板會合併列在同一個標題下，沒有標題的面板，其按鈕合併列在一組沒有標題的群組中。請為每個面板設定不同的標題，以便區分。</li>
+    <li><b>同步</b>：在 iPhone 上開啟 Cam Hub 期間，每當面板或按鈕有所修改，或方案改變，iPhone 都會傳送新的清單給手錶。App 關閉期間發生的變更（例如訂閱到期），要等下次在 iPhone 上開啟 Cam Hub，或下次經由 iPhone 送出按鈕時，才會傳到手錶；在此之前，由手錶自己送出的按鈕照常可用。方案不再涵蓋的面板，會從手錶上消失。</li>
     <li><b>獨立運作</b>：清單保存在手錶上。即使 iPhone 上的 App 沒有執行，或 iPhone 不在附近，手錶 App 仍可開啟並顯示清單；允許由手錶自己送出的按鈕照常可用。</li>
     <li><b>語言</b>：手錶上的文字與面板的預設文字，依 iPhone 上 App 的語言顯示，而不是手錶的語言。</li>
-    <li><b>尚未收到按鈕時</b>：手錶顯示<span class="ui" data-ui="value">還沒有按鈕</span>，並說明在 iPhone 上的 LiveView Mix 新增控制面板後，面板上的按鈕就會顯示在這裡。</li>
+    <li><b>沒有按鈕時</b>：iPhone 傳來的清單中沒有任何按鈕時，手錶一律顯示<span class="ui" data-ui="value">還沒有按鈕</span>與<span class="ui" data-ui="value">在 iPhone 上的 LiveView Mix 新增控制面板，面板上的按鈕就會顯示在這裡。</span>這些情況包括：尚未收到第一份清單、所有控制面板的按鈕都沒有有效的網址、面板只放在已關閉的頁面或畫布上，以及方案未涵蓋任何面板。</li>
   </ul>
   <figure class="phone"><img src="guide/img/watch-buttons.jpg" alt="Apple Watch 的控制清單：花園燈面板的開燈按鈕在端點回應後顯示綠色勾號，下方是關燈按鈕" loading="lazy" decoding="async" width="416" height="496"><figcaption>Apple Watch 上的控制面板按鈕</figcaption></figure>
   <h4>按下按鈕後如何送出</h4>
@@ -3148,7 +3185,7 @@
     </li>
     <li class="step">
       <p>點選一顆按鈕。</p>
-      <p class="check"><b class="check-label">確認：</b>未開啟<span class="ui">執行前先確認</span>的按鈕，該列尾端立即顯示轉圈。已開啟的按鈕會詢問<span class="ui">要執行這個動作嗎？</span>，下方為面板標題，另有一顆文字為按鈕標籤的紅色按鈕與<span class="ui">取消</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>未開啟<span class="ui">執行前先確認</span>的按鈕，該列尾端立即顯示轉圈。已開啟的按鈕會詢問<span class="ui">要執行這個動作嗎？</span>，下方為面板標題，另有一顆文字為按鈕標籤的紅色按鈕與<span class="ui">取消</span>。面板沒有標題時，問題下方改為顯示按鈕的標籤；標籤為空白時，紅色按鈕的文字為<span class="ui">確認</span>。</p>
     </li>
     <li class="step">
       <p>出現詢問時，點選紅色按鈕。要取消，點選<span class="ui">取消</span>。</p>
@@ -3299,8 +3336,8 @@ Content-Type: application/json
       <figure class="phone"><img src="guide/img/export-1.jpg" alt="匯出攝影機頁面：五台設備全部勾選，下方有以 PIN 鎖定與包含 App 設定兩個開關，以及匯出按鈕" loading="lazy" decoding="async" width="900" height="1956"><figcaption>匯出攝影機頁面</figcaption></figure>
     </li>
     <li class="step">
-      <p>選用：點選設備列取消勾選，或重新勾選該設備。也可點選清單標題右側的<span class="ui">取消全選</span>。</p>
-      <p class="check"><b class="check-label">確認：</b>按鈕顯示所選的台數，例如<span class="ui">匯出 3 台設備</span>。沒有選任何設備時，按鈕無法點選，清單標題右側改為<span class="ui">全選</span>。</p>
+      <p>選用：點選設備列取消勾選，或重新勾選該設備。</p>
+      <p class="check"><b class="check-label">確認：</b>匯出按鈕顯示所選的台數，例如<span class="ui">匯出 3 台設備</span>。所有設備都已勾選時，清單標題右側的按鈕為<span class="ui">取消全選</span>，點選後清除所有勾選；有任何設備未勾選時，該按鈕為<span class="ui">全選</span>，點選後勾選所有設備。沒有選任何設備時，匯出按鈕無法點選。</p>
     </li>
     <li class="step">
       <p>選用：開啟<span class="ui">包含 App 設定</span>。</p>
@@ -3410,11 +3447,15 @@ Content-Type: application/json
     </li>
     <li class="step">
       <p>點選<span class="ui">匯入攝影機</span>。</p>
-      <p class="check"><b class="check-label">確認：</b>未鎖定且不含 App 設定的代碼直接匯入，畫面顯示<span class="ui">已新增 3 支攝影機</span>。未鎖定但含 App 設定的代碼，出現對話框<span class="ui">此代碼也包含傳送者的 App 設定</span>。已鎖定的代碼出現<span class="ui">輸入 PIN</span>對話框（數字鍵盤，欄位為<span class="ui">6 位數字</span>），或<span class="ui">輸入密碼</span>對話框（完整鍵盤）。</p>
+      <p class="check"><b class="check-label">確認：</b>未鎖定的代碼立即讀取。代碼為這台裝置上既有的設備指定另一個位址，且沒有帶該設備的密碼時，先出現對話框<span class="ui">此代碼會變更攝影機的位址</span>。否則，不含 App 設定的代碼直接匯入，畫面顯示<span class="ui">已新增 3 支攝影機</span>；含 App 設定的代碼則出現對話框<span class="ui">此代碼也包含傳送者的 App 設定</span>。已鎖定的代碼出現<span class="ui">輸入 PIN</span>對話框（數字鍵盤，欄位為<span class="ui">6 位數字</span>），或<span class="ui">輸入密碼</span>對話框（完整鍵盤）。</p>
     </li>
     <li class="step">
       <p>已鎖定時，輸入 PIN 或密碼，點選<span class="ui">匯入</span>。</p>
-      <p class="check"><b class="check-label">確認：</b>對話框關閉。不含 App 設定的代碼隨即匯入，畫面顯示<span class="ui">已新增 3 支攝影機</span>；含 App 設定的代碼則出現對話框<span class="ui">此代碼也包含傳送者的 App 設定</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>對話框關閉，解鎖代碼期間<span class="ui">匯入攝影機</span>下方出現轉圈圖示，可能需要一點時間，這段期間<span class="ui">匯入攝影機</span>無法點選。之後的流程與未鎖定的代碼相同：出現對話框<span class="ui">此代碼會變更攝影機的位址</span>、對話框<span class="ui">此代碼也包含傳送者的 App 設定</span>，或顯示<span class="ui">已新增 3 支攝影機</span>。</p>
+    </li>
+    <li class="step">
+      <p>出現對話框<span class="ui">此代碼會變更攝影機的位址</span>時，點選<span class="ui">使用新位址</span>或<span class="ui">保留目前位址</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>對話框逐行列出相關的設備，每行包含目前的位址與代碼中的位址，並說明使用新位址後，Cam Hub 為這些攝影機儲存的密碼會傳送到新位址。選擇其中一項後，畫面顯示<span class="ui">已新增 3 支攝影機</span>；代碼含 App 設定時，則出現對話框<span class="ui">此代碼也包含傳送者的 App 設定</span>。點選<span class="ui">取消</span>則關閉對話框，不匯入任何內容。各選項的作用見<a class="xref" href="#share-addresses">「代碼會變更攝影機位址時」</a>。</p>
     </li>
     <li class="step">
       <p>出現對話框<span class="ui">此代碼也包含傳送者的 App 設定</span>時，點選<span class="ui">只加入攝影機</span>或<span class="ui">同時使用對方的設定</span>。</p>
@@ -3430,6 +3471,7 @@ Content-Type: application/json
     <figure class="phone"><img src="guide/img/import-password.jpg" alt="輸入密碼對話框：下方是完整鍵盤" loading="lazy" decoding="async" width="900" height="1956"><figcaption>密碼鎖定：完整鍵盤</figcaption></figure>
   </div>
   <p>點選<span class="ui">貼上</span>時，系統可能詢問是否允許 Cam Hub 從其他 App 貼上，須選擇允許貼上。也可以改為長按文字框，以編輯選單貼上。</p>
+  <p>在<span class="ui">輸入 PIN</span>或<span class="ui">輸入密碼</span>對話框點選<span class="ui">取消</span>，會關閉對話框，不匯入任何內容。儲存設備期間，以及兩個對話框之間，<span class="ui">匯入攝影機</span>下方同樣會出現轉圈圖示；轉圈圖示顯示期間，<span class="ui">匯入攝影機</span>無法點選。</p>
   <h4>從連結匯入</h4>
   <ol class="steps">
     <li class="step">
@@ -3438,17 +3480,17 @@ Content-Type: application/json
     </li>
     <li class="step">
       <p>點選<span class="ui">匯入攝影機</span>，已鎖定時再輸入 PIN 或密碼。</p>
-      <p class="check"><b class="check-label">確認：</b>畫面顯示<span class="ui">已新增 3 支攝影機</span>；代碼含 App 設定時，則出現對話框<span class="ui">此代碼也包含傳送者的 App 設定</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>畫面顯示<span class="ui">已新增 3 支攝影機</span>；或先出現貼上代碼步驟中說明的一個或兩個對話框：<span class="ui">此代碼會變更攝影機的位址</span>，以及代碼含 App 設定時的<span class="ui">此代碼也包含傳送者的 App 設定</span>。</p>
     </li>
     <li class="step">
-      <p>出現對話框時，點選<span class="ui">只加入攝影機</span>或<span class="ui">同時使用對方的設定</span>。</p>
+      <p>依貼上代碼的步驟，回應出現的每個對話框。</p>
       <p class="check"><b class="check-label">確認：</b>畫面顯示<span class="ui">已新增 3 支攝影機</span>。</p>
     </li>
   </ol>
   <div class="table-wrap"><table>
     <thead><tr><th>匯入時的訊息</th><th>意義與處理</th></tr></thead>
     <tbody>
-      <tr><td><span class="ui">已新增 3 支攝影機</span></td><td>匯入完成。數字是匯入的設備數，錄影主機也算一台。</td></tr>
+      <tr><td><span class="ui">已新增 3 支攝影機</span></td><td>匯入完成。數字計入代碼中的每一台設備：新增的設備，以及這台裝置上已有、因而更新的設備。錄影主機也算一台。</td></tr>
       <tr><td><span class="ui">PIN 錯誤</span></td><td>PIN 不正確。向分享的人確認六位數字，回到頁面再點選<span class="ui">匯入攝影機</span>，重新輸入。</td></tr>
       <tr><td><span class="ui">密碼錯誤</span></td><td>密碼不正確。大小寫、空格與符號都須完全一致。</td></tr>
       <tr><td><span class="ui">更新 Cam Hub</span></td><td>代碼是用不同版本的 Cam Hub 製作的，或代碼採用這個版本不認得的格式。在兩台裝置上都更新 App，再試一次。</td></tr>
@@ -3457,22 +3499,55 @@ Content-Type: application/json
     </tbody>
   </table></div>
   <ul>
-    <li><b>匯入是合併</b>。與這台裝置上既有設備相符的設備，其名稱、位址、帳號、密碼與通道會被代碼中的內容取代；代碼帶有 NAS 的 SNMP 設定時，該設定也一併取代（見<a class="xref" href="#devices-health">「硬碟健康」</a>）。其餘的設備則新增。這台裝置上原有的其他設備不會被刪除。</li>
+    <li><b>匯入是合併</b>。代碼中的設備與這台裝置上既有的設備相符時，更新該設備；代碼中其餘的設備則新增，這台裝置上原有的設備不會被刪除。相符的條件是品牌、序號與使用者名稱都相同；其中一方沒有序號時，則是品牌、位址、HTTP 連接埠與使用者名稱都相同。在製作代碼的裝置上匯入時，代碼中的設備也會與原本的設備相符。相符的設備會取得代碼中的名稱、型號、序號、韌體版本與通道。使用者名稱、密碼與 NAS 的 SNMP 設定（見<a class="xref" href="#devices-health">「硬碟健康」</a>），只有代碼帶有時才會取代，因此這台裝置上已儲存的密碼不會被空白的密碼取代。代碼帶有該設備的密碼時，設備也會取得代碼中的位址、連接埠與串流路徑，HTTPS 設定則依<a class="xref" href="#share-contents">「備份與代碼的內容」</a>的規則處理。代碼沒有帶該設備的密碼時，設備保留原本的位址、連接埠、串流路徑與 HTTPS 設定，除非在對話框<span class="ui">此代碼會變更攝影機的位址</span>中選擇<span class="ui">使用新位址</span>，見<a class="xref" href="#share-addresses">「代碼會變更攝影機位址時」</a>。</li>
     <li><b>通道的啟用狀態依這台裝置的方案檢查</b>。持有方案時，超出額度的通道匯入後顯示為<span class="ui">已停用</span>。免費方案下，啟用狀態維持代碼中的狀態，超出免費額度的通道顯示<span class="ui">方案未包含</span>與鎖頭，直到有方案涵蓋為止。額度說明見<a class="xref" href="#plans">第 11 章「方案與限制」</a>。</li>
     <li><b>App 設定</b>：只有匯出時開啟<span class="ui">包含 App 設定</span>的代碼，且收到的人選擇<span class="ui">同時使用對方的設定</span>時，才會套用設定。套用時，代碼中的設定取代這台裝置上對應的設定，包括 LiveView Mix 各頁面與語言。顯示未隨代碼匯入之攝影機的格子會變成空格，其他格子的位置不變。選擇<span class="ui">只加入攝影機</span>，或代碼不含 App 設定時，這台裝置的設定不受影響。</li>
     <li><b>YouTube 與 Twitch 串流</b>與其他設備一樣隨代碼匯入，且不占用方案額度。某項服務的串流第一次在這台裝置上播放之前，畫面會先顯示該服務的條款供您同意，見<a class="xref" href="#single-streams">「YouTube 與 Twitch 直播」</a>。</li>
   </ul>
+
+  <h3 id="share-addresses">代碼會變更攝影機位址時</h3>
+  <p>分享代碼可能為這台裝置上已有的設備指定另一個位址，例如傳送者的攝影機位址改變之後。代碼帶有該設備的密碼時，設備直接改用代碼中的位址。代碼沒有帶該設備的密碼時，若改用代碼中的位址，這台裝置上儲存的密碼就會傳送到該位址，而該位址可能屬於其他人。因此 Cam Hub 會先以對話框<span class="ui">此代碼會變更攝影機的位址</span>詢問。iPhone、iPad 與 Apple TV 上的對話框與選項都相同。</p>
+  <h4>對話框出現的時機</h4>
+  <ul>
+    <li>對話框在代碼讀取完成後出現；已鎖定的代碼在輸入 PIN 或密碼之後才出現，且一律在對話框<span class="ui">此代碼也包含傳送者的 App 設定</span>之前。沒有任何設備需要列出時，不會出現。</li>
+    <li>設備須同時符合下列條件才會列出：代碼中的設備與這台裝置上的設備相符（見<a class="xref" href="#share-import">「匯入攝影機」</a>）、代碼沒有帶該設備的密碼，且代碼中的位址、HTTP 連接埠或 RTSP 連接埠與目前不同。同一個位址只是寫法不同（例如大小寫不同，或前後多了空格），不算不同的位址。代碼中沒有該設備的位址時，視為位址不變，只有連接埠可能不同。</li>
+    <li>傳送者的 Cam Hub 已儲存密碼的設備，代碼都會帶上密碼。傳送者那一端沒有儲存密碼的設備（見<a class="xref" href="#devices-password-missing">「沒有儲存密碼的設備」</a>），則不帶密碼。</li>
+  </ul>
+  <h4>對話框的內容</h4>
+  <p>對話框為每台列出的設備顯示一行：這台裝置上的名稱、目前的位址與代碼中的位址，每個位址都寫成位址加上 HTTP 連接埠，例如 <code>前門：192.168.1.64:80 → 192.168.1.70:80</code>。RTSP 連接埠不同時，兩邊的位址都會加上 RTSP 連接埠，例如 <code>前門：192.168.1.64:80 (RTSP 554) → 192.168.1.64:80 (RTSP 8554)</code>。清單下方說明，使用新位址後，Cam Hub 為這些攝影機儲存的密碼會傳送到新位址，並提醒只有在信任傳送者時才使用新位址。按鈕為<span class="ui">使用新位址</span>、<span class="ui">保留目前位址</span>與<span class="ui">取消</span>。</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>清單中設備的項目</th><th><span class="ui">使用新位址</span></th><th><span class="ui">保留目前位址</span></th></tr></thead>
+    <tbody>
+      <tr><td>位址、HTTP 連接埠、RTSP 連接埠與串流路徑</td><td>改用代碼中的內容</td><td>不變</td></tr>
+      <tr><td>HTTPS 設定</td><td>位址或 HTTP 連接埠改變，且代碼帶有 HTTPS 及其連接埠與信任的憑證時，以代碼中的連接埠與憑證開啟 HTTPS。其他情況不變；只改變 RTSP 連接埠時，HTTPS 一律不變。</td><td>不變</td></tr>
+      <tr><td>這台裝置上儲存的密碼</td><td>保留，之後傳送到新位址</td><td>保留，仍只傳送到目前的位址</td></tr>
+      <tr><td>使用者名稱</td><td colspan="2">代碼帶有時，改用代碼中的使用者名稱</td></tr>
+      <tr><td>名稱、型號、序號、韌體版本、通道、NAS 的 SNMP 設定</td><td colspan="2">依<a class="xref" href="#share-import">「匯入攝影機」</a>的說明，取自代碼</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li><span class="ui">使用新位址</span>只會改動清單中的設備。其他不帶密碼的相符設備，保留原本的位址、連接埠、串流路徑與 HTTPS 設定。代碼中帶有密碼的設備，以及這台裝置上原本沒有的設備，無論選擇哪一項，都使用代碼中的位址。</li>
+    <li><span class="ui">保留目前位址</span>會匯入代碼：新增新的設備、更新相符的設備，但清單中的設備都不改動位址。</li>
+    <li><span class="ui">取消</span>關閉對話框，不匯入任何內容，也不新增或更改任何設備。</li>
+    <li>選擇<span class="ui">使用新位址</span>或<span class="ui">保留目前位址</span>後，<span class="ui">匯入攝影機</span>下方可能短暫出現轉圈圖示。接著，代碼含 App 設定時出現對話框<span class="ui">此代碼也包含傳送者的 App 設定</span>；否則畫面顯示<span class="ui">已新增 3 支攝影機</span>。</li>
+    <li>在 Apple TV 上，選擇<span class="ui">匯入攝影機</span>後同樣會出現此對話框，以遙控器選擇按鈕。在 Apple TV 上匯入代碼的方式，見<a class="xref" href="#appletv-bring">「把設定帶到 Apple TV」</a>。</li>
+  </ul>
+  <div class="callout warn">
+    <strong class="t">新位址會收到已儲存的密碼</strong>
+    <p>只有在代碼來自信任的傳送者，且列出的每個位址都符合預期時，才選擇<span class="ui">使用新位址</span>。否則，指向他人伺服器位址的代碼，會讓該伺服器收到這台裝置上儲存的密碼。無法確定時，選擇<span class="ui">保留目前位址</span>或<span class="ui">取消</span>。</p>
+  </div>
 
   <h3 id="share-contents">備份與代碼的內容</h3>
   <div class="table-wrap"><table>
     <thead><tr><th>項目</th><th>iCloud 備份</th><th>分享代碼</th></tr></thead>
     <tbody>
       <tr><td>設備</td><td>全部設備，包括 YouTube 與 Twitch 串流</td><td>勾選的設備，包括 YouTube 與 Twitch 串流</td></tr>
-      <tr><td>每台設備的資料</td><td colspan="2">名稱、位址、連接埠、使用者名稱、密碼、連線方式、HTTPS 設定（含連接埠與信任的憑證）、型號、序號、韌體版本、設備在清單中的順序，以及 NAS 供硬碟健康使用的 SNMP 設定（社群名稱與連接埠）。</td></tr>
+      <tr><td>每台設備的資料</td><td colspan="2">名稱、位址、連接埠、使用者名稱、密碼（製作備份或代碼的裝置上有儲存密碼時）、連線方式、HTTPS 設定（含連接埠與信任的憑證）、型號、序號、韌體版本、設備在清單中的順序，以及 NAS 供硬碟健康使用的 SNMP 設定（社群名稱與連接埠）。</td></tr>
       <tr><td>通道</td><td colspan="2">通道名稱與自訂名稱、啟用狀態、暫停狀態。</td></tr>
       <tr><td>App 設定</td><td>一律包含</td><td>只在開啟<span class="ui">包含 App 設定</span>時包含，且收到的人選擇<span class="ui">同時使用對方的設定</span>才會套用</td></tr>
     </tbody>
   </table></div>
+  <p><b>還原或匯入後的 HTTPS</b>：備份或代碼可以為設備開啟 HTTPS，並帶入其 HTTPS 連接埠與信任的憑證，但不會關閉 HTTPS。只有備份或代碼中該設備的 HTTPS 同時帶有連接埠與憑證時才會開啟；以較早版本的 Cam Hub 製作的備份或代碼，不會改變 HTTPS。這台裝置上已使用 HTTPS 的設備，保留自己的 HTTPS 連接埠與信任的憑證，除非備份或代碼把它改到另一個位址或 HTTP 連接埠，且帶有該設備的 HTTPS。代碼中不帶密碼的設備，見<a class="xref" href="#share-addresses">「代碼會變更攝影機位址時」</a>。要關閉 HTTPS，或信任更新後的憑證，使用該設備的<span class="ui">HTTPS</span>畫面，見<a class="xref" href="#devices-https">「已儲存設備的 HTTPS」</a>。備份或代碼中不帶密碼的設備，保留這台裝置上儲存的密碼。</p>
   <p>App 設定包括：語言；LiveView Mix，也就是橫向頁面、直向頁面與<span class="ui">直向頁面</span>開關，以及 iPhone Duo 的兩張畫布與<span class="ui">兩張畫布</span>開關，各含版面、格子圖片與控制面板（含標頭中的值）；LiveView Mix 分頁預覽的排列方式；<span class="ui">翻頁時保持攝影機連線</span>選項；<span class="ui">啟動時開啟</span>的選擇；即時分頁的設備與全螢幕牆的<span class="ui">版面</span>；<span class="ui">預設畫質</span>、<span class="ui">黑邊</span>、<span class="ui">滿版畫面</span>與<span class="ui">隱藏無訊號攝影機</span>；聲音偏好；以及網段掃描的範圍。LiveView Mix 各頁面的說明見<a class="xref" href="#lvm-pages">「直向頁面」</a>。</p>
   <p>在 iPhone Duo 以外的裝置上，下方畫布與<span class="ui">兩張畫布</span>開關會保留，但不會使用；設定再帶到 iPhone Duo 時，便恢復作用。Apple TV 只顯示橫向頁面。</p>
   <p>不包含：方案與訂閱狀態（跟隨 Apple 帳號，以<span class="ui">還原購買項目</span>取回，見<a class="xref" href="#plans-subscribe">「訂閱、還原購買與兌換代碼」</a>）、已儲存的設備報告、對 YouTube 或 Twitch 條款的同意（每台裝置各詢問一次），以及未列於上方的其他資料。</p>
@@ -3514,7 +3589,6 @@ Content-Type: application/json
     <li><b>iPhone 與 iPad 可以還原任何一份備份，Apple TV 只能還原<span class="ui">Apple TV</span>那一份</b>。在 iPhone 或 iPad 上改了設備或牆之後，須再備份一次到<span class="ui">Apple TV</span>，電視才會取得新的內容。</li>
     <li><b>備份空間有上限</b>。所有備份，也就是<span class="ui">我的備份</span>的每一份與 Apple TV 副本，合計共用約 <code>1 MB</code> 的 iCloud 空間，其中大部分由格子圖片占用。空間已滿時，頁面顯示<span class="ui">Cam Hub 在 iCloud 的備份空間已滿。請刪除較舊的備份或移除一些格子圖片後再試。</span></li>
     <li>這台裝置未登入 iCloud 時，頁面顯示橘色的<span class="ui">僅儲存在這台裝置上。登入 iCloud 後才會在雲端保留一份備份。</span>無法儲存備份時，顯示<span class="ui">無法儲存備份。請確認您已登入 iCloud。</span>或<span class="ui">備份失敗。請確認已登入 iCloud 後再試一次。</span></li>
-    <li>備份成功後，系統可能顯示評分的詢問，可直接關閉。</li>
     <li><b>刪除所有資料之前先備份</b>。<span class="ui">刪除所有資料</span>會移除這台裝置上的所有設備與已儲存的密碼，iCloud 備份不受影響，之後可依<a class="xref" href="#share-restore">「從 iCloud 還原」</a>還原。沒有 iCloud 備份時，設備密碼無法找回。見<a class="xref" href="#settings">第 13 章「設定」</a>。</li>
   </ul>
   <div class="callout note">
@@ -3587,7 +3661,8 @@ Content-Type: application/json
   </ol>
   <p>要在 iPhone 或 iPad 上還原 Apple TV 副本時，在<span class="ui">來源</span>選擇<span class="ui">Apple TV</span>：<span class="ui">iCloud 備份</span>區塊顯示該副本的<span class="ui">建立時間</span>與<span class="ui">設備</span>數量，再點選<span class="ui">還原</span>。<span class="ui">選擇備份</span>清單中的備份，可依<a class="xref" href="#share-versions">「多份具名備份：重新命名與刪除」</a>以滑動的方式重新命名或刪除。</p>
   <ul>
-    <li><b>設備是合併</b>：與這台裝置上既有設備相符的設備會被更新，包括通道的名稱與啟用狀態，以及 NAS 的 SNMP 設定；其餘設備則新增。原有的其他設備不會被刪除。</li>
+    <li>標有勾號的備份被刪除時（無論是在此頁面或在其他裝置上刪除），勾號隨之消失，<span class="ui">還原</span>按鈕無法點選，直到在<span class="ui">選擇備份</span>中點選另一份備份為止。</li>
+    <li><b>設備是合併</b>：與這台裝置上既有設備相符的設備會被更新，包括通道的名稱與啟用狀態，以及 NAS 的 SNMP 設定；其餘設備則新增。原有的其他設備不會被刪除。HTTPS 設定依<a class="xref" href="#share-contents">「備份與代碼的內容」</a>的規則處理。</li>
     <li><b>App 設定</b>：備份中的設定取代這台裝置上對應的設定，包括 LiveView Mix 各頁面、<span class="ui">啟動時開啟</span>與語言。備份中沒有的設定維持不變。顯示未一併還原之攝影機的格子會變成空格，其他格子的位置不變；空格、控制面板、時鐘、標籤與圖片格子保留。</li>
     <li><b>通道的啟用狀態依這台裝置目前的方案檢查</b>。持有方案時，超出額度的通道還原後顯示為<span class="ui">已停用</span>。免費方案下，啟用狀態維持備份中的狀態，超出免費額度的通道顯示<span class="ui">方案未包含</span>與鎖頭，直到還原購買或訂閱方案為止。額度說明見<a class="xref" href="#plans">第 11 章「方案與限制」</a>。</li>
     <li>出現橘色的<span class="ui">部分密碼無法儲存到這台裝置。請打開這些設備，使用「編輯帳號密碼」重新輸入。</span>時，表示部分設備的密碼無法儲存。請依<a class="xref" href="#devices-credentials">「變更設備的使用者名稱與密碼」</a>重新輸入。</li>
@@ -3673,7 +3748,7 @@ Content-Type: application/json
   <p>兩種方式都不會帶走方案。新手機以同一個 Apple 帳號登入後，以<span class="ui">還原購買項目</span>取回，見<a class="xref" href="#plans-subscribe">「訂閱、還原購買與兌換代碼」</a>。</p>
 
   <h3 id="share-appletv">帶到 Apple TV</h3>
-  <p>Apple TV 上不建立也不編輯牆，也很難用遙控器輸入長代碼。建議先在 iPhone 或 iPad 上完成設定，再以<span class="ui">目的地</span>為<span class="ui">Apple TV</span>的備份（見<a class="xref" href="#share-icloud">「備份到 iCloud」</a>）或分享代碼（見<a class="xref" href="#share-export">「匯出攝影機（產生代碼）」</a>），把設備與牆面帶到電視。Apple TV 只能還原 Apple TV 副本，無法還原<span class="ui">我的備份</span>的備份；YouTube 與 Twitch 串流在 Apple TV 上只顯示名稱。Apple TV 上的步驟與差異，見<a class="xref" href="#appletv">第 14 章「Apple TV」</a>。</p>
+  <p>在 Apple TV 上，牆只能選擇攝影機及其 SD 或 HD 畫質、版面與黑邊（見<a class="xref" href="#appletv-lvm">「LiveView Mix 分頁」</a>）；排列牆面、編輯格子、繪製自訂版面與建立控制面板，都須在 iPhone 或 iPad 上進行，而且很難用遙控器輸入長代碼。建議先在 iPhone 或 iPad 上完成設定，再以<span class="ui">目的地</span>為<span class="ui">Apple TV</span>的備份（見<a class="xref" href="#share-icloud">「備份到 iCloud」</a>）或分享代碼（見<a class="xref" href="#share-export">「匯出攝影機（產生代碼）」</a>），把設備與牆面帶到電視。Apple TV 只能還原 Apple TV 副本，無法還原<span class="ui">我的備份</span>的備份；YouTube 與 Twitch 串流在 Apple TV 上只顯示名稱。Apple TV 上的步驟與差異，見<a class="xref" href="#appletv">第 14 章「Apple TV」</a>。</p>
 </section>
 
 <section class="chapter" id="plans">
@@ -3720,12 +3795,12 @@ Content-Type: application/json
       <tr><td>錄影主機</td><td>依台數計算。主機在方案涵蓋的台數內時，它的所有通道都可使用。沒有 NVR 方案時，適用免費額度：1 台主機上最多 2 個啟用的通道。</td></tr>
       <tr><td>已停用的通道</td><td>不占用額度，也不串流。</td></tr>
       <tr><td>YouTube 與 Twitch 串流</td><td>在任何方案下（包括免費方案）都不占用額度，也不會被鎖住。串流加入時即為啟用，之後也隨時可以重新啟用。見<a class="xref" href="#single-streams">「YouTube 與 Twitch 直播」</a>。</td></tr>
-      <tr><td>控制面板</td><td>每個控制面板占用 1 個攝影機額度，與一支獨立攝影機相同，但只使用獨立攝影機用剩的額度：攝影機隨時可以取代控制面板而啟用，該控制面板隨即被鎖住。只訂閱 NVR 方案不會增加這項額度。時鐘、標籤、圖片與空白的格子不占用額度。見<a class="xref" href="#webhook">第 9 章「控制面板與 Webhook」</a>。</td></tr>
+      <tr><td>控制面板</td><td>每個控制面板占用 1 個攝影機額度，與一支獨立攝影機相同，但只使用獨立攝影機用剩的額度：攝影機隨時可以取代控制面板而啟用，該控制面板隨即被鎖住。只訂閱 NVR 方案時，攝影機額度仍是 2 個，但錄影主機的通道不再占用這項額度，因此控制面板使用獨立攝影機用剩的這 2 個額度。時鐘、標籤、圖片與空白的格子不占用額度。見<a class="xref" href="#webhook">第 9 章「控制面板與 Webhook」</a>。</td></tr>
       <tr><td>多個 LiveView Mix 頁面上的控制面板</td><td>使用中的每個頁面上的每個控制面板，各自計算：橫向頁面一律計算；直向頁面在<span class="ui">直向頁面</span>開啟時計算（iPhone 與 iPad）；下方畫布在 iPhone Duo 開啟<span class="ui">兩張畫布</span>時計算。複製到另一個頁面的控制面板會再計算一次。Apple TV 上只計算橫向頁面的控制面板。見<a class="xref" href="#lvm-pages">「直向頁面」</a>。</td></tr>
       <tr><td>LiveView Mix 的格子</td><td>牆的格數不受限制，受限制的是可串流的通道。LiveView Mix 無法讓使用者看到超過方案額度的攝影機。</td></tr>
     </tbody>
   </table></div>
-  <p>額度不足時，保留畫面的順序如下：先是獨立攝影機（依設備加入的先後，再依通道編號），其次是錄影主機的通道，最後是控制面板（先是橫向頁面的，其次是下方畫布的，最後是直向頁面的）。免費方案下，以上全部合併後只保留前 2 個，因此控制面板不會擠掉攝影機。持有攝影機方案時，控制面板使用獨立攝影機用剩的攝影機額度。持有 NVR 方案時，依序前幾台錄影主機保留所有通道，其餘主機的通道被鎖住。</p>
+  <p>額度不足時，保留畫面的順序如下：先是獨立攝影機（依設備加入的先後，再依通道編號），其次是錄影主機的通道，最後是控制面板（先是橫向頁面的，其次是下方畫布的，最後是直向頁面的）。免費方案下，以上全部合併後只保留前 2 個，因此控制面板不會擠掉攝影機。持有攝影機方案時，控制面板使用獨立攝影機用剩的攝影機額度。只持有 NVR 方案時，控制面板使用獨立攝影機用剩的 2 個免費攝影機額度，與錄影主機的通道數無關。持有 NVR 方案時，依序前幾台錄影主機保留所有通道，其餘主機的通道被鎖住。</p>
   <p>超出額度的控制面板保留在牆上原本的位置，顯示鎖頭、標題與<span class="ui">方案未包含</span>，按鈕無法使用。</p>
   <p>加入錄影主機時，已達方案允許的台數，畫面開啟方案畫面並顯示<span class="ui">免費版含 1 台錄影主機。訂閱 NVR 方案可新增更多。</span>，該錄影主機不會被加入。示範設備占用免費的錄影主機額度時，文字改為<span class="ui">免費版含 1 台錄影主機，目前被示範設備占用。刪除示範設備即可加入您自己的錄影主機，或訂閱 NVR 方案新增更多。</span>，見<a class="xref" href="#start-demo">「先用範例攝影機試用」</a>。</p>
 
@@ -3742,6 +3817,7 @@ Content-Type: application/json
       <tr><td><span class="ui">Cam Home — 8 支攝影機</span></td><td>10 支獨立攝影機</td><td>最多啟用 8 支。要使用另外 2 支時，先停用已啟用的 2 支。</td></tr>
       <tr><td><span class="ui">Cam Home — 8 支攝影機</span></td><td>8 支獨立攝影機與 1 台錄影主機（16 個通道）</td><td>錄影主機不受攝影機方案影響，仍是免費額度：1 台，最多啟用 2 個通道。主機的通道與獨立攝影機不再合計，因此最多同時使用 8 支獨立攝影機加上主機的 2 個通道。</td></tr>
       <tr><td><span class="ui">NVR Starter — 2 台主機</span></td><td>2 台錄影主機（各 16 個通道）與 4 支獨立攝影機</td><td>2 台主機的所有通道（共 32 個）都可使用。獨立攝影機仍是免費額度：最多啟用 2 支。要加入第 3 台錄影主機時，畫面開啟方案畫面，該主機不會被加入。</td></tr>
+      <tr><td><span class="ui">NVR Starter — 2 台主機</span></td><td>1 台錄影主機（16 個通道，全部啟用）與 1 個控制面板</td><td>主機的所有通道都可使用，控制面板也能使用：錄影主機的通道不占用 2 個免費攝影機額度，因此控制面板使用其中一個。</td></tr>
       <tr><td><span class="ui">Cam Plus — 16 支攝影機</span>與<span class="ui">NVR Pro — 4 台主機</span></td><td>4 台錄影主機與 12 支獨立攝影機</td><td>全部可用：4 台主機的所有通道，加上 12 支獨立攝影機（上限 16 支，還有 4 支的空間）。</td></tr>
       <tr><td><span class="ui">Cam Home — 8 支攝影機</span></td><td>7 支獨立攝影機與 1 個控制面板</td><td>控制面板占用第 8 個攝影機額度，額度剛好用滿。再加入的獨立攝影機仍可啟用：它取得這個額度，控制面板隨即被鎖住，顯示<span class="ui">方案未包含</span>。</td></tr>
       <tr><td><span class="ui">Cam Home — 8 支攝影機</span></td><td>6 支獨立攝影機，橫向頁面上有 1 個控制面板，直向頁面上有它的複本，且<span class="ui">直向頁面</span>已開啟</td><td>兩份各自計算：6 支攝影機加 2 個控制面板，用滿 8 個額度。關閉<span class="ui">直向頁面</span>後，直向頁面上的複本不再計算。</td></tr>
@@ -3761,6 +3837,7 @@ Content-Type: application/json
     </li>
     <li><b>顯示條件</b>：只有在方案的兩項限額至少有一項生效時，才會提供此項目。兩組方案都升到不限數量時，所有通道自動啟用，此項目隨之隱藏。沒有任何設備時，頁面顯示<span class="ui">沒有設備</span>、<span class="ui">請先新增設備，再在這裡選擇它的攝影機。</span>與<span class="ui">新增設備</span>按鈕。</li>
     <li>要增加額度時，依<a class="xref" href="#plans-subscribe">「訂閱、還原購買與兌換代碼」</a>訂閱。額度已滿的通道在牆面與設備頁顯示<span class="ui">方案未包含</span>與鎖頭，見<a class="xref" href="#devices-states">「縮圖的狀態」</a>。</li>
+    <li><b>在 Apple TV 上</b>，<span class="ui">設定</span>中的這一列開啟標題為<span class="ui">授權</span>的頁面，同樣有<span class="ui">您的方案</span>區塊，並依設備分組，每個通道一個開關。額度不允許的開關維持關閉，並以警示說明相同的原因；選擇<span class="ui">好</span>關閉警示，不會開啟方案畫面。沒有任何設備時，頁面顯示<span class="ui">沒有設備</span>，但沒有<span class="ui">新增設備</span>按鈕。見<a class="xref" href="#appletv-settings">「設定分頁」</a>。</li>
   </ul>
 
   <h3 id="plans-subscribe">訂閱、還原購買與兌換代碼</h3>
@@ -3788,17 +3865,40 @@ Content-Type: application/json
   <ul>
     <li>訂閱會自動續訂，直到使用者取消為止。攝影機方案按年計費，NVR 方案按月計費。</li>
     <li>購買沒有完成時，結果顯示在該方案卡片的下方：<span class="ui">購買失敗。請再試一次。</span>；購買需要核准（例如由家庭成員的管理者核准）時為<span class="ui">正在等待核准。購買核准後，方案會立即解鎖。</span>；或<span class="ui">App Store 無法確認這筆購買。請試試「還原購買項目」。</span></li>
-    <li>方案無法載入時，頁面顯示<span class="ui">無法載入方案。請檢查網路連線後再試一次。</span>方案的名稱與說明由 App 本身提供，費用則在購買服務回應後才會顯示。</li>
+    <li>購買服務回應後，方案卡片才會出現；在此之前，區塊標題下方顯示轉圈圖示。方案無法載入時，頁面改為顯示<span class="ui">無法載入方案。請檢查網路連線後再試一次。</span>關閉頁面後再次開啟，會重新載入方案。</li>
     <li><span class="ui">管理訂閱項目</span>開啟系統的訂閱頁面，可在其中取消、更換方案，並查看續訂日期。</li>
     <li>持有兩組方案時，<span class="ui">方案</span>一列以加號連接兩個方案的名稱。</li>
     <li>方案頁面的上方說明：每個方案都包含全部功能，包括即時檢視、錄影回放與多攝影機牆；影像不經雲端，也不需要帳號；兩組限額分開計算。頁面底部有<span class="ui">使用條款</span>與<span class="ui">隱私權政策</span>的連結。</li>
+  </ul>
+
+  <h4>在 Apple TV 上訂閱</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>在 Apple TV 的<span class="ui">設定</span>分頁選擇<span class="ui">方案</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>畫面開啟<span class="ui">方案</span>頁面。<span class="ui">訂閱方案</span>區塊的第一列為<span class="ui">目前方案</span>，顯示目前的方案（沒有訂閱時為<span class="ui">免費</span>）；其下每個攝影機方案與 NVR 方案各一列，顯示圖示、名稱與簡短說明，右側顯示費用與計費週期。Apple 帳號符合免費試用資格時，說明下方以綠色顯示試用期間。</p>
+    </li>
+    <li class="step">
+      <p>選擇要訂閱的方案所在的列。</p>
+      <p class="check"><b class="check-label">確認：</b>費用的位置改為轉圈圖示，並出現系統的購買確認畫面。</p>
+    </li>
+    <li class="step">
+      <p>依系統畫面的提示，以 Apple 帳號確認購買。</p>
+      <p class="check"><b class="check-label">確認：</b>該方案的列在費用的位置改為顯示勾號，<span class="ui">目前方案</span>一列顯示該方案的名稱，額度立即更新。</p>
+    </li>
+  </ol>
+  <ul>
+    <li>費用尚未載入、該方案為目前方案，或另一筆購買正在進行時，該列無法選擇。</li>
+    <li>購買服務回應之前，各列在費用的位置顯示<span class="ui">按年計費</span>或<span class="ui">按月計費</span>，區塊最後有一列無法選擇的項目，表示費用正在載入。無法載入時，這一列改為重試的按鈕，選擇它會重新載入。</li>
+    <li>購買沒有完成時，結果以警示顯示：<span class="ui">購買失敗。請再試一次。</span>、<span class="ui">正在等待核准。購買核准後，方案會立即解鎖。</span>或<span class="ui">App Store 無法確認這筆購買。請試試「還原購買項目」。</span>選擇<span class="ui">好</span>關閉警示。</li>
+    <li>方案下方的說明指出兩組限額分開計算，並說明訂閱跟著 Apple 帳號走：可在 Apple TV 上訂閱，也可在 iPhone 或 iPad 上訂閱，再以<span class="ui">還原購買項目</span>同步。訂閱會自動續訂，直到取消為止。</li>
+    <li>其後是<span class="ui">法律條款</span>區塊，含<span class="ui">使用條款（EULA）</span>與<span class="ui">隱私權政策</span>，選擇後在電視上顯示條文；再下方是<span class="ui">還原購買項目</span>按鈕，執行期間顯示轉圈圖示。在 Apple TV 上，只有這裡有<span class="ui">還原購買項目</span>。</li>
   </ul>
 
   <h4>還原購買</h4>
   <p>在另一台裝置、重新安裝後，或購買沒有立即反映時使用。</p>
   <ol class="steps">
     <li class="step">
-      <p>在<span class="ui">設定</span>分頁的<span class="ui">訂閱</span>區塊點選<span class="ui">還原購買項目</span>。方案頁面的底部也有同一個按鈕。</p>
+      <p>在<span class="ui">設定</span>分頁的<span class="ui">訂閱</span>區塊點選<span class="ui">還原購買項目</span>。方案頁面的底部也有同一個按鈕。在 Apple TV 上，選擇<span class="ui">方案</span>頁面底部的<span class="ui">還原購買項目</span>。</p>
       <p class="check"><b class="check-label">確認：</b>App 向系統的購買服務同步購買紀錄，並顯示提示。</p>
     </li>
     <li class="step">
@@ -3818,7 +3918,7 @@ Content-Type: application/json
       <p class="check"><b class="check-label">確認：</b>兌換成功後，方案與額度更新。尚未更新時，改以<span class="ui">還原購買項目</span>同步。</p>
     </li>
   </ol>
-  <p>Apple TV 沒有<span class="ui">管理訂閱項目</span>與<span class="ui">兌換代碼</span>，這兩項請在 iPhone 或 iPad 上操作，見<a class="xref" href="#appletv">第 14 章「Apple TV」</a>。</p>
+  <p>Apple TV 沒有<span class="ui">管理訂閱項目</span>與<span class="ui">兌換代碼</span>，這兩項請在 iPhone 或 iPad 上操作，見<a class="xref" href="#appletv-settings">「設定分頁」</a>。</p>
 
   <h3 id="plans-lapse">方案到期或降級時</h3>
   <ul>
@@ -3979,7 +4079,7 @@ Content-Type: application/json
 
 <section class="chapter" id="settings">
   <h2><span class="num">13</span>設定</h2>
-  <p class="lead"><span class="ui">設定</span>分頁包含方案、預設畫質與畫面設定、LiveView Mix 及其頁面與 App 啟動方式的選項、攝影機的備份與分享、語言、重設動作、法律條款、版本，以及本手冊的連結。本章依畫面順序列出每一列的作用與預設值，並指出詳細說明所在的章節。</p>
+  <p class="lead"><span class="ui">設定</span>分頁包含方案、預設畫質與畫面設定、LiveView Mix 及其頁面與 App 啟動方式的選項、攝影機的備份與分享、語言、重設動作、法律條款、版本、本手冊的連結，以及寄電子郵件給開發團隊的一列。本章依畫面順序列出每一列的作用與預設值，並指出詳細說明所在的章節。</p>
 
   <h3 id="settings-overview">設定分頁的區塊</h3>
   <p>路徑：畫面底部的<span class="ui">設定</span>分頁。此分頁是一張可捲動的清單，各區塊依下表的順序排列。</p>
@@ -4000,6 +4100,7 @@ Content-Type: application/json
       <tr><td><span class="ui">法律條款</span></td><td><span class="ui">使用條款</span>、<span class="ui">隱私權政策</span></td><td>無。</td><td><a class="xref" href="#settings-legal">「使用條款與隱私權政策」</a></td></tr>
       <tr><td><span class="ui">關於</span></td><td><span class="ui">版本</span></td><td>無。</td><td><a class="xref" href="#settings-about">「關於、操作手冊，以及設定中沒有的項目」</a></td></tr>
       <tr><td>（無區塊標題）</td><td><span class="ui">操作手冊</span></td><td>無。</td><td><a class="xref" href="#settings-about">「關於、操作手冊，以及設定中沒有的項目」</a></td></tr>
+      <tr><td>（無區塊標題）</td><td><span class="ui">聯絡開發團隊</span></td><td>無。</td><td><a class="xref" href="#settings-contact">「聯絡開發團隊」</a></td></tr>
     </tbody>
   </table></div>
   <ol class="steps">
@@ -4010,7 +4111,7 @@ Content-Type: application/json
     </li>
     <li class="step">
       <p>向下捲動到清單的最後。</p>
-      <p class="check"><b class="check-label">確認：</b>各區塊依上表的順序排列，最後的區塊是<span class="ui">重設</span>、<span class="ui">法律條款</span>與<span class="ui">關於</span>，其後是<span class="ui">操作手冊</span>一列。</p>
+      <p class="check"><b class="check-label">確認：</b>各區塊依上表的順序排列，最後的區塊是<span class="ui">重設</span>、<span class="ui">法律條款</span>與<span class="ui">關於</span>，其後是<span class="ui">操作手冊</span>與<span class="ui">聯絡開發團隊</span>兩列。</p>
     </li>
   </ol>
   <p>多數區塊的下方有一段文字說明該區塊。開關與選單的變更立即生效；除三個重設動作外，沒有任何項目需要確認。Apple TV 有自己的設定畫面，見<a class="xref" href="#appletv">第 14 章「Apple TV」</a>。</p>
@@ -4170,7 +4271,7 @@ Content-Type: application/json
     <thead><tr><th>項目</th><th>移除的內容</th><th>保留的內容</th></tr></thead>
     <tbody>
       <tr><td><span class="ui">還原預設設定</span></td><td>下表所列的設定，包含每一個 LiveView Mix 頁面。</td><td>設備、通道與其啟用狀態和名稱、已儲存的密碼與 SNMP 設定、iCloud 備份、訂閱。</td></tr>
-      <tr><td><span class="ui">刪除所有資料</span></td><td>所有設備及其通道、所有已儲存的密碼與 SNMP 設定、已下載的錄影、在單機畫面錄製的片段，以及儲存的最後畫面。之後再重設<span class="ui">還原預設設定</span>所重設的一切。</td><td>iCloud 備份與訂閱。</td></tr>
+      <tr><td><span class="ui">刪除所有資料</span></td><td>所有設備及其通道、所有已儲存的密碼與 SNMP 設定、已下載的錄影、在單機畫面錄製的片段，以及儲存的最後畫面。之後再重設<span class="ui">還原預設設定</span>所重設的一切。</td><td>iCloud 備份與訂閱、已儲存的設備報告、首次使用設備報告前對說明的確認、在 YouTube 與 Twitch 說明中所做的同意，以及<span class="ui">語音報速</span>開關。</td></tr>
       <tr><td><span class="ui">刪除 iCloud 備份</span></td><td>iCloud 中的所有備份，包括<span class="ui">我的備份</span>的每一份與另外為 Apple TV 製作的副本。沒有任何備份時，此列無法使用。</td><td>這台裝置上的一切。</td></tr>
     </tbody>
   </table></div>
@@ -4212,7 +4313,7 @@ Content-Type: application/json
   </ol>
 
   <h4>刪除所有資料</h4>
-  <p>這個動作用來清空 App，例如在轉讓裝置之前。此動作無法復原。沒有 iCloud 備份或匯出代碼時，攝影機的密碼無法找回，因為這個動作會將密碼從這台裝置上移除。</p>
+  <p>這個動作用來清空 App，例如在轉讓裝置之前。此動作不會刪除已儲存的設備報告；要刪除這些報告，請在報告頁面點選<span class="ui">刪除已儲存的報告</span>，見<a class="xref" href="#add-report">「設備報告（實驗性功能）」</a>。此動作無法復原。沒有 iCloud 備份或匯出代碼時，攝影機的密碼無法找回，因為這個動作會將密碼從這台裝置上移除。</p>
   <ol class="steps">
     <li class="step">
       <p>在<span class="ui">重設</span>區塊中，點選<span class="ui">刪除所有資料</span>。</p>
@@ -4253,12 +4354,12 @@ Content-Type: application/json
   <ol class="steps">
     <li class="step">
       <p>捲動到<span class="ui">設定</span>分頁的最後。</p>
-      <p class="check"><b class="check-label">確認：</b><span class="ui">關於</span>區塊只有<span class="ui">版本</span>一列，顯示已安裝 App 的版本號碼，後方括號內有第二個數字。此列僅供參考，不會開啟任何畫面。其下是<span class="ui">操作手冊</span>一列，說明文字為<span class="ui">在 Cam Hub 網站上查看每項功能的逐步說明。</span></p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">關於</span>區塊只有<span class="ui">版本</span>一列，顯示已安裝 App 的版本號碼，後方括號內有第二個數字。此列僅供參考，不會開啟任何畫面。其下是<span class="ui">操作手冊</span>一列，說明文字為<span class="ui">在 Cam Hub 網站上查看每項功能的逐步說明。</span>最後一列<span class="ui">聯絡開發團隊</span>的說明見<a class="xref" href="#settings-contact">「聯絡開發團隊」</a>。</p>
     </li>
     <li class="step">
       <p>點選<span class="ui">操作手冊</span>。</p>
       <p class="check"><b class="check-label">確認：</b>瀏覽器開啟本手冊 <code>https://cam-hub.almx.cc/guide.html</code>。需要網路連線。要回到 Cam Hub，請使用裝置的 App 切換器。</p>
-      <figure class="phone"><img src="guide/img/settings-user-manual.jpg" alt="設定分頁的最下方：法律資訊的使用條款與隱私權政策、關於區塊的版本，以及操作手冊列與說明" loading="lazy" decoding="async" width="900" height="1947"><figcaption>操作手冊列</figcaption></figure>
+      <figure class="phone"><img src="guide/img/settings-user-manual.jpg" alt="設定分頁的下半部：重設區塊的各列與說明文字、法律條款區塊的使用條款與隱私權政策、關於區塊的版本，以及操作手冊列與說明" loading="lazy" decoding="async" width="900" height="1947"><figcaption>操作手冊列</figcaption></figure>
     </li>
   </ol>
   <ul>
@@ -4269,11 +4370,40 @@ Content-Type: application/json
     <li><b>溫度單位</b>：溫度依 iPhone 或 iPad 地區設定的單位顯示（<span class="path"><span class="ui" data-ui="system">設定</span> › <span class="ui" data-ui="system">一般</span> › <span class="ui" data-ui="system">語言與地區</span></span>）。Cam Hub 本身沒有這項設定。</li>
     <li><b>通知</b>：Cam Hub 不會顯示通知，也沒有相關的設定。</li>
   </ul>
+
+  <h3 id="settings-contact">聯絡開發團隊</h3>
+  <p>在 iPhone 或 iPad 上，<span class="ui">設定</span>分頁的最後一列可寄電子郵件給開發團隊，例如回報某台攝影機或錄影主機運作不正常，或設備本身具備、但 Cam Hub 尚未提供的功能。此列位於沒有標題的區塊中，在<span class="ui">操作手冊</span>一列的下方。Apple TV 沒有這一列，見<a class="xref" href="#appletv-settings">「設定分頁」</a>。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>捲動到<span class="ui">設定</span>分頁的最後。</p>
+      <p class="check"><b class="check-label">確認：</b>最後一列是<span class="ui">聯絡開發團隊</span>，名稱下方顯示位址 <code>app-dev@almx.cc</code>，右側有信封符號。此列下方的文字為<span class="ui">覺得某台設備的支援有問題，或是設備本身就有的功能 Cam Hub 還不支援？歡迎與開發團隊聯絡，您的回報能幫助我們支援更多設備。</span></p>
+      <figure class="phone"><img src="guide/img/settings-contact.jpg" alt="設定分頁的最下方：重設區塊的說明文字、法律條款區塊的使用條款與隱私權政策、關於區塊的版本、操作手冊列與其說明文字，其下是聯絡開發團隊列，名稱下方為 app-dev@almx.cc，右側有信封符號，再下方是說明文字與分頁列" loading="lazy" decoding="async" width="900" height="1956"><figcaption>設定分頁最後的聯絡開發團隊列</figcaption></figure>
+    </li>
+    <li class="step">
+      <p>點選<span class="ui">聯絡開發團隊</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>裝置預設的電子郵件 App 開啟一封寄給 <code>app-dev@almx.cc</code> 的新郵件。主旨為英文的<span class="ui" data-ui="value">Cam Hub feedback</span>，後接 App 的版本。郵件開頭是<span class="ui">您可以使用自己最熟悉的語言撰寫，開發團隊都能支援。</span>這一行，接著是<span class="ui">設備品牌、型號與韌體版本：</span>與<span class="ui">哪裡有問題，或缺少哪項功能：</span>兩個問題，每個問題下方都留有填寫答案的空行。最後一行列出 App 的版本、系統及其版本，以及 iPhone 或 iPad。</p>
+    </li>
+    <li class="step">
+      <p>在兩個問題下方填寫答案。</p>
+      <p class="check"><b class="check-label">確認：</b>答案位於問題下方，列出版本的那一行仍在郵件的最後。</p>
+    </li>
+    <li class="step">
+      <p>在電子郵件 App 中寄出郵件。</p>
+      <p class="check"><b class="check-label">確認：</b>電子郵件 App 寄出郵件。要回到 Cam Hub，請使用裝置的 App 切換器。</p>
+    </li>
+  </ol>
+  <ul>
+    <li><b>語言</b>：開頭的那一行與兩個問題使用 App 的語言。主旨與最後一行一律為英文。答案可以用任何語言撰寫。</li>
+    <li><b>寄出的內容</b>：只有郵件的文字，不附加任何檔案。在電子郵件 App 中寄出之前，不會傳送任何內容；寄出前，每一行都可以閱讀與修改。</li>
+    <li><b>沒有電子郵件 App 時</b>：Cam Hub 在此不使用自己的郵件畫面，也不顯示自己的訊息。尚未設定電子郵件 App 或郵件帳號時，由系統或電子郵件 App 說明接下來的做法。</li>
+    <li><b>複製位址</b>：要從其他 App 或其他裝置寄信時，按住此列，再點選<span class="ui">複製</span>，即可複製位址 <code>app-dev@almx.cc</code>。</li>
+    <li><b>其他方式</b>：加入設備失敗後，設備報告另有附技術資訊的電子郵件，見<a class="xref" href="#add-report">「設備報告（實驗性功能）」</a>。郵件中應包含哪些內容、絕不可包含哪些內容，見<a class="xref" href="#trouble-contact">「聯絡開發者」</a>。</li>
+  </ul>
 </section>
 
 <section class="chapter" id="appletv">
   <h2><span class="num">14</span>Apple TV</h2>
-  <p class="lead">Apple TV 上的 App 顯示的是先在 iPhone 或 iPad 設定好的設備與 LiveView Mix 牆。建議的順序是先在 iPhone 或 iPad 完成全部設定，再帶到 Apple TV。本章列出帶過去的步驟，以及電視上有哪些不同；它不是 Apple TV 版 App 的操作說明。</p>
+  <p class="lead">Apple TV 上的 App 顯示先在 iPhone 或 iPad 設定好的設備與 LiveView Mix 牆，以遙控器操作即可觀看即時影像與錄影。建議的順序是先在 iPhone 或 iPad 完成全部設定，再帶到 Apple TV。本章列出帶過去的步驟，說明 Apple TV 版 App 的四個分頁，並列出與 iPhone 及 iPad 的不同之處。</p>
 
   <h3 id="appletv-prepare">先在 iPhone 或 iPad 設定</h3>
   <p>Apple TV 以遙控器操作。在電視上輸入、繪製與選擇都很費時，部分功能也沒有提供。因此，下列工作請在使用 Apple TV 之前，先在 iPhone 或 iPad 完成：</p>
@@ -4308,31 +4438,275 @@ Content-Type: application/json
     </li>
   </ol>
   <p>Apple TV 只還原為它建立的那一份備份。<span class="ui">我的備份</span>中具名的多份備份，只列在 iPhone 與 iPad 上，見<a class="xref" href="#share-versions">「多份具名備份：重新命名與刪除」</a>。</p>
-  <p>兩台裝置不是同一個 Apple 帳號時，以分享代碼取代備份。在 iPhone 或 iPad 依<a class="xref" href="#share-export">「匯出攝影機（產生代碼）」</a>產生代碼並複製。在 Apple TV 的<span class="ui">設定</span>分頁選取<span class="path"><span class="ui">分享攝影機</span> › <span class="ui">匯入攝影機</span></span>，輸入代碼；鍵盤出現時，附近的 iPhone 可以代為輸入。已鎖定的代碼會要求輸入 PIN 或密碼。代碼的長度可達數百到數千個字元，因此 Apple 帳號相同時，優先採用 iCloud 備份。</p>
   <div class="callout note">
     <strong class="t">之後的變更須重新備份才會到 Apple TV</strong>
-    <p>在 iPhone 或 iPad 變更設備、牆面或方案之後，重複步驟 2 到步驟 4。Apple TV 不會自行跟進變更。設備的密碼變更後，也可以在 Apple TV 的設備頁以<span class="ui">編輯帳號密碼</span>輸入新密碼。</p>
+    <p>在 iPhone 或 iPad 變更設備、牆面或方案之後，重複步驟 2 到步驟 4。Apple TV 不會自行跟進變更。設備的密碼變更後，也可以在 Apple TV 的設備頁以<span class="ui">編輯帳號密碼</span>輸入新密碼，見<a class="xref" href="#appletv-devices">「設備分頁與設備頁」</a>。</p>
   </div>
+  <h4>使用分享代碼</h4>
+  <p>兩台裝置不是同一個 Apple 帳號時，以分享代碼取代備份。代碼的長度可達數百到數千個字元，因此 Apple 帳號相同時，優先採用 iCloud 備份。先在 iPhone 或 iPad 依<a class="xref" href="#share-export">「匯出攝影機（產生代碼）」</a>產生代碼，再於 Apple TV 繼續操作。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>開啟<span class="ui">設定</span>分頁。</p>
+      <p class="check"><b class="check-label">確認：</b>設定清單的第一個區塊是<span class="ui">iCloud 備份</span>。</p>
+    </li>
+    <li class="step">
+      <p>在<span class="ui">分享攝影機</span>區塊選取<span class="ui">匯入攝影機</span>。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">匯入攝影機</span>頁面在<span class="ui">輸入代碼</span>下方顯示一個欄位，以及<span class="ui">匯入攝影機</span>按鈕。</p>
+    </li>
+    <li class="step">
+      <p>選取欄位，輸入代碼。</p>
+      <p class="check"><b class="check-label">確認：</b>代碼出現在欄位中。鍵盤顯示期間，附近的 iPhone 可以代為輸入代碼。已鎖定的代碼會在欄位下方顯示說明：<span class="ui">已用 6 位數 PIN 鎖定——匯入時會請您輸入。</span>或<span class="ui">已用密碼鎖定——匯入時會請您輸入。</span></p>
+    </li>
+    <li class="step">
+      <p>選取<span class="ui">匯入攝影機</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>已鎖定的代碼會開啟<span class="ui">輸入 PIN</span>或<span class="ui">輸入密碼</span>。未鎖定的代碼直接匯入，並顯示提示<span class="ui">已新增 3 支攝影機</span>。下文所述的詢問可能先出現。</p>
+    </li>
+    <li class="step">
+      <p>若代碼已鎖定，輸入 PIN 或密碼。</p>
+      <p class="check"><b class="check-label">確認：</b>對話框的欄位顯示輸入的內容，密碼以圓點顯示。</p>
+    </li>
+    <li class="step">
+      <p>選取<span class="ui">匯入</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>對話框關閉，接著與未鎖定的代碼一樣繼續匯入。PIN 或密碼無法解開代碼時，畫面顯示<span class="ui">PIN 錯誤</span>或<span class="ui">密碼錯誤</span>。</p>
+    </li>
+    <li class="step">
+      <p>在<span class="ui">已新增 3 支攝影機</span>提示中選取<span class="ui">完成</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>畫面回到設定清單，設備分頁列出新加入的設備。</p>
+    </li>
+  </ol>
+  <p>加入攝影機之前，可能出現與 iPhone 或 iPad 相同的詢問：</p>
+  <ul>
+    <li><span class="ui">此代碼會變更攝影機的位址</span>：代碼會把這台 Apple TV 上已有的攝影機改到其他位址時出現。對話框列出這些攝影機的目前位址與新位址。<span class="ui">使用新位址</span>會把這些攝影機已儲存的密碼送往新位址，只適合來自可信任傳送者的代碼；<span class="ui">保留目前位址</span>保留原本的位址；<span class="ui">取消</span>則什麼都不匯入，見<a class="xref" href="#share-addresses">「代碼會變更攝影機位址時」</a>。</li>
+    <li><span class="ui">此代碼也包含傳送者的 App 設定</span>：代碼附有 App 設定時出現。<span class="ui">只加入攝影機</span>保留 Apple TV 的設定；<span class="ui">同時使用對方的設定</span>則以代碼的設定取代，包括 LiveView Mix 牆與語言，見<a class="xref" href="#share-import">「匯入攝影機」</a>。</li>
+  </ul>
+  <p>代碼無法讀取時，<span class="ui">無法讀取該代碼</span>提示會請您確認輸入的是 Cam Hub 匯出的完整代碼。</p>
+
+  <h3 id="appletv-live">即時分頁</h3>
+  <p>Apple TV 版 App 的畫面上方有四個分頁：<span class="ui">LiveView Mix</span>、<span class="ui">即時</span>、<span class="ui">設備</span>與<span class="ui">設定</span>。<span class="ui">即時</span>分頁一次以牆面顯示一台設備已啟用的攝影機，設備名稱位於右上角。</p>
+  <ul>
+    <li><b>選擇設備</b>：有兩台以上的設備時，標題下方有一排按鈕，每台設備一個，圖示標出錄影主機或攝影機。選取按鈕即顯示該設備的攝影機。選中的按鈕以青色填滿；下次開啟 App 時，仍顯示同一台設備。只有一台設備時，不顯示這一排按鈕。</li>
+    <li><b>牆面</b>：一支攝影機時占滿整個區域，兩到四支時每列兩格，五支以上時每列三格。畫面一次容納三列，選取框往下移動時，其餘各列依序出現。每個縮圖左下角顯示攝影機的編號與名稱。</li>
+    <li><b>畫質與黑邊</b>：牆面採用<span class="ui">設定</span>分頁的<span class="ui">多支攝影機</span>與<span class="ui">黑邊</span>，見<a class="xref" href="#appletv-settings">「設定分頁」</a>。此分頁本身沒有這兩項的按鈕。</li>
+    <li><b>開啟攝影機</b>：以遙控器把選取框移到縮圖上，按下選取鍵。攝影機以<span class="ui">單支攝影機</span>的畫質在單機畫面開啟，見<a class="xref" href="#appletv-single">「單機畫面、錄影回放與事件」</a>。選取中的縮圖以青色框標示；選取框約 5 秒沒有移動時，青色框淡出，再次移動時重新出現。離線、已暫停或方案未包含的縮圖無法選取。暫停的設定與解除在 iPhone 或 iPad 上進行，見<a class="xref" href="#devices-menu">「通道選項（長按）」</a>。</li>
+    <li><b>沒有訊號的攝影機</b>：<span class="ui">隱藏無訊號攝影機</span>開啟時，這些攝影機不會出現在牆面上，見<a class="xref" href="#appletv-settings">「設定分頁」</a>。</li>
+  </ul>
+  <p>沒有設備時，分頁顯示<span class="ui">沒有設備</span>與<span class="ui">在「設備」分頁新增攝影機或錄影主機。</span>設備沒有已啟用的攝影機時，顯示<span class="ui">沒有已啟用的攝影機</span>與<span class="ui">請在 iPhone 或 iPad 上為這台設備啟用攝影機。</span>在 Apple TV 上，<span class="path"><span class="ui">設定</span> › <span class="ui">選擇顯示哪些攝影機</span></span>這一列有提供時，也可以在那裡開啟攝影機，見<a class="xref" href="#appletv-settings">「設定分頁」</a>。</p>
+
+  <h3 id="appletv-lvm">LiveView Mix 分頁</h3>
+  <p>App 開啟時顯示<span class="ui">LiveView Mix</span>分頁，內容是牆面的橫向頁面。隨備份帶來的直向頁面或下方畫布會保留，但不會顯示，其中的控制面板也不占用額度。</p>
+  <h4>分頁上的預覽</h4>
+  <p>標題下方的<span class="ui">全螢幕</span>按鈕開啟牆面。按鈕下方以格狀排列顯示牆面上的攝影機，不依牆面的版面：一支攝影機時占滿整個區域，兩到四支時每列兩格，五支以上時每列三格。格狀排列採用該牆面的黑邊與浮水印。選取縮圖即在單機畫面開啟該攝影機；從 LiveView Mix 開啟的攝影機一律以 HD 開始。控制面板、時鐘、文字標籤與圖片不會出現在預覽中。<span class="ui">隱藏無訊號攝影機</span>開啟時，沒有訊號的攝影機不會出現在格狀排列中。</p>
+  <p>牆面上沒有這台 Apple TV 已有的攝影機時（例如只有控制面板），分頁不顯示格狀排列，而是顯示<span class="ui">開啟全螢幕</span>與<span class="ui">您的 LiveView Mix 面板會顯示在全螢幕牆上。</span>尚未設定牆面時，分頁顯示<span class="ui">LiveView Mix 是空的</span>。</p>
+  <h4>全螢幕牆面</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>選取<span class="ui">全螢幕</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>牆面依其版面占滿螢幕，青色框標示選取中的攝影機或按鈕。牆面從第一個有內容可顯示的頁面開始。</p>
+    </li>
+    <li class="step">
+      <p>以遙控器移動選取框。</p>
+      <p class="check"><b class="check-label">確認：</b>青色框移到下一支攝影機或下一個控制面板按鈕。在牆面邊緣按左或右，即翻到上一頁或下一頁。選取框約 5 秒沒有移動時，青色框淡出，再次移動時重新出現。</p>
+    </li>
+    <li class="step">
+      <p>按下選取鍵。</p>
+      <p class="check"><b class="check-label">確認：</b>選取框在攝影機上時，以 HD 開啟單機畫面；按返回鍵回到牆面。選取框在控制面板按鈕上時，該按鈕送出它的請求。</p>
+    </li>
+    <li class="step">
+      <p>按下返回鍵。</p>
+      <p class="check"><b class="check-label">確認：</b>牆面關閉，分頁再次顯示預覽。</p>
+    </li>
+  </ol>
+  <p>控制面板的每個按鈕都是獨立的選取位置；方案未包含的面板，選取框會略過。開啟<span class="ui">執行前先確認</span>的按鈕會先開啟對話框，標題是面板名稱，面板沒有名稱時為<span class="ui">要執行這個動作嗎？</span>，選項是按鈕的標籤（沒有標籤時為<span class="ui">確認</span>）與<span class="ui">取消</span>。控制面板只出現在全螢幕牆面上，也只能在那裡按下，不會出現在預覽中，而且在 Apple TV 上無法編輯。在 iPhone 或 iPad 設定的浮水印會顯示在縮圖上。牆面上只有這台 Apple TV 沒有的攝影機時，牆面顯示<span class="ui">這些攝影機不在這台裝置上</span>。開啟過的全螢幕牆面，在 App 重新啟動後會再次顯示。</p>
+  <h4>在 Apple TV 上編輯牆面</h4>
+  <p><span class="path"><span class="ui">設定</span> › <span class="ui">LiveView Mix</span></span>頁面可在 Apple TV 上直接編輯牆面的橫向頁面。這一列顯示牆面上的攝影機數量，尚未設定牆面時顯示<span class="ui">關閉</span>。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>在<span class="ui">設定</span>分頁選取<span class="ui">LiveView Mix</span>。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">LiveView Mix</span>頁面開啟。<span class="ui">全螢幕版面</span>區塊顯示一排現成版面，以及<span class="ui">這面牆的黑邊</span>選項。再往下是說明<span class="ui">按一下攝影機以 SD 加入，再按一次切換 HD、第三次移除。</span>，接著依設備分區列出每台設備的攝影機。</p>
+    </li>
+    <li class="step">
+      <p>選取一支攝影機。</p>
+      <p class="check"><b class="check-label">確認：</b>該列顯示勾選記號與 SD，表示攝影機以 SD 加入牆面。攝影機清單上方的區塊標示牆面上的攝影機數量（例如<span class="ui">已選：3 支攝影機</span>），並提供<span class="ui">全部 SD</span>與<span class="ui">全部 HD</span>。</p>
+    </li>
+    <li class="step">
+      <p>再次選取同一支攝影機。</p>
+      <p class="check"><b class="check-label">確認：</b>該列顯示 HD，表示攝影機以 HD 顯示在牆面上。第三次選取會把攝影機從牆面移除。</p>
+    </li>
+    <li class="step">
+      <p>在版面列中選取一個版面。</p>
+      <p class="check"><b class="check-label">確認：</b>該版面反白，全螢幕牆面改用這個版面。</p>
+    </li>
+  </ol>
+  <p>版面列提供所有現成版面，包括超過 16 格、iPhone 與 iPad 已不再提供給新牆面的版面。自訂版面無法以遙控器繪製：在 iPhone 或 iPad 繪製過自訂版面後，它會出現在這一排的最後，可以選用，區塊下方的說明也會提到這一點。<span class="ui">這面牆的黑邊</span>只設定這面牆的黑邊。<span class="ui">全部 SD</span>與<span class="ui">全部 HD</span>一次設定牆面上所有攝影機的畫質。排列順序、編輯格子、加入時鐘、文字標籤、圖片或控制面板、浮水印，以及<span class="ui">翻頁時保持攝影機連線</span>，在 Apple TV 上都沒有提供。頁面最後的說明建議在 iPhone 或 iPad 完成全部設定，再以備份帶到 Apple TV。沒有設備時，頁面顯示<span class="ui">沒有設備</span>與<span class="ui">請先新增設備，再從這裡挑選它的攝影機。</span></p>
+
+  <h3 id="appletv-devices">設備分頁與設備頁</h3>
+  <p><span class="ui">設備</span>分頁最上方是<span class="ui">新增 IP 設備</span>。下方的<span class="ui">設備</span>區塊每台設備一列，顯示名稱、型號與位址。每列右側顯示連線指示，也就是<a class="xref" href="#devices-list">「設備清單」</a>所述的綠色或紅色 Wi-Fi 圖示；範例設備改為顯示<span class="ui">示範</span>，YouTube 或 Twitch 直播改為顯示<span class="ui">僅限 iPhone 或 iPad</span>。方案未涵蓋該設備的部分攝影機時，另外顯示<span class="ui">方案未包含</span>。</p>
+  <p>沒有設備時，<span class="ui">在 iPhone、iPad 或 Mac 上設定，再還原到這裡</span>區塊說明攝影機與牆面最好在那些裝置上設定，再從 iCloud 備份還原到 Apple TV，並說明一份訂閱涵蓋以同一個 Apple 帳號登入的每一台裝置。區塊上方的<span class="ui">新增 IP 設備</span>仍可使用。設備要在設備頁刪除，清單中沒有其他刪除方式。</p>
+  <h4>加入設備</h4>
+  <p><span class="ui">新增 IP 設備</span>開啟<span class="ui">新增設備</span>頁面。表單比 iPhone 或 iPad 簡短：沒有網段掃描、品牌清單、檢查清單與設備報告。</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>欄位或開關</th><th>內容</th></tr></thead>
+    <tbody>
+      <tr><td><span class="ui">名稱（選填）</span></td><td>設備在 App 中的名稱。</td></tr>
+      <tr><td><span class="ui">IP 位址或主機名稱</span></td><td>設備的位址。輸入 YouTube 或 Twitch 的連結時會被拒絕，並顯示<span class="ui">YouTube 直播只能在 iPhone 和 iPad 上播放。</span>或<span class="ui">Twitch 直播只能在 iPhone 和 iPad 上播放。</span></td></tr>
+      <tr><td><span class="ui">HTTP 連接埠</span>與<span class="ui">RTSP 連接埠</span></td><td>預設為 <code>80</code> 與 <code>554</code>。設備位於轉送連接埠或非標準連接埠之後時，請修改。</td></tr>
+      <tr><td><span class="ui">使用者名稱</span>與<span class="ui">密碼</span></td><td>設備的登入資訊。使用者名稱預先填入 <code>admin</code>。</td></tr>
+      <tr><td><span class="ui">透過 ONVIF 連線</span></td><td>不自動尋找連線方式，改以 ONVIF 連線，見<a class="xref" href="#brands-methods">「連線方式」</a>。</td></tr>
+      <tr><td>第二個開關，用於某一類設備的專用協定</td><td>見<a class="xref" href="#brands-methods">「連線方式」</a>。開啟時，<span class="ui">設備連接埠</span>取代<span class="ui">HTTP 連接埠</span>與<span class="ui">RTSP 連接埠</span>，並以 <code>34567</code> 取代 <code>80</code>；<span class="ui">使用 HTTPS</span>隱藏；位址在區域網路之外時，開關下方以橘色顯示警告。兩個開關只能開啟其中一個；兩者都關閉時，依<a class="xref" href="#add-auto">「不選品牌直接加入」</a>所述自動尋找連線方式。</td></tr>
+      <tr><td><span class="ui">使用 HTTPS</span></td><td>預設關閉。開啟時出現<span class="ui">HTTPS 連接埠</span>，預設為 <code>443</code>，見<a class="xref" href="#add-https">「透過 HTTPS 加入設備」</a>。</td></tr>
+    </tbody>
+  </table></div>
+  <ol class="steps">
+    <li class="step">
+      <p>在<span class="ui">設備</span>分頁選取<span class="ui">新增 IP 設備</span>。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">新增設備</span>頁面開啟。</p>
+    </li>
+    <li class="step">
+      <p>在<span class="ui">IP 位址或主機名稱</span>輸入設備的位址。</p>
+      <p class="check"><b class="check-label">確認：</b>位址出現在欄位中。</p>
+    </li>
+    <li class="step">
+      <p>在<span class="ui">密碼</span>輸入密碼。</p>
+      <p class="check"><b class="check-label">確認：</b>欄位以圓點顯示密碼。</p>
+    </li>
+    <li class="step">
+      <p>選取<span class="ui">新增</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>按鈕顯示<span class="ui">連線中…</span>。設備加入後，頁面關閉，設備出現在清單中。加入失敗時，按鈕上方以紅字顯示訊息。</p>
+    </li>
+  </ol>
+  <p>位址或使用者名稱空白時，<span class="ui">新增</span>無法使用。<span class="ui">取消</span>會中止仍在進行的連線，並在不儲存的情況下關閉頁面。已達錄影主機上限時，表單顯示<span class="ui">免費版含 1 台錄影主機。訂閱 NVR 方案可新增更多。</span>，範例設備占用名額時則顯示較長的說明，不會開啟方案頁。按鈕下方的<span class="ui">加入範例攝影機</span>加入兩支自行產生畫面的範例攝影機，<span class="ui">加入示範系統</span>加入五台範例錄影主機與兩支這類攝影機，見<a class="xref" href="#start-demo">「先用範例攝影機試用」</a>。</p>
+  <h4>設備頁</h4>
+  <p>在清單中選取設備，即開啟它的設備頁。設備名稱位於右上角，下方是一排按鈕：</p>
+  <ul>
+    <li><span class="ui">返回</span>回到清單。</li>
+    <li><span class="ui">顯示詳細資訊</span>或<span class="ui">隱藏詳細資訊</span>顯示或隱藏詳細資訊：<span class="ui">型號</span>、<span class="ui">IP 位址</span>（若為 YouTube 或 Twitch 直播，則為<span class="ui">連結</span>）、<span class="ui">類型</span>（<span class="ui">錄影主機</span>或<span class="ui">攝影機</span>）、設備有回報時的<span class="ui">序號</span>與<span class="ui">韌體</span>、<span class="ui">攝影機</span>（攝影機數量），以及 HTTPS 開啟時的<span class="ui">HTTPS</span>（連接埠）。</li>
+    <li><span class="ui">重新命名</span>開啟<span class="ui">重新命名設備</span>，內有<span class="ui">名稱</span>欄位與<span class="ui">儲存</span>。</li>
+    <li><span class="ui">編輯帳號密碼</span>：設備有自己的登入帳號時提供，用來儲存新的使用者名稱與密碼，見<a class="xref" href="#devices-credentials">「變更設備的使用者名稱與密碼」</a>。沒有儲存密碼的設備，縮圖上顯示<span class="ui">沒有儲存密碼，請到「設備」重新輸入。</span>；在 Apple TV 上，密碼在這裡輸入。</li>
+    <li><span class="ui">HTTPS</span>：設備提供 HTTPS 或已開啟 HTTPS 時出現，開啟該設備的 HTTPS 設定，見<a class="xref" href="#devices-https">「已儲存設備的 HTTPS」</a>。</li>
+  </ul>
+  <p>按鈕下方以牆面顯示已啟用的攝影機，採用<span class="ui">設定</span>分頁的<span class="ui">多支攝影機</span>與<span class="ui">黑邊</span>。選取縮圖即以<span class="ui">單支攝影機</span>的畫質開啟攝影機。<span class="ui">隱藏無訊號攝影機</span>開啟時，沒有訊號的攝影機同樣不會出現在這面牆上，只有<span class="ui">攝影機</span>的數量仍把它們算在內。沒有已啟用的攝影機時，頁面顯示<span class="ui">沒有已啟用的攝影機</span>與<span class="ui">在「設定」中選擇要顯示哪些攝影機。</span>攝影機沒有選單，也沒有全螢幕牆與<span class="ui">硬碟健康</span>。</p>
+  <p>牆面下方的<span class="ui">刪除設備</span>會詢問<span class="ui">要刪除這台設備嗎？</span>訊息列出要移除的設備與其攝影機數量，有儲存密碼時也一併移除密碼，並說明此動作無法復原。選取<span class="ui">刪除</span>即移除設備，或選取<span class="ui">取消</span>。</p>
+
+  <h3 id="appletv-single">單機畫面、錄影回放與事件</h3>
+  <p>從牆面開啟的攝影機占滿整個螢幕。從即時分頁或設備頁開啟時，以<span class="ui">單支攝影機</span>的畫質開始；從 LiveView Mix 開啟時，以 HD 開始。左上角的標記顯示<span class="ui">即時</span>，播放錄影時則顯示錄影的時間。按鈕位於右上角：</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>按鈕</th><th>出現時機</th><th>作用</th></tr></thead>
+    <tbody>
+      <tr><td><span class="ui">事件錄影</span></td><td>設備提供事件時，見下文。</td><td>開啟所選日期的事件清單。</td></tr>
+      <tr><td><span class="ui" data-ui="value">SD</span>或<span class="ui" data-ui="value">HD</span></td><td>即時影像中。</td><td>顯示目前的畫質，並在 SD 與 HD 之間切換。</td></tr>
+      <tr><td><span class="ui">靜音</span>或<span class="ui">取消靜音</span></td><td>串流帶有聲音時。</td><td>關閉或開啟聲音。這項選擇套用到所有攝影機。</td></tr>
+      <tr><td><span class="ui">符合畫面</span>或<span class="ui">填滿</span></td><td>一律出現。</td><td>顯示目前的模式並切換。<span class="ui">符合畫面</span>顯示完整畫面；<span class="ui">填滿</span>把畫面拉伸到螢幕邊緣，可能使畫面變形。畫面開啟時一律為<span class="ui">符合畫面</span>。</td></tr>
+      <tr><td><span class="ui">關閉</span></td><td>一律出現。</td><td>回到牆面。</td></tr>
+    </tbody>
+  </table></div>
+  <p>除了 SD 或 HD 之外，每個按鈕只顯示圖示；按鈕成為選取位置時，圖示旁才出現名稱。約 5 秒沒有按鍵時，按鈕與時間軸隱藏；在遙控器上滑動即再次顯示。按返回鍵關閉畫面。連線期間顯示<span class="ui">連線中…</span>或<span class="ui">重新連線中…</span>；串流失敗時顯示原因與<span class="ui">重試</span>。方案未包含的攝影機顯示<span class="ui">方案未包含</span>與<span class="ui">選擇顯示哪些攝影機</span>按鈕，按鈕開啟<span class="ui">授權</span>頁面，見<a class="xref" href="#appletv-settings">「設定分頁」</a>。沒有快照、錄製片段、對講、PTZ 與縮放。</p>
+  <h4>播放錄影</h4>
+  <p>支援回放的設備，畫面底部有一條時間軸。藍色長條代表連續錄影，紅色長條代表事件錄影。時間軸左上角顯示日期，固定的中心線所在的時間顯示在上方中央。時間軸一開始顯示 4 小時。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>把選取框往下移到時間軸。</p>
+      <p class="check"><b class="check-label">確認：</b>時間軸以青色框標示，上方出現一排按鈕：<span class="ui">前一天</span>、<span class="ui">後一天</span>、<span class="ui">縮小</span>、<span class="ui">放大</span>與<span class="ui">播放</span>。每個按鈕顯示圖示，成為選取位置時出現名稱。</p>
+    </li>
+    <li class="step">
+      <p>在遙控器上按左或右。</p>
+      <p class="check"><b class="check-label">確認：</b>中心線所在的時間移動目前顯示範圍的二十分之一，且不會超出所選的日期。此時尚未播放。</p>
+    </li>
+    <li class="step">
+      <p>選取<span class="ui">播放</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>從中心線所在的時間開始播放錄影。左上角的標記改為顯示錄影的時間，不再顯示<span class="ui">即時</span>，按鈕列中出現<span class="ui">即時</span>按鈕。</p>
+    </li>
+    <li class="step">
+      <p>選取<span class="ui">即時</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>畫面回到即時影像。</p>
+    </li>
+  </ol>
+  <p><span class="ui">前一天</span>與<span class="ui">後一天</span>切換日期；所選日期是設備當地的今天時，<span class="ui">後一天</span>無法使用。<span class="ui">縮小</span>與<span class="ui">放大</span>在 10 分鐘到 24 小時之間改變顯示範圍。按鈕列只在選取框位於時間軸或這些按鈕上時顯示。後面沒有錄影時，畫面顯示<span class="ui">錄影已播完</span>。必須先以檔案下載才能播放的錄影，在 Apple TV 上不會播放，畫面顯示<span class="ui">這段錄影請在 iPhone 或 iPad 上觀看。</span>Apple TV 沒有月曆，錄影只能以正常速度播放。</p>
+  <h4>事件</h4>
+  <p>設備保有事件索引，或時間軸上有事件錄影時，<span class="ui">事件錄影</span>按鈕開啟事件清單。日期顯示在上方的兩個箭頭之間，箭頭用來切換日期；所選日期是設備當地的今天時，右箭頭無法使用。每一列標出事件的種類（<span class="ui">偵測到人員</span>、<span class="ui">偵測到移動</span>、<span class="ui">警報輸入</span>或<span class="ui">事件觸發錄影</span>）與時間。清單依時間由舊到新排列，並包含前一天的事件，這些事件不顯示日期。沒有事件的日期顯示<span class="ui">這一天沒有事件。</span>，搜尋人員的設備則顯示<span class="ui">這一天未偵測到人員。</span>iPhone 與 iPad 上的清單，見<a class="xref" href="#playback-list">「錄影清單與事件」</a>。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>選取<span class="ui">事件錄影</span>。</p>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">事件錄影</span>頁面開啟，列出所選日期的事件。</p>
+    </li>
+    <li class="step">
+      <p>選取一個事件。</p>
+      <p class="check"><b class="check-label">確認：</b>清單關閉，從事件發生前 5 秒開始播放錄影，但不會早於該段錄影的開頭。按返回鍵則關閉清單而不播放。</p>
+    </li>
+  </ol>
+
+  <h3 id="appletv-settings">設定分頁</h3>
+  <p>Apple TV 的<span class="ui">設定</span>分頁依下列順序排列各區塊：</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>區塊或列</th><th>內容</th></tr></thead>
+    <tbody>
+      <tr><td><span class="ui">iCloud 備份</span></td><td><span class="ui">從 iCloud 還原</span>，附 Apple TV 那一份備份的日期與內容；沒有備份時顯示<span class="ui">iCloud 上尚未有備份</span>，見<a class="xref" href="#appletv-bring">「把設定帶到 Apple TV」</a>。</td></tr>
+      <tr><td><span class="ui">分享攝影機</span></td><td><span class="ui">匯入攝影機</span>，用於分享代碼，見<a class="xref" href="#appletv-bring">「把設定帶到 Apple TV」</a>。</td></tr>
+      <tr><td><span class="ui">方案</span></td><td>顯示目前的方案或<span class="ui">免費</span>，並開啟<span class="ui">方案</span>頁面（見下文）。</td></tr>
+      <tr><td><span class="ui">選擇顯示哪些攝影機</span></td><td>開啟<span class="ui">授權</span>頁面（見下文）。方案的兩項額度都是無限制時隱藏。</td></tr>
+      <tr><td><span class="ui">LiveView Mix</span></td><td>顯示牆面上的攝影機數量或<span class="ui">關閉</span>，並開啟<a class="xref" href="#appletv-lvm">「LiveView Mix 分頁」</a>所述的編輯頁面。</td></tr>
+      <tr><td><span class="ui">預設畫質</span></td><td><span class="ui">單支攝影機</span>與<span class="ui">多支攝影機</span>各顯示 SD 與 HD，目前的選擇反白；選取該列即切換。<span class="ui">單支攝影機</span>套用到從即時分頁或設備頁開啟的攝影機，<span class="ui">多支攝影機</span>套用到即時分頁與設備頁的牆面。預設分別為 HD 與 SD。<span class="ui">黑邊</span>設定同樣這些牆面的黑邊，選項見<a class="xref" href="#settings-picture">「畫面：黑邊與滿版」</a>。</td></tr>
+      <tr><td><span class="ui" data-ui="value">Language</span></td><td>一排按鈕：<span class="ui">跟隨系統</span>，以及每種語言各一個按鈕，以該語言自己的名稱顯示；選中的按鈕以青色填滿。區塊標題一律以英文顯示。</td></tr>
+      <tr><td><span class="ui">重設</span></td><td><span class="ui">還原預設設定</span>、<span class="ui">刪除所有資料</span>與<span class="ui">刪除 iCloud 備份</span>（見下文）。</td></tr>
+      <tr><td><span class="ui">即時牆</span></td><td><span class="ui">隱藏無訊號攝影機</span>（見下文）。</td></tr>
+      <tr><td><span class="ui">法律條款</span></td><td><span class="ui">使用條款（EULA）</span>與<span class="ui">隱私權政策</span>，見<a class="xref" href="#appletv-differs">「Apple TV 上有哪些不同」</a>。</td></tr>
+      <tr><td><span class="ui">關於</span></td><td><span class="ui">版本</span>，即 App 的版本。</td></tr>
+    </tbody>
+  </table></div>
+  <h4>變更語言</h4>
+  <ol class="steps">
+    <li class="step">
+      <p>在<span class="ui" data-ui="value">Language</span>區塊選取一種語言。</p>
+      <p class="check"><b class="check-label">確認：</b>對話框的標題是該語言以自己的文字寫成的名稱，選項為<span class="ui">切換</span>與<span class="ui">取消</span>。</p>
+    </li>
+    <li class="step">
+      <p>選取<span class="ui">切換</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>App 立即改用該語言，畫面仍停留在<span class="ui">設定</span>分頁。</p>
+    </li>
+  </ol>
+  <h4>重設</h4>
+  <p><span class="ui">還原預設設定</span>會詢問<span class="ui">要將所有設定還原為預設值嗎？</span>，<span class="ui">刪除所有資料</span>會詢問<span class="ui">要刪除所有資料嗎？</span>。這兩個對話框及其效果都與 iPhone 或 iPad 相同，分別以<span class="ui">還原預設值</span>與<span class="ui">全部刪除</span>確認，見<a class="xref" href="#settings-reset">「重設：還原預設設定、刪除所有資料、刪除 iCloud 備份」</a>。因此，<span class="ui">還原預設設定</span>也會清除 Apple TV 上的 LiveView Mix 牆。<span class="ui">刪除 iCloud 備份</span>會詢問<span class="ui">要刪除 iCloud 備份嗎？</span>，只移除 Apple TV 那一份備份；<span class="ui">我的備份</span>中具名的備份會保留，Apple TV 上的設備與設定也不受影響。沒有 Apple TV 那一份備份時，這一列無法使用。</p>
+  <h4>隱藏無訊號攝影機</h4>
+  <p><span class="ui">隱藏無訊號攝影機</span>開啟時，沒有訊號的攝影機不會出現在即時分頁與設備頁的牆面，也不會出現在 LiveView Mix 分頁的預覽中。只有全螢幕的 LiveView Mix 牆面保留它們的位置。這一點與 iPhone 及 iPad 不同，在 iPhone 與 iPad 上設備頁仍會列出這些攝影機，見<a class="xref" href="#live-hide">「隱藏無訊號攝影機」</a>。牆面上沒有任何攝影機剩下時，牆面保持空白。開啟或關閉這個開關時，所有攝影機都會重新檢查。</p>
+  <h4>方案</h4>
+  <p><span class="ui">方案</span>頁面的<span class="ui">訂閱方案</span>區塊顯示<span class="ui">目前方案</span>一列，以及每一種攝影機方案與 NVR 方案，並附各方案解鎖的內容；目前的方案有勾選記號。選取方案即以 Apple 帳號訂閱；取得方案資訊之後，方案才能選取。在那之前，區塊最後一列顯示正在等待回應；無法取得方案資訊時，可選取這一列再試一次。區塊下方的說明指出兩種額度分開計算，訂閱跟隨 Apple 帳號。接著是<span class="ui">法律條款</span>區塊，頁面最後是<span class="ui">還原購買項目</span>。</p>
+  <p>未完成的購買會以提示告知，選取<span class="ui">好</span>即關閉：<span class="ui">購買失敗。請再試一次。</span>、等待核准的購買顯示<span class="ui">正在等待核准。購買核准後，方案會立即解鎖。</span>，或<span class="ui">App Store 無法確認這筆購買。請試試「還原購買項目」。</span>沒有<span class="ui">管理訂閱項目</span>，也沒有<span class="ui">兌換代碼</span>；這兩項在 iPhone 與 iPad 上提供，見<a class="xref" href="#settings-subscription">「訂閱」</a>。一份訂閱涵蓋使用同一個 Apple 帳號的每一台裝置。</p>
+  <h4>選擇要顯示的攝影機</h4>
+  <p><span class="ui">選擇顯示哪些攝影機</span>開啟<span class="ui">授權</span>頁面。<span class="ui">您的方案</span>區塊在<span class="ui">攝影機</span>與<span class="ui">錄影主機</span>顯示額度；額度本身見<a class="xref" href="#plans-tiers">「各方案的額度」</a>。其下每台設備一個區塊，每支攝影機一個開關。</p>
+  <ol class="steps">
+    <li class="step">
+      <p>選取一支攝影機的開關。</p>
+      <p class="check"><b class="check-label">確認：</b>開關開啟，攝影機出現在牆面上。方案不允許時，開關保持關閉，並以提示說明原因。</p>
+    </li>
+    <li class="step">
+      <p>出現提示時，選取<span class="ui">好</span>。</p>
+      <p class="check"><b class="check-label">確認：</b>提示關閉。與 iPhone 或 iPad 不同，不會開啟方案頁，見<a class="xref" href="#plans-choose">「選擇顯示哪些攝影機」</a>。</p>
+    </li>
+  </ol>
+  <p>開關隨時都可以關閉。沒有設備時，頁面顯示<span class="ui">沒有設備</span>與<span class="ui">請先新增設備，再在這裡選擇它的攝影機。</span></p>
+  <h4>Apple TV 設定分頁沒有的項目</h4>
+  <p>Apple TV 沒有<span class="ui">啟動時開啟</span>、<span class="ui">滿版畫面</span>、匯出代碼與建立備份。也沒有<span class="ui">操作手冊</span>與<span class="ui">聯絡開發團隊</span>：分頁的最後是<span class="path"><span class="ui">關於</span> › <span class="ui">版本</span></span>。要寫信給開發團隊，請使用 iPhone 或 iPad，見<a class="xref" href="#settings-contact">「聯絡開發團隊」</a>。</p>
 
   <h3 id="appletv-differs">Apple TV 上有哪些不同</h3>
   <div class="table-wrap"><table>
     <thead><tr><th>項目</th><th>iPhone 與 iPad</th><th>Apple TV</th></tr></thead>
     <tbody>
-      <tr><td>分頁與啟動</td><td>五個分頁。App 開啟時顯示<span class="ui">LiveView Mix</span>，或依<span class="ui">啟動時開啟</span>的選擇。</td><td>四個分頁，沒有<span class="ui">工具</span>。App 一律從<span class="ui">LiveView Mix</span>開啟；開啟過的全螢幕牆，在 App 重新啟動後會再次顯示。沒有<span class="ui">啟動時開啟</span>。</td></tr>
+      <tr><td>分頁與啟動</td><td>五個分頁。App 開啟時顯示<span class="ui">LiveView Mix</span>，或依<span class="ui">啟動時開啟</span>的選擇。</td><td>四個分頁，沒有<span class="ui">工具</span>。App 一律從<span class="ui">LiveView Mix</span>開啟；開啟過的全螢幕牆面，在 App 重新啟動後會再次顯示。沒有<span class="ui">啟動時開啟</span>。</td></tr>
       <tr><td>操作方式</td><td>觸控，並有捏合、拖曳與長按等手勢。</td><td>遙控器。選取框以方向鍵或滑動移動，選取鍵相當於點選，返回鍵回到上一層。沒有觸控手勢。</td></tr>
-      <tr><td>加入設備</td><td>自動找出連線方式與連接埠的表單，兩者都收在<span class="ui">進階</span>之下；另有網段掃描、檢查清單、設備報告，以及加入 YouTube 直播與 Twitch 頻道的專用表單。</td><td>以<span class="ui">新增 IP 設備</span>開啟簡短的表單：名稱、位址、<span class="ui">HTTP 連接埠</span>、<span class="ui">RTSP 連接埠</span>、使用者名稱、密碼、開關<span class="ui">透過 ONVIF 連線</span>、某一類設備專用協定的開關（見<a class="xref" href="#brands-methods">「連線方式」</a>），以及不使用該協定時的<span class="ui">使用 HTTPS</span>與<span class="ui">HTTPS 連接埠</span>（見<a class="xref" href="#add-https">「透過 HTTPS 加入設備」</a>），下方另有<span class="ui">加入範例攝影機</span>與<span class="ui">加入示範系統</span>。沒有掃描、品牌清單、檢查清單與設備報告。YouTube 或 Twitch 的連結會被拒絕。已達錄影主機上限時，表單顯示<span class="ui">免費版含 1 台錄影主機。訂閱 NVR 方案可新增更多。</span>，範例設備占用名額時則顯示較長的說明，不會開啟方案頁。</td></tr>
-      <tr><td>設備頁</td><td>重新命名、<span class="ui">編輯帳號密碼</span>、設備提供時的<span class="ui">HTTPS</span>、設備有回報時的<span class="ui">硬碟健康</span>，以及每支攝影機的選單：重新命名、啟用或停用、暫停。設備從清單中刪除。</td><td>牆面上方有<span class="ui">顯示詳細資訊</span>或<span class="ui">隱藏詳細資訊</span>、<span class="ui">重新命名</span>、<span class="ui">編輯帳號密碼</span>，以及提供時的<span class="ui">HTTPS</span>，牆面下方有<span class="ui">刪除設備</span>。沒有儲存密碼的設備，只在縮圖上顯示<span class="ui">沒有儲存密碼，請到「設備」重新輸入。</span>，密碼以<span class="ui">編輯帳號密碼</span>輸入。攝影機沒有選單，也沒有<span class="ui">硬碟健康</span>。通道的開關在<span class="path"><span class="ui">設定</span> › <span class="ui">選擇顯示哪些攝影機</span></span>。</td></tr>
-      <tr><td>即時影像與單機畫面</td><td>SD 與 HD、聲音、快照、錄製片段、雙向對講、PTZ、捏合縮放、橫向畫面。</td><td>SD 與 HD、聲音，以及符合畫面與填滿螢幕的選擇。沒有快照、錄製片段、對講、PTZ 與捏合縮放。</td></tr>
+      <tr><td>即時分頁</td><td>清單按鈕、牆面的 SD 或 HD、黑邊按鈕與<span class="ui">全螢幕牆</span>，見<a class="xref" href="#live-tab">「即時分頁」</a>。</td><td>一排按鈕，每台設備一個。牆面依<span class="ui">設定</span>分頁的<span class="ui">多支攝影機</span>與<span class="ui">黑邊</span>顯示；沒有畫質與黑邊的按鈕，也沒有<span class="ui">全螢幕牆</span>。見<a class="xref" href="#appletv-live">「即時分頁」</a>。</td></tr>
+      <tr><td>加入設備</td><td>自動找出連線方式與連接埠的表單，兩者都收在<span class="ui">進階</span>之下；另有網段掃描、檢查清單、設備報告，以及加入 YouTube 直播與 Twitch 頻道的專用表單。</td><td>簡短的表單，以兩個開關取代連線方式清單。沒有掃描、品牌清單、檢查清單與設備報告，YouTube 或 Twitch 的連結會被拒絕。見<a class="xref" href="#appletv-devices">「設備分頁與設備頁」</a>。</td></tr>
+      <tr><td>設備頁</td><td>重新命名、<span class="ui">編輯帳號密碼</span>、設備提供時的<span class="ui">HTTPS</span>、設備有回報時的<span class="ui">硬碟健康</span>，以及每支攝影機的選單：重新命名、啟用或停用、暫停。設備從清單中刪除。</td><td>詳細資訊、<span class="ui">重新命名</span>、<span class="ui">編輯帳號密碼</span>，以及提供時的<span class="ui">HTTPS</span>等按鈕，其下是牆面與<span class="ui">刪除設備</span>。攝影機沒有選單，也沒有<span class="ui">硬碟健康</span>。攝影機的開關在<span class="path"><span class="ui">設定</span> › <span class="ui">選擇顯示哪些攝影機</span></span>。見<a class="xref" href="#appletv-devices">「設備分頁與設備頁」</a>。</td></tr>
+      <tr><td>即時影像與單機畫面</td><td>SD 與 HD、聲音、快照、錄製片段、雙向對講、PTZ、捏合縮放、橫向畫面。</td><td>SD 與 HD、聲音，以及符合畫面與填滿螢幕的選擇。沒有快照、錄製片段、對講、PTZ 與縮放。見<a class="xref" href="#appletv-single">「單機畫面、錄影回放與事件」</a>。</td></tr>
       <tr><td>YouTube 與 Twitch</td><td>在格子、單機畫面與全螢幕中，以各服務自己的播放器播放。</td><td>只顯示名稱，並附上<span class="ui">YouTube 直播只能在 iPhone 和 iPad 上播放。</span>或<span class="ui">Twitch 直播只能在 iPhone 和 iPad 上播放。</span>；設備清單標示<span class="ui">僅限 iPhone 或 iPad</span>。在 Apple TV 上一律不會播放，見<a class="xref" href="#trouble-streams">「YouTube 與 Twitch」</a>。</td></tr>
-      <tr><td>錄影回放</td><td>標出有錄影日期的月曆、可拖曳的時間軸、2×、4× 與 8× 的速度、人員搜尋。</td><td>支援回放的設備可使用。以遙控器移動時間列，有前一天與後一天的按鈕、縮放時間列的按鈕；設備提供時，另有偵測到人員的清單。沒有月曆，也沒有加速。必須先下載的錄影不會播放，畫面顯示<span class="ui">這段錄影請在 iPhone 或 iPad 上觀看。</span></td></tr>
-      <tr><td>LiveView Mix</td><td>選擇攝影機、排列、繪製版面、編輯格子、浮水印、保持攝影機連線、直向頁面，以及 iPhone Duo 的兩張畫布。</td><td>只顯示橫向的牆面。隨備份帶來的直向頁面或下方畫布會保留，但不會顯示，其中的控制面板也不占用額度。牆面以遙控器操作。<span class="path"><span class="ui">設定</span> › <span class="ui">LiveView Mix</span></span>中有精簡的編輯畫面，可選擇攝影機與 SD 或 HD、現成版面與黑邊。超過 16 格的現成版面只在這裡提供。在 iPhone 或 iPad 繪製的自訂版面會顯示，但無法編輯。控制面板可以按下，但無法編輯。排列、編輯格子、浮水印與保持攝影機連線都沒有提供。</td></tr>
+      <tr><td>錄影回放</td><td>標出有錄影日期的月曆、可拖曳的時間軸、2×、4× 與 8× 的速度、事件清單。</td><td>以遙控器移動、以<span class="ui">播放</span>開始播放的時間軸；設備提供時，另有<span class="ui">事件錄影</span>按鈕開啟的清單。沒有月曆，也沒有加速，必須先下載的錄影不會播放。見<a class="xref" href="#appletv-single">「單機畫面、錄影回放與事件」</a>。</td></tr>
+      <tr><td>LiveView Mix</td><td>選擇攝影機、排列、繪製版面、編輯格子、浮水印、保持攝影機連線、直向頁面，以及 iPhone Duo 的兩張畫布。</td><td>只顯示橫向的牆面。分頁以格狀排列顯示攝影機，不依牆面的版面；控制面板只在全螢幕牆面上出現並可按下，無法編輯。<span class="path"><span class="ui">設定</span> › <span class="ui">LiveView Mix</span></span>的編輯頁面可選擇攝影機與 SD 或 HD、所有現成版面與黑邊；在 iPhone 或 iPad 繪製的自訂版面可以選用，但無法編輯。排列、編輯格子、設定浮水印與保持攝影機連線都沒有提供。見<a class="xref" href="#appletv-lvm">「LiveView Mix 分頁」</a>。</td></tr>
       <tr><td>備份與分享</td><td>建立具名的備份、還原、匯出代碼、匯入代碼。</td><td>還原備份中<span class="ui">Apple TV</span>那一份，以及匯入輸入的代碼。無法建立備份或代碼。<span class="ui">刪除 iCloud 備份</span>只會移除 Apple TV 那一份。</td></tr>
-      <tr><td>方案</td><td><span class="ui">方案</span>、<span class="ui">管理訂閱項目</span>、<span class="ui">還原購買項目</span>與<span class="ui">兌換代碼</span>。</td><td><span class="ui">方案</span>與<span class="ui">還原購買項目</span>。沒有<span class="ui">管理訂閱項目</span>，也沒有<span class="ui">兌換代碼</span>。一份訂閱涵蓋使用同一個 Apple 帳號的每一台裝置。</td></tr>
-      <tr><td>法律條款</td><td><span class="ui">設定</span>分頁中的<span class="ui">使用條款</span>與<span class="ui">隱私權政策</span>會開啟 Cam Hub 網站。</td><td><span class="ui">設定</span>分頁<span class="ui">法律條款</span>區塊與<span class="ui">方案</span>頁面中的使用條款與<span class="ui">隱私權政策</span>，會在 App 內顯示全文，頂端並列出網址。全文隨 App 提供，不需要網路連線。點選<span class="ui">完成</span>即可返回。</td></tr>
+      <tr><td>方案</td><td><span class="ui">方案</span>、<span class="ui">管理訂閱項目</span>、<span class="ui">還原購買項目</span>與<span class="ui">兌換代碼</span>。</td><td><span class="ui">方案</span>與<span class="ui">還原購買項目</span>。沒有<span class="ui">管理訂閱項目</span>，也沒有<span class="ui">兌換代碼</span>。超出額度的攝影機以提示拒絕，不會開啟方案頁。見<a class="xref" href="#appletv-settings">「設定分頁」</a>。</td></tr>
+      <tr><td>法律條款</td><td><span class="ui">設定</span>分頁中的<span class="ui">使用條款</span>與<span class="ui">隱私權政策</span>會開啟 Cam Hub 網站。</td><td><span class="ui">設定</span>分頁<span class="ui">法律條款</span>區塊與<span class="ui">方案</span>頁面中的<span class="ui">使用條款（EULA）</span>與<span class="ui">隱私權政策</span>，會在 App 內顯示全文，頂端並列出網址。全文隨 App 提供，不需要網路連線。選取<span class="ui">完成</span>即可返回。</td></tr>
+      <tr><td>說明</td><td><span class="ui">設定</span>分頁最後的<span class="ui">操作手冊</span>與<span class="ui">聯絡開發團隊</span>，見<a class="xref" href="#settings-contact">「聯絡開發團隊」</a>。</td><td>兩列都沒有。<span class="ui">設定</span>分頁的最後是<span class="path"><span class="ui">關於</span> › <span class="ui">版本</span></span>。請從 iPhone 或 iPad 寫信給開發團隊，見<a class="xref" href="#trouble-contact">「聯絡開發者」</a>。</td></tr>
       <tr><td>權限</td><td>本地網路；<span class="ui">拍照</span>使用相機；透過攝影機對講時使用麥克風；儲存快照或片段時加入照片圖庫；時速表使用位置。</td><td>只有本地網路，見<a class="xref" href="#trouble-permissions">「權限要求與系統對話框」</a>。</td></tr>
     </tbody>
   </table></div>
-  <p>語言、預設畫質、黑邊與<span class="ui">隱藏無訊號攝影機</span>（位於<span class="ui">即時牆</span>區塊）的設定，在 Apple TV 上同樣可用。備份沒有出現在 Apple TV 上的問題，見<a class="xref" href="#trouble-share">「分享、匯入與 iCloud 備份」</a>。</p>
+  <p>Apple TV <span class="ui">設定</span>分頁的各區塊，見<a class="xref" href="#appletv-settings">「設定分頁」</a>。備份沒有出現在 Apple TV 上的問題，見<a class="xref" href="#trouble-share">「分享、匯入與 iCloud 備份」</a>。</p>
 </section>
 
 <section class="chapter" id="trouble">
@@ -4376,11 +4750,15 @@ Content-Type: application/json
       <tr><td><span class="ui">即時</span>分頁</td><td><span class="ui">沒有已啟用的攝影機</span>與<span class="ui">請在設備頁面啟用攝影機。</span></td><td>所選設備沒有已啟用的通道，或<span class="ui">隱藏無訊號攝影機</span>隱藏了全部通道。依<a class="xref" href="#devices-menu">「通道選項（長按）」</a>啟用通道、關閉<span class="ui">隱藏無訊號攝影機</span>，或以左上角的選單改選其他設備，見<a class="xref" href="#live-tab">「即時分頁」</a>。</td></tr>
       <tr><td>設備頁</td><td><span class="ui">找不到攝影機。</span></td><td>設備沒有回報任何通道。在頁面向下拉動，重新讀取通道清單，並檢查連線與設備，見<a class="xref" href="#devices-page">「設備頁」</a>。</td></tr>
       <tr><td><span class="ui">LiveView Mix</span>分頁</td><td><span class="ui">LiveView Mix</span>、<span class="ui">挑選不同設備的攝影機，它們就會一起出現在這面牆上。</span>與按鈕<span class="ui">設定 LiveView Mix</span></td><td>尚未設定牆面。點選<span class="ui">設定 LiveView Mix</span>，見<a class="xref" href="#lvm-tab">「LiveView Mix 分頁與預覽」</a>。</td></tr>
-      <tr><td>LiveView Mix 牆</td><td><span class="ui">LiveView Mix 是空的</span></td><td>牆上沒有任何格子。到<span class="path"><span class="ui">設定</span> › <span class="ui">LiveView Mix</span></span>新增攝影機。</td></tr>
-      <tr><td>LiveView Mix 牆</td><td><span class="ui">這些攝影機不在這台裝置上</span></td><td>牆上每個格子指向的攝影機，這台裝置都沒有，例如在沒有這些設備的裝置上還原之後。請重新加入設備，或重新選擇攝影機，見<a class="xref" href="#lvm-pick">「選擇攝影機與畫質」</a>。</td></tr>
-      <tr><td><span class="ui">選擇攝影機</span>與<span class="ui">選擇顯示哪些攝影機</span></td><td><span class="ui">沒有設備</span></td><td>尚無設備。請先新增設備。</td></tr>
+      <tr><td>LiveView Mix 牆，以及<span class="ui">LiveView Mix</span>分頁中的預覽</td><td><span class="ui">LiveView Mix 是空的</span></td><td>牆上沒有任何格子。在預覽中，每一格都是顯示<span class="ui">攝影機已移除</span>的攝影機時，也會出現這段文字。到<span class="path"><span class="ui">設定</span> › <span class="ui">LiveView Mix</span></span>新增攝影機。</td></tr>
+      <tr><td>LiveView Mix 牆</td><td><span class="ui">這些攝影機不在這台裝置上</span>與<span class="ui">請在 iPhone 或 iPad 的「設定 → LiveView Mix」加入攝影機。</span></td><td>從第一格到最後一個已填入的格子，每一格都是無法顯示的攝影機：<span class="ui">無訊號</span>、<span class="ui">已停用</span>、<span class="ui">方案未包含</span>或<span class="ui">攝影機已移除</span>。有任何一格是其他類型（即使是空格）時，牆面照常顯示。請檢查設備與方案，或重新選擇攝影機，見<a class="xref" href="#lvm-states">「格子無法顯示攝影機時」</a>。</td></tr>
+      <tr><td><span class="ui">選擇攝影機</span>與<span class="ui">選擇顯示哪些攝影機</span>；Apple TV 上為<span class="path"><span class="ui">設定</span> › <span class="ui">LiveView Mix</span></span>與<span class="ui">選擇顯示哪些攝影機</span></td><td><span class="ui">沒有設備</span></td><td>尚無設備。請先新增設備。</td></tr>
+      <tr><td>Apple TV 的<span class="ui">即時</span>分頁</td><td><span class="ui">沒有設備</span>與<span class="ui">在「設備」分頁新增攝影機或錄影主機。</span></td><td>Apple TV 上沒有任何設備。請還原備份中的 Apple TV 副本、匯入代碼，或以<span class="ui">新增 IP 設備</span>加入設備，見<a class="xref" href="#appletv-bring">「把設定帶到 Apple TV」</a>。</td></tr>
+      <tr><td>Apple TV 的<span class="ui">即時</span>分頁與設備頁</td><td><span class="ui">沒有已啟用的攝影機</span>，以及<span class="ui">請在 iPhone 或 iPad 上為這台設備啟用攝影機。</span>或<span class="ui">在「設定」中選擇要顯示哪些攝影機。</span></td><td>該設備沒有已啟用的通道。在 Apple TV 上以<span class="path"><span class="ui">設定</span> › <span class="ui">選擇顯示哪些攝影機</span></span>開啟通道（方案的兩項額度都不限數量時，不提供此列），或在 iPhone 或 iPad 上開啟後重新備份，見<a class="xref" href="#appletv-settings">「設定分頁」</a>。</td></tr>
+      <tr><td>Apple TV 的<span class="ui">LiveView Mix</span>分頁</td><td><span class="ui">LiveView Mix 是空的</span>與<span class="ui">請在 iPhone 或 iPad 的「設定 → LiveView Mix」加入攝影機，再用「備份與還原」帶過來。</span></td><td>尚未設定牆面。在 Apple TV 的<span class="path"><span class="ui">設定</span> › <span class="ui">LiveView Mix</span></span>選擇攝影機，或還原備份中的 Apple TV 副本，見<a class="xref" href="#appletv-bring">「把設定帶到 Apple TV」</a>。</td></tr>
+      <tr><td>Apple TV 的<span class="ui">LiveView Mix</span>分頁</td><td><span class="ui">開啟全螢幕</span>與<span class="ui">您的 LiveView Mix 面板會顯示在全螢幕牆上。</span></td><td>牆面已設定，但沒有任何一格是這台 Apple TV 上有的攝影機，例如牆上只有控制面板、圖片與標籤，或攝影機所屬的設備不在這台 Apple TV 上。選擇<span class="ui">全螢幕</span>查看牆面，見<a class="xref" href="#appletv-lvm">「LiveView Mix 分頁」</a>。</td></tr>
       <tr><td><span class="ui">工具</span>分頁的掃描</td><td><span class="ui">掃描中…</span>與<span class="ui">尚未找到設備。</span></td><td>掃描進行中，或沒有找到任何設備。結果為空時，見<a class="xref" href="#add-scan">「以網段掃描尋找設備」</a>與<a class="xref" href="#trouble-permissions">「權限要求與系統對話框」</a>。</td></tr>
-      <tr><td>錄影面板</td><td><span class="ui">正在載入錄影…</span>、<span class="ui">這一天沒有連續錄影。</span>、<span class="ui">這一天未偵測到人員。</span>、<span class="ui">選取的時間點沒有錄影。</span>與<span class="ui">錄影已播完</span></td><td>見<a class="xref" href="#trouble-playback">「錄影回放」</a>。</td></tr>
+      <tr><td>錄影面板</td><td><span class="ui">正在載入錄影…</span>、<span class="ui">這一天沒有連續錄影。</span>、<span class="ui">這支攝影機本身不保存錄影。如果有錄影主機替它錄影，請從錄影主機回放。</span>、<span class="ui">這一天未偵測到人員。</span>、<span class="ui">這一天沒有事件。</span>、<span class="ui">選取的時間點沒有錄影。</span>與<span class="ui">錄影已播完</span></td><td>見<a class="xref" href="#trouble-playback">「錄影回放」</a>。</td></tr>
       <tr><td>iCloud 備份與還原頁面</td><td><span class="ui">iCloud 中還沒有備份。</span>與<span class="ui">iCloud 中找不到備份。請先用登入相同 Apple 帳號的 iPhone 進行備份。</span></td><td>見<a class="xref" href="#trouble-share">「分享、匯入與 iCloud 備份」</a>。</td></tr>
       <tr><td><span class="ui">硬碟健康</span></td><td><span class="ui">此設備沒有硬碟。</span></td><td>設備沒有回報任何硬碟。請在設備上確認已裝上硬碟且已被辨識，見<a class="xref" href="#trouble-health">「硬碟健康」</a>。</td></tr>
       <tr><td>縮圖與格子</td><td><span class="ui">已暫停</span>、<span class="ui">已停用</span>、<span class="ui">無訊號</span>、<span class="ui">方案未包含</span>、<span class="ui">攝影機已移除</span>、<span class="ui">連線中…</span>與<span class="ui">重新連線中…</span></td><td>設備頁見<a class="xref" href="#devices-states">「縮圖的狀態」</a>，牆面見<a class="xref" href="#lvm-states">「格子無法顯示攝影機時」</a>。</td></tr>
@@ -4396,8 +4774,8 @@ Content-Type: application/json
       <tr><td>設備清單中出現紅色、帶斜線的 Wi‑Fi 符號</td><td>設備在約 4 秒內沒有在 HTTP 連接埠接受連線。設備可能未開機、位於其他網路，或被防火牆擋住。在<span class="ui">連線方式</span>選擇品牌加入的設備，或影像使用其他連接埠的設備，影像可以播放，指示符號仍可能為紅色。</td><td>檢查電源與網路。影像可以播放時，可以忽略此符號。見<a class="xref" href="#devices-list">「設備清單」</a>。</td></tr>
       <tr><td>昨天還能用的設備，今天連不上</td><td>設備的位址改變了。設備沿用加入時的位址。</td><td>在路由器查出新位址，刪除舊設備，再以新位址重新加入，見<a class="xref" href="#add-form">「新增設備表單」</a>。在設備或路由器設定固定位址，可避免再次發生。</td></tr>
       <tr><td>已儲存的密碼失效，設備頁顯示<span class="ui">使用者名稱或密碼錯誤。</span>與按鈕<span class="ui">編輯帳號密碼</span></td><td>設備上的密碼或使用者名稱已變更。</td><td>點選<span class="ui">編輯帳號密碼</span>，輸入新的帳號。新的帳號會先在設備上確認後才儲存；攝影機、攝影機名稱與牆面都維持不變。見<a class="xref" href="#devices-credentials">「變更設備的使用者名稱與密碼」</a>。</td></tr>
-      <tr><td>所有縮圖都顯示<span class="ui">沒有儲存密碼，請到「設備」重新輸入。</span>，例如在新的 iPhone、iPad 或 Mac 上</td><td>設備清單搬過來了，密碼卻沒有，例如新機沒有沿用舊機的鑰匙圈。</td><td>還原 Cam Hub 的 iCloud 備份（備份包含所有密碼），或在每台設備的設備頁點選<span class="ui">重新輸入密碼</span>逐台輸入。見<a class="xref" href="#devices-password-missing">「沒有儲存密碼的設備」</a>。</td></tr>
-      <tr><td>縮圖顯示<span class="ui">這台設備的安全憑證已變更。請到設備編輯選單中的「HTTPS」檢查。</span></td><td>該設備已開啟 HTTPS，而設備出示的憑證與信任的憑證不同，例如設備重置後，或在設備上產生了新憑證。</td><td>從設備頁的鉛筆選單開啟<span class="ui">HTTPS</span>，先將新的指紋與設備網頁的憑證比對，再點選<span class="ui">儲存</span>。見<a class="xref" href="#devices-https">「已儲存設備的 HTTPS」</a>。</td></tr>
+      <tr><td>所有縮圖都顯示<span class="ui">沒有儲存密碼，請到「設備」重新輸入。</span>，例如在新的 iPhone、iPad 或 Mac 上</td><td>設備清單搬過來了，密碼卻沒有，例如新機沒有沿用舊機的鑰匙圈。</td><td>還原 Cam Hub 的 iCloud 備份（備份包含所有密碼），或在每台設備的設備頁點選<span class="ui">重新輸入密碼</span>逐台輸入。在 Apple TV 上，選擇設備頁的<span class="ui">編輯帳號密碼</span>。見<a class="xref" href="#devices-password-missing">「沒有儲存密碼的設備」</a>。</td></tr>
+      <tr><td>縮圖顯示<span class="ui">這台設備的安全憑證已變更。請到設備編輯選單中的「HTTPS」檢查。</span></td><td>該設備已開啟 HTTPS，而設備出示的憑證與信任的憑證不同，例如設備重置後，或在設備上產生了新憑證。</td><td>從設備頁的鉛筆選單開啟<span class="ui">HTTPS</span>，先將新的指紋與設備網頁的憑證比對，再點選<span class="ui">儲存</span>。在 Apple TV 上，選擇設備頁攝影機牆上方的<span class="ui">HTTPS</span>。見<a class="xref" href="#devices-https">「已儲存設備的 HTTPS」</a>。</td></tr>
       <tr><td>加入錄影主機時開啟方案頁</td><td>方案的錄影主機額度已用完。範例設備與真實設備一樣計入額度。</td><td>見<a class="xref" href="#trouble-plans">「方案與購買」</a>。</td></tr>
       <tr><td>設備完全無法加入，而且只能在原廠的 App 使用</td><td>設備不提供區域網路上的連線，或只接受 HTTPS，但加入時沒有開啟<span class="ui">使用 HTTPS</span>。</td><td>只接受 HTTPS 的設備，加入時開啟<span class="ui">使用 HTTPS</span>，見<a class="xref" href="#add-https">「透過 HTTPS 加入設備」</a>。其他情況見<a class="xref" href="#brands-requirements">「需求與限制」</a>。</td></tr>
     </tbody>
@@ -4432,11 +4810,13 @@ Content-Type: application/json
   <div class="table-wrap"><table>
     <thead><tr><th>畫面顯示</th><th>可能的原因</th><th>處理方式</th></tr></thead>
     <tbody>
-      <tr><td>畫面下方沒有錄影面板</td><td>攝影機無法透過目前的連線方式搜尋錄影，或該通道超出方案額度。在<span class="ui">連線方式</span>選擇品牌加入的設備、範例攝影機、YouTube 直播與 Twitch 頻道都沒有錄影回放。</td><td>見<a class="xref" href="#playback-avail">「哪些設備提供錄影回放」</a>與<a class="xref" href="#brands-matrix">「各方式可使用的功能」</a>。</td></tr>
+      <tr><td>畫面下方沒有錄影面板</td><td>攝影機無法透過目前的連線方式搜尋錄影。在<span class="ui">連線方式</span>選擇品牌加入的設備、範例攝影機、YouTube 直播與 Twitch 頻道都沒有錄影回放。</td><td>見<a class="xref" href="#playback-avail">「哪些設備提供錄影回放」</a>與<a class="xref" href="#brands-matrix">「各方式可使用的功能」</a>。</td></tr>
       <tr><td><span class="ui">正在載入錄影…</span>一直不消失</td><td>設備回應很慢，或連線不穩。</td><td>稍候，再重新選擇日期。檢查網路。</td></tr>
-      <tr><td><span class="ui">這一天沒有連續錄影。</span></td><td>設備在該日沒有錄影。可能是錄影功能已關閉、沒有儲存裝置或已寫滿、該日早於儲存保留的期間，或該日在未來。</td><td>選擇其他日期；設備支援時，月曆會標出有錄影的日期，見<a class="xref" href="#playback-calendar">「錄影日曆」</a>。在設備上確認已排定錄影，且有硬碟或記憶卡。</td></tr>
+      <tr><td><span class="ui">這一天沒有連續錄影。</span></td><td>設備在該日沒有連續錄影。可能是錄影功能已關閉、沒有儲存裝置或已寫滿、該日早於儲存保留的期間，或該日在未來。只在事件發生時才錄影的設備沒有連續錄影；它的錄影列在<span class="ui">事件錄影</span>之下，顯示為<span class="ui">事件觸發錄影</span>，並在時間軸上以紅色長條標示。</td><td>清單上方顯示<span class="ui">事件錄影</span>切換時，點選它，見<a class="xref" href="#playback-list">「錄影清單與事件」</a>。否則選擇其他日期；設備支援時，月曆會標出有錄影的日期，見<a class="xref" href="#playback-calendar">「錄影日曆」</a>。在設備上確認已排定錄影，且有硬碟或記憶卡。</td></tr>
+      <tr><td><span class="ui">這支攝影機本身不保存錄影。如果有錄影主機替它錄影，請從錄影主機回放。</span></td><td>攝影機表示自己不保存錄影，例如由錄影主機替它錄影，或沒有記憶卡。</td><td>在替它錄影的錄影主機上開啟這支攝影機的通道，從那裡回放錄影，見<a class="xref" href="#playback-avail">「哪些設備提供錄影回放」</a>。</td></tr>
       <tr><td>月曆顯示<span class="ui">此錄影主機無法告知哪些日期有錄影。</span>或<span class="ui">無法載入這個月份。</span></td><td>設備不提供有錄影日期的清單，或沒有回應這個月份的查詢。</td><td>不依標記直接選擇日期。月份無法載入時，點選<span class="ui">再試一次</span>。見<a class="xref" href="#playback-calendar">「錄影日曆」</a>。</td></tr>
-      <tr><td><span class="ui">這一天未偵測到人員。</span>或<span class="ui">此設備無法搜尋人員事件索引。</span></td><td>沒有偵測紀錄，或設備不提供人員搜尋。</td><td>改用連續錄影清單，見<a class="xref" href="#playback-timeline">「使用時間軸」</a>。</td></tr>
+      <tr><td><span class="ui">這一天未偵測到人員。</span>或<span class="ui">這一天沒有事件。</span></td><td>設備在這一天沒有記錄任何事件。</td><td>改用連續錄影清單或時間軸，見<a class="xref" href="#playback-list">「錄影清單與事件」</a>。</td></tr>
+      <tr><td><span class="ui">此設備無法搜尋人員事件索引。</span>或<span class="ui">此設備無法搜尋其事件。</span></td><td>設備沒有回應事件的搜尋，或沒有保存偵測到的人員索引。</td><td>重新選擇日期。改從連續錄影清單或時間軸播放錄影，見<a class="xref" href="#playback-list">「錄影清單與事件」</a>。</td></tr>
       <tr><td><span class="ui">這個帳號無法讀取這台設備上的錄影。</span></td><td>該帳號沒有回放錄影的權限。</td><td>改用有回放權限的帳號，或在設備上授予權限。</td></tr>
       <tr><td><span class="ui">無法連線到這台設備。</span>或<span class="ui">連線逾時。</span></td><td>設備沒有回應當日錄影的搜尋。</td><td>檢查網路，再重新選擇日期。</td></tr>
       <tr><td><span class="ui">這台設備無法辨識這支攝影機的錄影。</span></td><td>設備找不到這支攝影機的錄影，例如攝影機沒有儲存空間，或以非預期的方式回報錄影。</td><td>在設備上確認攝影機有錄影。換一個通道或換一天可能可行。</td></tr>
@@ -4447,8 +4827,8 @@ Content-Type: application/json
       <tr><td><span class="ui">錄影已播完</span></td><td>正在播放的錄影之後沒有其他錄影。</td><td>點選<span class="ui">回到即時</span>，或選擇其他時間。</td></tr>
       <tr><td>時間與手機的時鐘不同</td><td>所有時間都是設備自己的時鐘，原樣顯示，不會轉換成手機的時區。</td><td>在設備上設定日期、時間與時區，例如使用網路校時，見<a class="xref" href="#playback-playing">「播放錄影期間」</a>。</td></tr>
       <tr><td>沒有加速按鈕，或出現<span class="ui">此錄影主機不支援加速播放。</span></td><td>設備無法加速播放錄影，或不接受該要求。提示約顯示 4 秒，錄影以正常速度繼續播放。</td><td>無法處理。此類設備只能以 1× 播放，見<a class="xref" href="#playback-speed">「播放速度」</a>。</td></tr>
-      <tr><td>無法儲存或匯出整段錄影</td><td>這是設計如此。錄影保留在設備上。</td><td>把重要的部分錄成最長 10 分鐘的片段再分享，見<a class="xref" href="#single-clip">「錄製片段」</a>。</td></tr>
-      <tr><td>單機畫面沒有錄製按鈕</td><td>攝影機傳送的影像格式無法存成影片，或正在使用 Apple TV，Apple TV 沒有錄製按鈕。</td><td>改用<span class="ui">快照</span>拍攝靜態影像，見<a class="xref" href="#single-clip">「錄製片段」</a>。</td></tr>
+      <tr><td>無法儲存或匯出整段錄影</td><td>這是設計如此。錄影保留在設備上。只有以完整檔案傳來的錄影，才能以取代錄製按鈕的分享按鈕（<span class="ui">分享錄影</span>）整段分享，見<a class="xref" href="#playback-playing">「播放錄影期間」</a>。</td><td>把重要的部分錄成最長 10 分鐘的片段再分享，見<a class="xref" href="#single-clip">「錄製片段」</a>。</td></tr>
+      <tr><td>單機畫面沒有錄製按鈕</td><td>攝影機傳送的影像格式無法存成影片，或正在使用 Apple TV，Apple TV 沒有錄製按鈕。</td><td>改用<span class="ui">快照</span>拍攝靜態影像，見<a class="xref" href="#single-clip">「錄製片段」</a>。Apple TV 也沒有<span class="ui">快照</span>；請在 iPhone 或 iPad 上錄製片段或拍攝影像。</td></tr>
     </tbody>
   </table></div>
 
@@ -4500,7 +4880,8 @@ Content-Type: application/json
       <tr><td>送出請求之前出現確認對話框</td><td>該按鈕開啟了<span class="ui">執行前先確認</span>。</td><td>確認後才會送出，或在按鈕的編輯畫面關閉該選項。</td></tr>
       <tr><td>按鈕在家裡可用，到其他地方失敗</td><td>位址指向家中的網路。沒有 VPN 或其他路徑時，請求無法從外部送進去。</td><td>見<a class="xref" href="#webhook-security">「安全注意事項」</a>。</td></tr>
       <tr><td>以 <code>.local</code> 結尾的位址失敗</td><td>部分網路無法解析這類名稱。</td><td>改輸入接收端的固定 IP 位址。</td></tr>
-      <tr><td>Apple Watch 上沒有出現按鈕，或按鈕失敗</td><td>手錶只顯示配對的 iPhone 上 LiveView Mix 牆中控制面板的按鈕，而且只顯示方案允許的按鈕。</td><td>見<a class="xref" href="#webhook-watch">「Apple Watch 上的按鈕」</a>。</td></tr>
+      <tr><td>Apple Watch 上沒有出現某個按鈕</td><td>該按鈕沒有有效的網址、方案未涵蓋其控制面板、控制面板位於直向頁面而<span class="ui">直向頁面</span>已關閉、位於下方畫布而<span class="ui">兩張畫布</span>已關閉，或方案變更後尚未在 iPhone 上開啟過 Cam Hub。</td><td>在 iPhone 上開啟 Cam Hub，再檢查按鈕的網址與方案。見<a class="xref" href="#webhook-watch">「Apple Watch 上的按鈕」</a>。</td></tr>
+      <tr><td>在 Apple Watch 上按下按鈕後出現紅色警告三角形</td><td>原因與牆面上相同。此外還可能是：手錶自己把請求送往家中網路的位址，但手錶不在該 Wi‑Fi 網路上；iPhone 沒有在約 20 秒內回應；或方案已不再涵蓋該控制面板，此時該按鈕隨後會從手錶上消失。</td><td>在 iPhone 上的按鈕編輯畫面檢查<span class="ui">傳送方式</span>。見<a class="xref" href="#webhook-watch">「Apple Watch 上的按鈕」</a>。</td></tr>
     </tbody>
   </table></div>
   <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="同一顆按鈕的三種狀態：傳送中的轉圈圖示、成功後的綠色勾號，以及失敗後的橘色警告三角形" loading="lazy" decoding="async" width="1600" height="736"><figcaption>按鈕的三種狀態</figcaption></figure>
@@ -4528,7 +4909,7 @@ Content-Type: application/json
     <tbody>
       <tr><td><span class="ui">PIN 錯誤</span></td><td>輸入的六位數字與匯出代碼時設定的 PIN 不符。</td><td>向分享者詢問數字，再點選<span class="ui">匯入攝影機</span>。嘗試次數沒有限制。忘記的 PIN 無法找回，須請分享者重新匯出。</td></tr>
       <tr><td><span class="ui">密碼錯誤</span></td><td>密碼不符。大小寫、空格與符號都會區分。</td><td>向分享者確認密碼，再試一次。忘記的密碼無法找回，須請分享者重新匯出。</td></tr>
-      <tr><td><span class="ui">無法讀取該代碼</span></td><td>文字不完整，或在傳送途中被改動，例如被訊息 App 截斷。</td><td>從匯出畫面重新複製完整的代碼，再完整貼上。代碼前後多出的文字不影響匯入。</td></tr>
+      <tr><td><span class="ui">無法讀取該代碼</span></td><td>文字不完整，或在傳送途中被改動，例如被訊息 App 截斷。</td><td>從匯出畫面重新複製完整的代碼，再完整貼上。代碼前後多出的文字不影響匯入。在需要手動輸入代碼的 Apple TV 上，訊息為<span class="ui">請確認您輸入的是 Cam Hub 匯出的完整代碼。</span>請重新輸入完整的代碼。</td></tr>
       <tr><td><span class="ui">更新 Cam Hub</span></td><td>代碼是以不同版本的 App 製作的。</td><td>在兩台裝置上都更新 App，再試一次。</td></tr>
       <tr><td><span class="ui">無法儲存攝影機，請再試一次。</span></td><td>代碼中的設備無法儲存。</td><td>再試一次。訊息持續出現時，重新啟動 App 再試一次，見<a class="xref" href="#trouble-contact">「聯絡開發者」</a>。</td></tr>
       <tr><td>匯入或還原之後，通道顯示<span class="ui">方案未包含</span>或<span class="ui">已停用</span></td><td>匯入與還原都不檢查錄影主機的數量。在免費方案下，超出額度的通道維持啟用，並顯示<span class="ui">方案未包含</span>，直到方案涵蓋為止；在 <span class="ui" data-ui="system">App Store</span> 尚未回報方案的新裝置上也是如此。在付費方案下，超出該方案額度的通道會寫入為停用。</td><td>等待方案出現，或點選<span class="ui">還原購買項目</span>。額度足夠之後，依<a class="xref" href="#plans-choose">「選擇顯示哪些攝影機」</a>重新開啟這些通道。</td></tr>
@@ -4576,7 +4957,7 @@ Content-Type: application/json
       <tr><td><span class="ui" data-ui="value">設備拒絕了影像串流（HTTP 404）。</span></td><td>設備以登入遭拒以外的狀態回應影像要求。數字是設備回報的狀態碼。</td><td>檢查帳號的即時影像權限、串流設定，以及設備的觀看者數量。</td></tr>
       <tr><td><span class="ui" data-ui="value">錄影主機回應 HTTP 500。</span></td><td>錄影主機以錯誤狀態回應要求。</td><td>稍後再試，必要時重新啟動錄影主機，並檢查其韌體。</td></tr>
       <tr><td><span class="ui">此錄影主機的影像經過加密，Cam Hub 無法透過它專用的協定讀取。請重新新增，並在「連線方式」選擇 ONVIF。</span></td><td>錄影主機是透過它專用的協定加入的，而它以該方式傳送的影像經過加密。</td><td>刪除該設備，再於<span class="path"><span class="ui">進階</span> › <span class="ui">連線方式</span></span>選擇<span class="ui">ONVIF</span>重新加入。</td></tr>
-      <tr><td><span class="ui">沒有儲存密碼，請到「設備」重新輸入。</span></td><td>這部 iPhone 或 iPad 上沒有儲存該設備的密碼，Cam Hub 沒有向設備送出任何請求。</td><td>在設備頁點選<span class="ui">重新輸入密碼</span>輸入密碼，或還原 iCloud 備份，見<a class="xref" href="#devices-password-missing">「沒有儲存密碼的設備」</a>。</td></tr>
+      <tr><td><span class="ui">沒有儲存密碼，請到「設備」重新輸入。</span></td><td>這部 iPhone 或 iPad 上沒有儲存該設備的密碼，Cam Hub 沒有向設備送出任何請求。</td><td>在設備頁點選<span class="ui">重新輸入密碼</span>輸入密碼，或還原 iCloud 備份，見<a class="xref" href="#devices-password-missing">「沒有儲存密碼的設備」</a>。在 Apple TV 上，選擇設備頁的<span class="ui">編輯帳號密碼</span>。</td></tr>
       <tr><td><span class="ui">這台設備的安全憑證已變更。請到設備編輯選單中的「HTTPS」檢查。</span></td><td>已開啟 HTTPS，而設備出示的憑證與信任的憑證不同。</td><td>在<span class="ui">HTTPS</span>畫面檢查新的憑證，見<a class="xref" href="#devices-https">「已儲存設備的 HTTPS」</a>。</td></tr>
       <tr><td><span class="ui">這台設備剛才沒有透過 HTTPS 回應。</span></td><td>Cam Hub 尋找 HTTPS 時，沒有任何連接埠出示憑證。</td><td>檢查 HTTPS 連接埠，或不開啟<span class="ui">使用 HTTPS</span>加入設備，見<a class="xref" href="#add-https">「透過 HTTPS 加入設備」</a>。</td></tr>
       <tr><td><span class="ui">這台設備沒有透過一般 HTTP 回應，因此 HTTPS 維持開啟。</span></td><td>要關閉 HTTPS，但設備不透過一般 HTTP 回應，例如設備上的 HTTP 已關閉。</td><td>先在設備上開啟 HTTP，或保持 HTTPS 開啟，見<a class="xref" href="#devices-https">「已儲存設備的 HTTPS」</a>。</td></tr>
@@ -4605,8 +4986,7 @@ Content-Type: application/json
       <tr><td>iCloud</td><td>不會要求。備份與還原需要裝置已以 Apple 帳號登入 iCloud。</td><td>備份失敗時，見<a class="xref" href="#trouble-share">「分享、匯入與 iCloud 備份」</a>。</td></tr>
       <tr><td>購買、<span class="ui">管理訂閱項目</span>與<span class="ui">兌換代碼</span></td><td><span class="ui" data-ui="system">App Store</span> 的系統畫面，從<span class="ui">設定</span>分頁或方案頁開啟。</td><td>以 Apple 帳號確認。見<a class="xref" href="#plans-subscribe">「訂閱、還原購買與兌換代碼」</a>。</td></tr>
       <tr><td>分享連結</td><td>形如 <code>https://cam-hub.almx.cc/i#…</code> 的連結會開啟 Cam Hub 的匯入頁面，並帶入代碼。</td><td>代碼位於位址中 <code>#</code> 後面的部分，這一部分不會傳到伺服器。見<a class="xref" href="#share-import">「匯入攝影機」</a>。</td></tr>
-      <tr><td>郵件</td><td>設備報告中的<span class="ui">以電子郵件寄給開發者</span>會開啟系統的郵件撰寫頁面，收件者已填入開發者。</td><td>在撰寫頁面按下傳送之前，不會寄出任何內容。沒有郵件帳號時，畫面顯示<span class="ui">此裝置尚未設定郵件</span>；報告已複製，只留在這台裝置上，複製的內容約 2 分鐘後失效。見<a class="xref" href="#add-report">「設備報告（實驗性功能）」</a>。</td></tr>
-      <tr><td>評分要求</td><td>備份成功後，系統可能詢問評分。</td><td>可以直接關閉。</td></tr>
+      <tr><td>郵件</td><td>設備報告中的<span class="ui">以電子郵件寄給開發者</span>會開啟系統的郵件撰寫頁面，收件者已填入開發者。<span class="ui">設定</span>分頁最後的<span class="ui">聯絡開發團隊</span>會在裝置的電子郵件 App 中開啟一封新郵件。</td><td>在撰寫頁面或電子郵件 App 中寄出之前，不會寄出任何內容。沒有郵件帳號時，設備報告顯示<span class="ui">此裝置尚未設定郵件</span>：完整的報告已複製到只限這台裝置使用的剪貼簿，約 2 分鐘後失效；點選<span class="ui">好</span>會開啟電子郵件 App，並帶入報告的開頭，請將完整的報告貼到郵件中。<span class="ui">聯絡開發團隊</span>的郵件由裝置的電子郵件 App 接手，Cam Hub 不會顯示自己的訊息。見<a class="xref" href="#add-report">「設備報告（實驗性功能）」</a>與<a class="xref" href="#settings-contact">「聯絡開發團隊」</a>。</td></tr>
     </tbody>
   </table></div>
   <p>權限遭拒絕後，重新開啟本地網路權限：</p>
@@ -4630,10 +5010,11 @@ Content-Type: application/json
   </ol>
 
   <h3 id="trouble-contact">聯絡開發者</h3>
-  <p>App 的設定中沒有支援項目；<span class="ui">設定</span>分頁最後的<span class="ui">操作手冊</span>一列會開啟本手冊。可以用三種方式聯絡開發者：</p>
+  <p>在 iPhone 或 iPad 上，<span class="ui">設定</span>分頁的最後一列<span class="ui">聯絡開發團隊</span>可寄電子郵件給開發者，見<a class="xref" href="#settings-contact">「聯絡開發團隊」</a>。其上方的<span class="ui">操作手冊</span>一列會開啟本手冊。Apple TV 沒有這兩列。可以用四種方式聯絡開發者：</p>
   <ul>
+    <li><b>設定分頁的一列</b>：<span class="ui">聯絡開發團隊</span>會在裝置的電子郵件 App 中開啟一封新郵件，收件位址、主旨、兩個問題與 App 的版本都已填好。</li>
     <li><b>支援頁面</b>：Cam Hub 網站上的 <a href="support.html">support.html</a>。頁面提供相容性說明、回報連線問題之前的檢查項目，以及聯絡信箱。</li>
-    <li><b>電子郵件</b>：<code>app-dev@almx.cc</code>。設備報告的郵件撰寫頁面，收件者預先填入的就是這個位址。</li>
+    <li><b>電子郵件</b>：<code>app-dev@almx.cc</code>。<span class="ui">聯絡開發團隊</span>一列顯示的就是這個位址，設備報告的郵件撰寫頁面也寄往這個位址。</li>
     <li><b>設備報告</b>：加入設備失敗後，實驗性的報告會蒐集技術資訊，並提供以電子郵件寄出的選項，見<a class="xref" href="#add-report">「設備報告（實驗性功能）」</a>。</li>
   </ul>
   <p>訊息中若寫明下列內容，最有助於開發者判斷：</p>
@@ -4644,6 +5025,7 @@ Content-Type: application/json
     <li>使用的連線方式；</li>
     <li>畫面顯示的完整訊息，以及先前已嘗試的做法。</li>
   </ul>
+  <p>以<span class="ui">聯絡開發團隊</span>開啟的郵件，已列出 App 的版本、系統及其版本，以及裝置是 iPhone 還是 iPad。郵件會詢問攝影機或錄影主機的品牌、型號與韌體版本，以及哪裡有問題或缺少哪項功能。郵件可以用任何語言撰寫。</p>
   <div class="callout warn">
     <strong class="t">下列內容請勿寄出</strong>
     <p>攝影機的密碼、分享代碼的 PIN 或密碼、完整的分享代碼、SNMP 社群名稱，以及從網際網路連線到設備所用的公開位址。開發者不需要這些資料。</p>
@@ -4653,7 +5035,7 @@ Content-Type: application/json
   <h3 id="trouble-faq">常見問題</h3>
   <details class="faq">
     <summary>為什麼 App 一律從 LiveView Mix 分頁開啟？</summary>
-    <p>App 一律從第一個分頁開啟。在<span class="path"><span class="ui">設定</span> › <span class="ui">啟動時開啟</span></span>可改為開啟所選設備的即時分頁，或 LiveView Mix 的全螢幕牆。選項<span class="ui">上次檢視</span>不會還原上一次的分頁。見<a class="xref" href="#lvm-settings">「設定中的 LiveView Mix」</a>。</p>
+    <p>App 一律從第一個分頁開啟。在<span class="path"><span class="ui">設定</span> › <span class="ui">啟動時開啟</span></span>可改為開啟所選設備的即時分頁，或 LiveView Mix 的全螢幕牆。選項<span class="ui">上次檢視</span>不會還原上一次的分頁。見<a class="xref" href="#lvm-settings">「設定中的 LiveView Mix」</a>。Apple TV 沒有<span class="ui">啟動時開啟</span>，見<a class="xref" href="#appletv-differs">「Apple TV 上有哪些不同」</a>。</p>
   </details>
   <details class="faq">
     <summary>為什麼 App 一律是深色？</summary>
@@ -4669,7 +5051,7 @@ Content-Type: application/json
   </details>
   <details class="faq">
     <summary>可以儲存或匯出錄影嗎？</summary>
-    <p>錄影的一部分可以。播放錄影，點選紅色錄製按鈕，等那個時刻過了再停止：最長 10 分鐘的片段可以傳送給別人，或存進照片圖庫。整段錄影保留在設備上，Cam Hub 也無法刪除。快照是設備在點選當下提供的靜態影像；回放期間，快照顯示的是目前的即時影像。見<a class="xref" href="#single-clip">「錄製片段」</a>。</p>
+    <p>錄影的一部分可以。播放錄影，點選紅色錄製按鈕，等那個時刻過了再停止：最長 10 分鐘的片段可以傳送給別人，或存進照片圖庫。整段錄影保留在設備上，Cam Hub 也無法刪除；只有以完整檔案傳來的錄影，才能以分享按鈕（<span class="ui">分享錄影</span>）整段分享。快照是設備在點選當下提供的靜態影像；回放期間，快照顯示的是目前的即時影像。見<a class="xref" href="#single-clip">「錄製片段」</a>。</p>
   </details>
   <details class="faq">
     <summary>為什麼沒有聲音？</summary>
@@ -4689,7 +5071,7 @@ Content-Type: application/json
   </details>
   <details class="faq">
     <summary>攝影機在原廠的 App 可以使用，在 Cam Hub 卻不行。該怎麼辦？</summary>
-    <p>在<span class="path"><span class="ui">進階</span> › <span class="ui">連線方式</span></span>改用其他連線方式（<span class="ui">ONVIF</span>、RTSP 或清單中的品牌），在設備上開啟 ONVIF 與 RTSP，設備有獨立的使用者清單時另建 ONVIF 使用者，並檢查影像格式。必須依賴原廠雲端的設備無法加入。見<a class="xref" href="#brands-requirements">「需求與限制」</a>。</p>
+    <p>在<span class="path"><span class="ui">進階</span> › <span class="ui">連線方式</span></span>改用其他連線方式（<span class="ui">ONVIF</span>、RTSP 或清單中的品牌），在設備上開啟 ONVIF 與 RTSP，設備有獨立的使用者清單時另建 ONVIF 使用者，並檢查影像格式。必須依賴原廠雲端的設備無法加入。見<a class="xref" href="#brands-requirements">「需求與限制」</a>。以上都無效，或設備具備 Cam Hub 尚未提供的功能時，請以<span class="ui">設定</span>分頁最後的<span class="ui">聯絡開發團隊</span>告知開發團隊，見<a class="xref" href="#settings-contact">「聯絡開發團隊」</a>。</p>
   </details>
   <details class="faq">
     <summary>只接受 HTTPS 的設備可以加入嗎？</summary>
@@ -4713,7 +5095,7 @@ Content-Type: application/json
   </details>
   <details class="faq">
     <summary>所有資料都被刪除了，攝影機可以找回來嗎？</summary>
-    <p>只能用先前建立的 iCloud 備份，以<span class="ui">從 iCloud 還原</span>找回，見<a class="xref" href="#share-restore">「從 iCloud 還原」</a>。沒有這樣的備份時，攝影機的密碼無法找回，因為密碼只儲存在輸入它的那台裝置上。<span class="ui">刪除所有資料</span>不影響方案。</p>
+    <p>只能用先前建立的 iCloud 備份，以<span class="ui">從 iCloud 還原</span>找回（見<a class="xref" href="#share-restore">「從 iCloud 還原」</a>），或用先前匯出的分享代碼找回（見<a class="xref" href="#share-import">「匯入攝影機」</a>）。兩者都沒有時，攝影機的密碼無法找回，因為此動作已將密碼從這台裝置上移除。<span class="ui">刪除所有資料</span>不影響方案。</p>
   </details>
   <details class="faq">
     <summary>設備報告會傳送密碼嗎？</summary>
@@ -4721,7 +5103,7 @@ Content-Type: application/json
   </details>
   <details class="faq">
     <summary>為什麼螢幕不會自動關閉？</summary>
-    <p>畫面上有即時影像或錄影時，App 會讓螢幕保持開啟。離開影像畫面或離開 App 後，這個行為就結束。</p>
+    <p>畫面上有即時影像或錄影時，App 會讓螢幕保持開啟。離開影像畫面或離開 App 後，這個行為就結束。在 Apple TV 上，Cam Hub 位於前景期間，無論顯示哪個畫面，App 都會讓 Apple TV 不進入睡眠，Apple TV 的睡眠設定因此不會中斷牆面。離開 App 後，這個行為就結束。</p>
   </details>
   <details class="faq">
     <summary>為什麼切換到其他 App 時，畫面會停止？</summary>
@@ -4747,7 +5129,7 @@ Content-Type: application/json
       </tr>
       <tr>
         <td><span class="ui">ONVIF</span></td>
-        <td>略過偵測，只在<span class="ui">HTTP 連接埠</span>所填的連接埠上使用開放的 ONVIF 協定。Cam Hub 在 <code>/onvif/device_service</code> 尋找服務；該位址沒有回應時，再試 <code>/onvif/service</code> 與 <code>/onvif/device</code>。影像取自設備所告知的位址。</td>
+        <td>略過偵測，只在<span class="ui">HTTP 連接埠</span>所填的連接埠上使用開放的 ONVIF 協定；開啟<span class="ui">使用 HTTPS</span>時改在 HTTPS 連接埠。Cam Hub 在 <code>/onvif/device_service</code> 尋找服務；該位址沒有回應時，再試 <code>/onvif/service</code> 與 <code>/onvif/device</code>。影像取自設備所告知的位址。</td>
         <td>任何提供 ONVIF 的攝影機或錄影主機；也適用於要改用 ONVIF 連線的 Hikvision、Dahua 或 Synology 設備。</td>
         <td>設備的 ONVIF 使用者。設備有獨立的 ONVIF 使用者清單時，須在該清單中建立使用者。</td>
       </tr>
@@ -4772,6 +5154,7 @@ Content-Type: application/json
     </tbody>
   </table></div>
   <p>建議先使用自動偵測。自動偵測回報<span class="ui">不支援的設備。</span>，或刻意要以 ONVIF 連線時，改選 ONVIF。自動偵測連不到的 Xiongmai 設備，選擇<span class="ui">Xiongmai (XMEye)</span>。設備已關閉 ONVIF 時，最後才選擇清單中的品牌或 RTSP。回報影像經過加密的 Xiongmai 錄影主機，無法透過 Xiongmai 的專用協定觀看；自動偵測此時會改試 ONVIF，這類錄影主機請以<span class="ui">ONVIF</span>加入。開發者已以部分 Hikvision、Dahua 與 Synology 設備測試過。任何方式下，特定型號能否使用，取決於韌體、設定、串流格式、帳號權限與網路。</p>
+  <p>在 Apple TV 上，新增設備表單沒有<span class="ui">連線方式</span>清單與<span class="ui">品牌</span>區塊，改以兩個開關取代，且同時只能開啟其中一個。<span class="ui">透過 ONVIF 連線</span>相當於<span class="ui">ONVIF</span>。<span class="ui">透過 Xiongmai 連線</span>相當於<span class="ui">Xiongmai (XMEye)</span>：<span class="ui">HTTP 連接埠</span>與<span class="ui">RTSP 連接埠</span>改為<span class="ui">設備連接埠</span>，欄位仍為 <code>80</code> 時改填 <code>34567</code>；<span class="ui">使用 HTTPS</span>不再顯示；位址在區域網路之外時，同樣以橘色顯示警告。兩個開關都關閉時，表單使用自動偵測。Apple TV 上無法選擇 RTSP 與清單中的品牌；自動偵測仍會嘗試這些品牌的串流路徑，並將這類攝影機加入為獨立攝影機。</p>
 
   <h3 id="brands-matrix">各方式可使用的功能</h3>
   <p>下表列出各方式下 Cam Hub 提供的功能。「有」表示提供該功能。「視設備而定」表示只有設備本身提供時才會出現。「無」表示該方式下 Cam Hub 不提供。細節見表格下方的說明。</p>
@@ -4783,7 +5166,7 @@ Content-Type: application/json
       <tr><th scope="row">錄影回放</th><td>有</td><td>有</td><td>有</td><td>有</td><td>視設備而定</td><td>無</td></tr>
       <tr><th scope="row">回放加速 2×、4×、8×</th><td>視設備而定</td><td>視設備而定</td><td>無</td><td>無</td><td>視設備而定</td><td>無</td></tr>
       <tr><th scope="row">在日曆中標示有錄影的日期</th><td>視設備而定</td><td>無</td><td>無</td><td>無</td><td>無</td><td>無</td></tr>
-      <tr><th scope="row">人員搜尋</th><td>視設備而定</td><td>無</td><td>無</td><td>無</td><td>無</td><td>無</td></tr>
+      <tr><th scope="row">事件錄影清單</th><td>有</td><td>視設備而定</td><td>有</td><td>視設備而定</td><td>無</td><td>無</td></tr>
       <tr><th scope="row">PTZ</th><td>視設備而定</td><td>視設備而定</td><td>視設備而定</td><td>視設備而定</td><td>視設備而定</td><td>無</td></tr>
       <tr><th scope="row">點選或框選畫面以對準</th><td>視設備而定</td><td>無</td><td>無</td><td>無</td><td>無</td><td>無</td></tr>
       <tr><th scope="row">快照</th><td>有</td><td>有</td><td>有</td><td>有</td><td>視設備而定</td><td>無</td></tr>
@@ -4798,10 +5181,10 @@ Content-Type: application/json
   <ul>
     <li><b>即時影像</b>：使用 ONVIF 時，設備須告知串流位址；設備沒有指出其媒體服務時，Cam Hub 會在該服務常見的位址詢問。影像以 RTSP 取得，先使用 <code>TCP</code>，設備拒絕 <code>TCP</code> 時改用 <code>UDP</code>。</li>
     <li><b>SD 與 HD</b>：Synology <span class="ui" data-ui="value">Surveillance Station</span> 的選項隱藏；攝影機有低解析度串流時，SD 使用該串流。Xiongmai 的 HD 為主串流，SD 為副串流。使用 ONVIF 時，設備最大的設定檔為 HD，最小的為 SD，只有一個設定檔時兩者共用。RTSP 與清單中的品牌，設備提供與所找到路徑相對應的第二路串流時，SD 使用該串流；否則 SD 與 HD 顯示同一路串流。</li>
-    <li><b>錄影回放</b>：Hikvision 的攝影機有自己的儲存空間時，可像錄影主機一樣回放。Dahua 播放錄影主機的主串流，移到其他時間時會從該時間點重新開始播放。Synology <span class="ui" data-ui="value">Surveillance Station</span> 與 Xiongmai 的錄影從所選的時間點以串流方式播放。使用 ONVIF 時，設備須提供 ONVIF 回放功能所需的搜尋與重播服務。</li>
+    <li><b>錄影回放</b>：Hikvision 的攝影機有自己的儲存空間時，可像錄影主機一樣回放。Dahua 播放錄影主機的主串流，移到其他時間時會從該時間點重新開始播放。Synology <span class="ui" data-ui="value">Surveillance Station</span> 與 Xiongmai 的錄影從所選的時間點以串流方式播放。使用 ONVIF 時，設備須提供 ONVIF 回放功能所需的搜尋與重播服務。部分以 ONVIF 連線的錄影主機，只列出最近約 24 小時的錄影。</li>
     <li><b>回放加速</b>：使用 Hikvision、Dahua 與 ONVIF 時，錄影主機可能拒絕較快的速度，此時 Cam Hub 會顯示提示。Synology <span class="ui" data-ui="value">Surveillance Station</span> 與 Xiongmai 的串流式回放沒有加速按鈕。</li>
     <li><b>日曆</b>：會回報哪些日期有錄影的 Hikvision 錄影主機，這些日期會在回放日期的日曆中標示，見<a class="xref" href="#playback-calendar">「錄影日曆」</a>。</li>
-    <li><b>人員搜尋</b>：錄影主機須有偵測到人員的索引。</li>
+    <li><b>事件錄影清單</b>：錄影清單上方<span class="ui">連續錄影</span>與<span class="ui">事件錄影</span>的切換，見<a class="xref" href="#playback-list">「錄影清單與事件」</a>。Hikvision 在設備保有偵測到人員的索引時，會搜尋偵測到的人員（<span class="ui">偵測到人員</span>），並列出設備因事件而產生的錄影（<span class="ui">事件觸發錄影</span>）。Synology <span class="ui" data-ui="value">Surveillance Station</span> 列出移動（<span class="ui">偵測到移動</span>）與警報輸入（<span class="ui">警報輸入</span>）。Dahua 與 Xiongmai 列出設備因事件而產生的錄影（<span class="ui">事件觸發錄影</span>）；只有在所選日期或前一天有這類錄影時，才會出現切換。使用 ONVIF 時，所有錄影都視為連續錄影，因此沒有事件錄影清單。</li>
     <li><b>PTZ</b>：Hikvision 的通道須已開啟 PTZ；設備列出已儲存的位置時才會提供，並且一律可回到原點。Dahua 須在該通道綁定 PTZ；提供已儲存的位置，但沒有原點。Synology <span class="ui" data-ui="value">Surveillance Station</span> 依系統回報的攝影機功能提供控制：四個方向，以及系統回報時可回到原點。Xiongmai 有雲台的攝影機提供方向、變焦，以及以編號 1 到 16 指定的已儲存位置，沒有原點。ONVIF 依設備回報的軸向提供；只有變焦的攝影機沒有方向盤。見<a class="xref" href="#single-ptz">「PTZ 控制：移動鏡頭」</a>。</li>
     <li><b>對準</b>：Hikvision 攝影機回報支援以畫面中的點或區域定位時提供。</li>
     <li><b>快照</b>：Xiongmai 的快照取自即時串流的第一個完整畫格。使用 ONVIF 時，設備須提供快照位址。</li>
@@ -4812,7 +5195,7 @@ Content-Type: application/json
     <li><b>通道清單</b>：Hikvision 與 Dahua 的錄影主機會列出各通道的名稱與訊號狀態，不是錄影主機的設備只有一個通道。Synology <span class="ui" data-ui="value">Surveillance Station</span> 將系統中的每支攝影機列為一個通道，並有訊號狀態。Xiongmai 設備回報通道數量與各通道的名稱，不回報訊號狀態。ONVIF 每個獨立的影像來源列為一個通道，不回報訊號狀態。RTSP 與清單中的品牌沒有清單：攝影機數量由使用者輸入（1 到 64），每個通道都顯示為在線。</li>
     <li><b>HTTPS</b>：設備的網頁介面提供 HTTPS 時可使用，須針對每台設備開啟，見<a class="xref" href="#add-https">「透過 HTTPS 加入設備」</a>與<a class="xref" href="#devices-https">「已儲存設備的 HTTPS」</a>。Xiongmai 的專用協定與純 RTSP 沒有可使用 HTTPS 的網頁介面。透過 RTSP 取得的影像不會因此加密。</li>
   </ul>
-  <p>任何方式都沒有的功能：對焦與光圈控制、儲存或匯出錄影，以及登入雲端帳號。</p>
+  <p>任何方式都沒有的功能：對焦與光圈控制、儲存或匯出錄影（以檔案形式送達、可整個分享的錄影除外），以及登入雲端帳號。</p>
 
   <h3 id="brands-profiles">清單中的品牌</h3>
   <p><span class="ui">品牌</span>區塊中的品牌以純 RTSP 連線。選擇品牌後，表單增加以該品牌命名的區塊，內有<span class="ui">攝影機</span>欄位（1 到 64）與路徑欄位。填 <code>1</code> 時，加入為以品牌命名的獨立攝影機；填較大的數字時，加入為錄影主機，通道為 <code>CH1</code> 到 <code>CHn</code>，並占用方案的錄影主機額度。路徑欄位留白時，Cam Hub 依序嘗試文件所載的路徑，並保留設備有回應的那一條。只有需要指定特定路徑時才填寫。RTSP 選項的運作方式相同，使用的是多數攝影機使用的路徑。</p>
@@ -4851,8 +5234,8 @@ Content-Type: application/json
   <div class="table-wrap"><table>
     <thead><tr><th>項目</th><th>需求或限制</th></tr></thead>
     <tbody>
-      <tr><td>HTTP 與 HTTPS</td><td>Cam Hub 以純 HTTP 連到設備，該設備開啟 HTTPS 時則改用 HTTPS；Xiongmai 設備則改用其專用協定。影像以 RTSP 取得，先使用 <code>TCP</code>，設備拒絕 <code>TCP</code> 時改用 <code>UDP</code>；HTTPS 不會加密影像。開啟 HTTPS 後，Cam Hub 信任開啟 HTTPS 時設備出示的憑證（自簽憑證亦可），或公開憑證機構為該位址簽發的憑證。關閉 HTTP 的設備，或只接受 HTTPS 的設備，以<span class="ui">使用 HTTPS</span>加入，見<a class="xref" href="#add-https">「透過 HTTPS 加入設備」</a>。網路儲存設備在<span class="ui">HTTP 連接埠</span>輸入 HTTP 管理介面的連接埠，例如 <code>5000</code>；開啟<span class="ui">使用 HTTPS</span>時，Cam Hub 也會自行找到其 HTTPS 連接埠 <code>5001</code>。</td></tr>
-      <tr><td>開啟 ONVIF</td><td>選擇<span class="ui">ONVIF</span>時，設備上須已開啟 ONVIF。Cam Hub 在<span class="ui">HTTP 連接埠</span>所填連接埠的 <code>/onvif/device_service</code>、<code>/onvif/service</code> 或 <code>/onvif/device</code> 尋找服務。部分設備的出廠設定是關閉 ONVIF。</td></tr>
+      <tr><td>HTTP 與 HTTPS</td><td>Cam Hub 以純 HTTP 連到設備，該設備開啟 HTTPS 時則改用 HTTPS；Xiongmai 設備則改用其專用協定。影像以 RTSP 取得，先使用 <code>TCP</code>，設備拒絕 <code>TCP</code> 時改用 <code>UDP</code>；HTTPS 不會加密影像。開啟 HTTPS 後，Cam Hub 信任開啟 HTTPS 時設備出示的憑證（自簽憑證亦可），或公開憑證機構為該位址簽發的憑證。關閉 HTTP 的設備，或只接受 HTTPS 的設備，以<span class="ui">使用 HTTPS</span>加入，見<a class="xref" href="#add-https">「透過 HTTPS 加入設備」</a>。自動偵測會自行在連接埠 <code>5000</code> 找到網路儲存設備的 HTTP 管理介面；只有管理介面使用其他連接埠時，才需要在<span class="ui">HTTP 連接埠</span>輸入。開啟<span class="ui">使用 HTTPS</span>時，Cam Hub 也會自行找到其 HTTPS 連接埠 <code>5001</code>。</td></tr>
+      <tr><td>開啟 ONVIF</td><td>選擇<span class="ui">ONVIF</span>時，設備上須已開啟 ONVIF。Cam Hub 在<span class="ui">HTTP 連接埠</span>所填連接埠的 <code>/onvif/device_service</code>、<code>/onvif/service</code> 或 <code>/onvif/device</code> 尋找服務；開啟<span class="ui">使用 HTTPS</span>時改在 HTTPS 連接埠。部分設備的出廠設定是關閉 ONVIF。</td></tr>
       <tr><td>開啟 RTSP</td><td>影像以 RTSP 取得。使用自動偵測時，Cam Hub 會自行找出 RTSP 連接埠；其他方式使用<span class="ui">RTSP 連接埠</span>所填的連接埠（通常是 <code>554</code>）。網路儲存設備可能先使用自己的串流路徑。設備有 RTSP 驗證方式的設定時，請選擇 <code>Digest</code>。</td></tr>
       <tr><td>獨立的 ONVIF 使用者</td><td>部分設備的 ONVIF 使用者清單與網頁介面的使用者分開，管理員登入無法用於 ONVIF。須在該清單中建立使用者。清單中有五個品牌須先建立專用的攝影機或 ONVIF 帳號，RTSP 才能連線：<span class="ui" data-ui="value">Axis</span>、<span class="ui" data-ui="value">TP-Link (Tapo / VIGI)</span>、<span class="ui" data-ui="value">ANNKE</span>、<span class="ui" data-ui="value">MOBOTIX</span>與<span class="ui" data-ui="value">2N</span>。</td></tr>
       <tr><td>帳號權限</td><td>帳號須有觀看即時影像的權限；要回放時，須有讀取錄影的權限。Synology 的帳號須可使用 <span class="ui" data-ui="value">Surveillance Station</span>。Cam Hub 沒有輸入驗證碼的欄位，因此要求兩步驟驗證的帳號無法使用。</td></tr>
@@ -4862,7 +5245,7 @@ Content-Type: application/json
       <tr><td>影像格式</td><td>Cam Hub 播放 <code>H.264</code> 與 <code>H.265</code>，由手機以硬體解碼。手機沒有 <code>H.265</code> 的硬體支援，或畫面尺寸超出解碼器的上限時，不會有畫面。<code>MJPEG</code> 只作為其中一個系列即時影像的備援。</td></tr>
       <tr><td>聲音</td><td>收聽時支援 <code>G.711</code>（<code>A-law</code> 與 <code>µ-law</code>）與 <code>AAC-LC</code>，其他格式沒有聲音。透過攝影機說話，只適用於提供 <code>G.711</code> 雙向語音的 Hikvision 獨立攝影機。</td></tr>
       <tr><td>帳號鎖定</td><td>輸入錯誤多次後，設備可能鎖定帳號，常見約 30 分鐘。自動偵測的連接埠檢查不會送出登入。Cam Hub 在品牌專用協定第一次拒絕登入時就停止，以 ONVIF 或 RTSP 連線時則在第二次被拒絕後停止；設備報告在被拒絕之後也不再送出登入。</td></tr>
-      <tr><td>再次加入設備</td><td>相同的位址、連接埠與使用者名稱，會更新已儲存的設備，而不是建立第二台。</td></tr>
+      <tr><td>再次加入設備</td><td>相同的位址、連接埠與使用者名稱，會更新已儲存的設備，而不是建立第二台，見<a class="xref" href="#add-form">「新增設備表單」</a>。</td></tr>
     </tbody>
   </table></div>
 
@@ -4961,6 +5344,6 @@ Content-Type: application/json
     <li>訊息、空白畫面、權限要求與常見問題，在<a class="xref" href="#trouble">第 15 章「疑難排解」</a>說明。</li>
     <li>加入設備時的失敗，在<a class="xref" href="#add-failed">「加入失敗時的檢查清單」</a>說明。</li>
     <li>如何聯絡開發者，以及訊息中應包含什麼，見<a class="xref" href="#trouble-contact">「聯絡開發者」</a>。Cam Hub 網站的支援頁面 <a href="support.html">support.html</a> 重述相容性說明，並列出聯絡信箱。</li>
-    <li>在 App 中，<span class="ui">設定</span>分頁最後的<span class="ui">操作手冊</span>一列會開啟本手冊。</li>
+    <li>在 App 中，<span class="ui">設定</span>分頁接近最後的<span class="ui">操作手冊</span>一列會開啟本手冊。在 iPhone 或 iPad 上，最後一列<span class="ui">聯絡開發團隊</span>可寄電子郵件給開發團隊，見<a class="xref" href="#settings-contact">「聯絡開發團隊」</a>。</li>
   </ul>
 </section>
