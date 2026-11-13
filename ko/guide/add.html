@@ -258,7 +258,7 @@
   <p><span class="ui">IP 주소 또는 호스트 이름</span>에 YouTube나 Twitch 링크를 입력하면 <span class="ui">추가</span> 버튼을 사용할 수 없게 되고, 양식에 <span class="ui">YouTube 라이브 스트림으로 추가</span> 또는 <span class="ui">Twitch 채널로 추가</span>가 표시됩니다. 이를 탭하면 링크가 이미 입력된 해당 서비스의 화면이 열리며, 스트림을 추가하면 두 화면이 모두 닫힙니다. 두 서비스가 제공되지 않는 지역에서는 링크가 일반 주소로 취급됩니다.</p>
 
   <h3 id="add-failed">추가에 실패했을 때: 점검 목록</h3>
-  <p>추가에 실패하면 양식에 오류 메시지가 빨간색으로 표시됩니다. <span class="ui">자동 감지</span>를 사용한 경우 그 아래에 찾은 열린 포트가 표시됩니다. 그 아래에는 <span class="ui">먼저 확인할 것</span> 목록이 나타납니다. 목록의 순서는 실패 유형에 따라 달라지며 가능성이 가장 높은 원인이 맨 위에 옵니다. 위에서 아래로 항목을 차례로 확인한 다음 <span class="ui">추가</span>를 다시 탭합니다.</p>
+  <p>추가에 실패하면 양식에 오류 메시지가 빨간색으로 표시됩니다. <span class="ui">자동 감지</span>를 사용한 경우 그 아래에 찾은 열린 포트가 표시되며, 응답한 포트가 하나도 없으면 그 자리에 <span class="ui">이 주소에서 열려 있는 포트를 찾지 못했습니다.</span> 문구가 나타납니다. 그 아래에는 <span class="ui">먼저 확인할 것</span> 목록이 나타납니다. 목록의 순서는 실패 유형에 따라 달라지며 가능성이 가장 높은 원인이 맨 위에 옵니다. 위에서 아래로 항목을 차례로 확인한 다음 <span class="ui">추가</span>를 다시 탭합니다.</p>
   <div class="table-wrap" tabindex="0"><table>
     <thead><tr><th>오류 메시지</th><th>점검 사항(위에서 아래로)</th></tr></thead>
     <tbody>
@@ -342,12 +342,12 @@
     <li class="step">
       <p>수집이 끝날 때까지 기다립니다.</p>
       <p class="check"><b class="check-label">확인:</b> <span class="ui">확인된 내용</span>에 가능성이 있는 원인과 먼저 시도할 일이 쉬운 말로 나열됩니다. 눈에 띄는 문제가 없으면 <span class="ui">눈에 띄는 문제는 없습니다.</span> 문구가 표시됩니다.</p>
-      <figure class="phone"><img src="/guide/img/device-report-found.jpg" alt="기기 보고서의 확인된 내용 목록. 포트, 네트워크 대역, VPN 등 가능성이 있는 원인이 나열되어 있습니다" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-found.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>확인된 내용 목록</figcaption></figure>
+      <figure class="phone"><img src="/guide/img/device-report-found.jpg" alt="기기 보고서의 확인된 내용 목록: 기기가 다른 네트워크 구간에 있고 VPN이 켜져 있다는 내용, 그 아래의 포함할 항목 스위치" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-found.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>확인된 내용 목록</figcaption></figure>
     </li>
     <li class="step">
       <p><span class="ui">포함할 항목</span> 아래에서 보내지 않을 항목의 스위치를 끕니다.</p>
       <p class="check"><b class="check-label">확인:</b> <span class="ui">보고서</span> 섹션의 텍스트가 즉시 갱신됩니다.</p>
-      <figure class="phone"><img src="/guide/img/device-report-text.jpg" alt="보고서 내용을 선택하는 스위치와 보고서 전문. 아래쪽에 보내기 버튼이 있습니다" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-text.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>내용 스위치와 보고서 전문</figcaption></figure>
+      <figure class="phone"><img src="/guide/img/device-report-text.jpg" alt="보고서 전문, 그 아래에 보고서가 저장되어 나중에 보낼 수 있다는 안내, 개발자에게 이메일 보내기, 복사, 공유… 버튼, 맨 아래의 저장된 보고서 삭제 버튼" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-text.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>보고서 전문과 보내기 버튼</figcaption></figure>
     </li>
     <li class="step">
       <p><span class="ui">보고서</span> 섹션에서 전체 텍스트를 검토합니다.</p>
@@ -395,13 +395,13 @@
   </div>
 
   <h4>저장된 보고서</h4>
-  <p>보고서는 모두 이 기기에 저장되며 최근 5개가 유지됩니다. 추가에 실패하면 <span class="ui">상세 정보를 개발자에게 보내기</span> 아래에 저장 날짜가 표시된 항목(예: <span class="ui">2026년 11월 13일 오전 9:41의 이전 보고서</span>)이 나타나며, 이를 탭하면 가장 최근에 저장된 보고서가 열립니다. 저장된 보고서는 저장 당시의 내용을 그대로 보여 주며 항목별로 전환할 수 없습니다. 내용을 다시 고르려면 상세 정보를 다시 수집합니다.</p>
+  <p>보고서는 모두 앱에 저장되며 최근 5개가 유지됩니다. 추가에 실패하면 <span class="ui">상세 정보를 개발자에게 보내기</span> 아래에 저장 날짜가 표시된 항목(예: <span class="ui">2026년 11월 13일 오전 9:41의 이전 보고서</span>)이 나타나며, 이를 탭하면 가장 최근에 저장된 보고서가 열립니다. 저장된 보고서는 저장 당시의 내용을 그대로 보여 주며 항목별로 전환할 수 없습니다. 내용을 다시 고르려면 상세 정보를 다시 수집합니다.</p>
   <p>저장된 보고서를 삭제하는 방법은 다음과 같습니다.</p>
   <ol class="steps">
     <li class="step">
       <p>보고서 페이지 맨 아래의 <span class="ui">저장된 보고서 삭제</span>를 탭합니다.</p>
-      <p class="check"><b class="check-label">확인:</b> <span class="ui">저장된 보고서를 모두 삭제할까요?</span> 대화상자가 표시됩니다. 이 기기에 저장된 모든 기기 보고서가 제거되며 이미 이메일로 보낸 보고서는 영향을 받지 않는다는 설명이 나옵니다.</p>
-      <figure class="phone"><img src="/guide/img/add-report-delete-confirm.jpg" alt="‘저장된 보고서를 모두 삭제할까요?’ 대화상자가 표시된 기기 보고서 페이지. 이 기기에 저장된 모든 보고서가 제거되며 이미 이메일로 보낸 보고서는 영향을 받지 않는다는 설명과 저장된 보고서 삭제 버튼이 있습니다" decoding="async" width="900" height="1956" data-src="/guide/img/add-report-delete-confirm.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>저장된 보고서를 삭제하기 전의 확인 대화상자</figcaption></figure>
+      <p class="check"><b class="check-label">확인:</b> <span class="ui">저장된 보고서를 모두 삭제할까요?</span> 대화상자가 표시됩니다. 저장된 모든 기기 보고서가 제거되며 이미 이메일로 보낸 보고서는 영향을 받지 않는다는 설명이 나옵니다.</p>
+      <figure class="phone"><img src="/guide/img/add-report-delete-confirm.jpg" alt="‘저장된 보고서를 모두 삭제할까요?’ 대화상자가 표시된 기기 보고서 페이지. 저장된 모든 기기 보고서가 제거되며 이미 이메일로 보낸 보고서는 영향을 받지 않는다는 설명과 저장된 보고서 삭제 버튼이 있습니다" decoding="async" width="900" height="1956" data-src="/guide/img/add-report-delete-confirm.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>저장된 보고서를 삭제하기 전의 확인 대화상자</figcaption></figure>
     </li>
     <li class="step">
       <p>대화상자에서 <span class="ui">저장된 보고서 삭제</span>를 탭합니다.</p>
@@ -416,7 +416,7 @@
     <li class="step">
       <p>화면 아래의 <span class="ui">도구</span> 탭을 선택합니다.</p>
       <p class="check"><b class="check-label">확인:</b> <span class="ui">서브넷</span> 섹션의 <span class="ui">이 기기</span> 행에 현재 네트워크 주소와 마스크가 표시됩니다(예: <code>192.168.1.10/24</code>). 주소 입력란과 <span class="ui">범위</span>에는 현재 네트워크가 채워져 있습니다.</p>
-      <figure class="phone"><img src="/guide/img/tools-scan.jpg" alt="도구 탭: 이 기기의 주소, 네트워크, 범위, 검색 버튼이 있는 서브넷 섹션과 그 아래의 찾은 기기 및 속도계" decoding="async" width="900" height="1745" data-src="/guide/img/tools-scan.jpg" style="aspect-ratio: 900 / 1745;" loading="lazy"><figcaption>도구 탭(예시 네트워크)</figcaption></figure>
+      <figure class="phone"><img src="/guide/img/tools-scan.jpg" alt="위쪽에 제목이 있는 도구 탭: 이 기기의 주소, 네트워크, 범위, 검색 버튼이 있는 서브넷 섹션, 그 아래에 아직 기기가 없는 찾은 기기와 속도계 행" decoding="async" width="900" height="1634" data-src="/guide/img/tools-scan.jpg" style="aspect-ratio: 900 / 1634;" loading="lazy"><figcaption>도구 탭(예시 네트워크)</figcaption></figure>
     </li>
     <li class="step">
       <p>선택 사항: 다른 네트워크를 검색하려면 주소 입력란에 네트워크를 입력하고(예: <code>192.168.1.0</code>) <span class="ui">범위</span> 메뉴에서 범위를 선택합니다.</p>

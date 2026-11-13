@@ -346,7 +346,7 @@
   <p>When a YouTube or Twitch link is entered in <span class="ui">IP address or hostname</span>, the <span class="ui">Add</span> button is unavailable and the form offers <span class="ui">Add as a YouTube Live Stream</span> or <span class="ui">Add as a Twitch Channel</span>. Tapping it opens the screen for that service with the link already entered; after the stream has been added, both screens close. Where the two services are not offered, the link is treated as an ordinary address.</p>
 
   <h3 id="add-failed">When adding fails: the checklist</h3>
-  <p>When adding fails, the form shows the error message in red. With <span class="ui">Auto-detect</span>, the open ports that were found are listed below it. Below that, the form lists <span class="ui">Things to check first</span>. The order of the list depends on the kind of failure, with the most likely cause first. Work through the items from top to bottom, then tap <span class="ui">Add</span> again.</p>
+  <p>When adding fails, the form shows the error message in red. With <span class="ui">Auto-detect</span>, the open ports that were found are listed below it, or, when nothing answered, the line <span class="ui">No open ports were found at this address.</span> appears there. Below that, the form lists <span class="ui">Things to check first</span>. The order of the list depends on the kind of failure, with the most likely cause first. Work through the items from top to bottom, then tap <span class="ui">Add</span> again.</p>
   <div class="table-wrap"><table>
     <thead><tr><th>Error message</th><th>Checks (from top to bottom)</th></tr></thead>
     <tbody>
@@ -408,7 +408,7 @@
   <h3 id="add-report">Device report (experimental)</h3>
   <div class="callout warn">
     <strong class="t">Experimental feature, no guarantee of support</strong>
-    <p>The device report is an experimental feature. It may change or be removed at any time. Sending a report does not mean that the developer will add support for the device, and there is no guarantee of a reply, a fix or a timeline. Some devices cannot be supported by design, for example because of closed or proprietary protocols, cloud-only operation, licensing or encryption restrictions, or hardware limits. The feature is not a customer-support or urgent-help channel.</p>
+    <p>The device report is an experimental feature. It may change or be removed at any time. Sending a report does not mean that the developer will add support for the device, and there is no guarantee of a reply, a fix, or a timeline. Some devices cannot be supported by design, for example because of closed or proprietary protocols, cloud-only operation, licensing or encryption restrictions, or hardware limits. The feature is not a customer-support or urgent-help service.</p>
     <p>Collecting the details signs in to the device with the account and password that were entered. Failed sign-ins are counted, and may be logged, by the device. When the password may be wrong, correct it first as described in <a class="xref" href="#add-failed">“When adding fails: the checklist”</a> instead of trying repeatedly.</p>
   </div>
   <p>The <span class="ui">Send details to the developer</span> button, marked <span class="ui">Experimental</span>, appears below the checklist only after adding has failed; it is not shown when adding succeeds. The feature runs only when the button is tapped. It checks the device with read-only requests and assembles a text report for review. Cam Hub never uploads the report by itself; the report is sent only if the person chooses to email it from their own mail account.</p>
@@ -424,18 +424,18 @@
       <p class="check"><b class="check-label">Check:</b> The screen shows <span class="ui">Collecting details…</span> and the progress of each check.</p>
       <div class="shots pair">
         <figure class="phone"><img src="guide/img/device-report-notice.jpg" alt="The full notice before first use, listing the limits of the experimental feature, with the confirmation button at the bottom" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The notice before first use</figcaption></figure>
-        <figure class="phone"><img src="guide/img/add-report-collecting.jpg" alt="The Device Report page while the details are collected: the Stop button at the top left, the Experimental badge with its notice and the About this feature row, the line Collecting details…, and checks with green check marks and orange cross marks" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The report page while the details are collected</figcaption></figure>
+        <figure class="phone"><img src="guide/img/add-report-collecting.jpg" alt="The Device Report page while the details are collected: the Stop button at the top left, the Experimental badge with its notice and the About This Feature row, the line Collecting details…, and checks with green check marks and orange cross marks" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The report page while the details are collected</figcaption></figure>
       </div>
     </li>
     <li class="step">
       <p>Wait until the collection is complete.</p>
       <p class="check"><b class="check-label">Check:</b> <span class="ui">What we found</span> lists the likely causes and what to try first, in plain language. When nothing stands out, the screen shows <span class="ui">Nothing obvious stands out.</span></p>
-      <figure class="phone"><img src="guide/img/device-report-found.jpg" alt="The findings list of the device report, with likely causes such as ports, network segment and VPN" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The findings list</figcaption></figure>
+      <figure class="phone"><img src="guide/img/device-report-found.jpg" alt="The findings list of the device report: the device is on a different network segment and a VPN is active, with the What to include switches below" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The findings list</figcaption></figure>
     </li>
     <li class="step">
       <p>Under <span class="ui">What to include</span>, switch off the items that should not be sent.</p>
       <p class="check"><b class="check-label">Check:</b> The text in the <span class="ui">The report</span> section updates immediately.</p>
-      <figure class="phone"><img src="guide/img/device-report-text.jpg" alt="The switches for the report contents and the full text of the report, with the buttons for sending below" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Content switches and the full report</figcaption></figure>
+      <figure class="phone"><img src="guide/img/device-report-text.jpg" alt="The full text of the report, below it the note that the report is saved in the app, the buttons Email to developer, Copy and Share…, and the Delete saved reports button at the bottom" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The full report and the buttons for sending</figcaption></figure>
     </li>
     <li class="step">
       <p>Review the full text in the <span class="ui">The report</span> section.</p>
@@ -460,7 +460,7 @@
     </li>
   </ol>
   <ul>
-    <li>After the notice has been confirmed once, the report page shows only a short reminder at the top, with <span class="ui">About this feature</span> to read the full notice again.</li>
+    <li>After the notice has been confirmed once, the report page shows only a short reminder at the top, with <span class="ui">About This Feature</span> to read the full notice again.</li>
     <li>During the collection, <span class="ui">Stop</span> in the top-left corner ends it early. What has been found so far is kept, the screen shows <span class="ui">You stopped the collection, so this report is partial. Nothing has been sent.</span> and offers <span class="ui">Collect again</span>.</li>
     <li><span class="ui">What to include</span> has five items: <span class="ui">Network</span>, <span class="ui">HTTP fingerprint</span>, <span class="ui">Protocol probes</span>, <span class="ui">RTSP and video</span> and <span class="ui">App trace</span>, each marked with a letter. The findings and the report header are always included.</li>
     <li>Besides <span class="ui">Email to developer</span>, the report can be copied with <span class="ui">Copy</span> or passed on with <span class="ui">Share…</span>. A copy stays on this device only and expires after about 2 minutes.</li>
@@ -483,13 +483,13 @@
   </div>
 
   <h4>Saved reports</h4>
-  <p>Each report is saved on this device, and the five most recent are kept. After a failed attempt, an entry with the saved date, for example <span class="ui">Previous report from Nov 13, 2026 at 9:41 AM</span>, appears below <span class="ui">Send details to the developer</span>; tapping it opens the most recent saved report. A saved report shows its content as it was saved and cannot be switched item by item; to choose the content again, collect the details again.</p>
+  <p>Each report is saved in the app, and the five most recent are kept. After a failed attempt, an entry with the saved date, for example <span class="ui">Previous report from Nov 13, 2026 at 9:41 AM</span>, appears below <span class="ui">Send details to the developer</span>; tapping it opens the most recent saved report. A saved report shows its content as it was saved and cannot be switched item by item; to choose the content again, collect the details again.</p>
   <p>To delete the saved reports:</p>
   <ol class="steps">
     <li class="step">
       <p>At the bottom of the report page, tap <span class="ui">Delete saved reports</span>.</p>
-      <p class="check"><b class="check-label">Check:</b> The screen shows the dialog <span class="ui">Delete all saved reports?</span>, which explains that every device report saved on this device is removed and that a report that was already emailed is not affected.</p>
-      <figure class="phone"><img src="guide/img/add-report-delete-confirm.jpg" alt="The Device Report page with the dialog Delete all saved reports? over it: the text that every report saved on this device is removed and that a report already emailed is not affected, and the button Delete saved reports" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The confirmation before the saved reports are deleted</figcaption></figure>
+      <p class="check"><b class="check-label">Check:</b> The screen shows the dialog <span class="ui">Delete all saved reports?</span>, which explains that every saved device report is removed and that a report that was already emailed is not affected.</p>
+      <figure class="phone"><img src="guide/img/add-report-delete-confirm.jpg" alt="The Device Report page with the dialog Delete all saved reports? over it: the text that every saved device report is removed and that a report already emailed is not affected, and the button Delete saved reports" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The confirmation before the saved reports are deleted</figcaption></figure>
     </li>
     <li class="step">
       <p>Tap <span class="ui">Delete saved reports</span> in the dialog.</p>
@@ -504,7 +504,7 @@
     <li class="step">
       <p>Tap the <span class="ui">Tools</span> tab at the bottom of the screen.</p>
       <p class="check"><b class="check-label">Check:</b> In the <span class="ui">Subnet</span> section, the <span class="ui">This device</span> row shows the current network address and mask, for example <code>192.168.1.10/24</code>. The address field and <span class="ui">Range</span> are filled in with the current network.</p>
-      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="The Tools tab: the Subnet section with the address of this device, the network, the range and the Scan button, with Found Devices and Speedometer below" loading="lazy" decoding="async" width="900" height="1745"><figcaption>The Tools tab (sample network)</figcaption></figure>
+      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="The Tools tab with its title at the top: the Subnet section with the address of this device, the network, the range and the Scan button, below it Found Devices with no devices yet and the Speedometer row" loading="lazy" decoding="async" width="900" height="1634"><figcaption>The Tools tab (sample network)</figcaption></figure>
     </li>
     <li class="step">
       <p>Optional: to scan a different network, enter the network in the address field, for example <code>192.168.1.0</code>, and select the range in the <span class="ui">Range</span> menu.</p>
@@ -881,8 +881,8 @@
     </li>
     <li class="step">
       <p>Tap <span class="ui">Rename Camera</span>.</p>
-      <p class="check"><b class="check-label">Check:</b> The dialog <span class="ui">Rename Camera</span> opens, with the text <span class="ui">Name this camera yourself. The device's own name is kept underneath, so refreshing the device won't overwrite yours.</span>, the current name in the <span class="ui">Name</span> field and the buttons <span class="ui">Cancel</span>, <span class="ui">Use Device Name</span> and <span class="ui">Save</span>.</p>
-      <figure class="phone"><img src="guide/img/channel-rename-alert.jpg" alt="The Rename Camera dialog with the Name field and the buttons Cancel, Use Device Name and Save" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The Rename Camera dialog</figcaption></figure>
+      <p class="check"><b class="check-label">Check:</b> The dialog <span class="ui">Rename Camera</span> opens, with the text <span class="ui">Name this camera yourself. The device's own name is kept underneath, so refreshing the device won't overwrite yours.</span>, the current name in the <span class="ui">Name</span> field and the buttons <span class="ui">Use Device Name</span>, <span class="ui">Save</span> and <span class="ui">Cancel</span>.</p>
+      <figure class="phone"><img src="guide/img/channel-rename-alert.jpg" alt="The Rename Camera dialog with the Name field and the buttons Use Device Name, Save and Cancel; the keyboard is open below the dialog" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The Rename Camera dialog</figcaption></figure>
     </li>
     <li class="step">
       <p>Enter the new name in the <span class="ui">Name</span> field.</p>
@@ -1009,7 +1009,7 @@
     <li class="step">
       <p>Tap a thumbnail that shows a picture.</p>
       <p class="check"><b class="check-label">Check:</b> A close-up of that camera opens over the wall, with <span class="ui">Back</span> and the camera name at the top.</p>
-      <figure class="phone"><img src="guide/img/fullwall-closeup.jpg" alt="The close-up of one camera over the wall: the back button and the camera name at the top left, the picture across the middle of the black screen, and the camera control button at the lower right" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The close-up of a camera</figcaption></figure>
+      <figure class="phone"><img src="guide/img/fullwall-closeup.jpg" alt="The close-up of one camera over the wall: the back button and the camera name at the top left, the Recordings button with a clock symbol at the top right, the picture across the middle of the black screen, and the camera control button at the lower right" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The close-up of a camera</figcaption></figure>
     </li>
     <li class="step">
       <p>Tap <span class="ui">Back</span> at the top left of the close-up.</p>
@@ -1243,7 +1243,7 @@
     <li class="step">
       <p>Tap the <span class="ui">Settings</span> tab, then scroll to <span class="ui">Hide offline cameras</span>. The row is in its own section below <span class="ui">Picture</span>.</p>
       <p class="check"><b class="check-label">Check:</b> The switch is off. The text below the row reads <span class="ui">Cameras with no signal are hidden from the live walls. The device page still lists them, grayed out.</span></p>
-      <figure class="phone"><img src="guide/img/settings-2.jpg" alt="The settings page: the rows Black bars and Edge-to-Edge Video, the switch Hide offline cameras, and below them the LiveView Mix section with Open on launch" loading="lazy" decoding="async" width="900" height="1947"><figcaption>The switch Hide offline cameras in the settings</figcaption></figure>
+      <figure class="phone"><img src="guide/img/settings-2.jpg" alt="The settings page: the rows Black bars and Edge-to-edge video, the switch Hide offline cameras, and below them the LiveView Mix section with Open on launch" loading="lazy" decoding="async" width="900" height="1947"><figcaption>The switch Hide offline cameras in the settings</figcaption></figure>
     </li>
     <li class="step">
       <p>Turn on <span class="ui">Hide offline cameras</span>.</p>
@@ -1282,7 +1282,7 @@
     <li class="step">
       <p>Tap the thumbnail of a channel that shows a live picture.</p>
       <p class="check"><b class="check-label">Check:</b> The single-camera view opens. The title is the name of the camera, and the green badge <span class="ui">LIVE</span> is shown at the top left of the picture. The picture starts with the quality of <span class="path"><span class="ui">Settings</span> › <span class="ui">Default quality</span> › <span class="ui">Single camera</span></span> (HD unless changed).</p>
-      <figure class="phone"><img src="guide/img/single-live.jpg" alt="The single-camera view in live mode: the picture with the LIVE badge and the camera control button, below it the controls bar with Snapshot at the left and the SD and HD switch at the right, and the recording panel with the day, the timeline and the list" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The single-camera view in live mode</figcaption></figure>
+      <figure class="phone"><img src="guide/img/single-live.jpg" alt="The single-camera view in live mode: the picture with the LIVE badge and the camera control button, below it the controls bar with Snapshot, the red record button and the SD and HD switch, and the recording panel with the calendar button, the day, the timeline and the list" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The single-camera view in live mode</figcaption></figure>
     </li>
   </ol>
   <p>Tap the back button in the top-left corner to leave the view.</p>
@@ -1293,7 +1293,7 @@
     <tbody>
       <tr><td>Navigation bar</td><td>The back button and the name of the camera. On an iPad and on the inner display of iPhone Duo, the <span class="ui">Open in New Window</span> button is at the right; see <a class="xref" href="#single-window">“A camera in a window of its own”</a>.</td></tr>
       <tr><td>Picture (upright, 16:9)</td><td>The badge at the top left names the mode: <span class="ui">LIVE</span> (green) or <span class="ui">PLAYBACK 15:00:03</span>, with the playback time (red). The round button at the lower right is the camera control for PTZ in live mode; see <a class="xref" href="#single-ptz">“PTZ control: moving the camera”</a>. While a recording plays, it is the speed button; see <a class="xref" href="#playback-speed">“Playback speed”</a>.</td></tr>
-      <tr><td>Controls bar</td><td><span class="ui">Snapshot</span> at the left, then the red record button; next to them the speaker button when the camera sends sound, and the talk button for a camera that can be talked through; at the right the SD/HD switch in live mode or <span class="ui">Back to Live</span> during playback. When the row is short of room, for example in a long language, <span class="ui">Snapshot</span> shows only its camera symbol. See <a class="xref" href="#single-controls">“Snapshot, sound and quality”</a>, <a class="xref" href="#single-clip">“Recording a clip”</a> and <a class="xref" href="#single-talk">“Two-way talk”</a>.</td></tr>
+      <tr><td>Controls bar</td><td><span class="ui">Snapshot</span> at the left, then the red record button; next to them the speaker button when the camera sends sound, and the talk button for a camera that can be talked through; at the right the SD/HD switch in live mode or <span class="ui">Back to Live</span> during playback. When the row is short of room, for example when the speaker or talk button is in it, or in a long language, <span class="ui">Snapshot</span> shows only its camera symbol. See <a class="xref" href="#single-controls">“Snapshot, sound and quality”</a>, <a class="xref" href="#single-clip">“Recording a clip”</a> and <a class="xref" href="#single-talk">“Two-way talk”</a>.</td></tr>
       <tr><td>Recording panel</td><td>The heading <span class="ui">Recordings</span> with the day, the timeline and the list of recordings, and on supported devices the button for the recording calendar. The panel appears only for devices that support playback; for all other devices, the view consists of the picture and the controls bar. See <a class="xref" href="#playback">Chapter 7, “Recording playback and speed”</a>.</td></tr>
     </tbody>
   </table></div>
@@ -1355,7 +1355,7 @@
     <li class="step">
       <p>Tap the speaker button in the controls bar (<span class="ui">Unmute</span>).</p>
       <p class="check"><b class="check-label">Check:</b> The symbol changes from a crossed-out speaker to a speaker with sound waves, and the sound of the camera plays.</p>
-      <figure class="phone"><img src="guide/img/single-audio.jpg" alt="The controls bar of a camera that sends sound, with the speaker button between Snapshot and the SD and HD switch" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The speaker button in the controls bar</figcaption></figure>
+      <figure class="phone"><img src="guide/img/single-audio.jpg" alt="The controls bar of a camera that sends sound: Snapshot as a camera symbol, the red record button, the speaker button and the SD and HD switch" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The speaker button in the controls bar</figcaption></figure>
     </li>
     <li class="step">
       <p>Tap the speaker button again (<span class="ui">Mute</span>).</p>
@@ -1423,7 +1423,7 @@
   <h3 id="single-talk">Two-way talk</h3>
   <p>A standalone camera with a speaker can be talked through. Talk works like a walkie-talkie: hold the button to speak, release it to listen. Cam Hub asks the camera for its talk channel when the view opens; the talk button (a microphone symbol) appears in the controls bar, after the record button and the speaker button, when the camera reports one.</p>
   <p>Prerequisites: a standalone camera of a supported brand that reports a two-way audio channel, live mode, and a channel within the plan. Channels of a recorder have no talk button: the talk channel of a recorder is the recorder's own audio output, not the speaker of the camera.</p>
-  <figure class="phone"><img src="guide/img/single-talk.jpg" alt="The single-camera view of a camera with a speaker: the talk button with a microphone symbol in the controls bar, and the SD and HD switch" loading="lazy" decoding="async" width="900" height="1947"><figcaption>The talk button in the controls bar</figcaption></figure>
+  <figure class="phone"><img src="guide/img/single-talk.jpg" alt="The single-camera view of a camera with a speaker: the talk button with a microphone symbol in the controls bar, and the SD and HD switch" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The talk button in the controls bar</figcaption></figure>
   <p>The first time the talk button is pressed, a dialog of the system asks for access to the microphone. Allow it, then press the button again.</p>
   <ol class="steps">
     <li class="step">
@@ -1486,7 +1486,7 @@
     <li class="step">
       <p>Tap the round button at the lower right of the picture (<span class="ui">Move camera</span>).</p>
       <p class="check"><b class="check-label">Check:</b> The pad opens to the left of the button, and the button shows a cross (<span class="ui">Hide camera controls</span>). The pad holds a capsule with plus and minus for zoom, a disc with four arrows and a house symbol in the middle, and a star button. For a camera that supports aiming by touch, an aim button with a target symbol is added next to the disc, above the star.</p>
-      <figure class="phone"><img src="guide/img/single-ptz.jpg" alt="The single-camera view with the camera control open: the zoom capsule, the direction disc with the house symbol, the aim button, the star button and the cross button on the picture" loading="lazy" decoding="async" width="900" height="1947"><figcaption>The camera control on the picture</figcaption></figure>
+      <figure class="phone"><img src="guide/img/single-ptz.jpg" alt="The single-camera view with the camera control open: the zoom capsule, the direction disc with the house symbol, the aim button, the star button and the cross button on the picture" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The camera control on the picture</figcaption></figure>
     </li>
     <li class="step">
       <p>Press and hold an arrow of the disc (<span class="ui">Tilt up</span>, <span class="ui">Tilt down</span>, <span class="ui">Pan left</span> or <span class="ui">Pan right</span>).</p>
@@ -1527,7 +1527,7 @@
 
   <h4>Aiming by touching the picture</h4>
   <p>On cameras that support it, the camera can be turned toward a spot of the picture, or zoomed straight into an area drawn on the picture. Prerequisite: the pad is open and shows the aim button.</p>
-  <figure class="phone"><img src="guide/img/single-ptz-aim.jpg" alt="The single-camera view while aiming by touch: the hint at the top of the picture, the lit aim button and the cross button" loading="lazy" decoding="async" width="900" height="1947"><figcaption>Aiming by touch</figcaption></figure>
+  <figure class="phone"><img src="guide/img/single-ptz-aim.jpg" alt="The single-camera view while aiming by touch: the hint at the top of the picture, the lit aim button and the cross button" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Aiming by touch</figcaption></figure>
   <ol class="steps">
     <li class="step">
       <p>Tap the aim button (<span class="ui">3D positioning</span>).</p>
@@ -1683,7 +1683,7 @@
     </tbody>
   </table></div>
   <div class="shots pair">
-    <figure class="phone"><img src="guide/img/single-reconnecting.jpg" alt="The single-camera view while the stream reconnects: a spinner with the text Reconnecting… on the black picture area, the LIVE badge at the top left, the camera control button at the lower right, below it the controls bar with Snapshot at the left and the SD and HD switch at the right, the line Could not reach the device., and the recording panel with an empty timeline" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The picture while the connection is made again</figcaption></figure>
+    <figure class="phone"><img src="guide/img/single-reconnecting.jpg" alt="The single-camera view while the stream reconnects: a spinner with the text Reconnecting… on the black picture area, the LIVE badge at the top left, the camera control button at the lower right, below it the controls bar with Snapshot and the red record button at the left and the SD and HD switch at the right, the line Could not reach the device., and the recording panel with an empty timeline" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The picture while the connection is made again</figcaption></figure>
     <figure class="phone"><img src="guide/img/single-failed.jpg" alt="The single-camera view with a failure message and the Retry button over the dark picture area" loading="lazy" decoding="async" width="900" height="1956"><figcaption>A failure message with Retry</figcaption></figure>
   </div>
   <ol class="steps">
@@ -1719,7 +1719,7 @@
   <div class="table-wrap"><table>
     <thead><tr><th>Offer</th><th>Shown when</th></tr></thead>
     <tbody>
-      <tr><td>Recording panel with day, timeline and list</td><td>The device was added with a connection method that offers playback; see <a class="xref" href="#brands-matrix">“What works with which method”</a>. When the account may not read recordings, the panel is still shown, with <span class="ui">This account cannot read recordings on this device.</span> above the timeline.</td></tr>
+      <tr><td>Recording panel with day, timeline and list</td><td>The device was added with a connection method that offers playback; see <a class="xref" href="#brands-matrix">“What works with which method”</a>. When the device refuses the sign-in, because the account may not read recordings or because the username or password is wrong, the panel is still shown, with <span class="ui">This account cannot read recordings on this device.</span> above the timeline.</td></tr>
       <tr><td>Button for the recording calendar</td><td>The device also keeps a daily index of its recordings; see <a class="xref" href="#playback-calendar">“The recording calendar”</a>.</td></tr>
       <tr><td>Switch <span class="ui">Continuous</span> and <span class="ui">Events</span></td><td>The device was added with a connection method that offers an index of events: of detected people, or of motion and alarm inputs; see <a class="xref" href="#brands-matrix">“What works with which method”</a>. The switch is shown even when the device itself does not answer the search of that index; see <a class="xref" href="#playback-list">“The list of recordings and events”</a>. With any other connection method, the switch appears only when the chosen day or the day before holds a recording that the device made because of an event. Otherwise, only the list of continuous recordings is shown, with no switch.</td></tr>
       <tr><td>Speed button</td><td>During playback, when the device can play the recording faster. If it cannot, a notice appears; see <a class="xref" href="#playback-speed">“Playback speed”</a>.</td></tr>
@@ -1759,7 +1759,7 @@
 
   <h3 id="playback-calendar">The recording calendar</h3>
   <p>On devices that keep a daily index of their recordings, a calendar button sits between the heading <span class="ui">Recordings</span> and the day. Its calendar marks the days that have recordings, so that a day does not have to be tried one after another. Without such an index, the button is not shown and the day is chosen as described in <a class="xref" href="#playback-day">“Choosing a day”</a>.</p>
-  <figure class="phone"><img src="guide/img/playback-calendar.jpg" alt="The Recording calendar sheet over the single-camera view: the month with arrows, days with recordings marked with a dot, the chosen day in a filled circle and the line Days with a dot have recordings." loading="lazy" decoding="async" width="900" height="1947"><figcaption>The recording calendar</figcaption></figure>
+  <figure class="phone"><img src="guide/img/playback-calendar.jpg" alt="The Recording calendar sheet over the single-camera view: the month with arrows, days with recordings marked with a dot, the chosen day in a filled circle and the line Days with a dot have recordings." loading="lazy" decoding="async" width="900" height="1956"><figcaption>The recording calendar</figcaption></figure>
   <ol class="steps">
     <li class="step">
       <p>Tap the calendar button (<span class="ui">Recording calendar</span>) next to the day.</p>
@@ -1877,7 +1877,7 @@
       <tr><td><span class="ui">No events on this day.</span></td><td>The day has no event, on any other device.</td></tr>
       <tr><td><span class="ui">This device could not search its person-event index.</span></td><td>Shown under <span class="ui">Events</span> in place of the list when the device does not answer the search for detected people, for example an older recorder without an index of people. Recordings that the device made because of an event are then not listed, but can still be played from their red bars on the timeline. The continuous list is not affected.</td></tr>
       <tr><td><span class="ui">This device could not search its events.</span></td><td>The same, on a device that marks motion and alarm inputs.</td></tr>
-      <tr><td>Message with a warning symbol above the timeline: <span class="ui">This account cannot read recordings on this device.</span>, <span class="ui">Could not reach the device.</span>, <span class="ui">The device did not recognize this camera's recordings.</span> or <span class="ui">This camera is offline.</span></td><td>The search for the day failed for the reason that the message names. The day can be changed, and another day tried, while the message is shown. For the account, check its rights on the device; for the connection, see <a class="xref" href="#trouble">Chapter 15, “Troubleshooting”</a>.</td></tr>
+      <tr><td>Message with a warning symbol above the timeline: <span class="ui">This account cannot read recordings on this device.</span>, <span class="ui">Could not reach the device.</span>, <span class="ui">The device did not recognize this camera's recordings.</span> or <span class="ui">This camera is offline.</span></td><td>The search for the day failed for the reason that the message names. The day can be changed, and another day tried, while the message is shown. For the account, check its username, password and rights on the device; for the connection, see <a class="xref" href="#trouble">Chapter 15, “Troubleshooting”</a>.</td></tr>
       <tr><td><span class="ui">Too many requests just now. Try again in a minute.</span></td><td>The device or its service refused the search because of too many requests, or the device was still busy with an earlier search. Wait a minute and choose the day again.</td></tr>
       <tr><td>Other messages in the same place, for example <span class="ui">The device sent an unexpected reply.</span>, <span class="ui">The connection timed out.</span> or <span class="ui">Something went wrong. Please try again.</span></td><td>The search failed for another reason. Choose the day again. When the message persists, see <a class="xref" href="#trouble">Chapter 15, “Troubleshooting”</a>.</td></tr>
     </tbody>
@@ -1958,7 +1958,7 @@
     <li class="step">
       <p>Start a recording and turn the iPhone sideways.</p>
       <p class="check"><b class="check-label">Check:</b> The picture fills the screen. A strip over the lower edge of the picture holds the badge <span class="ui">PLAYBACK 15:00:03</span>, the speed button, <span class="ui">Back to Live</span> and the timeline.</p>
-      <figure class="land"><img src="guide/img/playback-landscape.jpg" alt="Playback in landscape: the picture over the whole screen with a strip at the lower edge that holds the playback badge, the speed button, Back to Live and the timeline" loading="lazy" decoding="async" width="1600" height="736"><figcaption>Playback in landscape</figcaption></figure>
+      <figure class="land"><img src="guide/img/playback-landscape.jpg" alt="Playback in landscape: the picture in the middle of the black screen, the back button with the playback badge beside it and the red record button at the top, and a strip at the lower edge that holds the playback badge, the speed button, Back to Live and the timeline" loading="lazy" decoding="async" width="1600" height="736"><figcaption>Playback in landscape</figcaption></figure>
     </li>
     <li class="step">
       <p>Drag the timeline in the strip and lift the finger at the wanted time.</p>
@@ -2096,7 +2096,7 @@
     <li class="step">
       <p>Tick five more channels, in the order in which they should appear on the wall.</p>
       <p class="check"><b class="check-label">Check:</b> The top of the page shows <span class="ui" data-ui="value">6 cameras selected</span>.</p>
-      <figure class="phone"><img src="guide/img/lvm-pick-selected.jpg" alt="The Choose Cameras page with 6 cameras selected: each ticked channel has an SD and HD selector on its right, with the All SD and All HD buttons at the top" loading="lazy" decoding="async" width="900" height="1956"><figcaption>6 cameras selected</figcaption></figure>
+      <figure class="phone"><img src="guide/img/lvm-pick-selected.jpg" alt="The Choose Cameras page with 6 cameras selected: the Landscape page and Portrait page switch at the top, the All SD and All HD buttons below it, and an SD and HD selector on the right of each ticked channel" loading="lazy" decoding="async" width="900" height="1956"><figcaption>6 cameras selected</figcaption></figure>
     </li>
     <li class="step">
       <p>Optional: tap <span class="ui">HD</span> beside each camera that should show a sharper picture.</p>
@@ -2360,7 +2360,7 @@
   <h3 id="lvm-arrange">Arranging the wall and its tiles</h3>
   <p>Path: <span class="path"><span class="ui">LiveView Mix</span> › <span class="ui">Adjust the Layout</span> › <span class="ui">Arrange the wall</span></span>. This page decides what goes into each tile. Its title is <span class="ui">Arrange</span>. From top to bottom, the page holds the layout row, the canvas, <span class="ui">Tips</span> and the <span class="ui">Order</span> list. <span class="ui">Arrange the wall</span> is available as soon as cameras have been selected or a device exists.</p>
   <figure class="phone clip"><video class="clip" src="guide/vid/rec-arrange-swap.mp4" poster="guide/img/rec-arrange-swap.jpg" aria-label="Arranging the wall: dragging a tile onto another swaps the two, and dragging a tile to an empty cell moves it there." muted loop playsinline preload="metadata"></video><figcaption>Arranging the wall: dragging a tile onto another swaps the two, and dragging a tile to an empty cell moves it there.</figcaption></figure>
-  <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="The Arrange page: the layout row at the top, the canvas with ten tiles in the middle (tile 9 is a control panel and tile 10 a clock), and the Order list below" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The Arrange page</figcaption></figure>
+  <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="The Arrange page: the layout row at the top, the canvas with ten tiles in the middle (tile 9 is a control panel and tile 10 a clock), and Tips and the Order list below" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The Arrange page</figcaption></figure>
   <ul>
     <li><b>Layout row</b>: the same layout diagrams as on <span class="ui">Adjust the Layout</span>; the layout can be changed here directly. The <span class="ui">Custom</span> diagram appears once a layout has been drawn or while it is in use, and can only be selected here.</li>
     <li><b>Canvas</b>: drawn in 16:9 landscape for the landscape page and in 9:16 portrait for the portrait page, showing the current wall page. The number of each filled tile is in its top-left corner. Camera tiles show a live picture (SD); a camera that is offline or outside the plan shows a black tile with a crossed-out camera icon, and a YouTube or Twitch stream shows its name. While the watermark is off, the channel name is in the bottom-left corner; when it is on, the watermark is previewed. Control panels on the canvas look as they do on the wall, without the lock of a panel that the plan does not cover; tapping one opens its editor and does not send a request. On a device held upright, the real landscape wall is flipped, but each tile keeps its number.</li>
@@ -2941,7 +2941,7 @@
     <li class="step">
       <p>Tap <span class="ui">Arrange the wall</span>.</p>
       <p class="check"><b class="check-label">Check:</b> The <span class="ui">Arrange</span> page opens: the canvas of the wall is at the top, and the <span class="ui">Order</span> list below it lists every filled tile under its number.</p>
-      <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="The Arrange page: the wall canvas at the top with a control panel in tile 9 and a clock in tile 10, and the list of filled tiles below" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The Arrange page</figcaption></figure>
+      <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="The Arrange page: the layout row at the top, the wall canvas below it with a control panel in tile 9 and a clock in tile 10, and the list of filled tiles below" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The Arrange page</figcaption></figure>
     </li>
     <li class="step">
       <p>Tap an unused tile on the canvas, shown with a dashed outline and a +. When the unused tiles are on another wall page, use the arrows below the canvas or swipe sideways first.</p>
@@ -3084,8 +3084,8 @@
     </li>
   </ol>
   <div class="shots pair">
-    <figure class="phone"><img src="guide/img/lvm-button-editor.jpg" alt="The button editor: icon, label, Confirm before firing, and the method and URL of the Request section" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The button editor (upper part)</figcaption></figure>
-    <figure class="phone"><img src="guide/img/lvm-button-headers.jpg" alt="The lower part of the button editor: the Headers section with one Authorization row, and the Body section with the content type and JSON content" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The button editor (lower part)</figcaption></figure>
+    <figure class="phone"><img src="guide/img/lvm-button-editor.jpg" alt="The button editor: icon, label, Confirm before firing, the method and URL of the Request section, and the Apple Watch section with How it is sent" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The button editor (upper part)</figcaption></figure>
+    <figure class="phone"><img src="guide/img/lvm-button-headers.jpg" alt="The lower part of the button editor: the Apple Watch section, the Headers section with one Authorization row, and the Body section with the content type and JSON content" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The button editor (lower part)</figcaption></figure>
   </div>
   <div class="table-wrap"><table>
     <thead><tr><th>Field</th><th>Description</th></tr></thead>
@@ -3117,7 +3117,7 @@
     <li class="step">
       <p>Watch the icon of the button.</p>
       <p class="check"><b class="check-label">Check:</b> Depending on the result, the icon changes to a green check mark or an orange warning triangle, and returns to the original icon after about 1.6 seconds.</p>
-      <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="Three states of one button: the spinner while sending, the green check mark after success and the orange warning triangle after a failure" loading="lazy" decoding="async" width="1600" height="736"><figcaption>The three states of a button</figcaption></figure>
+      <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="Three buttons of a control panel on the LiveView Mix wall, each in one of the states: the spinner while sending, the green check mark after success and the orange warning triangle after a failure" loading="lazy" decoding="async" width="1600" height="736"><figcaption>The three states of a button, one on each button</figcaption></figure>
     </li>
   </ol>
   <div class="table-wrap"><table>
@@ -3851,7 +3851,7 @@ Content-Type: application/json
     <li class="step">
       <p>In the section <span class="ui">Camera plans · billed yearly</span> or <span class="ui">NVR plans · billed monthly</span>, find the plan to take and tap <span class="ui">Subscribe</span> on its card.</p>
       <p class="check"><b class="check-label">Check:</b> The system purchase confirmation appears. Each card shows the name of the plan, a short description and its cost; when the Apple Account is eligible, the length of a free trial is shown as well.</p>
-      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="The top of the Plans page: the Cam Hub logo, the heading Unlock every camera, a sentence about what the Free plan shows, five short lines about the plans and what they include, and the heading Camera plans · billed yearly at the bottom edge" loading="lazy" decoding="async" width="900" height="1215"><figcaption>The top of the Plans page; the plan cards follow below</figcaption></figure>
+      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="The top of the Plans page: the Cam Hub logo, the heading Unlock every camera, a sentence about what the Free plan shows, and five short lines about the plans and what they include" loading="lazy" decoding="async" width="900" height="1215"><figcaption>The top of the Plans page; the plan cards follow below</figcaption></figure>
     </li>
     <li class="step">
       <p>Follow the prompts of the system screen to confirm the purchase with the Apple Account.</p>
@@ -3950,7 +3950,7 @@ Content-Type: application/json
     <li class="step">
       <p>Tap the <span class="ui">Tools</span> tab at the bottom of the screen.</p>
       <p class="check"><b class="check-label">Check:</b> The screen shows the sections of the tab, beginning with <span class="ui">Subnet</span>. The address field and the range are already filled in with the network of the device.</p>
-      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="The Tools tab: the Subnet section with the own address, the network, the range and the Scan button, below it Found Devices and the Speedometer row" loading="lazy" decoding="async" width="900" height="1745"><figcaption>The Tools tab (sample network)</figcaption></figure>
+      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="The Tools tab with its title at the top: the Subnet section with the address of this device, the network, the range and the Scan button, below it Found Devices with no devices yet and the Speedometer row" loading="lazy" decoding="async" width="900" height="1634"><figcaption>The Tools tab (sample network)</figcaption></figure>
     </li>
   </ol>
   <p>For the steps of a scan, see <a class="xref" href="#add-scan">“Finding devices with the network scan”</a>. The following points concern the behavior of the tab as a whole.</p>
@@ -4132,7 +4132,7 @@ Content-Type: application/json
     <li class="step">
       <p>In the section <span class="ui">Subscription</span>, tap <span class="ui">Plans</span>.</p>
       <p class="check"><b class="check-label">Check:</b> The page <span class="ui">Plans</span> opens over the settings. It lists the camera plans and the NVR plans and marks the current plan.</p>
-      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="The top of the Plans page: the Cam Hub logo, the heading Unlock every camera, a sentence about what the Free plan shows, five short lines about the plans and what they include, and the heading Camera plans · billed yearly at the bottom edge" loading="lazy" decoding="async" width="900" height="1215"><figcaption>The top of the Plans page; the plan cards follow below</figcaption></figure>
+      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="The top of the Plans page: the Cam Hub logo, the heading Unlock every camera, a sentence about what the Free plan shows, and five short lines about the plans and what they include" loading="lazy" decoding="async" width="900" height="1215"><figcaption>The top of the Plans page; the plan cards follow below</figcaption></figure>
     </li>
     <li class="step">
       <p>Tap <span class="ui">Done</span> in the top-right corner.</p>
@@ -4256,7 +4256,7 @@ Content-Type: application/json
     <li class="step">
       <p>Tap the row <span class="ui" data-ui="value">Language</span>.</p>
       <p class="check"><b class="check-label">Check:</b> A menu lists <span class="ui">Follow System</span> and the languages <span class="ui" data-ui="value">English</span>, <span class="ui" data-ui="value">繁體中文</span>, <span class="ui" data-ui="value">简体中文</span>, <span class="ui" data-ui="value">日本語</span>, <span class="ui" data-ui="value">한국어</span>, <span class="ui" data-ui="value">العربية</span>, <span class="ui" data-ui="value">Deutsch</span>, <span class="ui" data-ui="value">Español</span>, <span class="ui" data-ui="value">Español (México)</span>, <span class="ui" data-ui="value">Français</span> and <span class="ui" data-ui="value">Slovenščina</span>. Each language is written in its own name.</p>
-      <figure class="phone"><img src="guide/img/settings-language.jpg" alt="The Language menu of the Settings tab: Follow System with a check mark and the languages, each written in its own name, including Español (México)" loading="lazy" decoding="async" width="900" height="1947"><figcaption>The Language menu</figcaption></figure>
+      <figure class="phone"><img src="guide/img/settings-language.jpg" alt="The Language menu of the Settings tab: Follow System with a check mark and the eleven languages, each written in its own name, from English to Slovenščina at the end" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The Language menu</figcaption></figure>
     </li>
     <li class="step">
       <p>Tap the language.</p>
@@ -4303,11 +4303,11 @@ Content-Type: application/json
   <ol class="steps">
     <li class="step">
       <p>In the section <span class="ui">Reset</span>, tap <span class="ui">Restore Default Settings</span>.</p>
-      <p class="check"><b class="check-label">Check:</b> The dialog <span class="ui">Restore all settings to defaults?</span> appears, with the buttons <span class="ui">Restore Defaults</span> and <span class="ui">Cancel</span>. The text of the dialog states that every setting, including the language, returns to its default, that the LiveView Mix wall (layouts, control panels, webhook buttons and pictures) is cleared, and that the devices and the iCloud backup are kept.</p>
+      <p class="check"><b class="check-label">Check:</b> The dialog <span class="ui">Restore all settings to defaults?</span> appears over the settings page, with the button <span class="ui">Restore Defaults</span>. On both iPhone and iPad, the dialog has no Cancel button. The text of the dialog states that every setting, including the language, returns to its default, that the LiveView Mix wall (layouts, control panels, webhook buttons and pictures) is cleared, and that the devices and the iCloud backup are kept.</p>
       <figure class="phone"><img src="guide/img/settings-restore-defaults.jpg" alt="The dialog Restore all settings to defaults? over the settings page, and the button Restore Defaults" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The confirmation before the default settings are restored</figcaption></figure>
     </li>
     <li class="step">
-      <p>Tap <span class="ui">Restore Defaults</span>. Tap <span class="ui">Cancel</span> instead to keep everything as it is.</p>
+      <p>Tap <span class="ui">Restore Defaults</span>. To keep everything as it is, tap anywhere outside the dialog instead; the dialog closes and nothing changes.</p>
       <p class="check"><b class="check-label">Check:</b> The settings show their defaults, and the language follows the system. The row <span class="ui">LiveView Mix</span> shows <span class="ui">Not set up</span>, and the switch <span class="ui">Portrait page</span> is off. The devices are still listed in the Devices tab.</p>
     </li>
   </ol>
@@ -4317,11 +4317,11 @@ Content-Type: application/json
   <ol class="steps">
     <li class="step">
       <p>In the section <span class="ui">Reset</span>, tap <span class="ui">Delete All Data</span>.</p>
-      <p class="check"><b class="check-label">Check:</b> The dialog <span class="ui">Delete all data?</span> appears, with the buttons <span class="ui">Delete Everything</span> and <span class="ui">Cancel</span>. Its text depends on the iCloud backup. With a backup, it reads <span class="ui">This removes every device, camera, and saved password from this app. Your iCloud backup and subscription are not affected.</span> Without a backup, it reads <span class="ui">There's no iCloud backup, so this can't be undone — camera passwords live only on this device and can't be recovered. Your subscription is not affected.</span></p>
-      <figure class="phone"><img src="guide/img/settings-delete-all.jpg" alt="The dialog Delete all data? over the settings page, with the buttons Delete Everything and Cancel" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The confirmation before all data is deleted</figcaption></figure>
+      <p class="check"><b class="check-label">Check:</b> The dialog <span class="ui">Delete all data?</span> appears over the settings page, with the button <span class="ui">Delete Everything</span>. On both iPhone and iPad, the dialog has no Cancel button. Its text depends on the iCloud backup. With a backup, it reads <span class="ui">This removes every device, camera, and saved password from this app. Your iCloud backup and subscription are not affected.</span> Without a backup, it reads <span class="ui">There's no iCloud backup, so this can't be undone — camera passwords live only on this device and can't be recovered. Your subscription is not affected.</span></p>
+      <figure class="phone"><img src="guide/img/settings-delete-all.jpg" alt="The dialog Delete all data? over the settings page, with the button Delete Everything" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The confirmation before all data is deleted</figcaption></figure>
     </li>
     <li class="step">
-      <p>Tap <span class="ui">Delete Everything</span>. Tap <span class="ui">Cancel</span> instead to keep the data.</p>
+      <p>Tap <span class="ui">Delete Everything</span>. To keep the data, tap anywhere outside the dialog instead; the dialog closes and nothing is deleted.</p>
       <p class="check"><b class="check-label">Check:</b> The Devices tab shows <span class="ui">No Devices</span>, and the settings show their defaults. An iCloud backup that exists can be restored as described in <a class="xref" href="#share-restore">“Restoring from iCloud”</a>.</p>
     </li>
   </ol>
@@ -4359,7 +4359,7 @@ Content-Type: application/json
     <li class="step">
       <p>Tap <span class="ui">User Manual</span>.</p>
       <p class="check"><b class="check-label">Check:</b> The browser opens this manual at <code>https://cam-hub.almx.cc/guide.html</code>. An internet connection is required. Return to Cam Hub with the app switcher of the device.</p>
-      <figure class="phone"><img src="guide/img/settings-user-manual.jpg" alt="The lower part of the Settings tab: the Reset rows with their explanation, Legal with Terms of Use and Privacy Policy, About with Version, and the User Manual row with its explanation" loading="lazy" decoding="async" width="900" height="1947"><figcaption>The User Manual row</figcaption></figure>
+      <figure class="phone"><img src="guide/img/settings-user-manual.jpg" alt="The lower part of the Settings tab: the last Reset rows with their explanation, Legal with Terms of Use and Privacy Policy, About with Version, the User Manual row with its explanation, and the Contact the Development Team row below it" loading="lazy" decoding="async" width="900" height="1956"><figcaption>The User Manual row</figcaption></figure>
     </li>
   </ol>
   <ul>
@@ -4817,7 +4817,7 @@ Content-Type: application/json
       <tr><td><span class="ui">This recorder cannot tell which days have recordings.</span> or <span class="ui">Could not load this month.</span> in the calendar</td><td>The device offers no list of the days with recordings, or did not answer for this month.</td><td>Choose the day without the marks. For a month that did not load, tap <span class="ui">Try Again</span>. See <a class="xref" href="#playback-calendar">“The recording calendar”</a>.</td></tr>
       <tr><td><span class="ui">No people detected on this day.</span> or <span class="ui">No events on this day.</span></td><td>The device registered no event on this day.</td><td>Use the continuous list or the timeline; see <a class="xref" href="#playback-list">“The list of recordings and events”</a>.</td></tr>
       <tr><td><span class="ui">This device could not search its person-event index.</span> or <span class="ui">This device could not search its events.</span></td><td>The device did not answer the search for events, or it keeps no index of detected people.</td><td>Choose the day again. Play the recordings from the continuous list or from the timeline; see <a class="xref" href="#playback-list">“The list of recordings and events”</a>.</td></tr>
-      <tr><td><span class="ui">This account cannot read recordings on this device.</span></td><td>The account has no right to play back recordings.</td><td>Use an account with playback rights, or grant the right on the device.</td></tr>
+      <tr><td><span class="ui">This account cannot read recordings on this device.</span></td><td>The device refused the sign-in: the account has no right to play back recordings, or the username or password is wrong, for example because it was changed on the device.</td><td>Check the username and password with <span class="ui">Edit Credentials</span> on the device page; see <a class="xref" href="#devices-credentials">“Changing the user name and password of a device”</a>. When they are correct, use an account with playback rights, or grant the right on the device.</td></tr>
       <tr><td><span class="ui">Could not reach the device.</span> or <span class="ui">The connection timed out.</span></td><td>The device did not answer the search for the day.</td><td>Check the network and choose the day again.</td></tr>
       <tr><td><span class="ui">The device did not recognize this camera's recordings.</span></td><td>The device cannot find the recordings of this camera, for example because the camera has no storage or reports its recordings in an unexpected way.</td><td>Check on the device that the camera records. Another channel or another day may work.</td></tr>
       <tr><td><span class="ui">The recorder would not play this recording. It may have been overwritten — choose another time.</span></td><td>The recording was listed, but the device refused to play it, usually because newer footage has replaced it.</td><td>Choose a later time or another day.</td></tr>
@@ -4884,7 +4884,7 @@ Content-Type: application/json
       <tr><td>A red warning triangle after a button was pressed on the Apple Watch</td><td>The same causes as on the wall. In addition, the watch sent the request itself to a home-network address while it was not on that Wi-Fi network, the iPhone did not answer within about 20 seconds, or the plan no longer covers the panel; in the last case, the button then disappears from the watch.</td><td>Check <span class="ui">How it is sent</span> in the editor of the button on the iPhone. See <a class="xref" href="#webhook-watch">“Buttons on Apple Watch”</a>.</td></tr>
     </tbody>
   </table></div>
-  <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="Three states of one button: the spinner while sending, the green check mark after success and the orange warning triangle after a failure" loading="lazy" decoding="async" width="1600" height="736"><figcaption>The three states of a button</figcaption></figure>
+  <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="Three buttons of a control panel on the LiveView Mix wall, each in one of the states: the spinner while sending, the green check mark after success and the orange warning triangle after a failure" loading="lazy" decoding="async" width="1600" height="736"><figcaption>The three states of a button, one on each button</figcaption></figure>
 
   <h3 id="trouble-health">Disk Health</h3>
   <p>The <span class="ui">Disk Health</span> page reads the state of the disks of devices that report it; see <a class="xref" href="#devices-health">“Disk Health”</a>. A network storage device reports it over SNMP, which has to be set up once. Apple TV has no Disk Health page.</p>

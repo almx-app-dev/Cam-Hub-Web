@@ -296,7 +296,7 @@
   <p>When a YouTube or Twitch link is entered in <span class="ui">IP address or hostname</span>, the <span class="ui">Add</span> button is unavailable and the form offers <span class="ui">Add as a YouTube Live Stream</span> or <span class="ui">Add as a Twitch Channel</span>. Tapping it opens the screen for that service with the link already entered; after the stream has been added, both screens close. Where the two services are not offered, the link is treated as an ordinary address.</p>
 
   <h3 id="add-failed">When adding fails: the checklist</h3>
-  <p>When adding fails, the form shows the error message in red. With <span class="ui">Auto-detect</span>, the open ports that were found are listed below it. Below that, the form lists <span class="ui">Things to check first</span>. The order of the list depends on the kind of failure, with the most likely cause first. Work through the items from top to bottom, then tap <span class="ui">Add</span> again.</p>
+  <p>When adding fails, the form shows the error message in red. With <span class="ui">Auto-detect</span>, the open ports that were found are listed below it, or, when nothing answered, the line <span class="ui">No open ports were found at this address.</span> appears there. Below that, the form lists <span class="ui">Things to check first</span>. The order of the list depends on the kind of failure, with the most likely cause first. Work through the items from top to bottom, then tap <span class="ui">Add</span> again.</p>
   <div class="table-wrap" tabindex="0"><table>
     <thead><tr><th>Error message</th><th>Checks (from top to bottom)</th></tr></thead>
     <tbody>
@@ -358,7 +358,7 @@
   <h3 id="add-report">Device report (experimental)</h3>
   <div class="callout warn">
     <strong class="t">Experimental feature, no guarantee of support</strong>
-    <p>The device report is an experimental feature. It may change or be removed at any time. Sending a report does not mean that the developer will add support for the device, and there is no guarantee of a reply, a fix or a timeline. Some devices cannot be supported by design, for example because of closed or proprietary protocols, cloud-only operation, licensing or encryption restrictions, or hardware limits. The feature is not a customer-support or urgent-help channel.</p>
+    <p>The device report is an experimental feature. It may change or be removed at any time. Sending a report does not mean that the developer will add support for the device, and there is no guarantee of a reply, a fix, or a timeline. Some devices cannot be supported by design, for example because of closed or proprietary protocols, cloud-only operation, licensing or encryption restrictions, or hardware limits. The feature is not a customer-support or urgent-help service.</p>
     <p>Collecting the details signs in to the device with the account and password that were entered. Failed sign-ins are counted, and may be logged, by the device. When the password may be wrong, correct it first as described in <a class="xref" href="/guide/add.html#add-failed">“When adding fails: the checklist”</a> instead of trying repeatedly.</p>
   </div>
   <p>The <span class="ui">Send details to the developer</span> button, marked <span class="ui">Experimental</span>, appears below the checklist only after adding has failed; it is not shown when adding succeeds. The feature runs only when the button is tapped. It checks the device with read-only requests and assembles a text report for review. Cam Hub never uploads the report by itself; the report is sent only if the person chooses to email it from their own mail account.</p>
@@ -374,18 +374,18 @@
       <p class="check"><b class="check-label">Check:</b> The screen shows <span class="ui">Collecting details…</span> and the progress of each check.</p>
       <div class="shots pair">
         <figure class="phone"><img src="/guide/img/device-report-notice.jpg" alt="The full notice before first use, listing the limits of the experimental feature, with the confirmation button at the bottom" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-notice.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The notice before first use</figcaption></figure>
-        <figure class="phone"><img src="/guide/img/add-report-collecting.jpg" alt="The Device Report page while the details are collected: the Stop button at the top left, the Experimental badge with its notice and the About this feature row, the line Collecting details…, and checks with green check marks and orange cross marks" decoding="async" width="900" height="1956" data-src="/guide/img/add-report-collecting.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The report page while the details are collected</figcaption></figure>
+        <figure class="phone"><img src="/guide/img/add-report-collecting.jpg" alt="The Device Report page while the details are collected: the Stop button at the top left, the Experimental badge with its notice and the About This Feature row, the line Collecting details…, and checks with green check marks and orange cross marks" decoding="async" width="900" height="1956" data-src="/guide/img/add-report-collecting.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The report page while the details are collected</figcaption></figure>
       </div>
     </li>
     <li class="step">
       <p>Wait until the collection is complete.</p>
       <p class="check"><b class="check-label">Check:</b> <span class="ui">What we found</span> lists the likely causes and what to try first, in plain language. When nothing stands out, the screen shows <span class="ui">Nothing obvious stands out.</span></p>
-      <figure class="phone"><img src="/guide/img/device-report-found.jpg" alt="The findings list of the device report, with likely causes such as ports, network segment and VPN" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-found.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The findings list</figcaption></figure>
+      <figure class="phone"><img src="/guide/img/device-report-found.jpg" alt="The findings list of the device report: the device is on a different network segment and a VPN is active, with the What to include switches below" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-found.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The findings list</figcaption></figure>
     </li>
     <li class="step">
       <p>Under <span class="ui">What to include</span>, switch off the items that should not be sent.</p>
       <p class="check"><b class="check-label">Check:</b> The text in the <span class="ui">The report</span> section updates immediately.</p>
-      <figure class="phone"><img src="/guide/img/device-report-text.jpg" alt="The switches for the report contents and the full text of the report, with the buttons for sending below" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-text.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Content switches and the full report</figcaption></figure>
+      <figure class="phone"><img src="/guide/img/device-report-text.jpg" alt="The full text of the report, below it the note that the report is saved in the app, the buttons Email to developer, Copy and Share…, and the Delete saved reports button at the bottom" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-text.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The full report and the buttons for sending</figcaption></figure>
     </li>
     <li class="step">
       <p>Review the full text in the <span class="ui">The report</span> section.</p>
@@ -410,7 +410,7 @@
     </li>
   </ol>
   <ul>
-    <li>After the notice has been confirmed once, the report page shows only a short reminder at the top, with <span class="ui">About this feature</span> to read the full notice again.</li>
+    <li>After the notice has been confirmed once, the report page shows only a short reminder at the top, with <span class="ui">About This Feature</span> to read the full notice again.</li>
     <li>During the collection, <span class="ui">Stop</span> in the top-left corner ends it early. What has been found so far is kept, the screen shows <span class="ui">You stopped the collection, so this report is partial. Nothing has been sent.</span> and offers <span class="ui">Collect again</span>.</li>
     <li><span class="ui">What to include</span> has five items: <span class="ui">Network</span>, <span class="ui">HTTP fingerprint</span>, <span class="ui">Protocol probes</span>, <span class="ui">RTSP and video</span> and <span class="ui">App trace</span>, each marked with a letter. The findings and the report header are always included.</li>
     <li>Besides <span class="ui">Email to developer</span>, the report can be copied with <span class="ui">Copy</span> or passed on with <span class="ui">Share…</span>. A copy stays on this device only and expires after about 2 minutes.</li>
@@ -433,13 +433,13 @@
   </div>
 
   <h4>Saved reports</h4>
-  <p>Each report is saved on this device, and the five most recent are kept. After a failed attempt, an entry with the saved date, for example <span class="ui">Previous report from Nov 13, 2026 at 9:41 AM</span>, appears below <span class="ui">Send details to the developer</span>; tapping it opens the most recent saved report. A saved report shows its content as it was saved and cannot be switched item by item; to choose the content again, collect the details again.</p>
+  <p>Each report is saved in the app, and the five most recent are kept. After a failed attempt, an entry with the saved date, for example <span class="ui">Previous report from Nov 13, 2026 at 9:41 AM</span>, appears below <span class="ui">Send details to the developer</span>; tapping it opens the most recent saved report. A saved report shows its content as it was saved and cannot be switched item by item; to choose the content again, collect the details again.</p>
   <p>To delete the saved reports:</p>
   <ol class="steps">
     <li class="step">
       <p>At the bottom of the report page, tap <span class="ui">Delete saved reports</span>.</p>
-      <p class="check"><b class="check-label">Check:</b> The screen shows the dialog <span class="ui">Delete all saved reports?</span>, which explains that every device report saved on this device is removed and that a report that was already emailed is not affected.</p>
-      <figure class="phone"><img src="/guide/img/add-report-delete-confirm.jpg" alt="The Device Report page with the dialog Delete all saved reports? over it: the text that every report saved on this device is removed and that a report already emailed is not affected, and the button Delete saved reports" decoding="async" width="900" height="1956" data-src="/guide/img/add-report-delete-confirm.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The confirmation before the saved reports are deleted</figcaption></figure>
+      <p class="check"><b class="check-label">Check:</b> The screen shows the dialog <span class="ui">Delete all saved reports?</span>, which explains that every saved device report is removed and that a report that was already emailed is not affected.</p>
+      <figure class="phone"><img src="/guide/img/add-report-delete-confirm.jpg" alt="The Device Report page with the dialog Delete all saved reports? over it: the text that every saved device report is removed and that a report already emailed is not affected, and the button Delete saved reports" decoding="async" width="900" height="1956" data-src="/guide/img/add-report-delete-confirm.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>The confirmation before the saved reports are deleted</figcaption></figure>
     </li>
     <li class="step">
       <p>Tap <span class="ui">Delete saved reports</span> in the dialog.</p>
@@ -454,7 +454,7 @@
     <li class="step">
       <p>Tap the <span class="ui">Tools</span> tab at the bottom of the screen.</p>
       <p class="check"><b class="check-label">Check:</b> In the <span class="ui">Subnet</span> section, the <span class="ui">This device</span> row shows the current network address and mask, for example <code>192.168.1.10/24</code>. The address field and <span class="ui">Range</span> are filled in with the current network.</p>
-      <figure class="phone"><img src="/guide/img/tools-scan.jpg" alt="The Tools tab: the Subnet section with the address of this device, the network, the range and the Scan button, with Found Devices and Speedometer below" decoding="async" width="900" height="1745" data-src="/guide/img/tools-scan.jpg" style="aspect-ratio: 900 / 1745;" loading="lazy"><figcaption>The Tools tab (sample network)</figcaption></figure>
+      <figure class="phone"><img src="/guide/img/tools-scan.jpg" alt="The Tools tab with its title at the top: the Subnet section with the address of this device, the network, the range and the Scan button, below it Found Devices with no devices yet and the Speedometer row" decoding="async" width="900" height="1634" data-src="/guide/img/tools-scan.jpg" style="aspect-ratio: 900 / 1634;" loading="lazy"><figcaption>The Tools tab (sample network)</figcaption></figure>
     </li>
     <li class="step">
       <p>Optional: to scan a different network, enter the network in the address field, for example <code>192.168.1.0</code>, and select the range in the <span class="ui">Range</span> menu.</p>

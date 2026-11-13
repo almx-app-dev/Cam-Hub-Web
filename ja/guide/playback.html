@@ -29,7 +29,7 @@
   <div class="table-wrap" tabindex="0"><table>
     <thead><tr><th>機能</th><th>表示される条件</th></tr></thead>
     <tbody>
-      <tr><td data-label="機能">日付、タイムライン、一覧のある録画パネル</td><td data-label="表示される条件">再生に対応した接続方法でデバイスを追加した場合。<a class="xref" href="/ja/guide/brands.html#brands-matrix">「方法ごとにできること」</a>を参照してください。アカウントに録画を読み取る権限がない場合もパネルは表示され、タイムラインの上に<span class="ui ui-long">このアカウントではこのデバイスの録画を表示できません。</span>と表示されます。</td></tr>
+      <tr><td data-label="機能">日付、タイムライン、一覧のある録画パネル</td><td data-label="表示される条件">再生に対応した接続方法でデバイスを追加した場合。<a class="xref" href="/ja/guide/brands.html#brands-matrix">「方法ごとにできること」</a>を参照してください。アカウントに録画を読み取る権限がない、またはユーザー名かパスワードが間違っているためにデバイスがサインインを拒否した場合も、パネルは表示され、タイムラインの上に<span class="ui ui-long">このアカウントではこのデバイスの録画を表示できません。</span>と表示されます。</td></tr>
       <tr><td data-label="機能">録画カレンダーのボタン</td><td data-label="表示される条件">デバイスが、録画の日ごとのインデックスも保持している場合。詳しくは<a class="xref" href="/ja/guide/playback.html#playback-calendar">「録画カレンダー」</a>を参照してください。</td></tr>
       <tr><td data-label="機能"><span class="ui">連続録画</span>と<span class="ui">イベント</span>の切り替え</td><td data-label="表示される条件">イベント（検出された人物、または動きとアラーム入力）のインデックスを提供する接続方法でデバイスを追加した場合。<a class="xref" href="/ja/guide/brands.html#brands-matrix">「方法ごとにできること」</a>を参照してください。デバイス自体がそのインデックスの検索に応答しない場合も、切り替えは表示されます。<a class="xref" href="/ja/guide/playback.html#playback-list">「録画とイベントの一覧」</a>を参照してください。それ以外の接続方法では、選んだ日またはその前日に、デバイスがイベントをきっかけに録画した映像がある場合にのみ、切り替えが表示されます。それ以外の場合は、連続録画の一覧だけが表示され、切り替えはありません。</td></tr>
       <tr><td data-label="機能">速度ボタン</td><td data-label="表示される条件">再生中で、デバイスが録画を高速で再生できる場合。できない場合は、通知が表示されます。詳しくは<a class="xref" href="/ja/guide/playback.html#playback-speed">「再生速度」</a>を参照してください。</td></tr>
@@ -69,7 +69,7 @@
 
   <h3 id="playback-calendar">録画カレンダー</h3>
   <p>録画の日ごとのインデックスを保持するデバイスでは、<span class="ui">録画</span>の見出しと日付の間に、カレンダーのボタンがあります。そのカレンダーには録画のある日に印が付くので、日付を 1 日ずつ試す必要がありません。そのようなインデックスがない場合、ボタンは表示されず、日付は<a class="xref" href="/ja/guide/playback.html#playback-day">「日付を選ぶ」</a>の説明に従って選びます。</p>
-  <figure class="phone"><img src="/guide/img/playback-calendar.jpg" alt="1 台表示の上の「録画カレンダー」シート。矢印付きの月、点で示された録画のある日、塗りつぶした円の中の選択した日、「点のある日には録画があります。」の行がある" decoding="async" width="900" height="1947" data-src="/guide/img/playback-calendar.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>録画カレンダー</figcaption></figure>
+  <figure class="phone"><img src="/guide/img/playback-calendar.jpg" alt="1 台表示の上の「録画カレンダー」シート。矢印付きの月、点で示された録画のある日、塗りつぶした円の中の選択した日、「点のある日には録画があります。」の行がある" decoding="async" width="900" height="1956" data-src="/guide/img/playback-calendar.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>録画カレンダー</figcaption></figure>
   <ol class="steps">
     <li class="step">
       <p>日付の隣にあるカレンダーのボタン（<span class="ui">録画カレンダー</span>）をタップします。</p>
@@ -187,7 +187,7 @@
       <tr><td data-label="メッセージ"><span class="ui">この日のイベントはありません。</span></td><td data-label="意味">それ以外のデバイスで、その日にイベントがありません。</td></tr>
       <tr><td data-label="メッセージ"><span class="ui ui-long">このデバイスでは人物イベントのインデックスを検索できませんでした。</span></td><td data-label="意味">デバイスが検出された人物の検索に応答しない場合（たとえば、人物のインデックスがない古いレコーダー）に、<span class="ui">イベント</span>の下に一覧の代わりに表示されます。この場合、デバイスがイベントをきっかけに録画した映像は一覧に表示されませんが、タイムライン上の赤いバーから再生できます。連続録画の一覧には影響しません。</td></tr>
       <tr><td data-label="メッセージ"><span class="ui ui-long">このデバイスのイベントを検索できませんでした。</span></td><td data-label="意味">動きとアラーム入力を記録するデバイスでの、同様の表示です。</td></tr>
-      <tr><td data-label="メッセージ">タイムラインの上に警告の記号付きで表示されるメッセージ：<span class="ui ui-long">このアカウントではこのデバイスの録画を表示できません。</span>、<span class="ui ui-long">このデバイスに接続できませんでした。</span>、<span class="ui ui-long">このデバイスはこのカメラの録画を認識できませんでした。</span>、または<span class="ui">このカメラはオフラインです。</span></td><td data-label="意味">メッセージが示す理由で、その日の検索に失敗しました。メッセージの表示中も、日付を変更して別の日を試せます。アカウントについては、デバイスでの権限を確認します。接続については、<a class="xref" href="/ja/guide/trouble.html">第15章「トラブルシューティング」</a>を参照してください。</td></tr>
+      <tr><td data-label="メッセージ">タイムラインの上に警告の記号付きで表示されるメッセージ：<span class="ui ui-long">このアカウントではこのデバイスの録画を表示できません。</span>、<span class="ui ui-long">このデバイスに接続できませんでした。</span>、<span class="ui ui-long">このデバイスはこのカメラの録画を認識できませんでした。</span>、または<span class="ui">このカメラはオフラインです。</span></td><td data-label="意味">メッセージが示す理由で、その日の検索に失敗しました。メッセージの表示中も、日付を変更して別の日を試せます。アカウントについては、ユーザー名、パスワード、デバイスでの権限を確認します。接続については、<a class="xref" href="/ja/guide/trouble.html">第15章「トラブルシューティング」</a>を参照してください。</td></tr>
       <tr><td data-label="メッセージ"><span class="ui ui-long">短時間にリクエストが多すぎます。1 分ほど待ってからもう一度お試しください。</span></td><td data-label="意味">リクエストが多すぎるため、デバイスまたはそのサービスが検索を拒否したか、デバイスが以前の検索をまだ処理していました。1 分待ってから、もう一度日付を選びます。</td></tr>
       <tr><td data-label="メッセージ">同じ場所に表示されるその他のメッセージ（たとえば<span class="ui ui-long">デバイスから予期しない応答が返されました。</span>、<span class="ui">接続がタイムアウトしました。</span>、<span class="ui ui-long">問題が発生しました。もう一度お試しください。</span>）</td><td data-label="意味">別の理由で検索に失敗しました。もう一度日付を選びます。メッセージが続く場合は、<a class="xref" href="/ja/guide/trouble.html">第15章「トラブルシューティング」</a>を参照してください。</td></tr>
     </tbody>
@@ -268,7 +268,7 @@
     <li class="step">
       <p>録画を開始し、iPhone を横向きにします。</p>
       <p class="check"><b class="check-label">確認：</b>映像が画面全体に表示されます。映像の下端に重なるバーに、<span class="ui">再生 15:00:03</span>のバッジ、速度ボタン、<span class="ui">ライブに戻る</span>、タイムラインが表示されます。</p>
-      <figure class="land"><img src="/guide/img/ja/playback-landscape.jpg" alt="横向きでの再生。画面全体の映像の下端に、再生バッジ、速度ボタン、「ライブに戻る」、タイムラインがあるバーが表示されている" decoding="async" width="1600" height="736" data-src="/guide/img/ja/playback-landscape.jpg" data-fallback="/guide/img/playback-landscape.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>横向きでの再生</figcaption></figure>
+      <figure class="land"><img src="/guide/img/ja/playback-landscape.jpg" alt="横向きでの再生。黒い画面の中央に映像、上部に戻るボタンとその横の再生バッジ、赤い録画ボタン、下端に再生バッジ、速度ボタン、「ライブに戻る」、タイムラインがあるバーが表示されている" decoding="async" width="1600" height="736" data-src="/guide/img/ja/playback-landscape.jpg" data-fallback="/guide/img/playback-landscape.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>横向きでの再生</figcaption></figure>
     </li>
     <li class="step">
       <p>バーのタイムラインをドラッグし、目的の時刻で指を離します。</p>

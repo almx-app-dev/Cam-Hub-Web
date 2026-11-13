@@ -258,7 +258,7 @@
   <p>在<span class="ui">IP 位址或主機名稱</span>輸入 YouTube 或 Twitch 連結時，<span class="ui">新增</span>按鈕無法使用，表單改為提供<span class="ui">以 YouTube 直播新增</span>或<span class="ui">以 Twitch 頻道新增</span>。點選後開啟該服務的畫面，連結已帶入；加入完成後，兩個畫面都會關閉。在不提供這兩項服務的地區，連結會被當作一般位址。</p>
 
   <h3 id="add-failed">加入失敗時的檢查清單</h3>
-  <p>加入失敗時，表單以紅色顯示錯誤訊息。使用<span class="ui">自動偵測</span>時，其下列出找到的開放連接埠。再往下列出<span class="ui">請先檢查這些</span>清單。清單的順序依失敗的種類而定，最可能的原因排在最前面。請由上而下逐項處理，再重新點選<span class="ui">新增</span>。</p>
+  <p>加入失敗時，表單以紅色顯示錯誤訊息。使用<span class="ui">自動偵測</span>時，其下列出找到的開放連接埠；完全沒有回應時，則顯示<span class="ui">這個位址沒有找到任何開放的連接埠。</span>再往下列出<span class="ui">請先檢查這些</span>清單。清單的順序依失敗的種類而定，最可能的原因排在最前面。請由上而下逐項處理，再重新點選<span class="ui">新增</span>。</p>
   <div class="table-wrap" tabindex="0"><table>
     <thead><tr><th>錯誤訊息</th><th>檢查項目（由上而下）</th></tr></thead>
     <tbody>
@@ -342,12 +342,12 @@
     <li class="step">
       <p>等待蒐集完成。</p>
       <p class="check"><b class="check-label">確認：</b><span class="ui">檢查結果</span>以白話列出可能的原因與可先嘗試的做法。沒有明顯問題時，顯示<span class="ui">沒有發現明顯的問題。</span></p>
-      <figure class="phone"><img src="/guide/img/device-report-found.jpg" alt="設備報告頁面的檢查結果，列出連接埠、網段與 VPN 等可能原因" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-found.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>檢查結果</figcaption></figure>
+      <figure class="phone"><img src="/guide/img/device-report-found.jpg" alt="設備報告的檢查結果：設備位於不同的網段，以及 VPN 正在使用中，下方為「包含的內容」的開關" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-found.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>檢查結果</figcaption></figure>
     </li>
     <li class="step">
       <p>在<span class="ui">包含的內容</span>中，關閉不想傳送的項目。</p>
       <p class="check"><b class="check-label">確認：</b><span class="ui">報告</span>區塊中的文字隨即更新。</p>
-      <figure class="phone"><img src="/guide/img/device-report-text.jpg" alt="可逐項開關的內容與報告全文，下方有寄出報告的按鈕" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-text.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>內容開關與報告全文</figcaption></figure>
+      <figure class="phone"><img src="/guide/img/device-report-text.jpg" alt="報告全文，其下為報告會儲存起來以便稍後傳送的說明、以電子郵件寄給開發者、複製與分享…三個按鈕，最下方為刪除已儲存的報告按鈕" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-text.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>報告全文與寄出的按鈕</figcaption></figure>
     </li>
     <li class="step">
       <p>檢視<span class="ui">報告</span>區塊中的全文。</p>
@@ -401,7 +401,7 @@
     <li class="step">
       <p>在報告頁面的底部點選<span class="ui">刪除已儲存的報告</span>。</p>
       <p class="check"><b class="check-label">確認：</b>畫面顯示對話框<span class="ui">要刪除所有已儲存的報告嗎？</span>，說明此操作會刪除儲存在此裝置上的所有設備報告，已透過電子郵件寄出的報告不受影響。</p>
-      <figure class="phone"><img src="/guide/img/add-report-delete-confirm.jpg" alt="設備報告頁面上方的對話框「要刪除所有已儲存的報告嗎？」：說明此裝置上儲存的所有設備報告會被移除，已寄出的報告不受影響，並有「刪除已儲存的報告」按鈕" decoding="async" width="900" height="1956" data-src="/guide/img/add-report-delete-confirm.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>刪除已儲存的報告前的確認</figcaption></figure>
+      <figure class="phone"><img src="/guide/img/add-report-delete-confirm.jpg" alt="設備報告頁面上方的對話框「要刪除所有已儲存的報告嗎？」：說明所有已儲存的設備報告都會被移除，已寄出的報告不受影響，並有「刪除已儲存的報告」按鈕" decoding="async" width="900" height="1956" data-src="/guide/img/add-report-delete-confirm.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>刪除已儲存的報告前的確認</figcaption></figure>
     </li>
     <li class="step">
       <p>點選對話框中的<span class="ui">刪除已儲存的報告</span>。</p>
@@ -416,7 +416,7 @@
     <li class="step">
       <p>點選底部的<span class="ui">工具</span>分頁。</p>
       <p class="check"><b class="check-label">確認：</b><span class="ui">子網路</span>區塊的<span class="ui">本機</span>列顯示目前的網路位址與遮罩，例如 <code>192.168.1.10/24</code>。位址欄位與<span class="ui">範圍</span>已帶入目前所在的網段。</p>
-      <figure class="phone"><img src="/guide/img/tools-scan.jpg" alt="工具分頁：子網路區塊顯示本機位址、網段、範圍與掃描按鈕，下方有找到的設備與時速表" decoding="async" width="900" height="1745" data-src="/guide/img/tools-scan.jpg" style="aspect-ratio: 900 / 1745;" loading="lazy"><figcaption>工具分頁（示意網段）</figcaption></figure>
+      <figure class="phone"><img src="/guide/img/tools-scan.jpg" alt="工具分頁，頂端為標題：子網路區塊顯示本機位址、網段、範圍與掃描按鈕，其下為顯示尚未找到設備的「找到的設備」，以及時速表列" decoding="async" width="900" height="1634" data-src="/guide/img/tools-scan.jpg" style="aspect-ratio: 900 / 1634;" loading="lazy"><figcaption>工具分頁（示意網段）</figcaption></figure>
     </li>
     <li class="step">
       <p>選用：要掃描其他網段時，在位址欄位輸入網段，例如 <code>192.168.1.0</code>，並在<span class="ui">範圍</span>選單選擇範圍。</p>

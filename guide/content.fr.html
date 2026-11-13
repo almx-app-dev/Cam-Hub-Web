@@ -346,7 +346,7 @@
   <p>Lorsqu’un lien YouTube ou Twitch est saisi dans <span class="ui">Adresse IP ou nom d’hôte</span>, le bouton <span class="ui">Ajouter</span> est indisponible et le formulaire propose <span class="ui">Ajouter comme diffusion en direct YouTube</span> ou <span class="ui">Ajouter comme chaîne Twitch</span>. Ce choix ouvre l’écran du service avec le lien déjà saisi ; une fois la diffusion ajoutée, les deux écrans se ferment. Là où les deux services ne sont pas proposés, le lien est traité comme une adresse ordinaire.</p>
 
   <h3 id="add-failed">En cas d’échec de l’ajout : la liste de vérification</h3>
-  <p>Lorsque l’ajout échoue, le formulaire affiche le message d’erreur en rouge. Avec <span class="ui">Détection automatique</span>, les ports ouverts trouvés sont énumérés en dessous. Plus bas, le formulaire affiche la liste <span class="ui">À vérifier d’abord</span>. L’ordre de la liste dépend du type d’échec ; la cause la plus probable vient en premier. Parcourez les éléments de haut en bas, puis touchez de nouveau <span class="ui">Ajouter</span>.</p>
+  <p>Lorsque l’ajout échoue, le formulaire affiche le message d’erreur en rouge. Avec <span class="ui">Détection automatique</span>, les ports ouverts trouvés sont énumérés en dessous ou, si rien n’a répondu, la ligne <span class="ui">Aucun port ouvert n’a été trouvé à cette adresse.</span> s’y affiche. Plus bas, le formulaire affiche la liste <span class="ui">À vérifier d’abord</span>. L’ordre de la liste dépend du type d’échec ; la cause la plus probable vient en premier. Parcourez les éléments de haut en bas, puis touchez de nouveau <span class="ui">Ajouter</span>.</p>
   <div class="table-wrap"><table>
     <thead><tr><th>Message d’erreur</th><th>Vérifications (de haut en bas)</th></tr></thead>
     <tbody>
@@ -408,7 +408,7 @@
   <h3 id="add-report">Rapport sur l’appareil (expérimental)</h3>
   <div class="callout warn">
     <strong class="t">Fonction expérimentale, sans garantie de prise en charge</strong>
-    <p>Le rapport sur l’appareil est une fonction expérimentale. Elle peut être modifiée ou supprimée à tout moment. L’envoi d’un rapport ne signifie pas que le développeur ajoutera la prise en charge de l’appareil ; aucune réponse, correction ni échéance n’est garantie. Certains appareils ne peuvent pas être pris en charge par conception, par exemple en raison de protocoles fermés ou propriétaires, d’un fonctionnement uniquement via le cloud, de restrictions de licence ou de chiffrement, ou de limites matérielles. Cette fonction n’est pas un canal d’assistance client ni d’aide urgente.</p>
+    <p>Le rapport sur l’appareil est une fonction expérimentale. Elle peut être modifiée ou supprimée à tout moment. L’envoi d’un rapport ne signifie pas que le développeur ajoutera la prise en charge de l’appareil ; aucune réponse, correction ni échéance n’est garantie. Certains appareils ne peuvent pas être pris en charge par conception, par exemple en raison de protocoles fermés ou propriétaires, d’un fonctionnement uniquement via le cloud, de restrictions de licence ou de chiffrement, ou de limites matérielles. Cette fonction n’est pas un service d’assistance client ni d’aide urgente.</p>
     <p>La collecte des détails se connecte à l’appareil avec le compte et le mot de passe saisis. Les connexions échouées sont comptées, et peuvent être consignées, par l’appareil. Si le mot de passe risque d’être erroné, corrigez-le d’abord comme décrit dans <a class="xref" href="#add-failed">« En cas d’échec de l’ajout : la liste de vérification »</a>, au lieu de multiplier les essais.</p>
   </div>
   <p>Le bouton <span class="ui">Envoyer les détails au développeur</span>, marqué <span class="ui">Expérimental</span>, n’apparaît sous la liste de vérification qu’après un échec de l’ajout ; il ne s’affiche pas lorsque l’ajout réussit. La fonction ne s’exécute que lorsque le bouton est touché. Elle examine l’appareil par des requêtes en lecture seule et assemble un rapport texte à relire. Cam Hub n’envoie jamais le rapport de lui-même ; il n’est transmis que si l’utilisateur choisit de l’envoyer par e-mail depuis son propre compte de messagerie.</p>
@@ -430,12 +430,12 @@
     <li class="step">
       <p>Attendez la fin de la collecte.</p>
       <p class="check"><b class="check-label">Vérification :</b> <span class="ui">Ce que nous avons trouvé</span> énumère en langage clair les causes probables et ce qu’il faut essayer en premier. Lorsque rien de particulier n’apparaît, l’écran affiche <span class="ui">Rien de particulier à signaler.</span></p>
-      <figure class="phone"><img src="guide/img/device-report-found.jpg" alt="La liste des constats du rapport sur l’appareil, avec des causes probables telles que les ports, le segment réseau et le VPN" loading="lazy" decoding="async" width="900" height="1956"><figcaption>La liste des constats</figcaption></figure>
+      <figure class="phone"><img src="guide/img/device-report-found.jpg" alt="La liste des constats du rapport sur l’appareil : l’appareil se trouve sur un autre segment réseau et un VPN est actif, avec en dessous les interrupteurs Ce qu’il faut inclure" loading="lazy" decoding="async" width="900" height="1956"><figcaption>La liste des constats</figcaption></figure>
     </li>
     <li class="step">
       <p>Sous <span class="ui">Ce qu’il faut inclure</span>, désactivez les éléments qui ne doivent pas être envoyés.</p>
       <p class="check"><b class="check-label">Vérification :</b> Le texte de la section <span class="ui">Le rapport</span> se met à jour immédiatement.</p>
-      <figure class="phone"><img src="guide/img/device-report-text.jpg" alt="Les interrupteurs du contenu du rapport et le texte complet du rapport, avec les boutons d’envoi en dessous" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Les interrupteurs de contenu et le rapport complet</figcaption></figure>
+      <figure class="phone"><img src="guide/img/device-report-text.jpg" alt="Le texte complet du rapport, en dessous la note indiquant que le rapport est conservé pour un envoi ultérieur, les boutons Envoyer par e-mail au développeur, Copier et Partager…, et tout en bas le bouton Supprimer les rapports enregistrés" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Le rapport complet et les boutons d’envoi</figcaption></figure>
     </li>
     <li class="step">
       <p>Relisez le texte complet dans la section <span class="ui">Le rapport</span>.</p>
@@ -483,13 +483,13 @@
   </div>
 
   <h4>Rapports enregistrés</h4>
-  <p>Chaque rapport est enregistré sur l’iPhone ou l’iPad, et les cinq plus récents sont conservés. Après un essai infructueux, une entrée indiquant la date d’enregistrement, par exemple <span class="ui">Rapport précédent du 13 nov. 2026 à 9:41</span>, apparaît sous <span class="ui">Envoyer les détails au développeur</span> ; la toucher ouvre le rapport enregistré le plus récent. Un rapport enregistré affiche son contenu tel qu’il a été enregistré et ne peut pas être ajusté élément par élément ; pour choisir de nouveau le contenu, recueillez de nouveau les détails.</p>
+  <p>Chaque rapport est enregistré dans l’app, et les cinq plus récents sont conservés. Après un essai infructueux, une entrée indiquant la date d’enregistrement, par exemple <span class="ui">Rapport précédent du 13 nov. 2026 à 9:41</span>, apparaît sous <span class="ui">Envoyer les détails au développeur</span> ; la toucher ouvre le rapport enregistré le plus récent. Un rapport enregistré affiche son contenu tel qu’il a été enregistré et ne peut pas être ajusté élément par élément ; pour choisir de nouveau le contenu, recueillez de nouveau les détails.</p>
   <p>Pour supprimer les rapports enregistrés :</p>
   <ol class="steps">
     <li class="step">
       <p>En bas de la page du rapport, touchez <span class="ui">Supprimer les rapports enregistrés</span>.</p>
-      <p class="check"><b class="check-label">Vérification :</b> L’écran affiche la boîte de dialogue <span class="ui">Supprimer tous les rapports enregistrés ?</span>, qui précise que tous les rapports d’appareil enregistrés sur l’iPhone ou l’iPad sont supprimés et qu’un rapport déjà envoyé par e-mail n’est pas concerné.</p>
-      <figure class="phone"><img src="guide/img/add-report-delete-confirm.jpg" alt="La page Rapport sur l’appareil avec la boîte de dialogue Supprimer tous les rapports enregistrés ? par-dessus : le texte indiquant que tous les rapports enregistrés sur cet appareil sont supprimés et qu’un rapport déjà envoyé par e-mail n’est pas concerné, et le bouton Supprimer les rapports enregistrés" loading="lazy" decoding="async" width="900" height="1956"><figcaption>La confirmation avant la suppression des rapports enregistrés</figcaption></figure>
+      <p class="check"><b class="check-label">Vérification :</b> L’écran affiche la boîte de dialogue <span class="ui">Supprimer tous les rapports enregistrés ?</span>, qui précise que tous les rapports d’appareil enregistrés sont supprimés et qu’un rapport déjà envoyé par e-mail n’est pas concerné.</p>
+      <figure class="phone"><img src="guide/img/add-report-delete-confirm.jpg" alt="La page Rapport sur l’appareil avec la boîte de dialogue Supprimer tous les rapports enregistrés ? par-dessus : le texte indiquant que tous les rapports d’appareil enregistrés sont supprimés et qu’un rapport déjà envoyé par e-mail n’est pas concerné, et le bouton Supprimer les rapports enregistrés" loading="lazy" decoding="async" width="900" height="1956"><figcaption>La confirmation avant la suppression des rapports enregistrés</figcaption></figure>
     </li>
     <li class="step">
       <p>Touchez <span class="ui">Supprimer les rapports enregistrés</span> dans la boîte de dialogue.</p>
@@ -504,7 +504,7 @@
     <li class="step">
       <p>Touchez l’onglet <span class="ui">Outils</span> en bas de l’écran.</p>
       <p class="check"><b class="check-label">Vérification :</b> Dans la section <span class="ui">Sous-réseau</span>, la ligne <span class="ui">Cet appareil</span> indique l’adresse et le masque du réseau actuel, par exemple <code>192.168.1.10/24</code>. Le champ d’adresse et <span class="ui">Plage</span> sont préremplis avec le réseau actuel.</p>
-      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="L’onglet Outils : la section Sous-réseau avec l’adresse de cet appareil, le réseau, la plage et le bouton Analyser, avec en dessous Appareils trouvés et Compteur de vitesse" loading="lazy" decoding="async" width="900" height="1745"><figcaption>L’onglet Outils (réseau d’exemple)</figcaption></figure>
+      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="L’onglet Outils avec son titre en haut : la section Sous-réseau avec l’adresse de cet appareil, le réseau, la plage et le bouton Analyser, puis en dessous Appareils trouvés, encore sans appareil, et la ligne Compteur de vitesse" loading="lazy" decoding="async" width="900" height="1634"><figcaption>L’onglet Outils (réseau d’exemple)</figcaption></figure>
     </li>
     <li class="step">
       <p>Facultatif : pour analyser un autre réseau, saisissez-le dans le champ d’adresse, par exemple <code>192.168.1.0</code>, puis sélectionnez la plage dans le menu <span class="ui">Plage</span>.</p>
@@ -881,8 +881,8 @@
     </li>
     <li class="step">
       <p>Touchez <span class="ui">Renommer la caméra</span>.</p>
-      <p class="check"><b class="check-label">Vérification :</b> La boîte de dialogue <span class="ui">Renommer la caméra</span> s’ouvre, avec le texte <span class="ui">Donnez à cette caméra le nom de votre choix. Le nom d’origine de l’appareil est conservé en dessous : actualiser l’appareil n’écrasera pas le vôtre.</span>, le nom actuel dans le champ <span class="ui">Nom</span> et les boutons <span class="ui">Annuler</span>, <span class="ui">Utiliser le nom de l’appareil</span> et <span class="ui">Enregistrer</span>.</p>
-      <figure class="phone"><img src="guide/img/channel-rename-alert.jpg" alt="La boîte de dialogue Renommer la caméra avec le champ Nom et les boutons Annuler, Utiliser le nom de l’appareil et Enregistrer" loading="lazy" decoding="async" width="900" height="1956"><figcaption>La boîte de dialogue Renommer la caméra</figcaption></figure>
+      <p class="check"><b class="check-label">Vérification :</b> La boîte de dialogue <span class="ui">Renommer la caméra</span> s’ouvre, avec le texte <span class="ui">Donnez à cette caméra le nom de votre choix. Le nom d’origine de l’appareil est conservé en dessous : actualiser l’appareil n’écrasera pas le vôtre.</span>, le nom actuel dans le champ <span class="ui">Nom</span> et les boutons <span class="ui">Utiliser le nom de l’appareil</span>, <span class="ui">Enregistrer</span> et <span class="ui">Annuler</span>.</p>
+      <figure class="phone"><img src="guide/img/channel-rename-alert.jpg" alt="La boîte de dialogue Renommer la caméra avec le champ Nom et les boutons Utiliser le nom de l’appareil, Enregistrer et Annuler ; le clavier est ouvert sous la boîte de dialogue" loading="lazy" decoding="async" width="900" height="1956"><figcaption>La boîte de dialogue Renommer la caméra</figcaption></figure>
     </li>
     <li class="step">
       <p>Saisissez le nouveau nom dans le champ <span class="ui">Nom</span>.</p>
@@ -1009,7 +1009,7 @@
     <li class="step">
       <p>Touchez une vignette qui affiche une image.</p>
       <p class="check"><b class="check-label">Vérification :</b> Un gros plan de cette caméra s’ouvre sur le mur, avec <span class="ui">Retour</span> et le nom de la caméra en haut.</p>
-      <figure class="phone"><img src="guide/img/fullwall-closeup.jpg" alt="Le gros plan d’une caméra sur le mur : le bouton de retour et le nom de la caméra en haut à gauche, l’image au milieu de l’écran noir et le bouton de commande de la caméra en bas à droite" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Le gros plan d’une caméra</figcaption></figure>
+      <figure class="phone"><img src="guide/img/fullwall-closeup.jpg" alt="Le gros plan d’une caméra sur le mur : le bouton de retour et le nom de la caméra en haut à gauche, le bouton Enregistrements avec un symbole d’horloge en haut à droite, l’image au milieu de l’écran noir et le bouton de commande de la caméra en bas à droite" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Le gros plan d’une caméra</figcaption></figure>
     </li>
     <li class="step">
       <p>Touchez <span class="ui">Retour</span> en haut à gauche du gros plan.</p>
@@ -1282,7 +1282,7 @@
     <li class="step">
       <p>Touchez la vignette d’un canal qui affiche une image en direct.</p>
       <p class="check"><b class="check-label">Vérification :</b> La vue d’une seule caméra s’ouvre. Le titre est le nom de la caméra, et la pastille verte <span class="ui">DIRECT</span> s’affiche en haut à gauche de l’image. L’image démarre avec la qualité de <span class="path"><span class="ui">Réglages</span> › <span class="ui">Qualité par défaut</span> › <span class="ui">Une seule caméra</span></span> (HD sauf modification).</p>
-      <figure class="phone"><img src="guide/img/single-live.jpg" alt="La vue d’une seule caméra en mode direct : l’image avec la pastille DIRECT et le bouton de commande de la caméra, en dessous la barre de commandes avec Instantané à gauche et le commutateur SD et HD à droite, puis le panneau des enregistrements avec le jour, la frise chronologique et la liste" loading="lazy" decoding="async" width="900" height="1956"><figcaption>La vue d’une seule caméra en mode direct</figcaption></figure>
+      <figure class="phone"><img src="guide/img/single-live.jpg" alt="La vue d’une seule caméra en mode direct : l’image avec la pastille DIRECT et le bouton de commande de la caméra, en dessous la barre de commandes avec Instantané, le bouton d’enregistrement rouge et le commutateur SD et HD, puis le panneau des enregistrements avec le bouton du calendrier, le jour, la frise chronologique et la liste" loading="lazy" decoding="async" width="900" height="1956"><figcaption>La vue d’une seule caméra en mode direct</figcaption></figure>
     </li>
   </ol>
   <p>Touchez le bouton de retour dans le coin supérieur gauche pour quitter la vue.</p>
@@ -1293,7 +1293,7 @@
     <tbody>
       <tr><td>Barre de navigation</td><td>Le bouton de retour et le nom de la caméra. Sur un iPad et sur l’écran intérieur de l’iPhone Duo, le bouton <span class="ui">Ouvrir dans une nouvelle fenêtre</span> se trouve à droite ; voir <a class="xref" href="#single-window">« Une caméra dans sa propre fenêtre »</a>.</td></tr>
       <tr><td>Image (à la verticale, 16:9)</td><td>La pastille en haut à gauche indique le mode : <span class="ui">DIRECT</span> (verte) ou <span class="ui">LECTURE 15:00:03</span>, avec l’heure de lecture (rouge). Le bouton rond en bas à droite est la commande de la caméra pour le PTZ en mode direct ; voir <a class="xref" href="#single-ptz">« Commande PTZ : déplacer la caméra »</a>. Pendant la lecture d’un enregistrement, c’est le bouton de vitesse ; voir <a class="xref" href="#playback-speed">« Vitesse de lecture »</a>.</td></tr>
-      <tr><td>Barre de commandes</td><td><span class="ui">Instantané</span> à gauche, puis le bouton d’enregistrement rouge ; à côté, le bouton du haut-parleur lorsque la caméra transmet du son, et le bouton pour parler lorsque la caméra permet de parler à travers elle ; à droite, le commutateur SD/HD en mode direct ou <span class="ui">Retour au direct</span> pendant la lecture. Lorsque la place manque dans la barre, par exemple dans une langue aux mots longs, <span class="ui">Instantané</span> n’affiche que son symbole d’appareil photo. Voir <a class="xref" href="#single-controls">« Instantané, son et qualité »</a>, <a class="xref" href="#single-clip">« Enregistrer un extrait »</a> et <a class="xref" href="#single-talk">« Conversation bidirectionnelle »</a>.</td></tr>
+      <tr><td>Barre de commandes</td><td><span class="ui">Instantané</span> à gauche, puis le bouton d’enregistrement rouge ; à côté, le bouton du haut-parleur lorsque la caméra transmet du son, et le bouton pour parler lorsque la caméra permet de parler à travers elle ; à droite, le commutateur SD/HD en mode direct ou <span class="ui">Retour au direct</span> pendant la lecture. Lorsque la place manque dans la barre, par exemple lorsque le bouton du haut-parleur ou le bouton pour parler s’y trouve, ou dans une langue aux mots longs, <span class="ui">Instantané</span> n’affiche que son symbole d’appareil photo. Voir <a class="xref" href="#single-controls">« Instantané, son et qualité »</a>, <a class="xref" href="#single-clip">« Enregistrer un extrait »</a> et <a class="xref" href="#single-talk">« Conversation bidirectionnelle »</a>.</td></tr>
       <tr><td>Panneau des enregistrements</td><td>Le titre <span class="ui">Enregistrements</span> avec le jour, la frise chronologique et la liste des enregistrements, et, sur les appareils compatibles, le bouton du calendrier des enregistrements. Le panneau n’apparaît que pour les appareils compatibles avec la lecture ; pour tous les autres, la vue se compose de l’image et de la barre de commandes. Voir <a class="xref" href="#playback">chapitre 7 : « Lecture des enregistrements et vitesse »</a>.</td></tr>
     </tbody>
   </table></div>
@@ -1355,7 +1355,7 @@
     <li class="step">
       <p>Touchez le bouton du haut-parleur dans la barre de commandes (<span class="ui">Activer le son</span>).</p>
       <p class="check"><b class="check-label">Vérification :</b> Le symbole passe d’un haut-parleur barré à un haut-parleur avec des ondes sonores, et le son de la caméra est lu.</p>
-      <figure class="phone"><img src="guide/img/single-audio.jpg" alt="La barre de commandes d’une caméra qui transmet du son, avec le bouton du haut-parleur entre Instantané et le commutateur SD et HD" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Le bouton du haut-parleur dans la barre de commandes</figcaption></figure>
+      <figure class="phone"><img src="guide/img/single-audio.jpg" alt="La barre de commandes d’une caméra qui transmet du son : Instantané sous forme de symbole d’appareil photo, le bouton d’enregistrement rouge, le bouton du haut-parleur et le commutateur SD et HD" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Le bouton du haut-parleur dans la barre de commandes</figcaption></figure>
     </li>
     <li class="step">
       <p>Touchez de nouveau le bouton du haut-parleur (<span class="ui">Couper le son</span>).</p>
@@ -1423,7 +1423,7 @@
   <h3 id="single-talk">Conversation bidirectionnelle</h3>
   <p>Il est possible de parler à travers une caméra autonome équipée d’un haut-parleur. La conversation fonctionne comme un talkie-walkie : maintenez le bouton appuyé pour parler, relâchez-le pour écouter. Cam Hub demande à la caméra son canal de parole à l’ouverture de la vue ; le bouton pour parler (un symbole de micro) apparaît dans la barre de commandes, après le bouton d’enregistrement et le bouton du haut-parleur, lorsque la caméra en signale un.</p>
   <p>Prérequis : une caméra autonome d’une marque prise en charge qui signale un canal audio bidirectionnel, le mode direct et un canal compris dans la formule. Les canaux d’un enregistreur n’ont pas de bouton pour parler : le canal de parole d’un enregistreur est la sortie audio de l’enregistreur lui-même, et non le haut-parleur de la caméra.</p>
-  <figure class="phone"><img src="guide/img/single-talk.jpg" alt="La vue d’une seule caméra équipée d’un haut-parleur : le bouton pour parler avec un symbole de micro dans la barre de commandes, et le commutateur SD et HD" loading="lazy" decoding="async" width="900" height="1947"><figcaption>Le bouton pour parler dans la barre de commandes</figcaption></figure>
+  <figure class="phone"><img src="guide/img/single-talk.jpg" alt="La vue d’une seule caméra équipée d’un haut-parleur : le bouton pour parler avec un symbole de micro dans la barre de commandes, et le commutateur SD et HD" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Le bouton pour parler dans la barre de commandes</figcaption></figure>
   <p>À la première pression sur le bouton pour parler, une boîte de dialogue du système demande l’accès au micro. Autorisez-le, puis appuyez de nouveau sur le bouton.</p>
   <ol class="steps">
     <li class="step">
@@ -1486,7 +1486,7 @@
     <li class="step">
       <p>Touchez le bouton rond en bas à droite de l’image (<span class="ui">Déplacer la caméra</span>).</p>
       <p class="check"><b class="check-label">Vérification :</b> Le pavé s’ouvre à gauche du bouton, et le bouton affiche une croix (<span class="ui">Masquer les commandes</span>). Le pavé contient une capsule avec plus et moins pour le zoom, un disque à quatre flèches avec un symbole de maison au centre, et un bouton en forme d’étoile. Pour une caméra qui permet la visée par toucher, un bouton de visée avec un symbole de cible s’ajoute à côté du disque, au-dessus de l’étoile.</p>
-      <figure class="phone"><img src="guide/img/single-ptz.jpg" alt="La vue d’une seule caméra avec la commande de la caméra ouverte : la capsule de zoom, le disque de direction avec le symbole de maison, le bouton de visée, le bouton en forme d’étoile et le bouton en forme de croix sur l’image" loading="lazy" decoding="async" width="900" height="1947"><figcaption>La commande de la caméra sur l’image</figcaption></figure>
+      <figure class="phone"><img src="guide/img/single-ptz.jpg" alt="La vue d’une seule caméra avec la commande de la caméra ouverte : la capsule de zoom, le disque de direction avec le symbole de maison, le bouton de visée, le bouton en forme d’étoile et le bouton en forme de croix sur l’image" loading="lazy" decoding="async" width="900" height="1956"><figcaption>La commande de la caméra sur l’image</figcaption></figure>
     </li>
     <li class="step">
       <p>Maintenez appuyée une flèche du disque (<span class="ui">Incliner vers le haut</span>, <span class="ui">Incliner vers le bas</span>, <span class="ui">Pivoter vers la gauche</span> ou <span class="ui">Pivoter vers la droite</span>).</p>
@@ -1527,7 +1527,7 @@
 
   <h4>Viser en touchant l’image</h4>
   <p>Sur les caméras qui le permettent, la caméra peut être tournée vers un point de l’image, ou zoomer directement sur une zone tracée sur l’image. Prérequis : le pavé est ouvert et affiche le bouton de visée.</p>
-  <figure class="phone"><img src="guide/img/single-ptz-aim.jpg" alt="La vue d’une seule caméra pendant la visée par toucher : l’indication en haut de l’image, le bouton de visée allumé et le bouton en forme de croix" loading="lazy" decoding="async" width="900" height="1947"><figcaption>La visée par toucher</figcaption></figure>
+  <figure class="phone"><img src="guide/img/single-ptz-aim.jpg" alt="La vue d’une seule caméra pendant la visée par toucher : l’indication en haut de l’image, le bouton de visée allumé et le bouton en forme de croix" loading="lazy" decoding="async" width="900" height="1956"><figcaption>La visée par toucher</figcaption></figure>
   <ol class="steps">
     <li class="step">
       <p>Touchez le bouton de visée (<span class="ui">Positionnement 3D</span>).</p>
@@ -1683,7 +1683,7 @@
     </tbody>
   </table></div>
   <div class="shots pair">
-    <figure class="phone"><img src="guide/img/single-reconnecting.jpg" alt="La vue d’une seule caméra pendant la reconnexion du flux : un indicateur de chargement avec le texte Reconnexion… sur la zone d’image noire, la pastille DIRECT en haut à gauche, le bouton de commande de la caméra en bas à droite, en dessous la barre de commandes avec Instantané à gauche et le commutateur SD et HD à droite, la ligne Impossible de joindre l’appareil., puis le panneau des enregistrements avec une frise chronologique vide" loading="lazy" decoding="async" width="900" height="1956"><figcaption>L’image pendant le rétablissement de la connexion</figcaption></figure>
+    <figure class="phone"><img src="guide/img/single-reconnecting.jpg" alt="La vue d’une seule caméra pendant la reconnexion du flux : un indicateur de chargement avec le texte Reconnexion… sur la zone d’image noire, la pastille DIRECT en haut à gauche, le bouton de commande de la caméra en bas à droite, en dessous la barre de commandes avec Instantané et le bouton d’enregistrement rouge à gauche, et le commutateur SD et HD à droite, la ligne Impossible de joindre l’appareil., puis le panneau des enregistrements avec une frise chronologique vide" loading="lazy" decoding="async" width="900" height="1956"><figcaption>L’image pendant le rétablissement de la connexion</figcaption></figure>
     <figure class="phone"><img src="guide/img/single-failed.jpg" alt="La vue d’une seule caméra avec un message d’échec et le bouton Réessayer sur la zone d’image sombre" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Un message d’échec avec Réessayer</figcaption></figure>
   </div>
   <ol class="steps">
@@ -1719,7 +1719,7 @@
   <div class="table-wrap"><table>
     <thead><tr><th>Fonction</th><th>Affichée lorsque</th></tr></thead>
     <tbody>
-      <tr><td>Panneau des enregistrements avec jour, frise chronologique et liste</td><td>L’appareil a été ajouté avec un mode de connexion qui offre la lecture ; voir <a class="xref" href="#brands-matrix">« Ce qui fonctionne avec quel mode »</a>. Lorsque le compte n’est pas autorisé à lire les enregistrements, le panneau est tout de même affiché, avec <span class="ui">Ce compte ne peut pas lire les enregistrements de cet appareil.</span> au-dessus de la frise chronologique.</td></tr>
+      <tr><td>Panneau des enregistrements avec jour, frise chronologique et liste</td><td>L’appareil a été ajouté avec un mode de connexion qui offre la lecture ; voir <a class="xref" href="#brands-matrix">« Ce qui fonctionne avec quel mode »</a>. Lorsque l’appareil refuse la connexion, parce que le compte n’est pas autorisé à lire les enregistrements ou parce que le nom d’utilisateur ou le mot de passe est incorrect, le panneau est tout de même affiché, avec <span class="ui">Ce compte ne peut pas lire les enregistrements de cet appareil.</span> au-dessus de la frise chronologique.</td></tr>
       <tr><td>Bouton du calendrier des enregistrements</td><td>L’appareil tient aussi un index quotidien de ses enregistrements ; voir <a class="xref" href="#playback-calendar">« Le calendrier des enregistrements »</a>.</td></tr>
       <tr><td>Commutateur <span class="ui">Continu</span> et <span class="ui">Événements</span></td><td>L’appareil a été ajouté avec un mode de connexion qui offre un index des événements : des personnes détectées, ou des mouvements et des entrées d’alarme ; voir <a class="xref" href="#brands-matrix">« Ce qui fonctionne avec quel mode »</a>. Le commutateur est affiché même lorsque l’appareil lui-même ne répond pas à la recherche dans cet index ; voir <a class="xref" href="#playback-list">« La liste des enregistrements et des événements »</a>. Avec tout autre mode de connexion, le commutateur n’apparaît que lorsque le jour choisi ou la veille contient un enregistrement réalisé par l’appareil à la suite d’un événement. Sinon, seule la liste des enregistrements continus est affichée, sans commutateur.</td></tr>
       <tr><td>Bouton de vitesse</td><td>Pendant la lecture, lorsque l’appareil peut lire l’enregistrement plus vite. S’il ne le peut pas, un avis s’affiche ; voir <a class="xref" href="#playback-speed">« Vitesse de lecture »</a>.</td></tr>
@@ -1759,7 +1759,7 @@
 
   <h3 id="playback-calendar">Le calendrier des enregistrements</h3>
   <p>Sur les appareils qui tiennent un index quotidien de leurs enregistrements, un bouton de calendrier se trouve entre le titre <span class="ui">Enregistrements</span> et le jour. Son calendrier marque les jours qui comportent des enregistrements, ce qui évite d’essayer les jours un à un. Sans un tel index, le bouton n’est pas affiché et le jour se choisit comme décrit dans <a class="xref" href="#playback-day">« Choisir un jour »</a>.</p>
-  <figure class="phone"><img src="guide/img/playback-calendar.jpg" alt="La feuille Calendrier des enregistrements sur la vue d’une seule caméra : le mois avec des flèches, les jours comportant des enregistrements marqués d’un point, le jour choisi dans un cercle plein et la ligne Les jours marqués d’un point ont des enregistrements." loading="lazy" decoding="async" width="900" height="1947"><figcaption>Le calendrier des enregistrements</figcaption></figure>
+  <figure class="phone"><img src="guide/img/playback-calendar.jpg" alt="La feuille Calendrier des enregistrements sur la vue d’une seule caméra : le mois avec des flèches, les jours comportant des enregistrements marqués d’un point, le jour choisi dans un cercle plein et la ligne Les jours marqués d’un point ont des enregistrements." loading="lazy" decoding="async" width="900" height="1956"><figcaption>Le calendrier des enregistrements</figcaption></figure>
   <ol class="steps">
     <li class="step">
       <p>Touchez le bouton de calendrier (<span class="ui">Calendrier des enregistrements</span>) à côté du jour.</p>
@@ -1877,7 +1877,7 @@
       <tr><td><span class="ui">Aucun événement ce jour-là.</span></td><td>Le jour n’a aucun événement, sur tout autre appareil.</td></tr>
       <tr><td><span class="ui">Cet appareil n’a pas pu consulter son index des détections de personnes.</span></td><td>Affiché sous <span class="ui">Événements</span> à la place de la liste lorsque l’appareil ne répond pas à la recherche de personnes détectées, par exemple un enregistreur plus ancien sans index des personnes. Les enregistrements réalisés par l’appareil à la suite d’un événement ne sont alors pas listés, mais peuvent toujours être lus à partir de leurs barres rouges sur la frise chronologique. La liste des enregistrements continus n’est pas concernée.</td></tr>
       <tr><td><span class="ui">Cet appareil n’a pas pu rechercher ses événements.</span></td><td>Même chose, sur un appareil qui signale les mouvements et les entrées d’alarme.</td></tr>
-      <tr><td>Message avec un symbole d’avertissement au-dessus de la frise chronologique : <span class="ui">Ce compte ne peut pas lire les enregistrements de cet appareil.</span>, <span class="ui">Impossible de joindre l’appareil.</span>, <span class="ui">L’appareil n’a pas reconnu les enregistrements de cette caméra.</span> ou <span class="ui">Cette caméra est hors ligne.</span></td><td>La recherche pour ce jour a échoué pour la raison que nomme le message. Pendant que le message est affiché, le jour peut être changé et un autre jour essayé. Pour le compte, vérifiez ses droits sur l’appareil ; pour la connexion, voir <a class="xref" href="#trouble">chapitre 15 : « Dépannage »</a>.</td></tr>
+      <tr><td>Message avec un symbole d’avertissement au-dessus de la frise chronologique : <span class="ui">Ce compte ne peut pas lire les enregistrements de cet appareil.</span>, <span class="ui">Impossible de joindre l’appareil.</span>, <span class="ui">L’appareil n’a pas reconnu les enregistrements de cette caméra.</span> ou <span class="ui">Cette caméra est hors ligne.</span></td><td>La recherche pour ce jour a échoué pour la raison que nomme le message. Pendant que le message est affiché, le jour peut être changé et un autre jour essayé. Pour le compte, vérifiez son nom d’utilisateur, son mot de passe et ses droits sur l’appareil ; pour la connexion, voir <a class="xref" href="#trouble">chapitre 15 : « Dépannage »</a>.</td></tr>
       <tr><td><span class="ui">Trop de requêtes en peu de temps. Réessayez dans une minute.</span></td><td>L’appareil ou son service a refusé la recherche à cause d’un trop grand nombre de requêtes, ou l’appareil était encore occupé par une recherche précédente. Attendez une minute, puis choisissez de nouveau le jour.</td></tr>
       <tr><td>Autres messages au même endroit, par exemple <span class="ui">L’appareil a envoyé une réponse inattendue.</span>, <span class="ui">Le délai de connexion a expiré.</span> ou <span class="ui">Une erreur s’est produite. Veuillez réessayer.</span></td><td>La recherche a échoué pour une autre raison. Choisissez de nouveau le jour. Si le message persiste, voir <a class="xref" href="#trouble">chapitre 15 : « Dépannage »</a>.</td></tr>
     </tbody>
@@ -1958,7 +1958,7 @@
     <li class="step">
       <p>Démarrez un enregistrement et faites pivoter l’iPhone à l’horizontale.</p>
       <p class="check"><b class="check-label">Vérification :</b> L’image occupe l’écran. Une bande placée sur le bord inférieur de l’image contient la pastille <span class="ui">LECTURE 15:00:03</span>, le bouton de vitesse, <span class="ui">Retour au direct</span> et la frise chronologique.</p>
-      <figure class="land"><img src="guide/img/playback-landscape.jpg" alt="Lecture à l’horizontale : l’image sur tout l’écran avec, sur le bord inférieur, une bande qui contient la pastille de lecture, le bouton de vitesse, Retour au direct et la frise chronologique" loading="lazy" decoding="async" width="1600" height="736"><figcaption>Lecture à l’horizontale</figcaption></figure>
+      <figure class="land"><img src="guide/img/playback-landscape.jpg" alt="Lecture à l’horizontale : l’image au milieu de l’écran noir, en haut le bouton de retour avec la pastille de lecture à côté et le bouton d’enregistrement rouge, et sur le bord inférieur une bande qui contient la pastille de lecture, le bouton de vitesse, Retour au direct et la frise chronologique" loading="lazy" decoding="async" width="1600" height="736"><figcaption>Lecture à l’horizontale</figcaption></figure>
     </li>
     <li class="step">
       <p>Faites glisser la frise chronologique dans la bande, puis levez le doigt à l’heure voulue.</p>
@@ -2096,7 +2096,7 @@
     <li class="step">
       <p>Cochez cinq autres canaux, dans l’ordre dans lequel ils doivent apparaître sur le mur.</p>
       <p class="check"><b class="check-label">Vérification :</b> Le haut de la page affiche <span class="ui" data-ui="value">6 caméras sélectionnées</span>.</p>
-      <figure class="phone"><img src="guide/img/lvm-pick-selected.jpg" alt="La page Choisir les caméras avec 6 caméras sélectionnées : chaque canal coché a un sélecteur SD et HD à sa droite, avec les boutons Tout en SD et Tout en HD en haut" loading="lazy" decoding="async" width="900" height="1956"><figcaption>6 caméras sélectionnées</figcaption></figure>
+      <figure class="phone"><img src="guide/img/lvm-pick-selected.jpg" alt="La page Choisir les caméras avec 6 caméras sélectionnées : le sélecteur Page paysage et Page portrait en haut, les boutons Tout en SD et Tout en HD en dessous, et un sélecteur SD et HD à droite de chaque canal coché" loading="lazy" decoding="async" width="900" height="1956"><figcaption>6 caméras sélectionnées</figcaption></figure>
     </li>
     <li class="step">
       <p>Facultatif : touchez <span class="ui">HD</span> à côté de chaque caméra qui doit afficher une image plus nette.</p>
@@ -2360,7 +2360,7 @@
   <h3 id="lvm-arrange">Organiser le mur et ses cases</h3>
   <p>Chemin : <span class="path"><span class="ui">LiveView Mix</span> › <span class="ui">Ajuster la disposition</span> › <span class="ui">Organiser le mur</span></span>. Cette page détermine ce qui va dans chaque case. Son titre est <span class="ui">Organiser</span>. De haut en bas, la page contient la rangée de dispositions, le canevas, <span class="ui">Astuces</span> et la liste <span class="ui">Ordre</span>. <span class="ui">Organiser le mur</span> est disponible dès que des caméras ont été sélectionnées ou qu’un appareil existe.</p>
   <figure class="phone clip"><video class="clip" src="guide/vid/rec-arrange-swap.mp4" poster="guide/img/rec-arrange-swap.jpg" aria-label="Organisation du mur : faire glisser une case sur une autre échange les deux, et faire glisser une case vers une cellule vide la déplace à cet endroit." muted loop playsinline preload="metadata"></video><figcaption>Organisation du mur : faire glisser une case sur une autre échange les deux, et faire glisser une case vers une cellule vide la déplace à cet endroit.</figcaption></figure>
-  <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="La page Organiser : la rangée de dispositions en haut, le canevas avec dix cases au milieu (la case 9 est un panneau de commande et la case 10 une horloge), et la liste Ordre en dessous" loading="lazy" decoding="async" width="900" height="1956"><figcaption>La page Organiser</figcaption></figure>
+  <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="La page Organiser : la rangée de dispositions en haut, le canevas avec dix cases au milieu (la case 9 est un panneau de commande et la case 10 une horloge), et en dessous Astuces et la liste Ordre" loading="lazy" decoding="async" width="900" height="1956"><figcaption>La page Organiser</figcaption></figure>
   <ul>
     <li><b>Rangée de dispositions</b> : les mêmes schémas de disposition que sur <span class="ui">Ajuster la disposition</span> ; la disposition peut être modifiée directement ici. Le schéma <span class="ui">Personnalisé</span> apparaît dès qu’une disposition a été dessinée ou tant qu’elle est utilisée, et ne peut être sélectionné qu’ici.</li>
     <li><b>Canevas</b> : dessiné en 16:9 à l’horizontale pour la page paysage et en 9:16 à la verticale pour la page portrait, il montre la page du mur actuelle. Le numéro de chaque case remplie se trouve dans son coin supérieur gauche. Les cases de caméra affichent une image en direct (SD) ; une caméra hors ligne ou hors formule affiche une case noire avec une icône de caméra barrée, et une diffusion YouTube ou Twitch affiche son nom. Tant que le filigrane est désactivé, le nom du canal se trouve dans le coin inférieur gauche ; lorsqu’il est activé, le filigrane est prévisualisé. Les panneaux de commande du canevas ont le même aspect que sur le mur, sans le cadenas d’un panneau que la formule ne couvre pas ; en toucher un ouvre son éditeur et n’envoie aucune requête. Sur un appareil tenu à la verticale, le mur paysage réel est retourné, mais chaque case garde son numéro.</li>
@@ -2941,7 +2941,7 @@
     <li class="step">
       <p>Touchez <span class="ui">Organiser le mur</span>.</p>
       <p class="check"><b class="check-label">Vérification :</b> La page <span class="ui">Organiser</span> s’ouvre : le canevas du mur est en haut, et la liste <span class="ui">Ordre</span> en dessous énumère chaque case remplie sous son numéro.</p>
-      <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="La page Organiser : le canevas du mur en haut avec un panneau de commande dans la case 9 et une horloge dans la case 10, et la liste des cases remplies en dessous" loading="lazy" decoding="async" width="900" height="1956"><figcaption>La page Organiser</figcaption></figure>
+      <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="La page Organiser : la rangée de dispositions en haut, le canevas du mur en dessous avec un panneau de commande dans la case 9 et une horloge dans la case 10, et plus bas la liste des cases remplies" loading="lazy" decoding="async" width="900" height="1956"><figcaption>La page Organiser</figcaption></figure>
     </li>
     <li class="step">
       <p>Touchez une case inutilisée du canevas, affichée avec un contour en pointillés et un +. Si les cases inutilisées se trouvent sur une autre page du mur, utilisez d’abord les flèches sous le canevas ou balayez latéralement.</p>
@@ -3084,8 +3084,8 @@
     </li>
   </ol>
   <div class="shots pair">
-    <figure class="phone"><img src="guide/img/lvm-button-editor.jpg" alt="L’éditeur de bouton : icône, libellé, Confirmer avant d’exécuter, et méthode et URL de la section Requête" loading="lazy" decoding="async" width="900" height="1956"><figcaption>L’éditeur de bouton (partie supérieure)</figcaption></figure>
-    <figure class="phone"><img src="guide/img/lvm-button-headers.jpg" alt="La partie inférieure de l’éditeur de bouton : la section En-têtes avec une ligne Authorization, et la section Corps avec le type de contenu et le contenu JSON" loading="lazy" decoding="async" width="900" height="1956"><figcaption>L’éditeur de bouton (partie inférieure)</figcaption></figure>
+    <figure class="phone"><img src="guide/img/lvm-button-editor.jpg" alt="L’éditeur de bouton : icône, libellé, Confirmer avant d’exécuter, méthode et URL de la section Requête, et la section Apple Watch avec Mode d’envoi" loading="lazy" decoding="async" width="900" height="1956"><figcaption>L’éditeur de bouton (partie supérieure)</figcaption></figure>
+    <figure class="phone"><img src="guide/img/lvm-button-headers.jpg" alt="La partie inférieure de l’éditeur de bouton : la section Apple Watch, la section En-têtes avec une ligne Authorization, et la section Corps avec le type de contenu et le contenu JSON" loading="lazy" decoding="async" width="900" height="1956"><figcaption>L’éditeur de bouton (partie inférieure)</figcaption></figure>
   </div>
   <div class="table-wrap"><table>
     <thead><tr><th>Champ</th><th>Description</th></tr></thead>
@@ -3117,7 +3117,7 @@
     <li class="step">
       <p>Observez l’icône du bouton.</p>
       <p class="check"><b class="check-label">Vérification :</b> Selon le résultat, l’icône devient une coche verte ou un triangle d’avertissement orange, puis reprend l’icône d’origine au bout d’environ 1,6 seconde.</p>
-      <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="Trois états d’un même bouton : l’indicateur de chargement pendant l’envoi, la coche verte après un succès et le triangle d’avertissement orange après un échec" loading="lazy" decoding="async" width="1600" height="736"><figcaption>Les trois états d’un bouton</figcaption></figure>
+      <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="Trois boutons d’un panneau de commande sur le mur LiveView Mix, chacun dans l’un des états : l’indicateur de chargement pendant l’envoi, la coche verte après un succès et le triangle d’avertissement orange après un échec" loading="lazy" decoding="async" width="1600" height="736"><figcaption>Les trois états d’un bouton, un sur chaque bouton</figcaption></figure>
     </li>
   </ol>
   <div class="table-wrap"><table>
@@ -3851,7 +3851,7 @@ Content-Type: application/json
     <li class="step">
       <p>Dans la section <span class="ui">Formules caméras · facturation annuelle</span> ou <span class="ui">Formules NVR · facturation mensuelle</span>, repérez la formule choisie et touchez <span class="ui">S’abonner</span> sur sa carte.</p>
       <p class="check"><b class="check-label">Vérification :</b> La confirmation d’achat du système apparaît. Chaque carte indique le nom de la formule, une courte description et son coût ; si le compte Apple y a droit, la durée d’un essai gratuit est également indiquée.</p>
-      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="Le haut de la page Formules : le logo Cam Hub, le titre Débloquez toutes les caméras, une phrase sur ce qu’affiche la formule gratuite, cinq courtes lignes sur les formules et ce qu’elles incluent, et le titre Formules caméras · facturation annuelle sur le bord inférieur" loading="lazy" decoding="async" width="900" height="1215"><figcaption>Le haut de la page Formules ; les cartes des formules suivent en dessous</figcaption></figure>
+      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="Le haut de la page Formules : le logo Cam Hub, le titre Débloquez toutes les caméras, une phrase sur ce qu’affiche la formule gratuite et cinq courtes lignes sur les formules et ce qu’elles incluent" loading="lazy" decoding="async" width="900" height="1215"><figcaption>Le haut de la page Formules ; les cartes des formules suivent en dessous</figcaption></figure>
     </li>
     <li class="step">
       <p>Suivez les invites de l’écran du système pour confirmer l’achat avec le compte Apple.</p>
@@ -3950,7 +3950,7 @@ Content-Type: application/json
     <li class="step">
       <p>Touchez l’onglet <span class="ui">Outils</span> en bas de l’écran.</p>
       <p class="check"><b class="check-label">Vérification :</b> L’écran affiche les sections de l’onglet, à commencer par <span class="ui">Sous-réseau</span>. Le champ d’adresse et la plage sont déjà renseignés avec le réseau de l’appareil.</p>
-      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="L’onglet Outils : la section Sous-réseau avec l’adresse propre, le réseau, la plage et le bouton Analyser, avec en dessous Appareils trouvés et la ligne Compteur de vitesse" loading="lazy" decoding="async" width="900" height="1745"><figcaption>L’onglet Outils (réseau d’exemple)</figcaption></figure>
+      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="L’onglet Outils avec son titre en haut : la section Sous-réseau avec l’adresse de cet appareil, le réseau, la plage et le bouton Analyser, puis en dessous Appareils trouvés, encore sans appareil, et la ligne Compteur de vitesse" loading="lazy" decoding="async" width="900" height="1634"><figcaption>L’onglet Outils (réseau d’exemple)</figcaption></figure>
     </li>
   </ol>
   <p>Pour les étapes d’une analyse, voir <a class="xref" href="#add-scan">« Trouver des appareils avec l’analyse du réseau »</a>. Les points suivants concernent le comportement de l’onglet dans son ensemble.</p>
@@ -4132,7 +4132,7 @@ Content-Type: application/json
     <li class="step">
       <p>Dans la section <span class="ui">Abonnement</span>, touchez <span class="ui">Formules</span>.</p>
       <p class="check"><b class="check-label">Vérification :</b> La page <span class="ui">Formules</span> s’ouvre par-dessus les réglages. Elle liste les formules caméras et les formules NVR et repère la formule actuelle.</p>
-      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="Le haut de la page Formules : le logo Cam Hub, le titre Débloquez toutes les caméras, une phrase sur ce qu’affiche la formule gratuite, cinq courtes lignes sur les formules et ce qu’elles incluent, et le titre Formules caméras · facturation annuelle sur le bord inférieur" loading="lazy" decoding="async" width="900" height="1215"><figcaption>Le haut de la page Formules ; les cartes des formules suivent en dessous</figcaption></figure>
+      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="Le haut de la page Formules : le logo Cam Hub, le titre Débloquez toutes les caméras, une phrase sur ce qu’affiche la formule gratuite et cinq courtes lignes sur les formules et ce qu’elles incluent" loading="lazy" decoding="async" width="900" height="1215"><figcaption>Le haut de la page Formules ; les cartes des formules suivent en dessous</figcaption></figure>
     </li>
     <li class="step">
       <p>Touchez <span class="ui">OK</span> dans le coin supérieur droit.</p>
@@ -4256,7 +4256,7 @@ Content-Type: application/json
     <li class="step">
       <p>Touchez la ligne <span class="ui" data-ui="value">Language</span>.</p>
       <p class="check"><b class="check-label">Vérification :</b> Un menu liste <span class="ui">Suivre le système</span> et les langues <span class="ui" data-ui="value">English</span>, <span class="ui" data-ui="value">繁體中文</span>, <span class="ui" data-ui="value">简体中文</span>, <span class="ui" data-ui="value">日本語</span>, <span class="ui" data-ui="value">한국어</span>, <span class="ui" data-ui="value">العربية</span>, <span class="ui" data-ui="value">Deutsch</span>, <span class="ui" data-ui="value">Español</span>, <span class="ui" data-ui="value">Español (México)</span>, <span class="ui" data-ui="value">Français</span> et <span class="ui" data-ui="value">Slovenščina</span>. Chaque langue est écrite sous son propre nom.</p>
-      <figure class="phone"><img src="guide/img/settings-language.jpg" alt="Le menu Language de l’onglet Réglages : Suivre le système avec une coche et les langues, chacune écrite sous son propre nom, dont Español (México)" loading="lazy" decoding="async" width="900" height="1947"><figcaption>Le menu Language</figcaption></figure>
+      <figure class="phone"><img src="guide/img/settings-language.jpg" alt="Le menu Language de l’onglet Réglages : Suivre le système avec une coche et les onze langues, chacune écrite sous son propre nom, de English à Slovenščina en dernier" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Le menu Language</figcaption></figure>
     </li>
     <li class="step">
       <p>Touchez la langue.</p>
@@ -4303,11 +4303,11 @@ Content-Type: application/json
   <ol class="steps">
     <li class="step">
       <p>Dans la section <span class="ui">Réinitialiser</span>, touchez <span class="ui">Rétablir les réglages par défaut</span>.</p>
-      <p class="check"><b class="check-label">Vérification :</b> La boîte de dialogue <span class="ui">Rétablir tous les réglages par défaut ?</span> apparaît, avec les boutons <span class="ui">Rétablir les valeurs par défaut</span> et <span class="ui">Annuler</span>. Le texte de la boîte de dialogue indique que chaque réglage, y compris la langue, revient à sa valeur par défaut, que le mur LiveView Mix (dispositions, panneaux de commande, boutons webhook et images) est vidé, et que les appareils et la sauvegarde iCloud sont conservés.</p>
+      <p class="check"><b class="check-label">Vérification :</b> La boîte de dialogue <span class="ui">Rétablir tous les réglages par défaut ?</span> apparaît sur la page des réglages, avec le bouton <span class="ui">Rétablir les valeurs par défaut</span>. Sur iPhone comme sur iPad, la boîte de dialogue n’a pas de bouton Annuler. Le texte de la boîte de dialogue indique que chaque réglage, y compris la langue, revient à sa valeur par défaut, que le mur LiveView Mix (dispositions, panneaux de commande, boutons webhook et images) est vidé, et que les appareils et la sauvegarde iCloud sont conservés.</p>
       <figure class="phone"><img src="guide/img/settings-restore-defaults.jpg" alt="La boîte de dialogue Rétablir tous les réglages par défaut ? sur la page des réglages, et le bouton Rétablir les valeurs par défaut" loading="lazy" decoding="async" width="900" height="1956"><figcaption>La confirmation avant le rétablissement des réglages par défaut</figcaption></figure>
     </li>
     <li class="step">
-      <p>Touchez <span class="ui">Rétablir les valeurs par défaut</span>. Touchez plutôt <span class="ui">Annuler</span> pour tout conserver en l’état.</p>
+      <p>Touchez <span class="ui">Rétablir les valeurs par défaut</span>. Pour tout conserver en l’état, touchez plutôt n’importe où en dehors de la boîte de dialogue ; elle se ferme et rien ne change.</p>
       <p class="check"><b class="check-label">Vérification :</b> Les réglages affichent leurs valeurs par défaut, et la langue suit le système. La ligne <span class="ui">LiveView Mix</span> affiche <span class="ui">Non configuré</span>, et l’interrupteur <span class="ui">Page portrait</span> est désactivé. Les appareils figurent toujours dans l’onglet Appareils.</p>
     </li>
   </ol>
@@ -4317,11 +4317,11 @@ Content-Type: application/json
   <ol class="steps">
     <li class="step">
       <p>Dans la section <span class="ui">Réinitialiser</span>, touchez <span class="ui">Supprimer toutes les données</span>.</p>
-      <p class="check"><b class="check-label">Vérification :</b> La boîte de dialogue <span class="ui">Supprimer toutes les données ?</span> apparaît, avec les boutons <span class="ui">Tout supprimer</span> et <span class="ui">Annuler</span>. Son texte dépend de la sauvegarde iCloud. Avec une sauvegarde, il indique <span class="ui">Cela supprime chaque appareil, caméra et mot de passe enregistré de cet appareil. Votre sauvegarde iCloud et votre abonnement ne sont pas affectés.</span> Sans sauvegarde, il indique <span class="ui">Il n’y a pas de sauvegarde iCloud, cette action est donc irréversible — les mots de passe des caméras ne sont que sur cet appareil et ne peuvent pas être récupérés. Votre abonnement n’est pas affecté.</span></p>
-      <figure class="phone"><img src="guide/img/settings-delete-all.jpg" alt="La boîte de dialogue Supprimer toutes les données ? sur la page des réglages, avec les boutons Tout supprimer et Annuler" loading="lazy" decoding="async" width="900" height="1956"><figcaption>La confirmation avant la suppression de toutes les données</figcaption></figure>
+      <p class="check"><b class="check-label">Vérification :</b> La boîte de dialogue <span class="ui">Supprimer toutes les données ?</span> apparaît sur la page des réglages, avec le bouton <span class="ui">Tout supprimer</span>. Sur iPhone comme sur iPad, la boîte de dialogue n’a pas de bouton Annuler. Son texte dépend de la sauvegarde iCloud. Avec une sauvegarde, il indique <span class="ui">Cela supprime chaque appareil, caméra et mot de passe enregistré de cet appareil. Votre sauvegarde iCloud et votre abonnement ne sont pas affectés.</span> Sans sauvegarde, il indique <span class="ui">Il n’y a pas de sauvegarde iCloud, cette action est donc irréversible — les mots de passe des caméras ne sont que sur cet appareil et ne peuvent pas être récupérés. Votre abonnement n’est pas affecté.</span></p>
+      <figure class="phone"><img src="guide/img/settings-delete-all.jpg" alt="La boîte de dialogue Supprimer toutes les données ? sur la page des réglages, avec le bouton Tout supprimer" loading="lazy" decoding="async" width="900" height="1956"><figcaption>La confirmation avant la suppression de toutes les données</figcaption></figure>
     </li>
     <li class="step">
-      <p>Touchez <span class="ui">Tout supprimer</span>. Touchez plutôt <span class="ui">Annuler</span> pour conserver les données.</p>
+      <p>Touchez <span class="ui">Tout supprimer</span>. Pour conserver les données, touchez plutôt n’importe où en dehors de la boîte de dialogue ; elle se ferme et rien n’est supprimé.</p>
       <p class="check"><b class="check-label">Vérification :</b> L’onglet Appareils affiche <span class="ui">Aucun appareil</span>, et les réglages affichent leurs valeurs par défaut. Une sauvegarde iCloud existante peut être restaurée comme décrit dans <a class="xref" href="#share-restore">« Restaurer depuis iCloud »</a>.</p>
     </li>
   </ol>
@@ -4359,7 +4359,7 @@ Content-Type: application/json
     <li class="step">
       <p>Touchez <span class="ui">Manuel</span>.</p>
       <p class="check"><b class="check-label">Vérification :</b> Le navigateur ouvre ce manuel à l’adresse <code>https://cam-hub.almx.cc/guide.html</code>. Une connexion internet est nécessaire. Revenez à Cam Hub avec le sélecteur d’apps de l’appareil.</p>
-      <figure class="phone"><img src="guide/img/settings-user-manual.jpg" alt="La partie inférieure de l’onglet Réglages : les lignes Réinitialiser avec leur explication, Mentions légales avec Conditions d’utilisation et Politique de confidentialité, À propos avec Version, et la ligne Manuel avec son explication" loading="lazy" decoding="async" width="900" height="1947"><figcaption>La ligne Manuel</figcaption></figure>
+      <figure class="phone"><img src="guide/img/settings-user-manual.jpg" alt="La partie inférieure de l’onglet Réglages : les dernières lignes Réinitialiser avec leur explication, Mentions légales avec Conditions d’utilisation et Politique de confidentialité, À propos avec Version, la ligne Manuel avec son explication, et en dessous la ligne Contacter l’équipe de développement" loading="lazy" decoding="async" width="900" height="1956"><figcaption>La ligne Manuel</figcaption></figure>
     </li>
   </ol>
   <ul>
@@ -4817,7 +4817,7 @@ Content-Type: application/json
       <tr><td><span class="ui">Cet enregistreur ne peut pas indiquer quels jours comportent des enregistrements.</span> ou <span class="ui">Impossible de charger ce mois.</span> dans le calendrier</td><td>L’appareil ne propose pas de liste des jours comportant des enregistrements, ou n’a pas répondu pour ce mois.</td><td>Choisissez le jour sans les repères. Pour un mois qui ne s’est pas chargé, touchez <span class="ui">Réessayer</span>. Voir <a class="xref" href="#playback-calendar">« Le calendrier des enregistrements »</a>.</td></tr>
       <tr><td><span class="ui">Aucune personne détectée ce jour-là.</span> ou <span class="ui">Aucun événement ce jour-là.</span></td><td>L’appareil n’a enregistré aucun événement ce jour-là.</td><td>Utilisez la liste continue ou la frise chronologique ; voir <a class="xref" href="#playback-list">« La liste des enregistrements et des événements »</a>.</td></tr>
       <tr><td><span class="ui">Cet appareil n’a pas pu consulter son index des détections de personnes.</span> ou <span class="ui">Cet appareil n’a pas pu rechercher ses événements.</span></td><td>L’appareil n’a pas répondu à la recherche d’événements, ou il ne tient pas d’index des personnes détectées.</td><td>Choisissez de nouveau le jour. Lisez les enregistrements depuis la liste continue ou depuis la frise chronologique ; voir <a class="xref" href="#playback-list">« La liste des enregistrements et des événements »</a>.</td></tr>
-      <tr><td><span class="ui">Ce compte ne peut pas lire les enregistrements de cet appareil.</span></td><td>Le compte n’a pas le droit de lire les enregistrements.</td><td>Utilisez un compte disposant des droits de lecture, ou accordez ce droit sur l’appareil.</td></tr>
+      <tr><td><span class="ui">Ce compte ne peut pas lire les enregistrements de cet appareil.</span></td><td>L’appareil a refusé la connexion : le compte n’a pas le droit de lire les enregistrements, ou le nom d’utilisateur ou le mot de passe est incorrect, par exemple parce qu’il a été modifié sur l’appareil.</td><td>Vérifiez le nom d’utilisateur et le mot de passe avec <span class="ui">Modifier les identifiants</span> sur la page de l’appareil ; voir <a class="xref" href="#devices-credentials">« Modifier le nom d’utilisateur et le mot de passe d’un appareil »</a>. S’ils sont corrects, utilisez un compte disposant des droits de lecture, ou accordez ce droit sur l’appareil.</td></tr>
       <tr><td><span class="ui">Impossible de joindre l’appareil.</span> ou <span class="ui">Le délai de connexion a expiré.</span></td><td>L’appareil n’a pas répondu à la recherche pour ce jour.</td><td>Vérifiez le réseau et choisissez de nouveau le jour.</td></tr>
       <tr><td><span class="ui">L’appareil n’a pas reconnu les enregistrements de cette caméra.</span></td><td>L’appareil ne retrouve pas les enregistrements de cette caméra, par exemple parce que la caméra n’a pas de stockage ou signale ses enregistrements d’une manière inattendue.</td><td>Vérifiez sur l’appareil que la caméra enregistre. Un autre canal ou un autre jour peut fonctionner.</td></tr>
       <tr><td><span class="ui">L’enregistreur n’a pas lu cet enregistrement. Il a peut-être été écrasé — choisissez un autre moment.</span></td><td>L’enregistrement figurait dans la liste, mais l’appareil a refusé de le lire, généralement parce que des images plus récentes l’ont remplacé.</td><td>Choisissez une heure plus tardive ou un autre jour.</td></tr>
@@ -4884,7 +4884,7 @@ Content-Type: application/json
       <tr><td>Un triangle d’avertissement rouge après l’appui sur un bouton de l’Apple Watch</td><td>Les mêmes causes que sur le mur. En outre, la montre a envoyé elle-même la requête à une adresse du réseau domestique alors qu’elle n’était pas sur ce réseau Wi-Fi, l’iPhone n’a pas répondu dans un délai d’environ 20 secondes, ou la formule ne couvre plus le panneau ; dans ce dernier cas, le bouton disparaît ensuite de la montre.</td><td>Vérifiez <span class="ui">Mode d’envoi</span> dans l’éditeur du bouton sur l’iPhone. Voir <a class="xref" href="#webhook-watch">« Les boutons sur l’Apple Watch »</a>.</td></tr>
     </tbody>
   </table></div>
-  <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="Trois états d’un même bouton : l’indicateur de chargement pendant l’envoi, la coche verte après un succès et le triangle d’avertissement orange après un échec" loading="lazy" decoding="async" width="1600" height="736"><figcaption>Les trois états d’un bouton</figcaption></figure>
+  <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="Trois boutons d’un panneau de commande sur le mur LiveView Mix, chacun dans l’un des états : l’indicateur de chargement pendant l’envoi, la coche verte après un succès et le triangle d’avertissement orange après un échec" loading="lazy" decoding="async" width="1600" height="736"><figcaption>Les trois états d’un bouton, un sur chaque bouton</figcaption></figure>
 
   <h3 id="trouble-health">État des disques</h3>
   <p>La page <span class="ui">État du disque</span> lit l’état des disques des appareils qui le fournissent ; voir <a class="xref" href="#devices-health">« État des disques »</a>. Un appareil de stockage réseau le fournit via SNMP, qui doit être configuré une fois. Apple TV n’a pas de page État du disque.</p>

@@ -346,7 +346,7 @@
   <p>在<span class="ui">IP 位址或主機名稱</span>輸入 YouTube 或 Twitch 連結時，<span class="ui">新增</span>按鈕無法使用，表單改為提供<span class="ui">以 YouTube 直播新增</span>或<span class="ui">以 Twitch 頻道新增</span>。點選後開啟該服務的畫面，連結已帶入；加入完成後，兩個畫面都會關閉。在不提供這兩項服務的地區，連結會被當作一般位址。</p>
 
   <h3 id="add-failed">加入失敗時的檢查清單</h3>
-  <p>加入失敗時，表單以紅色顯示錯誤訊息。使用<span class="ui">自動偵測</span>時，其下列出找到的開放連接埠。再往下列出<span class="ui">請先檢查這些</span>清單。清單的順序依失敗的種類而定，最可能的原因排在最前面。請由上而下逐項處理，再重新點選<span class="ui">新增</span>。</p>
+  <p>加入失敗時，表單以紅色顯示錯誤訊息。使用<span class="ui">自動偵測</span>時，其下列出找到的開放連接埠；完全沒有回應時，則顯示<span class="ui">這個位址沒有找到任何開放的連接埠。</span>再往下列出<span class="ui">請先檢查這些</span>清單。清單的順序依失敗的種類而定，最可能的原因排在最前面。請由上而下逐項處理，再重新點選<span class="ui">新增</span>。</p>
   <div class="table-wrap"><table>
     <thead><tr><th>錯誤訊息</th><th>檢查項目（由上而下）</th></tr></thead>
     <tbody>
@@ -430,12 +430,12 @@
     <li class="step">
       <p>等待蒐集完成。</p>
       <p class="check"><b class="check-label">確認：</b><span class="ui">檢查結果</span>以白話列出可能的原因與可先嘗試的做法。沒有明顯問題時，顯示<span class="ui">沒有發現明顯的問題。</span></p>
-      <figure class="phone"><img src="guide/img/device-report-found.jpg" alt="設備報告頁面的檢查結果，列出連接埠、網段與 VPN 等可能原因" loading="lazy" decoding="async" width="900" height="1956"><figcaption>檢查結果</figcaption></figure>
+      <figure class="phone"><img src="guide/img/device-report-found.jpg" alt="設備報告的檢查結果：設備位於不同的網段，以及 VPN 正在使用中，下方為「包含的內容」的開關" loading="lazy" decoding="async" width="900" height="1956"><figcaption>檢查結果</figcaption></figure>
     </li>
     <li class="step">
       <p>在<span class="ui">包含的內容</span>中，關閉不想傳送的項目。</p>
       <p class="check"><b class="check-label">確認：</b><span class="ui">報告</span>區塊中的文字隨即更新。</p>
-      <figure class="phone"><img src="guide/img/device-report-text.jpg" alt="可逐項開關的內容與報告全文，下方有寄出報告的按鈕" loading="lazy" decoding="async" width="900" height="1956"><figcaption>內容開關與報告全文</figcaption></figure>
+      <figure class="phone"><img src="guide/img/device-report-text.jpg" alt="報告全文，其下為報告會儲存起來以便稍後傳送的說明、以電子郵件寄給開發者、複製與分享…三個按鈕，最下方為刪除已儲存的報告按鈕" loading="lazy" decoding="async" width="900" height="1956"><figcaption>報告全文與寄出的按鈕</figcaption></figure>
     </li>
     <li class="step">
       <p>檢視<span class="ui">報告</span>區塊中的全文。</p>
@@ -489,7 +489,7 @@
     <li class="step">
       <p>在報告頁面的底部點選<span class="ui">刪除已儲存的報告</span>。</p>
       <p class="check"><b class="check-label">確認：</b>畫面顯示對話框<span class="ui">要刪除所有已儲存的報告嗎？</span>，說明此操作會刪除儲存在此裝置上的所有設備報告，已透過電子郵件寄出的報告不受影響。</p>
-      <figure class="phone"><img src="guide/img/add-report-delete-confirm.jpg" alt="設備報告頁面上方的對話框「要刪除所有已儲存的報告嗎？」：說明此裝置上儲存的所有設備報告會被移除，已寄出的報告不受影響，並有「刪除已儲存的報告」按鈕" loading="lazy" decoding="async" width="900" height="1956"><figcaption>刪除已儲存的報告前的確認</figcaption></figure>
+      <figure class="phone"><img src="guide/img/add-report-delete-confirm.jpg" alt="設備報告頁面上方的對話框「要刪除所有已儲存的報告嗎？」：說明所有已儲存的設備報告都會被移除，已寄出的報告不受影響，並有「刪除已儲存的報告」按鈕" loading="lazy" decoding="async" width="900" height="1956"><figcaption>刪除已儲存的報告前的確認</figcaption></figure>
     </li>
     <li class="step">
       <p>點選對話框中的<span class="ui">刪除已儲存的報告</span>。</p>
@@ -504,7 +504,7 @@
     <li class="step">
       <p>點選底部的<span class="ui">工具</span>分頁。</p>
       <p class="check"><b class="check-label">確認：</b><span class="ui">子網路</span>區塊的<span class="ui">本機</span>列顯示目前的網路位址與遮罩，例如 <code>192.168.1.10/24</code>。位址欄位與<span class="ui">範圍</span>已帶入目前所在的網段。</p>
-      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="工具分頁：子網路區塊顯示本機位址、網段、範圍與掃描按鈕，下方有找到的設備與時速表" loading="lazy" decoding="async" width="900" height="1745"><figcaption>工具分頁（示意網段）</figcaption></figure>
+      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="工具分頁，頂端為標題：子網路區塊顯示本機位址、網段、範圍與掃描按鈕，其下為顯示尚未找到設備的「找到的設備」，以及時速表列" loading="lazy" decoding="async" width="900" height="1634"><figcaption>工具分頁（示意網段）</figcaption></figure>
     </li>
     <li class="step">
       <p>選用：要掃描其他網段時，在位址欄位輸入網段，例如 <code>192.168.1.0</code>，並在<span class="ui">範圍</span>選單選擇範圍。</p>
@@ -881,8 +881,8 @@
     </li>
     <li class="step">
       <p>點選<span class="ui">重新命名攝影機</span>。</p>
-      <p class="check"><b class="check-label">確認：</b>開啟<span class="ui">重新命名攝影機</span>對話框，顯示說明<span class="ui">自己為這支攝影機命名。設備原本的名稱仍保留在底層，重新整理設備不會蓋掉您取的名字。</span>，<span class="ui">名稱</span>欄位帶入目前的名稱，並有<span class="ui">取消</span>、<span class="ui">使用設備名稱</span>與<span class="ui">儲存</span>三個按鈕。</p>
-      <figure class="phone"><img src="guide/img/channel-rename-alert.jpg" alt="重新命名攝影機對話框，有名稱欄位，以及取消、使用設備名稱與儲存三個按鈕" loading="lazy" decoding="async" width="900" height="1956"><figcaption>重新命名攝影機對話框</figcaption></figure>
+      <p class="check"><b class="check-label">確認：</b>開啟<span class="ui">重新命名攝影機</span>對話框，顯示說明<span class="ui">自己為這支攝影機命名。設備原本的名稱仍保留在底層，重新整理設備不會蓋掉您取的名字。</span>，<span class="ui">名稱</span>欄位帶入目前的名稱，並有<span class="ui">使用設備名稱</span>、<span class="ui">儲存</span>與<span class="ui">取消</span>三個按鈕。</p>
+      <figure class="phone"><img src="guide/img/channel-rename-alert.jpg" alt="重新命名攝影機對話框，有名稱欄位，以及使用設備名稱、儲存與取消三個按鈕；對話框下方為已開啟的鍵盤" loading="lazy" decoding="async" width="900" height="1956"><figcaption>重新命名攝影機對話框</figcaption></figure>
     </li>
     <li class="step">
       <p>在<span class="ui">名稱</span>欄位輸入新名稱。</p>
@@ -1009,7 +1009,7 @@
     <li class="step">
       <p>點選一個有畫面的縮圖。</p>
       <p class="check"><b class="check-label">確認：</b>牆面上方開啟該攝影機的近看畫面，頂部有<span class="ui">返回</span>按鈕與攝影機名稱。</p>
-      <figure class="phone"><img src="guide/img/fullwall-closeup.jpg" alt="牆面上方的單一攝影機近看畫面：左上角為返回按鈕與攝影機名稱，畫面位於黑色螢幕的中央，右下角為鏡頭控制按鈕" loading="lazy" decoding="async" width="900" height="1956"><figcaption>攝影機的近看畫面</figcaption></figure>
+      <figure class="phone"><img src="guide/img/fullwall-closeup.jpg" alt="牆面上方的單一攝影機近看畫面：左上角為返回按鈕與攝影機名稱，右上角為帶時鐘圖示的錄影按鈕，畫面位於黑色螢幕的中央，右下角為鏡頭控制按鈕" loading="lazy" decoding="async" width="900" height="1956"><figcaption>攝影機的近看畫面</figcaption></figure>
     </li>
     <li class="step">
       <p>點選近看畫面左上角的<span class="ui">返回</span>。</p>
@@ -1282,7 +1282,7 @@
     <li class="step">
       <p>點選一個顯示即時影像的通道縮圖。</p>
       <p class="check"><b class="check-label">確認：</b>開啟單機畫面。標題為攝影機名稱，畫面左上角顯示綠色標籤<span class="ui">即時</span>。畫面起始時使用<span class="path"><span class="ui">設定</span> › <span class="ui">預設畫質</span> › <span class="ui">單支攝影機</span></span>的畫質（未變更時為 HD）。</p>
-      <figure class="phone"><img src="guide/img/single-live.jpg" alt="即時模式的單機畫面：畫面上有即時標籤與鏡頭控制按鈕，其下為控制列，左側為快照，右側為 SD 與 HD 切換，再下方是錄影面板，含日期、時間軸與錄影清單" loading="lazy" decoding="async" width="900" height="1956"><figcaption>即時模式的單機畫面</figcaption></figure>
+      <figure class="phone"><img src="guide/img/single-live.jpg" alt="即時模式的單機畫面：畫面上有即時標籤與鏡頭控制按鈕，其下為控制列，有快照、紅色錄製按鈕，以及 SD 與 HD 切換，再下方是錄影面板，含錄影日曆按鈕、日期、時間軸與錄影清單" loading="lazy" decoding="async" width="900" height="1956"><figcaption>即時模式的單機畫面</figcaption></figure>
     </li>
   </ol>
   <p>點選左上角的返回按鈕，即可離開單機畫面。</p>
@@ -1293,7 +1293,7 @@
     <tbody>
       <tr><td>導覽列</td><td>返回按鈕與攝影機名稱。在 iPad 與 iPhone Duo 的內螢幕上，右側有<span class="ui">在新視窗中開啟</span>按鈕，見<a class="xref" href="#single-window">「在獨立視窗中顯示攝影機」</a>。</td></tr>
       <tr><td>畫面（直向，16:9）</td><td>左上角的標籤標示模式：<span class="ui">即時</span>（綠色）或<span class="ui">回放 15:00:03</span>，附回放的時間（紅色）。右下角的圓形按鈕，在即時模式為 PTZ 的鏡頭控制，見<a class="xref" href="#single-ptz">「PTZ 控制：移動鏡頭」</a>；播放錄影時則為速度按鈕，見<a class="xref" href="#playback-speed">「播放速度」</a>。</td></tr>
-      <tr><td>控制列</td><td>左側為<span class="ui">快照</span>，其後為紅色錄製按鈕；攝影機傳送聲音時，旁邊有喇叭按鈕；可對講的攝影機另有對講按鈕；右側在即時模式為 SD 與 HD 的切換，在回放時為<span class="ui">回到即時</span>。這一列空間不足時，例如使用較長的語言，<span class="ui">快照</span>只顯示相機圖示。見<a class="xref" href="#single-controls">「快照、聲音與畫質」</a>、<a class="xref" href="#single-clip">「錄製片段」</a>與<a class="xref" href="#single-talk">「雙向對講」</a>。</td></tr>
+      <tr><td>控制列</td><td>左側為<span class="ui">快照</span>，其後為紅色錄製按鈕；攝影機傳送聲音時，旁邊有喇叭按鈕；可對講的攝影機另有對講按鈕；右側在即時模式為 SD 與 HD 的切換，在回放時為<span class="ui">回到即時</span>。這一列空間不足時，例如列中有喇叭或對講按鈕，或使用較長的語言，<span class="ui">快照</span>只顯示相機圖示。見<a class="xref" href="#single-controls">「快照、聲音與畫質」</a>、<a class="xref" href="#single-clip">「錄製片段」</a>與<a class="xref" href="#single-talk">「雙向對講」</a>。</td></tr>
       <tr><td>錄影面板</td><td>標題<span class="ui">錄影</span>，以及日期、時間軸與錄影清單；支援的設備另有錄影日曆的按鈕。面板只在支援錄影回放的設備上出現；其他設備的畫面只有影像與控制列。見<a class="xref" href="#playback">第 7 章「錄影回放與加速」</a>。</td></tr>
     </tbody>
   </table></div>
@@ -1355,7 +1355,7 @@
     <li class="step">
       <p>點選控制列中的喇叭按鈕（<span class="ui">取消靜音</span>）。</p>
       <p class="check"><b class="check-label">確認：</b>符號由帶斜線的喇叭變為帶聲波的喇叭，並播放攝影機的聲音。</p>
-      <figure class="phone"><img src="guide/img/single-audio.jpg" alt="傳送聲音的攝影機的控制列：喇叭按鈕位於快照與 SD、HD 切換之間" loading="lazy" decoding="async" width="900" height="1956"><figcaption>控制列中的喇叭按鈕</figcaption></figure>
+      <figure class="phone"><img src="guide/img/single-audio.jpg" alt="傳送聲音的攝影機的控制列：只顯示相機圖示的快照、紅色錄製按鈕、喇叭按鈕，以及 SD 與 HD 切換" loading="lazy" decoding="async" width="900" height="1956"><figcaption>控制列中的喇叭按鈕</figcaption></figure>
     </li>
     <li class="step">
       <p>再點選一次喇叭按鈕（<span class="ui">靜音</span>）。</p>
@@ -1423,7 +1423,7 @@
   <h3 id="single-talk">雙向對講</h3>
   <p>具備喇叭的獨立攝影機可以對講。對講的方式與無線電對講機相同：按住按鈕說話，放開按鈕聆聽。單機畫面開啟時，Cam Hub 會向攝影機詢問對講通道；攝影機回報有對講通道時，控制列中錄製按鈕與喇叭按鈕之後會出現對講按鈕（麥克風符號）。</p>
   <p>前提：支援的品牌的獨立攝影機、攝影機回報具備雙向音訊通道、處於即時模式，且通道在方案範圍內。錄影主機的通道沒有對講按鈕：錄影主機的對講通道是錄影主機本身的音訊輸出，不是攝影機的喇叭。</p>
-  <figure class="phone"><img src="guide/img/single-talk.jpg" alt="支援對講的攝影機單機畫面：控制列中的麥克風對講按鈕，以及 SD 與 HD 切換" loading="lazy" decoding="async" width="900" height="1947"><figcaption>控制列中的對講按鈕</figcaption></figure>
+  <figure class="phone"><img src="guide/img/single-talk.jpg" alt="支援對講的攝影機單機畫面：控制列中的麥克風對講按鈕，以及 SD 與 HD 切換" loading="lazy" decoding="async" width="900" height="1956"><figcaption>控制列中的對講按鈕</figcaption></figure>
   <p>第一次按下對講按鈕時，系統會以對話框詢問麥克風的取用權限。請允許，再重新按住按鈕。</p>
   <ol class="steps">
     <li class="step">
@@ -1486,7 +1486,7 @@
     <li class="step">
       <p>點選畫面右下角的圓形按鈕（<span class="ui">移動鏡頭</span>）。</p>
       <p class="check"><b class="check-label">確認：</b>控制板在按鈕左側展開，按鈕改為叉號（<span class="ui">隱藏鏡頭控制</span>）。控制板包含：帶加號與減號的變焦膠囊、四個方向箭頭且中央為房屋符號的圓盤，以及星形按鈕。支援以觸控瞄準的攝影機，圓盤旁、星形按鈕上方另有帶準星符號的瞄準按鈕。</p>
-      <figure class="phone"><img src="guide/img/single-ptz.jpg" alt="鏡頭控制展開的單機畫面：影像上有變焦膠囊、含房屋符號的方向圓盤、瞄準按鈕、星形按鈕與叉號按鈕" loading="lazy" decoding="async" width="900" height="1947"><figcaption>影像上的鏡頭控制</figcaption></figure>
+      <figure class="phone"><img src="guide/img/single-ptz.jpg" alt="鏡頭控制展開的單機畫面：影像上有變焦膠囊、含房屋符號的方向圓盤、瞄準按鈕、星形按鈕與叉號按鈕" loading="lazy" decoding="async" width="900" height="1956"><figcaption>影像上的鏡頭控制</figcaption></figure>
     </li>
     <li class="step">
       <p>按住圓盤上的一個箭頭（<span class="ui">鏡頭向上</span>、<span class="ui">鏡頭向下</span>、<span class="ui">鏡頭向左</span>或<span class="ui">鏡頭向右</span>）。</p>
@@ -1527,7 +1527,7 @@
 
   <h4>點選畫面來瞄準</h4>
   <p>支援此功能的攝影機，可以轉向畫面中的某一點，或直接放大畫面上框出的區域。前提：控制板已展開，且顯示瞄準按鈕。</p>
-  <figure class="phone"><img src="guide/img/single-ptz-aim.jpg" alt="觸控瞄準時的單機畫面：畫面上方的提示、亮起的瞄準按鈕與關閉按鈕" loading="lazy" decoding="async" width="900" height="1947"><figcaption>觸控瞄準</figcaption></figure>
+  <figure class="phone"><img src="guide/img/single-ptz-aim.jpg" alt="觸控瞄準時的單機畫面：畫面上方的提示、亮起的瞄準按鈕與關閉按鈕" loading="lazy" decoding="async" width="900" height="1956"><figcaption>觸控瞄準</figcaption></figure>
   <ol class="steps">
     <li class="step">
       <p>點選瞄準按鈕（<span class="ui">3D 定位</span>）。</p>
@@ -1683,7 +1683,7 @@
     </tbody>
   </table></div>
   <div class="shots pair">
-    <figure class="phone"><img src="guide/img/single-reconnecting.jpg" alt="串流重新連線時的單機畫面：黑色的影像區顯示轉圈圖示與「重新連線中…」，左上角為「即時」標籤，右下角為鏡頭控制按鈕；其下為控制列，左側為「快照」，右側為 SD 與 HD 切換，再下為「無法連線到這台設備。」與時間軸是空的錄影區塊" loading="lazy" decoding="async" width="900" height="1956"><figcaption>重新連線時的畫面</figcaption></figure>
+    <figure class="phone"><img src="guide/img/single-reconnecting.jpg" alt="串流重新連線時的單機畫面：黑色的影像區顯示轉圈圖示與「重新連線中…」，左上角為「即時」標籤，右下角為鏡頭控制按鈕；其下為控制列，左側為「快照」與紅色錄製按鈕，右側為 SD 與 HD 切換，再下為「無法連線到這台設備。」與時間軸是空的錄影區塊" loading="lazy" decoding="async" width="900" height="1956"><figcaption>重新連線時的畫面</figcaption></figure>
     <figure class="phone"><img src="guide/img/single-failed.jpg" alt="單機畫面：深色的影像區顯示失敗訊息與重試按鈕" loading="lazy" decoding="async" width="900" height="1956"><figcaption>失敗訊息與重試按鈕</figcaption></figure>
   </div>
   <ol class="steps">
@@ -1719,7 +1719,7 @@
   <div class="table-wrap"><table>
     <thead><tr><th>項目</th><th>顯示條件</th></tr></thead>
     <tbody>
-      <tr><td>含日期、時間軸與清單的錄影面板</td><td>設備是以提供錄影回放的連線方式加入，見<a class="xref" href="#brands-matrix">「各方式可使用的功能」</a>。帳號沒有讀取錄影的權限時，仍會顯示錄影面板，並在時間軸上方顯示<span class="ui">這個帳號無法讀取這台設備上的錄影。</span></td></tr>
+      <tr><td>含日期、時間軸與清單的錄影面板</td><td>設備是以提供錄影回放的連線方式加入，見<a class="xref" href="#brands-matrix">「各方式可使用的功能」</a>。設備拒絕登入時，無論是帳號沒有讀取錄影的權限，還是使用者名稱或密碼錯誤，仍會顯示錄影面板，並在時間軸上方顯示<span class="ui">這個帳號無法讀取這台設備上的錄影。</span></td></tr>
       <tr><td>錄影日曆的按鈕</td><td>設備同時保有每日錄影的索引，見<a class="xref" href="#playback-calendar">「錄影日曆」</a>。</td></tr>
       <tr><td><span class="ui">連續錄影</span>與<span class="ui">事件錄影</span>的切換</td><td>設備是以提供事件索引的連線方式加入：偵測到人員的索引，或移動與警報輸入的索引，見<a class="xref" href="#brands-matrix">「各方式可使用的功能」</a>。即使設備本身不回應該索引的搜尋，仍會顯示切換，見<a class="xref" href="#playback-list">「錄影清單與事件」</a>。以其他連線方式加入的設備，只有在所選日期或前一天有設備因事件而產生的錄影時，才會出現切換。其他情況只顯示連續錄影的清單，也沒有切換。</td></tr>
       <tr><td>速度按鈕</td><td>播放錄影時，且設備可將該錄影加速播放。設備無法加速時會出現提示，見<a class="xref" href="#playback-speed">「播放速度」</a>。</td></tr>
@@ -1759,7 +1759,7 @@
 
   <h3 id="playback-calendar">錄影日曆</h3>
   <p>保有每日錄影索引的設備，<span class="ui">錄影</span>標題與日期之間有日曆按鈕。這個日曆會標示有錄影的日期，不必一天一天嘗試。沒有這種索引的設備不顯示此按鈕，日期依<a class="xref" href="#playback-day">「選擇日期」</a>的說明選擇。</p>
-  <figure class="phone"><img src="guide/img/playback-calendar.jpg" alt="單機畫面上的錄影日曆：月份與左右箭頭、有錄影的日期下方有圓點、選取的日期以實心圓標示，以及「有圓點的日期有錄影。」說明" loading="lazy" decoding="async" width="900" height="1947"><figcaption>錄影日曆</figcaption></figure>
+  <figure class="phone"><img src="guide/img/playback-calendar.jpg" alt="單機畫面上的錄影日曆：月份與左右箭頭、有錄影的日期下方有圓點、選取的日期以實心圓標示，以及「有圓點的日期有錄影。」說明" loading="lazy" decoding="async" width="900" height="1956"><figcaption>錄影日曆</figcaption></figure>
   <ol class="steps">
     <li class="step">
       <p>點選日期旁的日曆按鈕（<span class="ui">錄影日曆</span>）。</p>
@@ -1877,7 +1877,7 @@
       <tr><td><span class="ui">這一天沒有事件。</span></td><td>該日沒有事件，適用於其他所有設備。</td></tr>
       <tr><td><span class="ui">此設備無法搜尋人員事件索引。</span></td><td>設備不回應偵測到人員的搜尋時（例如沒有人員索引的較舊錄影主機），在<span class="ui">事件錄影</span>下取代清單顯示。此時設備因事件而產生的錄影不會列出，但仍可從時間軸上的紅色長條播放。連續錄影的清單不受影響。</td></tr>
       <tr><td><span class="ui">此設備無法搜尋其事件。</span></td><td>同上，適用於標示移動與警報輸入的設備。</td></tr>
-      <tr><td>時間軸上方帶警告符號的訊息：<span class="ui">這個帳號無法讀取這台設備上的錄影。</span>、<span class="ui">無法連線到這台設備。</span>、<span class="ui">這台設備無法辨識這支攝影機的錄影。</span>或<span class="ui">這支攝影機離線。</span></td><td>該日的搜尋因訊息所述的原因而失敗。訊息顯示期間，仍可更換日期，嘗試其他日期。帳號的問題，請檢查帳號在設備上的權限；連線的問題，見<a class="xref" href="#trouble">第 15 章「疑難排解」</a>。</td></tr>
+      <tr><td>時間軸上方帶警告符號的訊息：<span class="ui">這個帳號無法讀取這台設備上的錄影。</span>、<span class="ui">無法連線到這台設備。</span>、<span class="ui">這台設備無法辨識這支攝影機的錄影。</span>或<span class="ui">這支攝影機離線。</span></td><td>該日的搜尋因訊息所述的原因而失敗。訊息顯示期間，仍可更換日期，嘗試其他日期。帳號的問題，請檢查使用者名稱、密碼，以及帳號在設備上的權限；連線的問題，見<a class="xref" href="#trouble">第 15 章「疑難排解」</a>。</td></tr>
       <tr><td><span class="ui">短時間內要求太多次，請稍候一分鐘再試。</span></td><td>設備或其服務因要求過多而拒絕了搜尋，或設備仍在處理先前的搜尋。等待一分鐘後，重新選擇日期。</td></tr>
       <tr><td>同一位置的其他訊息，例如<span class="ui">設備回覆了非預期的內容。</span>、<span class="ui">連線逾時。</span>或<span class="ui">發生錯誤。請再試一次。</span></td><td>搜尋因其他原因而失敗。請重新選擇日期。訊息持續出現時，見<a class="xref" href="#trouble">第 15 章「疑難排解」</a>。</td></tr>
     </tbody>
@@ -1958,7 +1958,7 @@
     <li class="step">
       <p>開始播放一段錄影，並將 iPhone 轉為橫向。</p>
       <p class="check"><b class="check-label">確認：</b>影像佈滿螢幕。影像下緣有一條控制條，包含標籤<span class="ui">回放 15:00:03</span>、速度按鈕、<span class="ui">回到即時</span>與時間軸。</p>
-      <figure class="land"><img src="guide/img/playback-landscape.jpg" alt="橫向的錄影回放：影像佈滿螢幕，下緣的控制條包含回放標籤、速度按鈕、回到即時與時間軸" loading="lazy" decoding="async" width="1600" height="736"><figcaption>橫向的錄影回放</figcaption></figure>
+      <figure class="land"><img src="guide/img/playback-landscape.jpg" alt="橫向的錄影回放：影像位於黑色螢幕的中央，上方有返回按鈕及其旁的回放標籤，以及紅色錄製按鈕；下緣的控制條包含回放標籤、速度按鈕、回到即時與時間軸" loading="lazy" decoding="async" width="1600" height="736"><figcaption>橫向的錄影回放</figcaption></figure>
     </li>
     <li class="step">
       <p>在控制條中拖曳時間軸，並在想看的時間放開手指。</p>
@@ -2096,7 +2096,7 @@
     <li class="step">
       <p>依希望出現在牆上的順序，再勾選另外五個通道。</p>
       <p class="check"><b class="check-label">確認：</b>頁面上方顯示<span class="ui" data-ui="value">已選 6 支攝影機</span>。</p>
-      <figure class="phone"><img src="guide/img/lvm-pick-selected.jpg" alt="選擇攝影機頁面：已選 6 支攝影機，已勾選的通道右側有 SD 與 HD 選擇鈕，上方有全部 SD 與全部 HD 按鈕" loading="lazy" decoding="async" width="900" height="1956"><figcaption>已選 6 支攝影機</figcaption></figure>
+      <figure class="phone"><img src="guide/img/lvm-pick-selected.jpg" alt="選擇攝影機頁面：已選 6 支攝影機，上方為橫向頁面與直向頁面的切換，其下為全部 SD 與全部 HD 按鈕，每個已勾選的通道右側有 SD 與 HD 選擇鈕" loading="lazy" decoding="async" width="900" height="1956"><figcaption>已選 6 支攝影機</figcaption></figure>
     </li>
     <li class="step">
       <p>選用：在需要較清晰畫面的攝影機右側點選 <span class="ui">HD</span>。</p>
@@ -2360,7 +2360,7 @@
   <h3 id="lvm-arrange">排列牆面與格子</h3>
   <p>路徑：<span class="path"><span class="ui">LiveView Mix</span> › <span class="ui">調整版面</span> › <span class="ui">排列牆面</span></span>。此處決定每個格子放什麼。標題為<span class="ui">排列</span>，畫面由上而下為：版面列、畫布、<span class="ui">提示</span>與<span class="ui">順序</span>清單。<span class="ui">排列牆面</span>在已選攝影機，或已有設備時即可使用。</p>
   <figure class="phone clip"><video class="clip" src="guide/vid/rec-arrange-swap.mp4" poster="guide/img/rec-arrange-swap.jpg" aria-label="調整牆面順序：把一個畫面拖到另一個畫面上，兩者互換；拖到空格則移到該處。" muted loop playsinline preload="metadata"></video><figcaption>調整牆面順序：把一個畫面拖到另一個畫面上，兩者互換；拖到空格則移到該處。</figcaption></figure>
-  <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="排列頁面：上方是版面列，中間的畫布顯示十個格子，第 9 格為控制面板、第 10 格為時鐘，下方是順序清單" loading="lazy" decoding="async" width="900" height="1956"><figcaption>排列頁面</figcaption></figure>
+  <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="排列頁面：上方是版面列，中間的畫布顯示十個格子，第 9 格為控制面板、第 10 格為時鐘，下方是提示與順序清單" loading="lazy" decoding="async" width="900" height="1956"><figcaption>排列頁面</figcaption></figure>
   <ul>
     <li><b>版面列</b>：與<span class="ui">調整版面</span>相同的版面縮圖，可直接換版面。<span class="ui">自訂</span>縮圖在已畫過或正在使用時顯示，在這裡只能選用。</li>
     <li><b>畫布</b>：橫向頁面以橫向 16:9 繪製，直向頁面以直向 9:16 繪製，顯示目前這個牆面頁。每個有內容的格子左上角標有格子編號；攝影機格子顯示即時畫面（SD），離線或方案未涵蓋的攝影機顯示黑底與斜線攝影機圖示，YouTube 或 Twitch 直播顯示名稱。未開啟浮水印時左下角顯示通道名稱，開啟後預覽浮水印。畫布上的控制面板與牆面上的樣子相同，但方案未涵蓋的面板不顯示鎖頭；點選只會開啟編輯，不會送出請求。直放的裝置上，真正的橫向牆面是翻轉過的，但每個格子保留自己的編號。</li>
@@ -2941,7 +2941,7 @@
     <li class="step">
       <p>點選<span class="ui">排列牆面</span>。</p>
       <p class="check"><b class="check-label">確認：</b>畫面開啟<span class="ui">排列</span>頁面：上方是牆面的畫布，下方的<span class="ui">順序</span>清單依編號列出每個有內容的格子。</p>
-      <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="排列頁面：上方是牆面畫布，其中第 9 格為控制面板，第 10 格為時鐘，下方是有內容的格子清單" loading="lazy" decoding="async" width="900" height="1956"><figcaption>排列頁面</figcaption></figure>
+      <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="排列頁面：上方是版面列，其下是牆面畫布，其中第 9 格為控制面板，第 10 格為時鐘，下方是有內容的格子清單" loading="lazy" decoding="async" width="900" height="1956"><figcaption>排列頁面</figcaption></figure>
     </li>
     <li class="step">
       <p>點選畫布上一個以虛線與 + 標示的尚未使用的格子。尚未使用的格子位於其他牆面頁時，先以畫布下方的箭頭或左右滑動翻頁。</p>
@@ -3084,8 +3084,8 @@
     </li>
   </ol>
   <div class="shots pair">
-    <figure class="phone"><img src="guide/img/lvm-button-editor.jpg" alt="按鈕編輯頁面：圖示、標籤、執行前先確認，以及請求區塊的方法與網址" loading="lazy" decoding="async" width="900" height="1956"><figcaption>按鈕編輯頁面（上半）</figcaption></figure>
-    <figure class="phone"><img src="guide/img/lvm-button-headers.jpg" alt="按鈕編輯頁面下半：標頭區塊有一列授權標頭，內容區塊有內容類型與 JSON 內容" loading="lazy" decoding="async" width="900" height="1956"><figcaption>按鈕編輯頁面（下半）</figcaption></figure>
+    <figure class="phone"><img src="guide/img/lvm-button-editor.jpg" alt="按鈕編輯頁面：圖示、標籤、執行前先確認、請求區塊的方法與網址，以及 Apple Watch 區塊的傳送方式" loading="lazy" decoding="async" width="900" height="1956"><figcaption>按鈕編輯頁面（上半）</figcaption></figure>
+    <figure class="phone"><img src="guide/img/lvm-button-headers.jpg" alt="按鈕編輯頁面下半：Apple Watch 區塊、標頭區塊有一列授權標頭，內容區塊有內容類型與 JSON 內容" loading="lazy" decoding="async" width="900" height="1956"><figcaption>按鈕編輯頁面（下半）</figcaption></figure>
   </div>
   <div class="table-wrap"><table>
     <thead><tr><th>欄位</th><th>說明</th></tr></thead>
@@ -3117,7 +3117,7 @@
     <li class="step">
       <p>觀察按鈕的圖示。</p>
       <p class="check"><b class="check-label">確認：</b>圖示依結果變成綠色勾號或橘色警告三角形，約 1.6 秒後恢復為原來的圖示。</p>
-      <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="同一顆按鈕的三種狀態：送出中的轉圈、成功的綠色勾號、失敗的橘色警告三角形" loading="lazy" decoding="async" width="1600" height="736"><figcaption>按鈕的三種狀態</figcaption></figure>
+      <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="LiveView Mix 牆上控制面板的三顆按鈕，各呈現一種狀態：傳送中的轉圈圖示、成功後的綠色勾號，以及失敗後的橘色警告三角形" loading="lazy" decoding="async" width="1600" height="736"><figcaption>按鈕的三種狀態，每顆按鈕各一種</figcaption></figure>
     </li>
   </ol>
   <div class="table-wrap"><table>
@@ -3851,7 +3851,7 @@ Content-Type: application/json
     <li class="step">
       <p>在<span class="ui">攝影機方案 · 年繳</span>或<span class="ui">NVR 方案 · 月繳</span>區塊，找到要訂閱的方案，點選卡片上的<span class="ui">訂閱</span>。</p>
       <p class="check"><b class="check-label">確認：</b>畫面出現系統的購買確認畫面。每張卡片顯示方案名稱、簡短說明與費用；符合資格時，另顯示免費試用的期間。</p>
-      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="方案頁的上半部：Cam Hub 標誌、標題「解鎖所有攝影機」、說明免費方案可顯示內容的句子、五條簡短的方案說明，最下方為「攝影機方案 · 年繳」的標題" loading="lazy" decoding="async" width="900" height="1215"><figcaption>方案頁的上半部，方案卡片在其下方</figcaption></figure>
+      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="方案頁的上半部：Cam Hub 標誌、標題「解鎖所有攝影機」、說明免費方案可顯示內容的句子，以及五條簡短的方案說明" loading="lazy" decoding="async" width="900" height="1215"><figcaption>方案頁的上半部，方案卡片在其下方</figcaption></figure>
     </li>
     <li class="step">
       <p>依系統畫面的提示，以 Apple 帳號確認購買。</p>
@@ -3950,7 +3950,7 @@ Content-Type: application/json
     <li class="step">
       <p>點選畫面底部的<span class="ui">工具</span>分頁。</p>
       <p class="check"><b class="check-label">確認：</b>畫面顯示此分頁的各區塊，由<span class="ui">子網路</span>開始。位址欄位與範圍已帶入裝置所在的網路。</p>
-      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="工具分頁：子網路區塊顯示本機位址、網段、範圍與掃描按鈕，下方有找到的設備與時速表列" loading="lazy" decoding="async" width="900" height="1745"><figcaption>工具分頁（示意網段）</figcaption></figure>
+      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="工具分頁，頂端為標題：子網路區塊顯示本機位址、網段、範圍與掃描按鈕，其下為顯示尚未找到設備的「找到的設備」，以及時速表列" loading="lazy" decoding="async" width="900" height="1634"><figcaption>工具分頁（示意網段）</figcaption></figure>
     </li>
   </ol>
   <p>掃描的步驟見<a class="xref" href="#add-scan">「以網段掃描尋找設備」</a>。以下各點說明此分頁整體的行為。</p>
@@ -4132,7 +4132,7 @@ Content-Type: application/json
     <li class="step">
       <p>在<span class="ui">訂閱</span>區塊中，點選<span class="ui">方案</span>。</p>
       <p class="check"><b class="check-label">確認：</b>在設定上方開啟<span class="ui">方案</span>頁，列出攝影機方案與 NVR 方案，並標示目前的方案。</p>
-      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="方案頁的上半部：Cam Hub 標誌、標題「解鎖所有攝影機」、說明免費方案可顯示內容的句子、五條簡短的方案說明，最下方為「攝影機方案 · 年繳」的標題" loading="lazy" decoding="async" width="900" height="1215"><figcaption>方案頁的上半部，方案卡片在其下方</figcaption></figure>
+      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="方案頁的上半部：Cam Hub 標誌、標題「解鎖所有攝影機」、說明免費方案可顯示內容的句子，以及五條簡短的方案說明" loading="lazy" decoding="async" width="900" height="1215"><figcaption>方案頁的上半部，方案卡片在其下方</figcaption></figure>
     </li>
     <li class="step">
       <p>點選右上角的<span class="ui">完成</span>。</p>
@@ -4256,7 +4256,7 @@ Content-Type: application/json
     <li class="step">
       <p>點選<span class="ui" data-ui="value">Language</span>列。</p>
       <p class="check"><b class="check-label">確認：</b>選單列出<span class="ui">跟隨系統</span>與<span class="ui" data-ui="value">English</span>、<span class="ui" data-ui="value">繁體中文</span>、<span class="ui" data-ui="value">简体中文</span>、<span class="ui" data-ui="value">日本語</span>、<span class="ui" data-ui="value">한국어</span>、<span class="ui" data-ui="value">العربية</span>、<span class="ui" data-ui="value">Deutsch</span>、<span class="ui" data-ui="value">Español</span>、<span class="ui" data-ui="value">Español (México)</span>、<span class="ui" data-ui="value">Français</span>、<span class="ui" data-ui="value">Slovenščina</span>。每種語言以自己的名稱顯示。</p>
-      <figure class="phone"><img src="guide/img/settings-language.jpg" alt="設定分頁的語言選單：已勾選的跟隨系統，以及以各自文字寫出的語言，包含墨西哥西班牙文" loading="lazy" decoding="async" width="900" height="1947"><figcaption>語言選單</figcaption></figure>
+      <figure class="phone"><img src="guide/img/settings-language.jpg" alt="設定分頁的語言選單：已勾選的跟隨系統，以及以各自文字寫出的十一種語言，從英文到最後的斯洛維尼亞文" loading="lazy" decoding="async" width="900" height="1956"><figcaption>語言選單</figcaption></figure>
     </li>
     <li class="step">
       <p>點選要使用的語言。</p>
@@ -4303,11 +4303,11 @@ Content-Type: application/json
   <ol class="steps">
     <li class="step">
       <p>在<span class="ui">重設</span>區塊中，點選<span class="ui">還原預設設定</span>。</p>
-      <p class="check"><b class="check-label">確認：</b>出現對話框<span class="ui">要將所有設定還原為預設值嗎？</span>，有<span class="ui">還原預設值</span>與<span class="ui">取消</span>兩個按鈕。對話框的文字說明所有設定（包含語言）都會回到預設值，LiveView Mix 牆（版面、控制面板、Webhook 按鈕與圖片）會被清空，設備與 iCloud 備份則會保留。</p>
+      <p class="check"><b class="check-label">確認：</b>設定頁上方出現對話框<span class="ui">要將所有設定還原為預設值嗎？</span>，有<span class="ui">還原預設值</span>按鈕。無論在 iPhone 或 iPad 上，對話框都沒有取消按鈕。對話框的文字說明所有設定（包含語言）都會回到預設值，LiveView Mix 牆（版面、控制面板、Webhook 按鈕與圖片）會被清空，設備與 iCloud 備份則會保留。</p>
       <figure class="phone"><img src="guide/img/settings-restore-defaults.jpg" alt="設定頁上方的對話框「要將所有設定還原為預設值嗎？」，其中有「還原預設值」按鈕" loading="lazy" decoding="async" width="900" height="1956"><figcaption>還原預設設定前的確認</figcaption></figure>
     </li>
     <li class="step">
-      <p>點選<span class="ui">還原預設值</span>。要保持原狀時，改點<span class="ui">取消</span>。</p>
+      <p>點選<span class="ui">還原預設值</span>。要保持原狀時，改為點選對話框以外的任何位置；對話框隨即關閉，設定不會變更。</p>
       <p class="check"><b class="check-label">確認：</b>各設定顯示預設值，語言跟隨系統。<span class="ui">LiveView Mix</span>列顯示<span class="ui">尚未設定</span>，<span class="ui">直向頁面</span>開關為關閉。設備仍列在設備分頁中。</p>
     </li>
   </ol>
@@ -4317,11 +4317,11 @@ Content-Type: application/json
   <ol class="steps">
     <li class="step">
       <p>在<span class="ui">重設</span>區塊中，點選<span class="ui">刪除所有資料</span>。</p>
-      <p class="check"><b class="check-label">確認：</b>出現對話框<span class="ui">要刪除所有資料嗎？</span>，有<span class="ui">全部刪除</span>與<span class="ui">取消</span>兩個按鈕。對話框的文字取決於是否有 iCloud 備份。有備份時為<span class="ui">這會移除這台裝置上的所有設備、攝影機與已儲存的密碼。您的 iCloud 備份與訂閱不受影響。</span>沒有備份時為<span class="ui">目前沒有 iCloud 備份，因此此操作無法復原——攝影機密碼只儲存在這台裝置上，清除後將無法找回。您的訂閱不受影響。</span></p>
-      <figure class="phone"><img src="guide/img/settings-delete-all.jpg" alt="設定頁上方的對話框「要刪除所有資料嗎？」，有全部刪除與取消兩個按鈕" loading="lazy" decoding="async" width="900" height="1956"><figcaption>刪除所有資料前的確認</figcaption></figure>
+      <p class="check"><b class="check-label">確認：</b>設定頁上方出現對話框<span class="ui">要刪除所有資料嗎？</span>，有<span class="ui">全部刪除</span>按鈕。無論在 iPhone 或 iPad 上，對話框都沒有取消按鈕。對話框的文字取決於是否有 iCloud 備份。有備份時為<span class="ui">這會移除這台裝置上的所有設備、攝影機與已儲存的密碼。您的 iCloud 備份與訂閱不受影響。</span>沒有備份時為<span class="ui">目前沒有 iCloud 備份，因此此操作無法復原——攝影機密碼只儲存在這台裝置上，清除後將無法找回。您的訂閱不受影響。</span></p>
+      <figure class="phone"><img src="guide/img/settings-delete-all.jpg" alt="設定頁上方的對話框「要刪除所有資料嗎？」，有全部刪除按鈕" loading="lazy" decoding="async" width="900" height="1956"><figcaption>刪除所有資料前的確認</figcaption></figure>
     </li>
     <li class="step">
-      <p>點選<span class="ui">全部刪除</span>。要保留資料時，改點<span class="ui">取消</span>。</p>
+      <p>點選<span class="ui">全部刪除</span>。要保留資料時，改為點選對話框以外的任何位置；對話框隨即關閉，資料不會刪除。</p>
       <p class="check"><b class="check-label">確認：</b>設備分頁顯示<span class="ui">沒有設備</span>，各設定顯示預設值。已存在的 iCloud 備份可依<a class="xref" href="#share-restore">「從 iCloud 還原」</a>還原。</p>
     </li>
   </ol>
@@ -4359,7 +4359,7 @@ Content-Type: application/json
     <li class="step">
       <p>點選<span class="ui">操作手冊</span>。</p>
       <p class="check"><b class="check-label">確認：</b>瀏覽器開啟本手冊 <code>https://cam-hub.almx.cc/guide.html</code>。需要網路連線。要回到 Cam Hub，請使用裝置的 App 切換器。</p>
-      <figure class="phone"><img src="guide/img/settings-user-manual.jpg" alt="設定分頁的下半部：重設區塊的各列與說明文字、法律條款區塊的使用條款與隱私權政策、關於區塊的版本，以及操作手冊列與說明" loading="lazy" decoding="async" width="900" height="1947"><figcaption>操作手冊列</figcaption></figure>
+      <figure class="phone"><img src="guide/img/settings-user-manual.jpg" alt="設定分頁的下半部：重設區塊的最後幾列與說明文字、法律條款區塊的使用條款與隱私權政策、關於區塊的版本、操作手冊列與說明，以及其下的聯絡開發團隊列" loading="lazy" decoding="async" width="900" height="1956"><figcaption>操作手冊列</figcaption></figure>
     </li>
   </ol>
   <ul>
@@ -4817,7 +4817,7 @@ Content-Type: application/json
       <tr><td>月曆顯示<span class="ui">此錄影主機無法告知哪些日期有錄影。</span>或<span class="ui">無法載入這個月份。</span></td><td>設備不提供有錄影日期的清單，或沒有回應這個月份的查詢。</td><td>不依標記直接選擇日期。月份無法載入時，點選<span class="ui">再試一次</span>。見<a class="xref" href="#playback-calendar">「錄影日曆」</a>。</td></tr>
       <tr><td><span class="ui">這一天未偵測到人員。</span>或<span class="ui">這一天沒有事件。</span></td><td>設備在這一天沒有記錄任何事件。</td><td>改用連續錄影清單或時間軸，見<a class="xref" href="#playback-list">「錄影清單與事件」</a>。</td></tr>
       <tr><td><span class="ui">此設備無法搜尋人員事件索引。</span>或<span class="ui">此設備無法搜尋其事件。</span></td><td>設備沒有回應事件的搜尋，或沒有保存偵測到的人員索引。</td><td>重新選擇日期。改從連續錄影清單或時間軸播放錄影，見<a class="xref" href="#playback-list">「錄影清單與事件」</a>。</td></tr>
-      <tr><td><span class="ui">這個帳號無法讀取這台設備上的錄影。</span></td><td>該帳號沒有回放錄影的權限。</td><td>改用有回放權限的帳號，或在設備上授予權限。</td></tr>
+      <tr><td><span class="ui">這個帳號無法讀取這台設備上的錄影。</span></td><td>設備拒絕了登入：該帳號沒有回放錄影的權限，或使用者名稱或密碼錯誤，例如密碼已在設備上變更。</td><td>在設備頁以<span class="ui">編輯帳號密碼</span>檢查使用者名稱與密碼，見<a class="xref" href="#devices-credentials">「變更設備的使用者名稱與密碼」</a>。兩者都正確時，改用有回放權限的帳號，或在設備上授予權限。</td></tr>
       <tr><td><span class="ui">無法連線到這台設備。</span>或<span class="ui">連線逾時。</span></td><td>設備沒有回應當日錄影的搜尋。</td><td>檢查網路，再重新選擇日期。</td></tr>
       <tr><td><span class="ui">這台設備無法辨識這支攝影機的錄影。</span></td><td>設備找不到這支攝影機的錄影，例如攝影機沒有儲存空間，或以非預期的方式回報錄影。</td><td>在設備上確認攝影機有錄影。換一個通道或換一天可能可行。</td></tr>
       <tr><td><span class="ui">錄影主機沒有播放這段錄影，可能已被覆寫——請選擇其他時間。</span></td><td>清單中列出了這段錄影，但設備拒絕播放，通常是因為已被較新的錄影取代。</td><td>選擇較晚的時間，或其他日期。</td></tr>
@@ -4884,7 +4884,7 @@ Content-Type: application/json
       <tr><td>在 Apple Watch 上按下按鈕後出現紅色警告三角形</td><td>原因與牆面上相同。此外還可能是：手錶自己把請求送往家中網路的位址，但手錶不在該 Wi‑Fi 網路上；iPhone 沒有在約 20 秒內回應；或方案已不再涵蓋該控制面板，此時該按鈕隨後會從手錶上消失。</td><td>在 iPhone 上的按鈕編輯畫面檢查<span class="ui">傳送方式</span>。見<a class="xref" href="#webhook-watch">「Apple Watch 上的按鈕」</a>。</td></tr>
     </tbody>
   </table></div>
-  <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="同一顆按鈕的三種狀態：傳送中的轉圈圖示、成功後的綠色勾號，以及失敗後的橘色警告三角形" loading="lazy" decoding="async" width="1600" height="736"><figcaption>按鈕的三種狀態</figcaption></figure>
+  <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="LiveView Mix 牆上控制面板的三顆按鈕，各呈現一種狀態：傳送中的轉圈圖示、成功後的綠色勾號，以及失敗後的橘色警告三角形" loading="lazy" decoding="async" width="1600" height="736"><figcaption>按鈕的三種狀態，每顆按鈕各一種</figcaption></figure>
 
   <h3 id="trouble-health">硬碟健康</h3>
   <p><span class="ui">硬碟健康</span>頁面讀取有回報此資訊之設備的硬碟狀態，見<a class="xref" href="#devices-health">「硬碟健康」</a>。網路儲存設備透過 SNMP 回報，須先設定一次。Apple TV 沒有硬碟健康頁面。</p>

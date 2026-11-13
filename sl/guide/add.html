@@ -258,7 +258,7 @@
   <p>Ko je v polje <span class="ui">Naslov IP ali ime gostitelja</span> vnesena povezava YouTube ali Twitch, gumb <span class="ui">Dodaj</span> ni na voljo, obrazec pa ponudi <span class="ui">Dodaj kot prenos v živo YouTube</span> ali <span class="ui">Dodaj kot kanal Twitch</span>. Ko ga tapnete, se odpre zaslon te storitve z že vneseno povezavo; ko je prenos dodan, se zapreta oba zaslona. Kjer storitvi nista na voljo, se povezava obravnava kot običajen naslov.</p>
 
   <h3 id="add-failed">Ko dodajanje ne uspe: kontrolni seznam</h3>
-  <p>Ko dodajanje ne uspe, obrazec prikaže sporočilo o napaki v rdeči barvi. Pri izbiri <span class="ui">Samodejno zaznavanje</span> so pod njim navedena najdena odprta vrata. Pod tem je seznam <span class="ui">Najprej preverite</span>. Vrstni red seznama je odvisen od vrste napake; najverjetnejši vzrok je naveden na prvem mestu. Postavke preverite od zgoraj navzdol, nato znova tapnite <span class="ui">Dodaj</span>.</p>
+  <p>Ko dodajanje ne uspe, obrazec prikaže sporočilo o napaki v rdeči barvi. Pri izbiri <span class="ui">Samodejno zaznavanje</span> so pod njim navedena najdena odprta vrata; če se ni odzvalo nič, je tam prikazana vrstica <span class="ui">Na tem naslovu ni bilo najdenih odprtih vrat.</span> Pod tem je seznam <span class="ui">Najprej preverite</span>. Vrstni red seznama je odvisen od vrste napake; najverjetnejši vzrok je naveden na prvem mestu. Postavke preverite od zgoraj navzdol, nato znova tapnite <span class="ui">Dodaj</span>.</p>
   <div class="table-wrap" tabindex="0"><table>
     <thead><tr><th>Sporočilo o napaki</th><th>Preverjanja (od zgoraj navzdol)</th></tr></thead>
     <tbody>
@@ -320,7 +320,7 @@
   <h3 id="add-report">Poročilo o napravi (preizkusno)</h3>
   <div class="callout warn">
     <strong class="t">Preizkusna funkcija brez zagotovila podpore</strong>
-    <p>Poročilo o napravi je preizkusna funkcija. Kadar koli se lahko spremeni ali odstrani. Pošiljanje poročila ne pomeni, da bo razvijalec dodal podporo za napravo, in ni zagotovila za odgovor, popravek ali časovni okvir. Nekaterih naprav po zasnovi ni mogoče podpreti, na primer zaradi zaprtih ali lastniških protokolov, delovanja samo prek oblaka, licenčnih ali šifrirnih omejitev ali omejitev strojne opreme. Funkcija ni kanal za podporo strankam ali nujno pomoč.</p>
+    <p>Poročilo o napravi je preizkusna funkcija. Kadar koli se lahko spremeni ali odstrani. Pošiljanje poročila ne pomeni, da bo razvijalec dodal podporo za napravo, in ni zagotovila za odgovor, popravek ali časovni okvir. Nekaterih naprav po zasnovi ni mogoče podpreti, na primer zaradi zaprtih ali lastniških protokolov, delovanja samo prek oblaka, licenčnih ali šifrirnih omejitev ali omejitev strojne opreme. Funkcija ni storitev za podporo strankam ali nujno pomoč.</p>
     <p>Pri zbiranju podrobnosti se aplikacija prijavi v napravo z vnesenim računom in geslom. Naprava neuspele prijave šteje in jih lahko tudi beleži. Če je geslo morda napačno, ga najprej popravite, kot je opisano v razdelku <a class="xref" href="/sl/guide/add.html#add-failed">„Ko dodajanje ne uspe: kontrolni seznam“</a>, namesto da bi poskušali večkrat.</p>
   </div>
   <p>Gumb <span class="ui">Pošlji podrobnosti razvijalcu</span> z oznako <span class="ui">Preizkusno</span> se pod kontrolnim seznamom prikaže šele po neuspelem dodajanju; po uspešnem dodajanju ni prikazan. Funkcija se zažene samo, ko tapnete gumb. Napravo preveri z zahtevami samo za branje in sestavi besedilno poročilo za pregled. Aplikacija Cam Hub poročila nikoli ne naloži sama; poročilo se pošlje samo, če se ga uporabnik odloči poslati po e-pošti iz svojega e-poštnega računa.</p>
@@ -342,12 +342,12 @@
     <li class="step">
       <p>Počakajte, da se zbiranje konča.</p>
       <p class="check"><b class="check-label">Rezultat:</b> <span class="ui">Kaj smo našli</span> v razumljivem jeziku navaja verjetne vzroke in kaj je treba najprej poskusiti. Če nič ne izstopa, zaslon prikaže <span class="ui">Ni očitnih težav.</span></p>
-      <figure class="phone"><img src="/guide/img/device-report-found.jpg" alt="Seznam ugotovitev poročila o napravi z verjetnimi vzroki, kot so vrata, omrežni segment in VPN" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-found.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Seznam ugotovitev</figcaption></figure>
+      <figure class="phone"><img src="/guide/img/device-report-found.jpg" alt="Seznam ugotovitev poročila o napravi: naprava je v drugem omrežnem segmentu in vklopljen je VPN, pod tem pa so stikala razdelka „Kaj vključiti“" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-found.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Seznam ugotovitev</figcaption></figure>
     </li>
     <li class="step">
       <p>V razdelku <span class="ui">Kaj vključiti</span> izklopite postavke, ki jih ne želite poslati.</p>
       <p class="check"><b class="check-label">Rezultat:</b> Besedilo v razdelku <span class="ui">Poročilo</span> se takoj posodobi.</p>
-      <figure class="phone"><img src="/guide/img/device-report-text.jpg" alt="Stikala za vsebino poročila in celotno besedilo poročila, pod njim gumbi za pošiljanje" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-text.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Stikala za vsebino in celotno poročilo</figcaption></figure>
+      <figure class="phone"><img src="/guide/img/device-report-text.jpg" alt="Celotno besedilo poročila, pod njim opomba, da je poročilo shranjeno v aplikaciji, gumbi „Pošlji razvijalcu po e-pošti“, „Kopiraj“ in „Deli…“ ter na dnu gumb „Izbriši shranjena poročila“" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-text.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Celotno poročilo in gumbi za pošiljanje</figcaption></figure>
     </li>
     <li class="step">
       <p>Preglejte celotno besedilo v razdelku <span class="ui">Poročilo</span>.</p>
@@ -395,13 +395,13 @@
   </div>
 
   <h4>Shranjena poročila</h4>
-  <p>Vsako poročilo se shrani v tej napravi, ohrani pa se pet najnovejših. Po neuspelem poskusu se pod gumbom <span class="ui">Pošlji podrobnosti razvijalcu</span> prikaže vnos z datumom shranjevanja, na primer <span class="ui">Prejšnje poročilo z dne 13. nov. 2026, 9:41</span>; ko ga tapnete, se odpre najnovejše shranjeno poročilo. Shranjeno poročilo prikazuje vsebino, kot je bila shranjena, in ga ni mogoče prilagajati po postavkah; za ponovno izbiro vsebine znova zberite podrobnosti.</p>
+  <p>Vsako poročilo se shrani v aplikaciji, ohrani pa se pet najnovejših. Po neuspelem poskusu se pod gumbom <span class="ui">Pošlji podrobnosti razvijalcu</span> prikaže vnos z datumom shranjevanja, na primer <span class="ui">Prejšnje poročilo z dne 13. nov. 2026, 9:41</span>; ko ga tapnete, se odpre najnovejše shranjeno poročilo. Shranjeno poročilo prikazuje vsebino, kot je bila shranjena, in ga ni mogoče prilagajati po postavkah; za ponovno izbiro vsebine znova zberite podrobnosti.</p>
   <p>Brisanje shranjenih poročil:</p>
   <ol class="steps">
     <li class="step">
       <p>Na dnu strani poročila tapnite <span class="ui">Izbriši shranjena poročila</span>.</p>
-      <p class="check"><b class="check-label">Rezultat:</b> Zaslon prikaže pogovorno okno <span class="ui">Želite izbrisati vsa shranjena poročila?</span>, ki pojasni, da bodo odstranjena vsa poročila o napravah, shranjena v tej napravi, in da to ne vpliva na poročilo, ki je bilo že poslano po e-pošti.</p>
-      <figure class="phone"><img src="/guide/img/add-report-delete-confirm.jpg" alt="Stran „Poročilo o napravi“ s pogovornim oknom „Želite izbrisati vsa shranjena poročila?“: besedilo, da bodo odstranjena vsa poročila, shranjena v tej napravi, in da to ne vpliva na že poslano poročilo, ter gumb „Izbriši shranjena poročila“" decoding="async" width="900" height="1956" data-src="/guide/img/add-report-delete-confirm.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Potrditev pred brisanjem shranjenih poročil</figcaption></figure>
+      <p class="check"><b class="check-label">Rezultat:</b> Zaslon prikaže pogovorno okno <span class="ui">Želite izbrisati vsa shranjena poročila?</span>, ki pojasni, da bodo odstranjena vsa shranjena poročila o napravah in da to ne vpliva na poročilo, ki je bilo že poslano po e-pošti.</p>
+      <figure class="phone"><img src="/guide/img/add-report-delete-confirm.jpg" alt="Stran „Poročilo o napravi“ s pogovornim oknom „Želite izbrisati vsa shranjena poročila?“: besedilo, da bodo odstranjena vsa shranjena poročila o napravah in da to ne vpliva na že poslano poročilo, ter gumb „Izbriši shranjena poročila“" decoding="async" width="900" height="1956" data-src="/guide/img/add-report-delete-confirm.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Potrditev pred brisanjem shranjenih poročil</figcaption></figure>
     </li>
     <li class="step">
       <p>V pogovornem oknu tapnite <span class="ui">Izbriši shranjena poročila</span>.</p>
@@ -416,7 +416,7 @@
     <li class="step">
       <p>Tapnite zavihek <span class="ui">Orodja</span> na dnu zaslona.</p>
       <p class="check"><b class="check-label">Rezultat:</b> V razdelku <span class="ui">Podomrežje</span> vrstica <span class="ui">Ta naprava</span> prikazuje trenutni omrežni naslov in masko, na primer <code>192.168.1.10/24</code>. Polje za naslov in <span class="ui">Obseg</span> sta izpolnjena s trenutnim omrežjem.</p>
-      <figure class="phone"><img src="/guide/img/tools-scan.jpg" alt="Zavihek „Orodja“: razdelek „Podomrežje“ z naslovom te naprave, omrežjem, obsegom in gumbom „Preišči“, pod njim „Najdene naprave“ in „Merilnik hitrosti“" decoding="async" width="900" height="1745" data-src="/guide/img/tools-scan.jpg" style="aspect-ratio: 900 / 1745;" loading="lazy"><figcaption>Zavihek „Orodja“ (vzorčno omrežje)</figcaption></figure>
+      <figure class="phone"><img src="/guide/img/tools-scan.jpg" alt="Zavihek „Orodja“ z naslovom zavihka na vrhu: razdelek „Podomrežje“ z naslovom te naprave, omrežjem, obsegom in gumbom „Preišči“, pod njim razdelek „Najdene naprave“, v katerem še ni naprav, in vrstica „Merilnik hitrosti“" decoding="async" width="900" height="1634" data-src="/guide/img/tools-scan.jpg" style="aspect-ratio: 900 / 1634;" loading="lazy"><figcaption>Zavihek „Orodja“ (vzorčno omrežje)</figcaption></figure>
     </li>
     <li class="step">
       <p>Izbirno: če želite preiskati drugo omrežje, vnesite omrežje v polje za naslov, na primer <code>192.168.1.0</code>, in v meniju <span class="ui">Obseg</span> izberite obseg.</p>

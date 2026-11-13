@@ -258,7 +258,7 @@
   <p><span class="ui">IP アドレスまたはホスト名</span>に YouTube または Twitch のリンクを入力すると、<span class="ui">追加</span>ボタンは使用できなくなり、フォームに<span class="ui">YouTube ライブ配信として追加</span>または<span class="ui">Twitch チャンネルとして追加</span>が表示されます。タップすると、リンクが入力された状態でそのサービスの画面が開きます。配信を追加すると、両方の画面が閉じます。2 つのサービスが提供されていない国や地域では、リンクは通常のアドレスとして扱われます。</p>
 
   <h3 id="add-failed">追加に失敗したとき：チェックリスト</h3>
-  <p>追加に失敗すると、フォームにエラーメッセージが赤字で表示されます。<span class="ui">自動判別</span>では、見つかった開いているポートがその下に表示されます。さらにその下に、<span class="ui">まず確認すること</span>が一覧表示されます。一覧の順序は失敗の種類によって異なり、可能性の高い原因が先頭になります。上から順に項目を確認してから、もう一度<span class="ui">追加</span>をタップします。</p>
+  <p>追加に失敗すると、フォームにエラーメッセージが赤字で表示されます。<span class="ui">自動判別</span>では、見つかった開いているポートがその下に表示されます。どのポートからも応答がなかった場合は、そこに<span class="ui">このアドレスでは開いているポートが見つかりませんでした。</span>と表示されます。さらにその下に、<span class="ui">まず確認すること</span>が一覧表示されます。一覧の順序は失敗の種類によって異なり、可能性の高い原因が先頭になります。上から順に項目を確認してから、もう一度<span class="ui">追加</span>をタップします。</p>
   <div class="table-wrap" tabindex="0"><table>
     <thead><tr><th>エラーメッセージ</th><th>確認事項（上から順に）</th></tr></thead>
     <tbody>
@@ -342,12 +342,12 @@
     <li class="step">
       <p>収集が完了するまで待ちます。</p>
       <p class="check"><b class="check-label">確認：</b><span class="ui">確認できたこと</span>に、考えられる原因と最初に試すことが、わかりやすい言葉で一覧表示されます。特に問題がない場合は、<span class="ui">特に目立った問題は見つかりませんでした。</span>と表示されます。</p>
-      <figure class="phone"><img src="/guide/img/ja/device-report-found.jpg" alt="デバイスレポートの確認結果の一覧。ポート、ネットワークセグメント、VPN など、考えられる原因が並んでいる" decoding="async" width="900" height="1956" data-src="/guide/img/ja/device-report-found.jpg" data-fallback="/guide/img/device-report-found.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>確認結果の一覧</figcaption></figure>
+      <figure class="phone"><img src="/guide/img/ja/device-report-found.jpg" alt="デバイスレポートの確認結果の一覧。デバイスが別のネットワークセグメントにあることと、VPN が有効になっていることが示され、その下に「含める内容」のスイッチがある" decoding="async" width="900" height="1956" data-src="/guide/img/ja/device-report-found.jpg" data-fallback="/guide/img/device-report-found.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>確認結果の一覧</figcaption></figure>
     </li>
     <li class="step">
       <p><span class="ui">含める内容</span>で、送信したくない項目をオフにします。</p>
       <p class="check"><b class="check-label">確認：</b><span class="ui">レポート</span>セクションのテキストがすぐに更新されます。</p>
-      <figure class="phone"><img src="/guide/img/ja/device-report-text.jpg" alt="レポートに含める内容を切り替えるスイッチと、レポートの全文。下に送信用のボタンがある" decoding="async" width="900" height="1956" data-src="/guide/img/ja/device-report-text.jpg" data-fallback="/guide/img/device-report-text.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>内容のスイッチとレポート全文</figcaption></figure>
+      <figure class="phone"><img src="/guide/img/ja/device-report-text.jpg" alt="レポートの全文。その下に、レポートが保存されて後から送信できることを示す説明、「開発者にメールで送る」「コピー」「共有…」のボタン、いちばん下に「保存済みのレポートを削除」ボタンがある" decoding="async" width="900" height="1956" data-src="/guide/img/ja/device-report-text.jpg" data-fallback="/guide/img/device-report-text.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>レポート全文と送信用のボタン</figcaption></figure>
     </li>
     <li class="step">
       <p><span class="ui">レポート</span>セクションの全文を確認します。</p>
@@ -401,7 +401,7 @@
     <li class="step">
       <p>レポートのページの下部で、<span class="ui">保存済みのレポートを削除</span>をタップします。</p>
       <p class="check"><b class="check-label">確認：</b><span class="ui">保存済みのレポートをすべて削除しますか？</span>のダイアログが表示されます。この端末に保存されているデバイスレポートがすべて削除されること、すでにメールで送信したレポートには影響しないことが説明されます。</p>
-      <figure class="phone"><img src="/guide/img/ja/add-report-delete-confirm.jpg" alt="「保存済みのレポートをすべて削除しますか？」のダイアログが重なったデバイスレポートのページ。この端末に保存されているレポートがすべて削除されること、すでにメールで送信したレポートには影響しないことを説明する文と、「保存済みのレポートを削除」ボタンが表示されている" decoding="async" width="900" height="1956" data-src="/guide/img/ja/add-report-delete-confirm.jpg" data-fallback="/guide/img/add-report-delete-confirm.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>保存されたレポートを削除する前の確認</figcaption></figure>
+      <figure class="phone"><img src="/guide/img/ja/add-report-delete-confirm.jpg" alt="「保存済みのレポートをすべて削除しますか？」のダイアログが重なったデバイスレポートのページ。保存されているデバイスレポートがすべて削除されること、すでにメールで送信したレポートには影響しないことを説明する文と、「保存済みのレポートを削除」ボタンが表示されている" decoding="async" width="900" height="1956" data-src="/guide/img/ja/add-report-delete-confirm.jpg" data-fallback="/guide/img/add-report-delete-confirm.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>保存されたレポートを削除する前の確認</figcaption></figure>
     </li>
     <li class="step">
       <p>ダイアログの<span class="ui">保存済みのレポートを削除</span>をタップします。</p>
@@ -416,7 +416,7 @@
     <li class="step">
       <p>画面下部の<span class="ui">ツール</span>タブをタップします。</p>
       <p class="check"><b class="check-label">確認：</b><span class="ui">サブネット</span>セクションの<span class="ui">この端末</span>の行に、現在のネットワークのアドレスとマスクが表示されます。例：<code>192.168.1.10/24</code>。アドレス欄と<span class="ui">範囲</span>には、現在のネットワークが入力されています。</p>
-      <figure class="phone"><img src="/guide/img/ja/tools-scan.jpg" alt="ツールタブ。この端末のアドレス、ネットワーク、範囲、スキャンボタンがあるサブネットのセクションと、その下の「見つかったデバイス」と「スピードメーター」" decoding="async" width="900" height="1745" data-src="/guide/img/ja/tools-scan.jpg" data-fallback="/guide/img/tools-scan.jpg" style="aspect-ratio: 900 / 1745;" loading="lazy"><figcaption>ツールタブ（サンプルのネットワーク）</figcaption></figure>
+      <figure class="phone"><img src="/guide/img/ja/tools-scan.jpg" alt="上部にタイトルが表示されたツールタブ。この端末のアドレス、ネットワーク、範囲、スキャンボタンがあるサブネットのセクション、その下にまだデバイスが見つかっていない「見つかったデバイス」と、「スピードメーター」の行" decoding="async" width="900" height="1634" data-src="/guide/img/ja/tools-scan.jpg" data-fallback="/guide/img/tools-scan.jpg" style="aspect-ratio: 900 / 1634;" loading="lazy"><figcaption>ツールタブ（サンプルのネットワーク）</figcaption></figure>
     </li>
     <li class="step">
       <p>任意：別のネットワークをスキャンするには、アドレス欄にネットワークを入力し（例：<code>192.168.1.0</code>）、<span class="ui">範囲</span>メニューで範囲を選択します。</p>

@@ -346,7 +346,7 @@
   <p><span class="ui">IP アドレスまたはホスト名</span>に YouTube または Twitch のリンクを入力すると、<span class="ui">追加</span>ボタンは使用できなくなり、フォームに<span class="ui">YouTube ライブ配信として追加</span>または<span class="ui">Twitch チャンネルとして追加</span>が表示されます。タップすると、リンクが入力された状態でそのサービスの画面が開きます。配信を追加すると、両方の画面が閉じます。2 つのサービスが提供されていない国や地域では、リンクは通常のアドレスとして扱われます。</p>
 
   <h3 id="add-failed">追加に失敗したとき：チェックリスト</h3>
-  <p>追加に失敗すると、フォームにエラーメッセージが赤字で表示されます。<span class="ui">自動判別</span>では、見つかった開いているポートがその下に表示されます。さらにその下に、<span class="ui">まず確認すること</span>が一覧表示されます。一覧の順序は失敗の種類によって異なり、可能性の高い原因が先頭になります。上から順に項目を確認してから、もう一度<span class="ui">追加</span>をタップします。</p>
+  <p>追加に失敗すると、フォームにエラーメッセージが赤字で表示されます。<span class="ui">自動判別</span>では、見つかった開いているポートがその下に表示されます。どのポートからも応答がなかった場合は、そこに<span class="ui">このアドレスでは開いているポートが見つかりませんでした。</span>と表示されます。さらにその下に、<span class="ui">まず確認すること</span>が一覧表示されます。一覧の順序は失敗の種類によって異なり、可能性の高い原因が先頭になります。上から順に項目を確認してから、もう一度<span class="ui">追加</span>をタップします。</p>
   <div class="table-wrap"><table>
     <thead><tr><th>エラーメッセージ</th><th>確認事項（上から順に）</th></tr></thead>
     <tbody>
@@ -430,12 +430,12 @@
     <li class="step">
       <p>収集が完了するまで待ちます。</p>
       <p class="check"><b class="check-label">確認：</b><span class="ui">確認できたこと</span>に、考えられる原因と最初に試すことが、わかりやすい言葉で一覧表示されます。特に問題がない場合は、<span class="ui">特に目立った問題は見つかりませんでした。</span>と表示されます。</p>
-      <figure class="phone"><img src="guide/img/device-report-found.jpg" alt="デバイスレポートの確認結果の一覧。ポート、ネットワークセグメント、VPN など、考えられる原因が並んでいる" loading="lazy" decoding="async" width="900" height="1956"><figcaption>確認結果の一覧</figcaption></figure>
+      <figure class="phone"><img src="guide/img/device-report-found.jpg" alt="デバイスレポートの確認結果の一覧。デバイスが別のネットワークセグメントにあることと、VPN が有効になっていることが示され、その下に「含める内容」のスイッチがある" loading="lazy" decoding="async" width="900" height="1956"><figcaption>確認結果の一覧</figcaption></figure>
     </li>
     <li class="step">
       <p><span class="ui">含める内容</span>で、送信したくない項目をオフにします。</p>
       <p class="check"><b class="check-label">確認：</b><span class="ui">レポート</span>セクションのテキストがすぐに更新されます。</p>
-      <figure class="phone"><img src="guide/img/device-report-text.jpg" alt="レポートに含める内容を切り替えるスイッチと、レポートの全文。下に送信用のボタンがある" loading="lazy" decoding="async" width="900" height="1956"><figcaption>内容のスイッチとレポート全文</figcaption></figure>
+      <figure class="phone"><img src="guide/img/device-report-text.jpg" alt="レポートの全文。その下に、レポートが保存されて後から送信できることを示す説明、「開発者にメールで送る」「コピー」「共有…」のボタン、いちばん下に「保存済みのレポートを削除」ボタンがある" loading="lazy" decoding="async" width="900" height="1956"><figcaption>レポート全文と送信用のボタン</figcaption></figure>
     </li>
     <li class="step">
       <p><span class="ui">レポート</span>セクションの全文を確認します。</p>
@@ -489,7 +489,7 @@
     <li class="step">
       <p>レポートのページの下部で、<span class="ui">保存済みのレポートを削除</span>をタップします。</p>
       <p class="check"><b class="check-label">確認：</b><span class="ui">保存済みのレポートをすべて削除しますか？</span>のダイアログが表示されます。この端末に保存されているデバイスレポートがすべて削除されること、すでにメールで送信したレポートには影響しないことが説明されます。</p>
-      <figure class="phone"><img src="guide/img/add-report-delete-confirm.jpg" alt="「保存済みのレポートをすべて削除しますか？」のダイアログが重なったデバイスレポートのページ。この端末に保存されているレポートがすべて削除されること、すでにメールで送信したレポートには影響しないことを説明する文と、「保存済みのレポートを削除」ボタンが表示されている" loading="lazy" decoding="async" width="900" height="1956"><figcaption>保存されたレポートを削除する前の確認</figcaption></figure>
+      <figure class="phone"><img src="guide/img/add-report-delete-confirm.jpg" alt="「保存済みのレポートをすべて削除しますか？」のダイアログが重なったデバイスレポートのページ。保存されているデバイスレポートがすべて削除されること、すでにメールで送信したレポートには影響しないことを説明する文と、「保存済みのレポートを削除」ボタンが表示されている" loading="lazy" decoding="async" width="900" height="1956"><figcaption>保存されたレポートを削除する前の確認</figcaption></figure>
     </li>
     <li class="step">
       <p>ダイアログの<span class="ui">保存済みのレポートを削除</span>をタップします。</p>
@@ -504,7 +504,7 @@
     <li class="step">
       <p>画面下部の<span class="ui">ツール</span>タブをタップします。</p>
       <p class="check"><b class="check-label">確認：</b><span class="ui">サブネット</span>セクションの<span class="ui">この端末</span>の行に、現在のネットワークのアドレスとマスクが表示されます。例：<code>192.168.1.10/24</code>。アドレス欄と<span class="ui">範囲</span>には、現在のネットワークが入力されています。</p>
-      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="ツールタブ。この端末のアドレス、ネットワーク、範囲、スキャンボタンがあるサブネットのセクションと、その下の「見つかったデバイス」と「スピードメーター」" loading="lazy" decoding="async" width="900" height="1745"><figcaption>ツールタブ（サンプルのネットワーク）</figcaption></figure>
+      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="上部にタイトルが表示されたツールタブ。この端末のアドレス、ネットワーク、範囲、スキャンボタンがあるサブネットのセクション、その下にまだデバイスが見つかっていない「見つかったデバイス」と、「スピードメーター」の行" loading="lazy" decoding="async" width="900" height="1634"><figcaption>ツールタブ（サンプルのネットワーク）</figcaption></figure>
     </li>
     <li class="step">
       <p>任意：別のネットワークをスキャンするには、アドレス欄にネットワークを入力し（例：<code>192.168.1.0</code>）、<span class="ui">範囲</span>メニューで範囲を選択します。</p>
@@ -881,8 +881,8 @@
     </li>
     <li class="step">
       <p><span class="ui">カメラの名前を変更</span>をタップします。</p>
-      <p class="check"><b class="check-label">確認：</b><span class="ui">カメラの名前を変更</span>のダイアログが開きます。<span class="ui">このカメラに好きな名前を付けられます。デバイス側の名前は内部に残るので、デバイスを再読み込みしても付けた名前は消えません。</span>という文、現在の名前が入った<span class="ui">名前</span>欄、<span class="ui">キャンセル</span>、<span class="ui">デバイスの名前を使う</span>、<span class="ui">保存</span>のボタンが表示されます。</p>
-      <figure class="phone"><img src="guide/img/channel-rename-alert.jpg" alt="名前欄と、キャンセル、デバイスの名前を使う、保存のボタンがある「カメラの名前を変更」のダイアログ" loading="lazy" decoding="async" width="900" height="1956"><figcaption>「カメラの名前を変更」のダイアログ</figcaption></figure>
+      <p class="check"><b class="check-label">確認：</b><span class="ui">カメラの名前を変更</span>のダイアログが開きます。<span class="ui">このカメラに好きな名前を付けられます。デバイス側の名前は内部に残るので、デバイスを再読み込みしても付けた名前は消えません。</span>という文、現在の名前が入った<span class="ui">名前</span>欄、<span class="ui">デバイスの名前を使う</span>、<span class="ui">保存</span>、<span class="ui">キャンセル</span>のボタンが表示されます。</p>
+      <figure class="phone"><img src="guide/img/channel-rename-alert.jpg" alt="名前欄と、デバイスの名前を使う、保存、キャンセルのボタンがある「カメラの名前を変更」のダイアログ。ダイアログの下にキーボードが開いている" loading="lazy" decoding="async" width="900" height="1956"><figcaption>「カメラの名前を変更」のダイアログ</figcaption></figure>
     </li>
     <li class="step">
       <p><span class="ui">名前</span>欄に新しい名前を入力します。</p>
@@ -1009,7 +1009,7 @@
     <li class="step">
       <p>映像が表示されているサムネイルをタップします。</p>
       <p class="check"><b class="check-label">確認：</b>そのカメラの拡大表示がウォールの上に開き、上部に<span class="ui">戻る</span>とカメラ名が表示されます。</p>
-      <figure class="phone"><img src="guide/img/fullwall-closeup.jpg" alt="ウォールの上に開いた 1 台のカメラの拡大表示。左上に戻るボタンとカメラ名、黒い画面の中央に映像、右下にカメラ操作ボタンがある" loading="lazy" decoding="async" width="900" height="1956"><figcaption>カメラの拡大表示</figcaption></figure>
+      <figure class="phone"><img src="guide/img/fullwall-closeup.jpg" alt="ウォールの上に開いた 1 台のカメラの拡大表示。左上に戻るボタンとカメラ名、右上に時計の記号が付いた録画ボタン、黒い画面の中央に映像、右下にカメラ操作ボタンがある" loading="lazy" decoding="async" width="900" height="1956"><figcaption>カメラの拡大表示</figcaption></figure>
     </li>
     <li class="step">
       <p>拡大表示の左上にある<span class="ui">戻る</span>をタップします。</p>
@@ -1282,7 +1282,7 @@
     <li class="step">
       <p>ライブ映像が表示されているチャンネルのサムネイルをタップします。</p>
       <p class="check"><b class="check-label">確認：</b>1 台表示が開きます。タイトルはカメラの名前で、映像の左上に緑色の<span class="ui">ライブ</span>バッジが表示されます。映像は、<span class="path"><span class="ui">設定</span> › <span class="ui">デフォルトの画質</span> › <span class="ui">1 台のカメラ</span></span>の画質で始まります（変更しない限り HD）。</p>
-      <figure class="phone"><img src="guide/img/single-live.jpg" alt="ライブモードの 1 台表示。ライブのバッジとカメラ操作ボタンが付いた映像、その下に、左端にスナップショット、右端に SD/HD のスイッチがあるコントロールバー、日付、タイムライン、一覧がある録画パネル" loading="lazy" decoding="async" width="900" height="1956"><figcaption>ライブモードの 1 台表示</figcaption></figure>
+      <figure class="phone"><img src="guide/img/single-live.jpg" alt="ライブモードの 1 台表示。ライブのバッジとカメラ操作ボタンが付いた映像、その下に、スナップショット、赤い録画ボタン、SD と HD のスイッチがあるコントロールバー、カレンダーのボタン、日付、タイムライン、一覧がある録画パネル" loading="lazy" decoding="async" width="900" height="1956"><figcaption>ライブモードの 1 台表示</figcaption></figure>
     </li>
   </ol>
   <p>画面を閉じるには、左上の戻るボタンをタップします。</p>
@@ -1293,7 +1293,7 @@
     <tbody>
       <tr><td>ナビゲーションバー</td><td>戻るボタンとカメラの名前。iPad と iPhone Duo の内側ディスプレイでは、右側に<span class="ui">新しいウインドウで開く</span>ボタンがあります。詳しくは<a class="xref" href="#single-window">「カメラを独立したウインドウで開く」</a>を参照してください。</td></tr>
       <tr><td>映像（縦向き、16:9）</td><td>左上のバッジはモードを示します。<span class="ui">ライブ</span>（緑）、または再生時刻付きの<span class="ui">再生 15:00:03</span>（赤）です。右下の丸いボタンは、ライブモードでは PTZ 用のカメラ操作です。詳しくは<a class="xref" href="#single-ptz">「PTZ 操作：カメラを動かす」</a>を参照してください。録画の再生中は、速度ボタンになります。詳しくは<a class="xref" href="#playback-speed">「再生速度」</a>を参照してください。</td></tr>
-      <tr><td>コントロールバー</td><td>左に<span class="ui">スナップショット</span>、続いて赤い録画ボタンがあり、その隣に、カメラが音声を送信している場合はスピーカーボタン、トークに対応したカメラではトークボタンがあります。右には、ライブモードでは SD と HD のスイッチ、再生中は<span class="ui">ライブに戻る</span>があります。表記の長い言語などでバーの幅が足りない場合、<span class="ui">スナップショット</span>はカメラの記号だけで表示されます。詳しくは<a class="xref" href="#single-controls">「スナップショット、音声、画質」</a>、<a class="xref" href="#single-clip">「クリップの録画」</a>、<a class="xref" href="#single-talk">「双方向のトーク」</a>を参照してください。</td></tr>
+      <tr><td>コントロールバー</td><td>左に<span class="ui">スナップショット</span>、続いて赤い録画ボタンがあり、その隣に、カメラが音声を送信している場合はスピーカーボタン、トークに対応したカメラではトークボタンがあります。右には、ライブモードでは SD と HD のスイッチ、再生中は<span class="ui">ライブに戻る</span>があります。スピーカーボタンやトークボタンがバーにある場合や、表記の長い言語などでバーの幅が足りない場合、<span class="ui">スナップショット</span>はカメラの記号だけで表示されます。詳しくは<a class="xref" href="#single-controls">「スナップショット、音声、画質」</a>、<a class="xref" href="#single-clip">「クリップの録画」</a>、<a class="xref" href="#single-talk">「双方向のトーク」</a>を参照してください。</td></tr>
       <tr><td>録画パネル</td><td><span class="ui">録画</span>の見出しの下に、日付、タイムライン、録画の一覧があり、対応するデバイスでは録画カレンダーのボタンもあります。このパネルは、再生に対応したデバイスにのみ表示されます。それ以外のデバイスでは、画面は映像とコントロールバーだけで構成されます。詳しくは<a class="xref" href="#playback">第7章「録画の再生と再生速度」</a>を参照してください。</td></tr>
     </tbody>
   </table></div>
@@ -1355,7 +1355,7 @@
     <li class="step">
       <p>コントロールバーのスピーカーボタン（<span class="ui">消音解除</span>）をタップします。</p>
       <p class="check"><b class="check-label">確認：</b>記号が、斜線の入ったスピーカーから音波のあるスピーカーに変わり、カメラの音声が再生されます。</p>
-      <figure class="phone"><img src="guide/img/single-audio.jpg" alt="音声を送信するカメラのコントロールバー。スナップショットと SD と HD のスイッチの間にスピーカーボタンがある" loading="lazy" decoding="async" width="900" height="1956"><figcaption>コントロールバーのスピーカーボタン</figcaption></figure>
+      <figure class="phone"><img src="guide/img/single-audio.jpg" alt="音声を送信するカメラのコントロールバー。カメラの記号で表示されたスナップショット、赤い録画ボタン、スピーカーボタン、SD と HD のスイッチがある" loading="lazy" decoding="async" width="900" height="1956"><figcaption>コントロールバーのスピーカーボタン</figcaption></figure>
     </li>
     <li class="step">
       <p>スピーカーボタンをもう一度タップします（<span class="ui">消音</span>）。</p>
@@ -1423,7 +1423,7 @@
   <h3 id="single-talk">双方向のトーク</h3>
   <p>スピーカーを備えた単体カメラでは、カメラを通して話せます。トークはトランシーバーのように使います。ボタンを押し続けている間に話し、離すと聞く側に戻ります。Cam Hub は、画面を開いたときにカメラにトーク用のチャンネルを問い合わせます。カメラがトーク用のチャンネルを報告すると、コントロールバーの録画ボタンとスピーカーボタンに続いて、トークボタン（マイクの記号）が表示されます。</p>
   <p>前提条件：双方向音声のチャンネルを報告する、対応ブランドの単体カメラであること、ライブモードであること、チャンネルがプランの範囲内にあること。レコーダーのチャンネルにはトークボタンがありません。レコーダーのトーク用のチャンネルは、レコーダー自身の音声出力で、カメラのスピーカーではないためです。</p>
-  <figure class="phone"><img src="guide/img/single-talk.jpg" alt="スピーカーを備えたカメラの 1 台表示。コントロールバーにマイクの記号のトークボタンがあり、SD と HD のスイッチがある" loading="lazy" decoding="async" width="900" height="1947"><figcaption>コントロールバーのトークボタン</figcaption></figure>
+  <figure class="phone"><img src="guide/img/single-talk.jpg" alt="スピーカーを備えたカメラの 1 台表示。コントロールバーにマイクの記号のトークボタンがあり、SD と HD のスイッチがある" loading="lazy" decoding="async" width="900" height="1956"><figcaption>コントロールバーのトークボタン</figcaption></figure>
   <p>初めてトークボタンを押すと、マイクへのアクセスを求めるシステムのダイアログが表示されます。許可してから、もう一度ボタンを押します。</p>
   <ol class="steps">
     <li class="step">
@@ -1486,7 +1486,7 @@
     <li class="step">
       <p>映像の右下にある丸いボタン（<span class="ui">カメラを動かす</span>）をタップします。</p>
       <p class="check"><b class="check-label">確認：</b>ボタンの左にパッドが開き、ボタンが×印に変わります（<span class="ui">カメラ操作を非表示</span>）。パッドには、ズーム用のプラスとマイナスのカプセル、4 つの矢印と中央の家の記号がある円盤、星のボタンがあります。タッチによる照準に対応したカメラでは、円盤の隣、星の上に、標的の記号の照準ボタンが加わります。</p>
-      <figure class="phone"><img src="guide/img/single-ptz.jpg" alt="カメラ操作を開いた 1 台表示。映像の上に、ズームのカプセル、家の記号がある方向の円盤、照準ボタン、星のボタン、×印のボタンが表示されている" loading="lazy" decoding="async" width="900" height="1947"><figcaption>映像の上のカメラ操作</figcaption></figure>
+      <figure class="phone"><img src="guide/img/single-ptz.jpg" alt="カメラ操作を開いた 1 台表示。映像の上に、ズームのカプセル、家の記号がある方向の円盤、照準ボタン、星のボタン、×印のボタンが表示されている" loading="lazy" decoding="async" width="900" height="1956"><figcaption>映像の上のカメラ操作</figcaption></figure>
     </li>
     <li class="step">
       <p>円盤の矢印（<span class="ui">上に向ける</span>、<span class="ui">下に向ける</span>、<span class="ui">左に向ける</span>、<span class="ui">右に向ける</span>）を押し続けます。</p>
@@ -1527,7 +1527,7 @@
 
   <h4>映像に触れて照準を合わせる</h4>
   <p>対応するカメラでは、映像の一点にカメラを向けたり、映像に描いた範囲に直接ズームインしたりできます。前提条件：パッドが開いていて、照準ボタンが表示されていること。</p>
-  <figure class="phone"><img src="guide/img/single-ptz-aim.jpg" alt="タッチで照準を合わせている間の 1 台表示。映像の上部のヒント、点灯した照準ボタン、×印のボタンがある" loading="lazy" decoding="async" width="900" height="1947"><figcaption>タッチによる照準</figcaption></figure>
+  <figure class="phone"><img src="guide/img/single-ptz-aim.jpg" alt="タッチで照準を合わせている間の 1 台表示。映像の上部のヒント、点灯した照準ボタン、×印のボタンがある" loading="lazy" decoding="async" width="900" height="1956"><figcaption>タッチによる照準</figcaption></figure>
   <ol class="steps">
     <li class="step">
       <p>照準ボタン（<span class="ui">3D ポジショニング</span>）をタップします。</p>
@@ -1683,7 +1683,7 @@
     </tbody>
   </table></div>
   <div class="shots pair">
-    <figure class="phone"><img src="guide/img/single-reconnecting.jpg" alt="ストリームの再接続中の 1 台表示。黒い映像領域に「再接続中…」のスピナー、左上にライブのバッジ、右下にカメラ操作ボタン、その下に、左端にスナップショット、右端に SD と HD のスイッチがあるコントロールバー、「このデバイスに接続できませんでした。」の行、空のタイムラインがある録画パネル" loading="lazy" decoding="async" width="900" height="1956"><figcaption>接続をやり直している間の映像</figcaption></figure>
+    <figure class="phone"><img src="guide/img/single-reconnecting.jpg" alt="ストリームの再接続中の 1 台表示。黒い映像領域に「再接続中…」のスピナー、左上にライブのバッジ、右下にカメラ操作ボタン、その下に、左端にスナップショットと赤い録画ボタン、右端に SD と HD のスイッチがあるコントロールバー、「このデバイスに接続できませんでした。」の行、空のタイムラインがある録画パネル" loading="lazy" decoding="async" width="900" height="1956"><figcaption>接続をやり直している間の映像</figcaption></figure>
     <figure class="phone"><img src="guide/img/single-failed.jpg" alt="暗い映像領域の上に失敗メッセージと再試行ボタンが表示された 1 台表示" loading="lazy" decoding="async" width="900" height="1956"><figcaption>失敗メッセージと再試行</figcaption></figure>
   </div>
   <ol class="steps">
@@ -1719,7 +1719,7 @@
   <div class="table-wrap"><table>
     <thead><tr><th>機能</th><th>表示される条件</th></tr></thead>
     <tbody>
-      <tr><td>日付、タイムライン、一覧のある録画パネル</td><td>再生に対応した接続方法でデバイスを追加した場合。<a class="xref" href="#brands-matrix">「方法ごとにできること」</a>を参照してください。アカウントに録画を読み取る権限がない場合もパネルは表示され、タイムラインの上に<span class="ui">このアカウントではこのデバイスの録画を表示できません。</span>と表示されます。</td></tr>
+      <tr><td>日付、タイムライン、一覧のある録画パネル</td><td>再生に対応した接続方法でデバイスを追加した場合。<a class="xref" href="#brands-matrix">「方法ごとにできること」</a>を参照してください。アカウントに録画を読み取る権限がない、またはユーザー名かパスワードが間違っているためにデバイスがサインインを拒否した場合も、パネルは表示され、タイムラインの上に<span class="ui">このアカウントではこのデバイスの録画を表示できません。</span>と表示されます。</td></tr>
       <tr><td>録画カレンダーのボタン</td><td>デバイスが、録画の日ごとのインデックスも保持している場合。詳しくは<a class="xref" href="#playback-calendar">「録画カレンダー」</a>を参照してください。</td></tr>
       <tr><td><span class="ui">連続録画</span>と<span class="ui">イベント</span>の切り替え</td><td>イベント（検出された人物、または動きとアラーム入力）のインデックスを提供する接続方法でデバイスを追加した場合。<a class="xref" href="#brands-matrix">「方法ごとにできること」</a>を参照してください。デバイス自体がそのインデックスの検索に応答しない場合も、切り替えは表示されます。<a class="xref" href="#playback-list">「録画とイベントの一覧」</a>を参照してください。それ以外の接続方法では、選んだ日またはその前日に、デバイスがイベントをきっかけに録画した映像がある場合にのみ、切り替えが表示されます。それ以外の場合は、連続録画の一覧だけが表示され、切り替えはありません。</td></tr>
       <tr><td>速度ボタン</td><td>再生中で、デバイスが録画を高速で再生できる場合。できない場合は、通知が表示されます。詳しくは<a class="xref" href="#playback-speed">「再生速度」</a>を参照してください。</td></tr>
@@ -1759,7 +1759,7 @@
 
   <h3 id="playback-calendar">録画カレンダー</h3>
   <p>録画の日ごとのインデックスを保持するデバイスでは、<span class="ui">録画</span>の見出しと日付の間に、カレンダーのボタンがあります。そのカレンダーには録画のある日に印が付くので、日付を 1 日ずつ試す必要がありません。そのようなインデックスがない場合、ボタンは表示されず、日付は<a class="xref" href="#playback-day">「日付を選ぶ」</a>の説明に従って選びます。</p>
-  <figure class="phone"><img src="guide/img/playback-calendar.jpg" alt="1 台表示の上の「録画カレンダー」シート。矢印付きの月、点で示された録画のある日、塗りつぶした円の中の選択した日、「点のある日には録画があります。」の行がある" loading="lazy" decoding="async" width="900" height="1947"><figcaption>録画カレンダー</figcaption></figure>
+  <figure class="phone"><img src="guide/img/playback-calendar.jpg" alt="1 台表示の上の「録画カレンダー」シート。矢印付きの月、点で示された録画のある日、塗りつぶした円の中の選択した日、「点のある日には録画があります。」の行がある" loading="lazy" decoding="async" width="900" height="1956"><figcaption>録画カレンダー</figcaption></figure>
   <ol class="steps">
     <li class="step">
       <p>日付の隣にあるカレンダーのボタン（<span class="ui">録画カレンダー</span>）をタップします。</p>
@@ -1877,7 +1877,7 @@
       <tr><td><span class="ui">この日のイベントはありません。</span></td><td>それ以外のデバイスで、その日にイベントがありません。</td></tr>
       <tr><td><span class="ui">このデバイスでは人物イベントのインデックスを検索できませんでした。</span></td><td>デバイスが検出された人物の検索に応答しない場合（たとえば、人物のインデックスがない古いレコーダー）に、<span class="ui">イベント</span>の下に一覧の代わりに表示されます。この場合、デバイスがイベントをきっかけに録画した映像は一覧に表示されませんが、タイムライン上の赤いバーから再生できます。連続録画の一覧には影響しません。</td></tr>
       <tr><td><span class="ui">このデバイスのイベントを検索できませんでした。</span></td><td>動きとアラーム入力を記録するデバイスでの、同様の表示です。</td></tr>
-      <tr><td>タイムラインの上に警告の記号付きで表示されるメッセージ：<span class="ui">このアカウントではこのデバイスの録画を表示できません。</span>、<span class="ui">このデバイスに接続できませんでした。</span>、<span class="ui">このデバイスはこのカメラの録画を認識できませんでした。</span>、または<span class="ui">このカメラはオフラインです。</span></td><td>メッセージが示す理由で、その日の検索に失敗しました。メッセージの表示中も、日付を変更して別の日を試せます。アカウントについては、デバイスでの権限を確認します。接続については、<a class="xref" href="#trouble">第15章「トラブルシューティング」</a>を参照してください。</td></tr>
+      <tr><td>タイムラインの上に警告の記号付きで表示されるメッセージ：<span class="ui">このアカウントではこのデバイスの録画を表示できません。</span>、<span class="ui">このデバイスに接続できませんでした。</span>、<span class="ui">このデバイスはこのカメラの録画を認識できませんでした。</span>、または<span class="ui">このカメラはオフラインです。</span></td><td>メッセージが示す理由で、その日の検索に失敗しました。メッセージの表示中も、日付を変更して別の日を試せます。アカウントについては、ユーザー名、パスワード、デバイスでの権限を確認します。接続については、<a class="xref" href="#trouble">第15章「トラブルシューティング」</a>を参照してください。</td></tr>
       <tr><td><span class="ui">短時間にリクエストが多すぎます。1 分ほど待ってからもう一度お試しください。</span></td><td>リクエストが多すぎるため、デバイスまたはそのサービスが検索を拒否したか、デバイスが以前の検索をまだ処理していました。1 分待ってから、もう一度日付を選びます。</td></tr>
       <tr><td>同じ場所に表示されるその他のメッセージ（たとえば<span class="ui">デバイスから予期しない応答が返されました。</span>、<span class="ui">接続がタイムアウトしました。</span>、<span class="ui">問題が発生しました。もう一度お試しください。</span>）</td><td>別の理由で検索に失敗しました。もう一度日付を選びます。メッセージが続く場合は、<a class="xref" href="#trouble">第15章「トラブルシューティング」</a>を参照してください。</td></tr>
     </tbody>
@@ -1958,7 +1958,7 @@
     <li class="step">
       <p>録画を開始し、iPhone を横向きにします。</p>
       <p class="check"><b class="check-label">確認：</b>映像が画面全体に表示されます。映像の下端に重なるバーに、<span class="ui">再生 15:00:03</span>のバッジ、速度ボタン、<span class="ui">ライブに戻る</span>、タイムラインが表示されます。</p>
-      <figure class="land"><img src="guide/img/playback-landscape.jpg" alt="横向きでの再生。画面全体の映像の下端に、再生バッジ、速度ボタン、「ライブに戻る」、タイムラインがあるバーが表示されている" loading="lazy" decoding="async" width="1600" height="736"><figcaption>横向きでの再生</figcaption></figure>
+      <figure class="land"><img src="guide/img/playback-landscape.jpg" alt="横向きでの再生。黒い画面の中央に映像、上部に戻るボタンとその横の再生バッジ、赤い録画ボタン、下端に再生バッジ、速度ボタン、「ライブに戻る」、タイムラインがあるバーが表示されている" loading="lazy" decoding="async" width="1600" height="736"><figcaption>横向きでの再生</figcaption></figure>
     </li>
     <li class="step">
       <p>バーのタイムラインをドラッグし、目的の時刻で指を離します。</p>
@@ -2096,7 +2096,7 @@
     <li class="step">
       <p>ウォールに表示したい順に、さらに 5 つのチャンネルにチェックを入れます。</p>
       <p class="check"><b class="check-label">確認：</b>ページの上部に<span class="ui" data-ui="value">6 台のカメラを選択中</span>と表示されます。</p>
-      <figure class="phone"><img src="guide/img/lvm-pick-selected.jpg" alt="6 台のカメラを選択した「カメラを選択」ページ。チェックを入れた各チャンネルの右側に SD と HD の選択があり、上部に「すべて SD」と「すべて HD」のボタンがある" loading="lazy" decoding="async" width="900" height="1956"><figcaption>6 台のカメラを選択した状態</figcaption></figure>
+      <figure class="phone"><img src="guide/img/lvm-pick-selected.jpg" alt="6 台のカメラを選択した「カメラを選択」ページ。上部に「横向きページ」と「縦向きページ」の切り替え、その下に「すべて SD」と「すべて HD」のボタンがあり、チェックを入れた各チャンネルの右側に SD と HD の選択がある" loading="lazy" decoding="async" width="900" height="1956"><figcaption>6 台のカメラを選択した状態</figcaption></figure>
     </li>
     <li class="step">
       <p>任意：より鮮明に表示したいカメラごとに、<span class="ui">HD</span>をタップします。</p>
@@ -2360,7 +2360,7 @@
   <h3 id="lvm-arrange">ウォールとタイルの配置</h3>
   <p>パス：<span class="path"><span class="ui">LiveView Mix</span> › <span class="ui">レイアウトを調整</span> › <span class="ui">ウォールの配置</span></span>。このページで、各タイルに何を入れるかを決めます。タイトルは<span class="ui">配置</span>です。ページは上から順に、レイアウトの行、キャンバス、<span class="ui">ヒント</span>、<span class="ui">並び順</span>の一覧で構成されます。<span class="ui">ウォールの配置</span>は、カメラを選択済みか、デバイスがある時点で使用できます。</p>
   <figure class="phone clip"><video class="clip" src="guide/vid/rec-arrange-swap.mp4" poster="guide/img/rec-arrange-swap.jpg" aria-label="ウォールの配置：タイルを別のタイルの上にドラッグすると 2 つが入れ替わり、空のセルにドラッグするとそこに移動します。" muted loop playsinline preload="metadata"></video><figcaption>ウォールの配置：タイルを別のタイルの上にドラッグすると 2 つが入れ替わり、空のセルにドラッグするとそこに移動します。</figcaption></figure>
-  <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="「配置」ページ。上部にレイアウトの行、中央に 10 個のタイルがあるキャンバス（タイル 9 はコントロールパネル、タイル 10 は時計）、その下に「並び順」の一覧がある" loading="lazy" decoding="async" width="900" height="1956"><figcaption>「配置」ページ</figcaption></figure>
+  <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="「配置」ページ。上部にレイアウトの行、中央に 10 個のタイルがあるキャンバス（タイル 9 はコントロールパネル、タイル 10 は時計）、その下に「ヒント」と「並び順」の一覧がある" loading="lazy" decoding="async" width="900" height="1956"><figcaption>「配置」ページ</figcaption></figure>
   <ul>
     <li><b>レイアウトの行</b>：<span class="ui">レイアウトを調整</span>と同じレイアウトの図で、ここで直接レイアウトを変更できます。<span class="ui">カスタム</span>の図は、レイアウトを描いた後、または使用中の間に表示され、ここでは選択のみ行えます。</li>
     <li><b>キャンバス</b>：横向きページでは 16:9 の横長、縦向きページでは 9:16 の縦長で描画され、現在のウォールのページを表示します。内容のある各タイルの番号は、左上に表示されます。カメラのタイルにはライブ映像（SD）が表示されます。オフラインのカメラやプラン対象外のカメラは、斜線の入ったカメラのアイコンがある黒いタイルになり、YouTube や Twitch の配信は名前が表示されます。透かしがオフの間は左下にチャンネル名が表示され、オンの場合は透かしがプレビューされます。キャンバス上のコントロールパネルはウォールと同じ見た目ですが、プランの対象外のパネルでもロックは表示されません。タップすると編集画面が開き、リクエストは送信されません。縦向きの端末では、実際の横向きのウォールは反転しますが、各タイルの番号は変わりません。</li>
@@ -2941,7 +2941,7 @@
     <li class="step">
       <p><span class="ui">ウォールの配置</span>をタップします。</p>
       <p class="check"><b class="check-label">確認：</b><span class="ui">配置</span>ページが開きます。上部にウォールのキャンバスがあり、その下の<span class="ui">並び順</span>の一覧に、内容のあるすべてのタイルがそれぞれの番号の下に並んでいます。</p>
-      <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="「配置」ページ。上部のウォールのキャンバスのタイル 9 にコントロールパネル、タイル 10 に時計があり、その下に内容のあるタイルの一覧がある" loading="lazy" decoding="async" width="900" height="1956"><figcaption>「配置」ページ</figcaption></figure>
+      <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="「配置」ページ。上部にレイアウトの行、その下のウォールのキャンバスのタイル 9 にコントロールパネル、タイル 10 に時計があり、さらにその下に内容のあるタイルの一覧がある" loading="lazy" decoding="async" width="900" height="1956"><figcaption>「配置」ページ</figcaption></figure>
     </li>
     <li class="step">
       <p>キャンバス上の、破線の枠と + で表示された未使用のタイルをタップします。未使用のタイルが別のウォールのページにある場合は、先にキャンバスの下の矢印を使うか、横にスワイプします。</p>
@@ -3084,8 +3084,8 @@
     </li>
   </ol>
   <div class="shots pair">
-    <figure class="phone"><img src="guide/img/lvm-button-editor.jpg" alt="ボタンの編集画面。アイコン、ラベル、実行前に確認、リクエストセクションのメソッドと URL" loading="lazy" decoding="async" width="900" height="1956"><figcaption>ボタンの編集画面（上部）</figcaption></figure>
-    <figure class="phone"><img src="guide/img/lvm-button-headers.jpg" alt="ボタンの編集画面の下部。Authorization の行が 1 つあるヘッダーセクションと、コンテンツタイプと JSON の内容がある本文セクション" loading="lazy" decoding="async" width="900" height="1956"><figcaption>ボタンの編集画面（下部）</figcaption></figure>
+    <figure class="phone"><img src="guide/img/lvm-button-editor.jpg" alt="ボタンの編集画面。アイコン、ラベル、実行前に確認、リクエストセクションのメソッドと URL、送信方法がある Apple Watch のセクション" loading="lazy" decoding="async" width="900" height="1956"><figcaption>ボタンの編集画面（上部）</figcaption></figure>
+    <figure class="phone"><img src="guide/img/lvm-button-headers.jpg" alt="ボタンの編集画面の下部。Apple Watch のセクション、Authorization の行が 1 つあるヘッダーセクション、コンテンツタイプと JSON の内容がある本文セクション" loading="lazy" decoding="async" width="900" height="1956"><figcaption>ボタンの編集画面（下部）</figcaption></figure>
   </div>
   <div class="table-wrap"><table>
     <thead><tr><th>項目</th><th>説明</th></tr></thead>
@@ -3117,7 +3117,7 @@
     <li class="step">
       <p>ボタンのアイコンを見ます。</p>
       <p class="check"><b class="check-label">確認：</b>結果に応じて、アイコンが緑のチェックマークまたはオレンジの警告の三角形に変わり、約 1.6 秒後に元のアイコンに戻ります。</p>
-      <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="1 つのボタンの 3 つの状態。送信中のスピナー、成功後の緑のチェックマーク、失敗後のオレンジの警告の三角形" loading="lazy" decoding="async" width="1600" height="736"><figcaption>ボタンの 3 つの状態</figcaption></figure>
+      <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="LiveView Mix のウォールにあるコントロールパネルの 3 つのボタン。それぞれが 1 つの状態を示している。送信中のスピナー、成功後の緑のチェックマーク、失敗後のオレンジの警告の三角形" loading="lazy" decoding="async" width="1600" height="736"><figcaption>ボタンの 3 つの状態（ボタンごとに 1 つずつ）</figcaption></figure>
     </li>
   </ol>
   <div class="table-wrap"><table>
@@ -3851,7 +3851,7 @@ Content-Type: application/json
     <li class="step">
       <p><span class="ui">カメラプラン · 年額課金</span>または<span class="ui">NVR プラン · 月額課金</span>のセクションで、登録するプランを見つけ、そのカードの<span class="ui">登録する</span>をタップします。</p>
       <p class="check"><b class="check-label">確認：</b>システムの購入確認が表示されます。各カードには、プランの名前、短い説明、料金が表示されます。Apple アカウントが対象の場合は、無料トライアルの期間も表示されます。</p>
-      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="プランページの上部。Cam Hub のロゴ、「すべてのカメラを解除」の見出し、無料プランで表示できる内容についての文、プランと含まれる内容についての短い 5 行、下端に「カメラプラン · 年額課金」の見出しがある" loading="lazy" decoding="async" width="900" height="1215"><figcaption>プランページの上部。プランのカードは、その下に続きます</figcaption></figure>
+      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="プランページの上部。Cam Hub のロゴ、「すべてのカメラを解除」の見出し、無料プランで表示できる内容についての文、プランと含まれる内容についての短い 5 行がある" loading="lazy" decoding="async" width="900" height="1215"><figcaption>プランページの上部。プランのカードは、その下に続きます</figcaption></figure>
     </li>
     <li class="step">
       <p>システム画面の案内に従って、Apple アカウントで購入を確認します。</p>
@@ -3950,7 +3950,7 @@ Content-Type: application/json
     <li class="step">
       <p>画面下部の<span class="ui">ツール</span>タブをタップします。</p>
       <p class="check"><b class="check-label">確認：</b><span class="ui">サブネット</span>から始まるタブのセクションが表示されます。アドレス欄と範囲には、端末のネットワークがすでに入力されています。</p>
-      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="ツールタブ。自身のアドレス、ネットワーク、範囲、スキャンボタンがあるサブネットセクション、その下の「見つかったデバイス」と「スピードメーター」の行" loading="lazy" decoding="async" width="900" height="1745"><figcaption>ツールタブ（サンプルのネットワーク）</figcaption></figure>
+      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="上部にタイトルが表示されたツールタブ。この端末のアドレス、ネットワーク、範囲、スキャンボタンがあるサブネットのセクション、その下にまだデバイスが見つかっていない「見つかったデバイス」と、「スピードメーター」の行" loading="lazy" decoding="async" width="900" height="1634"><figcaption>ツールタブ（サンプルのネットワーク）</figcaption></figure>
     </li>
   </ol>
   <p>スキャンの手順は<a class="xref" href="#add-scan">「ネットワークスキャンでデバイスを探す」</a>を参照してください。以下は、タブ全体の動作に関する注意点です。</p>
@@ -4132,7 +4132,7 @@ Content-Type: application/json
     <li class="step">
       <p><span class="ui">サブスクリプション</span>セクションで、<span class="ui">プラン</span>をタップします。</p>
       <p class="check"><b class="check-label">確認：</b>設定の上に<span class="ui">プラン</span>ページが開きます。カメラプランと NVR プランが一覧表示され、現在のプランにマークが付きます。</p>
-      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="プランページの上部。Cam Hub のロゴ、「すべてのカメラを解除」の見出し、無料プランで表示できる内容についての文、プランと含まれる内容についての短い 5 行、下端に「カメラプラン · 年額課金」の見出しがある" loading="lazy" decoding="async" width="900" height="1215"><figcaption>プランページの上部。プランのカードは、その下に続きます</figcaption></figure>
+      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="プランページの上部。Cam Hub のロゴ、「すべてのカメラを解除」の見出し、無料プランで表示できる内容についての文、プランと含まれる内容についての短い 5 行がある" loading="lazy" decoding="async" width="900" height="1215"><figcaption>プランページの上部。プランのカードは、その下に続きます</figcaption></figure>
     </li>
     <li class="step">
       <p>右上の<span class="ui">完了</span>をタップします。</p>
@@ -4256,7 +4256,7 @@ Content-Type: application/json
     <li class="step">
       <p><span class="ui" data-ui="value">Language</span>の行をタップします。</p>
       <p class="check"><b class="check-label">確認：</b>メニューに、<span class="ui">システムに合わせる</span>と、<span class="ui" data-ui="value">English</span>、<span class="ui" data-ui="value">繁體中文</span>、<span class="ui" data-ui="value">简体中文</span>、<span class="ui" data-ui="value">日本語</span>、<span class="ui" data-ui="value">한국어</span>、<span class="ui" data-ui="value">العربية</span>、<span class="ui" data-ui="value">Deutsch</span>、<span class="ui" data-ui="value">Español</span>、<span class="ui" data-ui="value">Español (México)</span>、<span class="ui" data-ui="value">Français</span>、<span class="ui" data-ui="value">Slovenščina</span>の各言語が表示されます。各言語は、その言語自身の名前で表記されます。</p>
-      <figure class="phone"><img src="guide/img/settings-language.jpg" alt="設定タブの言語メニュー。チェックマークの付いた「システムに合わせる」と、Español (México) を含む各言語が、それぞれの言語の名前で表示されている" loading="lazy" decoding="async" width="900" height="1947"><figcaption>言語メニュー</figcaption></figure>
+      <figure class="phone"><img src="guide/img/settings-language.jpg" alt="設定タブの言語メニュー。チェックマークの付いた「システムに合わせる」と、English から最後の Slovenščina まで、それぞれの言語の名前で表示された 11 の言語" loading="lazy" decoding="async" width="900" height="1956"><figcaption>言語メニュー</figcaption></figure>
     </li>
     <li class="step">
       <p>言語をタップします。</p>
@@ -4303,11 +4303,11 @@ Content-Type: application/json
   <ol class="steps">
     <li class="step">
       <p><span class="ui">リセット</span>セクションで、<span class="ui">設定をデフォルトに戻す</span>をタップします。</p>
-      <p class="check"><b class="check-label">確認：</b><span class="ui">すべての設定をデフォルトに戻しますか？</span>のダイアログが表示され、<span class="ui">デフォルトに戻す</span>と<span class="ui">キャンセル</span>のボタンがあります。ダイアログのテキストには、言語を含むすべての設定がデフォルトに戻ること、LiveView Mix のウォール（レイアウト、コントロールパネル、Webhook ボタン、画像）が消去されること、デバイスと iCloud バックアップは保持されることが書かれています。</p>
+      <p class="check"><b class="check-label">確認：</b>設定ページに重なって<span class="ui">すべての設定をデフォルトに戻しますか？</span>のダイアログが表示され、<span class="ui">デフォルトに戻す</span>のボタンがあります。iPhone でも iPad でも、このダイアログにキャンセルのボタンはありません。ダイアログのテキストには、言語を含むすべての設定がデフォルトに戻ること、LiveView Mix のウォール（レイアウト、コントロールパネル、Webhook ボタン、画像）が消去されること、デバイスと iCloud バックアップは保持されることが書かれています。</p>
       <figure class="phone"><img src="guide/img/settings-restore-defaults.jpg" alt="設定ページに重なって表示された「すべての設定をデフォルトに戻しますか？」のダイアログと「デフォルトに戻す」ボタン" loading="lazy" decoding="async" width="900" height="1956"><figcaption>設定をデフォルトに戻す前の確認</figcaption></figure>
     </li>
     <li class="step">
-      <p><span class="ui">デフォルトに戻す</span>をタップします。すべてをそのままにするには、代わりに<span class="ui">キャンセル</span>をタップします。</p>
+      <p><span class="ui">デフォルトに戻す</span>をタップします。すべてをそのままにするには、代わりにダイアログの外側のどこかをタップします。ダイアログが閉じ、何も変更されません。</p>
       <p class="check"><b class="check-label">確認：</b>設定がデフォルトの値になり、言語はシステムに従います。<span class="ui">LiveView Mix</span>の行に<span class="ui">未設定</span>と表示され、<span class="ui">縦向きページ</span>のスイッチはオフになります。デバイスは、デバイスタブに引き続き表示されます。</p>
     </li>
   </ol>
@@ -4317,11 +4317,11 @@ Content-Type: application/json
   <ol class="steps">
     <li class="step">
       <p><span class="ui">リセット</span>セクションで、<span class="ui">すべてのデータを削除</span>をタップします。</p>
-      <p class="check"><b class="check-label">確認：</b><span class="ui">すべてのデータを削除しますか？</span>のダイアログが表示され、<span class="ui">すべて削除</span>と<span class="ui">キャンセル</span>のボタンがあります。テキストは、iCloud バックアップの有無によって異なります。バックアップがある場合は<span class="ui">この端末からすべてのデバイス、カメラ、保存済みパスワードを削除します。iCloud バックアップとサブスクリプションには影響しません。</span>、ない場合は<span class="ui">iCloud バックアップがないため、この操作は取り消せません。カメラのパスワードはこの端末にのみ保存されており、復元できません。サブスクリプションには影響しません。</span>です。</p>
-      <figure class="phone"><img src="guide/img/settings-delete-all.jpg" alt="設定ページに重なって表示された「すべてのデータを削除しますか？」のダイアログ。「すべて削除」と「キャンセル」のボタンがある" loading="lazy" decoding="async" width="900" height="1956"><figcaption>すべてのデータを削除する前の確認</figcaption></figure>
+      <p class="check"><b class="check-label">確認：</b>設定ページに重なって<span class="ui">すべてのデータを削除しますか？</span>のダイアログが表示され、<span class="ui">すべて削除</span>のボタンがあります。iPhone でも iPad でも、このダイアログにキャンセルのボタンはありません。テキストは、iCloud バックアップの有無によって異なります。バックアップがある場合は<span class="ui">この端末からすべてのデバイス、カメラ、保存済みパスワードを削除します。iCloud バックアップとサブスクリプションには影響しません。</span>、ない場合は<span class="ui">iCloud バックアップがないため、この操作は取り消せません。カメラのパスワードはこの端末にのみ保存されており、復元できません。サブスクリプションには影響しません。</span>です。</p>
+      <figure class="phone"><img src="guide/img/settings-delete-all.jpg" alt="設定ページに重なって表示された「すべてのデータを削除しますか？」のダイアログ。「すべて削除」のボタンがある" loading="lazy" decoding="async" width="900" height="1956"><figcaption>すべてのデータを削除する前の確認</figcaption></figure>
     </li>
     <li class="step">
-      <p><span class="ui">すべて削除</span>をタップします。データを残すには、代わりに<span class="ui">キャンセル</span>をタップします。</p>
+      <p><span class="ui">すべて削除</span>をタップします。データを残すには、代わりにダイアログの外側のどこかをタップします。ダイアログが閉じ、何も削除されません。</p>
       <p class="check"><b class="check-label">確認：</b>デバイスタブに<span class="ui">デバイスがありません</span>と表示され、設定がデフォルトの値になります。iCloud バックアップがある場合は、<a class="xref" href="#share-restore">「iCloud から復元する」</a>の説明に従って復元できます。</p>
     </li>
   </ol>
@@ -4359,7 +4359,7 @@ Content-Type: application/json
     <li class="step">
       <p><span class="ui">マニュアル</span>をタップします。</p>
       <p class="check"><b class="check-label">確認：</b>ブラウザで、このマニュアルが <code>https://cam-hub.almx.cc/guide.html</code> で開きます。インターネット接続が必要です。Cam Hub に戻るには、端末の App スイッチャーを使います。</p>
-      <figure class="phone"><img src="guide/img/settings-user-manual.jpg" alt="設定タブの下部。説明の付いた「リセット」の行、「利用規約」と「プライバシーポリシー」がある「法的情報」、「バージョン」がある「情報」、説明の付いた「マニュアル」の行" loading="lazy" decoding="async" width="900" height="1947"><figcaption>「マニュアル」の行</figcaption></figure>
+      <figure class="phone"><img src="guide/img/settings-user-manual.jpg" alt="設定タブの下部。説明の付いた「リセット」の最後の行、「利用規約」と「プライバシーポリシー」がある「法的情報」、「バージョン」がある「情報」、説明の付いた「マニュアル」の行、その下の「開発チームに問い合わせる」の行" loading="lazy" decoding="async" width="900" height="1956"><figcaption>「マニュアル」の行</figcaption></figure>
     </li>
   </ol>
   <ul>
@@ -4817,7 +4817,7 @@ Content-Type: application/json
       <tr><td>カレンダーに<span class="ui">このレコーダーは、録画のある日を教えてくれません。</span>または<span class="ui">この月を読み込めませんでした。</span></td><td>デバイスが録画のある日の一覧を提供していないか、この月について応答しませんでした。</td><td>印なしで日付を選びます。読み込めなかった月では、<span class="ui">もう一度試す</span>をタップします。詳しくは<a class="xref" href="#playback-calendar">「録画カレンダー」</a>を参照してください。</td></tr>
       <tr><td><span class="ui">この日は人物が検出されませんでした。</span>または<span class="ui">この日のイベントはありません。</span></td><td>デバイスが、その日にイベントを記録していません。</td><td>連続録画の一覧またはタイムラインを使います。詳しくは<a class="xref" href="#playback-list">「録画とイベントの一覧」</a>を参照してください。</td></tr>
       <tr><td><span class="ui">このデバイスでは人物イベントのインデックスを検索できませんでした。</span>または<span class="ui">このデバイスのイベントを検索できませんでした。</span></td><td>デバイスがイベントの検索に応答しなかったか、検出された人物のインデックスを保持していません。</td><td>もう一度日付を選びます。録画は、連続録画の一覧またはタイムラインから再生します。詳しくは<a class="xref" href="#playback-list">「録画とイベントの一覧」</a>を参照してください。</td></tr>
-      <tr><td><span class="ui">このアカウントではこのデバイスの録画を表示できません。</span></td><td>アカウントに録画を再生する権限がありません。</td><td>再生の権限があるアカウントを使うか、デバイスで権限を付与します。</td></tr>
+      <tr><td><span class="ui">このアカウントではこのデバイスの録画を表示できません。</span></td><td>デバイスがサインインを拒否しました。アカウントに録画を再生する権限がないか、ユーザー名またはパスワードが間違っています。たとえば、デバイスでパスワードが変更された場合です。</td><td>デバイスのページの<span class="ui">認証情報を編集</span>で、ユーザー名とパスワードを確認します。<a class="xref" href="#devices-credentials">「デバイスのユーザー名とパスワードの変更」</a>を参照してください。正しい場合は、再生の権限があるアカウントを使うか、デバイスで権限を付与します。</td></tr>
       <tr><td><span class="ui">このデバイスに接続できませんでした。</span>または<span class="ui">接続がタイムアウトしました。</span></td><td>デバイスが、その日の検索に応答しませんでした。</td><td>ネットワークを確認し、もう一度日付を選びます。</td></tr>
       <tr><td><span class="ui">このデバイスはこのカメラの録画を認識できませんでした。</span></td><td>デバイスがこのカメラの録画を見つけられません。たとえば、カメラにストレージがない、または録画が想定外の形で報告されている場合です。</td><td>デバイスで、カメラが録画していることを確認します。別のチャンネルや別の日付なら動作することがあります。</td></tr>
       <tr><td><span class="ui">レコーダーがこの録画を再生しませんでした。上書きされた可能性があります。別の時間を選んでください。</span></td><td>録画は一覧にありましたが、デバイスが再生を拒否しました。通常は、新しい映像で上書きされたためです。</td><td>もっと後の時刻か、別の日付を選びます。</td></tr>
@@ -4884,7 +4884,7 @@ Content-Type: application/json
       <tr><td>Apple Watch でボタンを押した後に赤い警告の三角形が表示される</td><td>ウォールと同じ原因です。さらに、Apple Watch がホームネットワークのアドレスに自分でリクエストを送ったときにその Wi-Fi ネットワークに接続していなかった、iPhone が約 20 秒以内に応答しなかった、またはプランがそのパネルを対象にしなくなった可能性があります。最後の場合、そのボタンは Apple Watch から消えます。</td><td>iPhone で、ボタンの編集画面の<span class="ui">送信方法</span>を確認します。詳しくは<a class="xref" href="#webhook-watch">「Apple Watch のボタン」</a>を参照してください。</td></tr>
     </tbody>
   </table></div>
-  <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="1 つのボタンの 3 つの状態。送信中のスピナー、成功後の緑のチェックマーク、失敗後のオレンジの警告の三角形" loading="lazy" decoding="async" width="1600" height="736"><figcaption>ボタンの 3 つの状態</figcaption></figure>
+  <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="LiveView Mix のウォールにあるコントロールパネルの 3 つのボタン。それぞれが 1 つの状態を示している。送信中のスピナー、成功後の緑のチェックマーク、失敗後のオレンジの警告の三角形" loading="lazy" decoding="async" width="1600" height="736"><figcaption>ボタンの 3 つの状態（ボタンごとに 1 つずつ）</figcaption></figure>
 
   <h3 id="trouble-health">ディスクの状態</h3>
   <p><span class="ui">ディスクの状態</span>のページは、ディスクの状態を報告するデバイスから、その状態を読み取ります。詳しくは<a class="xref" href="#devices-health">「ディスクの状態」</a>を参照してください。ネットワークストレージデバイスは SNMP で報告するため、一度設定が必要です。Apple TV には、ディスクの状態のページはありません。</p>

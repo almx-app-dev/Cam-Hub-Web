@@ -346,7 +346,7 @@
   <p>Ko je v polje <span class="ui">Naslov IP ali ime gostitelja</span> vnesena povezava YouTube ali Twitch, gumb <span class="ui">Dodaj</span> ni na voljo, obrazec pa ponudi <span class="ui">Dodaj kot prenos v živo YouTube</span> ali <span class="ui">Dodaj kot kanal Twitch</span>. Ko ga tapnete, se odpre zaslon te storitve z že vneseno povezavo; ko je prenos dodan, se zapreta oba zaslona. Kjer storitvi nista na voljo, se povezava obravnava kot običajen naslov.</p>
 
   <h3 id="add-failed">Ko dodajanje ne uspe: kontrolni seznam</h3>
-  <p>Ko dodajanje ne uspe, obrazec prikaže sporočilo o napaki v rdeči barvi. Pri izbiri <span class="ui">Samodejno zaznavanje</span> so pod njim navedena najdena odprta vrata. Pod tem je seznam <span class="ui">Najprej preverite</span>. Vrstni red seznama je odvisen od vrste napake; najverjetnejši vzrok je naveden na prvem mestu. Postavke preverite od zgoraj navzdol, nato znova tapnite <span class="ui">Dodaj</span>.</p>
+  <p>Ko dodajanje ne uspe, obrazec prikaže sporočilo o napaki v rdeči barvi. Pri izbiri <span class="ui">Samodejno zaznavanje</span> so pod njim navedena najdena odprta vrata; če se ni odzvalo nič, je tam prikazana vrstica <span class="ui">Na tem naslovu ni bilo najdenih odprtih vrat.</span> Pod tem je seznam <span class="ui">Najprej preverite</span>. Vrstni red seznama je odvisen od vrste napake; najverjetnejši vzrok je naveden na prvem mestu. Postavke preverite od zgoraj navzdol, nato znova tapnite <span class="ui">Dodaj</span>.</p>
   <div class="table-wrap"><table>
     <thead><tr><th>Sporočilo o napaki</th><th>Preverjanja (od zgoraj navzdol)</th></tr></thead>
     <tbody>
@@ -408,7 +408,7 @@
   <h3 id="add-report">Poročilo o napravi (preizkusno)</h3>
   <div class="callout warn">
     <strong class="t">Preizkusna funkcija brez zagotovila podpore</strong>
-    <p>Poročilo o napravi je preizkusna funkcija. Kadar koli se lahko spremeni ali odstrani. Pošiljanje poročila ne pomeni, da bo razvijalec dodal podporo za napravo, in ni zagotovila za odgovor, popravek ali časovni okvir. Nekaterih naprav po zasnovi ni mogoče podpreti, na primer zaradi zaprtih ali lastniških protokolov, delovanja samo prek oblaka, licenčnih ali šifrirnih omejitev ali omejitev strojne opreme. Funkcija ni kanal za podporo strankam ali nujno pomoč.</p>
+    <p>Poročilo o napravi je preizkusna funkcija. Kadar koli se lahko spremeni ali odstrani. Pošiljanje poročila ne pomeni, da bo razvijalec dodal podporo za napravo, in ni zagotovila za odgovor, popravek ali časovni okvir. Nekaterih naprav po zasnovi ni mogoče podpreti, na primer zaradi zaprtih ali lastniških protokolov, delovanja samo prek oblaka, licenčnih ali šifrirnih omejitev ali omejitev strojne opreme. Funkcija ni storitev za podporo strankam ali nujno pomoč.</p>
     <p>Pri zbiranju podrobnosti se aplikacija prijavi v napravo z vnesenim računom in geslom. Naprava neuspele prijave šteje in jih lahko tudi beleži. Če je geslo morda napačno, ga najprej popravite, kot je opisano v razdelku <a class="xref" href="#add-failed">„Ko dodajanje ne uspe: kontrolni seznam“</a>, namesto da bi poskušali večkrat.</p>
   </div>
   <p>Gumb <span class="ui">Pošlji podrobnosti razvijalcu</span> z oznako <span class="ui">Preizkusno</span> se pod kontrolnim seznamom prikaže šele po neuspelem dodajanju; po uspešnem dodajanju ni prikazan. Funkcija se zažene samo, ko tapnete gumb. Napravo preveri z zahtevami samo za branje in sestavi besedilno poročilo za pregled. Aplikacija Cam Hub poročila nikoli ne naloži sama; poročilo se pošlje samo, če se ga uporabnik odloči poslati po e-pošti iz svojega e-poštnega računa.</p>
@@ -430,12 +430,12 @@
     <li class="step">
       <p>Počakajte, da se zbiranje konča.</p>
       <p class="check"><b class="check-label">Rezultat:</b> <span class="ui">Kaj smo našli</span> v razumljivem jeziku navaja verjetne vzroke in kaj je treba najprej poskusiti. Če nič ne izstopa, zaslon prikaže <span class="ui">Ni očitnih težav.</span></p>
-      <figure class="phone"><img src="guide/img/device-report-found.jpg" alt="Seznam ugotovitev poročila o napravi z verjetnimi vzroki, kot so vrata, omrežni segment in VPN" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Seznam ugotovitev</figcaption></figure>
+      <figure class="phone"><img src="guide/img/device-report-found.jpg" alt="Seznam ugotovitev poročila o napravi: naprava je v drugem omrežnem segmentu in vklopljen je VPN, pod tem pa so stikala razdelka „Kaj vključiti“" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Seznam ugotovitev</figcaption></figure>
     </li>
     <li class="step">
       <p>V razdelku <span class="ui">Kaj vključiti</span> izklopite postavke, ki jih ne želite poslati.</p>
       <p class="check"><b class="check-label">Rezultat:</b> Besedilo v razdelku <span class="ui">Poročilo</span> se takoj posodobi.</p>
-      <figure class="phone"><img src="guide/img/device-report-text.jpg" alt="Stikala za vsebino poročila in celotno besedilo poročila, pod njim gumbi za pošiljanje" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Stikala za vsebino in celotno poročilo</figcaption></figure>
+      <figure class="phone"><img src="guide/img/device-report-text.jpg" alt="Celotno besedilo poročila, pod njim opomba, da je poročilo shranjeno v aplikaciji, gumbi „Pošlji razvijalcu po e-pošti“, „Kopiraj“ in „Deli…“ ter na dnu gumb „Izbriši shranjena poročila“" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Celotno poročilo in gumbi za pošiljanje</figcaption></figure>
     </li>
     <li class="step">
       <p>Preglejte celotno besedilo v razdelku <span class="ui">Poročilo</span>.</p>
@@ -483,13 +483,13 @@
   </div>
 
   <h4>Shranjena poročila</h4>
-  <p>Vsako poročilo se shrani v tej napravi, ohrani pa se pet najnovejših. Po neuspelem poskusu se pod gumbom <span class="ui">Pošlji podrobnosti razvijalcu</span> prikaže vnos z datumom shranjevanja, na primer <span class="ui">Prejšnje poročilo z dne 13. nov. 2026, 9:41</span>; ko ga tapnete, se odpre najnovejše shranjeno poročilo. Shranjeno poročilo prikazuje vsebino, kot je bila shranjena, in ga ni mogoče prilagajati po postavkah; za ponovno izbiro vsebine znova zberite podrobnosti.</p>
+  <p>Vsako poročilo se shrani v aplikaciji, ohrani pa se pet najnovejših. Po neuspelem poskusu se pod gumbom <span class="ui">Pošlji podrobnosti razvijalcu</span> prikaže vnos z datumom shranjevanja, na primer <span class="ui">Prejšnje poročilo z dne 13. nov. 2026, 9:41</span>; ko ga tapnete, se odpre najnovejše shranjeno poročilo. Shranjeno poročilo prikazuje vsebino, kot je bila shranjena, in ga ni mogoče prilagajati po postavkah; za ponovno izbiro vsebine znova zberite podrobnosti.</p>
   <p>Brisanje shranjenih poročil:</p>
   <ol class="steps">
     <li class="step">
       <p>Na dnu strani poročila tapnite <span class="ui">Izbriši shranjena poročila</span>.</p>
-      <p class="check"><b class="check-label">Rezultat:</b> Zaslon prikaže pogovorno okno <span class="ui">Želite izbrisati vsa shranjena poročila?</span>, ki pojasni, da bodo odstranjena vsa poročila o napravah, shranjena v tej napravi, in da to ne vpliva na poročilo, ki je bilo že poslano po e-pošti.</p>
-      <figure class="phone"><img src="guide/img/add-report-delete-confirm.jpg" alt="Stran „Poročilo o napravi“ s pogovornim oknom „Želite izbrisati vsa shranjena poročila?“: besedilo, da bodo odstranjena vsa poročila, shranjena v tej napravi, in da to ne vpliva na že poslano poročilo, ter gumb „Izbriši shranjena poročila“" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Potrditev pred brisanjem shranjenih poročil</figcaption></figure>
+      <p class="check"><b class="check-label">Rezultat:</b> Zaslon prikaže pogovorno okno <span class="ui">Želite izbrisati vsa shranjena poročila?</span>, ki pojasni, da bodo odstranjena vsa shranjena poročila o napravah in da to ne vpliva na poročilo, ki je bilo že poslano po e-pošti.</p>
+      <figure class="phone"><img src="guide/img/add-report-delete-confirm.jpg" alt="Stran „Poročilo o napravi“ s pogovornim oknom „Želite izbrisati vsa shranjena poročila?“: besedilo, da bodo odstranjena vsa shranjena poročila o napravah in da to ne vpliva na že poslano poročilo, ter gumb „Izbriši shranjena poročila“" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Potrditev pred brisanjem shranjenih poročil</figcaption></figure>
     </li>
     <li class="step">
       <p>V pogovornem oknu tapnite <span class="ui">Izbriši shranjena poročila</span>.</p>
@@ -504,7 +504,7 @@
     <li class="step">
       <p>Tapnite zavihek <span class="ui">Orodja</span> na dnu zaslona.</p>
       <p class="check"><b class="check-label">Rezultat:</b> V razdelku <span class="ui">Podomrežje</span> vrstica <span class="ui">Ta naprava</span> prikazuje trenutni omrežni naslov in masko, na primer <code>192.168.1.10/24</code>. Polje za naslov in <span class="ui">Obseg</span> sta izpolnjena s trenutnim omrežjem.</p>
-      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="Zavihek „Orodja“: razdelek „Podomrežje“ z naslovom te naprave, omrežjem, obsegom in gumbom „Preišči“, pod njim „Najdene naprave“ in „Merilnik hitrosti“" loading="lazy" decoding="async" width="900" height="1745"><figcaption>Zavihek „Orodja“ (vzorčno omrežje)</figcaption></figure>
+      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="Zavihek „Orodja“ z naslovom zavihka na vrhu: razdelek „Podomrežje“ z naslovom te naprave, omrežjem, obsegom in gumbom „Preišči“, pod njim razdelek „Najdene naprave“, v katerem še ni naprav, in vrstica „Merilnik hitrosti“" loading="lazy" decoding="async" width="900" height="1634"><figcaption>Zavihek „Orodja“ (vzorčno omrežje)</figcaption></figure>
     </li>
     <li class="step">
       <p>Izbirno: če želite preiskati drugo omrežje, vnesite omrežje v polje za naslov, na primer <code>192.168.1.0</code>, in v meniju <span class="ui">Obseg</span> izberite obseg.</p>
@@ -881,8 +881,8 @@
     </li>
     <li class="step">
       <p>Tapnite <span class="ui">Preimenuj kamero</span>.</p>
-      <p class="check"><b class="check-label">Rezultat:</b> Odpre se pogovorno okno <span class="ui">Preimenuj kamero</span> z besedilom <span class="ui">Kameri dodelite svoje ime. Ime iz naprave se ohrani v ozadju, zato osvežitev naprave vašega imena ne bo prepisala.</span>, trenutnim imenom v polju <span class="ui">Ime</span> in gumbi <span class="ui">Prekliči</span>, <span class="ui">Uporabi ime naprave</span> in <span class="ui">Shrani</span>.</p>
-      <figure class="phone"><img src="guide/img/channel-rename-alert.jpg" alt="Pogovorno okno „Preimenuj kamero“ s poljem „Ime“ in gumbi „Prekliči“, „Uporabi ime naprave“ in „Shrani“" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Pogovorno okno „Preimenuj kamero“</figcaption></figure>
+      <p class="check"><b class="check-label">Rezultat:</b> Odpre se pogovorno okno <span class="ui">Preimenuj kamero</span> z besedilom <span class="ui">Kameri dodelite svoje ime. Ime iz naprave se ohrani v ozadju, zato osvežitev naprave vašega imena ne bo prepisala.</span>, trenutnim imenom v polju <span class="ui">Ime</span> in gumbi <span class="ui">Uporabi ime naprave</span>, <span class="ui">Shrani</span> in <span class="ui">Prekliči</span>.</p>
+      <figure class="phone"><img src="guide/img/channel-rename-alert.jpg" alt="Pogovorno okno „Preimenuj kamero“ s poljem „Ime“ in gumbi „Uporabi ime naprave“, „Shrani“ in „Prekliči“; pod pogovornim oknom je odprta tipkovnica" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Pogovorno okno „Preimenuj kamero“</figcaption></figure>
     </li>
     <li class="step">
       <p>V polje <span class="ui">Ime</span> vnesite novo ime.</p>
@@ -1009,7 +1009,7 @@
     <li class="step">
       <p>Tapnite sličico, ki prikazuje sliko.</p>
       <p class="check"><b class="check-label">Rezultat:</b> Čez steno se odpre povečan prikaz te kamere z gumbom <span class="ui">Nazaj</span> in imenom kamere na vrhu.</p>
-      <figure class="phone"><img src="guide/img/fullwall-closeup.jpg" alt="Povečan prikaz ene kamere čez steno: gumb za nazaj in ime kamere zgoraj levo, slika čez sredino črnega zaslona in gumb za upravljanje kamere spodaj desno" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Povečan prikaz kamere</figcaption></figure>
+      <figure class="phone"><img src="guide/img/fullwall-closeup.jpg" alt="Povečan prikaz ene kamere čez steno: gumb za nazaj in ime kamere zgoraj levo, gumb Posnetki s simbolom ure zgoraj desno, slika čez sredino črnega zaslona in gumb za upravljanje kamere spodaj desno" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Povečan prikaz kamere</figcaption></figure>
     </li>
     <li class="step">
       <p>Tapnite <span class="ui">Nazaj</span> zgoraj levo v povečanem prikazu.</p>
@@ -1282,7 +1282,7 @@
     <li class="step">
       <p>Tapnite sličico kanala, ki prikazuje sliko v živo.</p>
       <p class="check"><b class="check-label">Rezultat:</b> Odpre se pogled posamezne kamere. Naslov je ime kamere, zgoraj levo na sliki pa je prikazana zelena oznaka <span class="ui">V ŽIVO</span>. Slika se začne v kakovosti iz <span class="path"><span class="ui">Nastavitve</span> › <span class="ui">Privzeta kakovost</span> › <span class="ui">Posamezna kamera</span></span> (HD, če ni spremenjeno).</p>
-      <figure class="phone"><img src="guide/img/single-live.jpg" alt="Pogled posamezne kamere v načinu v živo: slika z oznako V ŽIVO in gumbom za upravljanje kamere, pod njo vrstica s kontrolniki z gumbom Slika na levi ter stikalom SD in HD na desni ter razdelek s posnetki z dnevom, časovnico in seznamom" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Pogled posamezne kamere v načinu v živo</figcaption></figure>
+      <figure class="phone"><img src="guide/img/single-live.jpg" alt="Pogled posamezne kamere v načinu v živo: slika z oznako V ŽIVO in gumbom za upravljanje kamere, pod njo vrstica s kontrolniki z gumbom Slika, rdečim gumbom za snemanje in stikalom SD in HD ter razdelek s posnetki z gumbom za koledar, dnevom, časovnico in seznamom" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Pogled posamezne kamere v načinu v živo</figcaption></figure>
     </li>
   </ol>
   <p>Za izhod iz pogleda tapnite gumb za nazaj v zgornjem levem kotu.</p>
@@ -1293,7 +1293,7 @@
     <tbody>
       <tr><td>Navigacijska vrstica</td><td>Gumb za nazaj in ime kamere. V iPadu in na notranjem zaslonu iPhona Duo je na desni gumb <span class="ui">Odpri v novem oknu</span>; glejte <a class="xref" href="#single-window">„Kamera v lastnem oknu“</a>.</td></tr>
       <tr><td>Slika (pokončno, 16 : 9)</td><td>Oznaka zgoraj levo navaja način: <span class="ui">V ŽIVO</span> (zelena) ali <span class="ui">PREDVAJANJE 15:00:03</span> s časom predvajanja (rdeča). Okrogli gumb spodaj desno je v načinu v živo upravljanje kamere za PTZ; glejte <a class="xref" href="#single-ptz">„Upravljanje PTZ: premikanje kamere“</a>. Med predvajanjem posnetka je to gumb za hitrost; glejte <a class="xref" href="#playback-speed">„Hitrost predvajanja“</a>.</td></tr>
-      <tr><td>Vrstica s kontrolniki</td><td>Levo <span class="ui">Slika</span>, nato rdeči gumb za snemanje; zraven gumb za zvočnik, ko kamera pošilja zvok, in gumb za govorjenje pri kameri, prek katere je mogoče govoriti; desno v načinu v živo stikalo SD/HD, med predvajanjem pa <span class="ui">Nazaj v živo</span>. Ko je v vrstici premalo prostora, na primer v jeziku z dolgimi besedami, <span class="ui">Slika</span> prikazuje samo simbol kamere. Glejte <a class="xref" href="#single-controls">„Zajem slike, zvok in kakovost“</a>, <a class="xref" href="#single-clip">„Snemanje izrezka“</a> in <a class="xref" href="#single-talk">„Dvosmerno govorjenje“</a>.</td></tr>
+      <tr><td>Vrstica s kontrolniki</td><td>Levo <span class="ui">Slika</span>, nato rdeči gumb za snemanje; zraven gumb za zvočnik, ko kamera pošilja zvok, in gumb za govorjenje pri kameri, prek katere je mogoče govoriti; desno v načinu v živo stikalo SD/HD, med predvajanjem pa <span class="ui">Nazaj v živo</span>. Ko je v vrstici premalo prostora, na primer ko je v njej gumb za zvočnik ali za govorjenje oziroma v jeziku z dolgimi besedami, <span class="ui">Slika</span> prikazuje samo simbol kamere. Glejte <a class="xref" href="#single-controls">„Zajem slike, zvok in kakovost“</a>, <a class="xref" href="#single-clip">„Snemanje izrezka“</a> in <a class="xref" href="#single-talk">„Dvosmerno govorjenje“</a>.</td></tr>
       <tr><td>Razdelek s posnetki</td><td>Naslov <span class="ui">Posnetki</span> z dnevom, časovnica in seznam posnetkov, pri podprtih napravah pa še gumb za koledar posnetkov. Razdelek je prikazan samo pri napravah, ki podpirajo predvajanje; pri vseh drugih napravah pogled sestavljata slika in vrstica s kontrolniki. Glejte <a class="xref" href="#playback">poglavje 7, „Predvajanje posnetkov in hitrost“</a>.</td></tr>
     </tbody>
   </table></div>
@@ -1355,7 +1355,7 @@
     <li class="step">
       <p>Tapnite gumb za zvočnik v vrstici s kontrolniki (<span class="ui">Vklopi zvok</span>).</p>
       <p class="check"><b class="check-label">Rezultat:</b> Simbol se spremeni iz prečrtanega zvočnika v zvočnik z zvočnimi valovi, zvok kamere pa se predvaja.</p>
-      <figure class="phone"><img src="guide/img/single-audio.jpg" alt="Vrstica s kontrolniki kamere, ki pošilja zvok, z gumbom za zvočnik med gumbom Slika ter stikalom SD in HD" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Gumb za zvočnik v vrstici s kontrolniki</figcaption></figure>
+      <figure class="phone"><img src="guide/img/single-audio.jpg" alt="Vrstica s kontrolniki kamere, ki pošilja zvok: gumb Slika kot simbol kamere, rdeči gumb za snemanje, gumb za zvočnik ter stikalo SD in HD" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Gumb za zvočnik v vrstici s kontrolniki</figcaption></figure>
     </li>
     <li class="step">
       <p>Znova tapnite gumb za zvočnik (<span class="ui">Utišaj</span>).</p>
@@ -1423,7 +1423,7 @@
   <h3 id="single-talk">Dvosmerno govorjenje</h3>
   <p>Prek samostojne kamere z zvočnikom je mogoče govoriti. Govorjenje deluje kot voki-toki: za govorjenje držite gumb, za poslušanje ga spustite. Aplikacija Cam Hub ob odprtju pogleda vpraša kamero po kanalu za govorjenje; gumb za govorjenje (simbol mikrofona) se prikaže v vrstici s kontrolniki za gumbom za snemanje in gumbom za zvočnik, ko kamera tak kanal sporoči.</p>
   <p>Predpogoji: samostojna kamera podprte blagovne znamke, ki sporoča dvosmerni zvočni kanal, način v živo in kanal, ki ga paket pokriva. Kanali snemalnika nimajo gumba za govorjenje: kanal za govorjenje snemalnika je lastni zvočni izhod snemalnika, ne zvočnik kamere.</p>
-  <figure class="phone"><img src="guide/img/single-talk.jpg" alt="Pogled posamezne kamere z zvočnikom: gumb za govorjenje s simbolom mikrofona v vrstici s kontrolniki ter stikalo SD in HD" loading="lazy" decoding="async" width="900" height="1947"><figcaption>Gumb za govorjenje v vrstici s kontrolniki</figcaption></figure>
+  <figure class="phone"><img src="guide/img/single-talk.jpg" alt="Pogled posamezne kamere z zvočnikom: gumb za govorjenje s simbolom mikrofona v vrstici s kontrolniki ter stikalo SD in HD" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Gumb za govorjenje v vrstici s kontrolniki</figcaption></figure>
   <p>Ko prvič pritisnete gumb za govorjenje, sistemsko pogovorno okno vpraša za dovoljenje za dostop do mikrofona. Dovolite dostop, nato znova pritisnite gumb.</p>
   <ol class="steps">
     <li class="step">
@@ -1486,7 +1486,7 @@
     <li class="step">
       <p>Tapnite okrogli gumb spodaj desno na sliki (<span class="ui">Premakni kamero</span>).</p>
       <p class="check"><b class="check-label">Rezultat:</b> Levo od gumba se odpre kontrolnik PTZ, gumb pa prikazuje križec (<span class="ui">Skrij kontrolnike kamere</span>). Kontrolnik vsebuje kapsulo s plusom in minusom za povečavo, smerni kolut s štirimi puščicami in simbolom hiše na sredini ter gumb z zvezdico. Pri kameri, ki podpira usmerjanje z dotikom, je zraven koluta nad zvezdico dodan še gumb za usmerjanje s simbolom tarče.</p>
-      <figure class="phone"><img src="guide/img/single-ptz.jpg" alt="Pogled posamezne kamere z odprtim upravljanjem kamere: kapsula za povečavo, smerni kolut s simbolom hiše, gumb za usmerjanje, gumb z zvezdico in gumb s križcem na sliki" loading="lazy" decoding="async" width="900" height="1947"><figcaption>Upravljanje kamere na sliki</figcaption></figure>
+      <figure class="phone"><img src="guide/img/single-ptz.jpg" alt="Pogled posamezne kamere z odprtim upravljanjem kamere: kapsula za povečavo, smerni kolut s simbolom hiše, gumb za usmerjanje, gumb z zvezdico in gumb s križcem na sliki" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Upravljanje kamere na sliki</figcaption></figure>
     </li>
     <li class="step">
       <p>Dotaknite se puščice na kolutu in jo pridržite (<span class="ui">Nagni navzgor</span>, <span class="ui">Nagni navzdol</span>, <span class="ui">Zasukaj levo</span> ali <span class="ui">Zasukaj desno</span>).</p>
@@ -1527,7 +1527,7 @@
 
   <h4>Usmerjanje z dotikom slike</h4>
   <p>Pri kamerah, ki to podpirajo, je mogoče kamero obrniti proti točki na sliki ali z njo neposredno povečati območje, narisano na sliki. Predpogoj: kontrolnik je odprt in prikazuje gumb za usmerjanje.</p>
-  <figure class="phone"><img src="guide/img/single-ptz-aim.jpg" alt="Pogled posamezne kamere med usmerjanjem z dotikom: namig na vrhu slike, osvetljen gumb za usmerjanje in gumb s križcem" loading="lazy" decoding="async" width="900" height="1947"><figcaption>Usmerjanje z dotikom</figcaption></figure>
+  <figure class="phone"><img src="guide/img/single-ptz-aim.jpg" alt="Pogled posamezne kamere med usmerjanjem z dotikom: namig na vrhu slike, osvetljen gumb za usmerjanje in gumb s križcem" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Usmerjanje z dotikom</figcaption></figure>
   <ol class="steps">
     <li class="step">
       <p>Tapnite gumb za usmerjanje (<span class="ui">3D-pozicioniranje</span>).</p>
@@ -1683,7 +1683,7 @@
     </tbody>
   </table></div>
   <div class="shots pair">
-    <figure class="phone"><img src="guide/img/single-reconnecting.jpg" alt="Pogled posamezne kamere med ponovnim povezovanjem pretoka: kazalnik nalaganja z besedilom „Ponovno povezovanje…“ na črnem območju slike, oznaka V ŽIVO zgoraj levo, gumb za upravljanje kamere spodaj desno, pod tem vrstica s kontrolniki z gumbom „Slika“ na levi ter stikalom SD in HD na desni, vrstica „Naprave ni bilo mogoče doseči.“ in razdelek s posnetki s prazno časovnico" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Slika med ponovnim vzpostavljanjem povezave</figcaption></figure>
+    <figure class="phone"><img src="guide/img/single-reconnecting.jpg" alt="Pogled posamezne kamere med ponovnim povezovanjem pretoka: kazalnik nalaganja z besedilom „Ponovno povezovanje…“ na črnem območju slike, oznaka V ŽIVO zgoraj levo, gumb za upravljanje kamere spodaj desno, pod tem vrstica s kontrolniki z gumbom „Slika“ in rdečim gumbom za snemanje na levi ter stikalom SD in HD na desni, vrstica „Naprave ni bilo mogoče doseči.“ in razdelek s posnetki s prazno časovnico" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Slika med ponovnim vzpostavljanjem povezave</figcaption></figure>
     <figure class="phone"><img src="guide/img/single-failed.jpg" alt="Pogled posamezne kamere s sporočilom o napaki in gumbom Poskusi znova čez temno območje slike" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Sporočilo o napaki z gumbom Poskusi znova</figcaption></figure>
   </div>
   <ol class="steps">
@@ -1719,7 +1719,7 @@
   <div class="table-wrap"><table>
     <thead><tr><th>Element</th><th>Prikazan, ko</th></tr></thead>
     <tbody>
-      <tr><td>Razdelek s posnetki z dnevom, časovnico in seznamom</td><td>Naprava je bila dodana z načinom povezave, ki ponuja predvajanje; glejte <a class="xref" href="#brands-matrix">„Kaj deluje s katerim načinom“</a>. Če račun ne sme brati posnetkov, je razdelek vseeno prikazan, nad časovnico pa je prikazano sporočilo <span class="ui">Ta račun nima dostopa do posnetkov v tej napravi.</span></td></tr>
+      <tr><td>Razdelek s posnetki z dnevom, časovnico in seznamom</td><td>Naprava je bila dodana z načinom povezave, ki ponuja predvajanje; glejte <a class="xref" href="#brands-matrix">„Kaj deluje s katerim načinom“</a>. Če naprava zavrne prijavo, ker račun ne sme brati posnetkov ali ker je uporabniško ime ali geslo napačno, je razdelek vseeno prikazan, nad časovnico pa je prikazano sporočilo <span class="ui">Ta račun nima dostopa do posnetkov v tej napravi.</span></td></tr>
       <tr><td>Gumb za koledar posnetkov</td><td>Naprava vodi tudi dnevni indeks svojih posnetkov; glejte <a class="xref" href="#playback-calendar">„Koledar posnetkov“</a>.</td></tr>
       <tr><td>Stikalo <span class="ui">Neprekinjeno</span> in <span class="ui">Dogodki</span></td><td>Naprava je bila dodana z načinom povezave, ki ponuja indeks dogodkov: zaznanih oseb ali gibanja in alarmnih vhodov; glejte <a class="xref" href="#brands-matrix">„Kaj deluje s katerim načinom“</a>. Stikalo je prikazano tudi, ko se sama naprava ne odzove na iskanje v tem indeksu; glejte <a class="xref" href="#playback-list">„Seznam posnetkov in dogodkov“</a>. Pri vseh drugih načinih povezave se stikalo prikaže samo, če izbrani dan ali dan pred njim vsebuje posnetek, ki ga je naprava posnela zaradi dogodka. Sicer je prikazan samo seznam neprekinjenih posnetkov, brez stikala.</td></tr>
       <tr><td>Gumb za hitrost</td><td>Med predvajanjem, ko naprava lahko posnetek predvaja hitreje. Če tega ne more, se prikaže obvestilo; glejte <a class="xref" href="#playback-speed">„Hitrost predvajanja“</a>.</td></tr>
@@ -1759,7 +1759,7 @@
 
   <h3 id="playback-calendar">Koledar posnetkov</h3>
   <p>Pri napravah, ki vodijo dnevni indeks svojih posnetkov, je med naslovom <span class="ui">Posnetki</span> in dnevom gumb za koledar. Njegov koledar označuje dneve s posnetki, tako da dni ni treba preizkušati enega za drugim. Brez takšnega indeksa gumb ni prikazan, dan pa izberete, kot je opisano v razdelku <a class="xref" href="#playback-day">„Izbira dneva“</a>.</p>
-  <figure class="phone"><img src="guide/img/playback-calendar.jpg" alt="List „Koledar posnetkov“ čez pogled posamezne kamere: mesec s puščicama, dnevi s posnetki, označeni s piko, izbrani dan v zapolnjenem krogu in vrstica „Dnevi, označeni s piko, imajo posnetke.“" loading="lazy" decoding="async" width="900" height="1947"><figcaption>Koledar posnetkov</figcaption></figure>
+  <figure class="phone"><img src="guide/img/playback-calendar.jpg" alt="List „Koledar posnetkov“ čez pogled posamezne kamere: mesec s puščicama, dnevi s posnetki, označeni s piko, izbrani dan v zapolnjenem krogu in vrstica „Dnevi, označeni s piko, imajo posnetke.“" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Koledar posnetkov</figcaption></figure>
   <ol class="steps">
     <li class="step">
       <p>Tapnite gumb za koledar (<span class="ui">Koledar posnetkov</span>) ob dnevu.</p>
@@ -1877,7 +1877,7 @@
       <tr><td><span class="ui">Ta dan ni dogodkov.</span></td><td>Za ta dan ni nobenega dogodka; prikazano pri vseh drugih napravah.</td></tr>
       <tr><td><span class="ui">Ta naprava ni mogla preiskati svojega indeksa dogodkov z osebami.</span></td><td>Prikazano pod <span class="ui">Dogodki</span> namesto seznama, ko se naprava ne odzove na iskanje zaznanih oseb, na primer starejši snemalnik brez indeksa oseb. Posnetki, ki jih je naprava posnela zaradi dogodka, tedaj niso navedeni, vendar jih je še vedno mogoče predvajati z njihovih rdečih pasov na časovnici. To ne vpliva na seznam neprekinjenih posnetkov.</td></tr>
       <tr><td><span class="ui">Ta naprava ni mogla poiskati svojih dogodkov.</span></td><td>Enako pri napravi, ki označuje gibanje in alarmne vhode.</td></tr>
-      <tr><td>Sporočilo s simbolom opozorila nad časovnico: <span class="ui">Ta račun nima dostopa do posnetkov v tej napravi.</span>, <span class="ui">Naprave ni bilo mogoče doseči.</span>, <span class="ui">Naprava ni prepoznala posnetkov te kamere.</span> ali <span class="ui">Ta kamera je brez povezave.</span></td><td>Iskanje za izbrani dan ni uspelo iz razloga, ki ga navaja sporočilo. Dokler je sporočilo prikazano, je mogoče izbrati in preizkusiti drug dan. Pri težavi z računom preverite njegove pravice v napravi, pri težavi s povezavo glejte <a class="xref" href="#trouble">poglavje 15, „Odpravljanje težav“</a>.</td></tr>
+      <tr><td>Sporočilo s simbolom opozorila nad časovnico: <span class="ui">Ta račun nima dostopa do posnetkov v tej napravi.</span>, <span class="ui">Naprave ni bilo mogoče doseči.</span>, <span class="ui">Naprava ni prepoznala posnetkov te kamere.</span> ali <span class="ui">Ta kamera je brez povezave.</span></td><td>Iskanje za izbrani dan ni uspelo iz razloga, ki ga navaja sporočilo. Dokler je sporočilo prikazano, je mogoče izbrati in preizkusiti drug dan. Pri težavi z računom preverite uporabniško ime, geslo in pravice računa v napravi, pri težavi s povezavo glejte <a class="xref" href="#trouble">poglavje 15, „Odpravljanje težav“</a>.</td></tr>
       <tr><td><span class="ui">Trenutno je preveč zahtev. Poskusite znova čez minuto.</span></td><td>Naprava ali njena storitev je iskanje zavrnila zaradi preveč zahtev ali pa je bila naprava še zaposlena s prejšnjim iskanjem. Počakajte minuto in znova izberite dan.</td></tr>
       <tr><td>Druga sporočila na istem mestu, na primer <span class="ui">Naprava je poslala nepričakovan odgovor.</span>, <span class="ui">Časovna omejitev povezave je potekla.</span> ali <span class="ui">Prišlo je do napake. Poskusite znova.</span></td><td>Iskanje ni uspelo iz drugega razloga. Znova izberite dan. Če sporočilo ostane, glejte <a class="xref" href="#trouble">poglavje 15, „Odpravljanje težav“</a>.</td></tr>
     </tbody>
@@ -1958,7 +1958,7 @@
     <li class="step">
       <p>Začnite predvajati posnetek in obrnite iPhone v ležeči položaj.</p>
       <p class="check"><b class="check-label">Rezultat:</b> Slika zapolni zaslon. Trak čez spodnji rob slike vsebuje oznako <span class="ui">PREDVAJANJE 15:00:03</span>, gumb za hitrost, <span class="ui">Nazaj v živo</span> in časovnico.</p>
-      <figure class="land"><img src="guide/img/playback-landscape.jpg" alt="Predvajanje v ležečem položaju: slika čez ves zaslon s trakom na spodnjem robu, ki vsebuje oznako predvajanja, gumb za hitrost, Nazaj v živo in časovnico" loading="lazy" decoding="async" width="1600" height="736"><figcaption>Predvajanje v ležečem položaju</figcaption></figure>
+      <figure class="land"><img src="guide/img/playback-landscape.jpg" alt="Predvajanje v ležečem položaju: slika na sredini črnega zaslona, zgoraj gumb za nazaj z oznako predvajanja ob njem in rdeči gumb za snemanje ter na spodnjem robu trak, ki vsebuje oznako predvajanja, gumb za hitrost, Nazaj v živo in časovnico" loading="lazy" decoding="async" width="1600" height="736"><figcaption>Predvajanje v ležečem položaju</figcaption></figure>
     </li>
     <li class="step">
       <p>Povlecite časovnico v traku in dvignite prst pri želenem času.</p>
@@ -2096,7 +2096,7 @@
     <li class="step">
       <p>Označite še pet kanalov v vrstnem redu, v katerem naj bodo prikazani na steni.</p>
       <p class="check"><b class="check-label">Rezultat:</b> Na vrhu strani je prikazano <span class="ui" data-ui="value">6 izbranih kamer</span>.</p>
-      <figure class="phone"><img src="guide/img/lvm-pick-selected.jpg" alt="Stran Izberi kamere s šestimi izbranimi kamerami: vsak označeni kanal ima na desni izbirnik SD in HD, na vrhu pa sta gumba Vse v SD in Vse v HD" loading="lazy" decoding="async" width="900" height="1956"><figcaption>6 izbranih kamer</figcaption></figure>
+      <figure class="phone"><img src="guide/img/lvm-pick-selected.jpg" alt="Stran Izberi kamere s šestimi izbranimi kamerami: na vrhu preklopnik Ležeča stran in Pokončna stran, pod njim gumba Vse v SD in Vse v HD, na desni vsakega označenega kanala pa izbirnik SD in HD" loading="lazy" decoding="async" width="900" height="1956"><figcaption>6 izbranih kamer</figcaption></figure>
     </li>
     <li class="step">
       <p>Izbirno: tapnite <span class="ui">HD</span> ob vsaki kameri, ki naj prikazuje ostrejšo sliko.</p>
@@ -2360,7 +2360,7 @@
   <h3 id="lvm-arrange">Razporejanje stene in njenih polj</h3>
   <p>Pot: <span class="path"><span class="ui">LiveView Mix</span> › <span class="ui">Prilagodi postavitev</span> › <span class="ui">Razporedi steno</span></span>. Na tej strani se določi, kaj je v vsakem polju. Njen naslov je <span class="ui">Razporedi</span>. Od zgoraj navzdol stran vsebuje vrstico postavitev, platno, opombo <span class="ui">Nasveti</span> in seznam <span class="ui">Vrstni red</span>. Gumb <span class="ui">Razporedi steno</span> je na voljo, takoj ko so izbrane kamere ali obstaja naprava.</p>
   <figure class="phone clip"><video class="clip" src="guide/vid/rec-arrange-swap.mp4" poster="guide/img/rec-arrange-swap.jpg" aria-label="Razporejanje stene: vlečenje polja na drugo polje ju zamenja, vlečenje polja v prazno celico pa ga premakne tja." muted loop playsinline preload="metadata"></video><figcaption>Razporejanje stene: vlečenje polja na drugo polje ju zamenja, vlečenje polja v prazno celico pa ga premakne tja.</figcaption></figure>
-  <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="Stran Razporedi: vrstica postavitev na vrhu, platno z desetimi polji na sredini (polje 9 je nadzorna plošča, polje 10 ura) in spodaj seznam Vrstni red" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Stran Razporedi</figcaption></figure>
+  <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="Stran Razporedi: vrstica postavitev na vrhu, platno z desetimi polji na sredini (polje 9 je nadzorna plošča, polje 10 ura) ter spodaj Nasveti in seznam Vrstni red" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Stran Razporedi</figcaption></figure>
   <ul>
     <li><b>Vrstica postavitev</b>: iste sheme postavitev kot na strani <span class="ui">Prilagodi postavitev</span>; postavitev je mogoče spremeniti neposredno tukaj. Shema <span class="ui">Po meri</span> se prikaže, ko je postavitev narisana ali dokler je v uporabi, in jo je mogoče izbrati samo tukaj.</li>
     <li><b>Platno</b>: za ležečo stran je narisano ležeče v razmerju 16:9, za pokončno stran pa pokončno v razmerju 9:16, in prikazuje trenutno stran stene. Številka vsakega zapolnjenega polja je v njegovem zgornjem levem kotu. Polja s kamerami prikazujejo sliko v živo (SD); kamera brez povezave ali zunaj paketa prikazuje črno polje s prečrtano ikono kamere, prenos YouTube ali Twitch pa prikazuje svoje ime. Dokler je vodni žig izklopljen, je ime kanala v spodnjem levem kotu; ko je vklopljen, je prikazan predogled vodnega žiga. Nadzorne plošče so na platnu videti enako kot na steni, brez ključavnice plošče, ki je paket ne pokriva; ko tapnete ploščo, se odpre njen urejevalnik, zahteva pa se ne pošlje. Kadar je naprava v pokončnem položaju, je prava ležeča stena prezrcaljena, vendar vsako polje obdrži svojo številko.</li>
@@ -2941,7 +2941,7 @@
     <li class="step">
       <p>Tapnite <span class="ui">Razporedi steno</span>.</p>
       <p class="check"><b class="check-label">Rezultat:</b> Odpre se stran <span class="ui">Razporedi</span>: na vrhu je platno stene, pod njim pa seznam <span class="ui">Vrstni red</span>, ki navaja vsa zapolnjena polja pod njihovimi številkami.</p>
-      <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="Stran Razporedi: na vrhu platno stene z nadzorno ploščo v polju 9 in uro v polju 10, spodaj seznam zapolnjenih polj" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Stran Razporedi</figcaption></figure>
+      <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="Stran Razporedi: na vrhu vrstica postavitev, pod njo platno stene z nadzorno ploščo v polju 9 in uro v polju 10, spodaj seznam zapolnjenih polj" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Stran Razporedi</figcaption></figure>
     </li>
     <li class="step">
       <p>Na platnu tapnite neuporabljeno polje, prikazano s črtkano obrobo in znakom +. Če so neuporabljena polja na drugi strani stene, najprej uporabite puščici pod platnom ali podrsajte vstran.</p>
@@ -3084,8 +3084,8 @@
     </li>
   </ol>
   <div class="shots pair">
-    <figure class="phone"><img src="guide/img/lvm-button-editor.jpg" alt="Urejevalnik gumba: ikona, oznaka, Potrditev pred sprožitvijo ter metoda in URL v razdelku Zahteva" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Urejevalnik gumba (zgornji del)</figcaption></figure>
-    <figure class="phone"><img src="guide/img/lvm-button-headers.jpg" alt="Spodnji del urejevalnika gumba: razdelek Glave z vrstico Authorization in razdelek Telo z vrsto vsebine in vsebino JSON" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Urejevalnik gumba (spodnji del)</figcaption></figure>
+    <figure class="phone"><img src="guide/img/lvm-button-editor.jpg" alt="Urejevalnik gumba: ikona, oznaka, Potrditev pred sprožitvijo, metoda in URL v razdelku Zahteva ter razdelek Apple Watch z vrstico Način pošiljanja" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Urejevalnik gumba (zgornji del)</figcaption></figure>
+    <figure class="phone"><img src="guide/img/lvm-button-headers.jpg" alt="Spodnji del urejevalnika gumba: razdelek Apple Watch, razdelek Glave z vrstico Authorization in razdelek Telo z vrsto vsebine in vsebino JSON" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Urejevalnik gumba (spodnji del)</figcaption></figure>
   </div>
   <div class="table-wrap"><table>
     <thead><tr><th>Element</th><th>Opis</th></tr></thead>
@@ -3117,7 +3117,7 @@
     <li class="step">
       <p>Opazujte ikono gumba.</p>
       <p class="check"><b class="check-label">Rezultat:</b> Glede na rezultat se ikona spremeni v zeleno kljukico ali oranžen opozorilni trikotnik, po približno 1,6 sekunde pa se znova prikaže prvotna ikona.</p>
-      <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="Tri stanja enega gumba: kazalnik nalaganja med pošiljanjem, zelena kljukica po uspehu in oranžen opozorilni trikotnik po neuspehu" loading="lazy" decoding="async" width="1600" height="736"><figcaption>Tri stanja gumba</figcaption></figure>
+      <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="Trije gumbi nadzorne plošče na steni LiveView Mix, vsak v enem od stanj: kazalnik nalaganja med pošiljanjem, zelena kljukica po uspehu in oranžen opozorilni trikotnik po neuspehu" loading="lazy" decoding="async" width="1600" height="736"><figcaption>Tri stanja gumba, na vsakem gumbu eno</figcaption></figure>
     </li>
   </ol>
   <div class="table-wrap"><table>
@@ -3851,7 +3851,7 @@ Content-Type: application/json
     <li class="step">
       <p>V razdelku <span class="ui">Paketi za kamere · letni obračun</span> ali <span class="ui">Paketi za snemalnike NVR · mesečni obračun</span> poiščite želeni paket in na njegovi kartici tapnite <span class="ui">Naroči se</span>.</p>
       <p class="check"><b class="check-label">Rezultat:</b> Prikaže se sistemska potrditev nakupa. Vsaka kartica prikazuje ime paketa, kratek opis in ceno; ko je račun Apple Account upravičen, je prikazana tudi dolžina brezplačnega preizkusnega obdobja.</p>
-      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="Vrh strani „Paketi“: logotip Cam Hub, naslov „Odkleni vse kamere“, stavek o tem, kaj prikazuje brezplačni paket, pet kratkih vrstic o paketih in o tem, kaj vključujejo, ter na spodnjem robu naslov „Paketi za kamere · letni obračun“" loading="lazy" decoding="async" width="900" height="1215"><figcaption>Vrh strani „Paketi“; kartice paketov sledijo spodaj</figcaption></figure>
+      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="Vrh strani „Paketi“: logotip Cam Hub, naslov „Odkleni vse kamere“, stavek o tem, kaj prikazuje brezplačni paket, ter pet kratkih vrstic o paketih in o tem, kaj vključujejo" loading="lazy" decoding="async" width="900" height="1215"><figcaption>Vrh strani „Paketi“; kartice paketov sledijo spodaj</figcaption></figure>
     </li>
     <li class="step">
       <p>Sledite navodilom sistemskega zaslona in potrdite nakup z računom Apple Account.</p>
@@ -3950,7 +3950,7 @@ Content-Type: application/json
     <li class="step">
       <p>Tapnite zavihek <span class="ui">Orodja</span> na dnu zaslona.</p>
       <p class="check"><b class="check-label">Rezultat:</b> Zaslon prikazuje razdelke zavihka, začenši z razdelkom <span class="ui">Podomrežje</span>. Polje za naslov in obseg sta že izpolnjena z omrežjem naprave.</p>
-      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="Zavihek Orodja: razdelek Podomrežje z lastnim naslovom, omrežjem, obsegom in gumbom Preišči, pod njim Najdene naprave in vrstica Merilnik hitrosti" loading="lazy" decoding="async" width="900" height="1745"><figcaption>Zavihek Orodja (vzorčno omrežje)</figcaption></figure>
+      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="Zavihek Orodja z naslovom zavihka na vrhu: razdelek Podomrežje z naslovom te naprave, omrežjem, obsegom in gumbom Preišči, pod njim razdelek Najdene naprave, v katerem še ni naprav, in vrstica Merilnik hitrosti" loading="lazy" decoding="async" width="900" height="1634"><figcaption>Zavihek Orodja (vzorčno omrežje)</figcaption></figure>
     </li>
   </ol>
   <p>Za korake iskanja glejte <a class="xref" href="#add-scan">„Iskanje naprav v omrežju“</a>. Naslednje točke se nanašajo na delovanje zavihka kot celote.</p>
@@ -4132,7 +4132,7 @@ Content-Type: application/json
     <li class="step">
       <p>V razdelku <span class="ui">Naročnina</span> tapnite <span class="ui">Paketi</span>.</p>
       <p class="check"><b class="check-label">Rezultat:</b> Nad nastavitvami se odpre stran <span class="ui">Paketi</span>. Navaja pakete za kamere in pakete za snemalnike NVR ter označuje trenutni paket.</p>
-      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="Vrh strani Paketi: logotip Cam Hub, naslov Odkleni vse kamere, stavek o tem, kaj prikazuje brezplačni paket, pet kratkih vrstic o paketih in njihovi vsebini ter na spodnjem robu naslov Paketi za kamere · letni obračun" loading="lazy" decoding="async" width="900" height="1215"><figcaption>Vrh strani Paketi; kartice paketov sledijo spodaj</figcaption></figure>
+      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="Vrh strani Paketi: logotip Cam Hub, naslov Odkleni vse kamere, stavek o tem, kaj prikazuje brezplačni paket, ter pet kratkih vrstic o paketih in njihovi vsebini" loading="lazy" decoding="async" width="900" height="1215"><figcaption>Vrh strani Paketi; kartice paketov sledijo spodaj</figcaption></figure>
     </li>
     <li class="step">
       <p>Tapnite <span class="ui">Končano</span> v zgornjem desnem kotu.</p>
@@ -4256,7 +4256,7 @@ Content-Type: application/json
     <li class="step">
       <p>Tapnite vrstico <span class="ui" data-ui="value">Language</span>.</p>
       <p class="check"><b class="check-label">Rezultat:</b> Meni navaja <span class="ui">Sledi sistemu</span> in jezike <span class="ui" data-ui="value">English</span>, <span class="ui" data-ui="value">繁體中文</span>, <span class="ui" data-ui="value">简体中文</span>, <span class="ui" data-ui="value">日本語</span>, <span class="ui" data-ui="value">한국어</span>, <span class="ui" data-ui="value">العربية</span>, <span class="ui" data-ui="value">Deutsch</span>, <span class="ui" data-ui="value">Español</span>, <span class="ui" data-ui="value">Español (México)</span>, <span class="ui" data-ui="value">Français</span> in <span class="ui" data-ui="value">Slovenščina</span>. Vsak jezik je zapisan v svojem jeziku.</p>
-      <figure class="phone"><img src="guide/img/settings-language.jpg" alt="Meni Language na zavihku Nastavitve: Sledi sistemu s kljukico in jeziki, vsak zapisan v svojem jeziku, vključno z Español (México)" loading="lazy" decoding="async" width="900" height="1947"><figcaption>Meni Language</figcaption></figure>
+      <figure class="phone"><img src="guide/img/settings-language.jpg" alt="Meni Language na zavihku Nastavitve: Sledi sistemu s kljukico in enajst jezikov, vsak zapisan v svojem jeziku; prvi je English, zadnji Slovenščina" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Meni Language</figcaption></figure>
     </li>
     <li class="step">
       <p>Tapnite jezik.</p>
@@ -4303,11 +4303,11 @@ Content-Type: application/json
   <ol class="steps">
     <li class="step">
       <p>V razdelku <span class="ui">Ponastavitev</span> tapnite <span class="ui">Obnovi privzete nastavitve</span>.</p>
-      <p class="check"><b class="check-label">Rezultat:</b> Prikaže se pogovorno okno <span class="ui">Želite obnoviti privzete vrednosti vseh nastavitev?</span> z gumboma <span class="ui">Obnovi privzete nastavitve</span> in <span class="ui">Prekliči</span>. Besedilo pogovornega okna navaja, da se vse nastavitve, vključno z jezikom, vrnejo na privzete vrednosti, da se stena LiveView Mix (postavitve, nadzorne plošče, gumbi webhook in slike) izprazni ter da se naprave in varnostna kopija iCloud ohranijo.</p>
+      <p class="check"><b class="check-label">Rezultat:</b> Nad stranjo z nastavitvami se prikaže pogovorno okno <span class="ui">Želite obnoviti privzete vrednosti vseh nastavitev?</span> z gumbom <span class="ui">Obnovi privzete nastavitve</span>. Tako v iPhonu kot v iPadu pogovorno okno nima gumba za preklic. Besedilo pogovornega okna navaja, da se vse nastavitve, vključno z jezikom, vrnejo na privzete vrednosti, da se stena LiveView Mix (postavitve, nadzorne plošče, gumbi webhook in slike) izprazni ter da se naprave in varnostna kopija iCloud ohranijo.</p>
       <figure class="phone"><img src="guide/img/settings-restore-defaults.jpg" alt="Pogovorno okno Želite obnoviti privzete vrednosti vseh nastavitev? nad stranjo z nastavitvami in gumb Obnovi privzete nastavitve" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Potrditev pred obnovitvijo privzetih nastavitev</figcaption></figure>
     </li>
     <li class="step">
-      <p>Tapnite <span class="ui">Obnovi privzete nastavitve</span>. Če želite vse ohraniti, namesto tega tapnite <span class="ui">Prekliči</span>.</p>
+      <p>Tapnite <span class="ui">Obnovi privzete nastavitve</span>. Če želite vse ohraniti, namesto tega tapnite kjer koli zunaj pogovornega okna; okno se zapre in nič se ne spremeni.</p>
       <p class="check"><b class="check-label">Rezultat:</b> Nastavitve prikazujejo privzete vrednosti, jezik pa sledi sistemu. Vrstica <span class="ui">LiveView Mix</span> prikazuje <span class="ui">Ni nastavljeno</span>, stikalo <span class="ui">Pokončna stran</span> pa je izklopljeno. Naprave so še vedno navedene na zavihku Naprave.</p>
     </li>
   </ol>
@@ -4317,11 +4317,11 @@ Content-Type: application/json
   <ol class="steps">
     <li class="step">
       <p>V razdelku <span class="ui">Ponastavitev</span> tapnite <span class="ui">Izbriši vse podatke</span>.</p>
-      <p class="check"><b class="check-label">Rezultat:</b> Prikaže se pogovorno okno <span class="ui">Želite izbrisati vse podatke?</span> z gumboma <span class="ui">Izbriši vse</span> in <span class="ui">Prekliči</span>. Njegovo besedilo je odvisno od tega, ali obstaja varnostna kopija iCloud. Če varnostna kopija obstaja, se glasi <span class="ui">S tem iz te aplikacije odstranite vse naprave, kamere in shranjena gesla. To ne vpliva na vašo varnostno kopijo iCloud in naročnino.</span> Če je ni, se glasi <span class="ui">Varnostne kopije v storitvi iCloud ni, zato tega ni mogoče razveljaviti – gesla kamer so shranjena samo v tej napravi in jih ni mogoče obnoviti. To ne vpliva na vašo naročnino.</span></p>
-      <figure class="phone"><img src="guide/img/settings-delete-all.jpg" alt="Pogovorno okno Želite izbrisati vse podatke? nad stranjo z nastavitvami, z gumboma Izbriši vse in Prekliči" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Potrditev pred brisanjem vseh podatkov</figcaption></figure>
+      <p class="check"><b class="check-label">Rezultat:</b> Nad stranjo z nastavitvami se prikaže pogovorno okno <span class="ui">Želite izbrisati vse podatke?</span> z gumbom <span class="ui">Izbriši vse</span>. Tako v iPhonu kot v iPadu pogovorno okno nima gumba za preklic. Njegovo besedilo je odvisno od tega, ali obstaja varnostna kopija iCloud. Če varnostna kopija obstaja, se glasi <span class="ui">S tem iz te aplikacije odstranite vse naprave, kamere in shranjena gesla. To ne vpliva na vašo varnostno kopijo iCloud in naročnino.</span> Če je ni, se glasi <span class="ui">Varnostne kopije v storitvi iCloud ni, zato tega ni mogoče razveljaviti – gesla kamer so shranjena samo v tej napravi in jih ni mogoče obnoviti. To ne vpliva na vašo naročnino.</span></p>
+      <figure class="phone"><img src="guide/img/settings-delete-all.jpg" alt="Pogovorno okno Želite izbrisati vse podatke? nad stranjo z nastavitvami, z gumbom Izbriši vse" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Potrditev pred brisanjem vseh podatkov</figcaption></figure>
     </li>
     <li class="step">
-      <p>Tapnite <span class="ui">Izbriši vse</span>. Če želite podatke ohraniti, namesto tega tapnite <span class="ui">Prekliči</span>.</p>
+      <p>Tapnite <span class="ui">Izbriši vse</span>. Če želite podatke ohraniti, namesto tega tapnite kjer koli zunaj pogovornega okna; okno se zapre in nič se ne izbriše.</p>
       <p class="check"><b class="check-label">Rezultat:</b> Zavihek Naprave prikazuje <span class="ui">Ni naprav</span>, nastavitve pa privzete vrednosti. Obstoječo varnostno kopijo iCloud je mogoče obnoviti, kot opisuje <a class="xref" href="#share-restore">„Obnovitev iz iClouda“</a>.</p>
     </li>
   </ol>
@@ -4359,7 +4359,7 @@ Content-Type: application/json
     <li class="step">
       <p>Tapnite <span class="ui">Priročnik</span>.</p>
       <p class="check"><b class="check-label">Rezultat:</b> Brskalnik odpre ta priročnik na naslovu <code>https://cam-hub.almx.cc/guide.html</code>. Potrebna je internetna povezava. V aplikacijo Cam Hub se vrnete s preklopnikom aplikacij naprave.</p>
-      <figure class="phone"><img src="guide/img/settings-user-manual.jpg" alt="Spodnji del zavihka Nastavitve: vrstice razdelka Ponastavitev s pojasnilom, razdelek Pravne informacije (Pogoji uporabe, Pravilnik o zasebnosti), razdelek O aplikaciji (Različica) in vrstica Priročnik s pojasnilom" loading="lazy" decoding="async" width="900" height="1947"><figcaption>Vrstica Priročnik</figcaption></figure>
+      <figure class="phone"><img src="guide/img/settings-user-manual.jpg" alt="Spodnji del zavihka Nastavitve: zadnje vrstice razdelka Ponastavitev s pojasnilom, razdelek Pravne informacije (Pogoji uporabe, Pravilnik o zasebnosti), razdelek O aplikaciji (Različica), vrstica Priročnik s pojasnilom in pod njo vrstica Stik z razvojno ekipo" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Vrstica Priročnik</figcaption></figure>
     </li>
   </ol>
   <ul>
@@ -4817,7 +4817,7 @@ Content-Type: application/json
       <tr><td><span class="ui">Ta snemalnik ne more sporočiti, za katere dneve obstajajo posnetki.</span> ali <span class="ui">Tega meseca ni bilo mogoče naložiti.</span> v koledarju</td><td>Naprava ne ponuja seznama dni s posnetki ali pa se za ta mesec ni odzvala.</td><td>Dan izberite brez oznak. Pri mesecu, ki se ni naložil, tapnite <span class="ui">Poskusi znova</span>. Glejte <a class="xref" href="#playback-calendar">„Koledar posnetkov“</a>.</td></tr>
       <tr><td><span class="ui">Na ta dan ni bila zaznana nobena oseba.</span> ali <span class="ui">Ta dan ni dogodkov.</span></td><td>Naprava ta dan ni zabeležila nobenega dogodka.</td><td>Uporabite seznam neprekinjenih posnetkov ali časovnico; glejte <a class="xref" href="#playback-list">„Seznam posnetkov in dogodkov“</a>.</td></tr>
       <tr><td><span class="ui">Ta naprava ni mogla preiskati svojega indeksa dogodkov z osebami.</span> ali <span class="ui">Ta naprava ni mogla poiskati svojih dogodkov.</span></td><td>Naprava se ni odzvala na iskanje dogodkov ali pa ne vodi indeksa zaznanih oseb.</td><td>Znova izberite dan. Posnetke predvajajte s seznama neprekinjenih posnetkov ali s časovnice; glejte <a class="xref" href="#playback-list">„Seznam posnetkov in dogodkov“</a>.</td></tr>
-      <tr><td><span class="ui">Ta račun nima dostopa do posnetkov v tej napravi.</span></td><td>Račun nima pravice do predvajanja posnetkov.</td><td>Uporabite račun s pravico do predvajanja ali to pravico dodelite v napravi.</td></tr>
+      <tr><td><span class="ui">Ta račun nima dostopa do posnetkov v tej napravi.</span></td><td>Naprava je zavrnila prijavo: račun nima pravice do predvajanja posnetkov ali pa je uporabniško ime ali geslo napačno, na primer ker je bilo v napravi spremenjeno.</td><td>Uporabniško ime in geslo preverite z ukazom <span class="ui">Uredi poverilnice</span> na strani naprave; glejte <a class="xref" href="#devices-credentials">„Spreminjanje uporabniškega imena in gesla naprave“</a>. Če sta pravilna, uporabite račun s pravico do predvajanja ali to pravico dodelite v napravi.</td></tr>
       <tr><td><span class="ui">Naprave ni bilo mogoče doseči.</span> ali <span class="ui">Časovna omejitev povezave je potekla.</span></td><td>Naprava se ni odzvala na iskanje za ta dan.</td><td>Preverite omrežje in znova izberite dan.</td></tr>
       <tr><td><span class="ui">Naprava ni prepoznala posnetkov te kamere.</span></td><td>Naprava ne najde posnetkov te kamere, na primer ker kamera nima pomnilnika ali svoje posnetke sporoča na nepričakovan način.</td><td>V napravi preverite, ali kamera snema. Drug kanal ali drug dan morda deluje.</td></tr>
       <tr><td><span class="ui">Snemalnik tega posnetka ni mogel predvajati. Morda je bil prepisan – izberite drug čas.</span></td><td>Posnetek je bil na seznamu, vendar je naprava predvajanje zavrnila, običajno zato, ker so ga nadomestili novejši posnetki.</td><td>Izberite poznejši čas ali drug dan.</td></tr>
@@ -4884,7 +4884,7 @@ Content-Type: application/json
       <tr><td>Rdeč opozorilni trikotnik po pritisku gumba na uri Apple Watch</td><td>Enaki vzroki kot na steni. Poleg tega je ura zahtevo sama poslala na naslov v domačem omrežju, ko ni bila v tem omrežju Wi-Fi, iPhone se ni odzval v približno 20 sekundah ali pa paket plošče ne pokriva več; v zadnjem primeru gumb nato z ure izgine.</td><td>V urejevalniku gumba v iPhonu preverite <span class="ui">Način pošiljanja</span>. Glejte <a class="xref" href="#webhook-watch">„Gumbi na uri Apple Watch“</a>.</td></tr>
     </tbody>
   </table></div>
-  <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="Tri stanja enega gumba: kazalnik nalaganja med pošiljanjem, zelena kljukica po uspehu in oranžen opozorilni trikotnik po napaki" loading="lazy" decoding="async" width="1600" height="736"><figcaption>Tri stanja gumba</figcaption></figure>
+  <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="Trije gumbi nadzorne plošče na steni LiveView Mix, vsak v enem od stanj: kazalnik nalaganja med pošiljanjem, zelena kljukica po uspehu in oranžen opozorilni trikotnik po napaki" loading="lazy" decoding="async" width="1600" height="736"><figcaption>Tri stanja gumba, na vsakem gumbu eno</figcaption></figure>
 
   <h3 id="trouble-health">Stanje diskov</h3>
   <p>Stran <span class="ui">Stanje diskov</span> prebere stanje diskov tistih naprav, ki ga sporočajo; glejte <a class="xref" href="#devices-health">„Stanje diskov“</a>. Omrežna shramba (NAS) ga sporoča prek protokola SNMP, ki ga je treba enkrat nastaviti. Apple TV nima strani „Stanje diskov“.</p>

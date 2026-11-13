@@ -258,7 +258,7 @@
   <p>Si escribes un enlace de YouTube o de Twitch en <span class="ui">Dirección IP o nombre de host</span>, el botón <span class="ui">Agregar</span> no está disponible y el formulario ofrece <span class="ui">Agregar como transmisión en vivo de YouTube</span> o <span class="ui">Agregar como canal de Twitch</span>. Al tocarlo se abre la pantalla de ese servicio con el enlace ya escrito; después de agregar la transmisión, se cierran las dos pantallas. Donde los dos servicios no están disponibles, el enlace se trata como una dirección normal.</p>
 
   <h3 id="add-failed">Si no se puede agregar: la lista de verificación</h3>
-  <p>Cuando falla el intento de agregar, el formulario muestra el mensaje de error en rojo. Con <span class="ui">Detección automática</span>, debajo aparecen los puertos abiertos que se encontraron. Más abajo, el formulario muestra la lista <span class="ui">Qué revisar primero</span>. El orden de la lista depende del tipo de falla, con la causa más probable al principio. Recorre los elementos de arriba abajo y luego toca <span class="ui">Agregar</span> otra vez.</p>
+  <p>Cuando falla el intento de agregar, el formulario muestra el mensaje de error en rojo. Con <span class="ui">Detección automática</span>, debajo aparecen los puertos abiertos que se encontraron o, si nada respondió, la línea <span class="ui">No se encontraron puertos abiertos en esta dirección.</span> Más abajo, el formulario muestra la lista <span class="ui">Qué revisar primero</span>. El orden de la lista depende del tipo de falla, con la causa más probable al principio. Recorre los elementos de arriba abajo y luego toca <span class="ui">Agregar</span> otra vez.</p>
   <div class="table-wrap" tabindex="0"><table>
     <thead><tr><th>Mensaje de error</th><th>Qué revisar (de arriba abajo)</th></tr></thead>
     <tbody>
@@ -342,12 +342,12 @@
     <li class="step">
       <p>Espera a que termine la recopilación.</p>
       <p class="check"><b class="check-label">Resultado:</b> <span class="ui">Lo que encontramos</span> enumera, en lenguaje sencillo, las causas probables y qué probar primero. Si nada destaca, la pantalla muestra <span class="ui">No se ve nada fuera de lo normal.</span></p>
-      <figure class="phone"><img src="/guide/img/device-report-found.jpg" alt="La lista de hallazgos del informe del dispositivo, con causas probables como los puertos, el segmento de red y la VPN" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-found.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>La lista de hallazgos</figcaption></figure>
+      <figure class="phone"><img src="/guide/img/device-report-found.jpg" alt="La lista de hallazgos del informe del dispositivo: el dispositivo está en otro segmento de red y hay una VPN activa, con los interruptores de Qué incluir debajo" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-found.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>La lista de hallazgos</figcaption></figure>
     </li>
     <li class="step">
       <p>En <span class="ui">Qué incluir</span>, desactiva los elementos que no se deban enviar.</p>
       <p class="check"><b class="check-label">Resultado:</b> El texto de la sección <span class="ui">El informe</span> se actualiza al instante.</p>
-      <figure class="phone"><img src="/guide/img/device-report-text.jpg" alt="Los interruptores del contenido del informe y el texto completo del informe, con los botones de envío debajo" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-text.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>Los interruptores de contenido y el informe completo</figcaption></figure>
+      <figure class="phone"><img src="/guide/img/device-report-text.jpg" alt="El texto completo del informe; debajo, la nota de que el informe se guarda para poder enviarlo después, los botones Enviar correo al desarrollador, Copiar y Compartir…, y el botón Eliminar informes guardados en la parte inferior" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-text.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>El informe completo y los botones de envío</figcaption></figure>
     </li>
     <li class="step">
       <p>Revisa el texto completo en la sección <span class="ui">El informe</span>.</p>
@@ -401,7 +401,7 @@
     <li class="step">
       <p>En la parte inferior de la página del informe, toca <span class="ui">Eliminar informes guardados</span>.</p>
       <p class="check"><b class="check-label">Resultado:</b> La pantalla muestra el cuadro de diálogo <span class="ui">¿Eliminar todos los informes guardados?</span>, que explica que se elimina cada informe del dispositivo guardado en este iPhone o iPad y que un informe que ya se envió por correo no se ve afectado.</p>
-      <figure class="phone"><img src="/guide/img/add-report-delete-confirm.jpg" alt="La página Informe del dispositivo con el cuadro de diálogo ¿Eliminar todos los informes guardados? encima: el texto que indica que se elimina cada informe guardado en este iPhone o iPad y que un informe ya enviado por correo no se ve afectado, y el botón Eliminar informes guardados" decoding="async" width="900" height="1956" data-src="/guide/img/add-report-delete-confirm.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>La confirmación antes de eliminar los informes guardados</figcaption></figure>
+      <figure class="phone"><img src="/guide/img/add-report-delete-confirm.jpg" alt="La página Informe del dispositivo con el cuadro de diálogo ¿Eliminar todos los informes guardados? encima: el texto que indica que se eliminan todos los informes de dispositivos guardados y que un informe ya enviado por correo no se ve afectado, y el botón Eliminar informes guardados" decoding="async" width="900" height="1956" data-src="/guide/img/add-report-delete-confirm.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>La confirmación antes de eliminar los informes guardados</figcaption></figure>
     </li>
     <li class="step">
       <p>Toca <span class="ui">Eliminar informes guardados</span> en el cuadro de diálogo.</p>
@@ -416,7 +416,7 @@
     <li class="step">
       <p>Toca la pestaña <span class="ui">Herramientas</span> en la parte inferior de la pantalla.</p>
       <p class="check"><b class="check-label">Resultado:</b> En la sección <span class="ui">Subred</span>, la fila <span class="ui">Este dispositivo</span> muestra la dirección y la máscara de la red actual, por ejemplo <code>192.168.1.10/24</code>. El campo de dirección y <span class="ui">Rango</span> se llenan con la red actual.</p>
-      <figure class="phone"><img src="/guide/img/tools-scan.jpg" alt="La pestaña Herramientas: la sección Subred con la dirección de este dispositivo, la red, el rango y el botón Escanear, y debajo Dispositivos encontrados y Velocímetro" decoding="async" width="900" height="1745" data-src="/guide/img/tools-scan.jpg" style="aspect-ratio: 900 / 1745;" loading="lazy"><figcaption>La pestaña Herramientas (red de ejemplo)</figcaption></figure>
+      <figure class="phone"><img src="/guide/img/tools-scan.jpg" alt="La pestaña Herramientas con su título en la parte superior: la sección Subred con la dirección de este dispositivo, la red, el rango y el botón Escanear; debajo, Dispositivos encontrados, todavía sin dispositivos, y la fila Velocímetro" decoding="async" width="900" height="1634" data-src="/guide/img/tools-scan.jpg" style="aspect-ratio: 900 / 1634;" loading="lazy"><figcaption>La pestaña Herramientas (red de ejemplo)</figcaption></figure>
     </li>
     <li class="step">
       <p>Opcional: para escanear una red distinta, escribe la red en el campo de dirección, por ejemplo <code>192.168.1.0</code>, y elige el rango en el menú <span class="ui">Rango</span>.</p>

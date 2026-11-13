@@ -276,7 +276,7 @@
   </ul>
 
   <h3 id="add-failed">添加失败时：检查清单</h3>
-  <p>添加失败时，表单用红色显示错误信息。使用<span class="ui">自动检测</span>时，其下方列出找到的开放端口。再往下，表单列出<span class="ui">请先检查这些</span>。列表的顺序随失败类型而定，最可能的原因排在最前面。从上到下逐项检查，然后再次点击<span class="ui">添加</span>。</p>
+  <p>添加失败时，表单用红色显示错误信息。使用<span class="ui">自动检测</span>时，其下方列出找到的开放端口；完全没有任何响应时，则在该处显示<span class="ui">这个地址没有找到任何开放的端口。</span>再往下，表单列出<span class="ui">请先检查这些</span>。列表的顺序随失败类型而定，最可能的原因排在最前面。从上到下逐项检查，然后再次点击<span class="ui">添加</span>。</p>
   <div class="table-wrap"><table>
     <thead><tr><th>错误信息</th><th>检查项（从上到下）</th></tr></thead>
     <tbody>
@@ -360,12 +360,12 @@
     <li class="step">
       <p>等待收集完成。</p>
       <p class="check"><b class="check-label">确认：</b><span class="ui">发现的情况</span>用通俗的语言列出可能的原因和建议优先尝试的操作。没有明显问题时，屏幕显示<span class="ui">没有发现明显的问题。</span></p>
-      <figure class="phone"><img src="guide/img/device-report-found.jpg" alt="设备报告的发现列表，列出端口、网段和 VPN 等可能的原因" loading="lazy" decoding="async" width="900" height="1956"><figcaption>发现列表</figcaption></figure>
+      <figure class="phone"><img src="guide/img/device-report-found.jpg" alt="设备报告的发现列表：设备与这台手机不在同一个网段，且这台手机上开启了 VPN，下方是“包含的内容”的开关" loading="lazy" decoding="async" width="900" height="1956"><figcaption>发现列表</figcaption></figure>
     </li>
     <li class="step">
       <p>在<span class="ui">包含的内容</span>下，关闭不应发送的项目。</p>
       <p class="check"><b class="check-label">确认：</b><span class="ui">报告</span>部分的文字立即更新。</p>
-      <figure class="phone"><img src="guide/img/device-report-text.jpg" alt="报告内容的开关和报告全文，下方是发送按钮" loading="lazy" decoding="async" width="900" height="1956"><figcaption>内容开关与报告全文</figcaption></figure>
+      <figure class="phone"><img src="guide/img/device-report-text.jpg" alt="报告全文，其下是报告保存在 App 中的说明、“通过电子邮件发送给开发者”“复制”和“共享…”按钮，最底部是“删除已保存的报告”按钮" loading="lazy" decoding="async" width="900" height="1956"><figcaption>报告全文与发送按钮</figcaption></figure>
     </li>
     <li class="step">
       <p>检阅<span class="ui">报告</span>部分的全文。</p>
@@ -413,13 +413,13 @@
   </div>
 
   <h4>已保存的报告</h4>
-  <p>每份报告都保存在本设备上，保留最近的五份。添加失败后，<span class="ui">将详细信息发送给开发者</span>下方会出现一个带有保存日期的条目，例如<span class="ui">上一份报告（2026年11月13日 上午9:41）</span>，点击即可打开最近保存的一份报告。已保存的报告按保存时的内容显示，不能逐项切换；要重新选择内容，须重新收集详细信息。</p>
+  <p>每份报告都保存在 App 中，保留最近的五份。添加失败后，<span class="ui">将详细信息发送给开发者</span>下方会出现一个带有保存日期的条目，例如<span class="ui">上一份报告（2026年11月13日 上午9:41）</span>，点击即可打开最近保存的一份报告。已保存的报告按保存时的内容显示，不能逐项切换；要重新选择内容，须重新收集详细信息。</p>
   <p>删除已保存的报告：</p>
   <ol class="steps">
     <li class="step">
       <p>在报告页面底部，点击<span class="ui">删除已保存的报告</span>。</p>
-      <p class="check"><b class="check-label">确认：</b>屏幕显示标题为<span class="ui">要删除所有已保存的报告吗？</span>的对话框，说明本设备上保存的所有设备报告都将被删除，已通过电子邮件发送的报告不受影响。</p>
-      <figure class="phone"><img src="guide/img/add-report-delete-confirm.jpg" alt="“设备报告”页面上方的对话框“要删除所有已保存的报告吗？”：说明本设备上保存的所有报告都将被删除、已通过电子邮件发送的报告不受影响，以及“删除已保存的报告”按钮" loading="lazy" decoding="async" width="900" height="1956"><figcaption>删除已保存的报告之前的确认</figcaption></figure>
+      <p class="check"><b class="check-label">确认：</b>屏幕显示标题为<span class="ui">要删除所有已保存的报告吗？</span>的对话框，说明所有已保存的设备报告都将被删除，已通过电子邮件发送的报告不受影响。</p>
+      <figure class="phone"><img src="guide/img/add-report-delete-confirm.jpg" alt="“设备报告”页面上方的对话框“要删除所有已保存的报告吗？”：说明所有已保存的设备报告都将被删除、已通过电子邮件发送的报告不受影响，以及“删除已保存的报告”按钮" loading="lazy" decoding="async" width="900" height="1956"><figcaption>删除已保存的报告之前的确认</figcaption></figure>
     </li>
     <li class="step">
       <p>点击对话框中的<span class="ui">删除已保存的报告</span>。</p>
@@ -434,7 +434,7 @@
     <li class="step">
       <p>点击屏幕底部的<span class="ui">工具</span>标签页。</p>
       <p class="check"><b class="check-label">确认：</b>在<span class="ui">子网</span>部分，<span class="ui">本设备</span>一行显示当前的网络地址和掩码，例如 <code>192.168.1.10/24</code>。地址输入框和<span class="ui">范围</span>已按当前网络填好。</p>
-      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="“工具”标签页：“子网”部分显示本设备的地址、网络、范围和“扫描”按钮，下方是“找到的设备”和“速度计”" loading="lazy" decoding="async" width="900" height="1745"><figcaption>“工具”标签页（示例网络）</figcaption></figure>
+      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="“工具”标签页，顶部是其标题：“子网”部分显示本设备的地址、网络、范围和“扫描”按钮，其下是尚未列出任何设备的“找到的设备”，以及“速度计”一行" loading="lazy" decoding="async" width="900" height="1634"><figcaption>“工具”标签页（示例网络）</figcaption></figure>
     </li>
     <li class="step">
       <p>可选：要扫描其他网络，在地址输入框中输入该网络，例如 <code>192.168.1.0</code>，并在<span class="ui">范围</span>菜单中选择范围。</p>
@@ -799,8 +799,8 @@
     </li>
     <li class="step">
       <p>点击<span class="ui">重命名摄像头</span>。</p>
-      <p class="check"><b class="check-label">确认：</b>打开<span class="ui">重命名摄像头</span>对话框，其中显示说明文字<span class="ui">为这个摄像头自定义名称。设备原有的名称仍会保留在下方，刷新设备不会覆盖您设置的名称。</span>当前名称显示在<span class="ui">名称</span>输入框中，按钮有<span class="ui">取消</span>、<span class="ui">使用设备名称</span>和<span class="ui">保存</span>。</p>
-      <figure class="phone"><img src="guide/img/channel-rename-alert.jpg" alt="“重命名摄像头”对话框，带有“名称”输入框以及“取消”“使用设备名称”和“保存”按钮" loading="lazy" decoding="async" width="900" height="1956"><figcaption>“重命名摄像头”对话框</figcaption></figure>
+      <p class="check"><b class="check-label">确认：</b>打开<span class="ui">重命名摄像头</span>对话框，其中显示说明文字<span class="ui">为这个摄像头自定义名称。设备原有的名称仍会保留在下方，刷新设备不会覆盖您设置的名称。</span>当前名称显示在<span class="ui">名称</span>输入框中，按钮有<span class="ui">使用设备名称</span>、<span class="ui">保存</span>和<span class="ui">取消</span>。</p>
+      <figure class="phone"><img src="guide/img/channel-rename-alert.jpg" alt="“重命名摄像头”对话框，带有“名称”输入框以及“使用设备名称”“保存”和“取消”按钮；对话框下方是已打开的键盘" loading="lazy" decoding="async" width="900" height="1956"><figcaption>“重命名摄像头”对话框</figcaption></figure>
     </li>
     <li class="step">
       <p>在<span class="ui">名称</span>输入框中输入新名称。</p>
@@ -926,7 +926,7 @@
     <li class="step">
       <p>点击显示画面的缩略图。</p>
       <p class="check"><b class="check-label">确认：</b>该摄像头的特写在墙上方打开，顶部显示<span class="ui">返回</span>和摄像头名称。</p>
-      <figure class="phone"><img src="guide/img/fullwall-closeup.jpg" alt="墙上方的单个摄像头特写：左上角是返回按钮和摄像头名称，画面位于黑色屏幕的中部，右下角是摄像头控制按钮" loading="lazy" decoding="async" width="900" height="1956"><figcaption>摄像头特写</figcaption></figure>
+      <figure class="phone"><img src="guide/img/fullwall-closeup.jpg" alt="墙上方的单个摄像头特写：左上角是返回按钮和摄像头名称，右上角是带时钟符号的“录像”按钮，画面位于黑色屏幕的中部，右下角是摄像头控制按钮" loading="lazy" decoding="async" width="900" height="1956"><figcaption>摄像头特写</figcaption></figure>
     </li>
     <li class="step">
       <p>点击特写左上角的<span class="ui">返回</span>。</p>
@@ -1196,7 +1196,7 @@
     <li class="step">
       <p>点击显示实时画面的通道缩略图。</p>
       <p class="check"><b class="check-label">确认：</b>打开单摄像头视图。标题为摄像头名称，画面左上角显示绿色标记<span class="ui">实时</span>。画面以<span class="path"><span class="ui">设置</span> › <span class="ui">默认画质</span> › <span class="ui">单个摄像头</span></span>的画质开始（未更改时为 HD）。</p>
-      <figure class="phone"><img src="guide/img/single-live.jpg" alt="实时模式下的单摄像头视图：画面带有“实时”标记和摄像头控制按钮，其下是控制栏，左侧为“快照”，右侧为 SD 和 HD 开关，再下面是带有日期、时间轴和列表的录像面板" loading="lazy" decoding="async" width="900" height="1956"><figcaption>实时模式下的单摄像头视图</figcaption></figure>
+      <figure class="phone"><img src="guide/img/single-live.jpg" alt="实时模式下的单摄像头视图：画面带有“实时”标记和摄像头控制按钮，其下是控制栏，有“快照”、红色录制按钮以及 SD 和 HD 开关，再下面是带有录像日历按钮、日期、时间轴和列表的录像面板" loading="lazy" decoding="async" width="900" height="1956"><figcaption>实时模式下的单摄像头视图</figcaption></figure>
     </li>
   </ol>
   <p>点击左上角的返回按钮离开该视图。</p>
@@ -1207,7 +1207,7 @@
     <tbody>
       <tr><td>导航栏</td><td>返回按钮和摄像头名称。在 iPad 和 iPhone Duo 的内屏上，右侧是<span class="ui">在新窗口中打开</span>按钮，参见<a class="xref" href="#single-window">“在独立窗口中打开摄像头”</a>。</td></tr>
       <tr><td>画面（竖屏，16:9）</td><td>左上角的标记表示模式：<span class="ui">实时</span>（绿色），或带回放时间的<span class="ui">回放 15:00:03</span>（红色）。右下角的圆形按钮在实时模式下是用于 PTZ 的摄像头控制，参见<a class="xref" href="#single-ptz">“PTZ 控制：移动摄像头”</a>；录像播放时是速度按钮，参见<a class="xref" href="#playback-speed">“回放速度”</a>。</td></tr>
-      <tr><td>控制栏</td><td>左侧是<span class="ui">快照</span>，然后是红色录制按钮；摄像头发送声音时，旁边是扬声器按钮，可对讲的摄像头还有对讲按钮；右侧在实时模式下是 SD/HD 开关，回放时是<span class="ui">返回实时</span>。这一栏空间不足时（例如使用文字较长的语言），<span class="ui">快照</span>只显示相机符号。参见<a class="xref" href="#single-controls">“快照、声音与画质”</a>、<a class="xref" href="#single-clip">“录制片段”</a>和<a class="xref" href="#single-talk">“双向对讲”</a>。</td></tr>
+      <tr><td>控制栏</td><td>左侧是<span class="ui">快照</span>，然后是红色录制按钮；摄像头发送声音时，旁边是扬声器按钮，可对讲的摄像头还有对讲按钮；右侧在实时模式下是 SD/HD 开关，回放时是<span class="ui">返回实时</span>。这一栏空间不足时（例如栏中有扬声器或对讲按钮，或使用文字较长的语言），<span class="ui">快照</span>只显示相机符号。参见<a class="xref" href="#single-controls">“快照、声音与画质”</a>、<a class="xref" href="#single-clip">“录制片段”</a>和<a class="xref" href="#single-talk">“双向对讲”</a>。</td></tr>
       <tr><td>录像面板</td><td>标题为<span class="ui">录像</span>，下方有日期、时间轴和录像列表；在受支持的设备上，还有录像日历按钮。该面板仅在支持回放的设备上出现；其他设备的视图只有画面和控制栏。参见<a class="xref" href="#playback">第 7 章“录像回放与倍速”</a>。</td></tr>
     </tbody>
   </table></div>
@@ -1269,7 +1269,7 @@
     <li class="step">
       <p>点击控制栏中的扬声器按钮（<span class="ui">取消静音</span>）。</p>
       <p class="check"><b class="check-label">确认：</b>符号由带斜线的扬声器变为带声波的扬声器，开始播放摄像头的声音。</p>
-      <figure class="phone"><img src="guide/img/single-audio.jpg" alt="发送声音的摄像头的控制栏，扬声器按钮位于“快照”与 SD 和 HD 开关之间" loading="lazy" decoding="async" width="900" height="1956"><figcaption>控制栏中的扬声器按钮</figcaption></figure>
+      <figure class="phone"><img src="guide/img/single-audio.jpg" alt="发送声音的摄像头的控制栏：只显示相机符号的“快照”、红色录制按钮、扬声器按钮，以及 SD 和 HD 开关" loading="lazy" decoding="async" width="900" height="1956"><figcaption>控制栏中的扬声器按钮</figcaption></figure>
     </li>
     <li class="step">
       <p>再次点击扬声器按钮（<span class="ui">静音</span>）。</p>
@@ -1337,7 +1337,7 @@
   <h3 id="single-talk">双向对讲</h3>
   <p>带扬声器的单独摄像头可以用来对讲。对讲的方式与对讲机相同：按住按钮说话，松开按钮收听。视图打开时，Cam Hub 会向摄像头询问其对讲通道；摄像头上报对讲通道后，控制栏中录制按钮和扬声器按钮之后会出现对讲按钮（麦克风符号）。</p>
   <p>前提条件：受支持品牌的单独摄像头，且上报了双向音频通道；处于实时模式；通道在套餐范围内。录像机的通道没有对讲按钮：录像机的对讲通道是录像机自身的音频输出，而不是摄像头的扬声器。</p>
-  <figure class="phone"><img src="guide/img/single-talk.jpg" alt="带扬声器的摄像头的单摄像头视图：控制栏中带麦克风符号的对讲按钮，以及 SD 和 HD 开关" loading="lazy" decoding="async" width="900" height="1947"><figcaption>控制栏中的对讲按钮</figcaption></figure>
+  <figure class="phone"><img src="guide/img/single-talk.jpg" alt="带扬声器的摄像头的单摄像头视图：控制栏中带麦克风符号的对讲按钮，以及 SD 和 HD 开关" loading="lazy" decoding="async" width="900" height="1956"><figcaption>控制栏中的对讲按钮</figcaption></figure>
   <p>首次按下对讲按钮时，系统对话框会请求访问麦克风。请允许访问，然后再次按下按钮。</p>
   <ol class="steps">
     <li class="step">
@@ -1400,7 +1400,7 @@
     <li class="step">
       <p>点击画面右下角的圆形按钮（<span class="ui">移动镜头</span>）。</p>
       <p class="check"><b class="check-label">确认：</b>控制盘在按钮左侧展开，按钮变为叉号（<span class="ui">隐藏镜头控制</span>）。控制盘包含带加号和减号的变焦条、中间带房子符号的四向箭头圆盘，以及一个星形按钮。对支持触摸定位的摄像头，圆盘旁边、星形按钮上方还会多出一个带准星符号的定位按钮。</p>
-      <figure class="phone"><img src="guide/img/single-ptz.jpg" alt="摄像头控制展开后的单摄像头视图：画面上有变焦条、带房子符号的方向圆盘、定位按钮、星形按钮和叉号按钮" loading="lazy" decoding="async" width="900" height="1947"><figcaption>画面上的摄像头控制</figcaption></figure>
+      <figure class="phone"><img src="guide/img/single-ptz.jpg" alt="摄像头控制展开后的单摄像头视图：画面上有变焦条、带房子符号的方向圆盘、定位按钮、星形按钮和叉号按钮" loading="lazy" decoding="async" width="900" height="1956"><figcaption>画面上的摄像头控制</figcaption></figure>
     </li>
     <li class="step">
       <p>按住圆盘上的一个箭头（<span class="ui">镜头向上</span>、<span class="ui">镜头向下</span>、<span class="ui">镜头向左</span>或<span class="ui">镜头向右</span>）。</p>
@@ -1441,7 +1441,7 @@
 
   <h4>触摸画面进行定位</h4>
   <p>在支持此功能的摄像头上，可以让摄像头转向画面中的某个位置，或直接放大画面上框出的区域。前提条件：控制盘已展开，并显示定位按钮。</p>
-  <figure class="phone"><img src="guide/img/single-ptz-aim.jpg" alt="触摸定位时的单摄像头视图：画面顶部的提示、亮起的定位按钮和叉号按钮" loading="lazy" decoding="async" width="900" height="1947"><figcaption>触摸定位</figcaption></figure>
+  <figure class="phone"><img src="guide/img/single-ptz-aim.jpg" alt="触摸定位时的单摄像头视图：画面顶部的提示、亮起的定位按钮和叉号按钮" loading="lazy" decoding="async" width="900" height="1956"><figcaption>触摸定位</figcaption></figure>
   <ol class="steps">
     <li class="step">
       <p>点击定位按钮（<span class="ui">3D 定位</span>）。</p>
@@ -1555,7 +1555,7 @@
     </tbody>
   </table></div>
   <div class="shots pair">
-    <figure class="phone"><img src="guide/img/single-reconnecting.jpg" alt="视频流重新连接时的单摄像头视图：黑色画面区域上有转圈和“正在重新连接…”文字，左上角是“实时”标记，右下角是摄像头控制按钮，其下是控制栏，左侧为“快照”，右侧为 SD 和 HD 开关，然后是“无法连接到这台设备。”一行，再下面是时间轴为空的录像面板" loading="lazy" decoding="async" width="900" height="1956"><figcaption>重新建立连接时的画面</figcaption></figure>
+    <figure class="phone"><img src="guide/img/single-reconnecting.jpg" alt="视频流重新连接时的单摄像头视图：黑色画面区域上有转圈和“正在重新连接…”文字，左上角是“实时”标记，右下角是摄像头控制按钮，其下是控制栏，左侧为“快照”和红色录制按钮，右侧为 SD 和 HD 开关，然后是“无法连接到这台设备。”一行，再下面是时间轴为空的录像面板" loading="lazy" decoding="async" width="900" height="1956"><figcaption>重新建立连接时的画面</figcaption></figure>
     <figure class="phone"><img src="guide/img/single-failed.jpg" alt="单摄像头视图的深色画面区域上带有失败提示和“重试”按钮" loading="lazy" decoding="async" width="900" height="1956"><figcaption>带“重试”的失败提示</figcaption></figure>
   </div>
   <ol class="steps">
@@ -1591,7 +1591,7 @@
   <div class="table-wrap"><table>
     <thead><tr><th>功能</th><th>显示条件</th></tr></thead>
     <tbody>
-      <tr><td>带日期、时间轴和列表的录像面板</td><td>设备以提供回放的连接方式添加，参见<a class="xref" href="#brands-matrix">“各方式支持哪些功能”</a>。账号无权读取录像时，仍会显示该面板，时间轴上方显示<span class="ui">该账号无法读取这台设备上的录像。</span></td></tr>
+      <tr><td>带日期、时间轴和列表的录像面板</td><td>设备以提供回放的连接方式添加，参见<a class="xref" href="#brands-matrix">“各方式支持哪些功能”</a>。设备拒绝登录时，无论是因为账号无权读取录像，还是因为用户名或密码错误，仍会显示该面板，时间轴上方显示<span class="ui">该账号无法读取这台设备上的录像。</span></td></tr>
       <tr><td>录像日历按钮</td><td>设备还保存了按日划分的录像索引，参见<a class="xref" href="#playback-calendar">“录像日历”</a>。</td></tr>
       <tr><td><span class="ui">连续录像</span>与<span class="ui">事件</span>切换</td><td>设备以提供事件索引的连接方式添加：人员检测索引，或移动和报警输入的索引，参见<a class="xref" href="#brands-matrix">“各方式支持哪些功能”</a>。即使设备本身不响应该索引的搜索，也会显示该切换，参见<a class="xref" href="#playback-list">“录像列表与事件”</a>。使用其他连接方式时，只有所选日期或其前一天有设备因事件而录制的录像时，才会出现该切换。否则只显示连续录像列表，没有切换。</td></tr>
       <tr><td>速度按钮</td><td>回放期间，设备能以更快的速度播放录像时显示。不能时会出现提示，参见<a class="xref" href="#playback-speed">“回放速度”</a>。</td></tr>
@@ -1631,7 +1631,7 @@
 
   <h3 id="playback-calendar">录像日历</h3>
   <p>在保存按日划分的录像索引的设备上，标题<span class="ui">录像</span>与日期之间有一个日历按钮。该日历标出有录像的日期，因此不必逐日尝试。没有这种索引时，不显示该按钮，日期按<a class="xref" href="#playback-day">“选择日期”</a>所述选择。</p>
-  <figure class="phone"><img src="guide/img/playback-calendar.jpg" alt="单摄像头视图上方的“录像日历”面板：带箭头的月份，有录像的日期下方带圆点，所选日期位于实心圆中，以及“带圆点的日期有录像。”一行" loading="lazy" decoding="async" width="900" height="1947"><figcaption>录像日历</figcaption></figure>
+  <figure class="phone"><img src="guide/img/playback-calendar.jpg" alt="单摄像头视图上方的“录像日历”面板：带箭头的月份，有录像的日期下方带圆点，所选日期位于实心圆中，以及“带圆点的日期有录像。”一行" loading="lazy" decoding="async" width="900" height="1956"><figcaption>录像日历</figcaption></figure>
   <ol class="steps">
     <li class="step">
       <p>点击日期旁边的日历按钮（<span class="ui">录像日历</span>）。</p>
@@ -1749,7 +1749,7 @@
       <tr><td><span class="ui">这一天没有事件。</span></td><td>当天没有事件，适用于其他所有设备。</td></tr>
       <tr><td><span class="ui">此设备无法搜索人员事件索引。</span></td><td>设备不响应人员检测搜索时（例如没有人员检测索引的较旧录像机），在<span class="ui">事件</span>下代替列表显示。此时不会列出设备因事件而录制的录像，但仍可通过时间轴上的红色条播放。连续录像列表不受影响。</td></tr>
       <tr><td><span class="ui">此设备无法搜索其事件。</span></td><td>同上，适用于标记移动和报警输入的设备。</td></tr>
-      <tr><td>时间轴上方带警告符号的提示：<span class="ui">该账号无法读取这台设备上的录像。</span>、<span class="ui">无法连接到这台设备。</span>、<span class="ui">这台设备无法识别此摄像头的录像。</span>或<span class="ui">此摄像头当前离线。</span></td><td>当天的搜索因提示中所述的原因而失败。提示显示期间，可以更改日期并尝试另一天。账号问题请检查其在设备上的权限；连接问题参见<a class="xref" href="#trouble">第 15 章“故障排除”</a>。</td></tr>
+      <tr><td>时间轴上方带警告符号的提示：<span class="ui">该账号无法读取这台设备上的录像。</span>、<span class="ui">无法连接到这台设备。</span>、<span class="ui">这台设备无法识别此摄像头的录像。</span>或<span class="ui">此摄像头当前离线。</span></td><td>当天的搜索因提示中所述的原因而失败。提示显示期间，可以更改日期并尝试另一天。账号问题请检查用户名、密码以及账号在设备上的权限；连接问题参见<a class="xref" href="#trouble">第 15 章“故障排除”</a>。</td></tr>
       <tr><td><span class="ui">短时间内请求过于频繁，请稍等一分钟后重试。</span></td><td>因请求过多，设备或其服务拒绝了搜索，或设备仍在处理之前的搜索。等待一分钟，然后重新选择日期。</td></tr>
       <tr><td>同一位置的其他提示，例如<span class="ui">设备返回了意外的响应。</span>、<span class="ui">连接超时。</span>或<span class="ui">出错了。请重试。</span></td><td>搜索因其他原因失败。重新选择日期。提示持续出现时，参见<a class="xref" href="#trouble">第 15 章“故障排除”</a>。</td></tr>
     </tbody>
@@ -1830,7 +1830,7 @@
     <li class="step">
       <p>开始播放一段录像，然后把 iPhone 横过来。</p>
       <p class="check"><b class="check-label">确认：</b>画面铺满屏幕。画面下缘的控制条包含<span class="ui">回放 15:00:03</span> 标记、速度按钮、<span class="ui">返回实时</span>和时间轴。</p>
-      <figure class="land"><img src="guide/img/playback-landscape.jpg" alt="横屏回放：画面占满整个屏幕，下缘的控制条包含回放标记、速度按钮、“返回实时”和时间轴" loading="lazy" decoding="async" width="1600" height="736"><figcaption>横屏回放</figcaption></figure>
+      <figure class="land"><img src="guide/img/playback-landscape.jpg" alt="横屏回放：画面位于黑色屏幕的中部；顶部有返回按钮、其旁边的回放标记和红色录制按钮；下缘的控制条包含回放标记、速度按钮、“返回实时”和时间轴" loading="lazy" decoding="async" width="1600" height="736"><figcaption>横屏回放</figcaption></figure>
     </li>
     <li class="step">
       <p>在控制条中拖动时间轴，在所需的时间抬起手指。</p>
@@ -1968,7 +1968,7 @@
     <li class="step">
       <p>再按希望它们在墙上出现的顺序，勾选另外五个通道。</p>
       <p class="check"><b class="check-label">确认：</b>页面顶部显示<span class="ui" data-ui="value">已选 6 个摄像头</span>。</p>
-      <figure class="phone"><img src="guide/img/lvm-pick-selected.jpg" alt="已选 6 个摄像头的“选择摄像头”页面：每个勾选的通道右侧有 SD 和 HD 选择器，顶部有“全部 SD”和“全部 HD”按钮" loading="lazy" decoding="async" width="900" height="1956"><figcaption>已选 6 个摄像头</figcaption></figure>
+      <figure class="phone"><img src="guide/img/lvm-pick-selected.jpg" alt="已选 6 个摄像头的“选择摄像头”页面：顶部是“横向页面”和“竖向页面”的切换，其下是“全部 SD”和“全部 HD”按钮，每个勾选的通道右侧有 SD 和 HD 选择器" loading="lazy" decoding="async" width="900" height="1956"><figcaption>已选 6 个摄像头</figcaption></figure>
     </li>
     <li class="step">
       <p>可选：在需要更清晰画面的每个摄像头旁点击 <span class="ui">HD</span>。</p>
@@ -2232,7 +2232,7 @@
   <h3 id="lvm-arrange">排列墙面与图块</h3>
   <p>路径：<span class="path"><span class="ui">LiveView Mix</span> › <span class="ui">调整布局</span> › <span class="ui">排列墙面</span></span>。该页面决定每个图块里放什么。页面标题是<span class="ui">排列</span>。页面自上而下依次是布局行、画布、<span class="ui">提示</span>和<span class="ui">顺序</span>列表。选好摄像头或已有设备后，即可使用<span class="ui">排列墙面</span>。</p>
   <figure class="phone clip"><video class="clip" src="guide/vid/rec-arrange-swap.mp4" poster="guide/img/rec-arrange-swap.jpg" aria-label="排列墙面：把一个图块拖到另一个图块上会互换二者，把图块拖到空单元格会将其移到那里。" muted loop playsinline preload="metadata"></video><figcaption>排列墙面：把一个图块拖到另一个图块上会互换二者，把图块拖到空单元格会将其移到那里。</figcaption></figure>
-  <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="“排列”页面：顶部是布局行，中间的画布上有十个图块（第 9 个是控制面板，第 10 个是时钟），下方是“顺序”列表" loading="lazy" decoding="async" width="900" height="1956"><figcaption>“排列”页面</figcaption></figure>
+  <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="“排列”页面：顶部是布局行，中间的画布上有十个图块（第 9 个是控制面板，第 10 个是时钟），下方是“提示”和“顺序”列表" loading="lazy" decoding="async" width="900" height="1956"><figcaption>“排列”页面</figcaption></figure>
   <ul>
     <li><b>布局行</b>：与<span class="ui">调整布局</span>上相同的布局示意图，可直接在这里更换布局。<span class="ui">自定义</span>示意图在绘制过某个布局后，或该布局正在使用时出现，在这里只能选择它。</li>
     <li><b>画布</b>：横向页面的画布按 16:9 横屏绘制，竖向页面的画布按 9:16 竖屏绘制，显示当前墙页。每个已填充图块的左上角标有其编号。摄像头图块显示实时画面（SD）；离线或不在套餐内的摄像头显示带划掉摄像头图标的黑色图块。水印关闭时，通道名称在左下角；水印开启时，则预览水印。画布上的控制面板与墙上的外观相同，但不显示套餐未涵盖的控制面板的锁；点击它会打开其编辑界面，而不会发送请求。设备竖持时，实际的横向墙是翻转的，但每个图块保留其编号。</li>
@@ -2797,7 +2797,7 @@
     <li class="step">
       <p>点击<span class="ui">排列墙面</span>。</p>
       <p class="check"><b class="check-label">确认：</b>打开<span class="ui">排列</span>页面：墙的画布在顶部，其下的<span class="ui">顺序</span>列表按编号列出每个已填充的图块。</p>
-      <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="“排列”页面：顶部是墙的画布，第 9 个图块是控制面板，第 10 个图块是时钟，下方是已填充图块的列表" loading="lazy" decoding="async" width="900" height="1956"><figcaption>“排列”页面</figcaption></figure>
+      <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="“排列”页面：顶部是布局行，其下是墙的画布，第 9 个图块是控制面板，第 10 个图块是时钟，下方是已填充图块的列表" loading="lazy" decoding="async" width="900" height="1956"><figcaption>“排列”页面</figcaption></figure>
     </li>
     <li class="step">
       <p>点击画布上一个未使用的图块，它带有虚线边框和 +。未使用的图块在墙的另一页上时，先使用画布下方的箭头或左右滑动切换页面。</p>
@@ -2940,8 +2940,8 @@
     </li>
   </ol>
   <div class="shots pair">
-    <figure class="phone"><img src="guide/img/lvm-button-editor.jpg" alt="按钮编辑界面：图标、标签、执行前先确认，以及“请求”部分的方法和 URL" loading="lazy" decoding="async" width="900" height="1956"><figcaption>按钮编辑界面（上部）</figcaption></figure>
-    <figure class="phone"><img src="guide/img/lvm-button-headers.jpg" alt="按钮编辑界面的下部：“标头”部分有一行授权标头，“正文”部分有内容类型和 JSON 内容" loading="lazy" decoding="async" width="900" height="1956"><figcaption>按钮编辑界面（下部）</figcaption></figure>
+    <figure class="phone"><img src="guide/img/lvm-button-editor.jpg" alt="按钮编辑界面：图标、标签、执行前先确认、“请求”部分的方法和 URL，以及带有“发送方式”的 Apple Watch 部分" loading="lazy" decoding="async" width="900" height="1956"><figcaption>按钮编辑界面（上部）</figcaption></figure>
+    <figure class="phone"><img src="guide/img/lvm-button-headers.jpg" alt="按钮编辑界面的下部：Apple Watch 部分，“标头”部分有一行授权标头，“正文”部分有内容类型和 JSON 内容" loading="lazy" decoding="async" width="900" height="1956"><figcaption>按钮编辑界面（下部）</figcaption></figure>
   </div>
   <div class="table-wrap"><table>
     <thead><tr><th>输入项</th><th>说明</th></tr></thead>
@@ -2973,7 +2973,7 @@
     <li class="step">
       <p>观察按钮的图标。</p>
       <p class="check"><b class="check-label">确认：</b>根据结果，图标变为绿色对勾或橙色警告三角形，约 1.6 秒后恢复原来的图标。</p>
-      <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="同一个按钮的三种状态：发送时的转圈、成功后的绿色对勾，以及失败后的橙色警告三角形" loading="lazy" decoding="async" width="1600" height="736"><figcaption>按钮的三种状态</figcaption></figure>
+      <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="LiveView Mix 墙上一个控制面板的三个按钮，各处于一种状态：发送时的转圈、成功后的绿色对勾，以及失败后的橙色警告三角形" loading="lazy" decoding="async" width="1600" height="736"><figcaption>按钮的三种状态，每个按钮各显示一种</figcaption></figure>
     </li>
   </ol>
   <div class="table-wrap"><table>
@@ -3704,7 +3704,7 @@ Content-Type: application/json
     <li class="step">
       <p>在<span class="ui">摄像头套餐 · 按年计费</span>或 <span class="ui">NVR 套餐 · 按月计费</span>部分，找到要选的套餐，点击其卡片上的<span class="ui">订阅</span>。</p>
       <p class="check"><b class="check-label">确认：</b>出现系统的购买确认。每张卡片显示套餐的名称、简短说明和费用；Apple 账户符合条件时，还会显示免费试用的时长。</p>
-      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="套餐页面的顶部：Cam Hub 标志、标题“解锁每一个摄像头”、一句关于免费版可显示内容的说明、五行关于套餐及其内容的简短说明，以及底边的标题“摄像头套餐 · 按年计费”" loading="lazy" decoding="async" width="900" height="1215"><figcaption>套餐页面的顶部，套餐卡片在其下方</figcaption></figure>
+      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="套餐页面的顶部：Cam Hub 标志、标题“解锁每一个摄像头”、一句关于免费版可显示内容的说明，以及五行关于套餐及其内容的简短说明" loading="lazy" decoding="async" width="900" height="1215"><figcaption>套餐页面的顶部，套餐卡片在其下方</figcaption></figure>
     </li>
     <li class="step">
       <p>按系统界面的提示，用 Apple 账户确认购买。</p>
@@ -3803,7 +3803,7 @@ Content-Type: application/json
     <li class="step">
       <p>点击屏幕底部的<span class="ui">工具</span>标签页。</p>
       <p class="check"><b class="check-label">确认：</b>屏幕显示该标签页的各个部分，从<span class="ui">子网</span>开始。地址输入框和范围已按设备所在的网络填好。</p>
-      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="“工具”标签页：“子网”部分有本机地址、网络、范围和“扫描”按钮，其下是“找到的设备”和“速度计”一行" loading="lazy" decoding="async" width="900" height="1745"><figcaption>“工具”标签页（示例网络）</figcaption></figure>
+      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="“工具”标签页，顶部是其标题：“子网”部分显示本设备的地址、网络、范围和“扫描”按钮，其下是尚未列出任何设备的“找到的设备”，以及“速度计”一行" loading="lazy" decoding="async" width="900" height="1634"><figcaption>“工具”标签页（示例网络）</figcaption></figure>
     </li>
   </ol>
   <p>扫描的步骤参见<a class="xref" href="#add-scan">“用网络扫描查找设备”</a>。以下几点涉及该标签页的整体行为。</p>
@@ -3985,7 +3985,7 @@ Content-Type: application/json
     <li class="step">
       <p>在<span class="ui">订阅</span>部分点击<span class="ui">套餐</span>。</p>
       <p class="check"><b class="check-label">确认：</b><span class="ui">套餐</span>页面在设置界面上方打开。它列出摄像头套餐和 NVR 套餐，并标出当前套餐。</p>
-      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="套餐页面的顶部：Cam Hub 标志、标题“解锁每一个摄像头”、一句关于免费版可显示内容的说明、五行关于套餐及其内容的简短说明，以及底边的标题“摄像头套餐 · 按年计费”" loading="lazy" decoding="async" width="900" height="1215"><figcaption>套餐页面的顶部，套餐卡片在其下方</figcaption></figure>
+      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="套餐页面的顶部：Cam Hub 标志、标题“解锁每一个摄像头”、一句关于免费版可显示内容的说明，以及五行关于套餐及其内容的简短说明" loading="lazy" decoding="async" width="900" height="1215"><figcaption>套餐页面的顶部，套餐卡片在其下方</figcaption></figure>
     </li>
     <li class="step">
       <p>点击右上角的<span class="ui">完成</span>。</p>
@@ -4109,7 +4109,7 @@ Content-Type: application/json
     <li class="step">
       <p>点击 <span class="ui" data-ui="value">Language</span> 一行。</p>
       <p class="check"><b class="check-label">确认：</b>菜单列出<span class="ui">跟随系统</span>以及 <span class="ui" data-ui="value">English</span>、<span class="ui" data-ui="value">繁體中文</span>、<span class="ui" data-ui="value">简体中文</span>、<span class="ui" data-ui="value">日本語</span>、<span class="ui" data-ui="value">한국어</span>、<span class="ui" data-ui="value">العربية</span>、<span class="ui" data-ui="value">Deutsch</span>、<span class="ui" data-ui="value">Español</span>、<span class="ui" data-ui="value">Español (México)</span>、<span class="ui" data-ui="value">Français</span> 和 <span class="ui" data-ui="value">Slovenščina</span>。每种语言以其自身的名称书写。</p>
-      <figure class="phone"><img src="guide/img/settings-language.jpg" alt="“设置”标签页的语言菜单：带勾号的“跟随系统”和各种语言，每种语言以其自身的名称书写，其中包括 Español (México)" loading="lazy" decoding="async" width="900" height="1947"><figcaption>语言菜单</figcaption></figure>
+      <figure class="phone"><img src="guide/img/settings-language.jpg" alt="“设置”标签页的语言菜单：带勾号的“跟随系统”和十一种语言，每种语言以其自身的名称书写，从 English 到末尾的 Slovenščina" loading="lazy" decoding="async" width="900" height="1956"><figcaption>语言菜单</figcaption></figure>
     </li>
     <li class="step">
       <p>点击所需的语言。</p>
@@ -4156,11 +4156,11 @@ Content-Type: application/json
   <ol class="steps">
     <li class="step">
       <p>在<span class="ui">重置</span>部分点击<span class="ui">恢复默认设置</span>。</p>
-      <p class="check"><b class="check-label">确认：</b>出现标题为<span class="ui">要将所有设置恢复为默认值吗？</span>的对话框，带有<span class="ui">恢复默认</span>和<span class="ui">取消</span>按钮。对话框中的文字说明包括语言在内的每项设置都会恢复为默认值，LiveView Mix 墙（布局、控制面板、Webhook 按钮和图片）将被清空，设备和 iCloud 备份则保留。</p>
+      <p class="check"><b class="check-label">确认：</b>设置页面上方出现标题为<span class="ui">要将所有设置恢复为默认值吗？</span>的对话框，带有<span class="ui">恢复默认</span>按钮。无论在 iPhone 还是 iPad 上，该对话框都没有取消按钮。对话框中的文字说明包括语言在内的每项设置都会恢复为默认值，LiveView Mix 墙（布局、控制面板、Webhook 按钮和图片）将被清空，设备和 iCloud 备份则保留。</p>
       <figure class="phone"><img src="guide/img/settings-restore-defaults.jpg" alt="设置页面上方的对话框“要将所有设置恢复为默认值吗？”及“恢复默认”按钮" loading="lazy" decoding="async" width="900" height="1956"><figcaption>恢复默认设置之前的确认</figcaption></figure>
     </li>
     <li class="step">
-      <p>点击<span class="ui">恢复默认</span>。要保持现状，改为点击<span class="ui">取消</span>。</p>
+      <p>点击<span class="ui">恢复默认</span>。要保持现状，改为点击对话框以外的任意位置；对话框随即关闭，设置不会有任何改变。</p>
       <p class="check"><b class="check-label">确认：</b>各项设置显示默认值，语言跟随系统。<span class="ui">LiveView Mix</span> 一行显示<span class="ui">未设置</span>，<span class="ui">竖向页面</span>开关关闭。设备仍列在设备标签页中。</p>
     </li>
   </ol>
@@ -4170,11 +4170,11 @@ Content-Type: application/json
   <ol class="steps">
     <li class="step">
       <p>在<span class="ui">重置</span>部分点击<span class="ui">删除所有数据</span>。</p>
-      <p class="check"><b class="check-label">确认：</b>出现标题为<span class="ui">要删除所有数据吗？</span>的对话框，带有<span class="ui">全部删除</span>和<span class="ui">取消</span>按钮。其文字取决于 iCloud 备份。有备份时为<span class="ui">这将从本设备移除所有设备、摄像头和已保存的密码。您的 iCloud 备份和订阅不受影响。</span>没有备份时为<span class="ui">没有 iCloud 备份，因此此操作无法撤销——摄像头密码仅保存在本设备上，无法恢复。您的订阅不受影响。</span></p>
-      <figure class="phone"><img src="guide/img/settings-delete-all.jpg" alt="设置页面上方的对话框“要删除所有数据吗？”，带有“全部删除”和“取消”按钮" loading="lazy" decoding="async" width="900" height="1956"><figcaption>删除所有数据之前的确认</figcaption></figure>
+      <p class="check"><b class="check-label">确认：</b>设置页面上方出现标题为<span class="ui">要删除所有数据吗？</span>的对话框，带有<span class="ui">全部删除</span>按钮。无论在 iPhone 还是 iPad 上，该对话框都没有取消按钮。其文字取决于 iCloud 备份。有备份时为<span class="ui">这将从本设备移除所有设备、摄像头和已保存的密码。您的 iCloud 备份和订阅不受影响。</span>没有备份时为<span class="ui">没有 iCloud 备份，因此此操作无法撤销——摄像头密码仅保存在本设备上，无法恢复。您的订阅不受影响。</span></p>
+      <figure class="phone"><img src="guide/img/settings-delete-all.jpg" alt="设置页面上方的对话框“要删除所有数据吗？”，带有“全部删除”按钮" loading="lazy" decoding="async" width="900" height="1956"><figcaption>删除所有数据之前的确认</figcaption></figure>
     </li>
     <li class="step">
-      <p>点击<span class="ui">全部删除</span>。要保留数据，改为点击<span class="ui">取消</span>。</p>
+      <p>点击<span class="ui">全部删除</span>。要保留数据，改为点击对话框以外的任意位置；对话框随即关闭，不会删除任何数据。</p>
       <p class="check"><b class="check-label">确认：</b>设备标签页显示<span class="ui">没有设备</span>，各项设置显示默认值。已有的 iCloud 备份可按<a class="xref" href="#share-restore">“从 iCloud 恢复”</a>所述恢复。</p>
     </li>
   </ol>
@@ -4212,7 +4212,7 @@ Content-Type: application/json
     <li class="step">
       <p>点击<span class="ui">操作手册</span>。</p>
       <p class="check"><b class="check-label">确认：</b>浏览器打开本手册 <code>https://cam-hub.almx.cc/guide.html</code>。需要互联网连接。通过设备的 App 切换器回到 Cam Hub。</p>
-      <figure class="phone"><img src="guide/img/settings-user-manual.jpg" alt="“设置”标签页的下部：“重置”部分的各行及其说明，“法律条款”部分有“使用条款”和“隐私政策”，“关于”部分有“版本”，以及“操作手册”一行及其说明" loading="lazy" decoding="async" width="900" height="1947"><figcaption>“操作手册”一行</figcaption></figure>
+      <figure class="phone"><img src="guide/img/settings-user-manual.jpg" alt="“设置”标签页的下部：“重置”部分的最后几行及其说明，“法律条款”部分有“使用条款”和“隐私政策”，“关于”部分有“版本”，“操作手册”一行及其说明，以及其下的“联系开发团队”一行" loading="lazy" decoding="async" width="900" height="1956"><figcaption>“操作手册”一行</figcaption></figure>
     </li>
   </ol>
   <ul>
@@ -4668,7 +4668,7 @@ Content-Type: application/json
       <tr><td>日历中显示<span class="ui">此录像机无法告知哪些日期有录像。</span>或<span class="ui">无法加载这个月份。</span></td><td>设备不提供有录像日期的列表，或没有应答该月份的查询。</td><td>在没有标记的情况下选择日期。对未能加载的月份，点击<span class="ui">重试</span>。参见<a class="xref" href="#playback-calendar">“录像日历”</a>。</td></tr>
       <tr><td><span class="ui">这一天未检测到人员。</span>或<span class="ui">这一天没有事件。</span></td><td>设备在这一天没有记录任何事件。</td><td>改用连续录像列表或时间轴，参见<a class="xref" href="#playback-list">“录像列表与事件”</a>。</td></tr>
       <tr><td><span class="ui">此设备无法搜索人员事件索引。</span>或<span class="ui">此设备无法搜索其事件。</span></td><td>设备没有响应事件搜索，或没有保存人员检测索引。</td><td>重新选择日期。从连续录像列表或时间轴播放录像，参见<a class="xref" href="#playback-list">“录像列表与事件”</a>。</td></tr>
-      <tr><td><span class="ui">该账号无法读取这台设备上的录像。</span></td><td>账号没有回放录像的权限。</td><td>使用有回放权限的账号，或在设备上授予该权限。</td></tr>
+      <tr><td><span class="ui">该账号无法读取这台设备上的录像。</span></td><td>设备拒绝了登录：账号没有回放录像的权限，或者用户名或密码错误，例如密码已在设备上更改。</td><td>在设备页上用<span class="ui">编辑凭据</span>检查用户名和密码，参见<a class="xref" href="#devices-credentials">“更改设备的用户名和密码”</a>。两者都正确时，使用有回放权限的账号，或在设备上授予该权限。</td></tr>
       <tr><td><span class="ui">无法连接到这台设备。</span>或<span class="ui">连接超时。</span></td><td>设备没有应答当天的搜索。</td><td>检查网络，并重新选择日期。</td></tr>
       <tr><td><span class="ui">这台设备无法识别此摄像头的录像。</span></td><td>设备找不到此摄像头的录像，例如摄像头没有存储，或以意外的方式报告其录像。</td><td>在设备上检查该摄像头是否录像。换一个通道或另一天可能可行。</td></tr>
       <tr><td><span class="ui">录像机没有播放这段录像，可能已被覆盖——请选择其他时间。</span></td><td>录像在列表中，但设备拒绝播放，通常是因为它已被较新的录像取代。</td><td>选择较晚的时间或另一天。</td></tr>
@@ -4716,7 +4716,7 @@ Content-Type: application/json
       <tr><td>在 Apple Watch 上按下按钮后出现红色警告三角形</td><td>原因与墙上相同。此外，还可能是手表不在家庭 Wi-Fi 网络中时自行向家庭网络地址发送了请求、iPhone 在约 20 秒内没有应答，或者套餐不再涵盖该面板；最后一种情况下，该按钮随后会从手表上消失。</td><td>在 iPhone 上检查按钮编辑界面中的<span class="ui">发送方式</span>。参见<a class="xref" href="#webhook-watch">“Apple Watch 上的按钮”</a>。</td></tr>
     </tbody>
   </table></div>
-  <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="同一个按钮的三种状态：发送时的转圈、成功后的绿色对勾，以及失败后的橙色警告三角形" loading="lazy" decoding="async" width="1600" height="736"><figcaption>按钮的三种状态</figcaption></figure>
+  <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="LiveView Mix 墙上一个控制面板的三个按钮，各处于一种状态：发送时的转圈、成功后的绿色对勾，以及失败后的橙色警告三角形" loading="lazy" decoding="async" width="1600" height="736"><figcaption>按钮的三种状态，每个按钮各显示一种</figcaption></figure>
 
   <h3 id="trouble-health">磁盘健康</h3>
   <p><span class="ui">磁盘健康</span>页面读取能够报告磁盘状态的设备的磁盘状态，参见<a class="xref" href="#devices-health">“磁盘健康”</a>。网络存储设备通过 SNMP 报告磁盘状态，需要设置一次。Apple TV 没有磁盘健康页面。</p>

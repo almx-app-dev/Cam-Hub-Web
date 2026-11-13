@@ -346,7 +346,7 @@
   <p>Wird ein YouTube- oder Twitch-Link in <span class="ui">IP-Adresse oder Hostname</span> eingegeben, ist die Schaltfläche <span class="ui">Hinzufügen</span> nicht verfügbar, und das Formular bietet <span class="ui">Als YouTube-Livestream hinzufügen</span> oder <span class="ui">Als Twitch-Kanal hinzufügen</span> an. Ein Tippen darauf öffnet den Bildschirm dieses Dienstes mit dem bereits eingetragenen Link; nachdem der Stream hinzugefügt wurde, schließen sich beide Bildschirme. Wo die beiden Dienste nicht angeboten werden, wird der Link wie eine gewöhnliche Adresse behandelt.</p>
 
   <h3 id="add-failed">Wenn das Hinzufügen fehlschlägt: die Checkliste</h3>
-  <p>Schlägt das Hinzufügen fehl, zeigt das Formular die Fehlermeldung in Rot. Bei <span class="ui">Automatisch erkennen</span> werden darunter die gefundenen offenen Ports aufgeführt. Darunter folgt die Liste <span class="ui">Zuerst prüfen</span>. Die Reihenfolge der Liste hängt von der Art des Fehlers ab; die wahrscheinlichste Ursache steht zuerst. Arbeiten Sie die Punkte von oben nach unten ab und tippen Sie dann erneut auf <span class="ui">Hinzufügen</span>.</p>
+  <p>Schlägt das Hinzufügen fehl, zeigt das Formular die Fehlermeldung in Rot. Bei <span class="ui">Automatisch erkennen</span> werden darunter die gefundenen offenen Ports aufgeführt; hat nichts geantwortet, steht dort stattdessen die Zeile <span class="ui">An dieser Adresse wurden keine offenen Ports gefunden.</span> Darunter folgt die Liste <span class="ui">Zuerst prüfen</span>. Die Reihenfolge der Liste hängt von der Art des Fehlers ab; die wahrscheinlichste Ursache steht zuerst. Arbeiten Sie die Punkte von oben nach unten ab und tippen Sie dann erneut auf <span class="ui">Hinzufügen</span>.</p>
   <div class="table-wrap"><table>
     <thead><tr><th>Fehlermeldung</th><th>Prüfpunkte (von oben nach unten)</th></tr></thead>
     <tbody>
@@ -408,7 +408,7 @@
   <h3 id="add-report">Gerätebericht (experimentell)</h3>
   <div class="callout warn">
     <strong class="t">Experimentelle Funktion, keine Garantie für Unterstützung</strong>
-    <p>Der Gerätebericht ist eine experimentelle Funktion. Sie kann jederzeit geändert oder entfernt werden. Das Senden eines Berichts bedeutet nicht, dass der Entwickler Unterstützung für das Gerät hinzufügt, und es gibt keine Garantie für eine Antwort, eine Lösung oder einen Zeitplan. Manche Geräte lassen sich grundsätzlich nicht unterstützen, zum Beispiel wegen geschlossener oder proprietärer Protokolle, reinem Cloud-Betrieb, Lizenz- oder Verschlüsselungsbeschränkungen oder Hardware-Grenzen. Die Funktion ist kein Kanal für Kundensupport oder dringende Hilfe.</p>
+    <p>Der Gerätebericht ist eine experimentelle Funktion. Sie kann jederzeit geändert oder entfernt werden. Das Senden eines Berichts bedeutet nicht, dass der Entwickler Unterstützung für das Gerät hinzufügt, und es gibt keine Garantie für eine Antwort, eine Lösung oder einen Zeitplan. Manche Geräte lassen sich grundsätzlich nicht unterstützen, zum Beispiel wegen geschlossener oder proprietärer Protokolle, reinem Cloud-Betrieb, Lizenz- oder Verschlüsselungsbeschränkungen oder Hardware-Grenzen. Die Funktion ist kein Dienst für Kundensupport oder dringende Hilfe.</p>
     <p>Beim Sammeln der Details erfolgt die Anmeldung am Gerät mit dem eingegebenen Konto und Passwort. Fehlgeschlagene Anmeldungen werden vom Gerät gezählt und können protokolliert werden. Ist das Passwort möglicherweise falsch, ist es zuerst wie in <a class="xref" href="#add-failed">„Wenn das Hinzufügen fehlschlägt: die Checkliste“</a> beschrieben zu korrigieren, statt es wiederholt zu versuchen.</p>
   </div>
   <p>Die Schaltfläche <span class="ui">Details an den Entwickler senden</span>, gekennzeichnet mit <span class="ui">Experimentell</span>, erscheint unter der Checkliste nur, nachdem das Hinzufügen fehlgeschlagen ist; bei erfolgreichem Hinzufügen wird sie nicht angezeigt. Die Funktion läuft nur, wenn die Schaltfläche getippt wird. Sie prüft das Gerät mit rein lesenden Anfragen und stellt einen Textbericht zur Durchsicht zusammen. Cam Hub lädt den Bericht nie von selbst hoch; der Bericht wird nur gesendet, wenn er aus dem eigenen Mail-Konto per E-Mail versendet wird.</p>
@@ -430,12 +430,12 @@
     <li class="step">
       <p>Warten Sie, bis das Sammeln abgeschlossen ist.</p>
       <p class="check"><b class="check-label">Ergebnis:</b> <span class="ui">Was wir gefunden haben</span> nennt die wahrscheinlichen Ursachen und was zuerst zu versuchen ist, in einfacher Sprache. Fällt nichts auf, zeigt der Bildschirm <span class="ui">Nichts Auffälliges.</span></p>
-      <figure class="phone"><img src="guide/img/device-report-found.jpg" alt="Die Ergebnisliste des Geräteberichts mit wahrscheinlichen Ursachen wie Ports, Netzwerksegment und VPN" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Die Ergebnisliste</figcaption></figure>
+      <figure class="phone"><img src="guide/img/device-report-found.jpg" alt="Die Ergebnisliste des Geräteberichts: Das Gerät liegt in einem anderen Netzwerksegment, und ein VPN ist aktiv; darunter die Schalter des Abschnitts Was enthalten sein soll" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Die Ergebnisliste</figcaption></figure>
     </li>
     <li class="step">
       <p>Schalten Sie unter <span class="ui">Was enthalten sein soll</span> die Punkte aus, die nicht gesendet werden sollen.</p>
       <p class="check"><b class="check-label">Ergebnis:</b> Der Text im Abschnitt <span class="ui">Der Bericht</span> wird sofort aktualisiert.</p>
-      <figure class="phone"><img src="guide/img/device-report-text.jpg" alt="Die Schalter für den Berichtsinhalt und der vollständige Text des Berichts, darunter die Schaltflächen zum Senden" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Inhaltsschalter und vollständiger Bericht</figcaption></figure>
+      <figure class="phone"><img src="guide/img/device-report-text.jpg" alt="Der vollständige Text des Berichts, darunter der Hinweis, dass der Bericht in der App gespeichert wird, die Schaltflächen E-Mail an den Entwickler, Kopieren und Teilen … und ganz unten die Schaltfläche Gespeicherte Berichte löschen" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Der vollständige Bericht und die Schaltflächen zum Senden</figcaption></figure>
     </li>
     <li class="step">
       <p>Prüfen Sie den vollständigen Text im Abschnitt <span class="ui">Der Bericht</span>.</p>
@@ -483,13 +483,13 @@
   </div>
 
   <h4>Gespeicherte Berichte</h4>
-  <p>Jeder Bericht wird auf diesem Gerät gespeichert, und die fünf neuesten bleiben erhalten. Nach einem fehlgeschlagenen Versuch erscheint unter <span class="ui">Details an den Entwickler senden</span> ein Eintrag mit dem Speicherdatum, zum Beispiel <span class="ui">Letzter Bericht vom 13. Nov. 2026, 09:41</span>; ein Tippen darauf öffnet den zuletzt gespeicherten Bericht. Ein gespeicherter Bericht zeigt seinen Inhalt so, wie er gespeichert wurde, und lässt sich nicht Punkt für Punkt umschalten; um den Inhalt neu zu wählen, sind die Details erneut zu sammeln.</p>
+  <p>Jeder Bericht wird in der App gespeichert, und die fünf neuesten bleiben erhalten. Nach einem fehlgeschlagenen Versuch erscheint unter <span class="ui">Details an den Entwickler senden</span> ein Eintrag mit dem Speicherdatum, zum Beispiel <span class="ui">Letzter Bericht vom 13. Nov. 2026, 09:41</span>; ein Tippen darauf öffnet den zuletzt gespeicherten Bericht. Ein gespeicherter Bericht zeigt seinen Inhalt so, wie er gespeichert wurde, und lässt sich nicht Punkt für Punkt umschalten; um den Inhalt neu zu wählen, sind die Details erneut zu sammeln.</p>
   <p>So werden die gespeicherten Berichte gelöscht:</p>
   <ol class="steps">
     <li class="step">
       <p>Tippen Sie unten auf der Berichtsseite auf <span class="ui">Gespeicherte Berichte löschen</span>.</p>
-      <p class="check"><b class="check-label">Ergebnis:</b> Der Bildschirm zeigt den Dialog <span class="ui">Alle gespeicherten Berichte löschen?</span>, der erklärt, dass jeder auf diesem Gerät gespeicherte Gerätebericht entfernt wird und dass ein bereits per E-Mail gesendeter Bericht nicht betroffen ist.</p>
-      <figure class="phone"><img src="guide/img/add-report-delete-confirm.jpg" alt="Die Seite Gerätebericht mit dem Dialog Alle gespeicherten Berichte löschen? darüber: der Text, dass jeder auf diesem Gerät gespeicherte Bericht entfernt wird und ein bereits per E-Mail gesendeter Bericht nicht betroffen ist, und die Schaltfläche Gespeicherte Berichte löschen" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Die Bestätigung vor dem Löschen der gespeicherten Berichte</figcaption></figure>
+      <p class="check"><b class="check-label">Ergebnis:</b> Der Bildschirm zeigt den Dialog <span class="ui">Alle gespeicherten Berichte löschen?</span>, der erklärt, dass jeder gespeicherte Gerätebericht entfernt wird und dass ein bereits per E-Mail gesendeter Bericht nicht betroffen ist.</p>
+      <figure class="phone"><img src="guide/img/add-report-delete-confirm.jpg" alt="Die Seite Gerätebericht mit dem Dialog Alle gespeicherten Berichte löschen? darüber: der Text, dass jeder gespeicherte Gerätebericht entfernt wird und ein bereits per E-Mail gesendeter Bericht nicht betroffen ist, und die Schaltfläche Gespeicherte Berichte löschen" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Die Bestätigung vor dem Löschen der gespeicherten Berichte</figcaption></figure>
     </li>
     <li class="step">
       <p>Tippen Sie im Dialog auf <span class="ui">Gespeicherte Berichte löschen</span>.</p>
@@ -504,7 +504,7 @@
     <li class="step">
       <p>Tippen Sie unten auf dem Bildschirm auf den Tab <span class="ui">Werkzeuge</span>.</p>
       <p class="check"><b class="check-label">Ergebnis:</b> Im Abschnitt <span class="ui">Subnetz</span> zeigt die Zeile <span class="ui">Dieses Gerät</span> die aktuelle Netzwerkadresse und Maske, zum Beispiel <code>192.168.1.10/24</code>. Das Adressfeld und <span class="ui">Bereich</span> sind mit dem aktuellen Netzwerk ausgefüllt.</p>
-      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="Der Tab Werkzeuge: der Abschnitt Subnetz mit der Adresse dieses Geräts, dem Netzwerk, dem Bereich und der Schaltfläche Scannen, darunter Gefundene Geräte und Tacho" loading="lazy" decoding="async" width="900" height="1745"><figcaption>Der Tab Werkzeuge (Beispielnetzwerk)</figcaption></figure>
+      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="Der Tab Werkzeuge mit seinem Titel oben: der Abschnitt Subnetz mit der Adresse dieses Geräts, dem Netzwerk, dem Bereich und der Schaltfläche Scannen, darunter der Abschnitt Gefundene Geräte, noch leer, und die Zeile Tacho" loading="lazy" decoding="async" width="900" height="1634"><figcaption>Der Tab Werkzeuge (Beispielnetzwerk)</figcaption></figure>
     </li>
     <li class="step">
       <p>Optional: Um ein anderes Netzwerk zu scannen, geben Sie das Netzwerk im Adressfeld ein, zum Beispiel <code>192.168.1.0</code>, und wählen Sie den Bereich im Menü <span class="ui">Bereich</span>.</p>
@@ -881,8 +881,8 @@
     </li>
     <li class="step">
       <p>Tippen Sie auf <span class="ui">Kamera umbenennen</span>.</p>
-      <p class="check"><b class="check-label">Ergebnis:</b> Der Dialog <span class="ui">Kamera umbenennen</span> öffnet sich mit dem Text <span class="ui">Gib dieser Kamera einen eigenen Namen. Der Name des Geräts bleibt darunter erhalten, sodass ein Aktualisieren deinen Namen nicht überschreibt.</span>; das Feld <span class="ui">Name</span> enthält den aktuellen Namen, dazu kommen die Schaltflächen <span class="ui">Abbrechen</span>, <span class="ui">Gerätenamen verwenden</span> und <span class="ui">Sichern</span>.</p>
-      <figure class="phone"><img src="guide/img/channel-rename-alert.jpg" alt="Der Dialog Kamera umbenennen mit dem Feld Name und den Schaltflächen Abbrechen, Gerätenamen verwenden und Sichern" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Der Dialog Kamera umbenennen</figcaption></figure>
+      <p class="check"><b class="check-label">Ergebnis:</b> Der Dialog <span class="ui">Kamera umbenennen</span> öffnet sich mit dem Text <span class="ui">Gib dieser Kamera einen eigenen Namen. Der Name des Geräts bleibt darunter erhalten, sodass ein Aktualisieren deinen Namen nicht überschreibt.</span>; das Feld <span class="ui">Name</span> enthält den aktuellen Namen, dazu kommen die Schaltflächen <span class="ui">Gerätenamen verwenden</span>, <span class="ui">Sichern</span> und <span class="ui">Abbrechen</span>.</p>
+      <figure class="phone"><img src="guide/img/channel-rename-alert.jpg" alt="Der Dialog Kamera umbenennen mit dem Feld Name und den Schaltflächen Gerätenamen verwenden, Sichern und Abbrechen; unter dem Dialog ist die Tastatur geöffnet" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Der Dialog Kamera umbenennen</figcaption></figure>
     </li>
     <li class="step">
       <p>Geben Sie den neuen Namen in das Feld <span class="ui">Name</span> ein.</p>
@@ -1009,7 +1009,7 @@
     <li class="step">
       <p>Tippen Sie auf ein Vorschaubild, das ein Bild zeigt.</p>
       <p class="check"><b class="check-label">Ergebnis:</b> Eine Nahansicht dieser Kamera öffnet sich über der Wand; oben stehen <span class="ui">Zurück</span> und der Kameraname.</p>
-      <figure class="phone"><img src="guide/img/fullwall-closeup.jpg" alt="Die Nahansicht einer Kamera über der Wand: die Schaltfläche Zurück und der Kameraname oben links, das Bild in der Mitte des schwarzen Bildschirms und die Taste für die Kamerasteuerung unten rechts" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Die Nahansicht einer Kamera</figcaption></figure>
+      <figure class="phone"><img src="guide/img/fullwall-closeup.jpg" alt="Die Nahansicht einer Kamera über der Wand: die Schaltfläche Zurück und der Kameraname oben links, die Taste Aufnahmen mit einem Uhr-Symbol oben rechts, das Bild in der Mitte des schwarzen Bildschirms und die Taste für die Kamerasteuerung unten rechts" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Die Nahansicht einer Kamera</figcaption></figure>
     </li>
     <li class="step">
       <p>Tippen Sie oben links in der Nahansicht auf <span class="ui">Zurück</span>.</p>
@@ -1282,7 +1282,7 @@
     <li class="step">
       <p>Tippen Sie auf das Vorschaubild eines Kanals, der ein Livebild zeigt.</p>
       <p class="check"><b class="check-label">Ergebnis:</b> Die Einzelansicht öffnet sich. Der Titel ist der Name der Kamera, und oben links im Bild erscheint das grüne Kennzeichen <span class="ui">LIVE</span>. Das Bild startet mit der Qualität aus <span class="path"><span class="ui">Einstellungen</span> › <span class="ui">Standardqualität</span> › <span class="ui">Einzelne Kamera</span></span> (HD, sofern nicht geändert).</p>
-      <figure class="phone"><img src="guide/img/single-live.jpg" alt="Die Einzelansicht im Live-Modus: das Bild mit dem Kennzeichen LIVE und der Taste für die Kamerasteuerung, darunter die Steuerleiste mit Schnappschuss links und dem SD/HD-Schalter rechts sowie das Aufnahmefeld mit Tag, Zeitleiste und Liste" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Die Einzelansicht im Live-Modus</figcaption></figure>
+      <figure class="phone"><img src="guide/img/single-live.jpg" alt="Die Einzelansicht im Live-Modus: das Bild mit dem Kennzeichen LIVE und der Taste für die Kamerasteuerung, darunter die Steuerleiste mit Schnappschuss, der roten Aufnahmetaste und dem SD/HD-Schalter sowie das Aufnahmefeld mit Kalendertaste, Tag, Zeitleiste und Liste" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Die Einzelansicht im Live-Modus</figcaption></figure>
     </li>
   </ol>
   <p>Tippen Sie oben links auf die Zurück-Schaltfläche, um die Ansicht zu verlassen.</p>
@@ -1293,7 +1293,7 @@
     <tbody>
       <tr><td>Navigationsleiste</td><td>Die Zurück-Schaltfläche und der Name der Kamera. Auf einem iPad und auf dem inneren Display des iPhone Duo befindet sich rechts die Schaltfläche <span class="ui">In neuem Fenster öffnen</span>; siehe <a class="xref" href="#single-window">„Eine Kamera in einem eigenen Fenster“</a>.</td></tr>
       <tr><td>Bild (Hochformat, 16:9)</td><td>Das Kennzeichen oben links nennt den Modus: <span class="ui">LIVE</span> (grün) oder <span class="ui">WIEDERGABE 15:00:03</span> mit der Wiedergabezeit (rot). Die runde Taste unten rechts ist im Live-Modus die Kamerasteuerung für PTZ; siehe <a class="xref" href="#single-ptz">„PTZ-Steuerung: Kamera bewegen“</a>. Während eine Aufnahme läuft, ist sie die Geschwindigkeitstaste; siehe <a class="xref" href="#playback-speed">„Wiedergabegeschwindigkeit“</a>.</td></tr>
-      <tr><td>Steuerleiste</td><td>Links <span class="ui">Schnappschuss</span>, dann die rote Aufnahmetaste; daneben die Lautsprechertaste, wenn die Kamera Ton sendet, und die Sprechtaste bei einer Kamera, über die sich sprechen lässt; rechts der SD/HD-Schalter im Live-Modus oder <span class="ui">Zurück zu Live</span> während der Wiedergabe. Ist in der Leiste wenig Platz, zum Beispiel in einer Sprache mit langen Wörtern, zeigt <span class="ui">Schnappschuss</span> nur sein Kamerasymbol. Siehe <a class="xref" href="#single-controls">„Schnappschuss, Ton und Qualität“</a>, <a class="xref" href="#single-clip">„Clip aufnehmen“</a> und <a class="xref" href="#single-talk">„Gegensprechen“</a>.</td></tr>
+      <tr><td>Steuerleiste</td><td>Links <span class="ui">Schnappschuss</span>, dann die rote Aufnahmetaste; daneben die Lautsprechertaste, wenn die Kamera Ton sendet, und die Sprechtaste bei einer Kamera, über die sich sprechen lässt; rechts der SD/HD-Schalter im Live-Modus oder <span class="ui">Zurück zu Live</span> während der Wiedergabe. Ist in der Leiste wenig Platz, zum Beispiel weil die Lautsprecher- oder die Sprechtaste darin steht oder eine Sprache mit langen Wörtern eingestellt ist, zeigt <span class="ui">Schnappschuss</span> nur sein Kamerasymbol. Siehe <a class="xref" href="#single-controls">„Schnappschuss, Ton und Qualität“</a>, <a class="xref" href="#single-clip">„Clip aufnehmen“</a> und <a class="xref" href="#single-talk">„Gegensprechen“</a>.</td></tr>
       <tr><td>Aufnahmefeld</td><td>Die Überschrift <span class="ui">Aufnahmen</span> mit Tag, Zeitleiste und Liste der Aufnahmen sowie bei unterstützten Geräten die Taste für den Aufnahmekalender. Das Feld erscheint nur bei Geräten, die die Wiedergabe unterstützen; bei allen anderen Geräten besteht die Ansicht aus dem Bild und der Steuerleiste. Siehe <a class="xref" href="#playback">Kapitel 7, „Aufzeichnungswiedergabe und Geschwindigkeit“</a>.</td></tr>
     </tbody>
   </table></div>
@@ -1355,7 +1355,7 @@
     <li class="step">
       <p>Tippen Sie in der Steuerleiste auf die Lautsprechertaste (<span class="ui">Ton ein</span>).</p>
       <p class="check"><b class="check-label">Ergebnis:</b> Das Symbol wechselt von einem durchgestrichenen Lautsprecher zu einem Lautsprecher mit Schallwellen, und der Ton der Kamera wird wiedergegeben.</p>
-      <figure class="phone"><img src="guide/img/single-audio.jpg" alt="Die Steuerleiste einer Kamera, die Ton sendet, mit der Lautsprechertaste zwischen Schnappschuss und dem SD/HD-Schalter" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Die Lautsprechertaste in der Steuerleiste</figcaption></figure>
+      <figure class="phone"><img src="guide/img/single-audio.jpg" alt="Die Steuerleiste einer Kamera, die Ton sendet: Schnappschuss als Kamerasymbol, die rote Aufnahmetaste, die Lautsprechertaste und der SD/HD-Schalter" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Die Lautsprechertaste in der Steuerleiste</figcaption></figure>
     </li>
     <li class="step">
       <p>Tippen Sie erneut auf die Lautsprechertaste (<span class="ui">Ton aus</span>).</p>
@@ -1423,7 +1423,7 @@
   <h3 id="single-talk">Gegensprechen</h3>
   <p>Über eine eigenständige Kamera mit Lautsprecher lässt sich sprechen. Das Gegensprechen funktioniert wie bei einem Funkgerät: Taste gedrückt halten, um zu sprechen, loslassen, um zuzuhören. Cam Hub fragt beim Öffnen der Ansicht den Sprechkanal der Kamera ab; die Sprechtaste (ein Mikrofonsymbol) erscheint in der Steuerleiste nach der Aufnahmetaste und der Lautsprechertaste, wenn die Kamera einen solchen Kanal meldet.</p>
   <p>Voraussetzungen: eine eigenständige Kamera einer unterstützten Marke, die einen Kanal für Zwei-Wege-Audio meldet, der Live-Modus und ein Kanal, der im Abo enthalten ist. Kanäle eines Recorders haben keine Sprechtaste: Der Sprechkanal eines Recorders ist der eigene Audioausgang des Recorders, nicht der Lautsprecher der Kamera.</p>
-  <figure class="phone"><img src="guide/img/single-talk.jpg" alt="Die Einzelansicht einer Kamera mit Lautsprecher: die Sprechtaste mit Mikrofonsymbol in der Steuerleiste und der SD/HD-Schalter" loading="lazy" decoding="async" width="900" height="1947"><figcaption>Die Sprechtaste in der Steuerleiste</figcaption></figure>
+  <figure class="phone"><img src="guide/img/single-talk.jpg" alt="Die Einzelansicht einer Kamera mit Lautsprecher: die Sprechtaste mit Mikrofonsymbol in der Steuerleiste und der SD/HD-Schalter" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Die Sprechtaste in der Steuerleiste</figcaption></figure>
   <p>Beim ersten Drücken der Sprechtaste fragt ein Dialog des Systems nach dem Zugriff auf das Mikrofon. Erlauben Sie den Zugriff und drücken Sie die Taste dann erneut.</p>
   <ol class="steps">
     <li class="step">
@@ -1486,7 +1486,7 @@
     <li class="step">
       <p>Tippen Sie unten rechts im Bild auf die runde Taste (<span class="ui">Kamera bewegen</span>).</p>
       <p class="check"><b class="check-label">Ergebnis:</b> Das Feld öffnet sich links von der Taste, und die Taste zeigt ein Kreuz (<span class="ui">Kamerasteuerung ausblenden</span>). Das Feld enthält eine Kapsel mit Plus und Minus für den Zoom, eine Scheibe mit vier Pfeilen und einem Haus-Symbol in der Mitte sowie eine Stern-Taste. Bei einer Kamera, die das Ausrichten per Berührung unterstützt, kommt neben der Scheibe, über dem Stern, eine Ausrichtungstaste mit Zielsymbol hinzu.</p>
-      <figure class="phone"><img src="guide/img/single-ptz.jpg" alt="Die Einzelansicht mit geöffneter Kamerasteuerung: die Zoom-Kapsel, die Richtungsscheibe mit dem Haus-Symbol, die Ausrichtungstaste, die Stern-Taste und die Kreuz-Taste auf dem Bild" loading="lazy" decoding="async" width="900" height="1947"><figcaption>Die Kamerasteuerung auf dem Bild</figcaption></figure>
+      <figure class="phone"><img src="guide/img/single-ptz.jpg" alt="Die Einzelansicht mit geöffneter Kamerasteuerung: die Zoom-Kapsel, die Richtungsscheibe mit dem Haus-Symbol, die Ausrichtungstaste, die Stern-Taste und die Kreuz-Taste auf dem Bild" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Die Kamerasteuerung auf dem Bild</figcaption></figure>
     </li>
     <li class="step">
       <p>Halten Sie einen Pfeil der Scheibe gedrückt (<span class="ui">Nach oben neigen</span>, <span class="ui">Nach unten neigen</span>, <span class="ui">Nach links schwenken</span> oder <span class="ui">Nach rechts schwenken</span>).</p>
@@ -1527,7 +1527,7 @@
 
   <h4>Kamera durch Berühren des Bildes ausrichten</h4>
   <p>Bei Kameras, die es unterstützen, lässt sich die Kamera auf eine Stelle im Bild drehen oder direkt in einen Bereich zoomen, der auf dem Bild aufgezogen wird. Voraussetzung: Das Feld ist geöffnet und zeigt die Ausrichtungstaste.</p>
-  <figure class="phone"><img src="guide/img/single-ptz-aim.jpg" alt="Die Einzelansicht beim Ausrichten per Berührung: der Hinweis oben im Bild, die hervorgehobene Ausrichtungstaste und die Kreuz-Taste" loading="lazy" decoding="async" width="900" height="1947"><figcaption>Ausrichten per Berührung</figcaption></figure>
+  <figure class="phone"><img src="guide/img/single-ptz-aim.jpg" alt="Die Einzelansicht beim Ausrichten per Berührung: der Hinweis oben im Bild, die hervorgehobene Ausrichtungstaste und die Kreuz-Taste" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Ausrichten per Berührung</figcaption></figure>
   <ol class="steps">
     <li class="step">
       <p>Tippen Sie auf die Ausrichtungstaste (<span class="ui">3D-Positionierung</span>).</p>
@@ -1683,7 +1683,7 @@
     </tbody>
   </table></div>
   <div class="shots pair">
-    <figure class="phone"><img src="guide/img/single-reconnecting.jpg" alt="Die Einzelansicht, während der Stream die Verbindung wieder aufbaut: ein Ladesymbol mit dem Text Verbindung wird wiederhergestellt … auf dem schwarzen Bildbereich, das Kennzeichen LIVE oben links, die Taste für die Kamerasteuerung unten rechts, darunter die Steuerleiste mit Schnappschuss links und dem SD/HD-Schalter rechts, die Zeile Das Gerät war nicht erreichbar. sowie das Aufnahmefeld mit leerer Zeitleiste" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Das Bild, während die Verbindung erneut aufgebaut wird</figcaption></figure>
+    <figure class="phone"><img src="guide/img/single-reconnecting.jpg" alt="Die Einzelansicht, während der Stream die Verbindung wieder aufbaut: ein Ladesymbol mit dem Text Verbindung wird wiederhergestellt … auf dem schwarzen Bildbereich, das Kennzeichen LIVE oben links, die Taste für die Kamerasteuerung unten rechts, darunter die Steuerleiste mit Schnappschuss und der roten Aufnahmetaste links und dem SD/HD-Schalter rechts, die Zeile Das Gerät war nicht erreichbar. sowie das Aufnahmefeld mit leerer Zeitleiste" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Das Bild, während die Verbindung erneut aufgebaut wird</figcaption></figure>
     <figure class="phone"><img src="guide/img/single-failed.jpg" alt="Die Einzelansicht mit einer Fehlermeldung und der Schaltfläche Erneut versuchen über dem dunklen Bildbereich" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Eine Fehlermeldung mit Erneut versuchen</figcaption></figure>
   </div>
   <ol class="steps">
@@ -1719,7 +1719,7 @@
   <div class="table-wrap"><table>
     <thead><tr><th>Angebot</th><th>Wird angezeigt, wenn</th></tr></thead>
     <tbody>
-      <tr><td>Aufnahmefeld mit Tag, Zeitleiste und Liste</td><td>Das Gerät wurde mit einer Verbindungsart hinzugefügt, die die Wiedergabe bietet; siehe <a class="xref" href="#brands-matrix">„Was mit welcher Verbindungsart funktioniert“</a>. Darf das Konto keine Aufnahmen lesen, erscheint das Feld trotzdem, mit <span class="ui">Dieses Konto darf die Aufnahmen dieses Geräts nicht lesen.</span> über der Zeitleiste.</td></tr>
+      <tr><td>Aufnahmefeld mit Tag, Zeitleiste und Liste</td><td>Das Gerät wurde mit einer Verbindungsart hinzugefügt, die die Wiedergabe bietet; siehe <a class="xref" href="#brands-matrix">„Was mit welcher Verbindungsart funktioniert“</a>. Verweigert das Gerät die Anmeldung, weil das Konto keine Aufnahmen lesen darf oder weil Benutzername oder Passwort falsch sind, erscheint das Feld trotzdem, mit <span class="ui">Dieses Konto darf die Aufnahmen dieses Geräts nicht lesen.</span> über der Zeitleiste.</td></tr>
       <tr><td>Taste für den Aufnahmekalender</td><td>Das Gerät führt zusätzlich einen Index seiner Aufnahmen nach Tagen; siehe <a class="xref" href="#playback-calendar">„Der Aufnahmekalender“</a>.</td></tr>
       <tr><td>Umschalter <span class="ui">Daueraufnahme</span> und <span class="ui">Ereignisse</span></td><td>Das Gerät wurde mit einer Verbindungsart hinzugefügt, die einen Index von Ereignissen bietet: von erkannten Personen oder von Bewegungen und Alarmeingängen; siehe <a class="xref" href="#brands-matrix">„Was mit welcher Verbindungsart funktioniert“</a>. Der Umschalter erscheint auch dann, wenn das Gerät selbst die Suche in diesem Index nicht beantwortet; siehe <a class="xref" href="#playback-list">„Die Liste der Aufnahmen und Ereignisse“</a>. Bei jeder anderen Verbindungsart erscheint der Umschalter nur, wenn der gewählte Tag oder der Vortag eine Aufnahme enthält, die das Gerät wegen eines Ereignisses erstellt hat. Andernfalls erscheint nur die Liste der Daueraufnahmen, ohne Umschalter.</td></tr>
       <tr><td>Geschwindigkeitstaste</td><td>Während der Wiedergabe, wenn das Gerät die Aufnahme schneller abspielen kann. Kann es das nicht, erscheint ein Hinweis; siehe <a class="xref" href="#playback-speed">„Wiedergabegeschwindigkeit“</a>.</td></tr>
@@ -1759,7 +1759,7 @@
 
   <h3 id="playback-calendar">Der Aufnahmekalender</h3>
   <p>Bei Geräten, die einen Index ihrer Aufnahmen nach Tagen führen, befindet sich zwischen der Überschrift <span class="ui">Aufnahmen</span> und dem Tag eine Kalendertaste. Ihr Kalender markiert die Tage mit Aufnahmen, sodass nicht ein Tag nach dem anderen ausprobiert werden muss. Ohne einen solchen Index wird die Taste nicht angezeigt, und der Tag wird wie in <a class="xref" href="#playback-day">„Tag wählen“</a> beschrieben gewählt.</p>
-  <figure class="phone"><img src="guide/img/playback-calendar.jpg" alt="Das Fenster Aufnahmekalender über der Einzelansicht: der Monat mit Pfeilen, die Tage mit Aufnahmen mit einem Punkt markiert, der gewählte Tag in einem ausgefüllten Kreis und die Zeile Tage mit einem Punkt haben Aufnahmen." loading="lazy" decoding="async" width="900" height="1947"><figcaption>Der Aufnahmekalender</figcaption></figure>
+  <figure class="phone"><img src="guide/img/playback-calendar.jpg" alt="Das Fenster Aufnahmekalender über der Einzelansicht: der Monat mit Pfeilen, die Tage mit Aufnahmen mit einem Punkt markiert, der gewählte Tag in einem ausgefüllten Kreis und die Zeile Tage mit einem Punkt haben Aufnahmen." loading="lazy" decoding="async" width="900" height="1956"><figcaption>Der Aufnahmekalender</figcaption></figure>
   <ol class="steps">
     <li class="step">
       <p>Tippen Sie neben dem Tag auf die Kalendertaste (<span class="ui">Aufnahmekalender</span>).</p>
@@ -1877,7 +1877,7 @@
       <tr><td><span class="ui">An diesem Tag gibt es keine Ereignisse.</span></td><td>Der Tag hat kein Ereignis, bei jedem anderen Gerät.</td></tr>
       <tr><td><span class="ui">Dieses Gerät konnte seinen Personenereignisindex nicht durchsuchen.</span></td><td>Erscheint unter <span class="ui">Ereignisse</span> anstelle der Liste, wenn das Gerät die Suche nach erkannten Personen nicht beantwortet, zum Beispiel ein älterer Recorder ohne Index erkannter Personen. Aufnahmen, die das Gerät wegen eines Ereignisses erstellt hat, werden dann nicht aufgelistet, lassen sich aber weiterhin über ihre roten Balken auf der Zeitleiste abspielen. Die Liste der Daueraufnahmen ist nicht betroffen.</td></tr>
       <tr><td><span class="ui">Dieses Gerät konnte seine Ereignisse nicht durchsuchen.</span></td><td>Dasselbe, bei einem Gerät, das Bewegungen und Alarmeingänge markiert.</td></tr>
-      <tr><td>Meldung mit Warnsymbol über der Zeitleiste: <span class="ui">Dieses Konto darf die Aufnahmen dieses Geräts nicht lesen.</span>, <span class="ui">Das Gerät war nicht erreichbar.</span>, <span class="ui">Das Gerät kennt die Aufnahmen dieser Kamera nicht.</span> oder <span class="ui">Diese Kamera ist offline.</span></td><td>Die Suche für den Tag ist aus dem Grund fehlgeschlagen, den die Meldung nennt. Während die Meldung angezeigt wird, kann der Tag geändert und ein anderer Tag versucht werden. Beim Konto sind seine Rechte am Gerät zu prüfen; zur Verbindung siehe <a class="xref" href="#trouble">Kapitel 15, „Fehlerbehebung“</a>.</td></tr>
+      <tr><td>Meldung mit Warnsymbol über der Zeitleiste: <span class="ui">Dieses Konto darf die Aufnahmen dieses Geräts nicht lesen.</span>, <span class="ui">Das Gerät war nicht erreichbar.</span>, <span class="ui">Das Gerät kennt die Aufnahmen dieser Kamera nicht.</span> oder <span class="ui">Diese Kamera ist offline.</span></td><td>Die Suche für den Tag ist aus dem Grund fehlgeschlagen, den die Meldung nennt. Während die Meldung angezeigt wird, kann der Tag geändert und ein anderer Tag versucht werden. Beim Konto sind Benutzername, Passwort und seine Rechte am Gerät zu prüfen; zur Verbindung siehe <a class="xref" href="#trouble">Kapitel 15, „Fehlerbehebung“</a>.</td></tr>
       <tr><td><span class="ui">Zu viele Anfragen in kurzer Zeit. Versuche es in einer Minute erneut.</span></td><td>Das Gerät oder sein Dienst hat die Suche wegen zu vieler Anfragen abgelehnt, oder das Gerät war noch mit einer früheren Suche beschäftigt. Warten Sie eine Minute und wählen Sie den Tag erneut.</td></tr>
       <tr><td>Andere Meldungen an derselben Stelle, zum Beispiel <span class="ui">Das Gerät hat eine unerwartete Antwort gesendet.</span>, <span class="ui">Zeitüberschreitung der Verbindung.</span> oder <span class="ui">Etwas ist schiefgelaufen. Bitte versuche es erneut.</span></td><td>Die Suche ist aus einem anderen Grund fehlgeschlagen. Wählen Sie den Tag erneut. Bleibt die Meldung bestehen, siehe <a class="xref" href="#trouble">Kapitel 15, „Fehlerbehebung“</a>.</td></tr>
     </tbody>
@@ -1958,7 +1958,7 @@
     <li class="step">
       <p>Starten Sie eine Aufnahme und drehen Sie das iPhone ins Querformat.</p>
       <p class="check"><b class="check-label">Ergebnis:</b> Das Bild füllt den Bildschirm. Eine Leiste über dem unteren Bildrand enthält das Kennzeichen <span class="ui">WIEDERGABE 15:00:03</span>, die Geschwindigkeitstaste, <span class="ui">Zurück zu Live</span> und die Zeitleiste.</p>
-      <figure class="land"><img src="guide/img/playback-landscape.jpg" alt="Wiedergabe im Querformat: das Bild über dem gesamten Bildschirm mit einer Leiste am unteren Rand, die das Wiedergabekennzeichen, die Geschwindigkeitstaste, Zurück zu Live und die Zeitleiste enthält" loading="lazy" decoding="async" width="1600" height="736"><figcaption>Wiedergabe im Querformat</figcaption></figure>
+      <figure class="land"><img src="guide/img/playback-landscape.jpg" alt="Wiedergabe im Querformat: das Bild in der Mitte des schwarzen Bildschirms, oben die Schaltfläche Zurück mit dem Wiedergabekennzeichen daneben und die rote Aufnahmetaste, dazu eine Leiste am unteren Rand, die das Wiedergabekennzeichen, die Geschwindigkeitstaste, Zurück zu Live und die Zeitleiste enthält" loading="lazy" decoding="async" width="1600" height="736"><figcaption>Wiedergabe im Querformat</figcaption></figure>
     </li>
     <li class="step">
       <p>Ziehen Sie die Zeitleiste in der Leiste und heben Sie den Finger zur gewünschten Zeit an.</p>
@@ -2096,7 +2096,7 @@
     <li class="step">
       <p>Haken Sie fünf weitere Kanäle ab, in der Reihenfolge, in der sie auf der Wand erscheinen sollen.</p>
       <p class="check"><b class="check-label">Ergebnis:</b> Oben auf der Seite steht <span class="ui" data-ui="value">6 Kameras ausgewählt</span>.</p>
-      <figure class="phone"><img src="guide/img/lvm-pick-selected.jpg" alt="Die Seite Kameras auswählen mit 6 ausgewählten Kameras: Jeder abgehakte Kanal hat rechts einen Umschalter SD und HD, oben stehen die Schaltflächen Alle SD und Alle HD" loading="lazy" decoding="async" width="900" height="1956"><figcaption>6 Kameras ausgewählt</figcaption></figure>
+      <figure class="phone"><img src="guide/img/lvm-pick-selected.jpg" alt="Die Seite Kameras auswählen mit 6 ausgewählten Kameras: oben der Umschalter Querformat-Seite und Hochformat-Seite, darunter die Schaltflächen Alle SD und Alle HD und rechts neben jedem abgehakten Kanal ein Umschalter SD und HD" loading="lazy" decoding="async" width="900" height="1956"><figcaption>6 Kameras ausgewählt</figcaption></figure>
     </li>
     <li class="step">
       <p>Optional: Tippen Sie bei jeder Kamera, die ein schärferes Bild zeigen soll, auf <span class="ui">HD</span>.</p>
@@ -2360,7 +2360,7 @@
   <h3 id="lvm-arrange">Wand und Kacheln anordnen</h3>
   <p>Pfad: <span class="path"><span class="ui">LiveView Mix</span> › <span class="ui">Layout anpassen</span> › <span class="ui">Wand anordnen</span></span>. Diese Seite legt fest, was in jede Kachel kommt. Ihr Titel ist <span class="ui">Anordnen</span>. Von oben nach unten enthält die Seite die Layout-Zeile, die Anordnungsfläche, <span class="ui">Tipps</span> und die Liste <span class="ui">Reihenfolge</span>. <span class="ui">Wand anordnen</span> ist verfügbar, sobald Kameras ausgewählt wurden oder ein Gerät existiert.</p>
   <figure class="phone clip"><video class="clip" src="guide/vid/rec-arrange-swap.mp4" poster="guide/img/rec-arrange-swap.jpg" aria-label="Die Wand anordnen: Das Ziehen einer Kachel auf eine andere tauscht die beiden, das Ziehen einer Kachel auf eine leere Zelle verschiebt sie dorthin." muted loop playsinline preload="metadata"></video><figcaption>Die Wand anordnen: Das Ziehen einer Kachel auf eine andere tauscht die beiden, das Ziehen einer Kachel auf eine leere Zelle verschiebt sie dorthin.</figcaption></figure>
-  <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="Die Seite Anordnen: oben die Layout-Zeile, in der Mitte die Anordnungsfläche mit zehn Kacheln (Kachel 9 ist ein Bedienfeld und Kachel 10 eine Uhr), darunter die Liste Reihenfolge" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Die Seite Anordnen</figcaption></figure>
+  <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="Die Seite Anordnen: oben die Layout-Zeile, in der Mitte die Anordnungsfläche mit zehn Kacheln (Kachel 9 ist ein Bedienfeld und Kachel 10 eine Uhr), darunter Tipps und die Liste Reihenfolge" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Die Seite Anordnen</figcaption></figure>
   <ul>
     <li><b>Layout-Zeile</b>: dieselben Layout-Diagramme wie unter <span class="ui">Layout anpassen</span>; das Layout lässt sich hier direkt ändern. Das Diagramm <span class="ui">Eigene</span> erscheint, sobald ein Layout gezeichnet wurde oder solange es verwendet wird, und lässt sich hier nur auswählen, nicht bearbeiten.</li>
     <li><b>Anordnungsfläche</b>: für die Querformat-Seite im 16:9-Querformat und für die Hochformat-Seite im 9:16-Hochformat gezeichnet; sie zeigt die aktuelle Wandseite. Die Nummer jeder belegten Kachel steht in ihrer Ecke oben links. Kamerakacheln zeigen ein Livebild (SD); eine Kamera, die offline ist oder außerhalb des Abos liegt, zeigt eine schwarze Kachel mit durchgestrichenem Kamera-Symbol, und ein YouTube- oder Twitch-Stream zeigt seinen Namen. Solange das Wasserzeichen ausgeschaltet ist, steht der Kanalname unten links; ist es eingeschaltet, wird das Wasserzeichen in der Vorschau gezeigt. Bedienfelder auf der Anordnungsfläche sehen aus wie auf der Wand, ohne das Schloss eines Bedienfelds, das das Abo nicht abdeckt; ein Tippen darauf öffnet ihren Editor und sendet keine Anfrage. Bei hochkant gehaltenem Gerät ist die echte Querformat-Wand gespiegelt, aber jede Kachel behält ihre Nummer.</li>
@@ -2941,7 +2941,7 @@
     <li class="step">
       <p>Tippen Sie auf <span class="ui">Wand anordnen</span>.</p>
       <p class="check"><b class="check-label">Ergebnis:</b> Die Seite <span class="ui">Anordnen</span> öffnet sich: Oben steht die Anordnungsfläche der Wand, darunter führt die Liste <span class="ui">Reihenfolge</span> jede belegte Kachel unter ihrer Nummer auf.</p>
-      <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="Die Seite Anordnen: oben die Anordnungsfläche der Wand mit einem Bedienfeld in Kachel 9 und einer Uhr in Kachel 10, darunter die Liste der belegten Kacheln" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Die Seite Anordnen</figcaption></figure>
+      <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="Die Seite Anordnen: oben die Layout-Zeile, darunter die Anordnungsfläche der Wand mit einem Bedienfeld in Kachel 9 und einer Uhr in Kachel 10 und unten die Liste der belegten Kacheln" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Die Seite Anordnen</figcaption></figure>
     </li>
     <li class="step">
       <p>Tippen Sie auf der Anordnungsfläche auf eine unbenutzte Kachel; sie ist gestrichelt umrandet und trägt ein +. Liegen die unbenutzten Kacheln auf einer anderen Seite der Wand, wechseln Sie zuerst mit den Pfeilen unter der Anordnungsfläche oder durch seitliches Wischen die Seite.</p>
@@ -3084,8 +3084,8 @@
     </li>
   </ol>
   <div class="shots pair">
-    <figure class="phone"><img src="guide/img/lvm-button-editor.jpg" alt="Der Tasteneditor: Symbol, Beschriftung, Vor dem Auslösen bestätigen sowie Methode und URL des Abschnitts Anfrage" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Der Tasteneditor (oberer Teil)</figcaption></figure>
-    <figure class="phone"><img src="guide/img/lvm-button-headers.jpg" alt="Der untere Teil des Tasteneditors: der Abschnitt Header mit einer Zeile Authorization und der Abschnitt Inhalt mit dem Inhaltstyp und JSON-Inhalt" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Der Tasteneditor (unterer Teil)</figcaption></figure>
+    <figure class="phone"><img src="guide/img/lvm-button-editor.jpg" alt="Der Tasteneditor: Symbol, Beschriftung, Vor dem Auslösen bestätigen, Methode und URL des Abschnitts Anfrage sowie der Abschnitt Apple Watch mit Sendeweg" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Der Tasteneditor (oberer Teil)</figcaption></figure>
+    <figure class="phone"><img src="guide/img/lvm-button-headers.jpg" alt="Der untere Teil des Tasteneditors: der Abschnitt Apple Watch, der Abschnitt Header mit einer Zeile Authorization und der Abschnitt Inhalt mit dem Inhaltstyp und JSON-Inhalt" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Der Tasteneditor (unterer Teil)</figcaption></figure>
   </div>
   <div class="table-wrap"><table>
     <thead><tr><th>Feld</th><th>Beschreibung</th></tr></thead>
@@ -3117,7 +3117,7 @@
     <li class="step">
       <p>Beobachten Sie das Symbol der Taste.</p>
       <p class="check"><b class="check-label">Ergebnis:</b> Je nach Ergebnis wechselt das Symbol zu einem grünen Häkchen oder einem orangefarbenen Warndreieck und kehrt nach etwa 1,6&nbsp;Sekunden zum ursprünglichen Symbol zurück.</p>
-      <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="Drei Zustände einer Taste: das Ladesymbol beim Senden, das grüne Häkchen nach Erfolg und das orangefarbene Warndreieck nach einem Fehler" loading="lazy" decoding="async" width="1600" height="736"><figcaption>Die drei Zustände einer Taste</figcaption></figure>
+      <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="Drei Tasten eines Bedienfelds auf der LiveView-Mix-Wand, jede in einem der Zustände: das Ladesymbol beim Senden, das grüne Häkchen nach Erfolg und das orangefarbene Warndreieck nach einem Fehler" loading="lazy" decoding="async" width="1600" height="736"><figcaption>Die drei Zustände einer Taste, je einer pro Taste</figcaption></figure>
     </li>
   </ol>
   <div class="table-wrap"><table>
@@ -3851,7 +3851,7 @@ Content-Type: application/json
     <li class="step">
       <p>Suchen Sie im Abschnitt <span class="ui">Kamera-Abos · jährliche Abrechnung</span> oder <span class="ui">NVR-Abos · monatliche Abrechnung</span> das gewünschte Abo und tippen Sie auf seiner Karte auf <span class="ui">Abonnieren</span>.</p>
       <p class="check"><b class="check-label">Ergebnis:</b> Die Kaufbestätigung des Systems erscheint. Jede Karte zeigt den Namen des Abos, eine Kurzbeschreibung und seine Kosten; ist der Apple Account berechtigt, wird zusätzlich die Dauer einer kostenlosen Testphase angezeigt.</p>
-      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="Der obere Teil der Seite Abos: das Cam-Hub-Logo, die Überschrift Alle Kameras freischalten, ein Satz dazu, was der Gratis-Tarif zeigt, fünf kurze Zeilen zu den Abos und ihrem Umfang und am unteren Rand die Überschrift Kamera-Abos · jährliche Abrechnung" loading="lazy" decoding="async" width="900" height="1215"><figcaption>Der obere Teil der Seite Abos; die Abo-Karten folgen darunter</figcaption></figure>
+      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="Der obere Teil der Seite Abos: das Cam-Hub-Logo, die Überschrift Alle Kameras freischalten, ein Satz dazu, was der Gratis-Tarif zeigt, und fünf kurze Zeilen zu den Abos und ihrem Umfang" loading="lazy" decoding="async" width="900" height="1215"><figcaption>Der obere Teil der Seite Abos; die Abo-Karten folgen darunter</figcaption></figure>
     </li>
     <li class="step">
       <p>Folgen Sie den Hinweisen des Systembildschirms, um den Kauf mit dem Apple Account zu bestätigen.</p>
@@ -3950,7 +3950,7 @@ Content-Type: application/json
     <li class="step">
       <p>Tippen Sie unten auf dem Bildschirm auf den Tab <span class="ui">Werkzeuge</span>.</p>
       <p class="check"><b class="check-label">Ergebnis:</b> Der Bildschirm zeigt die Abschnitte des Tabs, beginnend mit <span class="ui">Subnetz</span>. Das Adressfeld und der Bereich sind bereits mit dem Netzwerk des Geräts ausgefüllt.</p>
-      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="Der Tab Werkzeuge: der Abschnitt Subnetz mit der eigenen Adresse, dem Netzwerk, dem Bereich und der Schaltfläche Scannen, darunter Gefundene Geräte und die Zeile Tacho" loading="lazy" decoding="async" width="900" height="1745"><figcaption>Der Tab Werkzeuge (Beispielnetzwerk)</figcaption></figure>
+      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="Der Tab Werkzeuge mit seinem Titel oben: der Abschnitt Subnetz mit der Adresse dieses Geräts, dem Netzwerk, dem Bereich und der Schaltfläche Scannen, darunter der Abschnitt Gefundene Geräte, noch leer, und die Zeile Tacho" loading="lazy" decoding="async" width="900" height="1634"><figcaption>Der Tab Werkzeuge (Beispielnetzwerk)</figcaption></figure>
     </li>
   </ol>
   <p>Zu den Schritten eines Scans siehe <a class="xref" href="#add-scan">„Geräte mit dem Netzwerk-Scan finden“</a>. Die folgenden Punkte betreffen das Verhalten des Tabs als Ganzes.</p>
@@ -4132,7 +4132,7 @@ Content-Type: application/json
     <li class="step">
       <p>Tippen Sie im Abschnitt <span class="ui">Abo</span> auf <span class="ui">Abos</span>.</p>
       <p class="check"><b class="check-label">Ergebnis:</b> Die Seite <span class="ui">Abos</span> öffnet sich über den Einstellungen. Sie listet die Kamera-Abos und die NVR-Abos auf und markiert das aktuelle Abo.</p>
-      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="Der obere Teil der Seite Abos: das Cam-Hub-Logo, die Überschrift Alle Kameras freischalten, ein Satz dazu, was der Gratis-Tarif zeigt, fünf kurze Zeilen zu den Abos und ihrem Umfang und am unteren Rand die Überschrift Kamera-Abos · jährliche Abrechnung" loading="lazy" decoding="async" width="900" height="1215"><figcaption>Der obere Teil der Seite Abos; die Abo-Karten folgen darunter</figcaption></figure>
+      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="Der obere Teil der Seite Abos: das Cam-Hub-Logo, die Überschrift Alle Kameras freischalten, ein Satz dazu, was der Gratis-Tarif zeigt, und fünf kurze Zeilen zu den Abos und ihrem Umfang" loading="lazy" decoding="async" width="900" height="1215"><figcaption>Der obere Teil der Seite Abos; die Abo-Karten folgen darunter</figcaption></figure>
     </li>
     <li class="step">
       <p>Tippen Sie oben rechts auf <span class="ui">Fertig</span>.</p>
@@ -4256,7 +4256,7 @@ Content-Type: application/json
     <li class="step">
       <p>Tippen Sie auf die Zeile <span class="ui" data-ui="value">Language</span>.</p>
       <p class="check"><b class="check-label">Ergebnis:</b> Ein Menü listet <span class="ui">Systemstandard</span> und die Sprachen <span class="ui" data-ui="value">English</span>, <span class="ui" data-ui="value">繁體中文</span>, <span class="ui" data-ui="value">简体中文</span>, <span class="ui" data-ui="value">日本語</span>, <span class="ui" data-ui="value">한국어</span>, <span class="ui" data-ui="value">العربية</span>, <span class="ui" data-ui="value">Deutsch</span>, <span class="ui" data-ui="value">Español</span>, <span class="ui" data-ui="value">Español (México)</span>, <span class="ui" data-ui="value">Français</span> und <span class="ui" data-ui="value">Slovenščina</span> auf. Jede Sprache steht unter ihrem eigenen Namen.</p>
-      <figure class="phone"><img src="guide/img/settings-language.jpg" alt="Das Menü Language des Tabs Einstellungen: Systemstandard mit einem Häkchen und die Sprachen, jede unter ihrem eigenen Namen geschrieben, darunter Español (México)" loading="lazy" decoding="async" width="900" height="1947"><figcaption>Das Menü Language</figcaption></figure>
+      <figure class="phone"><img src="guide/img/settings-language.jpg" alt="Das Menü Language des Tabs Einstellungen: Systemstandard mit einem Häkchen und die elf Sprachen, jede unter ihrem eigenen Namen geschrieben, von English bis Slovenščina am Ende" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Das Menü Language</figcaption></figure>
     </li>
     <li class="step">
       <p>Tippen Sie auf die Sprache.</p>
@@ -4303,11 +4303,11 @@ Content-Type: application/json
   <ol class="steps">
     <li class="step">
       <p>Tippen Sie im Abschnitt <span class="ui">Zurücksetzen</span> auf <span class="ui">Standardeinstellungen wiederherstellen</span>.</p>
-      <p class="check"><b class="check-label">Ergebnis:</b> Der Dialog <span class="ui">Alle Einstellungen auf Standard zurücksetzen?</span> erscheint, mit den Schaltflächen <span class="ui">Standard wiederherstellen</span> und <span class="ui">Abbrechen</span>. Der Text des Dialogs besagt, dass jede Einstellung, einschließlich der Sprache, auf ihren Standard zurückgesetzt wird, dass die LiveView-Mix-Wand (Layouts, Bedienfelder, Webhook-Tasten und Bilder) geleert wird und dass die Geräte und das iCloud-Backup erhalten bleiben.</p>
+      <p class="check"><b class="check-label">Ergebnis:</b> Der Dialog <span class="ui">Alle Einstellungen auf Standard zurücksetzen?</span> erscheint über der Einstellungsseite, mit der Schaltfläche <span class="ui">Standard wiederherstellen</span>. Sowohl auf dem iPhone als auch auf dem iPad hat der Dialog keine Schaltfläche Abbrechen. Der Text des Dialogs besagt, dass jede Einstellung, einschließlich der Sprache, auf ihren Standard zurückgesetzt wird, dass die LiveView-Mix-Wand (Layouts, Bedienfelder, Webhook-Tasten und Bilder) geleert wird und dass die Geräte und das iCloud-Backup erhalten bleiben.</p>
       <figure class="phone"><img src="guide/img/settings-restore-defaults.jpg" alt="Der Dialog Alle Einstellungen auf Standard zurücksetzen? über der Einstellungsseite und die Schaltfläche Standard wiederherstellen" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Die Bestätigung vor dem Wiederherstellen der Standardeinstellungen</figcaption></figure>
     </li>
     <li class="step">
-      <p>Tippen Sie auf <span class="ui">Standard wiederherstellen</span>. Um alles unverändert zu lassen, tippen Sie stattdessen auf <span class="ui">Abbrechen</span>.</p>
+      <p>Tippen Sie auf <span class="ui">Standard wiederherstellen</span>. Um alles unverändert zu lassen, tippen Sie stattdessen auf eine beliebige Stelle außerhalb des Dialogs; der Dialog schließt sich, und nichts wird geändert.</p>
       <p class="check"><b class="check-label">Ergebnis:</b> Die Einstellungen zeigen ihre Standardwerte, und die Sprache folgt dem System. Die Zeile <span class="ui">LiveView Mix</span> zeigt <span class="ui">Nicht eingerichtet</span>, und der Schalter <span class="ui">Hochformat-Seite</span> ist ausgeschaltet. Die Geräte stehen weiterhin im Tab Geräte.</p>
     </li>
   </ol>
@@ -4317,11 +4317,11 @@ Content-Type: application/json
   <ol class="steps">
     <li class="step">
       <p>Tippen Sie im Abschnitt <span class="ui">Zurücksetzen</span> auf <span class="ui">Alle Daten löschen</span>.</p>
-      <p class="check"><b class="check-label">Ergebnis:</b> Der Dialog <span class="ui">Alle Daten löschen?</span> erscheint, mit den Schaltflächen <span class="ui">Alles löschen</span> und <span class="ui">Abbrechen</span>. Sein Text hängt vom iCloud-Backup ab. Mit einem Backup lautet er <span class="ui">Dies entfernt jedes Gerät, jede Kamera und jedes gespeicherte Passwort von diesem Gerät. Dein iCloud-Backup und dein Abo sind nicht betroffen.</span> Ohne Backup lautet er <span class="ui">Es gibt kein iCloud-Backup, daher lässt sich das nicht rückgängig machen – Kamera-Passwörter liegen nur auf diesem Gerät und können nicht wiederhergestellt werden. Dein Abo ist nicht betroffen.</span></p>
-      <figure class="phone"><img src="guide/img/settings-delete-all.jpg" alt="Der Dialog Alle Daten löschen? über der Einstellungsseite, mit den Schaltflächen Alles löschen und Abbrechen" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Die Bestätigung vor dem Löschen aller Daten</figcaption></figure>
+      <p class="check"><b class="check-label">Ergebnis:</b> Der Dialog <span class="ui">Alle Daten löschen?</span> erscheint über der Einstellungsseite, mit der Schaltfläche <span class="ui">Alles löschen</span>. Sowohl auf dem iPhone als auch auf dem iPad hat der Dialog keine Schaltfläche Abbrechen. Sein Text hängt vom iCloud-Backup ab. Mit einem Backup lautet er <span class="ui">Dies entfernt jedes Gerät, jede Kamera und jedes gespeicherte Passwort von diesem Gerät. Dein iCloud-Backup und dein Abo sind nicht betroffen.</span> Ohne Backup lautet er <span class="ui">Es gibt kein iCloud-Backup, daher lässt sich das nicht rückgängig machen – Kamera-Passwörter liegen nur auf diesem Gerät und können nicht wiederhergestellt werden. Dein Abo ist nicht betroffen.</span></p>
+      <figure class="phone"><img src="guide/img/settings-delete-all.jpg" alt="Der Dialog Alle Daten löschen? über der Einstellungsseite, mit der Schaltfläche Alles löschen" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Die Bestätigung vor dem Löschen aller Daten</figcaption></figure>
     </li>
     <li class="step">
-      <p>Tippen Sie auf <span class="ui">Alles löschen</span>. Um die Daten zu behalten, tippen Sie stattdessen auf <span class="ui">Abbrechen</span>.</p>
+      <p>Tippen Sie auf <span class="ui">Alles löschen</span>. Um die Daten zu behalten, tippen Sie stattdessen auf eine beliebige Stelle außerhalb des Dialogs; der Dialog schließt sich, und nichts wird gelöscht.</p>
       <p class="check"><b class="check-label">Ergebnis:</b> Der Tab Geräte zeigt <span class="ui">Keine Geräte</span>, und die Einstellungen zeigen ihre Standardwerte. Ein vorhandenes iCloud-Backup lässt sich wie in <a class="xref" href="#share-restore">„Aus iCloud wiederherstellen“</a> beschrieben wiederherstellen.</p>
     </li>
   </ol>
@@ -4359,7 +4359,7 @@ Content-Type: application/json
     <li class="step">
       <p>Tippen Sie auf <span class="ui">Handbuch</span>.</p>
       <p class="check"><b class="check-label">Ergebnis:</b> Der Browser öffnet dieses Handbuch unter <code>https://cam-hub.almx.cc/guide.html</code>. Eine Internetverbindung ist erforderlich. Kehren Sie mit dem App-Umschalter des Geräts zu Cam Hub zurück.</p>
-      <figure class="phone"><img src="guide/img/settings-user-manual.jpg" alt="Der untere Teil des Tabs Einstellungen: die Zeilen von Zurücksetzen mit ihrer Erklärung, Rechtliches mit Nutzungsbedingungen und Datenschutzrichtlinie, Info mit Version und die Zeile Handbuch mit ihrer Erklärung" loading="lazy" decoding="async" width="900" height="1947"><figcaption>Die Zeile Handbuch</figcaption></figure>
+      <figure class="phone"><img src="guide/img/settings-user-manual.jpg" alt="Der untere Teil des Tabs Einstellungen: die letzten Zeilen von Zurücksetzen mit ihrer Erklärung, Rechtliches mit Nutzungsbedingungen und Datenschutzrichtlinie, Info mit Version, die Zeile Handbuch mit ihrer Erklärung und darunter die Zeile Entwicklungsteam kontaktieren" loading="lazy" decoding="async" width="900" height="1956"><figcaption>Die Zeile Handbuch</figcaption></figure>
     </li>
   </ol>
   <ul>
@@ -4817,7 +4817,7 @@ Content-Type: application/json
       <tr><td><span class="ui">Dieser Recorder kann nicht angeben, an welchen Tagen Aufnahmen vorhanden sind.</span> oder <span class="ui">Dieser Monat konnte nicht geladen werden.</span> im Kalender</td><td>Das Gerät bietet keine Liste der Tage mit Aufnahmen, oder es hat für diesen Monat nicht geantwortet.</td><td>Wählen Sie den Tag ohne die Markierungen. Tippen Sie bei einem Monat, der nicht geladen wurde, auf <span class="ui">Erneut versuchen</span>. Siehe <a class="xref" href="#playback-calendar">„Der Aufnahmekalender“</a>.</td></tr>
       <tr><td><span class="ui">An diesem Tag wurden keine Personen erkannt.</span> oder <span class="ui">An diesem Tag gibt es keine Ereignisse.</span></td><td>Das Gerät hat an diesem Tag kein Ereignis registriert.</td><td>Verwenden Sie die Liste der Daueraufnahmen oder die Zeitleiste; siehe <a class="xref" href="#playback-list">„Die Liste der Aufnahmen und Ereignisse“</a>.</td></tr>
       <tr><td><span class="ui">Dieses Gerät konnte seinen Personenereignisindex nicht durchsuchen.</span> oder <span class="ui">Dieses Gerät konnte seine Ereignisse nicht durchsuchen.</span></td><td>Das Gerät hat die Suche nach Ereignissen nicht beantwortet, oder es führt keinen Index erkannter Personen.</td><td>Wählen Sie den Tag erneut. Spielen Sie die Aufnahmen aus der Liste der Daueraufnahmen oder von der Zeitleiste ab; siehe <a class="xref" href="#playback-list">„Die Liste der Aufnahmen und Ereignisse“</a>.</td></tr>
-      <tr><td><span class="ui">Dieses Konto darf die Aufnahmen dieses Geräts nicht lesen.</span></td><td>Das Konto hat kein Recht, Aufnahmen wiederzugeben.</td><td>Verwenden Sie ein Konto mit Wiedergaberechten, oder erteilen Sie das Recht am Gerät.</td></tr>
+      <tr><td><span class="ui">Dieses Konto darf die Aufnahmen dieses Geräts nicht lesen.</span></td><td>Das Gerät hat die Anmeldung verweigert: Das Konto hat kein Recht, Aufnahmen wiederzugeben, oder Benutzername oder Passwort sind falsch, zum Beispiel weil sie am Gerät geändert wurden.</td><td>Prüfen Sie Benutzername und Passwort mit <span class="ui">Anmeldedaten bearbeiten</span> auf der Geräteseite; siehe <a class="xref" href="#devices-credentials">„Benutzername und Passwort eines Geräts ändern“</a>. Stimmen beide, verwenden Sie ein Konto mit Wiedergaberechten, oder erteilen Sie das Recht am Gerät.</td></tr>
       <tr><td><span class="ui">Das Gerät war nicht erreichbar.</span> oder <span class="ui">Zeitüberschreitung der Verbindung.</span></td><td>Das Gerät hat die Suche nach dem Tag nicht beantwortet.</td><td>Prüfen Sie das Netzwerk und wählen Sie den Tag erneut.</td></tr>
       <tr><td><span class="ui">Das Gerät kennt die Aufnahmen dieser Kamera nicht.</span></td><td>Das Gerät findet die Aufnahmen dieser Kamera nicht, zum Beispiel weil die Kamera keinen Speicher hat oder ihre Aufnahmen auf unerwartete Weise meldet.</td><td>Prüfen Sie am Gerät, dass die Kamera aufzeichnet. Ein anderer Kanal oder ein anderer Tag funktioniert möglicherweise.</td></tr>
       <tr><td><span class="ui">Der Recorder hat diese Aufnahme nicht abgespielt. Sie wurde vielleicht überschrieben – wähle eine andere Zeit.</span></td><td>Die Aufnahme war aufgelistet, aber das Gerät hat ihre Wiedergabe abgelehnt, meist weil neueres Material sie ersetzt hat.</td><td>Wählen Sie einen späteren Zeitpunkt oder einen anderen Tag.</td></tr>
@@ -4884,7 +4884,7 @@ Content-Type: application/json
       <tr><td>Ein rotes Warndreieck, nachdem auf der Apple Watch eine Taste gedrückt wurde</td><td>Dieselben Ursachen wie auf der Wand. Zusätzlich hat die Uhr die Anfrage selbst an eine Adresse im Heimnetz gesendet, während sie nicht in diesem WLAN war, das iPhone hat nicht innerhalb von etwa 20&nbsp;Sekunden geantwortet, oder das Abo deckt das Bedienfeld nicht mehr ab; im letzten Fall verschwindet die Taste danach von der Uhr.</td><td>Prüfen Sie <span class="ui">Sendeweg</span> im Editor der Taste auf dem iPhone. Siehe <a class="xref" href="#webhook-watch">„Tasten auf der Apple Watch“</a>.</td></tr>
     </tbody>
   </table></div>
-  <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="Drei Zustände einer Taste: das Ladesymbol beim Senden, das grüne Häkchen nach Erfolg und das orangefarbene Warndreieck nach einem Fehler" loading="lazy" decoding="async" width="1600" height="736"><figcaption>Die drei Zustände einer Taste</figcaption></figure>
+  <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="Drei Tasten eines Bedienfelds auf der LiveView-Mix-Wand, jede in einem der Zustände: das Ladesymbol beim Senden, das grüne Häkchen nach Erfolg und das orangefarbene Warndreieck nach einem Fehler" loading="lazy" decoding="async" width="1600" height="736"><figcaption>Die drei Zustände einer Taste, je einer pro Taste</figcaption></figure>
 
   <h3 id="trouble-health">Festplattenzustand</h3>
   <p>Die Seite <span class="ui">Festplattenzustand</span> liest den Zustand der Festplatten von Geräten, die ihn melden; siehe <a class="xref" href="#devices-health">„Festplattenzustand“</a>. Ein Netzwerkspeicher (NAS) meldet ihn über SNMP, das einmal eingerichtet werden muss. Das Apple TV hat keine Seite <span class="ui">Festplattenzustand</span>.</p>

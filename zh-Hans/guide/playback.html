@@ -29,7 +29,7 @@
   <div class="table-wrap" tabindex="0"><table>
     <thead><tr><th>功能</th><th>显示条件</th></tr></thead>
     <tbody>
-      <tr><td data-label="功能">带日期、时间轴和列表的录像面板</td><td data-label="显示条件">设备以提供回放的连接方式添加，参见<a class="xref" href="/zh-Hans/guide/brands.html#brands-matrix">“各方式支持哪些功能”</a>。账号无权读取录像时，仍会显示该面板，时间轴上方显示<span class="ui ui-long">该账号无法读取这台设备上的录像。</span></td></tr>
+      <tr><td data-label="功能">带日期、时间轴和列表的录像面板</td><td data-label="显示条件">设备以提供回放的连接方式添加，参见<a class="xref" href="/zh-Hans/guide/brands.html#brands-matrix">“各方式支持哪些功能”</a>。设备拒绝登录时，无论是因为账号无权读取录像，还是因为用户名或密码错误，仍会显示该面板，时间轴上方显示<span class="ui ui-long">该账号无法读取这台设备上的录像。</span></td></tr>
       <tr><td data-label="功能">录像日历按钮</td><td data-label="显示条件">设备还保存了按日划分的录像索引，参见<a class="xref" href="/zh-Hans/guide/playback.html#playback-calendar">“录像日历”</a>。</td></tr>
       <tr><td data-label="功能"><span class="ui">连续录像</span>与<span class="ui">事件</span>切换</td><td data-label="显示条件">设备以提供事件索引的连接方式添加：人员检测索引，或移动和报警输入的索引，参见<a class="xref" href="/zh-Hans/guide/brands.html#brands-matrix">“各方式支持哪些功能”</a>。即使设备本身不响应该索引的搜索，也会显示该切换，参见<a class="xref" href="/zh-Hans/guide/playback.html#playback-list">“录像列表与事件”</a>。使用其他连接方式时，只有所选日期或其前一天有设备因事件而录制的录像时，才会出现该切换。否则只显示连续录像列表，没有切换。</td></tr>
       <tr><td data-label="功能">速度按钮</td><td data-label="显示条件">回放期间，设备能以更快的速度播放录像时显示。不能时会出现提示，参见<a class="xref" href="/zh-Hans/guide/playback.html#playback-speed">“回放速度”</a>。</td></tr>
@@ -69,7 +69,7 @@
 
   <h3 id="playback-calendar">录像日历</h3>
   <p>在保存按日划分的录像索引的设备上，标题<span class="ui">录像</span>与日期之间有一个日历按钮。该日历标出有录像的日期，因此不必逐日尝试。没有这种索引时，不显示该按钮，日期按<a class="xref" href="/zh-Hans/guide/playback.html#playback-day">“选择日期”</a>所述选择。</p>
-  <figure class="phone"><img src="/guide/img/playback-calendar.jpg" alt="单摄像头视图上方的“录像日历”面板：带箭头的月份，有录像的日期下方带圆点，所选日期位于实心圆中，以及“带圆点的日期有录像。”一行" decoding="async" width="900" height="1947" data-src="/guide/img/playback-calendar.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>录像日历</figcaption></figure>
+  <figure class="phone"><img src="/guide/img/playback-calendar.jpg" alt="单摄像头视图上方的“录像日历”面板：带箭头的月份，有录像的日期下方带圆点，所选日期位于实心圆中，以及“带圆点的日期有录像。”一行" decoding="async" width="900" height="1956" data-src="/guide/img/playback-calendar.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>录像日历</figcaption></figure>
   <ol class="steps">
     <li class="step">
       <p>点击日期旁边的日历按钮（<span class="ui">录像日历</span>）。</p>
@@ -187,7 +187,7 @@
       <tr><td data-label="提示"><span class="ui">这一天没有事件。</span></td><td data-label="含义">当天没有事件，适用于其他所有设备。</td></tr>
       <tr><td data-label="提示"><span class="ui">此设备无法搜索人员事件索引。</span></td><td data-label="含义">设备不响应人员检测搜索时（例如没有人员检测索引的较旧录像机），在<span class="ui">事件</span>下代替列表显示。此时不会列出设备因事件而录制的录像，但仍可通过时间轴上的红色条播放。连续录像列表不受影响。</td></tr>
       <tr><td data-label="提示"><span class="ui">此设备无法搜索其事件。</span></td><td data-label="含义">同上，适用于标记移动和报警输入的设备。</td></tr>
-      <tr><td data-label="提示">时间轴上方带警告符号的提示：<span class="ui ui-long">该账号无法读取这台设备上的录像。</span>、<span class="ui">无法连接到这台设备。</span>、<span class="ui ui-long">这台设备无法识别此摄像头的录像。</span>或<span class="ui">此摄像头当前离线。</span></td><td data-label="含义">当天的搜索因提示中所述的原因而失败。提示显示期间，可以更改日期并尝试另一天。账号问题请检查其在设备上的权限；连接问题参见<a class="xref" href="/zh-Hans/guide/trouble.html">第 15 章“故障排除”</a>。</td></tr>
+      <tr><td data-label="提示">时间轴上方带警告符号的提示：<span class="ui ui-long">该账号无法读取这台设备上的录像。</span>、<span class="ui">无法连接到这台设备。</span>、<span class="ui ui-long">这台设备无法识别此摄像头的录像。</span>或<span class="ui">此摄像头当前离线。</span></td><td data-label="含义">当天的搜索因提示中所述的原因而失败。提示显示期间，可以更改日期并尝试另一天。账号问题请检查用户名、密码以及账号在设备上的权限；连接问题参见<a class="xref" href="/zh-Hans/guide/trouble.html">第 15 章“故障排除”</a>。</td></tr>
       <tr><td data-label="提示"><span class="ui ui-long">短时间内请求过于频繁，请稍等一分钟后重试。</span></td><td data-label="含义">因请求过多，设备或其服务拒绝了搜索，或设备仍在处理之前的搜索。等待一分钟，然后重新选择日期。</td></tr>
       <tr><td data-label="提示">同一位置的其他提示，例如<span class="ui">设备返回了意外的响应。</span>、<span class="ui">连接超时。</span>或<span class="ui">出错了。请重试。</span></td><td data-label="含义">搜索因其他原因失败。重新选择日期。提示持续出现时，参见<a class="xref" href="/zh-Hans/guide/trouble.html">第 15 章“故障排除”</a>。</td></tr>
     </tbody>
@@ -268,7 +268,7 @@
     <li class="step">
       <p>开始播放一段录像，然后把 iPhone 横过来。</p>
       <p class="check"><b class="check-label">确认：</b>画面铺满屏幕。画面下缘的控制条包含<span class="ui">回放 15:00:03</span> 标记、速度按钮、<span class="ui">返回实时</span>和时间轴。</p>
-      <figure class="land"><img src="/guide/img/playback-landscape.jpg" alt="横屏回放：画面占满整个屏幕，下缘的控制条包含回放标记、速度按钮、“返回实时”和时间轴" decoding="async" width="1600" height="736" data-src="/guide/img/playback-landscape.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>横屏回放</figcaption></figure>
+      <figure class="land"><img src="/guide/img/playback-landscape.jpg" alt="横屏回放：画面位于黑色屏幕的中部；顶部有返回按钮、其旁边的回放标记和红色录制按钮；下缘的控制条包含回放标记、速度按钮、“返回实时”和时间轴" decoding="async" width="1600" height="736" data-src="/guide/img/playback-landscape.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>横屏回放</figcaption></figure>
     </li>
     <li class="step">
       <p>在控制条中拖动时间轴，在所需的时间抬起手指。</p>

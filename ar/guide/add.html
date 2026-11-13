@@ -258,7 +258,7 @@
   <p>عند إدخال رابط YouTube أو Twitch في <span class="ui">عنوان IP أو اسم المضيف</span>، يكون الزر <span class="ui">إضافة</span> غير متاح، ويعرض النموذج <span class="ui">إضافة كبث مباشر على YouTube</span> أو <span class="ui">إضافة كقناة Twitch</span>. ويفتح الضغط عليه شاشة تلك الخدمة والرابط مُدخل فيها مسبقاً؛ وبعد إضافة البث تُغلق الشاشتان كلتاهما. وحيثما لا تتوفر الخدمتان، يُعامل الرابط كعنوان عادي.</p>
 
   <h3 id="add-failed">عند فشل الإضافة: قائمة التحقق</h3>
-  <p>عند فشل الإضافة، يعرض النموذج رسالة الخطأ باللون الأحمر. ومع <span class="ui">كشف تلقائي</span>، تُسرد تحتها المنافذ المفتوحة التي عُثر عليها. وتحت ذلك يسرد النموذج <span class="ui">ما يجب التحقق منه أولًا</span>. ويعتمد ترتيب القائمة على نوع الفشل، مع وضع السبب الأرجح أولاً. تابع البنود من الأعلى إلى الأسفل، ثم اضغط على <span class="ui">إضافة</span> مرة أخرى.</p>
+  <p>عند فشل الإضافة، يعرض النموذج رسالة الخطأ باللون الأحمر. ومع <span class="ui">كشف تلقائي</span>، تُسرد تحتها المنافذ المفتوحة التي عُثر عليها؛ وإذا لم يستجب أي منفذ، يظهر هناك السطر <span class="ui">لم يُعثر على أي منافذ مفتوحة على هذا العنوان.</span> وتحت ذلك يسرد النموذج <span class="ui">ما يجب التحقق منه أولًا</span>. ويعتمد ترتيب القائمة على نوع الفشل، مع وضع السبب الأرجح أولاً. تابع البنود من الأعلى إلى الأسفل، ثم اضغط على <span class="ui">إضافة</span> مرة أخرى.</p>
   <div class="table-wrap" tabindex="0"><table>
     <thead><tr><th>رسالة الخطأ</th><th>عمليات التحقق (من الأعلى إلى الأسفل)</th></tr></thead>
     <tbody>
@@ -342,12 +342,12 @@
     <li class="step">
       <p>انتظر حتى يكتمل الجمع.</p>
       <p class="check"><b class="check-label">التحقق:</b> يسرد <span class="ui">ما وجدناه</span> الأسباب المحتملة وما يجب تجربته أولاً، بلغة واضحة. إذا لم يظهر شيء لافت، تعرض الشاشة <span class="ui">لا شيء لافت للنظر.</span></p>
-      <figure class="phone"><img src="/guide/img/device-report-found.jpg" alt="قائمة النتائج في تقرير الجهاز، مع أسباب محتملة مثل المنافذ وجزء الشبكة وVPN" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-found.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>قائمة النتائج</figcaption></figure>
+      <figure class="phone"><img src="/guide/img/device-report-found.jpg" alt="قائمة النتائج في تقرير الجهاز: الجهاز على جزء شبكة مختلف، وشبكة VPN نشطة، وتحتها مفاتيح «ما سيُضمَّن»" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-found.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>قائمة النتائج</figcaption></figure>
     </li>
     <li class="step">
       <p>ضمن <span class="ui">ما سيُضمَّن</span>، أوقف العناصر التي لا ينبغي إرسالها.</p>
       <p class="check"><b class="check-label">التحقق:</b> يتحدّث النص في القسم <span class="ui">التقرير</span> فوراً.</p>
-      <figure class="phone"><img src="/guide/img/device-report-text.jpg" alt="مفاتيح محتويات التقرير والنص الكامل للتقرير، وتحتهما أزرار الإرسال" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-text.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>مفاتيح المحتوى والتقرير الكامل</figcaption></figure>
+      <figure class="phone"><img src="/guide/img/device-report-text.jpg" alt="النص الكامل للتقرير، وتحته ملاحظة بأن التقرير يُحفظ لإرساله لاحقاً، والأزرار «إرسال بالبريد إلى المطوّر» و«نسخ» و«مشاركة…»، والزر «حذف التقارير المحفوظة» في الأسفل" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-text.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>التقرير الكامل وأزرار الإرسال</figcaption></figure>
     </li>
     <li class="step">
       <p>راجع النص الكامل في القسم <span class="ui">التقرير</span>.</p>
@@ -401,7 +401,7 @@
     <li class="step">
       <p>في أسفل صفحة التقرير، اضغط على <span class="ui">حذف التقارير المحفوظة</span>.</p>
       <p class="check"><b class="check-label">التحقق:</b> تعرض الشاشة مربع الحوار <span class="ui">حذف كل التقارير المحفوظة؟</span>، الذي يوضح أن كل تقرير جهاز محفوظ على هذا الجهاز سيُزال، وأن التقرير الذي أُرسل بالبريد سابقاً لا يتأثر.</p>
-      <figure class="phone"><img src="/guide/img/add-report-delete-confirm.jpg" alt="صفحة «تقرير الجهاز» وفوقها مربع الحوار «حذف كل التقارير المحفوظة؟»: نص يوضح أن كل تقرير محفوظ على هذا الجهاز سيُزال وأن التقرير المُرسل بالبريد لا يتأثر، والزر «حذف التقارير المحفوظة»" decoding="async" width="900" height="1956" data-src="/guide/img/add-report-delete-confirm.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>التأكيد قبل حذف التقارير المحفوظة</figcaption></figure>
+      <figure class="phone"><img src="/guide/img/add-report-delete-confirm.jpg" alt="صفحة «تقرير الجهاز» وفوقها مربع الحوار «حذف كل التقارير المحفوظة؟»: نص يوضح أن كل تقارير الجهاز المحفوظة ستُزال وأن التقرير المُرسل بالبريد لا يتأثر، والزر «حذف التقارير المحفوظة»" decoding="async" width="900" height="1956" data-src="/guide/img/add-report-delete-confirm.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>التأكيد قبل حذف التقارير المحفوظة</figcaption></figure>
     </li>
     <li class="step">
       <p>اضغط على <span class="ui">حذف التقارير المحفوظة</span> في مربع الحوار.</p>
@@ -416,7 +416,7 @@
     <li class="step">
       <p>اضغط على علامة التبويب <span class="ui">الأدوات</span> أسفل الشاشة.</p>
       <p class="check"><b class="check-label">التحقق:</b> في القسم <span class="ui">الشبكة الفرعية</span>، يعرض الصف <span class="ui">هذا الجهاز</span> عنوان الشبكة الحالية وقناعها، مثل <code>192.168.1.10/24</code>. ويُملأ حقل العنوان والخيار <span class="ui">النطاق</span> بالشبكة الحالية.</p>
-      <figure class="phone"><img src="/guide/img/tools-scan.jpg" alt="علامة التبويب «الأدوات»: قسم «الشبكة الفرعية» مع عنوان هذا الجهاز والشبكة والنطاق وزر «فحص»، وتحته «الأجهزة المكتشَفة» و«عداد السرعة»" decoding="async" width="900" height="1745" data-src="/guide/img/tools-scan.jpg" style="aspect-ratio: 900 / 1745;" loading="lazy"><figcaption>علامة التبويب «الأدوات» (شبكة تجريبية)</figcaption></figure>
+      <figure class="phone"><img src="/guide/img/tools-scan.jpg" alt="علامة التبويب «الأدوات» وعنوانها في الأعلى: قسم «الشبكة الفرعية» مع عنوان هذا الجهاز والشبكة والنطاق وزر «فحص»، وتحته «الأجهزة المكتشَفة» دون أجهزة بعد، والصف «عداد السرعة»" decoding="async" width="900" height="1634" data-src="/guide/img/tools-scan.jpg" style="aspect-ratio: 900 / 1634;" loading="lazy"><figcaption>علامة التبويب «الأدوات» (شبكة تجريبية)</figcaption></figure>
     </li>
     <li class="step">
       <p>اختياري: لفحص شبكة مختلفة، أدخل الشبكة في حقل العنوان، مثل <code>192.168.1.0</code>، واختر النطاق من القائمة <span class="ui">النطاق</span>.</p>

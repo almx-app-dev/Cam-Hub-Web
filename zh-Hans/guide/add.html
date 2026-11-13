@@ -188,7 +188,7 @@
   </ul>
 
   <h3 id="add-failed">添加失败时：检查清单</h3>
-  <p>添加失败时，表单用红色显示错误信息。使用<span class="ui">自动检测</span>时，其下方列出找到的开放端口。再往下，表单列出<span class="ui">请先检查这些</span>。列表的顺序随失败类型而定，最可能的原因排在最前面。从上到下逐项检查，然后再次点击<span class="ui">添加</span>。</p>
+  <p>添加失败时，表单用红色显示错误信息。使用<span class="ui">自动检测</span>时，其下方列出找到的开放端口；完全没有任何响应时，则在该处显示<span class="ui">这个地址没有找到任何开放的端口。</span>再往下，表单列出<span class="ui">请先检查这些</span>。列表的顺序随失败类型而定，最可能的原因排在最前面。从上到下逐项检查，然后再次点击<span class="ui">添加</span>。</p>
   <div class="table-wrap" tabindex="0"><table>
     <thead><tr><th>错误信息</th><th>检查项（从上到下）</th></tr></thead>
     <tbody>
@@ -272,12 +272,12 @@
     <li class="step">
       <p>等待收集完成。</p>
       <p class="check"><b class="check-label">确认：</b><span class="ui">发现的情况</span>用通俗的语言列出可能的原因和建议优先尝试的操作。没有明显问题时，屏幕显示<span class="ui">没有发现明显的问题。</span></p>
-      <figure class="phone"><img src="/guide/img/device-report-found.jpg" alt="设备报告的发现列表，列出端口、网段和 VPN 等可能的原因" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-found.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>发现列表</figcaption></figure>
+      <figure class="phone"><img src="/guide/img/device-report-found.jpg" alt="设备报告的发现列表：设备与这台手机不在同一个网段，且这台手机上开启了 VPN，下方是“包含的内容”的开关" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-found.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>发现列表</figcaption></figure>
     </li>
     <li class="step">
       <p>在<span class="ui">包含的内容</span>下，关闭不应发送的项目。</p>
       <p class="check"><b class="check-label">确认：</b><span class="ui">报告</span>部分的文字立即更新。</p>
-      <figure class="phone"><img src="/guide/img/device-report-text.jpg" alt="报告内容的开关和报告全文，下方是发送按钮" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-text.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>内容开关与报告全文</figcaption></figure>
+      <figure class="phone"><img src="/guide/img/device-report-text.jpg" alt="报告全文，其下是报告保存在 App 中的说明、“通过电子邮件发送给开发者”“复制”和“共享…”按钮，最底部是“删除已保存的报告”按钮" decoding="async" width="900" height="1956" data-src="/guide/img/device-report-text.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>报告全文与发送按钮</figcaption></figure>
     </li>
     <li class="step">
       <p>检阅<span class="ui">报告</span>部分的全文。</p>
@@ -325,13 +325,13 @@
   </div>
 
   <h4>已保存的报告</h4>
-  <p>每份报告都保存在本设备上，保留最近的五份。添加失败后，<span class="ui">将详细信息发送给开发者</span>下方会出现一个带有保存日期的条目，例如<span class="ui">上一份报告（2026年11月13日 上午9:41）</span>，点击即可打开最近保存的一份报告。已保存的报告按保存时的内容显示，不能逐项切换；要重新选择内容，须重新收集详细信息。</p>
+  <p>每份报告都保存在 App 中，保留最近的五份。添加失败后，<span class="ui">将详细信息发送给开发者</span>下方会出现一个带有保存日期的条目，例如<span class="ui">上一份报告（2026年11月13日 上午9:41）</span>，点击即可打开最近保存的一份报告。已保存的报告按保存时的内容显示，不能逐项切换；要重新选择内容，须重新收集详细信息。</p>
   <p>删除已保存的报告：</p>
   <ol class="steps">
     <li class="step">
       <p>在报告页面底部，点击<span class="ui">删除已保存的报告</span>。</p>
-      <p class="check"><b class="check-label">确认：</b>屏幕显示标题为<span class="ui">要删除所有已保存的报告吗？</span>的对话框，说明本设备上保存的所有设备报告都将被删除，已通过电子邮件发送的报告不受影响。</p>
-      <figure class="phone"><img src="/guide/img/add-report-delete-confirm.jpg" alt="“设备报告”页面上方的对话框“要删除所有已保存的报告吗？”：说明本设备上保存的所有报告都将被删除、已通过电子邮件发送的报告不受影响，以及“删除已保存的报告”按钮" decoding="async" width="900" height="1956" data-src="/guide/img/add-report-delete-confirm.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>删除已保存的报告之前的确认</figcaption></figure>
+      <p class="check"><b class="check-label">确认：</b>屏幕显示标题为<span class="ui">要删除所有已保存的报告吗？</span>的对话框，说明所有已保存的设备报告都将被删除，已通过电子邮件发送的报告不受影响。</p>
+      <figure class="phone"><img src="/guide/img/add-report-delete-confirm.jpg" alt="“设备报告”页面上方的对话框“要删除所有已保存的报告吗？”：说明所有已保存的设备报告都将被删除、已通过电子邮件发送的报告不受影响，以及“删除已保存的报告”按钮" decoding="async" width="900" height="1956" data-src="/guide/img/add-report-delete-confirm.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>删除已保存的报告之前的确认</figcaption></figure>
     </li>
     <li class="step">
       <p>点击对话框中的<span class="ui">删除已保存的报告</span>。</p>
@@ -346,7 +346,7 @@
     <li class="step">
       <p>点击屏幕底部的<span class="ui">工具</span>标签页。</p>
       <p class="check"><b class="check-label">确认：</b>在<span class="ui">子网</span>部分，<span class="ui">本设备</span>一行显示当前的网络地址和掩码，例如 <code>192.168.1.10/24</code>。地址输入框和<span class="ui">范围</span>已按当前网络填好。</p>
-      <figure class="phone"><img src="/guide/img/tools-scan.jpg" alt="“工具”标签页：“子网”部分显示本设备的地址、网络、范围和“扫描”按钮，下方是“找到的设备”和“速度计”" decoding="async" width="900" height="1745" data-src="/guide/img/tools-scan.jpg" style="aspect-ratio: 900 / 1745;" loading="lazy"><figcaption>“工具”标签页（示例网络）</figcaption></figure>
+      <figure class="phone"><img src="/guide/img/tools-scan.jpg" alt="“工具”标签页，顶部是其标题：“子网”部分显示本设备的地址、网络、范围和“扫描”按钮，其下是尚未列出任何设备的“找到的设备”，以及“速度计”一行" decoding="async" width="900" height="1634" data-src="/guide/img/tools-scan.jpg" style="aspect-ratio: 900 / 1634;" loading="lazy"><figcaption>“工具”标签页（示例网络）</figcaption></figure>
     </li>
     <li class="step">
       <p>可选：要扫描其他网络，在地址输入框中输入该网络，例如 <code>192.168.1.0</code>，并在<span class="ui">范围</span>菜单中选择范围。</p>

@@ -128,7 +128,7 @@
       <tr><td data-label="畫面顯示">月曆顯示<span class="ui ui-long">此錄影主機無法告知哪些日期有錄影。</span>或<span class="ui">無法載入這個月份。</span></td><td data-label="可能的原因">設備不提供有錄影日期的清單，或沒有回應這個月份的查詢。</td><td data-label="處理方式">不依標記直接選擇日期。月份無法載入時，點選<span class="ui">再試一次</span>。見<a class="xref" href="/zh-Hant/guide/playback.html#playback-calendar">「錄影日曆」</a>。</td></tr>
       <tr><td data-label="畫面顯示"><span class="ui">這一天未偵測到人員。</span>或<span class="ui">這一天沒有事件。</span></td><td data-label="可能的原因">設備在這一天沒有記錄任何事件。</td><td data-label="處理方式">改用連續錄影清單或時間軸，見<a class="xref" href="/zh-Hant/guide/playback.html#playback-list">「錄影清單與事件」</a>。</td></tr>
       <tr><td data-label="畫面顯示"><span class="ui">此設備無法搜尋人員事件索引。</span>或<span class="ui">此設備無法搜尋其事件。</span></td><td data-label="可能的原因">設備沒有回應事件的搜尋，或沒有保存偵測到的人員索引。</td><td data-label="處理方式">重新選擇日期。改從連續錄影清單或時間軸播放錄影，見<a class="xref" href="/zh-Hant/guide/playback.html#playback-list">「錄影清單與事件」</a>。</td></tr>
-      <tr><td data-label="畫面顯示"><span class="ui ui-long">這個帳號無法讀取這台設備上的錄影。</span></td><td data-label="可能的原因">該帳號沒有回放錄影的權限。</td><td data-label="處理方式">改用有回放權限的帳號，或在設備上授予權限。</td></tr>
+      <tr><td data-label="畫面顯示"><span class="ui ui-long">這個帳號無法讀取這台設備上的錄影。</span></td><td data-label="可能的原因">設備拒絕了登入：該帳號沒有回放錄影的權限，或使用者名稱或密碼錯誤，例如密碼已在設備上變更。</td><td data-label="處理方式">在設備頁以<span class="ui">編輯帳號密碼</span>檢查使用者名稱與密碼，見<a class="xref" href="/zh-Hant/guide/devices.html#devices-credentials">「變更設備的使用者名稱與密碼」</a>。兩者都正確時，改用有回放權限的帳號，或在設備上授予權限。</td></tr>
       <tr><td data-label="畫面顯示"><span class="ui">無法連線到這台設備。</span>或<span class="ui">連線逾時。</span></td><td data-label="可能的原因">設備沒有回應當日錄影的搜尋。</td><td data-label="處理方式">檢查網路，再重新選擇日期。</td></tr>
       <tr><td data-label="畫面顯示"><span class="ui ui-long">這台設備無法辨識這支攝影機的錄影。</span></td><td data-label="可能的原因">設備找不到這支攝影機的錄影，例如攝影機沒有儲存空間，或以非預期的方式回報錄影。</td><td data-label="處理方式">在設備上確認攝影機有錄影。換一個通道或換一天可能可行。</td></tr>
       <tr><td data-label="畫面顯示"><span class="ui ui-long">錄影主機沒有播放這段錄影，可能已被覆寫——請選擇其他時間。</span></td><td data-label="可能的原因">清單中列出了這段錄影，但設備拒絕播放，通常是因為已被較新的錄影取代。</td><td data-label="處理方式">選擇較晚的時間，或其他日期。</td></tr>
@@ -195,7 +195,7 @@
       <tr><td data-label="畫面顯示">在 Apple Watch 上按下按鈕後出現紅色警告三角形</td><td data-label="可能的原因">原因與牆面上相同。此外還可能是：手錶自己把請求送往家中網路的位址，但手錶不在該 Wi‑Fi 網路上；iPhone 沒有在約 20 秒內回應；或方案已不再涵蓋該控制面板，此時該按鈕隨後會從手錶上消失。</td><td data-label="處理方式">在 iPhone 上的按鈕編輯畫面檢查<span class="ui">傳送方式</span>。見<a class="xref" href="/zh-Hant/guide/webhook.html#webhook-watch">「Apple Watch 上的按鈕」</a>。</td></tr>
     </tbody>
   </table></div>
-  <figure class="land"><img src="/guide/img/lvm-webhook-states.jpg" alt="同一顆按鈕的三種狀態：傳送中的轉圈圖示、成功後的綠色勾號，以及失敗後的橘色警告三角形" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-webhook-states.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>按鈕的三種狀態</figcaption></figure>
+  <figure class="land"><img src="/guide/img/lvm-webhook-states.jpg" alt="LiveView Mix 牆上控制面板的三顆按鈕，各呈現一種狀態：傳送中的轉圈圖示、成功後的綠色勾號，以及失敗後的橘色警告三角形" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-webhook-states.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>按鈕的三種狀態，每顆按鈕各一種</figcaption></figure>
 
   <h3 id="trouble-health">硬碟健康</h3>
   <p><span class="ui">硬碟健康</span>頁面讀取有回報此資訊之設備的硬碟狀態，見<a class="xref" href="/zh-Hant/guide/devices.html#devices-health">「硬碟健康」</a>。網路儲存設備透過 SNMP 回報，須先設定一次。Apple TV 沒有硬碟健康頁面。</p>

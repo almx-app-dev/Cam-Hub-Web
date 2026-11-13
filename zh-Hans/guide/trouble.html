@@ -127,7 +127,7 @@
       <tr><td data-label="显示内容">日历中显示<span class="ui ui-long">此录像机无法告知哪些日期有录像。</span>或<span class="ui">无法加载这个月份。</span></td><td data-label="可能的原因">设备不提供有录像日期的列表，或没有应答该月份的查询。</td><td data-label="处理方法">在没有标记的情况下选择日期。对未能加载的月份，点击<span class="ui">重试</span>。参见<a class="xref" href="/zh-Hans/guide/playback.html#playback-calendar">“录像日历”</a>。</td></tr>
       <tr><td data-label="显示内容"><span class="ui">这一天未检测到人员。</span>或<span class="ui">这一天没有事件。</span></td><td data-label="可能的原因">设备在这一天没有记录任何事件。</td><td data-label="处理方法">改用连续录像列表或时间轴，参见<a class="xref" href="/zh-Hans/guide/playback.html#playback-list">“录像列表与事件”</a>。</td></tr>
       <tr><td data-label="显示内容"><span class="ui">此设备无法搜索人员事件索引。</span>或<span class="ui">此设备无法搜索其事件。</span></td><td data-label="可能的原因">设备没有响应事件搜索，或没有保存人员检测索引。</td><td data-label="处理方法">重新选择日期。从连续录像列表或时间轴播放录像，参见<a class="xref" href="/zh-Hans/guide/playback.html#playback-list">“录像列表与事件”</a>。</td></tr>
-      <tr><td data-label="显示内容"><span class="ui ui-long">该账号无法读取这台设备上的录像。</span></td><td data-label="可能的原因">账号没有回放录像的权限。</td><td data-label="处理方法">使用有回放权限的账号，或在设备上授予该权限。</td></tr>
+      <tr><td data-label="显示内容"><span class="ui ui-long">该账号无法读取这台设备上的录像。</span></td><td data-label="可能的原因">设备拒绝了登录：账号没有回放录像的权限，或者用户名或密码错误，例如密码已在设备上更改。</td><td data-label="处理方法">在设备页上用<span class="ui">编辑凭据</span>检查用户名和密码，参见<a class="xref" href="/zh-Hans/guide/devices.html#devices-credentials">“更改设备的用户名和密码”</a>。两者都正确时，使用有回放权限的账号，或在设备上授予该权限。</td></tr>
       <tr><td data-label="显示内容"><span class="ui">无法连接到这台设备。</span>或<span class="ui">连接超时。</span></td><td data-label="可能的原因">设备没有应答当天的搜索。</td><td data-label="处理方法">检查网络，并重新选择日期。</td></tr>
       <tr><td data-label="显示内容"><span class="ui ui-long">这台设备无法识别此摄像头的录像。</span></td><td data-label="可能的原因">设备找不到此摄像头的录像，例如摄像头没有存储，或以意外的方式报告其录像。</td><td data-label="处理方法">在设备上检查该摄像头是否录像。换一个通道或另一天可能可行。</td></tr>
       <tr><td data-label="显示内容"><span class="ui ui-long">录像机没有播放这段录像，可能已被覆盖——请选择其他时间。</span></td><td data-label="可能的原因">录像在列表中，但设备拒绝播放，通常是因为它已被较新的录像取代。</td><td data-label="处理方法">选择较晚的时间或另一天。</td></tr>
@@ -175,7 +175,7 @@
       <tr><td data-label="显示内容">在 Apple Watch 上按下按钮后出现红色警告三角形</td><td data-label="可能的原因">原因与墙上相同。此外，还可能是手表不在家庭 Wi-Fi 网络中时自行向家庭网络地址发送了请求、iPhone 在约 20 秒内没有应答，或者套餐不再涵盖该面板；最后一种情况下，该按钮随后会从手表上消失。</td><td data-label="处理方法">在 iPhone 上检查按钮编辑界面中的<span class="ui">发送方式</span>。参见<a class="xref" href="/zh-Hans/guide/webhook.html#webhook-watch">“Apple Watch 上的按钮”</a>。</td></tr>
     </tbody>
   </table></div>
-  <figure class="land"><img src="/guide/img/lvm-webhook-states.jpg" alt="同一个按钮的三种状态：发送时的转圈、成功后的绿色对勾，以及失败后的橙色警告三角形" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-webhook-states.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>按钮的三种状态</figcaption></figure>
+  <figure class="land"><img src="/guide/img/lvm-webhook-states.jpg" alt="LiveView Mix 墙上一个控制面板的三个按钮，各处于一种状态：发送时的转圈、成功后的绿色对勾，以及失败后的橙色警告三角形" decoding="async" width="1600" height="736" data-src="/guide/img/lvm-webhook-states.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>按钮的三种状态，每个按钮各显示一种</figcaption></figure>
 
   <h3 id="trouble-health">磁盘健康</h3>
   <p><span class="ui">磁盘健康</span>页面读取能够报告磁盘状态的设备的磁盘状态，参见<a class="xref" href="/zh-Hans/guide/devices.html#devices-health">“磁盘健康”</a>。网络存储设备通过 SNMP 报告磁盘状态，需要设置一次。Apple TV 没有磁盘健康页面。</p>

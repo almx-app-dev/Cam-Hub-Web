@@ -346,7 +346,7 @@
   <p>عند إدخال رابط YouTube أو Twitch في <span class="ui">عنوان IP أو اسم المضيف</span>، يكون الزر <span class="ui">إضافة</span> غير متاح، ويعرض النموذج <span class="ui">إضافة كبث مباشر على YouTube</span> أو <span class="ui">إضافة كقناة Twitch</span>. ويفتح الضغط عليه شاشة تلك الخدمة والرابط مُدخل فيها مسبقاً؛ وبعد إضافة البث تُغلق الشاشتان كلتاهما. وحيثما لا تتوفر الخدمتان، يُعامل الرابط كعنوان عادي.</p>
 
   <h3 id="add-failed">عند فشل الإضافة: قائمة التحقق</h3>
-  <p>عند فشل الإضافة، يعرض النموذج رسالة الخطأ باللون الأحمر. ومع <span class="ui">كشف تلقائي</span>، تُسرد تحتها المنافذ المفتوحة التي عُثر عليها. وتحت ذلك يسرد النموذج <span class="ui">ما يجب التحقق منه أولًا</span>. ويعتمد ترتيب القائمة على نوع الفشل، مع وضع السبب الأرجح أولاً. تابع البنود من الأعلى إلى الأسفل، ثم اضغط على <span class="ui">إضافة</span> مرة أخرى.</p>
+  <p>عند فشل الإضافة، يعرض النموذج رسالة الخطأ باللون الأحمر. ومع <span class="ui">كشف تلقائي</span>، تُسرد تحتها المنافذ المفتوحة التي عُثر عليها؛ وإذا لم يستجب أي منفذ، يظهر هناك السطر <span class="ui">لم يُعثر على أي منافذ مفتوحة على هذا العنوان.</span> وتحت ذلك يسرد النموذج <span class="ui">ما يجب التحقق منه أولًا</span>. ويعتمد ترتيب القائمة على نوع الفشل، مع وضع السبب الأرجح أولاً. تابع البنود من الأعلى إلى الأسفل، ثم اضغط على <span class="ui">إضافة</span> مرة أخرى.</p>
   <div class="table-wrap"><table>
     <thead><tr><th>رسالة الخطأ</th><th>عمليات التحقق (من الأعلى إلى الأسفل)</th></tr></thead>
     <tbody>
@@ -430,12 +430,12 @@
     <li class="step">
       <p>انتظر حتى يكتمل الجمع.</p>
       <p class="check"><b class="check-label">التحقق:</b> يسرد <span class="ui">ما وجدناه</span> الأسباب المحتملة وما يجب تجربته أولاً، بلغة واضحة. إذا لم يظهر شيء لافت، تعرض الشاشة <span class="ui">لا شيء لافت للنظر.</span></p>
-      <figure class="phone"><img src="guide/img/device-report-found.jpg" alt="قائمة النتائج في تقرير الجهاز، مع أسباب محتملة مثل المنافذ وجزء الشبكة وVPN" loading="lazy" decoding="async" width="900" height="1956"><figcaption>قائمة النتائج</figcaption></figure>
+      <figure class="phone"><img src="guide/img/device-report-found.jpg" alt="قائمة النتائج في تقرير الجهاز: الجهاز على جزء شبكة مختلف، وشبكة VPN نشطة، وتحتها مفاتيح «ما سيُضمَّن»" loading="lazy" decoding="async" width="900" height="1956"><figcaption>قائمة النتائج</figcaption></figure>
     </li>
     <li class="step">
       <p>ضمن <span class="ui">ما سيُضمَّن</span>، أوقف العناصر التي لا ينبغي إرسالها.</p>
       <p class="check"><b class="check-label">التحقق:</b> يتحدّث النص في القسم <span class="ui">التقرير</span> فوراً.</p>
-      <figure class="phone"><img src="guide/img/device-report-text.jpg" alt="مفاتيح محتويات التقرير والنص الكامل للتقرير، وتحتهما أزرار الإرسال" loading="lazy" decoding="async" width="900" height="1956"><figcaption>مفاتيح المحتوى والتقرير الكامل</figcaption></figure>
+      <figure class="phone"><img src="guide/img/device-report-text.jpg" alt="النص الكامل للتقرير، وتحته ملاحظة بأن التقرير يُحفظ لإرساله لاحقاً، والأزرار «إرسال بالبريد إلى المطوّر» و«نسخ» و«مشاركة…»، والزر «حذف التقارير المحفوظة» في الأسفل" loading="lazy" decoding="async" width="900" height="1956"><figcaption>التقرير الكامل وأزرار الإرسال</figcaption></figure>
     </li>
     <li class="step">
       <p>راجع النص الكامل في القسم <span class="ui">التقرير</span>.</p>
@@ -489,7 +489,7 @@
     <li class="step">
       <p>في أسفل صفحة التقرير، اضغط على <span class="ui">حذف التقارير المحفوظة</span>.</p>
       <p class="check"><b class="check-label">التحقق:</b> تعرض الشاشة مربع الحوار <span class="ui">حذف كل التقارير المحفوظة؟</span>، الذي يوضح أن كل تقرير جهاز محفوظ على هذا الجهاز سيُزال، وأن التقرير الذي أُرسل بالبريد سابقاً لا يتأثر.</p>
-      <figure class="phone"><img src="guide/img/add-report-delete-confirm.jpg" alt="صفحة «تقرير الجهاز» وفوقها مربع الحوار «حذف كل التقارير المحفوظة؟»: نص يوضح أن كل تقرير محفوظ على هذا الجهاز سيُزال وأن التقرير المُرسل بالبريد لا يتأثر، والزر «حذف التقارير المحفوظة»" loading="lazy" decoding="async" width="900" height="1956"><figcaption>التأكيد قبل حذف التقارير المحفوظة</figcaption></figure>
+      <figure class="phone"><img src="guide/img/add-report-delete-confirm.jpg" alt="صفحة «تقرير الجهاز» وفوقها مربع الحوار «حذف كل التقارير المحفوظة؟»: نص يوضح أن كل تقارير الجهاز المحفوظة ستُزال وأن التقرير المُرسل بالبريد لا يتأثر، والزر «حذف التقارير المحفوظة»" loading="lazy" decoding="async" width="900" height="1956"><figcaption>التأكيد قبل حذف التقارير المحفوظة</figcaption></figure>
     </li>
     <li class="step">
       <p>اضغط على <span class="ui">حذف التقارير المحفوظة</span> في مربع الحوار.</p>
@@ -504,7 +504,7 @@
     <li class="step">
       <p>اضغط على علامة التبويب <span class="ui">الأدوات</span> أسفل الشاشة.</p>
       <p class="check"><b class="check-label">التحقق:</b> في القسم <span class="ui">الشبكة الفرعية</span>، يعرض الصف <span class="ui">هذا الجهاز</span> عنوان الشبكة الحالية وقناعها، مثل <code>192.168.1.10/24</code>. ويُملأ حقل العنوان والخيار <span class="ui">النطاق</span> بالشبكة الحالية.</p>
-      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="علامة التبويب «الأدوات»: قسم «الشبكة الفرعية» مع عنوان هذا الجهاز والشبكة والنطاق وزر «فحص»، وتحته «الأجهزة المكتشَفة» و«عداد السرعة»" loading="lazy" decoding="async" width="900" height="1745"><figcaption>علامة التبويب «الأدوات» (شبكة تجريبية)</figcaption></figure>
+      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="علامة التبويب «الأدوات» وعنوانها في الأعلى: قسم «الشبكة الفرعية» مع عنوان هذا الجهاز والشبكة والنطاق وزر «فحص»، وتحته «الأجهزة المكتشَفة» دون أجهزة بعد، والصف «عداد السرعة»" loading="lazy" decoding="async" width="900" height="1634"><figcaption>علامة التبويب «الأدوات» (شبكة تجريبية)</figcaption></figure>
     </li>
     <li class="step">
       <p>اختياري: لفحص شبكة مختلفة، أدخل الشبكة في حقل العنوان، مثل <code>192.168.1.0</code>، واختر النطاق من القائمة <span class="ui">النطاق</span>.</p>
@@ -881,8 +881,8 @@
     </li>
     <li class="step">
       <p>اضغط على <span class="ui">إعادة تسمية الكاميرا</span>.</p>
-      <p class="check"><b class="check-label">التحقق:</b> يُفتح مربع الحوار <span class="ui">إعادة تسمية الكاميرا</span>، وفيه النص <span class="ui">سمِّ هذه الكاميرا بنفسك. يبقى اسم الجهاز الأصلي محفوظًا تحته، فلا يمحو تحديثُ الجهاز الاسمَ الذي اخترته.</span>، والاسم الحالي في الحقل <span class="ui">الاسم</span> والأزرار <span class="ui">إلغاء</span> و<span class="ui">استخدام اسم الجهاز</span> و<span class="ui">حفظ</span>.</p>
-      <figure class="phone"><img src="guide/img/channel-rename-alert.jpg" alt="مربع حوار «إعادة تسمية الكاميرا» مع حقل «الاسم» والأزرار «إلغاء» و«استخدام اسم الجهاز» و«حفظ»" loading="lazy" decoding="async" width="900" height="1956"><figcaption>مربع الحوار «إعادة تسمية الكاميرا»</figcaption></figure>
+      <p class="check"><b class="check-label">التحقق:</b> يُفتح مربع الحوار <span class="ui">إعادة تسمية الكاميرا</span>، وفيه النص <span class="ui">سمِّ هذه الكاميرا بنفسك. يبقى اسم الجهاز الأصلي محفوظًا تحته، فلا يمحو تحديثُ الجهاز الاسمَ الذي اخترته.</span>، والاسم الحالي في الحقل <span class="ui">الاسم</span> والأزرار <span class="ui">استخدام اسم الجهاز</span> و<span class="ui">حفظ</span> و<span class="ui">إلغاء</span>.</p>
+      <figure class="phone"><img src="guide/img/channel-rename-alert.jpg" alt="مربع حوار «إعادة تسمية الكاميرا» مع حقل «الاسم» والأزرار «استخدام اسم الجهاز» و«حفظ» و«إلغاء»، ولوحة المفاتيح مفتوحة تحت مربع الحوار" loading="lazy" decoding="async" width="900" height="1956"><figcaption>مربع الحوار «إعادة تسمية الكاميرا»</figcaption></figure>
     </li>
     <li class="step">
       <p>أدخل الاسم الجديد في الحقل <span class="ui">الاسم</span>.</p>
@@ -1009,7 +1009,7 @@
     <li class="step">
       <p>اضغط على صورة مصغّرة تعرض صورة.</p>
       <p class="check"><b class="check-label">التحقق:</b> يُفتح عرض مقرّب لتلك الكاميرا فوق الجدار، مع <span class="ui">رجوع</span> واسم الكاميرا في الأعلى.</p>
-      <figure class="phone"><img src="guide/img/fullwall-closeup.jpg" alt="العرض المقرّب لكاميرا واحدة فوق الجدار: زر الرجوع واسم الكاميرا في أعلى الشاشة، والصورة في وسط الشاشة السوداء، وزر التحكم في الكاميرا في أسفلها" loading="lazy" decoding="async" width="900" height="1956"><figcaption>العرض المقرّب لكاميرا</figcaption></figure>
+      <figure class="phone"><img src="guide/img/fullwall-closeup.jpg" alt="العرض المقرّب لكاميرا واحدة فوق الجدار: زر الرجوع واسم الكاميرا في أعلى الشاشة، وزر «التسجيلات» برمز ساعة في الزاوية العلوية المقابلة، والصورة في وسط الشاشة السوداء، وزر التحكم في الكاميرا في أسفلها" loading="lazy" decoding="async" width="900" height="1956"><figcaption>العرض المقرّب لكاميرا</figcaption></figure>
     </li>
     <li class="step">
       <p>اضغط على <span class="ui">رجوع</span> في الزاوية العلوية اليمنى من العرض المقرّب.</p>
@@ -1282,7 +1282,7 @@
     <li class="step">
       <p>اضغط على الصورة المصغّرة لقناة تعرض صورة مباشرة.</p>
       <p class="check"><b class="check-label">التحقق:</b> يُفتح عرض الكاميرا الواحدة. والعنوان هو اسم الكاميرا، وتظهر الشارة الخضراء <span class="ui">مباشر</span> في الزاوية العلوية اليمنى من الصورة. تبدأ الصورة بجودة <span class="path"><span class="ui">الإعدادات</span> › <span class="ui">الجودة الافتراضية</span> › <span class="ui">كاميرا واحدة</span></span> (HD ما لم يتغير الإعداد).</p>
-      <figure class="phone"><img src="guide/img/single-live.jpg" alt="عرض الكاميرا الواحدة في الوضع المباشر: الصورة مع الشارة «مباشر» وزر التحكم في الكاميرا، وتحتها شريط عناصر التحكم مع «لقطة» في أحد طرفيه ومفتاح SD وHD في الطرف الآخر، ولوحة التسجيلات مع اليوم والخط الزمني والقائمة" loading="lazy" decoding="async" width="900" height="1956"><figcaption>عرض الكاميرا الواحدة في الوضع المباشر</figcaption></figure>
+      <figure class="phone"><img src="guide/img/single-live.jpg" alt="عرض الكاميرا الواحدة في الوضع المباشر: الصورة مع الشارة «مباشر» وزر التحكم في الكاميرا، وتحتها شريط عناصر التحكم مع «لقطة» وزر التسجيل الأحمر ومفتاح SD وHD، ولوحة التسجيلات مع زر تقويم التسجيلات واليوم والخط الزمني والقائمة" loading="lazy" decoding="async" width="900" height="1956"><figcaption>عرض الكاميرا الواحدة في الوضع المباشر</figcaption></figure>
     </li>
   </ol>
   <p>اضغط على زر الرجوع في الزاوية العلوية اليمنى لمغادرة العرض.</p>
@@ -1293,7 +1293,7 @@
     <tbody>
       <tr><td>شريط التنقل</td><td>زر الرجوع واسم الكاميرا. وعلى iPad وعلى الشاشة الداخلية لـ iPhone Duo، يوجد الزر <span class="ui">فتح في نافذة جديدة</span> في الجهة اليسرى؛ راجع <a class="xref" href="#single-window">«كاميرا في نافذة خاصة بها»</a>.</td></tr>
       <tr><td>الصورة (عمودية، 16:9)</td><td>تحدد الشارة في الزاوية العلوية اليمنى الوضع: <span class="ui">مباشر</span> (باللون الأخضر) أو <span class="ui">مُسجَّل 15:00:03</span> مع وقت التشغيل (باللون الأحمر). والزر المستدير في الزاوية السفلية اليسرى هو زر التحكم في PTZ بالكاميرا في الوضع المباشر؛ راجع <a class="xref" href="#single-ptz">«التحكم في PTZ: تحريك الكاميرا»</a>. وأثناء تشغيل تسجيل يكون هو زر السرعة؛ راجع <a class="xref" href="#playback-speed">«سرعة التشغيل»</a>.</td></tr>
-      <tr><td>شريط عناصر التحكم</td><td><span class="ui">لقطة</span> في الجهة اليمنى، ثم زر التسجيل الأحمر؛ وإلى جانبهما زر مكبّر الصوت عندما ترسل الكاميرا صوتاً، وزر التحدث لكاميرا يمكن التحدث عبرها؛ وفي الجهة اليسرى مفتاح SD/HD في الوضع المباشر أو <span class="ui">العودة إلى البث المباشر</span> أثناء التشغيل. وعندما يضيق الشريط، مثلاً في لغة كلماتها طويلة، لا يعرض <span class="ui">لقطة</span> إلا رمز الكاميرا. راجع <a class="xref" href="#single-controls">«اللقطة والصوت والجودة»</a> و<a class="xref" href="#single-clip">«تسجيل مقطع»</a> و<a class="xref" href="#single-talk">«التحدث باتجاهين»</a>.</td></tr>
+      <tr><td>شريط عناصر التحكم</td><td><span class="ui">لقطة</span> في الجهة اليمنى، ثم زر التسجيل الأحمر؛ وإلى جانبهما زر مكبّر الصوت عندما ترسل الكاميرا صوتاً، وزر التحدث لكاميرا يمكن التحدث عبرها؛ وفي الجهة اليسرى مفتاح SD/HD في الوضع المباشر أو <span class="ui">العودة إلى البث المباشر</span> أثناء التشغيل. وعندما يضيق الشريط، مثلاً عندما يكون فيه زر مكبّر الصوت أو زر التحدث، أو في لغة كلماتها طويلة، لا يعرض <span class="ui">لقطة</span> إلا رمز الكاميرا. راجع <a class="xref" href="#single-controls">«اللقطة والصوت والجودة»</a> و<a class="xref" href="#single-clip">«تسجيل مقطع»</a> و<a class="xref" href="#single-talk">«التحدث باتجاهين»</a>.</td></tr>
       <tr><td>لوحة التسجيلات</td><td>العنوان <span class="ui">التسجيلات</span> مع اليوم والخط الزمني وقائمة التسجيلات، وفي الأجهزة المدعومة زر تقويم التسجيلات. لا تظهر اللوحة إلا للأجهزة التي تدعم التشغيل؛ وفي جميع الأجهزة الأخرى يتكوّن العرض من الصورة وشريط عناصر التحكم. راجع <a class="xref" href="#playback">الفصل 7، «تشغيل التسجيلات والسرعة»</a>.</td></tr>
     </tbody>
   </table></div>
@@ -1355,7 +1355,7 @@
     <li class="step">
       <p>اضغط على زر مكبّر الصوت في شريط عناصر التحكم (<span class="ui">إلغاء كتم الصوت</span>).</p>
       <p class="check"><b class="check-label">التحقق:</b> يتغير الرمز من مكبّر صوت مشطوب إلى مكبّر صوت تصدر عنه موجات صوتية، ويُشغَّل صوت الكاميرا.</p>
-      <figure class="phone"><img src="guide/img/single-audio.jpg" alt="شريط عناصر التحكم لكاميرا ترسل الصوت، وفيه زر مكبّر الصوت بين «لقطة» ومفتاح SD وHD" loading="lazy" decoding="async" width="900" height="1956"><figcaption>زر مكبّر الصوت في شريط عناصر التحكم</figcaption></figure>
+      <figure class="phone"><img src="guide/img/single-audio.jpg" alt="شريط عناصر التحكم لكاميرا ترسل الصوت: «لقطة» برمز الكاميرا وحده، وزر التسجيل الأحمر، وزر مكبّر الصوت، ومفتاح SD وHD" loading="lazy" decoding="async" width="900" height="1956"><figcaption>زر مكبّر الصوت في شريط عناصر التحكم</figcaption></figure>
     </li>
     <li class="step">
       <p>اضغط على زر مكبّر الصوت مرة أخرى (<span class="ui">كتم الصوت</span>).</p>
@@ -1423,7 +1423,7 @@
   <h3 id="single-talk">التحدث باتجاهين</h3>
   <p>يمكن التحدث عبر الكاميرا المستقلة المزوّدة بمكبّر صوت. ويعمل التحدث مثل جهاز اللاسلكي: اضغط مع الاستمرار على الزر للتحدث، وارفع إصبعك للاستماع. يسأل Cam Hub الكاميرا عن قناة التحدث الخاصة بها عند فتح العرض؛ ويظهر زر التحدث (رمز ميكروفون) في شريط عناصر التحكم، بعد زر التسجيل وزر مكبّر الصوت، عندما تبلغ الكاميرا عن قناة كهذه.</p>
   <p>المتطلبات المسبقة: كاميرا مستقلة من علامة تجارية مدعومة تبلغ عن قناة صوت باتجاهين، والوضع المباشر، وقناة ضمن الخطة. ولا يوجد زر تحدث لقنوات المسجّل: فقناة التحدث في المسجّل هي مخرج الصوت الخاص بالمسجّل نفسه، لا مكبّر صوت الكاميرا.</p>
-  <figure class="phone"><img src="guide/img/single-talk.jpg" alt="عرض الكاميرا الواحدة لكاميرا مزوّدة بمكبّر صوت: زر التحدث برمز الميكروفون في شريط عناصر التحكم، ومفتاح SD وHD" loading="lazy" decoding="async" width="900" height="1947"><figcaption>زر التحدث في شريط عناصر التحكم</figcaption></figure>
+  <figure class="phone"><img src="guide/img/single-talk.jpg" alt="عرض الكاميرا الواحدة لكاميرا مزوّدة بمكبّر صوت: زر التحدث برمز الميكروفون في شريط عناصر التحكم، ومفتاح SD وHD" loading="lazy" decoding="async" width="900" height="1956"><figcaption>زر التحدث في شريط عناصر التحكم</figcaption></figure>
   <p>في المرة الأولى التي يُضغط فيها زر التحدث، يطلب مربع حوار من النظام الوصول إلى الميكروفون. اسمح بذلك، ثم اضغط على الزر مرة أخرى.</p>
   <ol class="steps">
     <li class="step">
@@ -1486,7 +1486,7 @@
     <li class="step">
       <p>اضغط على الزر المستدير في الزاوية السفلية اليسرى من الصورة (<span class="ui">تحريك الكاميرا</span>).</p>
       <p class="check"><b class="check-label">التحقق:</b> تنفتح اللوحة إلى يمين الزر، ويعرض الزر علامة × (<span class="ui">إخفاء عناصر التحكم بالكاميرا</span>). تضم اللوحة كبسولة فيها زرا زائد وناقص للتكبير، وقرصاً بأربعة أسهم ورمز بيت في وسطه، وزر نجمة. وللكاميرا التي تدعم التصويب باللمس، يُضاف زر تصويب برمز هدف بجانب القرص، فوق النجمة.</p>
-      <figure class="phone"><img src="guide/img/single-ptz.jpg" alt="عرض الكاميرا الواحدة مع فتح التحكم في الكاميرا: كبسولة التكبير وقرص الاتجاهات مع رمز البيت وزر التصويب وزر النجمة وزر الإغلاق على الصورة" loading="lazy" decoding="async" width="900" height="1947"><figcaption>التحكم في الكاميرا على الصورة</figcaption></figure>
+      <figure class="phone"><img src="guide/img/single-ptz.jpg" alt="عرض الكاميرا الواحدة مع فتح التحكم في الكاميرا: كبسولة التكبير وقرص الاتجاهات مع رمز البيت وزر التصويب وزر النجمة وزر الإغلاق على الصورة" loading="lazy" decoding="async" width="900" height="1956"><figcaption>التحكم في الكاميرا على الصورة</figcaption></figure>
     </li>
     <li class="step">
       <p>اضغط مع الاستمرار على سهم من القرص (<span class="ui">إمالة لأعلى</span> أو <span class="ui">إمالة لأسفل</span> أو <span class="ui">تدوير لليسار</span> أو <span class="ui">تدوير لليمين</span>).</p>
@@ -1527,7 +1527,7 @@
 
   <h4>التصويب بلمس الصورة</h4>
   <p>في الكاميرات التي تدعم ذلك، يمكن توجيه الكاميرا نحو بقعة في الصورة، أو التكبير مباشرةً على منطقة تُرسم على الصورة. المتطلب المسبق: اللوحة مفتوحة وتعرض زر التصويب.</p>
-  <figure class="phone"><img src="guide/img/single-ptz-aim.jpg" alt="عرض الكاميرا الواحدة أثناء التصويب باللمس: التلميح في أعلى الصورة، وزر التصويب مضاءً، وزر الإغلاق" loading="lazy" decoding="async" width="900" height="1947"><figcaption>التصويب باللمس</figcaption></figure>
+  <figure class="phone"><img src="guide/img/single-ptz-aim.jpg" alt="عرض الكاميرا الواحدة أثناء التصويب باللمس: التلميح في أعلى الصورة، وزر التصويب مضاءً، وزر الإغلاق" loading="lazy" decoding="async" width="900" height="1956"><figcaption>التصويب باللمس</figcaption></figure>
   <ol class="steps">
     <li class="step">
       <p>اضغط على زر التصويب (<span class="ui">التموضع ثلاثي الأبعاد</span>).</p>
@@ -1683,7 +1683,7 @@
     </tbody>
   </table></div>
   <div class="shots pair">
-    <figure class="phone"><img src="guide/img/single-reconnecting.jpg" alt="عرض الكاميرا الواحدة أثناء إعادة اتصال البث: مؤشر دوّار مع النص «جارٍ إعادة الاتصال…» على منطقة الصورة السوداء، والشارة «مباشر» في الزاوية العلوية، وزر التحكم في الكاميرا في الزاوية السفلية، وتحتها شريط عناصر التحكم مع «لقطة» في أحد طرفيه ومفتاح SD وHD في الطرف الآخر، والسطر «تعذّر الوصول إلى الجهاز.»، ولوحة التسجيلات بخط زمني فارغ" loading="lazy" decoding="async" width="900" height="1956"><figcaption>الصورة أثناء إعادة الاتصال</figcaption></figure>
+    <figure class="phone"><img src="guide/img/single-reconnecting.jpg" alt="عرض الكاميرا الواحدة أثناء إعادة اتصال البث: مؤشر دوّار مع النص «جارٍ إعادة الاتصال…» على منطقة الصورة السوداء، والشارة «مباشر» في الزاوية العلوية، وزر التحكم في الكاميرا في الزاوية السفلية، وتحتها شريط عناصر التحكم مع «لقطة» وزر التسجيل الأحمر في أحد طرفيه ومفتاح SD وHD في الطرف الآخر، والسطر «تعذّر الوصول إلى الجهاز.»، ولوحة التسجيلات بخط زمني فارغ" loading="lazy" decoding="async" width="900" height="1956"><figcaption>الصورة أثناء إعادة الاتصال</figcaption></figure>
     <figure class="phone"><img src="guide/img/single-failed.jpg" alt="عرض الكاميرا الواحدة مع رسالة فشل وزر «إعادة المحاولة» فوق منطقة الصورة المعتمة" loading="lazy" decoding="async" width="900" height="1956"><figcaption>رسالة فشل مع «إعادة المحاولة»</figcaption></figure>
   </div>
   <ol class="steps">
@@ -1719,7 +1719,7 @@
   <div class="table-wrap"><table>
     <thead><tr><th>العنصر</th><th>يظهر عندما</th></tr></thead>
     <tbody>
-      <tr><td>لوحة التسجيلات مع اليوم والخط الزمني والقائمة</td><td>أُضيف الجهاز بطريقة اتصال توفّر التشغيل؛ راجع <a class="xref" href="#brands-matrix">«ما يعمل مع أي طريقة»</a>. وعندما لا يُسمح للحساب بقراءة التسجيلات، تظل اللوحة ظاهرة، مع <span class="ui">لا يمكن لهذا الحساب قراءة تسجيلات هذا الجهاز.</span> فوق الخط الزمني.</td></tr>
+      <tr><td>لوحة التسجيلات مع اليوم والخط الزمني والقائمة</td><td>أُضيف الجهاز بطريقة اتصال توفّر التشغيل؛ راجع <a class="xref" href="#brands-matrix">«ما يعمل مع أي طريقة»</a>. وعندما يرفض الجهاز تسجيل الدخول، لأن الحساب لا يُسمح له بقراءة التسجيلات أو لأن اسم المستخدم أو كلمة المرور غير صحيحة، تظل اللوحة ظاهرة، مع <span class="ui">لا يمكن لهذا الحساب قراءة تسجيلات هذا الجهاز.</span> فوق الخط الزمني.</td></tr>
       <tr><td>زر تقويم التسجيلات</td><td>يحتفظ الجهاز أيضاً بفهرس يومي لتسجيلاته؛ راجع <a class="xref" href="#playback-calendar">«تقويم التسجيلات»</a>.</td></tr>
       <tr><td>مفتاح <span class="ui">تسجيل مستمر</span> و<span class="ui">الأحداث</span></td><td>أُضيف الجهاز بطريقة اتصال توفّر فهرساً للأحداث: للأشخاص المكتشَفين، أو للحركة ومداخل الإنذار؛ راجع <a class="xref" href="#brands-matrix">«ما يعمل مع أي طريقة»</a>. ويظهر المفتاح حتى عندما لا يرد الجهاز نفسه على البحث في ذلك الفهرس؛ راجع <a class="xref" href="#playback-list">«قائمة التسجيلات والأحداث»</a>. ومع أي طريقة اتصال أخرى، لا يظهر المفتاح إلا عندما يضم اليوم المختار أو اليوم السابق له تسجيلاً أنشأه الجهاز بسبب حدث. وفي غير ذلك لا تظهر إلا قائمة التسجيلات المستمرة، دون مفتاح.</td></tr>
       <tr><td>زر السرعة</td><td>أثناء التشغيل، عندما يستطيع الجهاز تشغيل التسجيل أسرع. وإن لم يستطع، يظهر إشعار؛ راجع <a class="xref" href="#playback-speed">«سرعة التشغيل»</a>.</td></tr>
@@ -1759,7 +1759,7 @@
 
   <h3 id="playback-calendar">تقويم التسجيلات</h3>
   <p>في الأجهزة التي تحتفظ بفهرس يومي لتسجيلاتها، يقع زر التقويم بين العنوان <span class="ui">التسجيلات</span> واليوم. ويميّز تقويمه الأيام التي فيها تسجيلات، كي لا يلزم تجربة الأيام واحداً تلو الآخر. وبدون هذا الفهرس لا يظهر الزر، ويُختار اليوم كما هو موضح في <a class="xref" href="#playback-day">«اختيار يوم»</a>.</p>
-  <figure class="phone"><img src="guide/img/playback-calendar.jpg" alt="ورقة «تقويم التسجيلات» فوق عرض الكاميرا الواحدة: الشهر مع سهمين، والأيام التي فيها تسجيلات مميّزة بنقطة، واليوم المختار في دائرة ممتلئة، والسطر «الأيام التي تحمل نقطة بها تسجيلات.»" loading="lazy" decoding="async" width="900" height="1947"><figcaption>تقويم التسجيلات</figcaption></figure>
+  <figure class="phone"><img src="guide/img/playback-calendar.jpg" alt="ورقة «تقويم التسجيلات» فوق عرض الكاميرا الواحدة: الشهر مع سهمين، والأيام التي فيها تسجيلات مميّزة بنقطة، واليوم المختار في دائرة ممتلئة، والسطر «الأيام التي تحمل نقطة بها تسجيلات.»" loading="lazy" decoding="async" width="900" height="1956"><figcaption>تقويم التسجيلات</figcaption></figure>
   <ol class="steps">
     <li class="step">
       <p>اضغط على زر التقويم (<span class="ui">تقويم التسجيلات</span>) بجانب اليوم.</p>
@@ -1877,7 +1877,7 @@
       <tr><td><span class="ui">لا توجد أحداث في هذا اليوم.</span></td><td>لا يوجد حدث في هذا اليوم، في أي جهاز آخر.</td></tr>
       <tr><td><span class="ui">تعذر على هذا الجهاز البحث في فهرس أحداث الأشخاص.</span></td><td>تظهر ضمن <span class="ui">الأحداث</span> بدلاً من القائمة عندما لا يرد الجهاز على البحث عن الأشخاص المكتشَفين، مثل مسجّل قديم بلا فهرس للأشخاص. ولا تُدرج حينئذ التسجيلات التي أنشأها الجهاز بسبب حدث، لكن يظل ممكناً تشغيلها من أشرطتها الحمراء على الخط الزمني. لا تتأثر قائمة التسجيلات المستمرة.</td></tr>
       <tr><td><span class="ui">تعذّر على هذا الجهاز البحث في أحداثه.</span></td><td>الحالة نفسها، في جهاز يحدد الحركة ومداخل الإنذار.</td></tr>
-      <tr><td>رسالة مع رمز تحذير فوق الخط الزمني: <span class="ui">لا يمكن لهذا الحساب قراءة تسجيلات هذا الجهاز.</span> أو <span class="ui">تعذّر الوصول إلى الجهاز.</span> أو <span class="ui">لم يتعرّف الجهاز على تسجيلات هذه الكاميرا.</span> أو <span class="ui">هذه الكاميرا غير متصلة.</span></td><td>فشل البحث عن اليوم للسبب الذي تذكره الرسالة. ويمكن تغيير اليوم وتجربة يوم آخر أثناء ظهور الرسالة. بالنسبة إلى الحساب، تحقق من صلاحياته على الجهاز؛ وبالنسبة إلى الاتصال، راجع <a class="xref" href="#trouble">الفصل 15، «استكشاف الأخطاء وإصلاحها»</a>.</td></tr>
+      <tr><td>رسالة مع رمز تحذير فوق الخط الزمني: <span class="ui">لا يمكن لهذا الحساب قراءة تسجيلات هذا الجهاز.</span> أو <span class="ui">تعذّر الوصول إلى الجهاز.</span> أو <span class="ui">لم يتعرّف الجهاز على تسجيلات هذه الكاميرا.</span> أو <span class="ui">هذه الكاميرا غير متصلة.</span></td><td>فشل البحث عن اليوم للسبب الذي تذكره الرسالة. ويمكن تغيير اليوم وتجربة يوم آخر أثناء ظهور الرسالة. بالنسبة إلى الحساب، تحقق من اسم المستخدم وكلمة المرور وصلاحيات الحساب على الجهاز؛ وبالنسبة إلى الاتصال، راجع <a class="xref" href="#trouble">الفصل 15، «استكشاف الأخطاء وإصلاحها»</a>.</td></tr>
       <tr><td><span class="ui">طلبات كثيرة خلال وقت قصير. أعد المحاولة بعد دقيقة.</span></td><td>رفض الجهاز أو خدمته البحث بسبب كثرة الطلبات، أو كان الجهاز لا يزال مشغولاً ببحث سابق. انتظر دقيقة ثم اختر اليوم مرة أخرى.</td></tr>
       <tr><td>رسائل أخرى في المكان نفسه، مثل <span class="ui">أرسل الجهاز ردًا غير متوقع.</span> أو <span class="ui">انتهت مهلة الاتصال.</span> أو <span class="ui">حدث خطأ ما. يرجى المحاولة مرة أخرى.</span></td><td>فشل البحث لسبب آخر. اختر اليوم مرة أخرى. إذا استمرت الرسالة، راجع <a class="xref" href="#trouble">الفصل 15، «استكشاف الأخطاء وإصلاحها»</a>.</td></tr>
     </tbody>
@@ -1958,7 +1958,7 @@
     <li class="step">
       <p>ابدأ تسجيلاً وأدِر iPhone إلى الوضع الأفقي.</p>
       <p class="check"><b class="check-label">التحقق:</b> تملأ الصورة الشاشة. يضم شريط فوق الحافة السفلية للصورة الشارة <span class="ui">مُسجَّل 15:00:03</span> وزر السرعة و<span class="ui">العودة إلى البث المباشر</span> والخط الزمني.</p>
-      <figure class="land"><img src="guide/img/playback-landscape.jpg" alt="التشغيل في الوضع الأفقي: الصورة على الشاشة كلها مع شريط عند الحافة السفلية يضم شارة التشغيل وزر السرعة و«العودة إلى البث المباشر» والخط الزمني" loading="lazy" decoding="async" width="1600" height="736"><figcaption>التشغيل في الوضع الأفقي</figcaption></figure>
+      <figure class="land"><img src="guide/img/playback-landscape.jpg" alt="التشغيل في الوضع الأفقي: الصورة في وسط الشاشة السوداء، وفي الأعلى زر الرجوع وبجانبه شارة التشغيل، وزر التسجيل الأحمر، وشريط عند الحافة السفلية يضم شارة التشغيل وزر السرعة و«العودة إلى البث المباشر» والخط الزمني" loading="lazy" decoding="async" width="1600" height="736"><figcaption>التشغيل في الوضع الأفقي</figcaption></figure>
     </li>
     <li class="step">
       <p>اسحب الخط الزمني في الشريط وارفع الإصبع عند الوقت المطلوب.</p>
@@ -2096,7 +2096,7 @@
     <li class="step">
       <p>حدّد خمس قنوات أخرى، بالترتيب الذي يجب أن تظهر به على الجدار.</p>
       <p class="check"><b class="check-label">التحقق:</b> يعرض أعلى الصفحة <span class="ui" data-ui="value">تم اختيار 6 كاميرات</span>.</p>
-      <figure class="phone"><img src="guide/img/lvm-pick-selected.jpg" alt="صفحة «اختيار الكاميرات» وقد اختيرت 6 كاميرات: لكل قناة محددة محدّد SD وHD في جهتها اليسرى، وفي الأعلى الزران «الكل SD» و«الكل HD»" loading="lazy" decoding="async" width="900" height="1956"><figcaption>تم اختيار 6 كاميرات</figcaption></figure>
+      <figure class="phone"><img src="guide/img/lvm-pick-selected.jpg" alt="صفحة «اختيار الكاميرات» وقد اختيرت 6 كاميرات: المفتاح «الصفحة الأفقية» و«الصفحة العمودية» في الأعلى، وتحته الزران «الكل SD» و«الكل HD»، ومحدّد SD وHD بجانب كل قناة محددة" loading="lazy" decoding="async" width="900" height="1956"><figcaption>تم اختيار 6 كاميرات</figcaption></figure>
     </li>
     <li class="step">
       <p>اختياري: اضغط على <span class="ui">HD</span> بجانب كل كاميرا يجب أن تعرض صورة أوضح.</p>
@@ -2360,7 +2360,7 @@
   <h3 id="lvm-arrange">ترتيب الجدار ومربّعاته</h3>
   <p>المسار: <span class="path"><span class="ui">LiveView Mix</span> › <span class="ui">تعديل التخطيط</span> › <span class="ui">ترتيب الجدار</span></span>. تحدد هذه الصفحة ما يوضع في كل مربّع. وعنوانها <span class="ui">ترتيب</span>. وتضم الصفحة، من الأعلى إلى الأسفل، صف التخطيطات ومنطقة الترتيب و<span class="ui">نصائح</span> وقائمة <span class="ui">الترتيب</span>. يتاح <span class="ui">ترتيب الجدار</span> بمجرد اختيار كاميرات أو وجود جهاز.</p>
   <figure class="phone clip"><video class="clip" src="guide/vid/rec-arrange-swap.mp4" poster="guide/img/rec-arrange-swap.jpg" aria-label="ترتيب الجدار: سحب مربّع إلى آخر يبدّل مكانيهما، وسحب مربّع إلى خلية فارغة ينقله إليها." muted loop playsinline preload="metadata"></video><figcaption>ترتيب الجدار: سحب مربّع إلى آخر يبدّل مكانيهما، وسحب مربّع إلى خلية فارغة ينقله إليها.</figcaption></figure>
-  <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="صفحة «ترتيب»: صف التخطيطات في الأعلى، ومنطقة الترتيب بعشرة مربّعات في الوسط (المربّع 9 لوحة تحكم والمربّع 10 ساعة)، وقائمة «الترتيب» تحتها" loading="lazy" decoding="async" width="900" height="1956"><figcaption>صفحة «ترتيب»</figcaption></figure>
+  <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="صفحة «ترتيب»: صف التخطيطات في الأعلى، ومنطقة الترتيب بعشرة مربّعات في الوسط (المربّع 9 لوحة تحكم والمربّع 10 ساعة)، و«نصائح» وقائمة «الترتيب» تحتها" loading="lazy" decoding="async" width="900" height="1956"><figcaption>صفحة «ترتيب»</figcaption></figure>
   <ul>
     <li><b>صف التخطيطات</b>: الرسوم التوضيحية للتخطيطات نفسها الموجودة في <span class="ui">تعديل التخطيط</span>؛ ويمكن تغيير التخطيط من هنا مباشرة. ويظهر الرسم التوضيحي <span class="ui">مخصّص</span> بعد رسم تخطيط أو أثناء استخدامه، ولا يمكن اختياره إلا من هنا.</li>
     <li><b>منطقة الترتيب</b>: تُرسم بنسبة 16:9 أفقياً للصفحة الأفقية، وبنسبة 9:16 عمودياً للصفحة العمودية، وتعرض صفحة الجدار الحالية. يظهر رقم كل مربّع مملوء في زاويته العلوية اليمنى. وتعرض مربّعات الكاميرات صورة مباشرة (SD)؛ أما الكاميرا غير المتصلة أو الواقعة خارج الخطة فتعرض مربّعاً أسود عليه رمز كاميرا مشطوب، ويعرض بث YouTube أو Twitch اسمه. ما دامت العلامة المائية متوقفة، يظهر اسم القناة في الزاوية السفلية اليمنى؛ وعندما تكون قيد التشغيل، تُعرض معاينة العلامة المائية. تبدو لوحات التحكم في منطقة الترتيب كما هي على الجدار، دون قفل اللوحة التي لا تشملها الخطة؛ والضغط على إحداها يفتح محررها ولا يرسل أي طلب. عندما يكون الجهاز في الوضع العمودي، يُقلب الجدار الأفقي الفعلي، لكن كل مربّع يحتفظ برقمه.</li>
@@ -2941,7 +2941,7 @@
     <li class="step">
       <p>اضغط على <span class="ui">ترتيب الجدار</span>.</p>
       <p class="check"><b class="check-label">التحقق:</b> تُفتح صفحة <span class="ui">ترتيب</span>: منطقة الترتيب الخاصة بالجدار في الأعلى، وتسرد قائمة <span class="ui">الترتيب</span> تحتها كل مربّع مملوء تحت رقمه.</p>
-      <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="صفحة «ترتيب»: منطقة ترتيب الجدار في الأعلى مع لوحة تحكم في المربّع 9 وساعة في المربّع 10، وتحتها قائمة المربّعات المملوءة" loading="lazy" decoding="async" width="900" height="1956"><figcaption>صفحة «ترتيب»</figcaption></figure>
+      <figure class="phone"><img src="guide/img/lvm-arrange-full.jpg" alt="صفحة «ترتيب»: صف التخطيطات في الأعلى، وتحته منطقة ترتيب الجدار مع لوحة تحكم في المربّع 9 وساعة في المربّع 10، وتحتها قائمة المربّعات المملوءة" loading="lazy" decoding="async" width="900" height="1956"><figcaption>صفحة «ترتيب»</figcaption></figure>
     </li>
     <li class="step">
       <p>اضغط على مربّع غير مستخدم في منطقة الترتيب، يظهر بإطار متقطع وعلامة +. وعندما تكون المربّعات غير المستخدمة في صفحة أخرى من صفحات الجدار، استخدم أولاً الأسهم تحت منطقة الترتيب أو اسحب جانبياً.</p>
@@ -3084,8 +3084,8 @@
     </li>
   </ol>
   <div class="shots pair">
-    <figure class="phone"><img src="guide/img/lvm-button-editor.jpg" alt="محرر الزر: الأيقونة والتسمية والتأكيد قبل التنفيذ، والطريقة وعنوان URL في قسم الطلب" loading="lazy" decoding="async" width="900" height="1956"><figcaption>محرر الزر (الجزء العلوي)</figcaption></figure>
-    <figure class="phone"><img src="guide/img/lvm-button-headers.jpg" alt="الجزء السفلي من محرر الزر: قسم الترويسات مع صف Authorization واحد، وقسم المحتوى مع نوع المحتوى ومحتوى JSON" loading="lazy" decoding="async" width="900" height="1956"><figcaption>محرر الزر (الجزء السفلي)</figcaption></figure>
+    <figure class="phone"><img src="guide/img/lvm-button-editor.jpg" alt="محرر الزر: الأيقونة والتسمية والتأكيد قبل التنفيذ، والطريقة وعنوان URL في قسم الطلب، وقسم Apple Watch مع «طريقة الإرسال»" loading="lazy" decoding="async" width="900" height="1956"><figcaption>محرر الزر (الجزء العلوي)</figcaption></figure>
+    <figure class="phone"><img src="guide/img/lvm-button-headers.jpg" alt="الجزء السفلي من محرر الزر: قسم Apple Watch، وقسم الترويسات مع صف Authorization واحد، وقسم المحتوى مع نوع المحتوى ومحتوى JSON" loading="lazy" decoding="async" width="900" height="1956"><figcaption>محرر الزر (الجزء السفلي)</figcaption></figure>
   </div>
   <div class="table-wrap"><table>
     <thead><tr><th>الحقل</th><th>الوصف</th></tr></thead>
@@ -3117,7 +3117,7 @@
     <li class="step">
       <p>راقب أيقونة الزر.</p>
       <p class="check"><b class="check-label">التحقق:</b> بحسب النتيجة، تتحول الأيقونة إلى علامة صح خضراء أو مثلث تحذير برتقالي، ثم تعود إلى الأيقونة الأصلية بعد نحو 1.6 ثانية.</p>
-      <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="ثلاث حالات لزر واحد: المؤشر الدوّار أثناء الإرسال، وعلامة الصح الخضراء بعد النجاح، ومثلث التحذير البرتقالي بعد الفشل" loading="lazy" decoding="async" width="1600" height="736"><figcaption>الحالات الثلاث للزر</figcaption></figure>
+      <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="ثلاثة أزرار للوحة تحكم على جدار LiveView Mix، كلٌّ منها في إحدى الحالات: المؤشر الدوّار أثناء الإرسال، وعلامة الصح الخضراء بعد النجاح، ومثلث التحذير البرتقالي بعد الفشل" loading="lazy" decoding="async" width="1600" height="736"><figcaption>الحالات الثلاث للزر، حالة على كل زر</figcaption></figure>
     </li>
   </ol>
   <div class="table-wrap"><table>
@@ -3851,7 +3851,7 @@ Content-Type: application/json
     <li class="step">
       <p>في القسم <span class="ui">خطط الكاميرات · فوترة سنوية</span> أو <span class="ui">خطط NVR · فوترة شهرية</span>، ابحث عن الخطة المراد اختيارها واضغط على <span class="ui">اشترك</span> في بطاقتها.</p>
       <p class="check"><b class="check-label">التحقق:</b> يظهر تأكيد الشراء الخاص بالنظام. تعرض كل بطاقة اسم الخطة ووصفاً قصيراً وتكلفتها؛ وعندما يكون حساب Apple مؤهلاً، تظهر أيضاً مدة التجربة المجانية.</p>
-      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="أعلى صفحة الخطط: شعار Cam Hub والعنوان «افتح كل كاميرا» وجملة عما تعرضه الخطة المجانية وخمسة أسطر قصيرة عن الخطط وما تشمله، والعنوان «خطط الكاميرات · فوترة سنوية» عند الحافة السفلية" loading="lazy" decoding="async" width="900" height="1215"><figcaption>أعلى صفحة الخطط؛ وتتبعه بطاقات الخطط في الأسفل</figcaption></figure>
+      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="أعلى صفحة الخطط: شعار Cam Hub والعنوان «افتح كل كاميرا» وجملة عما تعرضه الخطة المجانية، وخمسة أسطر قصيرة عن الخطط وما تشمله" loading="lazy" decoding="async" width="900" height="1215"><figcaption>أعلى صفحة الخطط؛ وتتبعه بطاقات الخطط في الأسفل</figcaption></figure>
     </li>
     <li class="step">
       <p>اتبع تعليمات شاشة النظام لتأكيد الشراء بحساب Apple.</p>
@@ -3950,7 +3950,7 @@ Content-Type: application/json
     <li class="step">
       <p>اضغط على علامة التبويب <span class="ui">الأدوات</span> أسفل الشاشة.</p>
       <p class="check"><b class="check-label">التحقق:</b> تعرض الشاشة أقسام العلامة، بدءاً من <span class="ui">الشبكة الفرعية</span>. يكون حقل العنوان والنطاق مملوءين أصلاً بشبكة الجهاز.</p>
-      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="علامة التبويب «الأدوات»: قسم «الشبكة الفرعية» مع العنوان الخاص والشبكة والنطاق وزر «فحص»، وتحته «الأجهزة المكتشَفة» وصف «عداد السرعة»" loading="lazy" decoding="async" width="900" height="1745"><figcaption>علامة التبويب «الأدوات» (شبكة تجريبية)</figcaption></figure>
+      <figure class="phone"><img src="guide/img/tools-scan.jpg" alt="علامة التبويب «الأدوات» وعنوانها في الأعلى: قسم «الشبكة الفرعية» مع عنوان هذا الجهاز والشبكة والنطاق وزر «فحص»، وتحته «الأجهزة المكتشَفة» دون أجهزة بعد، والصف «عداد السرعة»" loading="lazy" decoding="async" width="900" height="1634"><figcaption>علامة التبويب «الأدوات» (شبكة تجريبية)</figcaption></figure>
     </li>
   </ol>
   <p>وللاطلاع على خطوات الفحص، راجع <a class="xref" href="#add-scan">«العثور على الأجهزة بفحص الشبكة»</a>. وتتعلق النقاط التالية بسلوك العلامة ككل.</p>
@@ -4132,7 +4132,7 @@ Content-Type: application/json
     <li class="step">
       <p>في القسم <span class="ui">الاشتراك</span>، اضغط على <span class="ui">الخطط</span>.</p>
       <p class="check"><b class="check-label">التحقق:</b> تُفتح الصفحة <span class="ui">الخطط</span> فوق الإعدادات. تسرد خطط الكاميرات وخطط NVR وتميّز الخطة الحالية.</p>
-      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="أعلى صفحة الخطط: شعار Cam Hub والعنوان «افتح كل كاميرا» وجملة عما تعرضه الخطة المجانية وخمسة أسطر قصيرة عن الخطط وما تشمله، والعنوان «خطط الكاميرات · فوترة سنوية» عند الحافة السفلية" loading="lazy" decoding="async" width="900" height="1215"><figcaption>أعلى صفحة الخطط؛ وتتبعه بطاقات الخطط في الأسفل</figcaption></figure>
+      <figure class="phone"><img src="guide/img/plans-screen.jpg" alt="أعلى صفحة الخطط: شعار Cam Hub والعنوان «افتح كل كاميرا» وجملة عما تعرضه الخطة المجانية، وخمسة أسطر قصيرة عن الخطط وما تشمله" loading="lazy" decoding="async" width="900" height="1215"><figcaption>أعلى صفحة الخطط؛ وتتبعه بطاقات الخطط في الأسفل</figcaption></figure>
     </li>
     <li class="step">
       <p>اضغط على <span class="ui">تم</span> في الزاوية العلوية اليسرى.</p>
@@ -4256,7 +4256,7 @@ Content-Type: application/json
     <li class="step">
       <p>اضغط على الصف <span class="ui" data-ui="value">Language</span>.</p>
       <p class="check"><b class="check-label">التحقق:</b> تسرد قائمة <span class="ui">اتّباع النظام</span> واللغات <span class="ui" data-ui="value">English</span> و<span class="ui" data-ui="value">繁體中文</span> و<span class="ui" data-ui="value">简体中文</span> و<span class="ui" data-ui="value">日本語</span> و<span class="ui" data-ui="value">한국어</span> و<span class="ui" data-ui="value">العربية</span> و<span class="ui" data-ui="value">Deutsch</span> و<span class="ui" data-ui="value">Español</span> و<span class="ui" data-ui="value">Español (México)</span> و<span class="ui" data-ui="value">Français</span> و<span class="ui" data-ui="value">Slovenščina</span>. تُكتب كل لغة باسمها الخاص.</p>
-      <figure class="phone"><img src="guide/img/settings-language.jpg" alt="قائمة «Language» في علامة التبويب «الإعدادات»: «اتّباع النظام» مع علامة اختيار، واللغات مكتوبة كل منها باسمها الخاص، ومنها Español (México)" loading="lazy" decoding="async" width="900" height="1947"><figcaption>قائمة «Language»</figcaption></figure>
+      <figure class="phone"><img src="guide/img/settings-language.jpg" alt="قائمة «Language» في علامة التبويب «الإعدادات»: «اتّباع النظام» مع علامة اختيار، واللغات الإحدى عشرة مكتوبة كل منها باسمها الخاص، من English إلى Slovenščina في آخرها" loading="lazy" decoding="async" width="900" height="1956"><figcaption>قائمة «Language»</figcaption></figure>
     </li>
     <li class="step">
       <p>اضغط على اللغة.</p>
@@ -4303,11 +4303,11 @@ Content-Type: application/json
   <ol class="steps">
     <li class="step">
       <p>في القسم <span class="ui">إعادة تعيين</span>، اضغط على <span class="ui">استعادة الإعدادات الافتراضية</span>.</p>
-      <p class="check"><b class="check-label">التحقق:</b> يظهر مربع الحوار <span class="ui">استعادة كل الإعدادات إلى الوضع الافتراضي؟</span>، مع الزرين <span class="ui">استعادة الإعدادات الافتراضية</span> و<span class="ui">إلغاء</span>. ويذكر نص مربع الحوار أن كل إعداد، بما فيه اللغة، يعود إلى قيمته الافتراضية، وأن جدار LiveView Mix (التخطيطات ولوحات التحكم وأزرار Webhook والصور) يُمسح، وأن الأجهزة ونسخة iCloud الاحتياطية تبقى.</p>
+      <p class="check"><b class="check-label">التحقق:</b> يظهر مربع الحوار <span class="ui">استعادة كل الإعدادات إلى الوضع الافتراضي؟</span> فوق صفحة الإعدادات، مع الزر <span class="ui">استعادة الإعدادات الافتراضية</span>. ولا يحتوي مربع الحوار على زر إلغاء، سواء على iPhone أو على iPad. ويذكر نص مربع الحوار أن كل إعداد، بما فيه اللغة، يعود إلى قيمته الافتراضية، وأن جدار LiveView Mix (التخطيطات ولوحات التحكم وأزرار Webhook والصور) يُمسح، وأن الأجهزة ونسخة iCloud الاحتياطية تبقى.</p>
       <figure class="phone"><img src="guide/img/settings-restore-defaults.jpg" alt="مربع الحوار «استعادة كل الإعدادات إلى الوضع الافتراضي؟» فوق صفحة الإعدادات، مع الزر «استعادة الإعدادات الافتراضية»" loading="lazy" decoding="async" width="900" height="1956"><figcaption>التأكيد قبل استعادة الإعدادات الافتراضية</figcaption></figure>
     </li>
     <li class="step">
-      <p>اضغط على <span class="ui">استعادة الإعدادات الافتراضية</span>. واضغط على <span class="ui">إلغاء</span> بدلاً من ذلك لترك كل شيء كما هو.</p>
+      <p>اضغط على <span class="ui">استعادة الإعدادات الافتراضية</span>. ولترك كل شيء كما هو، اضغط بدلاً من ذلك في أي مكان خارج مربع الحوار؛ فيُغلق مربع الحوار دون أن يتغير شيء.</p>
       <p class="check"><b class="check-label">التحقق:</b> تعرض الإعدادات قيمها الافتراضية، وتتبع اللغة النظام. يعرض الصف <span class="ui">LiveView Mix</span> القيمة <span class="ui">لم يتم الإعداد</span>، ويكون المفتاح <span class="ui">الصفحة العمودية</span> متوقفاً. وتبقى الأجهزة مسرودة في علامة التبويب «الأجهزة».</p>
     </li>
   </ol>
@@ -4317,11 +4317,11 @@ Content-Type: application/json
   <ol class="steps">
     <li class="step">
       <p>في القسم <span class="ui">إعادة تعيين</span>، اضغط على <span class="ui">حذف كل البيانات</span>.</p>
-      <p class="check"><b class="check-label">التحقق:</b> يظهر مربع الحوار <span class="ui">حذف كل البيانات؟</span>، مع الزرين <span class="ui">حذف كل شيء</span> و<span class="ui">إلغاء</span>. يعتمد نصه على نسخة iCloud الاحتياطية. مع وجود نسخة احتياطية، يقول <span class="ui">يزيل هذا كل جهاز وكاميرا وكلمة مرور محفوظة من هذا الجهاز. لا تتأثر نسخة iCloud الاحتياطية والاشتراك.</span> وبدون نسخة احتياطية، يقول <span class="ui">لا توجد نسخة احتياطية في iCloud، لذا لا يمكن التراجع عن هذا — كلمات مرور الكاميرات موجودة على هذا الجهاز فقط ولا يمكن استرجاعها. لا يتأثر اشتراكك.</span></p>
-      <figure class="phone"><img src="guide/img/settings-delete-all.jpg" alt="مربع الحوار «حذف كل البيانات؟» فوق صفحة الإعدادات، مع الزرين «حذف كل شيء» و«إلغاء»" loading="lazy" decoding="async" width="900" height="1956"><figcaption>التأكيد قبل حذف كل البيانات</figcaption></figure>
+      <p class="check"><b class="check-label">التحقق:</b> يظهر مربع الحوار <span class="ui">حذف كل البيانات؟</span> فوق صفحة الإعدادات، مع الزر <span class="ui">حذف كل شيء</span>. ولا يحتوي مربع الحوار على زر إلغاء، سواء على iPhone أو على iPad. يعتمد نصه على نسخة iCloud الاحتياطية. مع وجود نسخة احتياطية، يقول <span class="ui">يزيل هذا كل جهاز وكاميرا وكلمة مرور محفوظة من هذا الجهاز. لا تتأثر نسخة iCloud الاحتياطية والاشتراك.</span> وبدون نسخة احتياطية، يقول <span class="ui">لا توجد نسخة احتياطية في iCloud، لذا لا يمكن التراجع عن هذا — كلمات مرور الكاميرات موجودة على هذا الجهاز فقط ولا يمكن استرجاعها. لا يتأثر اشتراكك.</span></p>
+      <figure class="phone"><img src="guide/img/settings-delete-all.jpg" alt="مربع الحوار «حذف كل البيانات؟» فوق صفحة الإعدادات، مع الزر «حذف كل شيء»" loading="lazy" decoding="async" width="900" height="1956"><figcaption>التأكيد قبل حذف كل البيانات</figcaption></figure>
     </li>
     <li class="step">
-      <p>اضغط على <span class="ui">حذف كل شيء</span>. واضغط على <span class="ui">إلغاء</span> بدلاً من ذلك للإبقاء على البيانات.</p>
+      <p>اضغط على <span class="ui">حذف كل شيء</span>. وللإبقاء على البيانات، اضغط بدلاً من ذلك في أي مكان خارج مربع الحوار؛ فيُغلق مربع الحوار دون حذف أي شيء.</p>
       <p class="check"><b class="check-label">التحقق:</b> تعرض علامة التبويب «الأجهزة» <span class="ui">لا توجد أجهزة</span>، وتعرض الإعدادات قيمها الافتراضية. ويمكن استعادة نسخة iCloud احتياطية موجودة كما هو موضح في <a class="xref" href="#share-restore">«الاستعادة من iCloud»</a>.</p>
     </li>
   </ol>
@@ -4359,7 +4359,7 @@ Content-Type: application/json
     <li class="step">
       <p>اضغط على <span class="ui">دليل المستخدم</span>.</p>
       <p class="check"><b class="check-label">التحقق:</b> يفتح المتصفح هذا الدليل على <code>https://cam-hub.almx.cc/guide.html</code>. ويلزم اتصال بالإنترنت. وللعودة إلى Cam Hub استخدم مبدّل التطبيقات في الجهاز.</p>
-      <figure class="phone"><img src="guide/img/settings-user-manual.jpg" alt="الجزء السفلي من علامة التبويب «الإعدادات»: صفوف «إعادة تعيين» مع شرحها، و«المعلومات القانونية» مع «شروط الاستخدام» و«سياسة الخصوصية»، و«حول» مع «الإصدار»، والصف «دليل المستخدم» مع شرحه" loading="lazy" decoding="async" width="900" height="1947"><figcaption>الصف «دليل المستخدم»</figcaption></figure>
+      <figure class="phone"><img src="guide/img/settings-user-manual.jpg" alt="الجزء السفلي من علامة التبويب «الإعدادات»: آخر صفوف «إعادة تعيين» مع شرحها، و«المعلومات القانونية» مع «شروط الاستخدام» و«سياسة الخصوصية»، و«حول» مع «الإصدار»، والصف «دليل المستخدم» مع شرحه، وتحته الصف «تواصل مع فريق التطوير»" loading="lazy" decoding="async" width="900" height="1956"><figcaption>الصف «دليل المستخدم»</figcaption></figure>
     </li>
   </ol>
   <ul>
@@ -4817,7 +4817,7 @@ Content-Type: application/json
       <tr><td><span class="ui">لا يستطيع هذا المسجّل تحديد الأيام التي تحتوي على تسجيلات.</span> أو <span class="ui">تعذّر تحميل هذا الشهر.</span> في التقويم</td><td>لا يوفّر الجهاز قائمة بالأيام التي فيها تسجيلات، أو لم يرد عن هذا الشهر.</td><td>اختر اليوم دون العلامات. وللشهر الذي لم يُحمَّل، اضغط على <span class="ui">حاول مرة أخرى</span>. راجع <a class="xref" href="#playback-calendar">«تقويم التسجيلات»</a>.</td></tr>
       <tr><td><span class="ui">لم يتم اكتشاف أشخاص في هذا اليوم.</span> أو <span class="ui">لا توجد أحداث في هذا اليوم.</span></td><td>لم يسجّل الجهاز أي حدث في هذا اليوم.</td><td>استخدم القائمة المستمرة أو الخط الزمني؛ راجع <a class="xref" href="#playback-list">«قائمة التسجيلات والأحداث»</a>.</td></tr>
       <tr><td><span class="ui">تعذر على هذا الجهاز البحث في فهرس أحداث الأشخاص.</span> أو <span class="ui">تعذّر على هذا الجهاز البحث في أحداثه.</span></td><td>لم يرد الجهاز على البحث عن الأحداث، أو أنه لا يحتفظ بفهرس للأشخاص المكتشَفين.</td><td>اختر اليوم مرة أخرى. وشغّل التسجيلات من القائمة المستمرة أو من الخط الزمني؛ راجع <a class="xref" href="#playback-list">«قائمة التسجيلات والأحداث»</a>.</td></tr>
-      <tr><td><span class="ui">لا يمكن لهذا الحساب قراءة تسجيلات هذا الجهاز.</span></td><td>ليس للحساب حق تشغيل التسجيلات.</td><td>استخدم حساباً له صلاحية التشغيل، أو امنح الصلاحية على الجهاز.</td></tr>
+      <tr><td><span class="ui">لا يمكن لهذا الحساب قراءة تسجيلات هذا الجهاز.</span></td><td>رفض الجهاز تسجيل الدخول: إما أن الحساب ليس له حق تشغيل التسجيلات، وإما أن اسم المستخدم أو كلمة المرور غير صحيحة، مثلاً بعد تغييرها على الجهاز.</td><td>تحقق من اسم المستخدم وكلمة المرور باستخدام <span class="ui">تعديل بيانات الاعتماد</span> في صفحة الجهاز؛ راجع <a class="xref" href="#devices-credentials">«تغيير اسم المستخدم وكلمة المرور للجهاز»</a>. وإذا كانا صحيحين، فاستخدم حساباً له صلاحية التشغيل، أو امنح الصلاحية على الجهاز.</td></tr>
       <tr><td><span class="ui">تعذّر الوصول إلى الجهاز.</span> أو <span class="ui">انتهت مهلة الاتصال.</span></td><td>لم يرد الجهاز على البحث عن اليوم.</td><td>تحقق من الشبكة واختر اليوم مرة أخرى.</td></tr>
       <tr><td><span class="ui">لم يتعرّف الجهاز على تسجيلات هذه الكاميرا.</span></td><td>لا يستطيع الجهاز العثور على تسجيلات هذه الكاميرا، مثلاً لأنه لا وحدة تخزين للكاميرا أو لأنها تبلغ عن تسجيلاتها بطريقة غير متوقعة.</td><td>تحقق على الجهاز من أن الكاميرا تسجّل. قد تعمل قناة أخرى أو يوم آخر.</td></tr>
       <tr><td><span class="ui">رفض المسجّل تشغيل هذا التسجيل. ربما تمت الكتابة فوقه — اختر وقتًا آخر.</span></td><td>أُدرج التسجيل في القائمة، لكن الجهاز رفض تشغيله، عادةً لأن لقطات أحدث حلت محله.</td><td>اختر وقتاً لاحقاً أو يوماً آخر.</td></tr>
@@ -4884,7 +4884,7 @@ Content-Type: application/json
       <tr><td>مثلث تحذير أحمر بعد الضغط على زر في Apple Watch</td><td>الأسباب نفسها التي على الجدار. وإضافة إلى ذلك، أرسلت الساعة الطلب بنفسها إلى عنوان في الشبكة المنزلية وهي ليست على شبكة Wi-Fi تلك، أو لم يرد iPhone في غضون نحو 20 ثانية، أو لم تعد الخطة تشمل اللوحة؛ وفي الحالة الأخيرة، يختفي الزر بعد ذلك من الساعة.</td><td>تحقق من <span class="ui">طريقة الإرسال</span> في محرر الزر على iPhone. راجع <a class="xref" href="#webhook-watch">«الأزرار على Apple Watch»</a>.</td></tr>
     </tbody>
   </table></div>
-  <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="ثلاث حالات لزر واحد: المؤشر الدوّار أثناء الإرسال، وعلامة الصح الخضراء بعد النجاح، ومثلث التحذير البرتقالي بعد الفشل" loading="lazy" decoding="async" width="1600" height="736"><figcaption>الحالات الثلاث للزر</figcaption></figure>
+  <figure class="land"><img src="guide/img/lvm-webhook-states.jpg" alt="ثلاثة أزرار للوحة تحكم على جدار LiveView Mix، كلٌّ منها في إحدى الحالات: المؤشر الدوّار أثناء الإرسال، وعلامة الصح الخضراء بعد النجاح، ومثلث التحذير البرتقالي بعد الفشل" loading="lazy" decoding="async" width="1600" height="736"><figcaption>الحالات الثلاث للزر، حالة على كل زر</figcaption></figure>
 
   <h3 id="trouble-health">صحة القرص</h3>
   <p>تقرأ صفحة <span class="ui">صحة القرص</span> حالة أقراص الأجهزة التي تبلغ عنها؛ راجع <a class="xref" href="#devices-health">«صحة القرص»</a>. ويبلغ جهاز التخزين الشبكي عنها عبر SNMP، الذي يجب إعداده مرة واحدة. وليس في Apple TV صفحة «صحة القرص».</p>

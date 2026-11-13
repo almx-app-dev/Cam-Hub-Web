@@ -29,7 +29,7 @@
   <div class="table-wrap" tabindex="0"><table>
     <thead><tr><th>項目</th><th>顯示條件</th></tr></thead>
     <tbody>
-      <tr><td data-label="項目">含日期、時間軸與清單的錄影面板</td><td data-label="顯示條件">設備是以提供錄影回放的連線方式加入，見<a class="xref" href="/zh-Hant/guide/brands.html#brands-matrix">「各方式可使用的功能」</a>。帳號沒有讀取錄影的權限時，仍會顯示錄影面板，並在時間軸上方顯示<span class="ui ui-long">這個帳號無法讀取這台設備上的錄影。</span></td></tr>
+      <tr><td data-label="項目">含日期、時間軸與清單的錄影面板</td><td data-label="顯示條件">設備是以提供錄影回放的連線方式加入，見<a class="xref" href="/zh-Hant/guide/brands.html#brands-matrix">「各方式可使用的功能」</a>。設備拒絕登入時，無論是帳號沒有讀取錄影的權限，還是使用者名稱或密碼錯誤，仍會顯示錄影面板，並在時間軸上方顯示<span class="ui ui-long">這個帳號無法讀取這台設備上的錄影。</span></td></tr>
       <tr><td data-label="項目">錄影日曆的按鈕</td><td data-label="顯示條件">設備同時保有每日錄影的索引，見<a class="xref" href="/zh-Hant/guide/playback.html#playback-calendar">「錄影日曆」</a>。</td></tr>
       <tr><td data-label="項目"><span class="ui">連續錄影</span>與<span class="ui">事件錄影</span>的切換</td><td data-label="顯示條件">設備是以提供事件索引的連線方式加入：偵測到人員的索引，或移動與警報輸入的索引，見<a class="xref" href="/zh-Hant/guide/brands.html#brands-matrix">「各方式可使用的功能」</a>。即使設備本身不回應該索引的搜尋，仍會顯示切換，見<a class="xref" href="/zh-Hant/guide/playback.html#playback-list">「錄影清單與事件」</a>。以其他連線方式加入的設備，只有在所選日期或前一天有設備因事件而產生的錄影時，才會出現切換。其他情況只顯示連續錄影的清單，也沒有切換。</td></tr>
       <tr><td data-label="項目">速度按鈕</td><td data-label="顯示條件">播放錄影時，且設備可將該錄影加速播放。設備無法加速時會出現提示，見<a class="xref" href="/zh-Hant/guide/playback.html#playback-speed">「播放速度」</a>。</td></tr>
@@ -69,7 +69,7 @@
 
   <h3 id="playback-calendar">錄影日曆</h3>
   <p>保有每日錄影索引的設備，<span class="ui">錄影</span>標題與日期之間有日曆按鈕。這個日曆會標示有錄影的日期，不必一天一天嘗試。沒有這種索引的設備不顯示此按鈕，日期依<a class="xref" href="/zh-Hant/guide/playback.html#playback-day">「選擇日期」</a>的說明選擇。</p>
-  <figure class="phone"><img src="/guide/img/playback-calendar.jpg" alt="單機畫面上的錄影日曆：月份與左右箭頭、有錄影的日期下方有圓點、選取的日期以實心圓標示，以及「有圓點的日期有錄影。」說明" decoding="async" width="900" height="1947" data-src="/guide/img/playback-calendar.jpg" style="aspect-ratio: 900 / 1947;" loading="lazy"><figcaption>錄影日曆</figcaption></figure>
+  <figure class="phone"><img src="/guide/img/playback-calendar.jpg" alt="單機畫面上的錄影日曆：月份與左右箭頭、有錄影的日期下方有圓點、選取的日期以實心圓標示，以及「有圓點的日期有錄影。」說明" decoding="async" width="900" height="1956" data-src="/guide/img/playback-calendar.jpg" style="aspect-ratio: 900 / 1956;" loading="lazy"><figcaption>錄影日曆</figcaption></figure>
   <ol class="steps">
     <li class="step">
       <p>點選日期旁的日曆按鈕（<span class="ui">錄影日曆</span>）。</p>
@@ -187,7 +187,7 @@
       <tr><td data-label="訊息"><span class="ui">這一天沒有事件。</span></td><td data-label="意義">該日沒有事件，適用於其他所有設備。</td></tr>
       <tr><td data-label="訊息"><span class="ui">此設備無法搜尋人員事件索引。</span></td><td data-label="意義">設備不回應偵測到人員的搜尋時（例如沒有人員索引的較舊錄影主機），在<span class="ui">事件錄影</span>下取代清單顯示。此時設備因事件而產生的錄影不會列出，但仍可從時間軸上的紅色長條播放。連續錄影的清單不受影響。</td></tr>
       <tr><td data-label="訊息"><span class="ui">此設備無法搜尋其事件。</span></td><td data-label="意義">同上，適用於標示移動與警報輸入的設備。</td></tr>
-      <tr><td data-label="訊息">時間軸上方帶警告符號的訊息：<span class="ui ui-long">這個帳號無法讀取這台設備上的錄影。</span>、<span class="ui">無法連線到這台設備。</span>、<span class="ui ui-long">這台設備無法辨識這支攝影機的錄影。</span>或<span class="ui">這支攝影機離線。</span></td><td data-label="意義">該日的搜尋因訊息所述的原因而失敗。訊息顯示期間，仍可更換日期，嘗試其他日期。帳號的問題，請檢查帳號在設備上的權限；連線的問題，見<a class="xref" href="/zh-Hant/guide/trouble.html">第 15 章「疑難排解」</a>。</td></tr>
+      <tr><td data-label="訊息">時間軸上方帶警告符號的訊息：<span class="ui ui-long">這個帳號無法讀取這台設備上的錄影。</span>、<span class="ui">無法連線到這台設備。</span>、<span class="ui ui-long">這台設備無法辨識這支攝影機的錄影。</span>或<span class="ui">這支攝影機離線。</span></td><td data-label="意義">該日的搜尋因訊息所述的原因而失敗。訊息顯示期間，仍可更換日期，嘗試其他日期。帳號的問題，請檢查使用者名稱、密碼，以及帳號在設備上的權限；連線的問題，見<a class="xref" href="/zh-Hant/guide/trouble.html">第 15 章「疑難排解」</a>。</td></tr>
       <tr><td data-label="訊息"><span class="ui ui-long">短時間內要求太多次，請稍候一分鐘再試。</span></td><td data-label="意義">設備或其服務因要求過多而拒絕了搜尋，或設備仍在處理先前的搜尋。等待一分鐘後，重新選擇日期。</td></tr>
       <tr><td data-label="訊息">同一位置的其他訊息，例如<span class="ui">設備回覆了非預期的內容。</span>、<span class="ui">連線逾時。</span>或<span class="ui">發生錯誤。請再試一次。</span></td><td data-label="意義">搜尋因其他原因而失敗。請重新選擇日期。訊息持續出現時，見<a class="xref" href="/zh-Hant/guide/trouble.html">第 15 章「疑難排解」</a>。</td></tr>
     </tbody>
@@ -268,7 +268,7 @@
     <li class="step">
       <p>開始播放一段錄影，並將 iPhone 轉為橫向。</p>
       <p class="check"><b class="check-label">確認：</b>影像佈滿螢幕。影像下緣有一條控制條，包含標籤<span class="ui">回放 15:00:03</span>、速度按鈕、<span class="ui">回到即時</span>與時間軸。</p>
-      <figure class="land"><img src="/guide/img/playback-landscape.jpg" alt="橫向的錄影回放：影像佈滿螢幕，下緣的控制條包含回放標籤、速度按鈕、回到即時與時間軸" decoding="async" width="1600" height="736" data-src="/guide/img/playback-landscape.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>橫向的錄影回放</figcaption></figure>
+      <figure class="land"><img src="/guide/img/playback-landscape.jpg" alt="橫向的錄影回放：影像位於黑色螢幕的中央，上方有返回按鈕及其旁的回放標籤，以及紅色錄製按鈕；下緣的控制條包含回放標籤、速度按鈕、回到即時與時間軸" decoding="async" width="1600" height="736" data-src="/guide/img/playback-landscape.jpg" style="aspect-ratio: 1600 / 736;" loading="lazy"><figcaption>橫向的錄影回放</figcaption></figure>
     </li>
     <li class="step">
       <p>在控制條中拖曳時間軸，並在想看的時間放開手指。</p>
