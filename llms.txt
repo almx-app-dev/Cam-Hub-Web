@@ -1,0 +1,37 @@
+# Cam Hub
+
+> Cam Hub is an app for iPhone, iPhone Duo, iPad and Apple TV (with control buttons on Apple Watch) that connects directly to IP cameras and NVR/DVR recorders, without a vendor cloud account: live view and recording playback over the equipment's own protocols, ONVIF and RTSP. Which brands work with which method is listed in the manual chapter "Supported brands and connection methods" (https://cam-hub.almx.cc/guide/brands.html). Developer: ALMX. App Store: https://apps.apple.com/app/id6792057195
+
+Cam Hub is a third-party viewer: it is not made by, affiliated with or endorsed by any camera vendor. It talks to the equipment itself (on the local network, or through a forwarded port, DDNS or VPN that the owner sets up), so no vendor account, P2P cloud or Cam Hub account is needed. Features depend on the model, firmware and account permissions of the equipment.
+
+## What it does
+
+- Add equipment: Auto-detect checks which ports answer and tries the built-in brand protocols, ONVIF and the RTSP stream paths of many brands; a network scan in the Tools tab finds cameras and recorders and fills in the form. HTTPS with a pinned certificate is optional per device.
+- Recorders: every channel of an NVR/DVR or NAS, with live view, recording search and playback (timeline, recording calendar, continuous and event recordings, playback speed), and Disk Health (S.M.A.R.T., temperatures; on a NAS also volumes, CPU, memory and network).
+- Single-camera view: zoom, snapshots, recording a clip of up to 10 minutes, SD/HD stream switching, PTZ control (tap to aim and draw-to-zoom on supported cameras) and two-way talk on supported standalone cameras.
+- LiveView Mix: one wall mixing channels from different cameras, recorders, brands and sites; 17 ready-made layouts or a custom drawn layout; an optional portrait page; pictures, clocks, labels and HTTP webhook control panels (for Home Assistant, Node-RED or other services) in any tile.
+- Apple TV: LiveView Mix, device walls, full-screen cameras and playback on the television; devices can be added on the TV or brought over from an iPhone or iPad backup.
+- Sharing and backup: share cameras as an encrypted code (open, six-digit PIN or password); several named encrypted backups in the owner's own iCloud.
+- Where available, YouTube live streams and channels and Twitch channels can be added and shown like cameras.
+- Languages: English, Traditional Chinese, Simplified Chinese, Japanese, Korean, German, Spanish, Mexican Spanish, French, Slovenian, Arabic.
+
+## Pricing
+
+Free: up to 2 enabled channels in the whole app and 1 recorder. Camera plans (yearly) raise the standalone-camera limit to 8, 16 or unlimited; NVR plans (monthly) raise the recorder count to 2, 4 or unlimited and unlock every channel of those recorders. Plans can be combined. Prices are shown in the app.
+
+## Pages
+
+- [Home](https://cam-hub.almx.cc/): overview and common compatibility questions
+- [Features](https://cam-hub.almx.cc/product.html): every feature, step by step, with the plans table
+- [Supported brands and connection methods](https://cam-hub.almx.cc/guide/brands.html): which brand works with which method and feature
+- [Adding a device](https://cam-hub.almx.cc/guide/add.html): Auto-detect, ONVIF, RTSP, HTTPS, network scan, troubleshooting
+- [Recording playback](https://cam-hub.almx.cc/guide/playback.html)
+- [LiveView Mix](https://cam-hub.almx.cc/guide/lvm.html) and [control panels and webhooks](https://cam-hub.almx.cc/guide/webhook.html), including Home Assistant
+- [Apple TV](https://cam-hub.almx.cc/guide/appletv.html)
+- [Plans and limits](https://cam-hub.almx.cc/guide/plans.html)
+- [User manual](https://cam-hub.almx.cc/guide.html): the full manual, 17 chapters, in all eleven languages
+- [Device differences](https://cam-hub.almx.cc/devices.html): iPhone, iPhone Duo, iPad, Apple TV and Apple Watch compared
+- [Support and compatibility](https://cam-hub.almx.cc/support.html)
+- [Privacy Policy](https://cam-hub.almx.cc/privacy.html) and [Terms of Use](https://cam-hub.almx.cc/terms.html)
+
+Other languages live in folders: /zh-Hant/, /zh-Hans/, /ja/, /ko/, /de/, /es/, /es-MX/, /fr/, /sl/, /ar/ (for example https://cam-hub.almx.cc/ja/product.html).

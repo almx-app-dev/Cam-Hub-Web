@@ -5316,6 +5316,29 @@ Content-Type: application/json
     <li>頁面底部的說明指出：名稱為各權利人的商標，Cam Hub 為獨立開發，成功連線僅代表技術相容。</li>
     <li>從已辨識出品牌的掃描結果開啟的表單，不會顯示<span class="ui">相容性參考</span>項目。</li>
   </ul>
+
+  <h3 id="brands-faq">常見問題</h3>
+  <p>這些設備的使用者最常問的問題，簡短回答如下；詳細內容見上方各節。</p>
+  <details class="faq">
+    <summary>不用 Hik-Connect，也能用 iPhone 看 Hikvision 的 NVR 監視主機嗎？</summary>
+    <p>可以。Cam Hub 用設備本身的使用者名稱與密碼，直接連接 Hikvision 錄影主機或攝影機，不需要 Hik-Connect、它的雲端或任何其他帳號。錄影主機會列出所有通道的名稱與訊號狀態；提供即時影像、SD 與 HD、錄影回放、快照與錄製片段；倍速播放、錄影日曆、PTZ、點畫面轉向，以及透過獨立攝影機對講，則依設備支援而定；<span class="ui">硬碟健康</span>會顯示硬碟狀態。iPad 與 Apple TV 也一樣能用。見<a class="xref" href="#brands-matrix">「各方式可使用的功能」</a>。</p>
+  </details>
+  <details class="faq">
+    <summary>需要雲端帳號嗎？</summary>
+    <p>不需要。Cam Hub 直接與每台設備連線，本身沒有雲端服務，任何連線方式都不會登入原廠的雲端帳號，只需要設備本身的使用者名稱與密碼。只能透過原廠遠端存取服務連線的設備無法加入，見<a class="xref" href="#brands-compat">「App 內的相容性參考」</a>。</p>
+  </details>
+  <details class="faq">
+    <summary>支援錄影回放嗎？</summary>
+    <p>支援。Hikvision、Dahua、Synology Surveillance Station 與 Xiongmai (XMEye) 都能回放；透過 ONVIF 時，錄影主機需提供 ONVIF 的搜尋與回放服務。單純的 RTSP 沒有回放。Hikvision、Dahua 與 ONVIF 錄影主機在主機允許時，可用 2×、4×、8× 播放；會回報錄影日期的 Hikvision 錄影主機，日曆上會標出有錄影的日子。</p>
+  </details>
+  <details class="faq">
+    <summary>人在外面，也能看家裡的監視器嗎？</summary>
+    <p>可以，只要設備能從網際網路連到：透過連回家中網路的 VPN，或指向設備的連接埠轉發、DDNS 名稱。Cam Hub 本身不使用中繼或雲端，要怎麼連到設備由您決定；使用 VPN 時，設備本身不必暴露在網際網路上。從網際網路連線的設備，若支援 HTTPS 請開啟，見<a class="xref" href="#add-https">「透過 HTTPS 加入設備」</a>與<a class="xref" href="#devices-https">「已儲存設備的 HTTPS」</a>。</p>
+  </details>
+  <details class="faq">
+    <summary>也支援 Dahua、Synology 與其他攝影機嗎？</summary>
+    <p>支援。Dahua 攝影機與錄影主機、Synology Surveillance Station 與 Xiongmai (XMEye) 設備都能直接連接，其他攝影機與錄影主機可透過 ONVIF 或 RTSP 連接，<span class="ui">自動偵測</span>會自行嘗試。各連線方式提供哪些功能，見<a class="xref" href="#brands-matrix">「各方式可使用的功能」</a>。</p>
+  </details>
 </section>
 
 <section class="chapter" id="about">

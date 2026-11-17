@@ -5316,6 +5316,29 @@ Content-Type: application/json
     <li>A note at the bottom states that the names are trademarks of their owners, that Cam Hub is developed independently, and that a successful connection means technical compatibility only.</li>
     <li>The entry <span class="ui">Compatibility reference</span> is not shown in a form that was opened from a scan result that named the brand of the device.</li>
   </ul>
+
+  <h3 id="brands-faq">Common questions</h3>
+  <p>Short answers to what owners of these devices ask most. The sections above give the details.</p>
+  <details class="faq">
+    <summary>Can I watch a Hikvision NVR on iPhone without Hik-Connect?</summary>
+    <p>Yes. Cam Hub connects to a Hikvision recorder or camera directly, with the user name and password of the device; Hik-Connect, its cloud and any other account are not needed. A recorder shows all its channels with their names and signal state. Live view, SD and HD, recording playback, snapshots and clip recording are offered; faster playback, the recording calendar, PTZ, aiming by touch and talking through a standalone camera appear where the device supports them; <span class="ui">Disk Health</span> shows the state of its disks. The same works on iPad and Apple TV. See <a class="xref" href="#brands-matrix">“What works with which method”</a>.</p>
+  </details>
+  <details class="faq">
+    <summary>Do I need a cloud account?</summary>
+    <p>No. Cam Hub talks to each device directly and has no cloud service of its own, and no method signs in to a maker's cloud account. The user name and password of the device are all it needs. A device that can be reached only through its maker's remote-access service cannot be added; see <a class="xref" href="#brands-compat">“The compatibility reference in the app”</a>.</p>
+  </details>
+  <details class="faq">
+    <summary>Is recording playback supported?</summary>
+    <p>Yes, with Hikvision, Dahua, Synology Surveillance Station and Xiongmai (XMEye), and through ONVIF on recorders that offer its search and replay services. Plain RTSP has no playback. Hikvision, Dahua and ONVIF recorders can also play at 2×, 4× and 8× where the recorder allows it, and a Hikvision recorder that reports its recording days has them marked in the calendar.</p>
+  </details>
+  <details class="faq">
+    <summary>Can I watch my cameras from outside my home network?</summary>
+    <p>Yes, when the device can be reached from the internet: through a VPN back to the home network, or through a forwarded port or a DDNS name that points at the device. Cam Hub uses no relay or cloud of its own, so how the device is reached is your choice; a VPN keeps the device itself off the internet. For a device reached over the internet, turn on HTTPS where it offers it; see <a class="xref" href="#add-https">“Adding a device over HTTPS”</a> and <a class="xref" href="#devices-https">“HTTPS for a saved device”</a>.</p>
+  </details>
+  <details class="faq">
+    <summary>Does it also work with Dahua, Synology and other cameras?</summary>
+    <p>Yes. Dahua cameras and recorders, Synology Surveillance Station and Xiongmai (XMEye) devices connect directly, and other cameras and recorders through ONVIF or RTSP; <span class="ui">Auto-detect</span> tries these by itself. What each method offers is in <a class="xref" href="#brands-matrix">“What works with which method”</a>.</p>
+  </details>
 </section>
 
 <section class="chapter" id="about">

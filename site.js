@@ -85,11 +85,11 @@ const translations = {
     siteNoticeBody: "本網站（不是 Cam Hub App）使用 Cloudflare, Inc. 提供的 Cloudflare Web Analytics 統計造訪次數。它不會設定 Cookie、不使用本機儲存空間、不會跨網站追蹤您，也不會建立您的個人檔案。統計內容為各頁面的瀏覽數、來源網站、國家或地區、瀏覽器與裝置類型。若您的瀏覽器送出「不追蹤」（Do Not Track）或 Global Privacy Control 訊號，則不會載入。Cam Hub App 本身不含任何分析工具。",
     footer: "Copyright © 2026 ALMX. All rights reserved.",
     home: {
-      documentTitle: "Cam Hub — 自己的攝影機，不必被雲端綁住",
+      documentTitle: "Cam Hub — 用 iPhone 看監視器，不必被雲端綁住",
       topline: "直接連接．集中監看",
       eyebrow: "直接連接您的設備",
-      title: '<span class="hero-line">自己的攝影機，</span><span class="hero-line hero-accent">不必被雲端綁住。</span>',
-      summary: "Cam Hub 讓您直接連接相容的攝影機與錄影主機，不需為觀看影像另外註冊品牌雲端帳號。",
+      title: '<span class="hero-line">用手機看監視器，</span><span class="hero-line hero-accent">不必被雲端綁住。</span>',
+      summary: "Cam Hub 讓您用 iPhone、iPad 與 Apple TV 直接看監視器：連接相容的攝影機與錄影主機，看即時影像與錄影回放，不需另外註冊品牌雲端帳號。",
       primaryCTA: "查看功能",
       secondaryCTA: "確認相容方式",
       trustAccount: "不需另外建立帳號",
@@ -430,7 +430,7 @@ const translations = {
     siteNoticeBody: "This website (not the Cam Hub app) counts visits with Cloudflare Web Analytics, a service provided by Cloudflare, Inc. It sets no cookies, does not use local storage, does not track you across other sites and does not build a profile of you. It reports page views by page, referring site, country, browser and device type. It is not loaded when your browser sends Do Not Track or Global Privacy Control. The Cam Hub app itself contains no analytics.",
     footer: "Copyright © 2026 ALMX. All rights reserved.",
     home: {
-      documentTitle: "Cam Hub — Your cameras, without the cloud lock-in",
+      documentTitle: "Cam Hub — Watch IP cameras and NVRs on iPhone, iPad and Apple TV",
       topline: "Direct connection · Unified viewing",
       eyebrow: "Connect directly to your equipment",
       title: '<span class="hero-line">Your cameras.</span><span class="hero-line hero-accent">No cloud lock-in.</span>',
