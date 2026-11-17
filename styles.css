@@ -497,6 +497,21 @@ h1 .hero-accent {
 .webhook-icon i:nth-child(3) { right: 9px; bottom: 10px; }
 .webhook-icon::after { position: absolute; z-index: 1; left: 18px; top: 16px; width: 23px; height: 20px; border-top: 1.5px solid var(--cyan); border-bottom: 1.5px solid var(--cyan); content: ""; transform: perspective(20px) rotateY(-32deg); }
 
+/* Home cards 07-10 (2026-11-18): PTZ (crosshair ring), Disk Health (drive), sharing (padlock), iPhone Duo (book). */
+.ptz-icon i { position: absolute; z-index: 1; inset: 14px; border: 1.5px solid var(--cyan); border-radius: 50%; }
+.ptz-icon i::before { position: absolute; left: 50%; top: 50%; width: 6px; height: 6px; margin: -3px 0 0 -3px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 8px var(--cyan); content: ""; }
+.ptz-icon::after { position: absolute; z-index: 1; left: 25.5px; top: 8px; bottom: 8px; width: 1.5px; background: linear-gradient(var(--cyan) 0 5px, transparent 5px calc(100% - 5px), var(--cyan) calc(100% - 5px)); content: ""; }
+.ptz-icon i::after { position: absolute; top: 50%; left: -7.5px; right: -7.5px; height: 1.5px; margin-top: -0.75px; background: linear-gradient(90deg, var(--cyan) 0 5px, transparent 5px calc(100% - 5px), var(--cyan) calc(100% - 5px)); content: ""; }
+.disk-icon i { position: absolute; z-index: 1; inset: 16px 10px; border: 1.5px solid var(--cyan); border-radius: 5px; background: rgba(18, 217, 238, 0.12); }
+.disk-icon i::before { position: absolute; right: 5px; top: 50%; width: 5px; height: 5px; margin-top: -2.5px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 8px var(--cyan); content: ""; }
+.disk-icon i::after { position: absolute; left: 6px; top: 50%; width: 14px; height: 1.5px; margin-top: -0.75px; background: var(--cyan); content: ""; }
+.share-icon i { position: absolute; z-index: 1; left: 15px; right: 15px; bottom: 12px; height: 15px; border: 1.5px solid var(--cyan); border-radius: 4px; background: rgba(18, 217, 238, 0.12); }
+.share-icon i::before { position: absolute; left: 50%; top: -13.5px; width: 12px; height: 12px; margin-left: -7.5px; border: 1.5px solid var(--cyan); border-bottom: 0; border-radius: 7px 7px 0 0; content: ""; }
+.share-icon i::after { position: absolute; left: 50%; top: 50%; width: 3px; height: 5px; margin: -2.5px 0 0 -1.5px; border-radius: 2px; background: var(--cyan); content: ""; }
+.duo-icon i { position: absolute; z-index: 1; top: 13px; bottom: 13px; width: 11px; border: 1.5px solid var(--cyan); border-radius: 3px; background: rgba(18, 217, 238, 0.12); }
+.duo-icon i:nth-child(1) { left: 11px; transform: perspective(40px) rotateY(18deg); }
+.duo-icon i:nth-child(2) { right: 11px; transform: perspective(40px) rotateY(-18deg); }
+
 .compatibility-band {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(420px, 1.2fr);

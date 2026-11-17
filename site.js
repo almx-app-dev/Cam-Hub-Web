@@ -98,21 +98,29 @@ const translations = {
       statusLive: "即時",
       introKicker: "少一層帳號，多一點掌控",
       introTitle: "讓不同來源的影像，回到同一個畫面。",
-      introBody: "加入單一攝影機，或連接部分相容的 NVR、DVR 與 NAS 監控系統。Cam Hub 將通道整理在一致的介面中，讓查看與切換更簡單。",
+      introBody: "加入單一攝影機，或連接部分相容的 NVR、DVR 與 NAS 監控系統。Cam Hub 會在 iPhone、iPhone Duo、iPad 與 Apple TV 上，把通道整理在一致的介面中，讓查看與切換更簡單。",
       featureDirectTitle: "直接連接",
       featureDirectBody: "使用設備本身的位址與存取資訊連線，不必為了觀看影像註冊品牌雲端帳號。",
-      featureMixBody: "把不同攝影機與錄影主機的通道混合成一面專屬的牆。",
+      featureMixBody: "把不同攝影機與錄影主機的通道混合成一面專屬的牆：17 種版面或自己畫的版面、可另設直向頁面，任何一格都能放圖片、時鐘、標籤或控制面板。",
       featureProtocolTitle: "開放協定優先",
-      featureProtocolBody: "支援 ONVIF 與 RTSP 串流，並針對部分設備提供相容連接。",
+      featureProtocolBody: "支援 ONVIF 與 RTSP，不必選品牌也能自動辨識多種攝影機，並可透過 HTTPS 連線並檢查憑證。",
       featurePlaybackTitle: "即時與回放",
-      featurePlaybackBody: "查看即時影像，並在支援的設備上搜尋與播放錄影內容。",
+      featurePlaybackBody: "查看即時影像，用錄影日曆看出哪幾天有錄影，並以您選擇的速度播放錄影（依設備支援而定）。",
       featureTVTitle: "Apple TV 大螢幕監看",
       featureTVBody: "在 Apple TV 上使用 LiveView Mix、各設備的牆面與全螢幕影像；也能從 iPhone 或 iPad 建立加密備份，無需 PIN 即可還原設定。",
       featureWebhookTitle: "Webhook 控制面板",
       featureWebhookBody: "把 LiveView Mix 的空格變成 HTTP Webhook 按鈕，連接您自行管理的門禁、照明、場景或其他網路服務；敏感操作可要求再次確認。",
+      featurePTZTitle: "PTZ 與雙向對講",
+      featurePTZBody: "在支援的攝影機上，點一下畫面，PTZ 攝影機就轉向那裡，拉出方框即可直接放大；按住「對講」還能透過攝影機的喇叭說話。",
+      featureDiskTitle: "硬碟健康",
+      featureDiskBody: "一眼看出錄影主機與 NAS 的硬碟狀況：判定、溫度與 S.M.A.R.T. 資料；NAS 還能看磁碟區、CPU、記憶體與網路。",
+      featureShareTitle: "分享與備份",
+      featureShareBody: "用加密代碼分享攝影機，可用 PIN 或密碼上鎖；也能在自己的 iCloud 保留多份具名備份。",
+      featureDuoTitle: "iPhone Duo 與 Apple Watch",
+      featureDuoBody: "iPhone Duo 半摺時，LiveView Mix 會分成上下兩張畫布，攝影機頁也會把畫面放在控制項上方。Apple Watch 點一下就能執行控制面板按鈕。",
       compatibilityKicker: "目前相容性",
-      compatibilityTitle: "開放協定，加上經過實測的設備連接。",
-      compatibilityNote: "* 僅代表部分設備與功能經過相容性測試，不代表與品牌原廠存在合作、贊助或官方認可關係。實際功能依型號、韌體與設定而異。",
+      compatibilityTitle: "開放協定，加上品牌設備的直接連接。",
+      compatibilityNote: "* 代表部分設備與功能經過相容性測試。品牌名稱僅用於說明相容性，不代表與品牌原廠存在合作、贊助或官方認可關係。實際功能依型號、韌體與設定而異。",
       closingTitle: "把監看畫面，重新交回自己掌握。",
       closingCTA: "了解如何使用"
     },
@@ -127,46 +135,61 @@ const translations = {
         ["devices", "01", "設備與通道", "先完成設備連線，再決定哪些通道要出現在監看畫面。", [
           ["準備連線資訊", [
             "開啟「設備」，按下「新增設備」，進入新增設備表單。",
-            "「名稱」可以留白；「IP 位址或主機名稱」、「使用者名稱」為必要欄位。「HTTP 連接埠」預設 80，「RTSP 連接埠」預設 554，若設備使用其他連接埠請依管理介面填寫。",
-            "輸入「密碼」後按「新增」。連線期間畫面會顯示「正在連線到設備…」；若失敗，App 會區分無法連線、帳密錯誤或設備不支援。",
+            "「名稱」可以留白；「IP 位址或主機名稱」、「使用者名稱」為必要欄位。「進階」裡的「HTTP 連接埠」預設 80、「RTSP 連接埠」預設 554，只有設備使用其他連接埠時才需要修改。",
+            "輸入「密碼」後按「新增」。連線期間畫面會顯示「正在連線到設備…」；若失敗，App 會區分無法連線、帳密錯誤或設備不支援，並列出在該位址找到的開放連接埠。",
+            "不知道設備位址時，可在「工具」分頁按「掃描」：Cam Hub 會列出網路上有回應的攝影機與錄影主機，標出能辨識的機型，並替您填好新增設備表單。",
+            "在可使用的地區，「新增設備」也能加入 YouTube 直播或頻道，以及 Twitch 頻道；它會以該服務自己的播放器和攝影機並排播放，而且不占用方案額度。",
             "請只使用您擁有、管理或已獲明確授權的設備與帳號。"
           ]],
-          ["自動辨識或使用 ONVIF", [
-            "一般情況先保持「透過 ONVIF 連線」關閉，讓 Cam Hub 嘗試相容設備的原生連線，以取得較完整功能。",
-            "若無法辨識，或您希望固定使用開放協定，再開啟「透過 ONVIF 連線」後重新加入。",
-            "設備端可能需要先啟用 ONVIF、建立具備觀看權限的 ONVIF 帳號，並開放 RTSP。可從「相容性參考」查看連線提示。"
+          ["自動偵測、ONVIF 與 HTTPS", [
+            "一般情況請把「進階」裡的「連線方式」保持在「自動偵測」：Cam Hub 會先檢查哪些連接埠有回應，再自動嘗試內建的品牌協定、ONVIF，以及多個品牌的 RTSP 串流路徑。",
+            "若找不到設備，或您想固定使用某種協定，可在附搜尋欄的「連線方式」清單中選擇 ONVIF、RTSP 或設備品牌，再重新新增。",
+            "設備端可能需要先啟用 ONVIF、建立具備觀看權限的 ONVIF 帳號，並開放 RTSP。可從「相容性參考」查看連線提示。",
+            "設備網頁使用 HTTPS 時，可在「進階」開啟「使用 HTTPS」。Cam Hub 會信任設備當下出示的憑證，之後若換成其他憑證就不會連線（公開憑證機構核發的續期憑證仍可使用）；已加入的設備可從設備頁改用 HTTPS。"
           ]],
           ["整理攝影機通道", [
-            "加入成功後展開設備卡片，「通道」會列出設備回報的攝影機。",
+            "加入成功後，在「設備」點選該設備即可開啟設備頁；「攝影機」區會列出設備回報的通道。",
             "開啟需要觀看的通道；不使用的通道可以停用。錄影主機通道也可選擇「暫停畫面」，使它停止串流而不是只隱藏。",
-            "離線通道仍會保留在設備頁並以灰色呈現；若已開啟「隱藏無訊號攝影機」，它不會出現在即時牆。"
+            "離線通道仍會保留在「設備」清單並以灰色呈現；若已開啟「隱藏無訊號攝影機」，它不會出現在即時牆。"
           ]],
           ["查看與更新設備資訊", [
-            "設備卡片可展開或收合型號、位址、連接埠、序號、韌體與通道數。",
-            "右上角可重新命名設備；下拉重新整理可重新取得通道狀態。",
+            "設備頁上方的資訊卡會顯示型號、位址、連接埠、序號、韌體與通道數；按旁邊的箭頭可收合或展開這些資訊。",
+            "右上角的鉛筆可重新命名設備、用「編輯帳號密碼」更換使用者名稱與密碼（攝影機與牆面上的位置都會保留），以及開啟或關閉 HTTPS。下拉可重新取得通道清單。",
             "設備頁右上角的黑邊按鈕只改變目前畫面的黑邊處理（預設／等比例放大／不等比例拉伸）；全螢幕按鈕會打開該設備的全螢幕牆。"
+          ]],
+          ["硬碟健康", [
+            "能回報硬碟狀態的錄影主機與 NAS，設備頁會出現「硬碟健康」列；列上的橘色或紅色符號代表上次讀取時最差的硬碟判定。",
+            "每顆硬碟會顯示判定（健康、需要留意或即將故障）、狀態、容量、溫度、通電時間與 S.M.A.R.T. 詳細資料；溫度單位依 iPhone 或 iPad 的設定。",
+            "NAS 透過 SNMP 提供硬碟健康資訊，用「設定 SNMP」設定一次後，頁面還會顯示磁碟區、CPU、記憶體、網路埠與硬碟活動。Cam Hub 只讀取這些資訊，不會更改設備上的任何設定。"
           ]]
         ]],
         ["mix", "02", "LiveView Mix 多機牆", "把不同攝影機與錄影主機的通道排在同一個畫面，並依實際螢幕調整密度。", [
           ["選擇 LiveView Mix 的攝影機", [
-            "前往「設定」→「LiveView Mix 儀表板」。",
+            "在「LiveView Mix」分頁按「選擇攝影機」，或前往「設定」→「LiveView Mix」。",
             "在各設備區段勾選要混合的通道；每個通道右側可獨立選 SD 或 HD，也可用「全部 SD」／「全部 HD」一次套用。",
-            "回到「即時」分頁並在上方選擇 LiveView Mix。分頁內是方便捲動的預覽；按「全螢幕」才會套用所選的完整牆面版面。"
+            "分頁內是可捲動的預覽，欄數與列數可用下方的「排列」調整；按「全螢幕」即可看到套用所選版面的完整牆面。"
           ]],
-          ["17 種全螢幕版面", [
+          ["17 種版面，或自己畫", [
             "均分網格：2×2、2×3、3×3、3×4、4×4、5×4、6×4、5×5、7×4、6×5、6×6、7×7。",
             "焦點版面：1+3、1+5、1+7、1+21、1+27。第一個攝影機會放入最大的主格。",
-            "超過 16 格的版面會顯示螢幕標記，表示密度較高，較適合大尺寸顯示器。"
+            "用「自己畫一個版面」可選擇 2 到 8 列與欄，拖過相鄰格子即可合併成大格，讓重要的攝影機占大格。超過 16 格的版面較適合在 iPad 或 Apple TV 上觀看。"
           ]],
-          ["排列攝影機與空格", [
-            "在 LiveView Mix 設定按「排列牆面」進入排列頁。",
-            "可直接把一格拖到另一格互換；也可按「編輯」，使用清單拖曳排序或滑動刪除。順序會逐頁填入版面的格子。",
-            "按「新增空格」可插入刻意保留的空格；點一下該空格可繼續設定它要顯示的內容。"
+          ["排列牆面", [
+            "從「LiveView Mix」分頁開啟「調整版面」→「排列牆面」；畫布會照實際樣子顯示每一頁牆面。",
+            "把一格拖到另一格可互換，拖到空格則移到那裡。任何一格都能放內容，前面的格子不必先填滿。",
+            "點一下空格，可在這裡放攝影機、把其他格移進來（也可以來自別的牆面頁），或放入圖片、控制面板、時鐘或標籤。"
+          ]],
+          ["直向頁面與兩張畫布", [
+            "在「設定」開啟「直向頁面」，即可為手機直拿時另設一面牆，有自己的攝影機、版面、控制面板與浮水印；在 iPad 上，畫面高大於寬時就會顯示直向頁面。",
+            "裝置轉向時，分頁與全螢幕牆會在橫向頁面與直向頁面之間切換；未開啟直向頁面時，直拿的手機會把橫向牆面轉過來顯示。",
+            "控制面板、時鐘、標籤與圖片可以從一頁複製到另一頁，不必重新建立。",
+            "在 iPhone Duo 上開啟「兩張畫布」後，手機半摺時 LiveView Mix 會在摺線處分成上下兩張畫布，各有自己的攝影機與控制面板。"
           ]],
           ["三種畫面填滿方式", [
             "預設：保留完整影像比例，尺寸不合時出現黑邊。",
             "等比例放大：維持比例並放大到填滿格子，超出格子的邊緣會被裁掉。",
-            "不等比例拉伸：不裁切並直接填滿格子，但可能拉寬或壓扁影像。這個設定可作為全域預設，也能在個別設備或通道暫時切換。"
+            "不等比例拉伸：不裁切並直接填滿格子，但可能拉寬或壓扁影像。「設定」→「黑邊」決定設備畫面的預設方式；每面 LiveView Mix 牆則在「調整版面」裡有自己的「這面牆的黑邊」。",
+            "「設定」→「滿版畫面」（預設開啟）讓全螢幕影像延伸到動態島與圓角區域；關閉後畫面會避開這些區域。"
           ]],
           ["自訂浮水印", [
             "在「浮水印」開啟「顯示浮水印」，選擇顯示「設備名稱」、「攝影機名稱」與「IP 位址」。",
@@ -174,7 +197,7 @@ const translations = {
             "「文字清晰度」可使用「陰影」、「描邊」、「底色板」或「無」；頁面同時提供明亮與深色背景預覽，確認文字在日夜畫面都看得清楚。"
           ]],
           ["圖片、時鐘、標籤與控制面板", [
-            "在「排列」新增「空格」，再點選空格進入編輯頁面。",
+            "在「排列牆面」點一下空格，選「圖片、控制面板、時鐘或標籤…」，再從「顯示內容」選擇空白、圖片、控制、時鐘或標籤。",
             "「圖片」可從照片選擇或直接拍攝；「時鐘」可選擇日期、秒數與 12／24 小時；「標籤」可設定文字、SF Symbol 與顏色。",
             "「控制」可建立 HTTP Webhook 按鈕，內建門、車庫、燈、門鎖、窗簾、場景、警報、風扇、插座與空調範本，也能自訂。涉及開門、解鎖等操作可要求再次確認。",
             "圖片與格子設定會隨支援的加密備份移轉；Webhook 端點仍由您自行建立與保護。"
@@ -192,38 +215,43 @@ const translations = {
             "雙擊可快速切換至 2.5 倍，再次雙擊回到完整畫面。",
             "將裝置旋轉為橫向時，導覽列、控制列與分頁列會隱藏，畫面改為盡量填滿螢幕。"
           ]],
+          ["PTZ 控制與雙向對講", [
+            "PTZ 攝影機的畫面右下角有圓形按鈕，點一下打開控制盤：按住箭頭轉動鏡頭，用加號與減號變焦，星號則列出已儲存的位置。",
+            "攝影機支援時，按「3D 定位」後點畫面上的位置，鏡頭就會轉過去；在畫面上拉出方框則會直接放大該區域。",
+            "有喇叭的獨立攝影機可以對講：像對講機一樣，按住「對講」說話，放開就能聽。第一次使用時 Cam Hub 會要求麥克風權限。"
+          ]],
           ["快照與分享", [
             "在單一通道控制列按「快照」，Cam Hub 會向設備要求目前畫面的快照。",
-            "取得影像後會開啟預覽頁；按「分享」使用系統分享功能。",
+            "取得影像後會開啟預覽頁；按「分享」即可傳送或存到「照片」。",
             "按「快照」旁的紅色錄製按鈕，可把畫面上的即時影像或錄影錄成最長 10 分鐘的片段；停止後 Cam Hub 會顯示片段，可分享或存到「照片」。",
             "快照或片段可能包含人物、聲音、地址、時間或其他敏感資訊。送出前請確認內容、接收對象與所在地規範。"
           ]],
           ["日期、時間軸與錄影分類", [
-            "在通道頁下方選擇要查詢的日期；Cam Hub 會向設備要求該日的錄影片段。",
+            "在通道頁下方選擇要查詢的日期。設備有每日錄影索引時，「錄影日曆」會標出有錄影的日子。",
             "「錄影」可在「連續錄影」與「事件錄影」間切換。拖曳或縮放時間軸，將中央游標移到希望播放的時間；也可以直接點選下方片段。",
             "進入錄影後畫面會顯示「回放」與設備時間；按「回到即時」返回即時串流。部分設備會先下載片段，再由系統播放器播放。"
           ]]
-        ], '功能可用性警語：即時串流、快照、<span class="keep-phrase">主／子串流切換</span>、錄影搜尋、<span class="keep-phrase">連續錄影／事件錄影分類</span>、時間軸定位及回放，均以攝影機或錄影主機實際回傳的能力，以及登入帳號被賦予的權限為準。'],
-        ["backup", "04", "加密備份與攝影機分享", "iCloud 備份與還原不再使用 PIN；分享攝影機時，可自行決定是否用六位數 PIN 鎖定分享代碼。", [
+        ], "功能可用性警語：即時串流、快照、<span class=\"keep-phrase\">主／子串流切換</span>、錄影搜尋、<span class=\"keep-phrase\">連續錄影／事件錄影分類</span>、時間軸定位及回放，均以攝影機或錄影主機實際回傳的能力，以及登入帳號被賦予的權限為準。"],
+        ["backup", "04", "加密備份與攝影機分享", "iCloud 備份不需要 PIN，還能保留多份並各自命名；分享代碼可以不上鎖，也能用六位數 PIN 或密碼鎖定。", [
           ["本機密碼保護", [
             "加入設備成功後，密碼存入 Apple 鑰匙圈；設備名稱、位址、連接埠、通道與 App 設定保留在裝置資料中。",
             "Cam Hub 只在建立您要求的連線、搜尋錄影、擷取快照或進行備份／移轉時使用這些資料。",
             "「刪除所有資料」會移除本機設備資料與已儲存的密碼；刪除 App 也可能使尚未備份的設定無法復原。"
           ]],
-          ["不需 PIN 的 iCloud 加密備份", [
-            "前往「設定」→「備份到 iCloud」，選擇 iPhone／iPad 或 Apple TV 為目的地後即可建立備份，不需要設定 PIN。",
+          ["多份具名的 iCloud 備份", [
+            "前往「設定」→「備份到 iCloud」，在頁面上方選擇「我的備份」（iPhone 與 iPad 用）或 Apple TV，需要的話輸入名稱，再按「立即備份」，不需要設定 PIN。",
             "備份內容包括支援的設備、登入資訊、通道、LiveView Mix 與 App 設定，會先加密再保存至您自己的私人 iCloud。",
-            "完成後請確認「目前的備份」已顯示新的備份時間與設備數。"
+            "每次備份都會和先前的備份並列保存，最新的在最上面；滑動即可重新命名或刪除。Apple TV 目的地只保留一份。"
           ]],
           ["從 iCloud 還原", [
-            "在「設定」→「從 iCloud 還原」選擇要還原的備份即可繼續；iPhone、iPad 與 Apple TV 都不會要求 PIN 驗證。",
-            "建議來源與目標使用相同 App 版本，並先確認登入的是保存該備份的 Apple帳號；舊版本建立的備份可能需要重新備份後才會顯示。",
+            "開啟「設定」→「從 iCloud 還原」，在「選擇備份」中點選一份備份，再按「還原」；iPhone、iPad 與 Apple TV 都不會要求 PIN 驗證。",
+            "建議來源與目標使用相同 App 版本，並先確認登入的是保存該備份的 Apple 帳號；舊版本建立的備份可能需要重新備份後才會顯示。",
             "還原會受目前方案可用上限影響。完成後請逐一確認設備位址、通道與 LiveView Mix 是否符合目前網路環境。"
           ]],
-          ["分享攝影機與選用 PIN", [
-            "前往「設定」→「分享攝影機」，選擇要分享的攝影機並產生加密代碼；分享時可決定是否用 PIN 鎖定。",
-            "若啟用 PIN 鎖定，請設定並確認六位數字；接收端匯入或還原分享內容時必須通過 PIN 驗證。未設定 PIN 時，貼上或開啟完整代碼後可直接匯入。",
-            "匯入內容包含設備及其登入資訊，並受接收端目前方案限制。完整代碼與 PIN 只應交給可信任的對象，不要張貼到公開聊天室、工單或網站。"
+          ["用 PIN 或密碼分享攝影機", [
+            "在「設定」的「分享攝影機」區段開啟「匯出攝影機」，勾選設備並產生加密代碼。開啟「包含 App 設定」會一併帶上 LiveView Mix 頁面與控制面板，由接收者決定是否套用。",
+            "代碼可以不上鎖；開啟「以 PIN 鎖定」使用六位數字，或再開啟「複雜加密」改用至少 8 個字元的密碼。匯入代碼的人必須輸入該 PIN 或密碼。",
+            "匯入內容包含設備及其登入資訊，並受接收端目前方案限制。PIN 或密碼請與代碼分開傳送，而且只交給可信任的對象；不要張貼到公開聊天室、工單或網站。"
           ]]
         ]],
         ["preferences", "05", "顯示、串流與資料管理", "依網路、裝置效能與日常使用方式調整 App 行為；需要重設時，也可以分開處理設定、本機資料與 iCloud 備份。", [
@@ -232,12 +260,12 @@ const translations = {
             "它仍會保留在「設備」的通道清單並以灰色顯示，因此不會被誤認為已刪除；訊號恢復後可再次出現在監看畫面。"
           ]],
           ["維持畫面外串流", [
-            "當 App 偵測到需要較長重新連線時間的相容設備時，「串流」區段會顯示「翻頁時保持攝影機連線」。",
+            "前往「設定」→「LiveView Mix」，在「翻頁」下找到「翻頁時保持攝影機連線」；對重新連線較慢的設備最有幫助。",
             "開啟後，捲出畫面的通道仍保留連線，回到該畫面時能更快恢復；代價是持續使用網路、電力與系統資源。不需要立即恢復時建議關閉。"
           ]],
           ["選擇啟動首頁", [
-            "前往「設定」→「LiveView Mix」→「啟動時開啟」。",
-            "「上次檢視」會回到上次選擇；LiveView Mix 直接開啟跨設備牆面；也可以指定某一台設備。",
+            "前往「設定」，在「LiveView Mix」區段找到「啟動時開啟」。",
+            "「上次檢視」會回到上次選擇；「LiveView Mix」開啟跨設備牆面，「LiveView Mix 全螢幕」直接以全螢幕開啟；也可以指定某一台設備。",
             "如果指定設備已刪除或 LiveView Mix 尚未設定，App 會回到可用的畫面，而不會保留不存在的入口。"
           ]],
           ["方案與顯示通道", [
@@ -248,11 +276,15 @@ const translations = {
           ["分開重設與刪除", [
             "「還原預設設定」：只把外觀、語言、畫質、LiveView Mix 等設定恢復預設，保留已加入設備。",
             "「刪除所有資料」：移除本機設備、攝影機與鑰匙圈密碼；iCloud 備份與訂閱不受影響。",
-            "「刪除 iCloud 備份」：刪除雲端的加密備份，不影響目前裝置上的設備與設定。若尚未登入 iCloud，可能只能清除本機看到的備份狀態。",
+            "「刪除 iCloud 備份」：刪除雲端所有加密備份（包括 Apple TV 那份），不影響目前裝置上的設備與設定；只想刪除一份時，請在備份清單中滑動該份備份。",
             "執行不可逆刪除前，請先確認 iCloud 已完成同步，而且備份版本可供目標裝置還原。"
+          ]],
+          ["聯絡開發團隊", [
+            "在 iPhone 與 iPad 上，「設定」最後一列「聯絡開發團隊」會開啟一封寄給開發團隊的郵件，可回報運作不正常的設備，或設備有 Cam Hub 尚未支援的功能。",
+            "可以用您最習慣的語言撰寫；請附上品牌、型號與韌體版本，但絕對不要附上攝影機密碼、分享代碼或 PIN。"
           ]]
         ]],
-        ["tv-control", "06", "Apple TV 與 Webhook 控制", "把牆面帶到電視，也能在 LiveView Mix 中加入由您自行管理的 HTTP 控制按鈕。", [
+        ["tv-control", "06", "Apple TV、Apple Watch 與 Webhook 控制", "把牆面帶到電視，在 LiveView Mix 中加入由您自行管理的 HTTP 控制按鈕，也能在 Apple Watch 上按。", [
           ["在 Apple TV 上監看", [
             "tvOS 版提供 LiveView Mix、單一設備的牆面、單一攝影機全螢幕與錄影時間軸，並以 Siri 遙控器的焦點操作方式設計。",
             "高密度版面適合大螢幕；可直接在牆面選取攝影機或 Webhook 按鈕，不必先離開目前畫面。",
@@ -260,18 +292,22 @@ const translations = {
           ]],
           ["從 iPhone 或 iPad 移轉設定", [
             "在 iPhone 或 iPad 開啟「設定」→「備份到 iCloud」，將「目的地」選為 Apple TV，建立 Apple TV 專用加密備份；不需要設定 PIN。",
-            "Apple TV 登入保存備份的同一個 Apple帳號，開啟「從 iCloud 還原」並選擇備份，即可直接還原。",
+            "Apple TV 登入保存備份的同一個 Apple 帳號，開啟「從 iCloud 還原」並選擇備份，即可直接還原。",
             "Apple TV 只會還原 Apple TV 專用備份。完成後請確認設備位址、通道與 LiveView Mix 符合電視所在的網路環境。"
           ]],
           ["建立 Webhook 控制面板", [
-            "前往 LiveView Mix 設定，從「排列牆面」加入「空格」，再將該空格設為「控制」。",
-            "可使用門、車庫、照明、門鎖、窗簾、場景、警報、風扇、插座、空調或自訂範本；每個按鈕皆可設定圖示、標籤、顏色與操作前確認。",
+            "在「LiveView Mix」分頁開啟「調整版面」→「排列牆面」，點一下空格，並把「顯示內容」設為「控制」。",
+            "可使用門、車庫、照明、門鎖、窗簾、場景、警報、風扇、插座、空調或自訂範本；每個按鈕皆可設定圖示、標籤與操作前確認，面板也有自己的標題與顏色。",
             "每個按鈕可向您指定的 HTTP 或 HTTPS 端點傳送 GET、POST、PUT 或 DELETE，並能加入自訂標頭、Content-Type 與 JSON 內容。"
           ]],
           ["在牆面直接執行", [
             "在 iPhone 或 iPad 直接點按按鈕；在 Apple TV 則以遙控器移動焦點並按下執行，畫面會顯示傳送中、成功或失敗狀態。",
             "開門、解鎖、警報等不易復原的操作建議開啟再次確認，並只使用權限與用途受限制的端點。",
             "支援的控制面板設定可隨加密備份移轉；Webhook 端點、憑證、網路存取與實體設備安全仍由您自行建立及管理。"
+          ]],
+          ["Apple Watch 上的按鈕", [
+            "Apple Watch 上的 Cam Hub 會依控制面板標題分組，列出配對 iPhone 上已設定的控制面板按鈕，點一下即可執行；手錶上不顯示影像。",
+            "iPhone 會隨時更新這份清單，手錶也會保留自己的副本，因此 iPhone 上的 App 沒有開啟時也能打開清單。不在方案內的控制面板不會出現。"
           ]]
         ], "安全提醒：Webhook 按鈕會直接呼叫您指定的網路端點。Cam Hub 不會替您驗證端點、門禁、門鎖、警報或其他實體設備的安全性；請限制端點權限、保護認證資訊，並為不易復原的操作啟用再次確認。"]
       ],
@@ -301,7 +337,7 @@ const translations = {
       summary: "連線問題通常與設備協定、權限、連接埠或網路設定有關。這裡整理了開始檢查的位置。",
       meta: [["聯絡信箱", `<a href="mailto:${shared.contactEmail}">${shared.contactEmail}</a>`], ["App", "Cam Hub"], ["支援語言", shared.supportedLanguages]],
       sections: [
-        ["相容性", ["Cam Hub 支援 ONVIF 與 RTSP 影像連接，並已針對部分 Hikvision、Dahua 與 Synology 設備或系統進行測試。實際相容性取決於型號、韌體、帳號權限、串流格式與網路設定。", "部分設備可能需要先在管理介面中啟用 ONVIF、RTSP 或相關本機服務。品牌相容性說明不代表與品牌原廠存在合作、贊助或官方認可關係。"], "compatibility"],
+        ["相容性", ["Cam Hub 支援 ONVIF 與 RTSP 影像連接，可直接連接 Hikvision、Dahua、Synology 與 Xiongmai（XMEye）設備，也認得許多其他品牌的 RTSP 串流路徑；並已針對部分 Hikvision、Dahua 與 Synology 設備或系統進行測試。實際相容性取決於型號、韌體、帳號權限、串流格式與網路設定。", "部分設備可能需要先在管理介面中啟用 ONVIF、RTSP 或相關本機服務。品牌相容性說明不代表與品牌原廠存在合作、贊助或官方認可關係。"], "compatibility"],
         ["回報連線問題前", ["確認攝影機或錄影主機已上線，且 Apple 裝置可以連線至該設備。", "確認設備位址、HTTP 連接埠、RTSP 連接埠、使用者名稱與密碼。", "需要時，請在設備管理介面中啟用 ONVIF 或相關本機服務。", "確認設備帳號具備查看指定通道與錄影內容的權限。", "若主串流的編碼、解析度或流量不相容，可以嘗試使用子串流。"]],
         ["聯絡支援時請提供", ["App 版本、Apple 裝置型號與作業系統版本。", "攝影機或錄影主機的型號與韌體版本。", "使用的連線方式、操作步驟與完整錯誤訊息。", "請勿寄送攝影機密碼、分享攝影機 PIN、完整分享代碼或從網際網路連線到設備所用的公開位址。"]],
         ["常見限制", ["ONVIF 與 RTSP 的實作會因設備品牌、型號與韌體而異，因此支援協定不等於每項功能都能使用。", "遠端連線需要您自行建立並保護適當的 VPN、路由或設備遠端存取設定。Cam Hub 不會自動開放路由器連接埠。", "錄影搜尋與回放需要設備本身支援，並且登入帳號擁有相應權限。"]]
@@ -407,21 +443,29 @@ const translations = {
       statusLive: "Live",
       introKicker: "One less account. More control.",
       introTitle: "Bring video from different sources into one clear view.",
-      introBody: "Add an individual camera or connect selected compatible NVR, DVR, and NAS surveillance systems. Cam Hub organizes their channels in one consistent interface for faster viewing and switching.",
+      introBody: "Add an individual camera or connect selected compatible NVR, DVR, and NAS surveillance systems. Cam Hub organizes their channels in one consistent interface on iPhone, iPhone Duo, iPad, and Apple TV.",
       featureDirectTitle: "Direct connection",
       featureDirectBody: "Connect with the address and access information already configured on your equipment, without registering a vendor cloud account just to view video.",
-      featureMixBody: "Combine channels from different cameras and recorders into your own monitoring dashboard.",
+      featureMixBody: "Combine channels from different cameras and recorders on your own wall: 17 layouts or one you draw, an optional portrait page, and pictures, clocks, labels, or control panels in any tile.",
       featureProtocolTitle: "Open protocols first",
-      featureProtocolBody: "Supports ONVIF and RTSP streaming, with compatible connections for selected equipment.",
+      featureProtocolBody: "Supports ONVIF and RTSP, recognizes many camera brands without you choosing one, and can connect over HTTPS with a certificate check.",
       featurePlaybackTitle: "Live and playback",
-      featurePlaybackBody: "View live video and search or play recordings when the equipment supports those capabilities.",
+      featurePlaybackBody: "View live video, see on a recording calendar which days have video, and play recordings back at the speed you choose, on equipment that supports it.",
       featureTVTitle: "Monitoring on Apple TV",
       featureTVBody: "Use LiveView Mix, equipment walls, and full-screen video on Apple TV. Create an encrypted Apple TV backup on iPhone or iPad, then restore it without a PIN.",
       featureWebhookTitle: "Webhook control panels",
       featureWebhookBody: "Turn a LiveView Mix blank slot into HTTP webhook buttons for access, lighting, scenes, or other services you manage. Sensitive actions can require confirmation.",
+      featurePTZTitle: "PTZ and two-way talk",
+      featurePTZBody: "On supported cameras, tap the picture to turn a PTZ camera there or draw a box to zoom straight in, and hold Talk to speak through the camera's speaker.",
+      featureDiskTitle: "Disk Health",
+      featureDiskBody: "See the disks of recorders and NAS units at a glance: verdict, temperature, and S.M.A.R.T. data, and on a NAS also volumes, CPU, memory, and network.",
+      featureShareTitle: "Sharing and backups",
+      featureShareBody: "Share cameras with an encrypted code, locked with a PIN or a password, and keep several named backups in your own iCloud.",
+      featureDuoTitle: "iPhone Duo and Apple Watch",
+      featureDuoBody: "Half-folded, iPhone Duo splits LiveView Mix into two canvases and puts a camera above its controls. Apple Watch fires your control-panel buttons with a tap.",
       compatibilityKicker: "Current compatibility",
-      compatibilityTitle: "Open protocols, plus tested equipment connections.",
-      compatibilityNote: "* Indicates that selected equipment and features have been compatibility-tested. It does not imply affiliation, sponsorship, or endorsement by the equipment vendor. Features vary by model, firmware, and configuration.",
+      compatibilityTitle: "Open protocols, plus direct connections to brand equipment.",
+      compatibilityNote: "* Selected equipment and features have been compatibility-tested. Brand names only describe compatibility and do not imply affiliation, sponsorship, or endorsement by the equipment vendor. Features vary by model, firmware, and configuration.",
       closingTitle: "Put your monitoring view back under your control.",
       closingCTA: "Learn how it works"
     },
@@ -436,14 +480,17 @@ const translations = {
         ["devices", "01", "Devices and channels", "Connect the equipment first, then decide which channels belong on your monitoring screens.", [
           ["Prepare connection details", [
             "Open Devices, tap Add Device, and enter the Add Device screen.",
-            "Name is optional. IP address or hostname and Username are required. HTTP Port defaults to 80 and RTSP Port to 554; use the values shown in the equipment administration interface when they differ.",
-            "Enter Password and tap Add. The app displays Connecting to device and distinguishes connection, credential, and unsupported-equipment errors when the attempt fails.",
+            "Name is optional. IP address or hostname and Username are required. Under Advanced, HTTP Port defaults to 80 and RTSP Port to 554; change them only when the equipment uses other ports.",
+            "Enter Password and tap Add. The app displays Connecting to device and distinguishes connection, credential, and unsupported-equipment errors when the attempt fails; it also lists the open ports it found at the address.",
+            "If you don't know the address, tap Scan in the Tools tab: Cam Hub lists the cameras and recorders that answer on your network, names what it can identify, and fills in the Add Device form for you.",
+            "Where available, Add Device also takes a YouTube live stream or channel, or a Twitch channel. It plays beside your cameras in the service's own player and never counts toward a plan.",
             "Connect only to equipment and accounts that you own, manage, or are explicitly authorized to use."
           ]],
-          ["Auto-detect or use ONVIF", [
-            "Normally leave Connect using on Auto-detect first so Cam Hub can try a compatible native connection and request the fullest available feature set.",
-            "If the equipment is not identified, or you want to use the open protocol directly, set Connect using to ONVIF and add it again.",
-            "You may need to enable ONVIF, create an ONVIF account with viewing permission, and enable RTSP in the equipment settings. Compatibility reference contains connection notes."
+          ["Auto-detect, ONVIF, and HTTPS", [
+            "Normally leave Connect using (under Advanced) on Auto-detect. Cam Hub checks which ports answer, then tries the built-in brand protocols, ONVIF, and the RTSP stream paths of many brands by itself.",
+            "If the equipment is not found, or you want a particular protocol, choose ONVIF, RTSP, or the brand in the Connect using list, which has a search field, and add it again.",
+            "You may need to enable ONVIF, create an ONVIF account with viewing permission, and enable RTSP in the equipment settings. Compatibility reference contains connection notes.",
+            "For equipment whose web page uses HTTPS, turn on Use HTTPS under Advanced. Cam Hub trusts the certificate the equipment presents and will not connect to a different one later (a renewed certificate from a public certificate authority still works). Equipment that is already added switches to HTTPS from its page."
           ]],
           ["Organize camera channels", [
             "After the equipment is added, tap it in Devices to open its page. Cameras lists the channels reported by that equipment.",
@@ -451,31 +498,43 @@ const translations = {
             "Offline channels stay in the Devices list in a dimmed state. When Hide offline cameras is enabled, they do not appear on live monitoring walls."
           ]],
           ["Review and update equipment", [
-            "Expand the equipment card to review its model, address, port, serial number, firmware, and channel count.",
-            "Use the control in the upper-right to rename the equipment, or pull to refresh to request updated channel state.",
+            "The information card at the top of the device page shows the model, address, ports, serial number, firmware, and channel count; the arrow beside it hides or shows the details.",
+            "The pencil at the upper right renames the equipment, changes its user name and password with Edit Credentials (its cameras and wall places stay as they are), and turns HTTPS on or off. Pull down to refresh the channel list.",
             "The black-bars control cycles Default, Enlarge to fill, and Stretch to fill for the current view only. The Full Screen Wall control opens that equipment's channel wall."
+          ]],
+          ["Disk Health", [
+            "Recorders and NAS units that report their disks show a Disk Health row on the device page. An orange or red symbol on the row repeats the worst disk verdict of the last reading.",
+            "Each disk shows a verdict (Healthy, Needs attention, or Failing), its status, capacity, temperature, power-on time, and S.M.A.R.T. details. Temperatures use the unit set on your iPhone or iPad.",
+            "A NAS shares its disk health over SNMP, which Set Up SNMP configures once; its page then also shows volumes, CPU, memory, network ports, and disk activity. Cam Hub only reads this information and changes nothing on the equipment."
           ]]
         ]],
         ["mix", "02", "LiveView Mix monitoring wall", "Place channels from different cameras and recorders on one screen, then tune the density for the display you use.", [
           ["Choose cameras for LiveView Mix", [
-            "Go to Settings → LiveView Mix.",
+            "In the LiveView Mix tab, tap Choose Cameras, or go to Settings → LiveView Mix.",
             "Select channels under each equipment section. Each channel can use SD or HD independently, and All SD or All HD applies one quality to the complete selection.",
-            "Open the LiveView Mix tab. It shows a scrollable preview; tap Full screen to apply the selected monitoring-wall layout."
+            "The tab shows a scrollable preview whose columns and rows you can set with Arrangement below it. Tap Full screen to see the wall in its chosen layout."
           ]],
-          ["17 full-screen layouts", [
+          ["17 layouts, or draw your own", [
             "Uniform grids: 2×2, 2×3, 3×3, 3×4, 4×4, 5×4, 6×4, 5×5, 7×4, 6×5, 6×6, and 7×7.",
             "Focus layouts: 1+3, 1+5, 1+7, 1+21, and 1+27. The first camera occupies the largest primary tile.",
-            "Layouts with more than 16 tiles display a screen marker because their density is better suited to a large display."
+            "With Draw a custom layout, choose 2 to 8 rows and columns and drag across cells to merge them into larger tiles, so the important cameras get big tiles. Layouts with more than 16 tiles are best viewed on iPad or Apple TV."
           ]],
-          ["Arrange the wall and empty slots", [
-            "Tap Arrange the wall in LiveView Mix settings.",
-            "Drag one tile onto another to swap them, or tap Edit to reorder the list and swipe to delete. The list order fills the layout page by page.",
-            "Tap Add empty slot to preserve an intentional gap. Select the empty tile to configure what it displays."
+          ["Arrange the wall", [
+            "Open Adjust the Layout → Arrange the wall from the LiveView Mix tab. The canvas shows each wall page as it will look.",
+            "Drag a tile onto another to swap them, or onto an empty tile to move it there. Any tile can be filled; the tiles before it don't need to be filled first.",
+            "Tap an empty tile to put a camera there, to move another tile into it (even from another wall page), or to fill it with a picture, control panel, clock, or label."
+          ]],
+          ["Portrait page and two canvases", [
+            "Turn on Portrait page in Settings for a second wall that shows while the phone is upright, with its own cameras, layout, panels, and watermark. On iPad it shows while the screen is taller than wide.",
+            "The tab and the full-screen wall swap between the landscape and portrait page as the device turns. While the portrait page is off, an upright phone shows the landscape wall turned sideways.",
+            "Control panels, clocks, labels, and pictures can be copied from one page to the other instead of being built again.",
+            "On iPhone Duo, Two canvases splits LiveView Mix at the hinge into an upper and a lower canvas while the phone is half folded, each with its own cameras and control panels."
           ]],
           ["Three video fill modes", [
             "Default preserves the complete image and adds black bars when the aspect ratios differ.",
             "Enlarge to fill preserves the aspect ratio and enlarges the picture to fill the tile, trimming the edges that extend beyond it.",
-            "Stretch to fill fills the tile without cropping but may widen or compress the image. Set the mode as the global default under Settings → Black bars, or temporarily override it for individual equipment or channels."
+            "Stretch to fill fills the tile without cropping but may widen or compress the image. Settings → Black bars sets the starting mode for device screens; each LiveView Mix wall has its own Black bars on this wall under Adjust the Layout.",
+            "Settings → Edge-to-edge video (on by default) lets full-screen video reach into the Dynamic Island area and the rounded corners; turn it off to keep the picture clear of them."
           ]],
           ["Custom watermarks", [
             "Open Watermark, enable Show watermark, and choose Device name, Camera name, or IP address.",
@@ -483,7 +542,7 @@ const translations = {
             "Legibility offers Shadow, Outline, Backdrop, or None. Use the light and dark previews to confirm that the watermark remains readable on day and night footage."
           ]],
           ["Pictures, clocks, labels, and controls", [
-            "Use Add empty slot in Arrange, then select that tile to open its slot page (titled Slot 1, Slot 2, and so on), where Shows chooses Empty, Image, Control, Clock, or Label.",
+            "In Arrange the wall, tap an empty tile, choose Picture, control panel, clock or label…, and pick Empty, Image, Control, Clock, or Label under Shows.",
             "Image can use a photo or a new picture. Clock can show the date, seconds, and 12- or 24-hour time. Label supports custom text, an SF Symbol, and colour.",
             "Control creates HTTP Webhook buttons from the Gate / Shutter, Garage Door, Light, Door Lock, Curtain / Blind, Scene / Automation, Alarm / Siren, Fan, Smart Plug, Air Conditioner, and Custom templates. Sensitive actions such as opening or unlocking can require confirmation.",
             "Supported image and slot settings can move with an encrypted backup. You remain responsible for creating and securing every webhook endpoint."
@@ -501,38 +560,43 @@ const translations = {
             "Double-tap to jump to 2.5× zoom, and double-tap again to return to the complete picture.",
             "Rotate the device to landscape to hide the navigation, controls, and tab bar so the video can use as much of the display as possible."
           ]],
+          ["PTZ control and two-way talk", [
+            "On a PTZ camera, tap the round button at the lower right of the picture to open the pad: hold an arrow to turn the camera, use plus and minus to zoom, and the star for saved positions.",
+            "Where the camera supports it, 3D positioning lets you tap a spot to turn the camera toward it, or draw a box to zoom straight into that area.",
+            "On a standalone camera with a speaker, hold Talk to speak and release it to listen, like a walkie-talkie. Cam Hub asks for microphone access the first time."
+          ]],
           ["Snapshots and sharing", [
             "Tap Snapshot in the single-channel control bar to ask the equipment for its current image.",
-            "After the image arrives, Cam Hub opens a preview. Tap Share to use the system share sheet.",
+            "After the image arrives, Cam Hub opens a preview. Tap Share to send it or save it to Photos.",
             "Tap the red record button beside Snapshot to record what the view shows, live or from a recording, for up to 10 minutes. When you stop, Cam Hub shows the clip so you can share it or save it to Photos.",
             "A snapshot or clip may contain people, voices, addresses, timestamps, or other sensitive information. Check it, the recipient, and local requirements before sending it."
           ]],
           ["Date, timeline, and recording types", [
-            "Choose a date below the channel view. Cam Hub asks the equipment for recordings from that day.",
+            "Choose a date below the channel view. On equipment that keeps a daily index, the Recording calendar marks the days that have video.",
             "Recordings can switch between Continuous and Events. Drag or zoom the timeline until the centre cursor reaches the desired time, or select a segment from the list.",
             "Playback displays PLAYBACK and the equipment time. Tap Back to Live to return to the live stream. Some equipment downloads a clip before opening it in the system player."
           ]]
-        ], 'Availability notice: live streaming, snapshots, <span class="keep-phrase">main/sub-stream selection</span>, recording search, <span class="keep-phrase">Continuous/Events classification</span>, timeline seeking, and playback all depend on the capabilities actually reported by the camera or recorder and the permissions granted to the signed-in equipment account.'],
-        ["backup", "04", "Encrypted backup and camera sharing", "iCloud backup and restore no longer use a PIN. When sharing cameras, you can choose whether to lock the sharing code with a six-digit PIN.", [
+        ], "Availability notice: live streaming, snapshots, <span class=\"keep-phrase\">main/sub-stream selection</span>, recording search, <span class=\"keep-phrase\">Continuous/Events classification</span>, timeline seeking, and playback all depend on the capabilities actually reported by the camera or recorder and the permissions granted to the signed-in equipment account."],
+        ["backup", "04", "Encrypted backup and camera sharing", "iCloud backups need no PIN, and you can keep several named ones. A sharing code can stay open or be locked with a six-digit PIN or a password.", [
           ["Local password protection", [
             "After equipment is added, its password is stored in Apple Keychain. The equipment name, address, ports, channels, and app settings remain in device data.",
             "Cam Hub uses this information only for connections, recording searches, snapshots, backups, and transfers that you request.",
             "Delete All Data removes local equipment data and saved passwords. Removing the app can also make configuration that was never backed up unrecoverable."
           ]],
-          ["Encrypted iCloud backup without a PIN", [
-            "Go to Settings → Back Up to iCloud, choose My Backup (for iPhone and iPad) or Apple TV at the top of the page, and tap Back Up Now without setting a PIN.",
+          ["Several named iCloud backups", [
+            "Go to Settings → Back Up to iCloud, choose My Backup (for iPhone and iPad) or Apple TV at the top of the page, enter a name if you like, and tap Back Up Now. No PIN is needed.",
             "The backup includes supported equipment, credentials, channels, LiveView Mix, and app settings. Cam Hub encrypts it before saving it to your private iCloud.",
-            "Confirm that Current Backup shows the new time and equipment count."
+            "Each new backup is kept beside the earlier ones, newest first, and can be renamed or deleted with a swipe. The Apple TV destination keeps one copy."
           ]],
           ["Restore from iCloud", [
-            "Open Settings → Restore from iCloud and select the backup to continue. iPhone, iPad, and Apple TV do not require PIN verification.",
+            "Open Settings → Restore from iCloud, choose a backup under Choose a Backup, and tap Restore. iPhone, iPad, and Apple TV do not require PIN verification.",
             "Use the same app version when possible and confirm that the Apple Account containing the backup is signed in. Backups from an older version may need to be recreated before they appear.",
             "Restore is subject to the current plan limits. Afterwards, verify every equipment address, channel, and LiveView Mix against the current network."
           ]],
-          ["Share cameras with an optional PIN", [
-            "In Settings, open Export Cameras (in the Share Cameras section), select the cameras, and create an encrypted sharing code. Choose whether to turn on Lock with a PIN.",
-            "If Lock with a PIN is on, enter six digits. The recipient must pass PIN verification when importing or restoring the shared cameras. Without a PIN, the complete code imports directly.",
-            "The import includes equipment and credentials and is subject to destination plan limits. Send the complete code and PIN only to a trusted recipient; never post them in a public chat, ticket, or website."
+          ["Share cameras with a PIN or a password", [
+            "In Settings, open Export Cameras (in the Share Cameras section), tick the devices, and create an encrypted sharing code. Include app settings adds your LiveView Mix pages and control panels; the recipient decides whether to use them.",
+            "Leave the code open, turn on Lock with a PIN for six digits, or also turn on Complex encryption for a password of at least 8 characters. Whoever imports the code must enter that PIN or password.",
+            "The import includes equipment and credentials and is subject to destination plan limits. Send the PIN or password separately from the code, and only to a trusted recipient; never post them in a public chat, ticket, or website."
           ]]
         ]],
         ["preferences", "05", "Display, streaming, and data controls", "Tune app behaviour for your network and device, and handle preferences, local data, and iCloud backup separately when resetting.", [
@@ -551,17 +615,21 @@ const translations = {
           ]],
           ["Plans and visible cameras", [
             "Settings → Plans shows the current camera and recorder plan and its usage limits.",
-            "When not every channel is unlocked, Choose which cameras show assigns the available slots. The list is unnecessary after the app is fully unlocked.",
+            "When not every channel is unlocked, Choose which cameras to show assigns the available slots. The list is unnecessary after the app is fully unlocked.",
             "Purchases and Restore Purchases follow the status provided by Apple. A plan does not change the protocols, permissions, or playback features supplied by the camera itself."
           ]],
           ["Reset and delete separately", [
             "Restore Default Settings resets language, quality, LiveView Mix, and other preferences while keeping added equipment.",
             "Delete All Data removes local equipment, cameras, and Keychain passwords. It does not affect iCloud backups or subscriptions.",
-            "Delete iCloud Backup removes the encrypted cloud backup without changing equipment and settings on the current device. When iCloud is unavailable, it may only clear locally displayed backup state.",
+            "Delete iCloud Backup removes every encrypted cloud backup, the Apple TV copy included, without changing equipment and settings on the current device. To delete a single backup, swipe it in the backup list instead.",
             "Before an irreversible deletion, confirm that iCloud has synchronized and that the backup version can be restored on the destination device."
+          ]],
+          ["Contact the development team", [
+            "On iPhone and iPad, Contact the Development Team, the last row of Settings, starts an email about equipment that doesn't work as it should, or about a feature of your equipment that Cam Hub doesn't offer yet.",
+            "Write in whichever language you prefer. Include the brand, model, and firmware version, but never a camera password, sharing code, or PIN."
           ]]
         ]],
-        ["tv-control", "06", "Apple TV and webhook controls", "Move the monitoring wall to the television and add HTTP control buttons that connect to endpoints you manage.", [
+        ["tv-control", "06", "Apple TV, Apple Watch, and webhook controls", "Move the monitoring wall to the television, add HTTP control buttons that connect to endpoints you manage, and press them on Apple Watch too.", [
           ["Monitor on Apple TV", [
             "The tvOS app includes LiveView Mix, per-equipment camera walls, full-screen single-camera viewing, and a recording timeline, all designed for focus-based Siri Remote navigation.",
             "Dense layouts are well suited to a large display. Cameras and webhook buttons can be selected directly on the monitoring wall without leaving the current view first.",
@@ -573,7 +641,7 @@ const translations = {
             "Apple TV restores only the dedicated Apple TV backup. Afterwards, verify equipment addresses, channels, and LiveView Mix against the television's current network."
           ]],
           ["Build a webhook control panel", [
-            "In LiveView Mix settings, open Arrange the wall, add an empty slot, and set Shows to Control for that slot.",
+            "In the LiveView Mix tab, open Adjust the Layout → Arrange the wall, tap an empty tile, and set Shows to Control.",
             "Choose the Gate / Shutter, Garage Door, Light, Door Lock, Curtain / Blind, Scene / Automation, Alarm / Siren, Fan, Smart Plug, Air Conditioner, or Custom template. Every button can have its own icon, label, and Confirm before firing setting; the panel has its own title and colour.",
             "Each button can send GET, POST, PUT, or DELETE to an HTTP or HTTPS endpoint you specify, with optional headers, Content-Type, and JSON body."
           ]],
@@ -581,6 +649,10 @@ const translations = {
             "Tap a button on iPhone or iPad. On Apple TV, move focus with the remote and press to run it. The panel reports sending, success, or failure in place.",
             "Use confirmation for opening, unlocking, alarm, and other hard-to-reverse actions, and expose only narrowly scoped endpoints for the required purpose.",
             "Supported control-panel settings move with encrypted backups. You remain responsible for webhook endpoints, credentials, network access, and the safety of connected physical equipment."
+          ]],
+          ["Buttons on Apple Watch", [
+            "Cam Hub on Apple Watch lists the buttons of the control panels set up on the paired iPhone, grouped under the panel titles, and fires one with a tap. It shows no video.",
+            "The iPhone keeps the list up to date and the watch keeps its own copy, so the list opens even when the iPhone app isn't running. Panels outside your plan don't appear."
           ]]
         ], "Security notice: webhook buttons call the network endpoints you specify. Cam Hub does not validate the security of endpoints, access controls, locks, alarms, or other physical equipment. Restrict endpoint permissions, protect credentials, and require confirmation for hard-to-reverse actions."]
       ],
@@ -610,7 +682,7 @@ const translations = {
       summary: "Connection issues are usually related to protocols, permissions, ports, or network configuration. Here is where to start checking.",
       meta: [["Contact", `<a href="mailto:${shared.contactEmail}">${shared.contactEmail}</a>`], ["App", "Cam Hub"], ["Languages", shared.supportedLanguages]],
       sections: [
-        ["Compatibility", ["Cam Hub supports ONVIF and RTSP-based viewing and has been tested with selected Hikvision, Dahua, and Synology devices or systems. Compatibility varies by model, firmware, account permissions, stream format, and network configuration.", "Some equipment requires ONVIF, RTSP, or another local service to be enabled in its administration interface. Compatibility statements do not imply affiliation, sponsorship, or endorsement by the equipment vendor."], "compatibility"],
+        ["Compatibility", ["Cam Hub supports ONVIF and RTSP-based viewing, connects directly to Hikvision, Dahua, Synology, and Xiongmai (XMEye) equipment, and recognizes the RTSP stream paths of many other brands. It has been tested with selected Hikvision, Dahua, and Synology devices or systems. Compatibility varies by model, firmware, account permissions, stream format, and network configuration.", "Some equipment requires ONVIF, RTSP, or another local service to be enabled in its administration interface. Compatibility statements do not imply affiliation, sponsorship, or endorsement by the equipment vendor."], "compatibility"],
         ["Before reporting a connection problem", ["Confirm that the camera or recorder is online and reachable from your Apple device.", "Verify the equipment address, HTTP port, RTSP port, username, and password.", "Enable ONVIF or the required local service in the equipment settings when applicable.", "Use an account that has permission to view the selected channels and recordings.", "Try the camera sub-stream when the main-stream codec, resolution, or bandwidth is not compatible."]],
         ["When contacting support", ["Include the app version, Apple device, and operating system version.", "Include the camera or recorder model and firmware version.", "Describe the connection method, exact steps, and complete error message.", "Never send us your camera password, camera-sharing PIN, complete sharing code, or public connection address."]],
         ["Common limitations", ["ONVIF and RTSP implementations vary across vendors, models, and firmware. Supporting a protocol does not mean every optional feature is available.", "Remote access requires you to configure and secure an appropriate VPN, router, or equipment remote-access method. Cam Hub does not automatically open router ports.", "Recording search and playback require equipment support and an account with the relevant permissions."]]

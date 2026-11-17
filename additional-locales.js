@@ -40,21 +40,29 @@
         statusLive: "实时",
         introKicker: "统一设备与通道",
         introTitle: "将不同来源的画面集中到一个界面。",
-        introBody: "可添加单台摄像头，或连接部分兼容的 NVR、DVR 和 NAS 监控系统。实际功能取决于设备型号、固件、权限和网络设置。",
+        introBody: "可添加单台摄像头，或连接部分兼容的 NVR、DVR 和 NAS 监控系统。Cam Hub 会在 iPhone、iPhone Duo、iPad 和 Apple TV 上，将它们的通道整理在统一的界面中。",
         featureDirectTitle: "设备直连",
         featureDirectBody: "使用设备本身的地址和访问凭据建立连接，不绕过设备原有的权限控制。",
-        featureMixBody: "将不同摄像头和录像机的通道组合成一面自定义的墙。",
+        featureMixBody: "将不同摄像头和录像机的通道组合成一面自定义的墙：17 种布局或自行绘制的布局、可选的竖向页面，任何图块中都能放入图片、时钟、标签或控制面板。",
         featureProtocolTitle: "开放协议",
-        featureProtocolBody: "支持 ONVIF 与 RTSP，并为部分设备提供兼容连接。",
+        featureProtocolBody: "支持 ONVIF 与 RTSP，无需选择品牌即可自动识别多种品牌的摄像头，并可通过 HTTPS 连接并校验证书。",
         featurePlaybackTitle: "实时与回放",
-        featurePlaybackBody: "查看实时画面，并在设备支持时搜索和播放录像。",
+        featurePlaybackBody: "查看实时画面，通过录像日历了解哪些日子有录像，并按您选择的速度播放录像（需设备支持）。",
         featureTVTitle: "Apple TV 大屏监看",
         featureTVBody: "在 Apple TV 上使用 LiveView Mix、各设备的实时墙和全屏画面；也可在 iPhone 或 iPad 上建立 Apple TV 专用加密备份，无需 PIN 即可恢复。",
         featureWebhookTitle: "Webhook 控制面板",
         featureWebhookBody: "将 LiveView Mix 的空位设为 HTTP Webhook 按钮，连接您自行管理的门禁、照明、场景或其他网络服务；重要操作可要求再次确认。",
+        featurePTZTitle: "PTZ 与双向对讲",
+        featurePTZBody: "在支持的摄像头上，点击画面即可让 PTZ 摄像头转向该处，拖出一个框即可直接放大；按住“对讲”，还能通过摄像头的扬声器说话。",
+        featureDiskTitle: "磁盘健康",
+        featureDiskBody: "一目了然地查看录像机和 NAS 的磁盘状况：判定结果、温度与 S.M.A.R.T. 数据；NAS 还可查看存储空间、CPU、内存与网络。",
+        featureShareTitle: "共享与备份",
+        featureShareBody: "用加密代码共享摄像头，并可用 PIN 或密码锁定；还能在您自己的 iCloud 中保留多份命名备份。",
+        featureDuoTitle: "iPhone Duo 与 Apple Watch",
+        featureDuoBody: "iPhone Duo 半折叠时，LiveView Mix 会分成两张画布，摄像头页也会把画面放在控件上方。在 Apple Watch 上点击一下，即可执行控制面板按钮。",
         compatibilityKicker: "当前兼容性",
-        compatibilityTitle: "开放协议与经过测试的设备连接。",
-        compatibilityNote: "* 仅表示部分设备和功能经过兼容性测试，不表示与相关厂商存在隶属、合作、赞助或官方认可关系。实际功能以型号、固件和设置为准。",
+        compatibilityTitle: "开放协议，以及与品牌设备的直接连接。",
+        compatibilityNote: "* 部分设备和功能经过兼容性测试。品牌名称仅用于说明兼容性，不表示与设备厂商存在隶属、赞助或官方认可关系。实际功能因型号、固件和设置而异。",
         closingTitle: "在一个界面中管理您的监看画面。",
         closingCTA: "了解使用方法"
       },
@@ -82,7 +90,7 @@
         summary: "连接问题通常与协议、权限、端口、编码或网络设置有关，可按以下项目进行检查。",
         meta: [["联系邮箱", contactLink], ["App", "Cam Hub"], ["支持语言", languages]],
         sections: [
-          ["兼容性", ["Cam Hub 支持 ONVIF 与 RTSP，并对部分 Hikvision、Dahua、Synology 设备或系统进行了兼容性测试。实际结果取决于型号、固件、权限、码流格式和网络设置。", "部分设备需要先在管理界面中启用 ONVIF、RTSP 或相关本地服务。品牌名称仅用于说明兼容性，不表示合作、赞助或官方认可。"], "compatibility"],
+          ["兼容性", ["Cam Hub 支持基于 ONVIF 与 RTSP 的查看，可直接连接 Hikvision、Dahua、Synology 与 Xiongmai（XMEye）设备，并能识别许多其他品牌的 RTSP 视频流路径；已针对部分 Hikvision、Dahua 与 Synology 设备或系统进行测试。实际兼容性取决于型号、固件、账号权限、码流格式和网络设置。", "部分设备需要先在管理界面中启用 ONVIF、RTSP 或相关本地服务。品牌名称仅用于说明兼容性，不表示合作、赞助或官方认可。"], "compatibility"],
           ["报告连接问题前", ["确认摄像头或录像机已在线，并且 Apple 设备可以访问。", "检查设备地址、HTTP 端口、RTSP 端口、用户名和密码。", "根据设备说明启用 ONVIF、RTSP 或所需的本地服务。", "确认设备账号拥有所选通道和录像的查看权限。", "如果主码流不兼容，可尝试子码流。"]],
           ["联系支持时", ["请提供 App 版本、Apple 设备型号和系统版本。", "请提供摄像头或录像机型号及固件版本。", "说明连接方式、操作步骤和完整错误信息。", "请勿发送设备密码、摄像头共享 PIN、完整共享代码或公网地址。"]],
           ["常见限制", ["不同厂商、型号和固件对 ONVIF 与 RTSP 的实现可能不同。", "远程访问需要由您自行配置并保护 VPN、路由器或设备远程访问功能。", "录像搜索与回放需要设备支持，并要求账号具备相应权限。"]]
@@ -190,21 +198,29 @@
         statusLive: "ライブ",
         introKicker: "異なるデバイスを一元管理",
         introTitle: "映像ソースを、見やすいひとつの画面へ。",
-        introBody: "単体カメラの追加に加え、一部の対応 NVR、DVR、NAS 監視システムへ接続できます。機能は機種、ファームウェア、権限、ネットワーク設定により異なります。",
+        introBody: "単体カメラの追加に加え、一部の対応 NVR、DVR、NAS 監視システムへ接続できます。Cam Hub は、iPhone、iPhone Duo、iPad、Apple TV で、それらのチャンネルを統一されたインターフェイスにまとめます。",
         featureDirectTitle: "直接接続",
         featureDirectBody: "デバイスに設定されたアドレスと認証情報を使用し、既存のアクセス制御を回避せずに接続します。",
-        featureMixBody: "異なるカメラやレコーダーのチャンネルを、独自の監視ダッシュボードにまとめます。",
+        featureMixBody: "異なるカメラやレコーダーのチャンネルを、独自のウォールにまとめます。17 種類のレイアウトや自作レイアウト、任意の縦向きページに対応し、どのタイルにも画像、時計、ラベル、コントロールパネルを置けます。",
         featureProtocolTitle: "オープンプロトコル",
-        featureProtocolBody: "ONVIF と RTSP に対応し、一部デバイス向けの互換接続も提供します。",
+        featureProtocolBody: "ONVIF と RTSP に対応し、ブランドを選ばなくても多くのカメラブランドを自動で判別します。証明書を確認したうえで、HTTPS で接続することもできます。",
         featurePlaybackTitle: "ライブ・録画再生",
-        featurePlaybackBody: "ライブ映像を表示し、デバイスが対応する場合は録画の検索と再生も行えます。",
+        featurePlaybackBody: "ライブ映像を表示し、対応デバイスでは録画カレンダーで録画のある日を確認して、好きな速度で録画を再生できます。",
         featureTVTitle: "Apple TV の大画面表示",
         featureTVBody: "Apple TV で LiveView Mix、デバイスごとのウォール、フルスクリーン映像を表示できます。iPhone／iPad で Apple TV 用の暗号化バックアップを作成し、PIN なしで復元できます。",
         featureWebhookTitle: "Webhook コントロールパネル",
         featureWebhookBody: "LiveView Mix の空きスロットを HTTP Webhook ボタンに変え、管理しているゲート、照明、シーンなどのサービスへ接続できます。重要な操作には確認画面を設定できます。",
+        featurePTZTitle: "PTZ と双方向トーク",
+        featurePTZBody: "対応カメラでは、映像をタップしてその方向へ PTZ カメラを向けたり、枠を描いて直接ズームインしたりできます。「トーク」を押し続けると、カメラのスピーカーから話すこともできます。",
+        featureDiskTitle: "ディスクの状態",
+        featureDiskBody: "レコーダーや NAS のディスクの状態をひと目で確認できます。判定、温度、S.M.A.R.T. データに加え、NAS ではボリューム、CPU、メモリ、ネットワークも表示します。",
+        featureShareTitle: "共有とバックアップ",
+        featureShareBody: "PIN またはパスワードでロックできる暗号化コードでカメラを共有し、ご自身の iCloud に名前付きのバックアップを複数保存できます。",
+        featureDuoTitle: "iPhone Duo と Apple Watch",
+        featureDuoBody: "iPhone Duo を半分に折りたたむと、LiveView Mix が 2 つのキャンバスに分かれ、カメラの映像が操作部の上に表示されます。Apple Watch では、コントロールパネルのボタンをタップひとつで実行できます。",
         compatibilityKicker: "対応状況",
-        compatibilityTitle: "オープンプロトコルと検証済み接続。",
-        compatibilityNote: "* 一部デバイス・機能で互換性を確認したことを示すもので、各メーカーとの提携、協賛、公式認定を意味しません。",
+        compatibilityTitle: "オープンプロトコルと、各ブランドのデバイスへの直接接続。",
+        compatibilityNote: "* 一部のデバイスと機能で互換性を確認しています。ブランド名は互換性を説明するためだけに使用しており、各メーカーとの提携、協賛、公式認定を意味するものではありません。機能は機種、ファームウェア、設定により異なります。",
         closingTitle: "監視画面を、より見やすく整理。",
         closingCTA: "使い方を見る"
       },
@@ -232,7 +248,7 @@
         summary: "接続の問題は、プロトコル、権限、ポート、映像形式、ネットワーク設定に関連することがあります。",
         meta: [["お問い合わせ", contactLink], ["アプリ", "Cam Hub"], ["対応言語", languages]],
         sections: [
-          ["互換性", ["Cam Hub は ONVIF と RTSP に対応し、一部の Hikvision、Dahua、Synology デバイスまたはシステムで互換性を検証しています。実際の動作は機種、ファームウェア、権限、ストリーム形式、ネットワーク設定により異なります。", "デバイス側で ONVIF、RTSP、または関連するローカルサービスの有効化が必要な場合があります。メーカー名の記載は提携、協賛、公式認定を意味しません。"], "compatibility"],
+          ["互換性", ["Cam Hub は ONVIF と RTSP による映像表示に対応し、Hikvision、Dahua、Synology、Xiongmai (XMEye) のデバイスへ直接接続できるほか、その他多くのブランドの RTSP ストリームパスも認識します。一部の Hikvision、Dahua、Synology のデバイスまたはシステムで動作を検証しています。実際の互換性は、機種、ファームウェア、アカウント権限、ストリーム形式、ネットワーク設定により異なります。", "デバイス側で ONVIF、RTSP、または関連するローカルサービスの有効化が必要な場合があります。メーカー名の記載は提携、協賛、公式認定を意味しません。"], "compatibility"],
           ["お問い合わせの前に", ["デバイスがオンラインで Apple デバイスから到達できることを確認してください。", "アドレス、HTTP／RTSP ポート、ユーザー名、パスワードを確認してください。", "必要なローカルサービスをデバイスの管理画面で有効にしてください。", "アカウントにチャンネルと録画を表示する権限があることを確認してください。", "メインストリームが非対応の場合はサブストリームをお試しください。"]],
           ["サポートへ連絡する際", ["アプリのバージョン、Apple デバイス、OS バージョンをお知らせください。", "デバイスの型番とファームウェアをお知らせください。", "接続方法、操作手順、エラー全文をお知らせください。", "パスワード、カメラ共有用 PIN、完全な共有コード、公開接続先は送信しないでください。"]],
           ["一般的な制限", ["ONVIF と RTSP の実装はメーカー、機種、ファームウェアにより異なります。", "リモートアクセスには、安全に構成した VPN、ルーター、またはデバイス側の機能が必要です。", "録画検索と再生には、デバイスの対応と適切な権限が必要です。"]]
@@ -341,21 +357,29 @@
         statusLive: "실시간",
         introKicker: "서로 다른 기기를 한곳에",
         introTitle: "여러 영상 소스를 하나의 명확한 화면으로.",
-        introBody: "개별 카메라 또는 일부 호환 NVR, DVR, NAS 감시 시스템을 연결할 수 있습니다. 기능은 모델, 펌웨어, 권한 및 네트워크 설정에 따라 달라집니다.",
+        introBody: "개별 카메라를 추가하거나 일부 호환 NVR, DVR, NAS 감시 시스템을 연결할 수 있습니다. Cam Hub는 iPhone, iPhone Duo, iPad, Apple TV에서 이들의 채널을 일관된 하나의 인터페이스로 정리합니다.",
         featureDirectTitle: "직접 연결",
         featureDirectBody: "기기에 설정된 주소와 인증 정보를 사용하며 기존 접근 제어를 우회하지 않습니다.",
-        featureMixBody: "서로 다른 카메라와 녹화기의 채널을 하나의 대시보드로 구성합니다.",
+        featureMixBody: "서로 다른 카메라와 녹화기의 채널을 나만의 비디오 월로 구성합니다. 17가지 레이아웃이나 직접 그린 레이아웃, 선택 사항인 세로 페이지를 사용할 수 있고, 어느 타일에든 이미지, 시계, 레이블, 제어 패널을 넣을 수 있습니다.",
         featureProtocolTitle: "개방형 프로토콜",
-        featureProtocolBody: "ONVIF와 RTSP를 지원하며 일부 기기에 대한 호환 연결을 제공합니다.",
+        featureProtocolBody: "ONVIF와 RTSP를 지원하고, 브랜드를 선택하지 않아도 여러 카메라 브랜드를 인식하며, 인증서를 확인하는 HTTPS로 연결할 수 있습니다.",
         featurePlaybackTitle: "실시간 및 재생",
-        featurePlaybackBody: "실시간 영상을 보고 기기가 지원하는 경우 녹화를 검색하고 재생합니다.",
+        featurePlaybackBody: "지원하는 기기에서는 실시간 영상을 보고, 녹화 캘린더로 영상이 있는 날짜를 확인하며, 원하는 속도로 녹화를 재생할 수 있습니다.",
         featureTVTitle: "Apple TV 대화면 모니터링",
         featureTVBody: "Apple TV에서 LiveView Mix, 기기별 모니터링 화면과 전체 화면 영상을 볼 수 있습니다. iPhone 또는 iPad에서 Apple TV용 암호화 백업을 만들고 PIN 없이 복원할 수 있습니다.",
         featureWebhookTitle: "웹훅 제어 패널",
         featureWebhookBody: "LiveView Mix의 빈 슬롯을 HTTP 웹훅 버튼으로 바꾸어 직접 관리하는 출입, 조명, 장면 또는 기타 네트워크 서비스에 연결할 수 있습니다. 중요한 동작에는 확인을 설정할 수 있습니다.",
+        featurePTZTitle: "PTZ와 양방향 대화",
+        featurePTZBody: "지원하는 카메라에서는 화면을 탭해 PTZ 카메라를 그쪽으로 돌리거나 사각형을 그려 바로 확대할 수 있으며, ‘대화’를 길게 누르면 카메라 스피커로 말할 수 있습니다.",
+        featureDiskTitle: "디스크 상태",
+        featureDiskBody: "녹화기와 NAS의 디스크를 한눈에 확인합니다. 판정, 온도, S.M.A.R.T. 데이터를 볼 수 있고, NAS에서는 볼륨, CPU, 메모리, 네트워크도 확인할 수 있습니다.",
+        featureShareTitle: "공유와 백업",
+        featureShareBody: "암호화된 코드로 카메라를 공유하고 PIN이나 비밀번호로 잠글 수 있으며, 이름을 붙인 여러 백업을 내 iCloud에 보관할 수 있습니다.",
+        featureDuoTitle: "iPhone Duo와 Apple Watch",
+        featureDuoBody: "iPhone Duo를 반쯤 접으면 LiveView Mix가 두 캔버스로 나뉘고, 카메라 화면은 영상을 조작 버튼 위에 표시합니다. Apple Watch에서는 탭 한 번으로 제어 패널 버튼을 실행합니다.",
         compatibilityKicker: "현재 호환성",
-        compatibilityTitle: "개방형 프로토콜과 테스트된 연결.",
-        compatibilityNote: "* 일부 기기와 기능의 호환성 테스트를 의미하며 제조사와의 제휴, 후원 또는 공식 인증을 뜻하지 않습니다.",
+        compatibilityTitle: "개방형 프로토콜과 브랜드 기기 직접 연결.",
+        compatibilityNote: "* 일부 기기와 기능은 호환성 테스트를 거쳤습니다. 브랜드 이름은 호환성을 설명하기 위한 것일 뿐이며 기기 제조사와의 제휴, 후원 또는 공식 인증을 뜻하지 않습니다. 기능은 모델, 펌웨어, 설정에 따라 다릅니다.",
         closingTitle: "감시 화면을 더 명확하게 정리하세요.",
         closingCTA: "사용 방법 보기"
       },
@@ -383,7 +407,7 @@
         summary: "연결 문제는 프로토콜, 권한, 포트, 영상 형식 또는 네트워크 설정과 관련될 수 있습니다.",
         meta: [["문의", contactLink], ["앱", "Cam Hub"], ["지원 언어", languages]],
         sections: [
-          ["호환성", ["Cam Hub는 ONVIF와 RTSP를 지원하며 일부 Hikvision, Dahua 및 Synology 기기나 시스템에서 호환성을 테스트했습니다. 실제 결과는 모델, 펌웨어, 권한, 스트림 형식 및 네트워크 설정에 따라 다릅니다.", "일부 기기는 관리 화면에서 ONVIF, RTSP 또는 관련 로컬 서비스를 활성화해야 합니다. 제조사 이름은 호환성 설명을 위한 것이며 제휴, 후원 또는 공식 인증을 의미하지 않습니다."], "compatibility"],
+          ["호환성", ["Cam Hub는 ONVIF와 RTSP 기반 보기를 지원하고, Hikvision, Dahua, Synology, Xiongmai (XMEye) 기기에 직접 연결하며, 다른 여러 브랜드의 RTSP 스트림 경로를 인식합니다. 일부 Hikvision, Dahua 및 Synology 기기나 시스템에서 테스트를 거쳤습니다. 호환성은 모델, 펌웨어, 계정 권한, 스트림 형식 및 네트워크 설정에 따라 다릅니다.", "일부 기기는 관리 화면에서 ONVIF, RTSP 또는 관련 로컬 서비스를 활성화해야 합니다. 제조사 이름은 호환성 설명을 위한 것이며 제휴, 후원 또는 공식 인증을 의미하지 않습니다."], "compatibility"],
           ["문의 전 확인 사항", ["기기가 온라인이며 Apple 기기에서 접근 가능한지 확인하세요.", "주소, HTTP/RTSP 포트, 사용자 이름 및 비밀번호를 확인하세요.", "필요한 로컬 서비스를 기기 설정에서 활성화하세요.", "계정에 채널 및 녹화 보기 권한이 있는지 확인하세요.", "주 스트림이 호환되지 않으면 보조 스트림을 사용해 보세요."]],
           ["지원 문의 시", ["앱 버전, Apple 기기 및 OS 버전을 알려 주세요.", "연결하려는 기기의 모델과 펌웨어 버전을 알려 주세요.", "연결 방식, 단계와 전체 오류 메시지를 알려 주세요.", "비밀번호, 카메라 공유 PIN, 전체 공유 코드 또는 공개 주소를 보내지 마세요."]],
           ["일반적인 제한", ["ONVIF와 RTSP 구현은 제조사, 모델 및 펌웨어에 따라 다릅니다.", "원격 접근에는 안전하게 구성한 VPN, 라우터 또는 기기 기능이 필요합니다.", "녹화 검색과 재생에는 기기 지원 및 적절한 계정 권한이 필요합니다."]]
@@ -491,21 +515,29 @@
         statusLive: "Live",
         introKicker: "Verschiedene Geräte, eine Ansicht",
         introTitle: "Videokanäle übersichtlich zusammenführen.",
-        introBody: "Fügen Sie einzelne Kameras hinzu oder verbinden Sie ausgewählte kompatible NVR-, DVR- und NAS-Überwachungssysteme. Funktionen hängen von Modell, Firmware, Berechtigungen und Netzwerkkonfiguration ab.",
+        introBody: "Fügen Sie einzelne Kameras hinzu oder verbinden Sie ausgewählte kompatible NVR-, DVR- und NAS-Überwachungssysteme. Cam Hub ordnet ihre Kanäle in einer einheitlichen Oberfläche auf iPhone, iPhone Duo, iPad und Apple TV.",
         featureDirectTitle: "Direkte Verbindung",
         featureDirectBody: "Verwendet die am Gerät eingerichtete Adresse und die Zugangsdaten, ohne bestehende Zugriffskontrollen zu umgehen.",
-        featureMixBody: "Kombinieren Sie Kanäle verschiedener Kameras und Recorder in einem eigenen Dashboard.",
+        featureMixBody: "Kombinieren Sie Kanäle verschiedener Kameras und Recorder auf Ihrer eigenen Wand: 17 Layouts oder ein selbst gezeichnetes, eine optionale Hochformat-Seite und Bilder, Uhren, Beschriftungen oder Bedienfelder in jeder beliebigen Kachel.",
         featureProtocolTitle: "Offene Protokolle",
-        featureProtocolBody: "Unterstützt ONVIF und RTSP sowie kompatible Verbindungen für ausgewählte Geräte.",
+        featureProtocolBody: "Unterstützt ONVIF und RTSP, erkennt viele Kameramarken, ohne dass Sie eine auswählen müssen, und kann sich über HTTPS mit Zertifikatsprüfung verbinden.",
         featurePlaybackTitle: "Live und Wiedergabe",
-        featurePlaybackBody: "Zeigen Sie Livevideo an und suchen oder spielen Sie Aufnahmen ab, sofern das Gerät dies unterstützt.",
+        featurePlaybackBody: "Sehen Sie Livevideo, erkennen Sie im Aufnahmekalender, an welchen Tagen Aufnahmen vorliegen, und spielen Sie Aufnahmen im gewünschten Tempo ab, sofern das Gerät dies unterstützt.",
         featureTVTitle: "Monitoring auf Apple TV",
         featureTVBody: "Nutzen Sie LiveView Mix, gerätebezogene Übersichten und Vollbildvideo auf Apple TV. Erstellen Sie auf iPhone oder iPad ein verschlüsseltes Apple-TV-Backup und stellen Sie es ohne PIN wieder her.",
         featureWebhookTitle: "Webhook-Bedienfelder",
         featureWebhookBody: "Verwandeln Sie freie Plätze im LiveView Mix in HTTP-Webhook-Tasten für selbst verwaltete Zugänge, Beleuchtung, Szenen oder andere Netzwerkdienste. Wichtige Aktionen können eine Bestätigung verlangen.",
+        featurePTZTitle: "PTZ und Gegensprechen",
+        featurePTZBody: "Tippen Sie bei unterstützten Kameras auf das Bild, damit sich eine PTZ-Kamera dorthin dreht, oder ziehen Sie ein Rechteck auf, um direkt hineinzuzoomen. Halten Sie „Sprechen“ gedrückt, um über den Lautsprecher der Kamera zu sprechen.",
+        featureDiskTitle: "Festplattenzustand",
+        featureDiskBody: "Prüfen Sie die Festplatten von Recordern und NAS-Geräten auf einen Blick: Bewertung, Temperatur und S.M.A.R.T.-Daten, bei einem NAS außerdem Volumes, CPU, Arbeitsspeicher und Netzwerk.",
+        featureShareTitle: "Teilen und Backups",
+        featureShareBody: "Teilen Sie Kameras mit einem verschlüsselten Code, gesperrt mit PIN oder Passwort, und bewahren Sie mehrere benannte Backups in Ihrer eigenen iCloud auf.",
+        featureDuoTitle: "iPhone Duo und Apple Watch",
+        featureDuoBody: "Halb zugeklappt teilt das iPhone Duo LiveView Mix in zwei Flächen und zeigt eine Kamera über ihren Bedienelementen. Die Apple Watch löst Ihre Bedienfeld-Tasten mit einem Tippen aus.",
         compatibilityKicker: "Aktuelle Kompatibilität",
-        compatibilityTitle: "Offene Protokolle und getestete Verbindungen.",
-        compatibilityNote: "* Bezeichnet Kompatibilitätstests ausgewählter Geräte und Funktionen und keine Zugehörigkeit, Partnerschaft, Förderung oder offizielle Anerkennung durch den Hersteller.",
+        compatibilityTitle: "Offene Protokolle und direkte Verbindungen zu Markengeräten.",
+        compatibilityNote: "* Ausgewählte Geräte und Funktionen wurden auf Kompatibilität getestet. Markennamen beschreiben nur die Kompatibilität und bedeuten keine Zugehörigkeit, Förderung oder offizielle Anerkennung durch den Gerätehersteller. Funktionen variieren je nach Modell, Firmware und Konfiguration.",
         closingTitle: "Behalten Sie Ihre Videoansicht im Blick.",
         closingCTA: "Funktionsweise ansehen"
       },
@@ -533,7 +565,7 @@
         summary: "Verbindungsprobleme hängen häufig mit Protokollen, Berechtigungen, Ports, Videoformaten oder Netzwerkeinstellungen zusammen.",
         meta: [["Kontakt", contactLink], ["App", "Cam Hub"], ["Sprachen", languages]],
         sections: [
-          ["Kompatibilität", ["Cam Hub unterstützt ONVIF und RTSP und wurde mit ausgewählten Geräten oder Systemen von Hikvision, Dahua und Synology getestet. Die tatsächliche Kompatibilität hängt von Modell, Firmware, Berechtigungen, Streamformat und Netzwerk ab.", "Bei manchen Geräten müssen ONVIF, RTSP oder lokale Dienste in der Geräteverwaltung aktiviert werden. Markennamen dienen nur der Beschreibung der Kompatibilität und bedeuten keine Zugehörigkeit, Förderung oder offizielle Anerkennung."], "compatibility"],
+          ["Kompatibilität", ["Cam Hub unterstützt die Anzeige über ONVIF und RTSP, verbindet sich direkt mit Geräten von Hikvision, Dahua, Synology und Xiongmai (XMEye) und erkennt die RTSP-Streampfade vieler weiterer Marken. Die App wurde mit ausgewählten Geräten oder Systemen von Hikvision, Dahua und Synology getestet. Die Kompatibilität hängt von Modell, Firmware, Kontoberechtigungen, Streamformat und Netzwerkkonfiguration ab.", "Bei manchen Geräten müssen ONVIF, RTSP oder lokale Dienste in der Geräteverwaltung aktiviert werden. Markennamen dienen nur der Beschreibung der Kompatibilität und bedeuten keine Zugehörigkeit, Förderung oder offizielle Anerkennung."], "compatibility"],
           ["Vor einer Supportanfrage", ["Prüfen Sie, ob das Gerät online und vom Apple-Gerät erreichbar ist.", "Prüfen Sie Adresse, HTTP- und RTSP-Port, Benutzernamen und Passwort.", "Aktivieren Sie erforderliche lokale Dienste am Gerät.", "Prüfen Sie die Berechtigung für Kanäle und Aufnahmen.", "Testen Sie bei Inkompatibilität des Hauptstreams den Substream."]],
           ["Bei Kontaktaufnahme", ["Nennen Sie App-Version, Apple-Gerät und Betriebssystemversion.", "Nennen Sie Gerätemodell und Firmwareversion.", "Beschreiben Sie Verbindung, Schritte und vollständige Fehlermeldung.", "Senden Sie niemals Passwort, PIN zur Kamerafreigabe, vollständigen Freigabecode oder öffentliche Adresse."]],
           ["Typische Einschränkungen", ["ONVIF- und RTSP-Implementierungen unterscheiden sich nach Hersteller, Modell und Firmware.", "Fernzugriff benötigt ein sicher eingerichtetes VPN, einen Router oder eine Gerätefunktion.", "Aufzeichnungssuche und Wiedergabe erfordern Geräteunterstützung und passende Berechtigungen."]]
@@ -641,21 +673,29 @@
         statusLive: "En vivo",
         introKicker: "Distintos equipos, una sola vista",
         introTitle: "Reúne distintas fuentes de vídeo en una vista clara.",
-        introBody: "Añade una cámara individual o conecta determinados sistemas NVR, DVR y NAS compatibles. Las funciones dependen del modelo, firmware, permisos y configuración de red.",
+        introBody: "Añade una cámara individual o conecta determinados sistemas de vigilancia NVR, DVR y NAS compatibles. Cam Hub organiza sus canales en una interfaz coherente en iPhone, iPhone Duo, iPad y Apple TV.",
         featureDirectTitle: "Conexión directa",
         featureDirectBody: "Usa la dirección y credenciales configuradas en el equipo sin eludir sus controles de acceso.",
-        featureMixBody: "Combina canales de distintas cámaras y grabadores en tu propio panel.",
+        featureMixBody: "Combina canales de distintas cámaras y grabadores en tu propio mural: 17 diseños o uno dibujado por ti, una página vertical opcional e imágenes, relojes, etiquetas o paneles de control en cualquier casilla.",
         featureProtocolTitle: "Protocolos abiertos",
-        featureProtocolBody: "Compatible con ONVIF y RTSP, además de conexiones para determinados equipos.",
+        featureProtocolBody: "Compatible con ONVIF y RTSP, reconoce muchas marcas de cámaras sin que tengas que elegir una y puede conectarse por HTTPS con verificación del certificado.",
         featurePlaybackTitle: "En vivo y grabaciones",
-        featurePlaybackBody: "Mira vídeo en vivo y busca o reproduce grabaciones cuando el equipo lo permita.",
+        featurePlaybackBody: "Mira vídeo en vivo, consulta en un calendario de grabaciones qué días tienen vídeo y reproduce las grabaciones a la velocidad que elijas, en los equipos que lo permitan.",
         featureTVTitle: "Monitorización en Apple TV",
         featureTVBody: "Usa LiveView Mix, vistas por equipo y vídeo a pantalla completa en Apple TV. Crea en el iPhone o iPad una copia cifrada para Apple TV y restáurala sin PIN.",
         featureWebhookTitle: "Paneles de control Webhook",
         featureWebhookBody: "Convierte una casilla vacía de LiveView Mix en botones HTTP Webhook para accesos, iluminación, escenas u otros servicios de red que administras. Las acciones importantes pueden requerir confirmación.",
+        featurePTZTitle: "PTZ y audio bidireccional",
+        featurePTZBody: "En las cámaras compatibles, toca la imagen para orientar una cámara PTZ hacia ese punto o dibuja un recuadro para acercarla directamente, y mantén pulsado Hablar para hablar por el altavoz de la cámara.",
+        featureDiskTitle: "Estado del disco",
+        featureDiskBody: "Consulta de un vistazo los discos de grabadores y NAS: veredicto, temperatura y datos S.M.A.R.T., y en un NAS también volúmenes, CPU, memoria y red.",
+        featureShareTitle: "Uso compartido y copias",
+        featureShareBody: "Comparte cámaras con un código cifrado, bloqueado con un PIN o una contraseña, y conserva varias copias con nombre en tu propio iCloud.",
+        featureDuoTitle: "iPhone Duo y Apple Watch",
+        featureDuoBody: "Medio plegado, el iPhone Duo divide LiveView Mix en dos lienzos y coloca la cámara encima de sus controles. El Apple Watch ejecuta los botones de tus paneles de control con un toque.",
         compatibilityKicker: "Compatibilidad actual",
-        compatibilityTitle: "Protocolos abiertos y conexiones probadas.",
-        compatibilityNote: "* Indica pruebas de compatibilidad con determinados equipos y funciones; no implica afiliación, patrocinio ni aprobación oficial del fabricante.",
+        compatibilityTitle: "Protocolos abiertos y conexiones directas con equipos de marca.",
+        compatibilityNote: "* Se han realizado pruebas de compatibilidad con determinados equipos y funciones. Los nombres de marca solo describen la compatibilidad y no implican afiliación, patrocinio ni aprobación por parte del fabricante del equipo. Las funciones varían según el modelo, el firmware y la configuración.",
         closingTitle: "Organiza tu vista de supervisión.",
         closingCTA: "Ver cómo funciona"
       },
@@ -683,7 +723,7 @@
         summary: "Los problemas de conexión suelen estar relacionados con protocolos, permisos, puertos, formatos de vídeo o la red.",
         meta: [["Contacto", contactLink], ["App", "Cam Hub"], ["Idiomas", languages]],
         sections: [
-          ["Compatibilidad", ["Cam Hub admite ONVIF y RTSP y se ha probado con determinados equipos o sistemas de Hikvision, Dahua y Synology. La compatibilidad real depende del modelo, firmware, permisos, formato de transmisión y red.", "Algunos equipos requieren activar ONVIF, RTSP u otros servicios locales. Los nombres de marcas solo describen compatibilidad y no implican afiliación, patrocinio ni aprobación oficial."], "compatibility"],
+          ["Compatibilidad", ["Cam Hub admite la visualización mediante ONVIF y RTSP, se conecta directamente a equipos de Hikvision, Dahua, Synology y Xiongmai (XMEye) y reconoce las rutas de transmisión RTSP de muchas otras marcas. Se ha probado con determinados equipos o sistemas de Hikvision, Dahua y Synology. La compatibilidad real depende del modelo, el firmware, los permisos de la cuenta, el formato de transmisión y la configuración de red.", "Algunos equipos requieren activar ONVIF, RTSP u otros servicios locales. Los nombres de marcas solo describen compatibilidad y no implican afiliación, patrocinio ni aprobación oficial."], "compatibility"],
           ["Antes de pedir ayuda", ["Confirma que el equipo esté conectado y sea accesible desde el dispositivo Apple.", "Comprueba dirección, puertos HTTP y RTSP, usuario y contraseña.", "Activa los servicios locales necesarios en el equipo.", "Comprueba los permisos para canales y grabaciones.", "Prueba la transmisión secundaria si la principal no es compatible."]],
           ["Al contactar con soporte", ["Incluye versión de la App, dispositivo Apple y versión del sistema.", "Incluye modelo del equipo y firmware.", "Describe la conexión, los pasos y el mensaje de error completo.", "No envíes contraseñas, el PIN para compartir cámaras, el código compartido completo ni una dirección pública."]],
           ["Limitaciones habituales", ["Las implementaciones de ONVIF y RTSP varían entre fabricantes, modelos y firmware.", "El acceso remoto requiere una VPN, un router o una función del equipo configurados de forma segura.", "La búsqueda y reproducción requieren compatibilidad del equipo y permisos adecuados."]]
@@ -791,21 +831,29 @@
         statusLive: "En vivo",
         introKicker: "Una cuenta menos. Más control.",
         introTitle: "Reúne el video de distintas fuentes en una sola vista clara.",
-        introBody: "Agrega una cámara individual o conecta determinados sistemas de videovigilancia NVR, DVR y NAS compatibles. Cam Hub organiza sus canales en una interfaz uniforme para que veas y cambies de uno a otro con más rapidez.",
+        introBody: "Agrega una cámara individual o conecta determinados sistemas de videovigilancia NVR, DVR y NAS compatibles. Cam Hub organiza sus canales en una interfaz uniforme en iPhone, iPhone Duo, iPad y Apple TV.",
         featureDirectTitle: "Conexión directa",
         featureDirectBody: "Conéctate con la dirección y los datos de acceso que ya están configurados en tu equipo, sin registrarte en la nube de un fabricante solo para ver video.",
-        featureMixBody: "Combina canales de distintas cámaras y grabadores en tu propio panel de monitoreo.",
+        featureMixBody: "Combina canales de distintas cámaras y grabadores en tu propio muro: 17 diseños o uno que dibujes tú, una página vertical opcional, e imágenes, relojes, etiquetas o paneles de control en cualquier recuadro.",
         featureProtocolTitle: "Protocolos abiertos primero",
-        featureProtocolBody: "Compatible con transmisión por ONVIF y RTSP, además de conexiones para determinados equipos.",
+        featureProtocolBody: "Compatible con ONVIF y RTSP, reconoce muchas marcas de cámaras sin que tengas que indicar cuál y puede conectarse por HTTPS con verificación del certificado.",
         featurePlaybackTitle: "En vivo y reproducción",
-        featurePlaybackBody: "Mira video en vivo y busca o reproduce grabaciones cuando el equipo lo permita.",
+        featurePlaybackBody: "Mira video en vivo, consulta en un calendario de grabaciones qué días tienen video y reproduce las grabaciones a la velocidad que elijas, en los equipos que lo permiten.",
         featureTVTitle: "Monitoreo en Apple TV",
         featureTVBody: "Usa LiveView Mix, los muros por equipo y el video a pantalla completa en Apple TV. Crea en tu iPhone o iPad un respaldo cifrado para Apple TV y restáuralo sin PIN.",
         featureWebhookTitle: "Paneles de control con Webhook",
         featureWebhookBody: "Convierte un recuadro vacío de LiveView Mix en botones de webhook HTTP para accesos, iluminación, escenas u otros servicios que administras. Las acciones sensibles pueden pedir confirmación.",
+        featurePTZTitle: "PTZ y conversación en dos sentidos",
+        featurePTZBody: "En las cámaras compatibles, toca la imagen para girar una cámara PTZ hacia ese punto o dibuja un recuadro para acercarte directamente, y mantén presionado Hablar para hablar por la bocina de la cámara.",
+        featureDiskTitle: "Estado del disco",
+        featureDiskBody: "Revisa de un vistazo los discos de grabadores y NAS: resultado, temperatura y datos S.M.A.R.T. y, en un NAS, también volúmenes, CPU, memoria y red.",
+        featureShareTitle: "Compartir y respaldar",
+        featureShareBody: "Comparte cámaras con un código cifrado, bloqueado con un PIN o una contraseña, y conserva varios respaldos con nombre en tu propio iCloud.",
+        featureDuoTitle: "iPhone Duo y Apple Watch",
+        featureDuoBody: "Medio doblado, el iPhone Duo divide LiveView Mix en dos lienzos y coloca la imagen de la cámara encima de sus controles. El Apple Watch ejecuta los botones de tus paneles de control con un toque.",
         compatibilityKicker: "Compatibilidad actual",
-        compatibilityTitle: "Protocolos abiertos y conexiones con equipos probados.",
-        compatibilityNote: "* Indica que determinados equipos y funciones pasaron por pruebas de compatibilidad. No implica afiliación, patrocinio ni aprobación oficial del fabricante del equipo. Las funciones varían según el modelo, el firmware y la configuración.",
+        compatibilityTitle: "Protocolos abiertos, además de conexiones directas con equipos de marca.",
+        compatibilityNote: "* Determinados equipos y funciones pasaron por pruebas de compatibilidad. Los nombres de las marcas solo describen la compatibilidad y no implican afiliación, patrocinio ni aprobación del fabricante del equipo. Las funciones varían según el modelo, el firmware y la configuración.",
         closingTitle: "Recupera el control de tu vista de monitoreo.",
         closingCTA: "Conoce cómo funciona"
       },
@@ -833,7 +881,7 @@
         summary: "Los problemas de conexión suelen estar relacionados con los protocolos, los permisos, los puertos o la configuración de la red. Aquí te decimos por dónde empezar a revisar.",
         meta: [["Contacto", contactLink], ["App", "Cam Hub"], ["Idiomas", languages]],
         sections: [
-          ["Compatibilidad", ["Cam Hub permite ver video por ONVIF y RTSP, y se ha probado con determinados dispositivos o sistemas de Hikvision, Dahua y Synology. La compatibilidad varía según el modelo, el firmware, los permisos de la cuenta, el formato de la transmisión y la configuración de la red.", "Algunos equipos requieren activar ONVIF, RTSP u otro servicio local en su interfaz de administración. Las menciones de compatibilidad no implican afiliación, patrocinio ni aprobación oficial del fabricante del equipo."], "compatibility"],
+          ["Compatibilidad", ["Cam Hub permite ver video por ONVIF y RTSP, se conecta directamente con equipos de Hikvision, Dahua, Synology y Xiongmai (XMEye), y reconoce las rutas de transmisión RTSP de muchas otras marcas. Se ha probado con determinados dispositivos o sistemas de Hikvision, Dahua y Synology. La compatibilidad varía según el modelo, el firmware, los permisos de la cuenta, el formato de la transmisión y la configuración de la red.", "Algunos equipos requieren activar ONVIF, RTSP u otro servicio local en su interfaz de administración. Las menciones de compatibilidad no implican afiliación, patrocinio ni aprobación oficial del fabricante del equipo."], "compatibility"],
           ["Antes de reportar un problema de conexión", ["Confirma que la cámara o el grabador esté en línea y que tu dispositivo Apple pueda acceder a él.", "Verifica la dirección del equipo, el puerto HTTP, el puerto RTSP, el usuario y la contraseña.", "Si corresponde, activa ONVIF o el servicio local necesario en la configuración del equipo.", "Usa una cuenta que tenga permiso para ver los canales y las grabaciones que elegiste.", "Prueba la transmisión secundaria de la cámara cuando el códec, la resolución o el ancho de banda de la transmisión principal no sean compatibles."]],
           ["Al escribir a soporte", ["Incluye la versión de la app, el dispositivo Apple y la versión del sistema operativo.", "Incluye el modelo y la versión de firmware de la cámara o del grabador.", "Describe el método de conexión, los pasos exactos y el mensaje de error completo.", "Nunca nos envíes la contraseña de tu cámara, el PIN para compartir cámaras, el código para compartir completo ni tu dirección de conexión pública."]],
           ["Limitaciones comunes", ["Las implementaciones de ONVIF y RTSP varían entre fabricantes, modelos y versiones de firmware. Que un equipo sea compatible con un protocolo no significa que todas sus funciones opcionales estén disponibles.", "El acceso remoto requiere que configures y protejas una VPN, un router o el método de acceso remoto del propio equipo. Cam Hub no abre puertos del router de manera automática.", "La búsqueda de grabaciones y la reproducción requieren que el equipo las admita y una cuenta con los permisos correspondientes."]]
@@ -938,21 +986,29 @@
         statusLive: "Direct",
         introKicker: "Plusieurs appareils, une seule vue",
         introTitle: "Réunissez plusieurs sources vidéo dans une vue claire.",
-        introBody: "Ajoutez une caméra ou connectez certains systèmes NVR, DVR et NAS compatibles. Les fonctions dépendent du modèle, du micrologiciel, des autorisations et du réseau.",
+        introBody: "Ajoutez une caméra ou connectez certains systèmes de surveillance NVR, DVR et NAS compatibles. Cam Hub organise leurs canaux dans une interface cohérente sur iPhone, iPhone Duo, iPad et Apple TV.",
         featureDirectTitle: "Connexion directe",
         featureDirectBody: "Utilise l’adresse et les identifiants configurés sur l’appareil sans contourner ses contrôles d’accès.",
-        featureMixBody: "Combinez les canaux de différentes caméras et de différents enregistreurs dans votre propre tableau de bord.",
+        featureMixBody: "Combinez les canaux de différentes caméras et de différents enregistreurs sur votre propre mur : 17 dispositions ou celle que vous dessinez, une page portrait facultative, et des images, horloges, étiquettes ou panneaux de commande dans n’importe quelle case.",
         featureProtocolTitle: "Protocoles ouverts",
-        featureProtocolBody: "Prend en charge ONVIF et RTSP, ainsi que des connexions compatibles pour certains appareils.",
+        featureProtocolBody: "Prend en charge ONVIF et RTSP, reconnaît de nombreuses marques de caméras sans que vous ayez à en choisir une, et peut se connecter en HTTPS avec vérification du certificat.",
         featurePlaybackTitle: "Direct et lecture",
-        featurePlaybackBody: "Affichez la vidéo en direct et recherchez ou lisez des enregistrements lorsque l’appareil le permet.",
+        featurePlaybackBody: "Affichez la vidéo en direct, repérez dans un calendrier des enregistrements les jours qui contiennent de la vidéo et lisez les enregistrements à la vitesse de votre choix, sur les appareils qui le permettent.",
         featureTVTitle: "Surveillance sur Apple TV",
         featureTVBody: "Utilisez LiveView Mix, les vues par appareil et la vidéo plein écran sur Apple TV. Créez sur iPhone ou iPad une sauvegarde chiffrée dédiée à Apple TV, puis restaurez-la sans PIN.",
         featureWebhookTitle: "Panneaux de commande Webhook",
         featureWebhookBody: "Transformez une case vide de LiveView Mix en boutons HTTP Webhook pour les accès, l’éclairage, les scènes ou d’autres services réseau que vous gérez. Les actions importantes peuvent demander confirmation.",
+        featurePTZTitle: "PTZ et conversation bidirectionnelle",
+        featurePTZBody: "Sur les caméras compatibles, touchez l’image pour orienter une caméra PTZ vers ce point ou tracez un cadre pour zoomer directement, et maintenez Parler pour parler par le haut-parleur de la caméra.",
+        featureDiskTitle: "État du disque",
+        featureDiskBody: "Visualisez d’un coup d’œil les disques des enregistreurs et des NAS : verdict, température et données S.M.A.R.T., ainsi que volumes, processeur, mémoire et réseau sur un NAS.",
+        featureShareTitle: "Partage et sauvegardes",
+        featureShareBody: "Partagez vos caméras avec un code chiffré, verrouillé par un PIN ou un mot de passe, et conservez plusieurs sauvegardes nommées dans votre propre iCloud.",
+        featureDuoTitle: "iPhone Duo et Apple Watch",
+        featureDuoBody: "À moitié plié, l’iPhone Duo divise LiveView Mix en deux zones et place une caméra au-dessus de ses commandes. L’Apple Watch exécute les boutons de vos panneaux de commande d’un simple toucher.",
         compatibilityKicker: "Compatibilité actuelle",
-        compatibilityTitle: "Protocoles ouverts et connexions testées.",
-        compatibilityNote: "* Signale des tests de compatibilité sur certains appareils et fonctions, sans affiliation, parrainage ni approbation officielle du fabricant.",
+        compatibilityTitle: "Protocoles ouverts, plus une connexion directe aux appareils de certaines marques.",
+        compatibilityNote: "* Certains appareils et certaines fonctions ont fait l’objet de tests de compatibilité. Les noms de marque servent uniquement à décrire la compatibilité et n’impliquent aucune affiliation, aucun parrainage ni aucune approbation de la part du fabricant. Les fonctions varient selon le modèle, le micrologiciel et la configuration.",
         closingTitle: "Organisez clairement votre vue de surveillance.",
         closingCTA: "Découvrir le fonctionnement"
       },
@@ -980,7 +1036,7 @@
         summary: "Les problèmes de connexion sont souvent liés aux protocoles, autorisations, ports, formats vidéo ou paramètres réseau.",
         meta: [["Contact", contactLink], ["App", "Cam Hub"], ["Langues", languages]],
         sections: [
-          ["Compatibilité", ["Cam Hub prend en charge ONVIF et RTSP et a été testé avec certains appareils ou systèmes Hikvision, Dahua et Synology. La compatibilité réelle dépend du modèle, du micrologiciel, des autorisations, du format du flux et du réseau.", "Certains appareils nécessitent l’activation d’ONVIF, de RTSP ou d’un service local. Les noms de marques décrivent uniquement la compatibilité et n’impliquent aucune affiliation, aucun parrainage ni aucune approbation officielle."], "compatibility"],
+          ["Compatibilité", ["Cam Hub prend en charge la visualisation via ONVIF et RTSP, se connecte directement aux appareils Hikvision, Dahua, Synology et Xiongmai (XMEye), et reconnaît les chemins de flux RTSP de nombreuses autres marques. Il a été testé avec certains appareils ou systèmes Hikvision, Dahua et Synology. La compatibilité réelle dépend du modèle, du micrologiciel, des autorisations du compte, du format du flux et de la configuration réseau.", "Certains appareils nécessitent l’activation d’ONVIF, de RTSP ou d’un service local. Les noms de marques décrivent uniquement la compatibilité et n’impliquent aucune affiliation, aucun parrainage ni aucune approbation officielle."], "compatibility"],
           ["Avant de contacter l’assistance", ["Vérifiez que l’appareil est en ligne et accessible depuis votre appareil Apple.", "Vérifiez l’adresse, les ports HTTP et RTSP, le nom d’utilisateur et le mot de passe.", "Activez les services locaux nécessaires sur l’appareil.", "Vérifiez les droits d’accès aux canaux et enregistrements.", "Essayez le flux secondaire si le flux principal n’est pas compatible."]],
           ["Lors de votre demande", ["Indiquez la version de l’App, l’appareil Apple et la version du système.", "Indiquez le modèle de l’appareil et son micrologiciel.", "Décrivez la connexion, les étapes et le message d’erreur complet.", "N’envoyez jamais de mot de passe, de PIN de partage des caméras, de code partagé complet ni d’adresse publique."]],
           ["Limites courantes", ["Les implémentations ONVIF et RTSP varient selon le fabricant, le modèle et le micrologiciel.", "L’accès distant nécessite un VPN, un routeur ou une fonction de l’appareil configurés de manière sécurisée.", "La recherche et la lecture exigent la prise en charge par l’appareil et des autorisations adaptées."]]
@@ -1088,21 +1144,29 @@
         statusLive: "V živo",
         introKicker: "En račun manj. Več nadzora.",
         introTitle: "Video iz različnih virov v enem preglednem prikazu.",
-        introBody: "Dodajte posamezno kamero ali povežite izbrane združljive sisteme za videonadzor NVR, DVR in NAS. Aplikacija Cam Hub njihove kanale uredi v enotnem vmesniku, da sta ogled in preklapljanje hitrejša.",
+        introBody: "Dodajte posamezno kamero ali povežite izbrane združljive sisteme za videonadzor NVR, DVR in NAS. Aplikacija Cam Hub njihove kanale uredi v enotnem vmesniku v napravah iPhone, iPhone Duo, iPad in Apple TV.",
         featureDirectTitle: "Neposredna povezava",
         featureDirectBody: "Povežite se z naslovom in podatki za dostop, ki so že nastavljeni v vaši opremi, ne da bi se samo za ogled videa registrirali v oblaku proizvajalca.",
-        featureMixBody: "Kanale različnih kamer in snemalnikov združite v lasten prikaz za videonadzor.",
+        featureMixBody: "Kanale različnih kamer in snemalnikov združite na lastni steni: 17 postavitev ali lastna, ki jo narišete sami, izbirna pokončna stran ter slike, ure, oznake ali nadzorne plošče v katerem koli polju.",
         featureProtocolTitle: "Najprej odprti protokoli",
-        featureProtocolBody: "Podpira pretakanje prek ONVIF in RTSP ter združljive povezave z izbrano opremo.",
+        featureProtocolBody: "Podpira ONVIF in RTSP, prepozna številne znamke kamer, ne da bi vam bilo treba izbrati znamko, in se lahko poveže prek HTTPS s preverjanjem potrdila.",
         featurePlaybackTitle: "V živo in predvajanje",
-        featurePlaybackBody: "Glejte video v živo ter iščite in predvajajte posnetke, kadar oprema to podpira.",
+        featurePlaybackBody: "Glejte video v živo, v koledarju posnetkov preverite, kateri dnevi imajo posnetke, in posnetke predvajajte z izbrano hitrostjo, kadar oprema to podpira.",
         featureTVTitle: "Videonadzor v napravi Apple TV",
         featureTVBody: "V napravi Apple TV uporabljajte LiveView Mix, stene posameznih naprav in celozaslonski video. Šifrirano varnostno kopijo za Apple TV ustvarite v napravi iPhone ali iPad, nato jo obnovite brez kode PIN.",
         featureWebhookTitle: "Nadzorne plošče z gumbi za webhook",
         featureWebhookBody: "Prazno polje v pogledu LiveView Mix spremenite v gumbe za webhook HTTP za dostop, razsvetljavo, scene ali druge storitve, ki jih upravljate. Za občutljiva dejanja lahko zahtevate potrditev.",
+        featurePTZTitle: "PTZ in dvosmerno govorjenje",
+        featurePTZBody: "Pri podprtih kamerah tapnite sliko, da se kamera PTZ obrne tja, ali narišite okvir za neposredno povečavo, za govorjenje prek zvočnika kamere pa pridržite „Govori“.",
+        featureDiskTitle: "Stanje diskov",
+        featureDiskBody: "Diske snemalnikov in strežnikov NAS preglejte na prvi pogled: ocena, temperatura in podatki S.M.A.R.T., pri strežniku NAS pa tudi nosilci, procesor, pomnilnik in omrežje.",
+        featureShareTitle: "Deljenje in varnostne kopije",
+        featureShareBody: "Kamere delite s šifrirano kodo, zaklenjeno s kodo PIN ali geslom, in hranite več poimenovanih varnostnih kopij v svojem iCloudu.",
+        featureDuoTitle: "iPhone Duo in Apple Watch",
+        featureDuoBody: "Napol prepognjen iPhone Duo razdeli LiveView Mix na dve platni, kamero pa prikaže nad njenimi kontrolniki. Na uri Apple Watch gumbe nadzornih plošč sprožite s tapom.",
         compatibilityKicker: "Trenutna združljivost",
-        compatibilityTitle: "Odprti protokoli in preizkušene povezave z opremo.",
-        compatibilityNote: "* Pomeni, da je bila združljivost izbrane opreme in funkcij preizkušena. Ne pomeni povezanosti s proizvajalcem opreme, njegovega sponzorstva ali priporočila. Funkcije se razlikujejo glede na model, vdelano programsko opremo in nastavitve.",
+        compatibilityTitle: "Odprti protokoli in neposredne povezave z opremo posameznih znamk.",
+        compatibilityNote: "* Združljivost izbrane opreme in funkcij je bila preizkušena. Imena znamk opisujejo samo združljivost in ne pomenijo povezanosti s proizvajalcem opreme, njegovega sponzorstva ali priporočila. Funkcije se razlikujejo glede na model, vdelano programsko opremo in nastavitve.",
         closingTitle: "Nadzor nad svojimi kamerami znova vzemite v svoje roke.",
         closingCTA: "Kako deluje"
       },
@@ -1130,7 +1194,7 @@
         summary: "Za težavami s povezavo so običajno protokoli, dovoljenja, vrata ali nastavitve omrežja. Tukaj je opisano, kaj preveriti najprej.",
         meta: [["Kontakt", contactLink], ["Aplikacija", "Cam Hub"], ["Jeziki", languages]],
         sections: [
-          ["Združljivost", ["Aplikacija Cam Hub podpira ogled prek protokolov ONVIF in RTSP in je bila preizkušena z izbranimi napravami ali sistemi Hikvision, Dahua in Synology. Združljivost se razlikuje glede na model, vdelano programsko opremo, dovoljenja računa, obliko pretoka in nastavitve omrežja.", "Pri nekaterih napravah je treba v skrbniškem vmesniku omogočiti ONVIF, RTSP ali drugo lokalno storitev. Navedbe o združljivosti ne pomenijo povezanosti s proizvajalcem opreme, njegovega sponzorstva ali priporočila."], "compatibility"],
+          ["Združljivost", ["Aplikacija Cam Hub podpira ogled prek protokolov ONVIF in RTSP, se neposredno poveže z opremo Hikvision, Dahua, Synology in Xiongmai (XMEye) ter prepozna poti pretokov RTSP številnih drugih znamk. Preizkušena je bila z izbranimi napravami ali sistemi Hikvision, Dahua in Synology. Združljivost se razlikuje glede na model, vdelano programsko opremo, dovoljenja računa, obliko pretoka in nastavitve omrežja.", "Pri nekaterih napravah je treba v skrbniškem vmesniku omogočiti ONVIF, RTSP ali drugo lokalno storitev. Navedbe o združljivosti ne pomenijo povezanosti s proizvajalcem opreme, njegovega sponzorstva ali priporočila."], "compatibility"],
           ["Preden prijavite težavo s povezavo", ["Preverite, ali je oprema (kamera ali snemalnik) v omrežju in dosegljiva iz vaše naprave Apple.", "Preverite naslov opreme, vrata HTTP, vrata RTSP, uporabniško ime in geslo.", "Po potrebi v nastavitvah opreme omogočite ONVIF ali zahtevano lokalno storitev.", "Uporabite račun, ki ima dovoljenje za ogled izbranih kanalov in posnetkov.", "Če glavni pretok ni združljiv zaradi kodeka, ločljivosti ali pasovne širine, poskusite s pomožnim pretokom kamere."]],
           ["Ko se obrnete na podporo", ["Navedite različico aplikacije, napravo Apple in različico operacijskega sistema.", "Navedite model kamere ali snemalnika in različico vdelane programske opreme.", "Opišite način povezave, natančne korake in celotno sporočilo o napaki.", "Nikoli nam ne pošiljajte gesla kamere, kode PIN za deljenje kamer, celotne kode za deljenje ali javnega naslova za povezavo."]],
           ["Pogoste omejitve", ["Izvedbe ONVIF in RTSP se razlikujejo glede na proizvajalca, model in vdelano programsko opremo. Podpora za protokol ne pomeni, da so na voljo vse neobvezne funkcije.", "Za oddaljeni dostop morate sami nastaviti in zaščititi ustrezen VPN, usmerjevalnik ali način oddaljenega dostopa opreme. Aplikacija Cam Hub vrat v usmerjevalniku ne odpira samodejno.", "Iskanje in predvajanje posnetkov zahtevata podporo opreme in račun z ustreznimi dovoljenji."]]
@@ -1237,21 +1301,29 @@
         statusLive: "مباشر",
         introKicker: "أجهزة متعددة في مكان واحد",
         introTitle: "اجمع مصادر الفيديو المختلفة في عرض واضح.",
-        introBody: "أضف كاميرا منفردة أو اتصل بأنظمة NVR وDVR وNAS متوافقة محددة. تعتمد الميزات على الطراز والبرنامج الثابت والصلاحيات وإعدادات الشبكة.",
+        introBody: "أضف كاميرا منفردة أو اتصل بأنظمة مراقبة NVR وDVR وNAS متوافقة محددة. وينظّم Cam Hub قنواتها في واجهة واحدة متّسقة على iPhone وiPhone Duo وiPad وApple TV.",
         featureDirectTitle: "اتصال مباشر",
         featureDirectBody: "يستخدم عنوان الجهاز وبيانات الدخول المحددة عليه دون تجاوز ضوابط الوصول الأصلية.",
-        featureMixBody: "ادمج قنوات من كاميرات ومسجّلات مختلفة في جدار مراقبة خاص بك.",
+        featureMixBody: "ادمج قنوات من كاميرات ومسجّلات مختلفة في جدار خاص بك: 17 تخطيطاً أو تخطيط ترسمه بنفسك، وصفحة عمودية اختيارية، وصور أو ساعات أو تسميات أو لوحات تحكم في أي مربّع.",
         featureProtocolTitle: "بروتوكولات مفتوحة",
-        featureProtocolBody: "يدعم ONVIF وRTSP واتصالات متوافقة مع معدات محددة.",
+        featureProtocolBody: "يدعم ONVIF وRTSP، ويتعرّف على علامات تجارية كثيرة للكاميرات دون أن تختار واحدة منها، ويمكنه الاتصال عبر HTTPS مع التحقق من الشهادة.",
         featurePlaybackTitle: "البث والتسجيلات",
-        featurePlaybackBody: "شاهد الفيديو المباشر وابحث عن التسجيلات أو شغّلها عندما تدعم المعدات ذلك.",
+        featurePlaybackBody: "شاهد الفيديو المباشر، واعرف من تقويم التسجيلات الأيام التي فيها فيديو، وشغّل التسجيلات بالسرعة التي تختارها، في الأجهزة التي تدعم ذلك.",
         featureTVTitle: "المراقبة على Apple TV",
         featureTVBody: "استخدم LiveView Mix وجدران الأجهزة والفيديو بملء الشاشة على Apple TV. أنشئ نسخة احتياطية مشفرة مخصصة لـ Apple TV على iPhone أو iPad ثم استعدها من دون رمز PIN.",
         featureWebhookTitle: "لوحات تحكم Webhook",
         featureWebhookBody: "حوّل خانة فارغة في LiveView Mix إلى أزرار HTTP Webhook لخدمات الوصول أو الإضاءة أو المشاهد أو غيرها من خدمات الشبكة التي تديرها. يمكن طلب تأكيد للإجراءات المهمة.",
+        featurePTZTitle: "PTZ والتحدث باتجاهين",
+        featurePTZBody: "في الكاميرات المدعومة، اضغط على الصورة لتوجيه كاميرا PTZ إلى ذلك الموضع، أو ارسم إطاراً للتكبير عليه مباشرةً، واضغط مع الاستمرار على «تحدّث» للتحدث عبر مكبّر صوت الكاميرا.",
+        featureDiskTitle: "صحة القرص",
+        featureDiskBody: "اطّلع على أقراص المسجّلات وأجهزة NAS في لمحة: التقييم ودرجة الحرارة وبيانات S.M.A.R.T.، وفي NAS أيضاً وحدات التخزين والمعالج والذاكرة والشبكة.",
+        featureShareTitle: "المشاركة والنسخ الاحتياطي",
+        featureShareBody: "شارك الكاميرات برمز مشفّر مقفل برمز PIN أو بكلمة مرور، واحتفظ بعدة نسخ احتياطية مسمّاة في iCloud الخاص بك.",
+        featureDuoTitle: "iPhone Duo وApple Watch",
+        featureDuoBody: "عندما يكون iPhone Duo مطوياً جزئياً، يقسم LiveView Mix إلى مساحتين ويضع الكاميرا فوق عناصر التحكم الخاصة بها. وعلى Apple Watch تُنفَّذ أزرار لوحات التحكم بضغطة واحدة.",
         compatibilityKicker: "التوافق الحالي",
-        compatibilityTitle: "بروتوكولات مفتوحة واتصالات مختبرة.",
-        compatibilityNote: "* يشير إلى اختبار التوافق مع معدات وميزات محددة، ولا يعني الانتساب أو الرعاية أو الاعتماد الرسمي من الشركة المصنعة.",
+        compatibilityTitle: "بروتوكولات مفتوحة، إلى جانب اتصالات مباشرة بأجهزة العلامات التجارية.",
+        compatibilityNote: "* خضعت معدات وميزات محددة لاختبار التوافق. تُذكر أسماء العلامات التجارية لوصف التوافق فقط، ولا تعني الانتساب إلى الشركة المصنّعة أو رعايتها أو اعتمادها. وتختلف الميزات حسب الطراز والبرنامج الثابت والإعداد.",
         closingTitle: "نظّم عرض المراقبة بوضوح.",
         closingCTA: "معرفة طريقة الاستخدام"
       },
@@ -1279,7 +1351,7 @@
         summary: "ترتبط مشكلات الاتصال عادة بالبروتوكولات أو الصلاحيات أو المنافذ أو تنسيق الفيديو أو إعدادات الشبكة.",
         meta: [["التواصل", contactLink], ["App", "Cam Hub"], ["اللغات", languages]],
         sections: [
-          ["التوافق", ["يدعم Cam Hub بروتوكولي ONVIF وRTSP، وقد تم اختباره مع معدات أو أنظمة محددة من Hikvision وDahua وSynology. يعتمد التوافق الفعلي على الطراز والبرنامج الثابت والصلاحيات وتنسيق البث والشبكة.", "قد تتطلب بعض المعدات تفعيل ONVIF أو RTSP أو خدمة محلية من صفحة الإدارة. تُذكر أسماء العلامات لوصف التوافق فقط ولا تعني الانتساب أو الرعاية أو الاعتماد الرسمي."], "compatibility"],
+          ["التوافق", ["يدعم Cam Hub العرض عبر ONVIF وRTSP، ويتصل مباشرةً بمعدات Hikvision وDahua وSynology وXiongmai (XMEye)، ويتعرّف على مسارات بث RTSP لعلامات تجارية أخرى كثيرة. وقد تم اختباره مع أجهزة أو أنظمة محددة من Hikvision وDahua وSynology. ويختلف التوافق حسب الطراز والبرنامج الثابت وصلاحيات الحساب وتنسيق البث وإعدادات الشبكة.", "قد تتطلب بعض المعدات تفعيل ONVIF أو RTSP أو خدمة محلية من صفحة الإدارة. تُذكر أسماء العلامات لوصف التوافق فقط ولا تعني الانتساب أو الرعاية أو الاعتماد الرسمي."], "compatibility"],
           ["قبل طلب الدعم", ["تأكد من أن المعدات متصلة ويمكن لجهاز Apple الوصول إليها.", "تحقق من العنوان ومنافذ HTTP وRTSP واسم المستخدم وكلمة المرور.", "فعّل الخدمات المحلية المطلوبة على المعدات.", "تحقق من صلاحية عرض القنوات والتسجيلات.", "جرّب البث الفرعي إذا لم يكن البث الرئيسي متوافقًا."]],
           ["عند التواصل مع الدعم", ["اذكر إصدار التطبيق وجهاز Apple وإصدار النظام.", "اذكر طراز المعدات وإصدار البرنامج الثابت.", "اشرح طريقة الاتصال والخطوات ورسالة الخطأ كاملة.", "لا ترسل كلمة المرور أو رمز PIN لمشاركة الكاميرات أو رمز المشاركة الكامل أو عنوانًا عامًا."]],
           ["قيود شائعة", ["تختلف تطبيقات ONVIF وRTSP بين الشركات والطرازات وإصدارات البرامج الثابتة.", "يتطلب الوصول عن بُعد شبكة VPN أو جهاز توجيه أو ميزة وصول تم إعدادها بشكل آمن.", "يتطلب البحث في التسجيلات وتشغيلها دعم المعدات والصلاحيات المناسبة."]]
@@ -1392,54 +1464,69 @@
         ["devices", "01", "デバイスとチャンネル", "まずデバイスを接続し、監視画面に表示するチャンネルを選びます。", [
           ["接続情報を準備", [
             "「デバイス」を開き、「デバイスを追加」をタップして追加画面を表示します。",
-            "名前は任意です。IP アドレスまたはホスト名とユーザー名は必須です。HTTP ポートの初期値は 80、RTSP ポートは 554 です。異なる場合は、デバイスの管理画面に表示されている値を使用します。",
-            "パスワードを入力して「追加」をタップします。接続できない場合は、接続、認証情報、未対応デバイスなど、エラーの種類に応じた案内が表示されます。",
+            "名前は任意です。IP アドレスまたはホスト名とユーザー名は必須です。「詳細」の HTTP ポートの初期値は 80、RTSP ポートは 554 です。デバイスが別のポートを使用している場合にのみ変更してください。",
+            "パスワードを入力して「追加」をタップします。接続中は「デバイスに接続中…」と表示されます。接続できない場合は、接続、認証情報、未対応デバイスのどのエラーかを区別して表示し、そのアドレスで見つかった開いているポートも一覧表示します。",
+            "アドレスがわからない場合は、「ツール」タブで「スキャン」をタップします。Cam Hub はネットワーク上で応答したカメラとレコーダーを一覧表示し、識別できた機種は名前を表示して、デバイス追加フォームも自動で入力します。",
+            "利用可能な地域では、「デバイスを追加」で YouTube のライブ配信やチャンネル、Twitch のチャンネルも追加できます。各サービス独自のプレーヤーでカメラと並べて再生され、プランの上限にはカウントされません。",
             "ご自身が所有・管理している、または明示的な使用許可を得ているデバイスとアカウントにのみ接続してください。"
           ]],
-          ["自動判別または ONVIF で接続", [
-            "通常は「ONVIF で接続」をオフのまま追加すると、Cam Hub が互換性のある接続方法を試し、利用可能な機能を取得します。",
-            "デバイスが認識されない場合や、オープンプロトコルを直接使用する場合は、「ONVIF で接続」をオンにして追加し直します。",
-            "デバイス側で ONVIF と RTSP を有効にし、視聴権限のある ONVIF アカウントを作成する必要がある場合があります。接続時の注意点は「対応リファレンス」で確認できます。"
+          ["自動判別・ONVIF・HTTPS", [
+            "通常は、「詳細」の「接続方法」を「自動判別」のままにします。Cam Hub は応答するポートを確認したうえで、内蔵のブランド別プロトコル、ONVIF、多数のブランドの RTSP ストリームパスを自動的に試します。",
+            "デバイスが見つからない場合や、特定のプロトコルを使いたい場合は、検索欄のある「接続方法」の一覧で ONVIF、RTSP、またはデバイスのブランドを選び、追加し直します。",
+            "デバイス側で ONVIF と RTSP を有効にし、視聴権限のある ONVIF アカウントを作成する必要がある場合があります。接続時の注意点は「対応リファレンス」で確認できます。",
+            "Web 管理画面に HTTPS を使用しているデバイスでは、「詳細」で「HTTPS を使用」をオンにします。Cam Hub はデバイスが提示した証明書を信頼し、その後別の証明書に変わった場合は接続しません（公的な認証局が発行した更新後の証明書であれば、引き続き接続できます）。追加済みのデバイスは、そのデバイスのページから HTTPS に切り替えられます。"
           ]],
           ["カメラのチャンネルを整理", [
-            "デバイスを追加したら、そのカードを展開します。「チャンネル」には、デバイスから取得したカメラが表示されます。",
-            "表示するチャンネルをオンにし、不要なチャンネルをオフにします。レコーダーのチャンネルでは、タイルを隠すだけでなく、「カメラをオフ」にしてストリーミングを停止できる場合もあります。",
-            "オフラインのチャンネルは、薄い表示のまま「デバイス」一覧に残ります。「オフラインのカメラを隠す」をオンにすると、ライブウォールには表示されません。"
+            "デバイスを追加したら、「デバイス」でそのデバイスをタップしてページを開きます。「カメラ」には、そのデバイスから取得したチャンネルが表示されます。",
+            "表示するチャンネルをオンにし、不要なチャンネルをオフにします。レコーダーのチャンネルでは、タイルを隠すだけでなく、「映像を一時停止」でストリーミングを停止することもできます。",
+            "オフラインのチャンネルは、薄い表示のまま「デバイス」一覧に残ります。「オフラインのカメラを非表示」をオンにすると、ライブウォールには表示されません。"
           ]],
           ["デバイス情報を確認・更新", [
-            "デバイスカードを展開すると、モデル、アドレス、ポート、シリアル番号、ファームウェア、チャンネル数を確認できます。",
-            "右上の操作からデバイス名を変更できます。下に引いて更新すると、最新のチャンネル状態を取得します。",
-            "表示方法の操作は、現在の画面だけを Fit、Crop、Stretch に切り替えます。フルスクリーンボタンを押すと、そのデバイスのチャンネル一覧をフルスクリーンで表示します。"
+            "デバイスのページ上部にある情報カードには、モデル、アドレス、ポート、シリアル番号、ファームウェア、チャンネル数が表示されます。横の矢印で、詳細の表示／非表示を切り替えられます。",
+            "右上の鉛筆ボタンから、デバイス名の変更、「認証情報を編集」によるユーザー名とパスワードの変更（カメラやウォール上の配置はそのまま残ります）、HTTPS のオン／オフを行えます。下に引いて更新すると、チャンネル一覧を再取得します。",
+            "黒帯ボタンは、現在の画面に限り「デフォルト」「拡大して埋める」「引き伸ばして埋める」を順に切り替えます。「フルスクリーンウォール」ボタンを押すと、そのデバイスのチャンネルウォールが開きます。"
+          ]],
+          ["ディスクの状態", [
+            "ディスク情報を報告できるレコーダーや NAS では、デバイスのページに「ディスクの状態」の行が表示されます。行にオレンジまたは赤の記号が付いている場合は、前回の読み取りで最も悪かったディスクの判定を示しています。",
+            "各ディスクには、判定（「正常」「要確認」「故障の恐れ」）、ステータス、容量、温度、通電時間、S.M.A.R.T. の詳細が表示されます。温度は、iPhone または iPad で設定されている単位で表示されます。",
+            "NAS はディスクの状態を SNMP で提供します。「SNMP を設定」で一度設定すると、そのページにボリューム、CPU、メモリ、ネットワークポート、ディスクの動作状況も表示されます。Cam Hub はこれらの情報を読み取るだけで、デバイスの設定は一切変更しません。"
           ]]
         ]],
         ["mix", "02", "LiveView Mix ウォール", "異なるカメラやレコーダーのチャンネルをひとつの画面にまとめ、表示する画面に合わせて密度を調整できます。", [
           ["LiveView Mix にカメラを追加", [
-            "「設定」→「LiveView Mix」を開きます。",
+            "「LiveView Mix」タブで「カメラを選択」をタップするか、「設定」→「LiveView Mix」を開きます。",
             "デバイスごとにチャンネルを選びます。チャンネル単位で SD または HD を設定でき、「すべて SD」「すべて HD」で選択中の全チャンネルをまとめて変更できます。",
-            "「ライブ」に戻って LiveView Mix を選びます。タブにはスクロール可能なプレビューが表示され、「フルスクリーン」をタップすると、選択したウォールのレイアウトで表示されます。"
+            "タブにはスクロール可能なプレビューが表示され、その下の「配置」で列数と行数を設定できます。「フルスクリーン」をタップすると、選択したレイアウトでウォールが表示されます。"
           ]],
-          ["17 種類のフルスクリーンレイアウト", [
+          ["17 種類のレイアウト、または自作レイアウト", [
             "均等グリッドは 2×2、2×3、3×3、3×4、4×4、5×4、6×4、5×5、7×4、6×5、6×6、7×7 から選べます。",
             "メイン画面付きレイアウトは 1+3、1+5、1+7、1+21、1+27 です。最初のカメラが最も大きなメインタイルに配置されます。",
-            "16 タイルを超えるレイアウトには画面アイコンが表示されます。表示密度が高いため、大きなディスプレイに適しています。"
+            "「カスタムレイアウトを作成」では、行と列を 2〜8 の範囲で選び、セルをまたいでドラッグして結合すると、重要なカメラ用の大きなタイルを作れます。16 タイルを超えるレイアウトは、iPad や Apple TV での表示に適しています。"
           ]],
-          ["カメラと空きスロットを配置", [
-            "LiveView Mix の設定で「ウォールの配置」をタップします。",
-            "タイルを別のタイルへドラッグすると位置を交換できます。「編集」から並べ替え、スワイプで削除することもできます。一覧の順番に沿って、レイアウトの各ページへ配置されます。",
-            "「空きスロットを追加」をタップすると、意図的に空白を残せます。空のタイルを選ぶと、表示内容を設定できます。"
+          ["ウォールの配置", [
+            "「LiveView Mix」タブから「レイアウトを調整」→「ウォールの配置」を開きます。キャンバスでは、各ウォールページを実際の見た目のまま確認できます。",
+            "タイルを別のタイルへドラッグすると位置を交換でき、空のタイルへドラッグするとそこへ移動できます。どのタイルにも内容を配置でき、前のタイルから順に埋める必要はありません。",
+            "空のタイルをタップすると、カメラを配置したり、別のタイルを移動したり（別のウォールページからも可能）、画像、コントロールパネル、時計、ラベルを配置したりできます。"
+          ]],
+          ["縦向きページと 2 つのキャンバス", [
+            "「設定」で「縦向きページ」をオンにすると、iPhone を縦に持ったときに表示する 2 つ目のウォールを作れます。カメラ、レイアウト、パネル、透かしは、このページ専用に設定できます。iPad では、画面が横より縦に長いときに表示されます。",
+            "端末の向きを変えると、タブとフルスクリーンウォールが横向きページと縦向きページの間で切り替わります。縦向きページがオフのときは、縦に持った iPhone に横向きのウォールが回転した状態で表示されます。",
+            "コントロールパネル、時計、ラベル、画像は、作り直さなくても一方のページからもう一方へコピーできます。",
+            "iPhone Duo では、「2 つのキャンバス」をオンにすると、半分に折りたたんだときに LiveView Mix がヒンジを境に上下 2 つのキャンバスに分かれ、それぞれに別のカメラとコントロールパネルを配置できます。"
           ]],
           ["3 種類の表示方法", [
-            "Fit は画像全体を保ち、縦横比が異なる部分に余白を追加します。",
-            "Crop は縦横比を保ったままタイル全体を満たすように拡大し、外側にはみ出した部分を切り取ります。",
-            "Stretch は切り取らずにタイル全体へ広げますが、画像が横長または縦長に見える場合があります。全体の初期設定として使うほか、デバイスやチャンネルごとに一時的に変更できます。"
+            "「デフォルト」は画像全体を保ち、縦横比が異なる場合は黒帯を追加します。",
+            "「拡大して埋める」は縦横比を保ったままタイル全体を満たすように拡大し、外側にはみ出した部分を切り取ります。",
+            "「引き伸ばして埋める」は切り取らずにタイル全体へ広げますが、画像が横長または縦長に見える場合があります。「設定」→「黒帯」でデバイス画面の初期モードを設定でき、LiveView Mix の各ウォールは「レイアウトを調整」の「このウォールの黒帯」で個別に設定できます。",
+            "「設定」→「画面いっぱいに表示」（初期設定はオン）では、フルスクリーンの映像が Dynamic Island の領域や画面の角丸部分まで広がります。オフにすると、映像はそれらの領域を避けて表示されます。"
           ]],
           ["透かしをカスタマイズ", [
             "「透かし」を開き、「透かしを表示」をオンにして、デバイス名、カメラ名、IP アドレスから表示内容を選びます。",
-            "位置、不透明度、色、文字サイズを調整し、標準、角丸、等幅、セリフのフォントから選べます。",
-            "読みやすさは、影、輪郭、プレート、なしから選択できます。明るい映像と暗い映像のプレビューで、昼夜どちらでも読めることを確認できます。"
+            "位置、不透明度、色、文字サイズを調整し、システム、丸ゴシック、等幅、明朝のフォントから選べます。",
+            "「見やすさ」は、影、アウトライン、背景、なしから選択できます。明るい映像と暗い映像のプレビューで、昼夜どちらでも読めることを確認できます。"
           ]],
           ["画像・時計・ラベル・コントロール", [
-            "「配置」で空きスロットを追加し、そのタイルを選んでスロットの編集画面を開きます。",
+            "「ウォールの配置」で空のタイルをタップし、「画像、コントロールパネル、時計、ラベル…」を選んで、「表示内容」で「なし」「画像」「コントロール」「時計」「ラベル」のいずれかを選びます。",
             "「画像」には写真または新しい画像を設定できます。「時計」では日付、秒、12 時間／24 時間表示を選べます。「ラベル」には任意の文字、SF Symbol、色を設定できます。",
             "「コントロール」では、ゲート、ガレージ、照明、鍵、カーテン、シーン、警報、ファン、コンセント、空調、カスタムの各テンプレートから HTTP Webhook ボタンを作成できます。開放や解錠などの操作には確認画面を設定できます。",
             "対応する画像とスロット設定は、暗号化バックアップで移行できます。Webhook の接続先は、ご自身の責任で作成し、安全に管理してください。"
@@ -1457,67 +1544,76 @@
             "ダブルタップすると 2.5 倍に拡大し、もう一度ダブルタップすると画像全体に戻ります。",
             "端末を横向きにすると、ナビゲーション、操作部、タブバーが非表示になり、映像を画面いっぱいに表示できます。"
           ]],
+          ["PTZ 操作と双方向トーク", [
+            "PTZ カメラでは、映像の右下にある丸いボタンをタップしてパッドを開きます。矢印を押し続けるとカメラが動き、プラスとマイナスでズーム、星のボタンで保存した位置を呼び出せます。",
+            "カメラが対応している場合は、「3D ポジショニング」で映像の一点をタップしてカメラをその方向へ向けたり、枠を描いてその範囲へ直接ズームインしたりできます。",
+            "スピーカーを備えた単体カメラでは、トランシーバーのように「トーク」を押し続けて話し、離すとカメラ側の音声を聞けます。初回は Cam Hub がマイクへのアクセスを求めます。"
+          ]],
           ["スナップショットと共有", [
             "単一チャンネルの操作バーで「スナップショット」をタップすると、デバイスへ現在の画像を要求します。",
-            "画像を受信するとプレビューが開きます。「共有」をタップすると、システムの共有シートから送信できます。",
+            "画像を受信すると、Cam Hub がプレビューを開きます。「共有」をタップすると、送信したり「写真」に保存したりできます。",
             "「スナップショット」の隣にある赤い録画ボタンをタップすると、画面に表示されている映像を、ライブでも録画からでも最長 10 分まで録画できます。停止すると Cam Hub がクリップを表示するので、そのまま共有したり「写真」に保存したりできます。",
             "スナップショットやクリップには人物、音声、住所、日時などの個人情報が含まれる場合があります。送信前に内容、共有先、適用される規則を確認してください。"
           ]],
           ["日付・タイムライン・録画分類", [
-            "チャンネル画面の下で日付を選ぶと、その日の録画をデバイスへ問い合わせます。",
+            "チャンネル画面の下で日付を選びます。日ごとの録画インデックスを持つデバイスでは、「録画カレンダー」で録画のある日に印が付きます。",
             "録画は「連続録画」と「イベント」を切り替えられます。タイムラインをドラッグまたは拡大し、中央のカーソルを目的の時刻へ合わせるか、一覧から区間を選びます。",
             "再生中は「再生」とデバイスの時刻が表示されます。「ライブに戻る」をタップするとライブ映像へ戻ります。デバイスによっては、システムプレーヤーで開く前にクリップをダウンロードします。"
           ]]
-        ], '機能の利用条件：ライブ映像、スナップショット、<span class="keep-phrase">メイン／サブストリーム切り替え</span>、録画検索、<span class="keep-phrase">連続録画／イベント分類</span>、タイムライン操作、録画再生は、カメラまたはレコーダーが実際に提供する機能と、サインインしたデバイスアカウントに付与された権限により異なります。'],
-        ["backup", "04", "暗号化バックアップとカメラ共有", "iCloud のバックアップと復元に PIN は不要です。カメラ共有時は、共有コードを 6 桁の PIN でロックするか選べます。", [
+        ], "機能の利用条件：ライブ映像、スナップショット、<span class=\"keep-phrase\">メイン／サブストリーム切り替え</span>、録画検索、<span class=\"keep-phrase\">連続録画／イベント分類</span>、タイムライン操作、録画再生は、カメラまたはレコーダーが実際に提供する機能と、サインインしたデバイスアカウントに付与された権限により異なります。"],
+        ["backup", "04", "暗号化バックアップとカメラ共有", "iCloud バックアップに PIN は不要で、名前を付けて複数保存できます。共有コードはロックなしのままにするか、6 桁の PIN またはパスワードでロックできます。", [
           ["パスワードを端末内で保護", [
             "追加したデバイスのパスワードは Appleキーチェーンに保存されます。デバイス名、アドレス、ポート、チャンネル、アプリの設定は端末内のデータとして保存されます。",
             "Cam Hub は、ユーザーが実行した接続、録画検索、スナップショット、バックアップ、移行のためにのみ、これらの情報を使用します。",
             "「すべてのデータを削除」を実行すると、端末内のデバイス情報と保存済みパスワードが削除されます。バックアップしていない設定は、アプリを削除した場合も復元できなくなることがあります。"
           ]],
-          ["PIN 不要の暗号化 iCloud バックアップ", [
-            "「設定」→「iCloud にバックアップ」を開き、iPhone／iPad または Apple TV の保存先を選んでバックアップを作成します。PIN の設定は不要です。",
+          ["複数の名前付き iCloud バックアップ", [
+            "「設定」→「iCloud にバックアップ」を開き、ページ上部で「自分のバックアップ」（iPhone／iPad 用）または Apple TV を選びます。必要に応じて名前を入力し、「今すぐバックアップ」をタップします。PIN は不要です。",
             "対応するデバイス、認証情報、チャンネル、LiveView Mix、アプリの設定は暗号化してから、お客様個人の iCloud に保存されます。",
-            "「現在のバックアップ」に新しい日時とデバイス数が表示されていることを確認してください。"
+            "新しいバックアップは以前のものと並べて保存され、新しい順に表示されます。スワイプで名前の変更や削除ができます。Apple TV の宛先には、1 つだけ保存されます。"
           ]],
           ["iCloud から復元", [
-            "「設定」→「iCloud から復元」を開き、バックアップを選ぶとそのまま続行できます。iPhone、iPad、Apple TV のいずれでも PIN の確認はありません。",
+            "「設定」→「iCloud から復元」を開き、「バックアップを選択」でバックアップを選んで「復元」をタップします。iPhone、iPad、Apple TV のいずれでも PIN の確認はありません。",
             "可能な限り同じアプリバージョンを使用し、バックアップを保存した Apple Account でサインインしていることを確認します。古いバージョンのバックアップは、一覧に表示するために作り直す必要がある場合があります。",
             "復元できる数は現在のプラン上限に従います。復元後は、すべてのデバイスアドレス、チャンネル、LiveView Mix が現在のネットワークで正しいことを確認してください。"
           ]],
-          ["カメラ共有と任意の PIN", [
-            "「設定」→「カメラを共有」で対象を選び、暗号化された共有コードを作成します。共有時に PIN でロックするかを選べます。",
-            "PIN ロックを有効にする場合は 6 桁の数字を入力して確認します。受信者は共有カメラの読み込みまたは復元時に PIN の確認が必要です。PIN を設定しなければ、完全なコードからそのまま読み込めます。",
-            "取り込みにはデバイスと認証情報が含まれ、移行先のプラン上限が適用されます。完全なコードと PIN は信頼できる相手にだけ送り、公開チャット、問い合わせチケット、ウェブサイトには投稿しないでください。"
+          ["PIN またはパスワードでカメラを共有", [
+            "「設定」の「カメラを共有」セクションで「カメラを書き出す」を開き、デバイスにチェックを付けて、暗号化された共有コードを作成します。「アプリ設定を含める」をオンにすると LiveView Mix のページとコントロールパネルも含まれ、使用するかどうかは受信者が決められます。",
+            "コードはロックなしのままにすることも、「PIN でロック」をオンにして 6 桁の数字でロックすることも、さらに「複雑な暗号化」をオンにして 8 文字以上のパスワードでロックすることもできます。コードを取り込む人は、その PIN またはパスワードを入力する必要があります。",
+            "取り込みにはデバイスと認証情報が含まれ、移行先のプラン上限が適用されます。PIN またはパスワードはコードとは別に、信頼できる相手にだけ送ってください。公開チャット、問い合わせチケット、ウェブサイトには絶対に投稿しないでください。"
           ]]
         ]],
         ["preferences", "05", "表示・ストリーミング・データ管理", "ネットワークと端末に合わせてアプリの動作を調整できます。初期化する場合も、設定、端末内データ、iCloud バックアップを個別に扱えます。", [
           ["オフラインのカメラを隠す", [
-            "「設定」→「オフラインのカメラを隠す」をオンにすると、信号のないカメラが「ライブ」と各ライブウォールから非表示になります。",
+            "「設定」→「オフラインのカメラを非表示」をオンにすると、信号のないカメラが「ライブ」と各ライブウォールから非表示になります。",
             "オフラインのカメラは薄い表示のまま「デバイス」のチャンネル一覧に残ります。削除済みのカメラと区別でき、信号が戻ると再び表示されます。"
           ]],
           ["ページを移動しても接続を維持", [
-            "再接続に時間がかかる対応デバイスを Cam Hub が検出すると、「ページ送り」に「ページを移動しても接続を維持」が表示されます。",
+            "「設定」→「LiveView Mix」を開き、「ページ送り」にある「ページを移動しても接続を維持」を使います。再接続に時間がかかるデバイスで特に効果があります。",
             "オンにすると、スクロールして画面外になったチャンネルも接続を維持し、戻ったときに素早く再開できます。ネットワーク、バッテリー、システム資源を継続して使用するため、すぐに再開する必要がない場合はオフのままにしてください。"
           ]],
           ["起動時に開く画面を選択", [
-            "「設定」→「LiveView Mix」→「起動時に開く」を開きます。",
-            "「最終表示」は前回の選択へ戻り、「LiveView Mix」はデバイスをまたぐウォールを開きます。個別のデバイスを選ぶと、そのデバイスを直接開きます。",
+            "「設定」の「LiveView Mix」セクションにある「起動時に開く」を開きます。",
+            "「前回の画面」は前回の選択へ戻り、「LiveView Mix」はデバイスをまたぐウォールを、「LiveView Mix フルスクリーン」はそのウォールをフルスクリーンで開きます。個別のデバイスを選ぶと、そのデバイスを直接開きます。",
             "選択したデバイスが削除されている場合や、LiveView Mix が未設定の場合は、無効な移動先を保持せず、利用可能な画面を表示します。"
           ]],
           ["プランと表示するカメラ", [
             "「設定」→「プラン」では、現在のカメラ／レコーダープランと利用上限を確認できます。",
-            "すべてのチャンネルが利用可能でない場合は、「表示するカメラを選択」で利用可能な枠を割り当てます。アプリの制限をすべて解除した後は、この一覧を設定する必要はありません。",
+            "まだ一部のチャンネルしか解除されていない場合は、「表示するカメラを選択」で利用可能な枠を割り当てます。アプリの制限をすべて解除した後は、この一覧は不要です。",
             "購入と「購入を復元」は、Apple が提供する状態に従います。プランを変更しても、カメラ自体が提供するプロトコル、権限、再生機能は変わりません。"
           ]],
           ["リセットと削除を使い分ける", [
             "「設定をデフォルトに戻す」は、追加済みデバイスを残したまま、外観、言語、画質、LiveView Mix などの設定を初期値に戻します。",
             "「すべてのデータを削除」は、端末内のデバイス、カメラ、キーチェーンのパスワードを削除します。iCloud バックアップとサブスクリプションには影響しません。",
-            "「iCloud バックアップを削除」は、現在の端末にあるデバイスと設定を変更せず、暗号化されたクラウドバックアップだけを削除します。iCloud を利用できない場合は、画面に表示されるバックアップ状態だけが消去されることがあります。",
+            "「iCloud バックアップを削除」は、現在の端末にあるデバイスと設定を変更せずに、Apple TV 用のコピーを含むすべての暗号化クラウドバックアップを削除します。1 つのバックアップだけを削除する場合は、バックアップの一覧でそのバックアップをスワイプしてください。",
             "元に戻せない削除を行う前に、iCloud の同期が完了していることと、移行先の端末でバックアップのバージョンを復元できることを確認してください。"
+          ]],
+          ["開発チームへの問い合わせ", [
+            "iPhone と iPad では、「設定」の最後の行にある「開発チームに問い合わせる」から、正しく動作しないデバイスや、Cam Hub がまだ対応していないデバイスの機能についてのメールを作成できます。",
+            "使い慣れた言語で書いてかまいません。ブランド、モデル、ファームウェアのバージョンを記載し、カメラのパスワード、共有コード、PIN は絶対に含めないでください。"
           ]]
         ]],
-        ["tv-control", "06", "Apple TV と Webhook 操作", "ウォールをテレビへ広げ、LiveView Mix にご自身で管理する HTTP 操作ボタンを追加できます。", [
+        ["tv-control", "06", "Apple TV・Apple Watch・Webhook 操作", "ウォールをテレビへ広げられるほか、ご自身で管理する接続先へリクエストを送る HTTP 操作ボタンを追加し、Apple Watch からも操作できます。", [
           ["Apple TV の大画面で見る", [
             "tvOS 版では LiveView Mix、デバイスごとのウォール、カメラ 1 台のフルスクリーン表示、録画タイムラインを利用でき、Siri Remote のフォーカス操作に合わせて設計されています。",
             "高密度レイアウトは大画面に適しています。現在のウォールを離れず、カメラや Webhook ボタンを直接選択できます。",
@@ -1529,14 +1625,18 @@
             "Apple TV では Apple TV 専用バックアップだけを復元します。完了後、デバイスのアドレス、チャンネル、LiveView Mix がテレビのネットワーク環境に合っていることを確認してください。"
           ]],
           ["Webhook コントロールパネルを作る", [
-            "LiveView Mix の設定で「ウォールの配置」を開き、空きスロットを追加して、そのスロットを「コントロール」に設定します。",
-            "ゲート、ガレージ、照明、鍵、カーテン、シーン、警報、ファン、コンセント、空調、カスタムの各テンプレートを選べます。ボタンごとにアイコン、ラベル、色、実行前の確認を設定できます。",
+            "「LiveView Mix」タブで「レイアウトを調整」→「ウォールの配置」を開き、空のタイルをタップして、「表示内容」を「コントロール」に設定します。",
+            "ゲート、ガレージ、照明、鍵、カーテン、シーン、警報、ファン、コンセント、空調、カスタムの各テンプレートを選べます。ボタンごとにアイコン、ラベル、「実行前に確認」を設定でき、パネルには独自のタイトルと色を設定できます。",
             "各ボタンは、指定した HTTP または HTTPS の接続先へ GET、POST、PUT、DELETE を送信でき、任意のヘッダー、Content-Type、JSON 本文にも対応します。"
           ]],
           ["ウォールからそのまま実行", [
             "iPhone／iPad ではボタンをタップします。Apple TV ではリモコンでフォーカスを移動して押すと実行され、送信中、成功、失敗の状態がその場に表示されます。",
             "開放、解錠、警報など元に戻しにくい操作には確認を設定し、必要な用途だけに権限を絞った接続先を使用してください。",
             "対応するコントロールパネル設定は暗号化バックアップで移行できます。Webhook の接続先、認証情報、ネットワークアクセス、接続する実機の安全管理はお客様の責任です。"
+          ]],
+          ["Apple Watch のボタン", [
+            "Apple Watch の Cam Hub は、ペアリングした iPhone で設定したコントロールパネルのボタンをパネルのタイトルごとにまとめて一覧表示し、タップで実行します。映像は表示されません。",
+            "一覧は iPhone が常に最新の状態に保ち、Apple Watch にもコピーが保存されるため、iPhone のアプリが起動していなくても一覧を開けます。プランに含まれないパネルは表示されません。"
           ]]
         ], "セキュリティに関する注意：Webhook ボタンは指定したネットワーク先へ直接リクエストを送信します。Cam Hub は接続先、入退室設備、鍵、警報などの安全性を検証しません。接続先の権限と認証情報を適切に保護し、元に戻しにくい操作には確認を設定してください。"]
       ]
