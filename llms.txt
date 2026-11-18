@@ -1,14 +1,13 @@
 # Cam Hub
 
-> Cam Hub is an app for iPhone, iPhone Duo, iPad and Apple TV (with control buttons on Apple Watch) that connects directly to IP cameras and NVR/DVR recorders, without a vendor cloud account. It works with Hikvision, Dahua, Synology Surveillance Station and Xiongmai (XMEye) equipment over their own protocols, with ACTi recorders through ONVIF, and with other brands through ONVIF and RTSP. Developer: ALMX. App Store: https://apps.apple.com/app/id6792057195
+> Cam Hub is an app for iPhone, iPhone Duo, iPad and Apple TV (with control buttons on Apple Watch) that connects directly to IP cameras and NVR/DVR recorders, without a vendor cloud account. It works with Hikvision, Dahua, Synology Surveillance Station, ACTi and Xiongmai (XMEye) equipment, and with other brands through ONVIF and RTSP. Developer: ALMX. App Store: https://apps.apple.com/app/id6792057195
 
 Cam Hub is a third-party viewer: it is not made by, affiliated with or endorsed by any camera vendor. It talks to the equipment itself (on the local network, or through a forwarded port, DDNS or VPN that the owner sets up), so no vendor account, P2P cloud or Cam Hub account is needed. Features depend on the model, firmware and account permissions of the equipment.
 
 ## Compatibility
 
 - Hikvision cameras and NVR/DVR recorders (no Hik-Connect needed): live view, recording playback with the recording calendar and faster playback, snapshots, PTZ, two-way talk and Disk Health, where the device supports them.
-- Dahua cameras and recorders, Synology Surveillance Station, Xiongmai (XMEye) devices: connected directly, with live view and recording playback.
-- ACTi recorders (tested on the KNR-120): added with Auto-detect, connected through ONVIF, with live view and recording playback.
+- Dahua cameras and recorders, Synology Surveillance Station, ACTi recorders, Xiongmai (XMEye) devices: connected directly, with live view and recording playback (an ACTi recorder is added with Auto-detect).
 - Any brand with ONVIF (live view; recording playback on recorders with ONVIF recording search) or RTSP (live view; the stream paths of 71 brands are built in).
 - Details per brand and method: https://cam-hub.almx.cc/guide/brands.html
 
