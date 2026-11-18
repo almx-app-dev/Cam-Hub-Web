@@ -121,6 +121,20 @@ const translations = {
       compatibilityKicker: "目前相容性",
       compatibilityTitle: "開放協定，加上品牌設備的直接連接。",
       compatibilityNote: "* 代表部分設備與功能經過相容性測試。品牌名稱僅用於說明相容性，不代表與品牌原廠存在合作、贊助或官方認可關係。實際功能依型號、韌體與設定而異。",
+      faqKicker: "常見問題",
+      faqTitle: "Cam Hub 能連接哪些設備",
+      faqQ1: "不用 Hik-Connect，也能用 iPhone 看 Hikvision 攝影機與 NVR 嗎？",
+      faqA1: "可以。Cam Hub 用設備本身的使用者名稱與密碼，直接連接 Hikvision 攝影機與 NVR／DVR 錄影主機，不需要 Hik-Connect，也不需要雲端帳號。即時影像、錄影回放與快照都能用；PTZ、雙向對講與硬碟健康，依設備支援而定。",
+      faqQ2: "還支援哪些品牌？",
+      faqA2: "Dahua 攝影機與錄影主機、Synology Surveillance Station 與 Xiongmai（XMEye）設備都能直接連接。ACTi 錄影主機（例如 KNR-120）用「自動偵測」加入，透過 ONVIF 看即時影像與錄影回放。其他攝影機與錄影主機可透過 ONVIF 或 RTSP 連接，「自動偵測」也認得許多品牌的 RTSP 串流路徑。",
+      faqQ3: "需要雲端帳號或訂閱才能開始用嗎？",
+      faqA3: "不需要。Cam Hub 直接與您的設備連線，不必建立帳號。免費方案可啟用 2 個通道與 1 台錄影主機；攝影機方案與 NVR 方案可提高這些上限。",
+      faqQ4: "能把不同錄影主機、不同品牌的攝影機放在同一個畫面嗎？",
+      faqA4: "可以。LiveView Mix 能把不同攝影機、錄影主機與地點的通道放在同一面牆上，使用 17 種版面之一或自己畫的版面；任何一格都能放 Webhook 按鈕，連接 Home Assistant 或您自行管理的其他服務。",
+      faqQ5: "能回放 NVR 裡的錄影嗎？",
+      faqA5: "可以。Hikvision、Dahua、Synology Surveillance Station 與 Xiongmai（XMEye）的錄影都能回放，提供錄影搜尋的 ONVIF 錄影主機（包括 ACTi）也可以。選日期、拖曳時間軸；主機有標示時，可切換連續錄影與事件錄影；主機允許時，還能倍速播放。",
+      faqQ6: "Cam Hub 可以在哪些 Apple 裝置上使用？",
+      faqA6: "iPhone、iPhone Duo 與 iPad，還有 Apple TV，可在電視上顯示監看牆。Apple Watch 會列出控制面板的按鈕，點一下即可執行。",
       closingTitle: "把監看畫面，重新交回自己掌握。",
       closingCTA: "了解如何使用"
     },
@@ -337,7 +351,7 @@ const translations = {
       summary: "連線問題通常與設備協定、權限、連接埠或網路設定有關。這裡整理了開始檢查的位置。",
       meta: [["聯絡信箱", `<a href="mailto:${shared.contactEmail}">${shared.contactEmail}</a>`], ["App", "Cam Hub"], ["支援語言", shared.supportedLanguages]],
       sections: [
-        ["相容性", ["Cam Hub 支援 ONVIF 與 RTSP 影像連接，可直接連接 Hikvision、Dahua、Synology 與 Xiongmai（XMEye）設備，也認得許多其他品牌的 RTSP 串流路徑；並已針對部分 Hikvision、Dahua 與 Synology 設備或系統進行測試。實際相容性取決於型號、韌體、帳號權限、串流格式與網路設定。", "部分設備可能需要先在管理介面中啟用 ONVIF、RTSP 或相關本機服務。品牌相容性說明不代表與品牌原廠存在合作、贊助或官方認可關係。"], "compatibility"],
+        ["相容性", ["Cam Hub 支援 ONVIF 與 RTSP 影像連接，可直接連接 Hikvision、Dahua、Synology 與 Xiongmai（XMEye）設備，也認得許多其他品牌的 RTSP 串流路徑；並已針對部分 Hikvision、Dahua、Synology 與 ACTi 設備或系統進行測試。實際相容性取決於型號、韌體、帳號權限、串流格式與網路設定。", "部分設備可能需要先在管理介面中啟用 ONVIF、RTSP 或相關本機服務。品牌相容性說明不代表與品牌原廠存在合作、贊助或官方認可關係。"], "compatibility"],
         ["回報連線問題前", ["確認攝影機或錄影主機已上線，且 Apple 裝置可以連線至該設備。", "確認設備位址、HTTP 連接埠、RTSP 連接埠、使用者名稱與密碼。", "需要時，請在設備管理介面中啟用 ONVIF 或相關本機服務。", "確認設備帳號具備查看指定通道與錄影內容的權限。", "若主串流的編碼、解析度或流量不相容，可以嘗試使用子串流。"]],
         ["聯絡支援時請提供", ["App 版本、Apple 裝置型號與作業系統版本。", "攝影機或錄影主機的型號與韌體版本。", "使用的連線方式、操作步驟與完整錯誤訊息。", "請勿寄送攝影機密碼、分享攝影機 PIN、完整分享代碼或從網際網路連線到設備所用的公開位址。"]],
         ["常見限制", ["ONVIF 與 RTSP 的實作會因設備品牌、型號與韌體而異，因此支援協定不等於每項功能都能使用。", "遠端連線需要您自行建立並保護適當的 VPN、路由或設備遠端存取設定。Cam Hub 不會自動開放路由器連接埠。", "錄影搜尋與回放需要設備本身支援，並且登入帳號擁有相應權限。"]]
@@ -466,6 +480,20 @@ const translations = {
       compatibilityKicker: "Current compatibility",
       compatibilityTitle: "Open protocols, plus direct connections to brand equipment.",
       compatibilityNote: "* Selected equipment and features have been compatibility-tested. Brand names only describe compatibility and do not imply affiliation, sponsorship, or endorsement by the equipment vendor. Features vary by model, firmware, and configuration.",
+      faqKicker: "Common questions",
+      faqTitle: "What Cam Hub works with",
+      faqQ1: "Can I watch Hikvision cameras and NVRs on iPhone without Hik-Connect?",
+      faqA1: "Yes. Cam Hub connects to Hikvision cameras and NVR/DVR recorders directly, with the device's own user name and password: no Hik-Connect and no cloud account. Live view, recording playback and snapshots are always there; PTZ, two-way talk and Disk Health work where the device supports them.",
+      faqQ2: "Which other brands does Cam Hub work with?",
+      faqA2: "Dahua cameras and recorders, Synology Surveillance Station and Xiongmai (XMEye) devices connect directly. ACTi recorders, such as the KNR-120, are added with Auto-detect and connect through ONVIF, with live view and recording playback. Other cameras and recorders connect through ONVIF or RTSP, and Auto-detect knows the RTSP stream paths of many brands.",
+      faqQ3: "Do I need a cloud account or a subscription to start?",
+      faqA3: "No. Cam Hub talks to your devices directly and needs no account. The free plan covers 2 enabled channels and 1 recorder; camera plans and NVR plans raise those limits.",
+      faqQ4: "Can I watch cameras from different recorders and brands on one screen?",
+      faqA4: "Yes. LiveView Mix puts channels from different cameras, recorders and sites on one wall, in one of 17 layouts or a layout you draw, and any tile can hold webhook buttons for Home Assistant or other services you manage.",
+      faqQ5: "Can I play back recordings from my NVR?",
+      faqA5: "Yes, on Hikvision, Dahua, Synology Surveillance Station and Xiongmai (XMEye) recorders, and on ONVIF recorders that offer recording search, ACTi included. Pick a day, scrub the timeline, switch between continuous and event recordings where the recorder labels them, and play faster where it allows.",
+      faqQ6: "Which Apple devices does Cam Hub run on?",
+      faqA6: "iPhone, iPhone Duo and iPad, plus Apple TV for a monitoring wall on the television. Apple Watch shows your control-panel buttons and fires one with a tap.",
       closingTitle: "Put your monitoring view back under your control.",
       closingCTA: "Learn how it works"
     },
@@ -682,7 +710,7 @@ const translations = {
       summary: "Connection issues are usually related to protocols, permissions, ports, or network configuration. Here is where to start checking.",
       meta: [["Contact", `<a href="mailto:${shared.contactEmail}">${shared.contactEmail}</a>`], ["App", "Cam Hub"], ["Languages", shared.supportedLanguages]],
       sections: [
-        ["Compatibility", ["Cam Hub supports ONVIF and RTSP-based viewing, connects directly to Hikvision, Dahua, Synology, and Xiongmai (XMEye) equipment, and recognizes the RTSP stream paths of many other brands. It has been tested with selected Hikvision, Dahua, and Synology devices or systems. Compatibility varies by model, firmware, account permissions, stream format, and network configuration.", "Some equipment requires ONVIF, RTSP, or another local service to be enabled in its administration interface. Compatibility statements do not imply affiliation, sponsorship, or endorsement by the equipment vendor."], "compatibility"],
+        ["Compatibility", ["Cam Hub supports ONVIF and RTSP-based viewing, connects directly to Hikvision, Dahua, Synology, and Xiongmai (XMEye) equipment, and recognizes the RTSP stream paths of many other brands. It has been tested with selected Hikvision, Dahua, Synology, and ACTi devices or systems. Compatibility varies by model, firmware, account permissions, stream format, and network configuration.", "Some equipment requires ONVIF, RTSP, or another local service to be enabled in its administration interface. Compatibility statements do not imply affiliation, sponsorship, or endorsement by the equipment vendor."], "compatibility"],
         ["Before reporting a connection problem", ["Confirm that the camera or recorder is online and reachable from your Apple device.", "Verify the equipment address, HTTP port, RTSP port, username, and password.", "Enable ONVIF or the required local service in the equipment settings when applicable.", "Use an account that has permission to view the selected channels and recordings.", "Try the camera sub-stream when the main-stream codec, resolution, or bandwidth is not compatible."]],
         ["When contacting support", ["Include the app version, Apple device, and operating system version.", "Include the camera or recorder model and firmware version.", "Describe the connection method, exact steps, and complete error message.", "Never send us your camera password, camera-sharing PIN, complete sharing code, or public connection address."]],
         ["Common limitations", ["ONVIF and RTSP implementations vary across vendors, models, and firmware. Supporting a protocol does not mean every optional feature is available.", "Remote access requires you to configure and secure an appropriate VPN, router, or equipment remote-access method. Cam Hub does not automatically open router ports.", "Recording search and playback require equipment support and an account with the relevant permissions."]]
@@ -2201,6 +2229,12 @@ function applyLanguage(language) {
       const key = node.dataset.i18n;
       if (pageData[key] !== undefined) node.innerHTML = pageData[key];
       else if (locale[key] !== undefined) node.innerHTML = locale[key];
+    });
+    // v2026-11-18: a block marked data-i18n-requires="key" (the home questions, English and Traditional Chinese
+    // first) is removed for a language that has no text for that key yet, so the page never shows the template's
+    // Traditional Chinese fallback or another language. Each language has its own pre-rendered file, so removing is final.
+    document.querySelectorAll("[data-i18n-requires]").forEach((node) => {
+      if (pageData[node.dataset.i18nRequires] === undefined) node.remove();
     });
     document.querySelectorAll("[data-i18n-aria]").forEach((node) => {
       const key = node.dataset.i18nAria;

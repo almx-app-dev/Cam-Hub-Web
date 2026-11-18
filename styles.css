@@ -529,6 +529,19 @@ h1 .hero-accent {
 .compatibility-items span { padding: 12px 16px; color: #dce6ff; background: rgba(14, 34, 79, 0.72); border: 1px solid rgba(102, 148, 250, 0.26); border-radius: 10px; font-size: 13px; font-weight: 750; }
 .legal-note { grid-column: 1 / -1; margin: 0; color: #7f8dad; font-size: 12px; line-height: 1.65; }
 
+/* Compatibility questions on the home page (2026-11-18): plain visible text, so readers, search engines and AI
+   assistants can all read and quote it (the same questions are published as FAQPage data by build_site.py). */
+.faq-band { margin-bottom: 96px; padding: clamp(30px, 5vw, 54px); background: linear-gradient(120deg, rgba(7, 21, 56, 0.88), rgba(8, 13, 35, 0.8)); border: 1px solid var(--line); border-radius: 20px; }
+.faq-band h2 { margin: 0 0 28px; font-size: clamp(27px, 3.5vw, 42px); line-height: 1.2; }
+.faq-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.faq-item { padding: 22px 24px; color: #dce6ff; background: rgba(14, 34, 79, 0.72); border: 1px solid rgba(102, 148, 250, 0.26); border-radius: 14px; }
+.faq-item h3 { margin: 0 0 10px; font-size: 18px; line-height: 1.4; }
+.faq-item p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.7; }
+@media (max-width: 720px) {
+  .faq-band { margin-bottom: 66px; padding: 26px; }
+  .faq-list { grid-template-columns: 1fr; }
+}
+
 .closing-cta {
   display: grid;
   grid-template-columns: auto 1fr auto;
@@ -1010,7 +1023,8 @@ html[dir="rtl"] .guide-visual figcaption { right: 20px; left: auto; }
   :root:not([data-theme="dark"]) .guide-card,
   :root:not([data-theme="dark"]) .wiki-nav,
   :root:not([data-theme="dark"]) .wiki-chapter,
-  :root:not([data-theme="dark"]) .compatibility-band { background: rgba(255, 255, 255, 0.72); }
+  :root:not([data-theme="dark"]) .compatibility-band,
+  :root:not([data-theme="dark"]) .faq-band { background: rgba(255, 255, 255, 0.72); }
   :root:not([data-theme="dark"]) .wiki-topic,
   :root:not([data-theme="dark"]) .plans-table-wrap,
   :root:not([data-theme="dark"]) .wiki-nav a { color: #17284f; background: rgba(230, 239, 255, 0.8); }
@@ -1021,6 +1035,7 @@ html[dir="rtl"] .guide-visual figcaption { right: 20px; left: auto; }
   :root:not([data-theme="dark"]) .wiki-warning { color: #5a3600; background: #fff2d5; border-color: rgba(164, 96, 0, 0.3); }
   :root:not([data-theme="dark"]) .wiki-warning strong { color: white; background: #a96200; }
   :root:not([data-theme="dark"]) .compatibility-items span,
+  :root:not([data-theme="dark"]) .faq-item,
   :root:not([data-theme="dark"]) .meta div { color: #17284f; background: rgba(230, 239, 255, 0.8); }
   :root:not([data-theme="dark"]) .legal-note { color: #53617d; }
   :root:not([data-theme="dark"]) .footer { color: #53617d; background: #e7eefc; }
@@ -1063,7 +1078,8 @@ html[dir="rtl"] .guide-visual figcaption { right: 20px; left: auto; }
 :root[data-theme="light"] .guide-card,
 :root[data-theme="light"] .wiki-nav,
 :root[data-theme="light"] .wiki-chapter,
-:root[data-theme="light"] .compatibility-band { background: rgba(255, 255, 255, 0.72); }
+:root[data-theme="light"] .compatibility-band,
+:root[data-theme="light"] .faq-band { background: rgba(255, 255, 255, 0.72); }
 :root[data-theme="light"] .wiki-topic,
 :root[data-theme="light"] .plans-table-wrap,
 :root[data-theme="light"] .wiki-nav a { color: #17284f; background: rgba(230, 239, 255, 0.8); }
@@ -1074,6 +1090,7 @@ html[dir="rtl"] .guide-visual figcaption { right: 20px; left: auto; }
 :root[data-theme="light"] .wiki-warning { color: #5a3600; background: #fff2d5; border-color: rgba(164, 96, 0, 0.3); }
 :root[data-theme="light"] .wiki-warning strong { color: white; background: #a96200; }
 :root[data-theme="light"] .compatibility-items span,
+:root[data-theme="light"] .faq-item,
 :root[data-theme="light"] .meta div { color: #17284f; background: rgba(230, 239, 255, 0.8); }
 :root[data-theme="light"] .legal-note { color: #53617d; }
 :root[data-theme="light"] .footer { color: #53617d; background: #e7eefc; }
